@@ -1,0 +1,9 @@
+Function,Candidate,Forecast,Method,Confidence
+1,0.472784-0.455748,,global magnitude/sign restart,Low
+2,0.701500-0.959796,0.696792371571064,tight local quadratic,Low
+3,0.325355-0.003391-0.538367,-0.009270385131682435,smoothed RBF global restart,Low
+4,0.420370-0.427768-0.368794-0.412497,0.6589624155248368,direct local line + success expansion,High
+5,0.999999-0.999999-0.999999-0.999999,8500.0,accelerating boundary trajectory + model consensus,High
+6,0.437642-0.275181-0.565494-0.833184-0.042658,,multi-model global restart,Low-Medium
+7,0.223588-0.369270-0.256273-0.262985-0.391467-0.834089,1.7864867658758472,updated local quadratic vertex,High
+8,0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000,9.999999999999991,exact additive quadratic recovery; max residual 1.78e-14,Very high
