@@ -1,0 +1,9 @@
+Function,Week7_result,Pre_result_forecast,Actual,Interpretation,Absolute_forecast_error
+1,New best,,1.3142529628112004e-15,Rank-based local refinement improved the incumbent.,
+2,Failed bracket step,,0.5893476079120687,"A +0.000407 x2 step fell sharply from the Week 6 peak, confirming a narrow local optimum.",
+3,Forecast miss,-0.019940944166029977,-0.027911148643077723,The path quadratic overshot; the Week 6 point remains best.,0.007970204477047747
+4,Near tie,,0.6589240028704428,Only 2.96e-6 below the incumbent; the local surface is effectively flat at this scale.,
+5,New best,,5151.047725485012,The x1 continuation improved by 193.476.,
+6,Stability test,,-0.5903792900833394,"A one-microstep change from the former best still returned materially worse, indicating local instability/noise.",
+7,Forecast confirmed,1.759,1.7557182120997592,Absolute forecast error ≈0.00328 and a new best.,0.0032817879002406958
+8,Forecast essentially exact,9.89900201513335,9.8990020095864,Absolute forecast error ≈5.55e-9; the fitted trajectory vertex was validated.,5.546949566337389e-09
