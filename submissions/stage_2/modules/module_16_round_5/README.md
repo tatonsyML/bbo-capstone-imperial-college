@@ -1,13 +1,7 @@
 # Module 16 / Round 5 recovered evidence
 
-**Capstone component:** 16.x  
-**Archive type:** recovered evidence pack, not claimed to be the original submission package.
+**Archive type:** recovered evidence pack.
 
-The exact historical portal query and returned output are preserved below from the project's round ledger. The original standalone assessment/package artefact for this module was not present among the recovered package files, so no reconstructed submission text is presented as original.
+The exact historical Round 5 portal query and returned output are preserved from the project ledger. The original standalone Module 16 submission/package is not present among the recovered files, so no later reconstruction is labelled as the original submission.
 
-Files:
-- `queries.txt` — exact historical portal query.
-- `outputs.txt` — exact returned portal output.
-- `notes.md` — surviving evidence/provenance note.
-
-Later cumulative packages also include this round in their chronological history.
+The surrounding project history shows the strategy had moved from a single universal BO rule towards controlled, function-specific local experiments and model diagnostics.
