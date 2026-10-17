@@ -1,5 +1,14 @@
-# Component 21.2 — working snapshot
+# Module 21.2 — Transparency and interpretability
 
-The current datasheet and model card are copied here as a **working snapshot**, not as a confirmed submitted version.
+This folder contains the current assessment-facing copies for Module 21.2.
 
-When the discussion is actually submitted, the exact submitted files will be frozen with their final names and this note will be updated. Until then the living authoritative versions remain under `docs/`.
+## Main documents
+
+- [Datasheet](datasheet.md)
+- [Model card](model_card.md)
+
+## Supporting document
+
+- [Decision log](decision_log.md)
+
+The same current versions are also available in the top-level [docs](../../../docs/) folder, which is the easiest route from the repository home page.
