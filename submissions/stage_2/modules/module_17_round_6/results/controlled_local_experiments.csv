@@ -1,0 +1,7 @@
+Function,Experiment,Estimated optimum/path position,Predicted output
+F2,x2 local quadratic,0.9598159816257765,0.6544286139882587
+F3,controlled path quadratic,0.34249520313251897,-0.03048414267669428
+F4,controlled path quadratic,-0.019338739120455396,0.6589313829514507
+F6,controlled path quadratic,-0.026836434856032616,-0.5414262707373169
+F7,x1 controlled quadratic,0.2732288404514892,
+F8,controlled path quadratic,5.37349953536989,9.899004024813395
