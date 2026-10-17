@@ -1,0 +1,9 @@
+Function,Round 6 portal value,Empirical rationale,Model/local forecast
+1,0.732524-0.738900,"Local rank-GP consensus near the current F1 best; raw outputs span extreme orders of magnitude, so ranking is safer than fitting raw scale.","Local rank score, not a raw-output forecast"
+2,0.701500-0.959816,Quadratic fit to the high-performing x2 corridor with x1 effectively fixed; estimated local vertex x2≈0.959816.,Local quadratic ≈0.65443
+3,0.487816-0.639038-0.365586,Rounds 3–5 lie on one controlled direction. A quadratic through those three returns places the local vertex 34% of the way from Round 4 toward Round 5.,Local quadratic ≈-0.03048
+4,0.420290-0.427795-0.368797-0.412509,Round 5 was the midpoint of the two strong Round 2/Round 4 points and beat both. A one-dimensional quadratic puts the vertex almost exactly at that midpoint.,Local quadratic ≈0.65893
+5,0.608373-0.999999-0.999999-0.999999,Continue the controlled x1 test by +0.05 while holding x2–x4 at their successful upper bounds. Round 5 improved from 4694.32 to 4807.99.,Current GP ensemble ≈4913
+6,0.480996-0.256731-0.814471-0.999999-0.056773,Rounds 3–5 lie on one line. Round 4 was best and Round 5 worsened; the local quadratic vertex lies almost exactly back at Round 4.,Local quadratic ≈-0.54143
+7,0.100000-0.369270-0.256273-0.262985-0.391467-0.834089,Only x1 changes. The controlled sequence 0.015→0.046316→0.060 raised the return 1.5516→1.6138→1.6384; continue cautiously.,Current GP ensemble ≈1.695
+8,0.115345-0.080886-0.066188-0.090106-0.977378-0.234773-0.185804-0.537023,"Rounds 1,3,4,5 lie on the same trajectory and improved monotonically; take one more equal step.",Current GP ensemble ≈9.892
