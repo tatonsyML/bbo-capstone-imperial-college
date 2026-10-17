@@ -1,0 +1,9 @@
+Function,Pre_result_forecast,Actual,Interpretation,Absolute_forecast_error
+1,,4.1970039548686525e-16,No new best; the Week 7 incumbent remains best. The previous rank-GP direction did not survive this observation.,
+2,0.6951890957425348,0.6130861312279376,Forecast miss of about 0.0821. The supposed smooth local vertex was not supported; the peak is much sharper or less stable than the quadratic assumed.,0.0821029645145972
+3,-0.01967500426160122,-0.029663277388799626,Forecast miss of about 0.0100. Week 6 remains best; another reason to tighten the local bracket.,0.009988273127198407
+4,,0.6589299133743123,New best by about 2.96e-6. The controlled micro-step succeeded.,
+5,5654.122541235046,5709.3613198927205,New best; actual exceeded the local quadratic forecast by about 55.24. The validated trajectory accelerated rather than flattening.,55.23877865767463
+6,,-0.6337817154897656,The symmetric x1 micro-step also deteriorated. This confirms an exceptionally narrow local feature or instability around the incumbent.,
+7,1.7913964966142097,1.785862549726479,New best; forecast error about 0.00553. The x1 trajectory is still credible but now visibly flattening.,0.0055339468877306786
+8,9.905418265365158,9.9113990095864,New best; all three GP kernels under-predicted it. The orthogonal x6 move found additional headroom.,0.0059807442212420625
