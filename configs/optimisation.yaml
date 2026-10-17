@@ -1,0 +1,46 @@
+# Optimisation configuration — Round 10 prospective
+project:
+  objective: maximise
+  bounds: [0.0, 0.999999]
+  portal_precision: 6
+  observed_through: week_9
+  round_10_status: prospective
+
+validation:
+  preserve_raw_observations: true
+  separate_prospective_and_retrospective_evidence: true
+  forbid_counterfactual_portal_scores: true
+
+challengers:
+  gp_kernels: [RBF, Matern15, Matern25]
+  acquisitions: [EI, PI, UCB]
+  hebo_inspired: true
+  turbo_style: true
+  official_hebo_optional: true
+  botorch_optional: true
+
+round_10:
+  F1:
+    candidate: "0.472784-0.455748"
+    verification: "provisional; rerun before portal submission"
+  F2:
+    candidate: "0.701500-0.959796"
+    verification: "evidence-derived prospective candidate"
+  F3:
+    candidate: "0.325355-0.003391-0.538367"
+    verification: "provisional; rerun before portal submission"
+  F4:
+    candidate: "0.420370-0.427768-0.368794-0.412497"
+    verification: "evidence-derived prospective candidate"
+  F5:
+    candidate: "0.999999-0.999999-0.999999-0.999999"
+    verification: "evidence-derived prospective candidate"
+  F6:
+    candidate: "0.437642-0.275181-0.565494-0.833184-0.042658"
+    verification: "provisional; rerun before portal submission"
+  F7:
+    candidate: "0.223588-0.369270-0.256273-0.262985-0.391467-0.834089"
+    verification: "evidence-derived prospective candidate"
+  F8:
+    candidate: "0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000"
+    verification: "structural candidate; unconfirmed until portal-tested"
