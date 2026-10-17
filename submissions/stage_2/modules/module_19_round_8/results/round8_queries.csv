@@ -1,0 +1,9 @@
+Function,Portal_value,Rationale
+1,0.735874-0.729467,Rank-GP local consensus around the new Week 7 best; stay inside the near-zero basin while testing a small x1-up/x2-down move.
+2,0.701500-0.959720,"Three-point local bracket around the Week 6 spike; quadratic vertex from x2=0.959409, 0.959816 and 0.960223 is approximately 0.959720."
+3,0.488344-0.634434-0.364235,"Week 7 overshot the Week 6 local best. A quadratic through the left bracket, Week 6 best and Week 7 point places the local vertex back at t≈0.260 on the controlled path."
+4,0.420381-0.427768-0.368794-0.412497,Week 7 tested x1 one micro-step to the right of the incumbent and was slightly worse. Test one micro-step to the left while holding the other coordinates fixed.
+5,0.758373-0.999999-0.999999-0.999999,The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary.
+6,0.481358-0.256800-0.814241-0.999999-0.057285,Week 7 changed x1 by only +0.000001 from the Week 4 incumbent but lost about 0.049. Test the symmetric -0.000001 side to distinguish a razor-sharp local feature from instability/noise.
+7,0.234070-0.369270-0.256273-0.262985-0.391467-0.834089,The x1-only controlled path continues to fit a stable concave quadratic. The last three points place the estimated vertex at x1≈0.234070.
+8,0.128076-0.104109-0.074587-0.102502-0.970754-0.264560-0.238989-0.536764,"Week 7 landed essentially exactly on the validated trajectory vertex. Leave that path fixed and test one orthogonal coordinate: increase x6 by 0.025, where the GP-kernel committee agrees on positive headroom."
