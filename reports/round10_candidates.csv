@@ -1,0 +1,9 @@
+Function,Portal_value,Strategy,Status,Verification
+1,0.472784-0.455748,Global restart using signed-log magnitude/sign evidence; abandon low-upside local polishing.,Prospective,Provisional challenger; rerun/verify before portal submission
+2,0.701500-0.959796,Tight diagnostic bracket around the Week 6 incumbent after the wider Week 9 forecast failed.,Prospective,Evidence-derived prospective candidate; not yet an observed result
+3,0.325355-0.003391-0.538367,Alternative-basin restart because repeated local refinement stalled.,Prospective,Provisional challenger; rerun/verify before portal submission
+4,0.420370-0.427768-0.368794-0.412497,TuRBO-style success expansion of an exceptionally well-validated local direction.,Prospective,Evidence-derived prospective candidate; not yet an observed result
+5,0.999999-0.999999-0.999999-0.999999,Decisive upper-bound exploitation on the accelerating trajectory.,Prospective,Evidence-derived prospective candidate; not yet an observed result
+6,0.437642-0.275181-0.565494-0.833184-0.042658,Multi-model global restart after an unstable/stalled incumbent region.,Prospective,Provisional challenger; rerun/verify before portal submission
+7,0.223588-0.369270-0.256273-0.262985-0.391467-0.834089,Precision exploitation at the updated local quadratic vertex.,Prospective,Evidence-derived prospective candidate; not yet an observed result
+8,0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000,Direct structural candidate from an additive quadratic fit to all 49 observed values.,Prospective,Evidence-derived prospective candidate; not yet an observed result
