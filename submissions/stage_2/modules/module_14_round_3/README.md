@@ -1,13 +1,8 @@
 # Module 14 / Round 3 recovered evidence
 
-**Capstone component:** 14.1/14.2  
-**Archive type:** recovered evidence pack, not claimed to be the original submission package.
+**Capstone components:** 14.1 and 14.2  
+**Archive type:** recovered evidence pack.
 
-The exact historical portal query and returned output are preserved below from the project's round ledger. The original standalone assessment/package artefact for this module was not present among the recovered package files, so no reconstructed submission text is presented as original.
+The exact historical Round 3 portal query and output are preserved here. The course records identify Module 14's capstone work as refining the BBO strategy and documenting the project on GitHub. The exact final discussion-board wording was not recovered as a standalone file, so it is not reconstructed here.
 
-Files:
-- `queries.txt` — exact historical portal query.
-- `outputs.txt` — exact returned portal output.
-- `notes.md` — surviving evidence/provenance note.
-
-Later cumulative packages also include this round in their chronological history.
+Later surviving packages include this round in their cumulative histories.
