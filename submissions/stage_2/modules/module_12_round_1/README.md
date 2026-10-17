@@ -1,13 +1,8 @@
 # Module 12 / Round 1 recovered evidence
 
 **Capstone component:** 12.1  
-**Archive type:** recovered evidence pack, not claimed to be the original submission package.
+**Archive type:** recovered evidence pack.
 
-The exact historical portal query and returned output are preserved below from the project's round ledger. The original standalone assessment/package artefact for this module was not present among the recovered package files, so no reconstructed submission text is presented as original.
+The exact historical portal query and returned output are preserved from the project's round ledger. The exact final Week 1 reflection was not recovered as a standalone file, so this folder does not fabricate it.
 
-Files:
-- `queries.txt` — exact historical portal query.
-- `outputs.txt` — exact returned portal output.
-- `notes.md` — surviving evidence/provenance note.
-
-Later cumulative packages also include this round in their chronological history.
+The Module 12 capstone marked the start of Stage 2 BBO: Gaussian-process surrogate modelling, uncertainty, exploration versus exploitation and acquisition-led query selection.
