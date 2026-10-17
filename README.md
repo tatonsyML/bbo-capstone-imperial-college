@@ -1,67 +1,91 @@
 # Black-Box Optimisation Capstone
 
-**Status:** observed data through Week 9; Round 10 candidates are prospective and are not included in observed performance.
+Imperial College London — Professional Certificate in Machine Learning and Artificial Intelligence
 
-This repository preserves the original capstone architecture while reflecting how the project evolved. It separates reusable optimisation code, historical evidence, accumulated data, exploratory notebooks, reports and transparency documentation.
+## This week's submission: Module 21
 
-## Core workflow
+For Module 21, the two main documents are:
 
-`observations → surrogate/challengers → acquisition/diagnostics → candidate decision → portal query → update`
+- **[Datasheet](docs/datasheet.md)** — what data I used, how it was collected and its limitations.
+- **[Model card](docs/model_card.md)** — how the optimisation approach works, how it evolved, how it performed and where it remains uncertain.
 
-The current framework is **evidence-gated**. HEBO-inspired, TuRBO-style, GP committee, local-fit and structural candidates are challengers. A more sophisticated model does not automatically outrank stronger direct evidence.
+Supporting material:
 
-## Repository structure
+- [Decision log](docs/decision_log.md)
+- [Project journey](docs/project_journey.md)
+- [Module 21 assessment folder](submissions/stage_2/module_21/component_21_2/)
+
+## Project in plain English
+
+This project asks a simple question with a difficult constraint: how do you find the best setting when you cannot see the formula and every test is expensive? I optimise eight hidden functions using a small number of experiments. I began with Gaussian-process Bayesian optimisation, then changed the method as evidence accumulated. Some functions responded well to local refinement; others needed broader exploration. I now compare model suggestions with direct experimental patterns and recorded forecasts before deciding what to test next. The repository keeps the data, code, results and decision history together so the progress can be followed from the first query to the current round.
+
+## Progress through Week 9
+
+The project started with 175 programme-supplied observations. Nine completed query rounds added 72 observations, giving **247 observed evaluations**.
+
+| Function | Initial best | Best through Week 9 | Where the current best was found |
+|---|---:|---:|---|
+| F1 | 7.7109e-16 | 1.9213e-15 | Week 9 |
+| F2 | 0.611205 | 0.691315 | Week 6 |
+| F3 | -0.034835 | -0.020856 | Week 6 |
+| F4 | -4.025542 | 0.658933 | Week 9 |
+| F5 | 1088.860 | 6583.561 | Week 9 |
+| F6 | -0.714265 | -0.541448 | Week 4 |
+| F7 | 1.364968 | 1.786338 | Week 9 |
+| F8 | 9.598482 | 9.932443 | Week 9 |
+
+Round 10 is currently kept separately from the observed results until the portal returns its outputs.
+
+## How the approach evolved
+
+| Phase | Main idea |
+|---|---|
+| Early rounds | Gaussian-process surrogate models and acquisition functions to balance exploration and exploitation |
+| Middle rounds | Function-specific diagnostics, alternative kernels, SVM and small neural-network checks |
+| Later rounds | Controlled local experiments, quadratic fits and forecasts recorded before results |
+| Current | Evidence-gated decisions: GP, local models, HEBO-inspired and TuRBO-style challengers compete with direct observed patterns |
+
+The important change is that there is no longer one universal rule for all eight functions. Each function earns a different strategy from its own evidence.
+
+## Where to start
+
+If you want the **shortest non-technical route**, read:
+
+1. [Project journey](docs/project_journey.md)
+2. [Datasheet](docs/datasheet.md)
+3. [Model card](docs/model_card.md)
+
+If you want the **round-by-round history**, use:
+
+- [Stage 2 module archive](submissions/stage_2/modules/README.md)
+- [Query experiments](experiments/)
+
+If you want the **technical implementation**, use:
+
+- [Notebooks](notebooks/)
+- [Reusable Python code](src/)
+- [Reports and result tables](reports/)
+- [Tests](tests/)
+
+## Repository map
 
 ```text
 bbo-capstone-imperial-college/
-├── README.md
-├── requirements.txt
-├── requirements-advanced.txt
-├── configs/
-├── data/
-│   ├── initial/
-│   └── accumulated/
-├── src/bbo/
-├── experiments/
-├── notebooks/
-├── reports/
-├── docs/
-└── tests/
+├── README.md                 ← start here
+├── docs/                     ← datasheet, model card, decision log, project journey
+├── submissions/              ← module-by-module capstone history
+├── experiments/              ← queries, returned outputs and round notes
+├── data/                     ← accumulated observation history
+├── notebooks/                ← exploratory and model-comparison notebooks
+├── reports/                  ← forecasts, current bests and challenger results
+├── src/                      ← reusable optimisation code
+├── tests/                    ← basic reproducibility checks
+└── configs/                  ← optimisation settings
 ```
 
-## Evidence discipline
+## Reproducibility
 
-The project distinguishes four evidence classes:
-
-1. **Observed** — portal inputs and returned outputs.
-2. **Prospective** — forecasts and rationale recorded before a result.
-3. **Retrospective** — challenger analyses performed later.
-4. **Interpretive** — conclusions made after comparing forecasts with observations.
-
-Retrospective HEBO/TuRBO recommendations never receive invented portal scores.
-
-## Module 21 transparency documents
-
-- [Datasheet](docs/datasheet.md)
-- [Model card](docs/model_card.md)
-- [Decision log](docs/decision_log.md)
-
-## Assessment submission archive
-
-Historical/final assessment-facing versions are kept separately from the living project under [submissions/](submissions/README.md). Exact historical text is archived only when it can be recovered; missing older submissions are explicitly marked rather than reconstructed.
-
-## Current observed dataset
-
-The current cut contains **247 observed evaluations**:
-
-- 175 programme-supplied initial observations
-- 72 submitted Week 1–9 observations
-
-Per function the totals are 19, 19, 24, 39, 29, 29, 39 and 49.
-
-Round 10 is kept separately as prospective evidence until the portal returns results.
-
-## Reproduce
+Core dependencies are listed in [requirements.txt](requirements.txt). Optional advanced optimisation packages are listed in [requirements-advanced.txt](requirements-advanced.txt).
 
 ```bash
 python -m pip install -r requirements.txt
@@ -69,8 +93,4 @@ PYTHONPATH=src python -m bbo.pipeline
 python -m pytest -q
 ```
 
-Optional advanced challenger packages are listed in `requirements-advanced.txt`.
-
-## Transparency note
-
-A rerunnable model is not the same as a reproducible decision. The repository therefore preserves not only code and data, but also the evidence class and rationale behind important query decisions.
+The repository keeps current project files separate from the module-by-module history so the latest work remains easy to find without losing the development path.
