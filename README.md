@@ -46,6 +46,10 @@ Retrospective HEBO/TuRBO recommendations never receive invented portal scores.
 - [Model card](docs/model_card.md)
 - [Decision log](docs/decision_log.md)
 
+## Assessment submission archive
+
+Historical/final assessment-facing versions are kept separately from the living project under [submissions/](submissions/README.md). Exact historical text is archived only when it can be recovered; missing older submissions are explicitly marked rather than reconstructed.
+
 ## Current observed dataset
 
 The current cut contains **247 observed evaluations**:
