@@ -1,11 +1,12 @@
-# PROSPECTIVE CANDIDATES — not portal observations
-# F1, F3 and F6 require rerun/verification before portal submission.
+# ROUND 10 - PORTAL INPUTS (submitted; outputs not yet returned)
+# Eight vectors confirmed against the portal edit form on 18 October 2026.
+# These are not measured scores; do not add them to the observation history.
 
-Function 1: 0.472784-0.455748
+Function 1: 0.582552-0.558941
 Function 2: 0.701500-0.959796
-Function 3: 0.325355-0.003391-0.538367
+Function 3: 0.469634-0.620072-0.416672
 Function 4: 0.420370-0.427768-0.368794-0.412497
 Function 5: 0.999999-0.999999-0.999999-0.999999
-Function 6: 0.437642-0.275181-0.565494-0.833184-0.042658
-Function 7: 0.223588-0.369270-0.256273-0.262985-0.391467-0.834089
+Function 6: 0.379322-0.338275-0.586412-0.727790-0.036539
+Function 7: 0.190478-0.171014-0.347582-0.283057-0.283946-0.639922
 Function 8: 0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000
