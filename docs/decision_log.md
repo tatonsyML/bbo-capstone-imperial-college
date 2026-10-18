@@ -31,10 +31,14 @@ Retrospective analysis never overwrites the historical record, and unsubmitted c
 - F7: 1.78633819779689 at `0.228702-0.369270-0.256273-0.262985-0.391467-0.834089` (Week 9).
 - F8: 9.9324430095864 at `0.128076-0.104109-0.074587-0.102502-0.970754-0.314560-0.238989-0.536764` (Week 9).
 
-## Round 10 governance
+## Round 10 governance and final submission
 
-Each candidate must satisfy at least one of two tests: it should have credible upside, or it should resolve an uncertainty that changes the next decision. Strong local validation outranks a more sophisticated model that has recently failed.
+Each proposed query must have a credible prospect of improvement **or** produce information that changes a later decision. Historical forecast accuracy and direct observations take precedence over algorithm prestige. This is a documented human review policy rather than a calibrated automatic acceptance rule.
 
-The exact F1, F3 and F6 restart coordinates in the working configuration are provisional and must be rerun before portal submission. F8's predicted value of 10 is a structural hypothesis until the portal tests it.
+**The Round 10 vectors are now confirmed as submitted**, but none has an observed score in the dataset. Four earlier provisional ideas (F1, F3, F6 and F7) were replaced. The old points are preserved alongside final choices and their evidential rationale in [the revision audit](../reports/round10_revision_audit.md). F2, F4, F5 and F8 were unchanged.
 
-Transparency is not the volume of documentation. It is the ability to tell what was known, what was assumed, what was decided and what happened next.
+**F8's predicted output of 10 remains a structural model result until the portal returns its score.** F6 and F7's higher model-predicted means are not measured improvements. Some exploratory candidate selection was informed by public classmates' evaluated data; these are external benchmarks, not observations collected by this participant, and their assessed use is subject to the course collaboration rules.
+
+[The exact submitted vectors](../experiments/round_10/queries.txt) are recorded separately from observed results. The archive of Weeks 1–9 has not been rewritten.
+
+Transparency is the ability to tell what was known, what was assumed, what was decided and what happened next, rather than the volume of generated documentation.
