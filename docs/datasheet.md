@@ -93,16 +93,16 @@ The **authoritative history keeps the actual portal outputs**. No score is repla
 **Additional provenance:** Supplementary retrospective research compared this history against publicly shared classmates' query/output records. Those peer observations were used as **external research evidence**, not inserted into my 247-row dataset or mislabelled as my own results. 
 
 **Additional resources:** 
-# AI GP – YouTube Playlist
 
-A collection ofvideos covering Gaussian Processes, Bayesian Optimisation, surrogate modelling and Bayesian Deep Learning.
+A collection of YouTube videos covering Gaussian Processes, Bayesian Optimisation, surrogate modelling and Bayesian Deep Learning.
 
-1. **Video 4 – Bayesian Optimisation:** Understand the overall optimisation process, acquisition functions and exploration versus exploitation.
-2. **Video 1 – Gaussian Processes:** Understand predictive distributions, uncertainty and how Gaussian Processes support optimisation.
-3. **Video 5 – Gaussian Processes: Data Science Concepts:** Explore GP regression, covariance and kernel functions.
-4. **Video 7 – Bayesian Optimisation with scikit-learn:** Learn practical implementation techniques.
-5. **Video 9 – Bayesian Optimisation with Gaussian Processes:** Develop a deeper understanding of surrogate models and sequential optimisation.
-
+| Order | Video | Duration | Learning Objective |
+|---|---|---|---|
+| 1 | [Bayesian Optimisation](https://www.youtube.com/watch?v=M-NTkxfd7-8) | 9:50 | Understand the overall optimisation process, acquisition functions, and exploration versus exploitation. |
+| 2 | [Gaussian Processes](https://www.youtube.com/watch?v=UBDgSHPxVME) | 23:47 | Understand predictive distributions, uncertainty, and how Gaussian Processes support optimisation. |
+| 3 | [Gaussian Processes: Data Science Concepts](https://www.youtube.com/watch?v=HA-VHNVbvwQ) | 24:47 | Explore GP regression, covariance, and kernel functions. |
+| 4 | [Bayesian Optimisation with scikit-learn](https://www.youtube.com/watch?v=jtRPxRnOXnk) | 39:21 | Learn practical implementation techniques. |
+| 5 | [Bayesian Optimisation with Gaussian Processes](https://www.youtube.com/watch?v=VWLI1jthE24) | 1:05:56 | Develop a deeper understanding of surrogate models and sequential optimisation. |
 
 ## 5. Intended uses and uses to avoid
 
