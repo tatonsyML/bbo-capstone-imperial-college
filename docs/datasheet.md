@@ -5,7 +5,7 @@
 **Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college  
 **Important status:** Round 10 inputs have been submitted, but their outputs have not yet been received or added to the observed dataset.
 
-> **In plain English:** This is a record of 247 experiments on eight unknown functions. It shows what settings were tried, what scores came back, and how those results shaped the next experiments. It is a record of a *search*, not a map of every possible outcome.
+> This is a record of 247 experiments on eight unknown functions. It shows what settings were tried, what scores came back, and how those results shaped the next experiments. It is a record of a *search*, not a map of every possible outcome.
 
 ## 1. Why was this dataset created?
 
