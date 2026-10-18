@@ -1,46 +1,53 @@
-# Optimisation configuration — Round 10 prospective
+# Round 10 portal-submitted choices; measured results through Week 9 only
 project:
   objective: maximise
   bounds: [0.0, 0.999999]
   portal_precision: 6
   observed_through: week_9
-  round_10_status: prospective
-
+  round_10_status: submitted_pending_outputs
 validation:
   preserve_raw_observations: true
   separate_prospective_and_retrospective_evidence: true
+  peer_benchmarks_are_external: true
   forbid_counterfactual_portal_scores: true
-
 challengers:
   gp_kernels: [RBF, Matern15, Matern25]
   acquisitions: [EI, PI, UCB]
   hebo_inspired: true
   turbo_style: true
+  turbo_style_default_length: 0.20
   official_hebo_optional: true
   botorch_optional: true
-
 round_10:
   F1:
-    candidate: "0.472784-0.455748"
-    verification: "provisional; rerun before portal submission"
+    candidate: "0.582552-0.558941"
+    status: submitted_pending_output
+    rationale: "Targeted positive-response region; exploratory near-peer evidence; unobserved"
   F2:
     candidate: "0.701500-0.959796"
-    verification: "evidence-derived prospective candidate"
+    status: submitted_pending_output
+    rationale: "Tight incumbent diagnostic after Week 9 GP forecast miss"
   F3:
-    candidate: "0.325355-0.003391-0.538367"
-    verification: "provisional; rerun before portal submission"
+    candidate: "0.469634-0.620072-0.416672"
+    status: submitted_pending_output
+    rationale: "Alternative-region local interpolation; external evidence; uncertain"
   F4:
     candidate: "0.420370-0.427768-0.368794-0.412497"
-    verification: "evidence-derived prospective candidate"
+    status: submitted_pending_output
+    rationale: "Controlled local refinement supported by prospective accuracy"
   F5:
     candidate: "0.999999-0.999999-0.999999-0.999999"
-    verification: "evidence-derived prospective candidate"
+    status: submitted_pending_output
+    rationale: "Upper-bound exploitation supported by nine observed gains and cubic challenger"
   F6:
-    candidate: "0.437642-0.275181-0.565494-0.833184-0.042658"
-    verification: "provisional; rerun before portal submission"
+    candidate: "0.379322-0.338275-0.586412-0.727790-0.036539"
+    status: submitted_pending_output
+    rationale: "Peer-informed GP regional exploration; model forecast only"
   F7:
-    candidate: "0.223588-0.369270-0.256273-0.262985-0.391467-0.834089"
-    verification: "evidence-derived prospective candidate"
+    candidate: "0.190478-0.171014-0.347582-0.283057-0.283946-0.639922"
+    status: submitted_pending_output
+    rationale: "Alternative basin; peer-informed ensemble; substantial uncertainty"
   F8:
     candidate: "0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000"
-    verification: "structural candidate; unconfirmed until portal-tested"
+    status: submitted_pending_output
+    rationale: "17-coefficient additive quadratic fitted vertex; predicted score 10"
