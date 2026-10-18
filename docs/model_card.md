@@ -1,185 +1,185 @@
-# Model Card: Evidence-Gated Function-Specific Black-Box Optimisation
+# Model Card | Evidence-Gated, Function-Specific Black-Box Optimisation
 
-**Version:** Module 21 / pre-Round 10  
-**Status:** Experimental educational optimisation framework  
-**Author:** Tamer El-Tonsy  
-**Observed performance cut:** Portal results through Week 9; Round 10 candidate set is prospective
+**Model name:** Evidence-Gated BBO Optimiser  
+**Type:** Sequential Bayesian optimisation with human-reviewed surrogate and structural challengers  
+**Version:** 4.1, Module 21 / Round 10 submitted  
+**Developer and maintainer:** Project author  
+**Evidence cut:** Portal-returned results through **Week 9** (247 evaluations); **Round 10 scores pending**  
+**Code:** [src/bbo/](../src/bbo/) | **Data:** [docs/datasheet.md](datasheet.md) | **Decisions:** [docs/decision_log.md](decision_log.md)
 
-## 1. Overview
+> **In plain English:** When every experiment is expensive and the formula is hidden, an algorithm predicts which setting to try next. This project goes one step further: it checks whether that algorithm has been reliable *before* allowing its prediction to drive the next experiment.
 
-This project is not a single fixed surrogate model. It is a sequential decision framework for eight independent black-box optimisation problems with 2–8 continuous inputs.
+## 1. At a glance
 
-The approach began with Gaussian-process Bayesian optimisation and evolved into a function-specific evidence gate. Candidate points can be proposed by GP surrogates, alternative kernels, local quadratic fits, controlled one-coordinate experiments, model committees and, for Round 10, HEBO-inspired and TuRBO-style challengers. A human decision layer determines whether a model has earned enough authority to influence the expensive portal query.
+The task is to obtain the **highest observed score** for each of eight unknown functions. Each function accepts between two and eight numeric settings. I can submit only one new setting per function per round and receive the answer later.
 
-The governing rule is simple: **a more sophisticated model does not automatically outrank stronger direct evidence.**
+There is **no single model** that works equally well on every function. My framework asks several models for proposals, reviews their past forecast errors, and chooses one legal input for the portal.
 
-## Version history
+**Core decision principle: The most confident or complicated model does not automatically get the deciding vote. Evidence of past predictive accuracy matters more.**
 
-| Version | Project stage | Main change |
-|---|---|---|
-| v1 | Early rounds | GP-led Bayesian optimisation and uncertainty-aware acquisition |
-| v2 | Middle rounds | Function-specific models, diagnostics and controlled local experiments |
-| v3 | Weeks 7–9 | Cross-validation, rolling/prospective forecasts and explicit reduction of model authority after failure |
-| v4 | Round 10 preparation | Evidence-gated optimisation with HEBO/TuRBO challengers, structural models and decision-value tests |
+### Quick definitions
 
-The current code is reproducible from the repository snapshot. The complete historical decision process is reproducible only to the extent that its original settings, forecasts and judgement calls were preserved.
+| Term | Meaning for a non-specialist |
+|---|---|
+| **Gaussian Process (GP)** | A statistical model that predicts a score *and* expresses uncertainty about that prediction |
+| **Acquisition function** | A rule for choosing whether to pursue a promising estimate or explore an uncertain region |
+| **EI / PI / UCB** | Expected Improvement / Probability of Improvement / Upper Confidence Bound: three different ways to rank possible next experiments |
+| **HEBO-inspired committee** | Several GP kernels and acquisition rules provide alternative recommendations rather than one model dictating the answer |
+| **TuRBO-style search** | A more detailed search near a strong observed result, rather than searching the whole domain at once |
+| **Structural model** | A simpler equation, such as a quadratic, fitted when observations suggest a recognisable mathematical pattern |
+| **Evidence gate** | The documented review of predictive accuracy, direct observations, model disagreement and the value of a new experiment |
 
-## 2. Intended use and audience
+## 2. Intended use
 
-### Suitable for
+**Suitable for:** Educational or research optimisation of expensive, bounded, continuously valued black-box functions; tens of observations rather than thousands; one query at a time; and projects where an analyst reviews proposals before evaluation.
 
-- expensive continuous black-box optimisation on bounded domains;
-- low-to-moderate dimensions with only tens of observations;
-- sequential settings in which uncertainty, information value and opportunity cost matter;
-- research or educational workflows where a human reviews the final recommendation.
+**Not suitable without substantial redesign for:** Safety-critical automatic decisions, discrete or categorical variables without appropriate encoding, rapidly changing functions, abrupt discontinuities, very noisy outputs, extremely high dimensions, or any application requiring a *guaranteed* global maximum.
 
-### Not recommended for
-
-- safety-critical autonomous deployment without domain constraints and independent validation;
-- high-dimensional problems where the available observations are too sparse to support the chosen surrogate;
-- discrete or categorical spaces unless those variables are explicitly encoded with a suitable model;
-- strongly discontinuous or time-varying systems without methods designed for those behaviours;
-- claims of guaranteed global optimality.
-
-The main audience is assessors, ML practitioners, future maintainers of the repository and readers who want to understand not only what point was chosen, but why.
+**Who should use this card?** Course assessors, other students, maintainers and practitioners who want to understand what the optimiser does, why it chose particular points and what the results do *not* establish.
 
 ## 3. How the approach decides
 
-The final decision process separates four evidence classes:
+The pipeline combines **measured results**, **model-generated candidates** and **a documented human decision**:
 
-1. **Observed evidence:** portal-returned input/output history.
-2. **Prospective evidence:** forecasts and rationale recorded before the next result arrives.
-3. **Retrospective evidence:** later re-analysis using alternative models, without rewriting the original decision.
-4. **Interpretation:** what changed after the new observation was seen.
+1. **Load only information available at decision time.** Start with the course's original observations and append each completed portal response. Do not train historical forecasts on later results.
+2. **Generate alternatives.** Fit suitable GPs, compare kernels and acquisitions, examine local or structural fits, and optionally propose a regional-search candidate.
+3. **Check the evidence.** Compare prospective forecasts against their actual returned scores; review local experiments, model disagreement, plausible gain and the likely information from a failure.
+4. **Apply the decision gate.** Prefer models with a credible forecasting record. Reduce the influence of models that confidently missed. A simple fit supported by controlled observations can overrule a more elaborate GP.
+5. **Enforce submission requirements.** Inputs must lie from 0.000000 to 0.999999 inclusive, with six decimal places. Check for unhelpful duplicates and preserve the selected vector **before** the portal returns a result.
 
-A candidate is judged on more than its predicted mean. Depending on the function, the decision may consider forecast calibration, predictive uncertainty, expected improvement, model/acquisition agreement, distance from the incumbent, information value and what a failure would teach.
+**Important qualification:** This is a human-reviewed decision procedure, not a fully automated, numerical acceptance threshold. Model reliability and expected information value are criteria for review, but I have not implemented a formally calibrated universal model-voting rule.
 
-This makes the optimisation decision more interpretable without pretending that the hidden mathematical function itself has been explained.
+### What HEBO-inspired and TuRBO-style mean here
 
-## 4. Strategy evolution across the ten query decisions
+The implementation in [src/bbo/optimizer.py](../src/bbo/optimizer.py) makes the distinction auditable:
 
-| Stage | Main techniques | What changed |
+- **HEBO-inspired:** Fits RBF, Matérn 1.5 and Matérn 2.5 GPs with a Yeo–Johnson transformation. It evaluates EI, PI and UCB over a seeded Sobol candidate pool and compares robust candidate ranks. This is **not** a complete implementation of HEBO.
+- **TuRBO-style:** Fits a GP and evaluates EI over a Sobol pool restricted to a region around the best observed point. The coded default region width is **0.20** in normalised input space. This is a local challenger, **not** the complete TuRBO method with automatic expansion, contraction and restarts.
+- **Other challengers:** Controlled one-coordinate steps, local quadratics, structural polynomial models and additional retrospectives using alternative kernels, noise levels or output transforms.
+
+An optional adapter to the official HEBO package exists in the code. Its presence does **not** establish that official HEBO was run for the submitted rounds.
+
+## 4. How the strategy evolved
+
+| Stage | What changed | Why |
 |---|---|---|
-| Weeks 1–2 | GP surrogate, EI/UCB, broad exploration | Established the BO workflow and uncertainty-aware search |
-| Weeks 3–4 | History-aware regional search, alternative kernels, SVM/NN diagnostics | Began treating functions differently rather than using one universal policy |
-| Weeks 5–6 | Controlled local experiments and quadratic peak fitting | Reduced confounding by changing one variable where practical |
-| Week 7 | Cross-validation, rolling-origin prediction and kernel comparison | Shifted attention from in-sample fit to next-result prediction |
-| Week 8 | Pre-result forecasts, micro-steps, model committees | A model lost authority when direct local evidence contradicted it |
-| Week 9 | Scaling/forecast audit and function-specific risk allocation | Quantified where extra modelling paid for itself and where it did not |
-| Round 10 preparation | HEBO-inspired acquisition/warping challengers, TuRBO-style trust-region logic, global restarts and structural recovery | Advanced methods became challengers, not automatic replacements for validated evidence |
+| **Weeks 1–2** | GP-led Bayesian optimisation using EI and UCB; relatively broad exploration | Learn a useful starting workflow with limited observations |
+| **Weeks 3–4** | Alternative kernels, regional searches and supplementary SVM/neural-network diagnostics | Different functions responded differently to the same search strategy |
+| **Weeks 5–6** | Controlled local adjustments and quadratic fitting where the pattern warranted it | Isolate the effect of a coordinate instead of changing too many variables together |
+| **Week 7** | Cross-validation and comparisons of predictions against later points | Distinguish a model that fits historical data from one that predicts useful new results |
+| **Week 8** | Recorded pre-result forecasts, smaller steps and alternative candidate reviews | Make model failures visible and reduce unearned confidence |
+| **Week 9** | Quantified forecast errors and function-specific allocation of risk | Reward reliable local models; stop blindly following poor forecasts |
+| **Round 10** | HEBO-inspired and TuRBO-style challenger evaluation, additional quadratic/cubic comparisons and separate peer-informed external research | Test neglected regions without discarding strong direct evidence |
 
-The approach therefore evolved from **model-led Bayesian optimisation** towards **evidence-gated sequential experimentation**.
+**The decisive lesson from Week 9:** The F4 local model predicted 0.658932869 and the portal returned 0.658932867, an error of about **1.56 × 10⁻⁹**. F2's prediction of 0.730502 returned 0.505526, an error of **0.224977**. Treating these two models as equally reliable would be difficult to justify.
 
-## 5. Performance
+The refinement is therefore not simply “more algorithms”. It is a stronger rule for deciding **when an algorithm should be trusted**.
 
-### Metrics
+## 5. Performance: what actually happened?
 
-The primary metric is the maximum observed portal output for each function. Supporting metrics include:
+**Primary metric:** The best **portal-observed** score per function. Larger is better, including when scores are negative. Improvements in F1 or negative-valued functions are not expressed as simple percentages because that would be misleading.
 
-- number of post-initial rounds that established a new best;
-- prospective forecast error where a numerical forecast was recorded before the result;
-- rolling/cross-validated surrogate error;
-- uncertainty calibration and model disagreement where available;
-- qualitative decision value when a diagnostic query rules out a hypothesis.
+**Secondary measures:** New-best rounds, error in forecasts recorded before outcomes, rolling/leave-one-out prediction error where assessed, uncertainty disagreement, and information gained by a deliberately diagnostic query.
 
-Relative percentage improvement is not used as a universal metric because some functions start near zero or with negative values, where percentages can be misleading.
+### Official best observations through Week 9
 
-### Best observed results through Week 9
+| Function | Dimensions | Best in starting data | Best measured by Week 9 | New bests in 9 rounds | What it shows |
+|---|---:|---:|---:|---:|---|
+| **F1** | 2 | 7.7109 × 10⁻¹⁶ | **1.9213 × 10⁻¹⁵** | 2 | Extreme scale makes an apparently precise local peak practically uninformative |
+| **F2** | 2 | 0.611205 | **0.691315** | 3 | Some improvement, but the latest smooth local forecast failed substantially |
+| **F3** | 3 | −0.034835 | **−0.020856** | 2 | Improved then stalled, suggesting value in investigating another region |
+| **F4** | 4 | −4.025542 | **0.658933** | 5 | Large measured gain and unusually reliable fine local predictions |
+| **F5** | 4 | 1,088.860 | **6,583.561** | 9 | Improved in every completed round while approaching the upper boundary |
+| **F6** | 5 | −0.714265 | **−0.541448** | 3 | Improvement is real, but later local changes have been inconsistent |
+| **F7** | 6 | 1.364968 | **1.786338** | 6 | Consistent local progress does not rule out a better distant region |
+| **F8** | 8 | 9.598482 | **9.932443** | 8 | Strong improvement and evidence for a remarkably simple fitted structure |
 
-| Function | Initial best | Best observed through W9 | New-best rounds / 9 | Current interpretation |
-|---|---:|---:|---:|---|
-| F1 | 7.7109e-16 | 1.9213e-15 | 2 | Extreme scale; incumbent basin still offers little absolute signal |
-| F2 | 0.611205 | 0.691315 | 3 | Strong but very narrow incumbent; smooth local forecasts have failed |
-| F3 | -0.034835 | -0.020856 | 2 | Improved, then stalled; alternative basin now worth testing |
-| F4 | -4.025542 | 0.658933 | 5 | Strong local trajectory; recent prospective forecast was exceptionally accurate |
-| F5 | 1088.8596 | 6583.5614 | 9 | Every completed round improved the incumbent; upper-bound trajectory is still accelerating |
-| F6 | -0.714265 | -0.541448 | 3 | Best set in Week 4; incumbent neighbourhood remains unstable |
-| F7 | 1.364968 | 1.786338 | 6 | Consistent local gains, now approaching a fitted local vertex |
-| F8 | 9.598482 | 9.932443 | 8 | Strong progression; observed history supports a simple structural model |
+**Observed total:** 175 initial values + 9 completed rounds × 8 functions = **247**. The next eight inputs were submitted for Round 10 but do not have verified outputs in this assessment cut.
 
-### Prospective Week 9 audit
+### A closer look at four revealing cases
 
-The forecast audit is part of model performance, not an appendix to it. Week 9 gave sharply different outcomes:
+**F2: A failed forecast.** The Week 9 forecast error of 0.224977 was large relative to the improvement being sought. The model's numerical confidence was not enough to warrant another wide move.
 
-| Function | Pre-result forecast | Actual | Absolute error | Interpretation |
-|---|---:|---:|---:|---|
-| F2 | 0.730502 | 0.505526 | 0.224977 | Local smooth forecast failed; model authority reduced |
-| F3 | -0.020112 | -0.025816 | 0.005704 | Direction plausible, magnitude not reliable enough |
-| F4 | 0.658932869 | 0.658932867 | 1.56e-9 | Direct local model strongly validated |
-| F5 | 6454.0 | 6583.561 | 129.561 | Direction correct; gain was underestimated |
-| F7 | 1.786415 | 1.786338 | 7.69e-5 | Local quadratic strongly supported |
-| F8 | 9.933511 | 9.932443 | 0.001068 | Direction and scale well supported |
+**F4: A model that earned trust.** Fine local changes tracked the observed result so closely that further controlled refinement was defensible. Here a simple model had stronger evidence than a complicated global search.
 
-F1 and F6 deliberately had no trustworthy numerical Week 9 forecast. Not issuing a number where the evidence did not support one is treated as a transparency feature rather than a missing metric.
+**F5: A useful change in mathematical model.** Retrospective experiments compared additive quadratic and additive cubic fits against a small external hold-out set. In that experiment, the best tested cubic achieved RMSE **61.80** versus **1,033.44** for the tested quadratic. That supports the *model form* and upper-bound direction, but these settings were selected after testing alternatives on a small external set. The apparent improvement is **not** an independent guarantee of a future score.
 
-## 6. Function-specific Round 10 rationale
+**F8: A structural discovery.** An additive quadratic with **17 coefficients** fitted all **49 personal observations** to around numerical precision. It also predicted **five external held-out scores** with error around **1.35 × 10⁻¹⁰** when trained on my own data. Its mathematically implied vertex is:
 
-The prospective Round 10 strategy is deliberately heterogeneous. F1, F3 and F6 use higher-risk restarts because their incumbent regions do not offer enough competitive upside. F2 uses a tighter local diagnostic bracket. F4 expands a validated local step. F5 moves to the all-upper-bound candidate. F7 refines its fitted local vertex. F8 tests the maximiser of an additive quadratic that fits all 49 observed values to numerical precision.
+**0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000**
 
-The exact F1, F3 and F6 challenger coordinates in the current configuration remain provisional and should be rerun before portal submission. All Round 10 candidates remain prospective until the portal returns results.
+Its fitted score is **10**. This remains a **predicted**, not a portal-returned, Round 10 value. These external checks support the functional shape, but the independent points are still selected rather than randomly sampled; absolute global optimality is not established by the portal evidence.
 
-## 7. Assumptions
+## 6. The Round 10 submission: decisions, not outcomes
 
-### Local continuity
+The final [Round 10 query record](../experiments/round_10/queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
 
-GPs, local quadratics and trust regions all assume, in different ways, that nearby observations provide useful information about nearby candidates. F1, F2 and F6 show how fragile this can become when useful behaviour is extremely narrow or locally unstable.
+| Function | Decision | Evidence and uncertainty |
+|---|---|---|
+| **F1** | Test a nearby positive-response region, away from 0.73 | Better external positive results suggest an alternative search area; exact local peak remains unknown |
+| **F2** | A small diagnostic move near the incumbent | The previous broad forecast failed |
+| **F3** | Target a different promising neighbourhood | External observations suggest stronger scores; interpolation remains exploratory |
+| **F4** | Preserve controlled local refinement | The preceding prospective local forecast was exceptionally accurate |
+| **F5** | Query all four legal upper bounds | Nine successive measured improvements support the direction |
+| **F6** | Explore a peer-informed alternative region | Ensemble-predicted mean changed from about −0.262 to −0.192, **not** a measured gain |
+| **F7** | Test a different high-performing region | Ensemble-predicted mean changed from about 1.73 to 2.79; the model range remains wide |
+| **F8** | Query the fitted additive-quadratic vertex | Predicted score 10 with unusually strong external prediction tests |
 
-### Stability of the data-generating process
+**External evidence disclosure:** Some Round 10 proposals arose from supplementary experiments informed by publicly shared classmates' evaluated points. These observations were used for **external benchmarking and experimental models**, not merged with the 247 personal portal observations. Sources and their role are documented in the [datasheet](datasheet.md). Their acceptability in assessed query design must be checked against the programme's collaboration requirements.
 
-The approach assumes that an observation remains relevant to later decisions. The project does not have enough replicate measurements to establish the noise process or determinism of every function independently.
+## 7. Assumptions, constraints and failure modes
 
-### Surrogate uncertainty is only useful when calibrated
+| Assumption or limitation | What it means | What might go wrong |
+|---|---|---|
+| **Local continuity and smoothness** | Nearby settings usually give related scores | A narrow spike, cliff or discontinuity may be missed or smoothed away |
+| **Stationarity** | A kernel's notion of distance applies similarly across the domain | Different areas may behave differently; a single length scale can mislead |
+| **Noise and stability** | Earlier observations remain informative in later rounds | Location-dependent randomness could make a promising signal look reliable when it is not |
+| **Sparse sampling** | A few dozen observations must guide a large search | Predictive uncertainty outside visited areas is mostly a modelling assumption |
+| **Adaptive sampling bias** | Earlier recommendations shape later training points | Repeated success in one region may hide a better region elsewhere |
+| **Polynomial structure** | Fitted trends continue into untested locations | Excellent interpolation alone does not guarantee global optimality |
+| **Single query and delayed feedback** | Only one new experiment per function is evaluated at a time | Contradictory model recommendations cannot be checked immediately |
+| **Human and LLM judgement** | Code generation and interpretation involve review | Incorrect explanations, confirmation bias and unrecorded overrides threaten reproducibility |
 
-A GP standard deviation is model uncertainty under the fitted assumptions, not a guarantee about the hidden function. Forecast misses therefore reduce the authority given to acquisition functions that depend on that uncertainty.
+**A concrete failure mode:** Models that fitted F2 locally still produced a large Week 9 forecast error. By contrast, F4 and F8 show why a narrow or structurally simple model can sometimes be more useful than a more flexible alternative.
 
-### Structural assumptions are local claims unless tested globally
+Exact GP fitting and candidate searching are manageable at these sample sizes. Computation is **not** the main constraint here; the limited number of *real evaluations* is.
 
-The strongest example is F8. An additive quadratic with 17 coefficients fits all 49 observed values with a maximum residual around 1.8e-14 and implies a candidate with predicted value 10. This is unusually strong evidence, but the unobserved domain remains unobserved until the portal tests the candidate.
+## 8. Transparency, ethics and real-world adaptation
 
-## 8. Limitations and failure modes
+There are no personal records in this synthetic challenge, so demographic fairness and privacy are not primary dataset risks. The important ethical risks are **overclaiming**, **concealing failures**, **misusing external evidence** and **transferring a classroom method into high-consequence settings without validation**.
 
-### Adaptive sampling bias
+Transparency supports practical trust in four ways:
 
-The model helps choose the data and then uses those data as evidence for itself. Dense local success can therefore make the model increasingly confident in a region it repeatedly chose to inspect while leaving alternative regions poorly characterised.
+1. **Keep observations separate from forecasts.** A predicted score is not an achieved result.
+2. **Record reasoning before feedback.** This reduces the temptation to invent an explanation for a successful outcome afterwards.
+3. **Show failed models as well as successful ones.** A model earns its influence from tested performance, not its reputation.
+4. **Keep human decisions inspectable.** The code can regenerate candidates, but past manual choices also require a decision record.
 
-### Missing counterfactual outcomes
+In manufacturing, agriculture or clinical research, an optimisation query might waste material, create environmental harm or present a safety risk. The current educational model is **not** suitable for those tasks without domain-specific limits, independent tests, explicit risk tolerances and appropriate human oversight.
 
-Retrospective HEBO, TuRBO or other challengers can be replayed without leakage, but an unsubmitted historical candidate has no true portal result. Counterfactual optimisation performance must not be invented.
+## 9. Reproducibility: what is possible and what is not?
 
-### Sparse high-dimensional evidence
+**Available now:** Chronological CSVs for the personal observations, exact round inputs/outputs, current Python pipeline, documented kernels/acquisitions and the forecast/decision files linked below.
 
-The 6D and 8D functions contain only 39 and 49 observed points respectively. Good local performance does not establish global coverage.
+**To reproduce numerical experiments:** Use the same observation cut, code revision, Python dependencies and random seeds. The core pipeline uses a seeded Sobol candidate generator; numerical optimisation may still vary slightly with library versions and computing environments.
 
-### Human and LLM confirmation bias
+**To reproduce original historical judgements:** Some early discarded alternatives and manual settings were not saved. Those choices cannot be reconstructed perfectly from the final scripts. This is a documented limitation, not a claim of complete historical reproducibility.
 
-The project uses human judgement and LLM assistance for coding, hypothesis generation and critique. Once a narrative becomes attractive, later evidence can be interpreted through it. The controls are pre-result forecasts, preserved failures, explicit overrides and keeping retrospective analysis separate from the historical decision.
+**To reproduce initial source files:** The original programme-distributed NumPy arrays must be obtained through authorised channels. The public project does not claim redistribution rights over them.
 
-### Computational and methodological scope
+Useful starting points:
+- [Dataset and provenance](datasheet.md)
+- [Chronological queries and outcomes](../experiments/)
+- [Current implementation](../src/bbo/)
+- [Best measured scores](../reports/current_best_after_week9.csv)
+- [Forecast audit](../reports/week9_forecast_audit.csv)
+- [F8 quadratic coefficients](../reports/f8_additive_quadratic_coefficients.csv)
+- [Decision log](decision_log.md)
 
-Exact GP fitting is practical at the current sample sizes, but more complex model portfolios cost time and can create false confidence. Complexity is retained only when it improves validation, calibration or decision value.
+## 10. Does the model card need more detail?
 
-### Delayed feedback
+**Not in the main narrative.** This card explains the task, how candidate decisions are made, the measured evidence, what failed and what should not be concluded. A reader should be able to follow that in a few minutes.
 
-Each expensive result arrives after the query decision. A surprising observation cannot be followed immediately with a second query, increasing the opportunity cost of a poor choice.
+The **next useful additions** are a per-function forecast-calibration table, a machine-readable candidate decision register and confirmed Round 10 outputs when available. Those belong in linked evidence files rather than making the central explanation harder to read.
 
-## 9. Ethical considerations, transparency and interpretability
-
-No personal data is used, so privacy and demographic fairness are not the primary ethical risks. The relevant risks are overclaiming, unearned confidence and unsafe transfer of a method outside the setting in which it was tested.
-
-Transparency is therefore treated as part of model quality. Negative results, forecast failures, manual overrides and changes of mind are retained because they explain how the final method was reached. The raw observations are preserved, and prospective claims are kept separate from retrospective interpretation.
-
-Interpretability in this project means a reviewer can understand why a query was chosen and what evidence would change that decision. It does **not** mean that the optimiser has recovered the causal mechanism of the hidden function.
-
-For real-world adaptation, a good score on these synthetic functions would not justify direct deployment. The data-generating process, measurement system, constraints, costs and failure consequences would need to be re-established in the target environment. A model that works under one collection process should not be assumed portable to another.
-
-## 10. Is this level of detail sufficient?
-
-Yes for the capstone model card. The card contains the decision logic, evidence cut, performance, assumptions, failure modes and appropriate-use boundaries needed to judge the approach. More detailed kernel fits, candidate scores and per-round diagnostics belong in linked notebooks and audit tables rather than in the card itself.
-
-That separation is deliberate: transparency requires enough detail to verify a claim, while interpretability also requires cognitive tractability. A document that contains every intermediate number can become less useful rather than more transparent.
-
-## 11. Reproducibility checklist
-
-A reviewer should be able to reconstruct the public working analysis from the chronological CSV history, exact code revision, Python/package versions, random seeds, model and acquisition settings, transformations, candidate-search bounds, six-decimal portal rounding, prospective forecast records and the decision log documenting manual overrides. Full byte-for-byte reproduction of the original programme seed files additionally requires those files to be available under the programme's permitted terms.
-
-Bitwise reproduction is not the same as decision reproduction. Where numerical optimisation is stochastic or library-dependent, the repository should preserve the environment and seed and state an acceptable tolerance; where judgement selected between candidates, the rationale must be recorded as data about the decision process.
+**Bottom line:** The optimiser is best understood as a disciplined sequence of expensive experiments. The most valuable improvement was learning to judge the quality of its recommendations, not simply adding more sophisticated algorithms.
