@@ -1,23 +1,29 @@
-# Datasheet: BBO Query History and Function Evaluations
+# Datasheet | Black-Box Optimisation Query History
 
-**Project:** Black-Box Optimisation Capstone  
-**Status:** Observed data through Week 9; Round 10 candidate set recorded separately and not yet treated as an observation  
-**Maintainer:** Tamer El-Tonsy  
-**Purpose:** Transparency, auditability and reproducible sequential optimisation
+**Dataset version:** Module 21, observed through Week 9 (18 October 2026 documentation update)  
+**Maintainer:** Project author  
+**Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college  
+**Important status:** Round 10 inputs have been submitted, but their outputs have not yet been received or added to the observed dataset.
 
-## 1. Motivation
+> **In plain English:** This is a record of 247 experiments on eight unknown functions. It shows what settings were tried, what scores came back, and how those results shaped the next experiments. It is a record of a *search*, not a map of every possible outcome.
 
-This dataset was created to support a capstone challenge in which eight unknown black-box functions must be maximised under a strict evaluation budget. The internal formulae and gradients are unavailable. The only way to learn about each function is to submit an input vector and observe the returned scalar output.
+## 1. Why was this dataset created?
 
-The dataset therefore serves two purposes. First, it is the evidence base for sequential black-box optimisation. Second, it is an audit trail of how the optimisation strategy changed as new evidence arrived. This distinction matters because the later observations were not sampled independently: they were partly selected by models fitted to earlier observations.
+The Imperial College London machine-learning capstone asks participants to **maximise eight hidden numerical functions** with very few opportunities to test new settings. A function takes between two and eight numerical inputs and returns one score. Higher scores are better; the formula is hidden.
 
-The initial data were supplied by the programme. I generated the later query points and recorded the returned results. I did not generate the initial sample and therefore do not infer or claim a sampling design for it unless that design is documented by the programme.
+The dataset supports three tasks:
 
-## 2. Composition
+1. **Optimisation:** Learn from earlier evaluations and select the next promising input.
+2. **Evaluation:** Measure whether each new query improved the best score and whether predictions were reliable.
+3. **Accountability:** Make it possible to inspect why a particular point was chosen, including mistakes and changes of strategy.
 
-Each instance is one black-box evaluation: a vector `x` within the unit hypercube and one scalar output `y=f(x)`. All functions are maximisation problems.
+The course supplied the starting input/output observations and the evaluation portal. I selected the subsequent queries and recorded the responses. I do not claim to have generated the original data or to know the hidden function definitions.
 
-| Function | Dimensions | Initial observations | Week 1–9 observations | Observed total |
+## 2. What is in the dataset?
+
+One **observation** is one input vector (the settings sent to a function) paired with the scalar score returned by the portal. The eight functions must be analysed separately: their dimensions and output scales differ.
+
+| Function | Input variables | Course starting observations | Completed personal queries | Observed total |
 |---|---:|---:|---:|---:|
 | F1 | 2 | 10 | 9 | 19 |
 | F2 | 2 | 10 | 9 | 19 |
@@ -27,85 +33,91 @@ Each instance is one black-box evaluation: a vector `x` within the unit hypercub
 | F6 | 5 | 20 | 9 | 29 |
 | F7 | 6 | 30 | 9 | 39 |
 | F8 | 8 | 40 | 9 | 49 |
-| **Total** |  | **175** | **72** | **247** |
+| **Total** | | **175** | **72** | **247** |
 
-The working project stores the programme-supplied seed arrays as NumPy files. They are not redistributed publicly here until the programme's redistribution terms are confirmed. The public working history is represented in chronological CSV tables containing the function identifier, stage, submitted input and observed output.
+**Current observation cut:** Nine completed additional evaluations for each function. The eight Round 10 coordinate strings are **submitted queries without returned scores** and must not be counted as eight further observations.
 
-### Known gaps and data-quality issues
+### Format and fields
 
-The recorded evaluations have no known missing output fields and the Week 9 audit found no exact duplicate submitted points. The more important gaps are structural:
+- **Initial source:** paired NumPy files (initial_inputs.npy and initial_outputs.npy), supplied through the programme.
+- **Public working history:** chronological CSV files in **data/accumulated/function_1/** through **function_8/**, each named **observations_through_week9.csv**.
+- **Columns:** function, stage, sequence_in_stage, is_initial, x1 ... xD, output. The stage separates the initial course sample from Weeks 1–9.
+- **Round evidence:** submitted query strings, returned portal values and notes in **experiments/round_01/** through **round_09/**.
+- **Calculated summaries:** best values, forecast errors and challenger proposals in **reports/**. These are *derived analysis*, not new portal observations.
 
-- **Adaptive sampling:** later queries concentrate where earlier models or observed trajectories suggested value. The dataset is a search history, not a representative survey of each domain.
-- **High-dimensional sparsity:** 49 observations in 8D and 39 in 6D leave almost all of the corresponding hypercubes unobserved.
-- **Uneven information density:** F4 and F7 contain dense local sequences; F5 is concentrated near an upper boundary trajectory; F1 contains values spanning extreme orders of magnitude.
-- **No counterfactual outcomes:** when an alternative optimiser would have proposed another point, its portal value is unknown because it was never queried.
-- **Unknown observation noise:** the budget did not support systematic repeat measurements, so determinism is not assumed merely because the portal returns a precise number.
-- **Rounding:** submitted coordinates are constrained to six decimal places. The stored raw course inputs and derived modelling values may contain greater precision, but the portal observation corresponds to the submitted six-decimal vector.
+Input coordinates are bounded between **0.000000 and 0.999999**. Submitted queries contain exactly six decimal places per coordinate. Starting inputs may contain more precision; do not silently round them when reproducing an earlier fit. Scores are real numbers and can be negative or extremely small.
 
-## 3. Collection process
+The public repository preserves the derived numerical history but does **not** redistribute the original course-provided binary arrays pending confirmation of redistribution rights. Anyone requiring byte-for-byte reconstruction of the initial source must obtain those files through an authorised programme route.
 
-### Initial data
+### What is missing, and what is biased?
 
-The programme supplied the initial input/output pairs for all eight functions. Their provenance and counts are preserved even where the original binary files are not redistributed publicly.
+There are no known missing score fields in the completed CSV records. But **complete records do not mean complete coverage**:
 
-### Sequential queries
+- **F1:** Outputs have extreme magnitude differences, with most readings too close to zero to reveal a useful gradient.
+- **F2:** Results have been difficult to predict consistently; the available evidence does not establish whether variation is observation noise, rapidly changing local behaviour or both.
+- **F3:** Repeated searches around an earlier promising region produced limited further progress. Competing regions remain weakly sampled.
+- **F4 and F7:** Small steps around successful points yield excellent *local* detail while leaving other regions relatively unexplored.
+- **F5:** The later observations concentrate near the upper boundary, not across the full four-dimensional domain.
+- **F6:** The incumbent neighbourhood remains difficult to model reliably.
+- **F8:** Forty-nine points are still sparse in eight dimensions, even where a simple mathematical pattern fits exceptionally well.
 
-One new point per function was selected and submitted in each completed round. The strategy evolved with the evidence rather than remaining fixed:
+There is no independently measured global optimum, no comprehensive repeat-measurement programme to identify noise, and no observed outcomes for unsubmitted HEBO, TuRBO or other counterfactual candidates.
 
-| Stage | Main collection logic |
-|---|---|
-| Early rounds | Gaussian-process Bayesian optimisation, uncertainty-aware acquisition and broad exploration |
-| Middle rounds | Alternative kernels and diagnostic models, cross-validation, local search and function-specific treatment |
-| Later rounds | Controlled one-coordinate experiments, local quadratic fits, pre-result forecasting, model-authority reduction after forecast failure, and function-specific exploration/exploitation |
-| Round 10 preparation | HEBO-inspired warping/acquisition challengers, TuRBO-style trust-region logic, multi-model restarts where incumbents stalled, and direct structural modelling where the data supported it |
+## 3. How and when were the observations collected?
 
-Human judgement remained part of the collection mechanism. A model recommendation was not automatically submitted. In later rounds the decision increasingly considered prospective forecast accuracy, local evidence, disagreement between models, potential objective gain and the information a failed query would still provide.
+The programme provided 175 starting evaluations. Across **Modules 12–20**, I made one new submission per function each round, collected its returned score and appended it to that function's history. **Module 21 / Round 10** represents the next submitted query set, still awaiting scores.
 
-The reasoning for a query was recorded before its output arrived whenever practical. This reduces hindsight bias and separates prediction from later interpretation.
+Later queries were **not random draws**. They were chosen using everything already learnt, then reviewed before submission:
 
-## 4. Preprocessing, cleaning and labelling
+| Project phase | Selection approach | Why it changed |
+|---|---|---|
+| Early rounds | Gaussian Processes (GPs) with Expected Improvement or Upper Confidence Bound | Balance promising predictions against exploration of uncertain areas |
+| Middle rounds | Alternative kernels, diagnostic models, regional search and controlled one-coordinate changes | A single modelling rule did not work equally well across all eight functions |
+| Weeks 7–9 | Cross-validation, forecasts written before results and local polynomial fitting | Reward models whose predictions actually worked; challenge those that failed |
+| Round 10 decision | HEBO-inspired acquisition comparisons, TuRBO-style local challenger and polynomial structure, with human evidence review | Choose the next experiment by credible gain **or** the information it would provide |
 
-The raw observations are preserved. No observation has been deleted, relabelled or replaced because it was inconvenient for the model.
+**HEBO-inspired** means I compare candidate recommendations from multiple GP kernels and acquisition criteria. **TuRBO-style** means I search in a restricted area around a promising result. The code implements educational adaptations rather than the complete published algorithms.
 
-Inputs already lie in the bounded search domain, so no permanent input rescaling is written back to the raw data. Portal submissions are rounded to six decimal places as required.
+The human selection step is part of the collection process: a more complex algorithm was not automatically preferred over a simpler model backed by better experimental evidence.
 
-Model-specific transformations have been tested where the scale or distribution justified them, including standardisation and log-like transforms. These are modelling artefacts, not replacements for the raw outcomes. Derived datasets and forecasts are kept separate from the authoritative portal observations.
+## 4. What preparation or transformations were applied?
 
-No conventional class labels are present. Derived fields such as `best_so_far`, `new_best`, forecast error or strategy tag are analytical annotations and should not be confused with original measurements.
+The **authoritative history keeps the actual portal outputs**. No score is replaced with a fitted or transformed value, and unsuccessful queries remain in the record.
 
-## 5. Intended and inappropriate uses
+- Inputs are already on the programme's common zero-to-one scale.
+- Model fitting sometimes uses standardisation, Yeo–Johnson or signed-log-like transformations to handle difficult score scales. These are temporary model inputs, **not edits to the saved outcomes**.
+- Polynomial coefficients, surrogate forecasts, uncertainty values and labels such as *new best* are computed from the observations and kept in separate reports.
+- Proposals are clipped to legal bounds and formatted to six decimal places **before submission**.
+- Modelling experiments and peer-informed tests are distinguished from the participant's own portal-returned observations.
 
-### Intended uses
+**Additional provenance:** Supplementary retrospective research compared this history against publicly shared classmates' query/output records. Those peer observations were used as **external research evidence**, not inserted into my 247-row dataset or mislabelled as my own results. Some revised Round 10 candidates were informed by this research. The public sources include the repositories of [Rishin Mitra](https://github.com/mitrarishinoracleace/AIML), [Andreia Bilé-Silva](https://github.com/andreia-bs/Capstone-project), [Ugo Isiocha](https://github.com/u-isiocha/Capstone) and [Hilton Patel](https://github.com/HP014/Machine-Learning-Capstone-Project). The use of evaluated peer outcomes for assessed work remains subject to programme collaboration rules; publicly readable data is not automatically unrestricted for reuse.
 
-- sequential black-box optimisation under a small evaluation budget;
-- reproducing and auditing the project's query history;
-- comparing surrogate and acquisition strategies using only information available at the time;
-- studying forecast calibration, exploration/exploitation and model failure on sparse data;
-- teaching how an adaptive dataset differs from an independently sampled regression dataset.
+## 5. Intended uses and uses to avoid
 
-### Inappropriate uses
+**Appropriate:** Replaying completed rounds; teaching sequential Bayesian optimisation; comparing candidate-selection strategies without future-data leakage; inspecting prediction failures; and examining how sparse, adaptively collected evidence shapes decisions.
 
-- claiming the complete global shape or global maximum of a hidden function from these observations alone;
-- treating the observations as independent and identically distributed;
-- using the data as an unbiased general regression benchmark;
-- inferring causal feature importance from correlations created by an adaptive query policy;
-- assigning true scores to retrospective HEBO, TuRBO or other counterfactual recommendations that were never submitted;
-- transferring conclusions directly to a real operational system without new domain validation, constraints and safety analysis.
+**Inappropriate:** Treating these points as an unbiased statistical survey; claiming a global maximum or complete function formula; comparing raw scores across functions with different scales; inferring cause from correlations where several settings changed together; treating untested recommendations as successful experiments; or transferring the method to safety-critical operations without new validation.
 
-## 6. Distribution and terms of use
+**Why the distinction matters:** A dataset containing many observations near one peak describes that area well. It says little about a distant region that was never tested.
 
-The project is published in this public GitHub repository with the datasheet, model card, code, results and analysis linked from the main README.
+## 6. Where is it available, and under what terms?
 
-The author's own code and documentation may be licensed separately. No blanket licence is asserted here over programme-provided seed data or the hidden objective functions. Redistribution and reuse of course-provided material remain subject to the programme's terms.
+- **Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college
+- **Working data:** [data/accumulated/](../data/accumulated/)
+- **Round records:** [experiments/](../experiments/)
+- **Model card:** [docs/model_card.md](model_card.md)
+- **Decision log:** [docs/decision_log.md](decision_log.md)
 
-There are no personal, demographic or directly identifiable records in this dataset.
+The repository is shared for educational review. **No blanket open-source licence is asserted for the programme's starting data, objective functions or any third-party observations.** Permissions to redistribute or reuse those assets must be checked with their respective rights holders. The repository does not presently declare a general licence for its contents.
 
-## 7. Maintenance and versioning
+There are no personal, demographic or directly identifying records; privacy and group fairness are therefore not directly evaluated in this synthetic dataset.
 
-The dataset is maintained by the project author. Each new portal result is appended rather than overwriting previous history. Observed results, pending queries, prospective forecasts and retrospective analyses are kept as separate evidence classes.
+## 7. Who maintains it, and how will it change?
 
-Git commits identify the data cut used by each notebook or report. After the final capstone round, the observation dataset will be frozen; later analytical work should create a new derived version rather than silently altering the historical record.
+The project author maintains the dataset and the accompanying decision records. When Round 10 scores arrive, they should be appended as eight **new observations**, preserving the earlier rows. Reports and the model card should then be versioned to show the new observation cut.
 
-## 8. Transparency note
+Versioning should always distinguish: **observed results**, **pre-result forecasts**, **retrospective comparisons**, and **interpretation after results**. The same input cannot have both an unobserved predicted score and a claimed actual score.
 
-The largest risk to interpretation is not a missing cell. It is the data-generating process itself. Because earlier models influenced later queries, the dataset increasingly reflects what the optimiser chose to inspect. A reader should therefore interpret strong local evidence as local evidence, not as proof that unvisited regions are unimportant.
+## 8. What a reviewer should remember
+
+**The greatest risk is not a missing CSV value; it is mistaking an intelligently selected search history for unbiased evidence about the entire search space.** This datasheet records both what the project learnt and where it still has no reliable information.
