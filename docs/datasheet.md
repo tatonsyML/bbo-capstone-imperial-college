@@ -90,7 +90,19 @@ The **authoritative history keeps the actual portal outputs**. No score is repla
 - Proposals are clipped to legal bounds and formatted to six decimal places **before submission**.
 - Modelling experiments and peer-informed tests are distinguished from the participant's own portal-returned observations.
 
-**Additional provenance:** Supplementary retrospective research compared this history against publicly shared classmates' query/output records. Those peer observations were used as **external research evidence**, not inserted into my 247-row dataset or mislabelled as my own results. Some revised Round 10 candidates were informed by this research. The public sources include the repositories of [Rishin Mitra](https://github.com/mitrarishinoracleace/AIML), [Andreia Bilé-Silva](https://github.com/andreia-bs/Capstone-project), [Ugo Isiocha](https://github.com/u-isiocha/Capstone) and [Hilton Patel](https://github.com/HP014/Machine-Learning-Capstone-Project). The use of evaluated peer outcomes for assessed work remains subject to programme collaboration rules; publicly readable data is not automatically unrestricted for reuse.
+**Additional provenance:** Supplementary retrospective research compared this history against publicly shared classmates' query/output records. Those peer observations were used as **external research evidence**, not inserted into my 247-row dataset or mislabelled as my own results. 
+
+**Additional resources:** 
+# AI GP – YouTube Playlist
+
+A collection ofvideos covering Gaussian Processes, Bayesian Optimisation, surrogate modelling and Bayesian Deep Learning.
+
+1. **Video 4 – Bayesian Optimisation:** Understand the overall optimisation process, acquisition functions and exploration versus exploitation.
+2. **Video 1 – Gaussian Processes:** Understand predictive distributions, uncertainty and how Gaussian Processes support optimisation.
+3. **Video 5 – Gaussian Processes: Data Science Concepts:** Explore GP regression, covariance and kernel functions.
+4. **Video 7 – Bayesian Optimisation with scikit-learn:** Learn practical implementation techniques.
+5. **Video 9 – Bayesian Optimisation with Gaussian Processes:** Develop a deeper understanding of surrogate models and sequential optimisation.
+
 
 ## 5. Intended uses and uses to avoid
 
