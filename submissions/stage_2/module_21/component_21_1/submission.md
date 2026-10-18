@@ -1,5 +1,7 @@
 # Stage 2: Required Capstone Component 21.1
 
+> **Historical submission note (18 October 2026):** The reflection below preserves the earlier discussion-board text written before the final Round 10 portal edits. Its F1, F3, F6 and F7 proposal descriptions refer to **superseded working candidates**, not the actual inputs confirmed in the portal. The [final submitted inputs](../../../../experiments/round_10/queries.txt) and [revision audit](../../../../reports/round10_revision_audit.md) document the subsequent changes. No Round 10 output has yet been observed. This note does not retroactively rewrite the original reflection.
+
 ## 1. Reasoning behind Round 10
 
 By Round 10, I had stopped treating the eight functions as variations of the same problem. I used the complete history through Week 9, forecasts recorded before their results, local geometry and competing model recommendations. HEBO-inspired output warping and acquisition comparison, and TuRBO-style trust-region logic, were used as challengers rather than automatically replacing stronger observed evidence.
