@@ -2,9 +2,9 @@
 
 Imperial College London — Professional Certificate in Machine Learning and Artificial Intelligence
 
-## This week's submission: Module 21
+## Module 21.2 assessment: Datasheet and model card
 
-For Module 21, the two main documents are:
+**Reviewer quick start:** These two linked documents address the full 22-point rubric. They explain the data and model for readers without a technical background, then link to supporting code and evidence.
 
 - **[Datasheet](docs/datasheet.md)** — what data I used, how it was collected and its limitations.
 - **[Model card](docs/model_card.md)** — how the optimisation approach works, how it evolved, how it performed and where it remains uncertain.
@@ -13,7 +13,9 @@ Supporting material:
 
 - [Decision log](docs/decision_log.md)
 - [Project journey](docs/project_journey.md)
-- [Module 21 assessment folder](submissions/stage_2/module_21/component_21_2/)
+- [Module 21.2 assessment copies](submissions/stage_2/module_21/component_21_2/)
+- [Round 10 confirmed portal inputs](experiments/round_10/queries.txt)
+- [Round 10 revision and external-source audit](reports/round10_revision_audit.md)
 
 ## Project in plain English
 
@@ -34,7 +36,13 @@ The project started with 175 programme-supplied observations. Nine completed que
 | F7 | 1.364968 | 1.786338 | Week 9 |
 | F8 | 9.598482 | 9.932443 | Week 9 |
 
-Round 10 is currently kept separately from the observed results until the portal returns its outputs.
+**Round 10 has been submitted and the eight input vectors have been confirmed. Its outputs are still pending.** The submitted inputs are preserved separately and the best-results table above remains based solely on measurements through Week 9. The [revision audit](reports/round10_revision_audit.md) records superseded provisional ideas and explains the provenance and limits of external evidence used to inform some choices.
+
+## What this project shows
+
+**A more sophisticated model does not automatically deserve more trust.** In Week 9, a simple local model forecast the F4 result to within about 1.6 × 10⁻⁹, while the F2 forecast missed by approximately 0.225. The project now compares candidates from different methods, reviews forecasting reliability and chooses experiments for improvement or information value.
+
+The eight functions are not equivalent: F5 has shown nine consecutive measured improvements near a boundary, while F8 supports a 17-coefficient additive quadratic that predicts a score of 10 at an as-yet-unconfirmed Round 10 point. No unreturned score is represented as achieved.
 
 ## How the approach evolved
 
