@@ -103,6 +103,8 @@ A collection of YouTube videos covering Gaussian Processes, Bayesian Optimisatio
 | 3 | [Gaussian Processes: Data Science Concepts](https://www.youtube.com/watch?v=HA-VHNVbvwQ) | 24:47 | Explore GP regression, covariance, and kernel functions. |
 | 4 | [Bayesian Optimisation with scikit-learn](https://www.youtube.com/watch?v=jtRPxRnOXnk) | 39:21 | Learn practical implementation techniques. |
 | 5 | [Bayesian Optimisation with Gaussian Processes](https://www.youtube.com/watch?v=VWLI1jthE24) | 1:05:56 | Develop a deeper understanding of surrogate models and sequential optimisation. |
+| 6 | [Modeling Complex Data with Deep Gaussian Processes](https://youtu.be/9CdfO_R2_lg) | Not verified | Understand how Deep Gaussian Processes extend standard GPs to model more complex functions and uncertainty. Advanced / Optional. |
+
 
 ## 5. Intended uses and uses to avoid
 
