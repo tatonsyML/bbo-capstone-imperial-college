@@ -21,28 +21,28 @@ Supporting material:
 
 This project asks a simple question with a difficult constraint: how do you find the best setting when you cannot see the formula and every test is expensive? I optimise eight hidden functions using a small number of experiments. I began with Gaussian-process Bayesian optimisation, then changed the method as evidence accumulated. Some functions responded well to local refinement; others needed broader exploration. I now compare model suggestions with direct experimental patterns and recorded forecasts before deciding what to test next. The repository keeps the data, code, results and decision history together so the progress can be followed from the first query to the current round.
 
-## Progress through Week 9
+## Progress through Week 10
 
-The project started with 175 programme-supplied observations. Nine completed query rounds added 72 observations, giving **247 observed evaluations**.
+The project started with 175 programme-supplied observations. Ten completed query rounds added 80 observations, giving **255 observed evaluations**.
 
-| Function | Initial best | Best through Week 9 | Where the current best was found |
+| Function | Initial best | Best through Week 10 | Where the current best was found |
 |---|---:|---:|---|
-| F1 | 7.7109e-16 | 1.9213e-15 | Week 9 |
+| F1 | 7.7109e-16 | 7.2640e-6 | Week 10 |
 | F2 | 0.611205 | 0.691315 | Week 6 |
-| F3 | -0.034835 | -0.020856 | Week 6 |
-| F4 | -4.025542 | 0.658933 | Week 9 |
-| F5 | 1088.860 | 6583.561 | Week 9 |
-| F6 | -0.714265 | -0.541448 | Week 4 |
-| F7 | 1.364968 | 1.786338 | Week 9 |
-| F8 | 9.598482 | 9.932443 | Week 9 |
+| F3 | -0.034835 | -0.014603 | Week 10 |
+| F4 | -4.025542 | 0.658962 | Week 10 |
+| F5 | 1088.860 | 8662.405 | Week 10 |
+| F6 | -0.714265 | -0.285656 | Week 10 |
+| F7 | 1.364968 | 3.149459 | Week 10 |
+| F8 | 9.598482 | 10.000000 | Week 10 |
 
-**Round 10 has been submitted and the eight input vectors have been confirmed. Its outputs are still pending.** The submitted inputs are preserved separately and the best-results table above remains based solely on measurements through Week 9. The [revision audit](reports/round10_revision_audit.md) records superseded provisional ideas and explains the provenance and limits of external evidence used to inform some choices.
+**Round 10 has completed and its eight portal-returned scores are recorded.** [Week 10 outputs](experiments/round_10/outputs.txt) and [cumulative observations through Week 10](data/accumulated/history_through_week10.csv) are authoritative for the current measured bests. [Week 11 candidate inputs](experiments/round_11/proposed_queries.txt) are **proposals, not submitted results**. The [revision audit](reports/round10_revision_audit.md) records superseded provisional ideas and explains the provenance and limits of external evidence used to inform some choices.
 
 ## What this project shows
 
 **A more sophisticated model does not automatically deserve more trust.** In Week 9, a simple local model forecast the F4 result to within about 1.6 × 10⁻⁹, while the F2 forecast missed by approximately 0.225. The project now compares candidates from different methods, reviews forecasting reliability and chooses experiments for improvement or information value.
 
-The eight functions are not equivalent: F5 has shown nine consecutive measured improvements near a boundary, while F8 supports a 17-coefficient additive quadratic that predicts a score of 10 at an as-yet-unconfirmed Round 10 point. No unreturned score is represented as achieved.
+The eight functions are not equivalent: F5 has shown nine consecutive measured improvements near a boundary, while F8's 17-coefficient additive quadratic vertex returned a portal-confirmed score of **10** in Week 10. F5 also reached **8,662.405** at its permitted upper corner. No unreturned score is represented as achieved.
 
 ## How the approach evolved
 
