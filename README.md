@@ -36,7 +36,7 @@ The project started with 175 programme-supplied observations. Ten completed quer
 | F7 | 1.364968 | 3.149459 | Week 10 |
 | F8 | 9.598482 | 10.000000 | Week 10 |
 
-**Round 10 has completed and its eight portal-returned scores are recorded.** [Week 10 outputs](experiments/round_10/outputs.txt) and [cumulative observations through Week 10](data/accumulated/history_through_week10.csv) are authoritative for the current measured bests. [Week 11 candidate inputs](experiments/round_11/proposed_queries.txt) are **proposals, not submitted results**. The [revision audit](reports/round10_revision_audit.md) records superseded provisional ideas and explains the provenance and limits of external evidence used to inform some choices.
+**Round 10 has completed and its eight portal-returned scores are recorded.** [Week 10 outputs](experiments/round_10/outputs.txt) and [cumulative observations through Week 10](data/accumulated/history_through_week10.csv) are authoritative for the current measured bests. **Round 11 portal inputs have been submitted. Their coordinates are withheld from the public repository until the final assessment submission; no Round 11 outputs are recorded yet.** The [revision audit](reports/round10_revision_audit.md) records superseded provisional ideas and explains the provenance and limits of external evidence used to inform some choices.
 
 ## What this project shows
 
