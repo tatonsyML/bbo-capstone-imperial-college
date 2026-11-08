@@ -51,7 +51,7 @@ The original optimisation demo remains available via PYTHONPATH=src python -m bb
 
 ## Evidence and limitations
 
-The leaderboard provided comparisons of attained outputs. A smaller number of public input-output records also helped redirect later candidates and validate some structural models. These were not counted as personal evaluations; their sources remain in the [historical Round 10 audit](reports/round10_revision_audit.md). The official complete HEBO and TuRBO implementations were not benchmarked: the project evaluated selected inspired mechanisms.
+The leaderboard provided comparisons of attained outputs. A smaller number of public input-output records also helped redirect later candidates and validate some structural models. These were not counted as personal evaluations; their categories and methodological limits are documented in the [anonymised Round 10 audit](reports/round10_revision_audit.md); identifying source references should be retained separately for any required academic attribution. The official complete HEBO and TuRBO implementations were not benchmarked: the project evaluated selected inspired mechanisms.
 
 The source audit confirms Round 11 F7's *output* but does not preserve its exact input coordinates. The [Round 11–12 CSV](data/portal_rounds_11_12.csv) leaves this coordinate empty rather than fabricating one. An earlier proposed Round 12 shortlist differs from the actual submitted F2, F3 and F6 queries; only observed portal returns are used in the results.
 

@@ -6,7 +6,7 @@
 
 **Public leaderboard:** its after-Round-9 snapshot ranked this project first on F8, seventh on F4, tenth on F7 and 29th on F6 among 39 participants. It generally showed *attained scores*, not the inputs needed to achieve them.
 
-**Externally published observations:** limited public input-output records informed some later F1, F3 and F6 queries and F5/F7 challenger models; five external F8 records supported a fitted quadratic before the Round 10 submission. They were never counted as this author's portal queries. Source attribution and methodological cautions are retained in the [original Round 10 audit](../reports/round10_revision_audit.md).
+**Externally published observations:** limited public input-output records informed some later F1, F3 and F6 queries and F5/F7 challenger models; five external F8 records supported a fitted quadratic before the Round 10 submission. They were never counted as this author's portal queries. Source categories and methodological cautions are retained in the [anonymised Round 10 audit](../reports/round10_revision_audit.md). Identifying source citations are excluded from the published repository and should be supplied separately if programme rules require them.
 
 **F8 provenance:** fit on accumulated personal records → check against five public external returns → submit model vertex → receive portal score 10 → later refit on the original 40 supplied course records alone → check against 12 later personal outputs. The final refit is *retrospective*, not a prior prospective decision.
 

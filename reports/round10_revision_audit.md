@@ -9,7 +9,7 @@
 | Function | Previous provisional candidate | Actual Round 10 submitted candidate | Why |
 |---|---|---|---|
 | F1 | 0.472784-0.455748 | **0.582552-0.558941** | Explore a positive-response neighbourhood suggested by external evidence |
-| F3 | 0.325355-0.003391-0.538367 | **0.469634-0.620072-0.416672** | Test a different region suggested by Rishin's measured results; interpolation uncertain |
+| F3 | 0.325355-0.003391-0.538367 | **0.469634-0.620072-0.416672** | Test a different region suggested by a published external result; interpolation uncertain |
 | F6 | 0.437642-0.275181-0.565494-0.833184-0.042658 | **0.379322-0.338275-0.586412-0.727790-0.036539** | Test a regional candidate with better peer-informed GP predictions |
 | F7 | 0.223588-0.369270-0.256273-0.262985-0.391467-0.834089 | **0.190478-0.171014-0.347582-0.283057-0.283946-0.639922** | Test an alternative region rather than continue a nearly flat local refinement |
 
@@ -34,12 +34,9 @@ The F5 all-upper-bound choice remains 0.999999 in each coordinate; its cubic mod
 
 Classmates' publicly shared records informed supplementary **experimental models** and helped reveal underexplored areas; they have **not** been counted as this participant's own portal observations.
 
-- [Rishin Mitra, cumulative Week 10 records](https://github.com/mitrarishinoracleace/AIML/tree/main/data/accumulated/week10)
-- [Andreia Bilé-Silva, input/output records](https://github.com/andreia-bs/Capstone-project)
-- [Ugo Isiocha, F7 benchmark reported in model card](https://github.com/u-isiocha/Capstone/blob/main/docs/model-card.md)
-- [Hilton Patel, F1 positive-response result in code](https://github.com/HP014/Machine-Learning-Capstone-Project)
+The supplementary research used publicly shared input-output histories, model-card benchmark results and selected positive-response observations. Individual contributors' names, account identifiers and repository URLs are intentionally excluded from this public version. Their specific attribution and references should be maintained separately for authorised academic review where required.
 
-**Data handling:** Only peer coordinates inside the legal 0.000000–0.999999 range entered the legal-input polynomial and GP comparisons. In particular, Andreia's F5 report at (1, 1, 1, 1) was excluded from those fits as **outside the course portal bounds**. The original reported value is evidence of a boundary trend, not a legal candidate.
+**Data handling:** Only peer coordinates inside the legal 0.000000–0.999999 range entered the legal-input polynomial and GP comparisons. In particular, an externally reported F5 result at (1, 1, 1, 1) was excluded from those fits as **outside the course portal bounds**. The original reported value is evidence of a boundary trend, not a legal candidate.
 
 **Validation design:** The experimental polynomial models included linear, additive quadratic, additive cubic and full quadratic feature sets with different regularisation values. GP comparisons varied RBF/Matérn kernels, length scales, fixed noise terms and target transformations. Retrospective tests held out the author's Weeks 6–9 or later peer observations, as applicable.
 
@@ -49,6 +46,6 @@ Classmates' publicly shared records informed supplementary **experimental models
 
 ## 4. Reproducibility status
 
-The authoritative personal observation CSV files, main GP/acquisition code and Round 10 submitted inputs are in this repository. This audit captures the supplementary parameter families, source records, predictions and chosen coordinates. The detailed ad-hoc external test scripts were developed separately from the versioned project pipeline; the **exact supplementary analysis is not yet fully reproducible from this repository alone**. Any future publication should add the tested script revisions, dependencies, seeds and peer data download instructions under permitted terms.
+The authoritative personal observation CSV files, main GP/acquisition code and Round 10 submitted inputs are in this repository. This audit captures the supplementary parameter families, types of external evidence, predictions and chosen coordinates, without identifying individual contributors. The detailed ad-hoc external test scripts were developed separately from the versioned project pipeline; the **exact supplementary analysis is not yet fully reproducible from this repository alone**. Any future publication should add the tested script revisions, dependencies, seeds and permitted source-retrieval instructions and an appropriate attribution register for authorised review.
 
 This document makes no claim that F3, F6, F7 or F8 achieved the forecast scores; only new portal outputs can establish that.
