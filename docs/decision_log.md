@@ -1,3 +1,5 @@
+> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the verified status through Round 12, use the [current evidence](round12_evidence.md), [README](../README.md) and [provenance](evidence_provenance.md). Statements that Round 10 was pending are historical, not current.
+
 # Decision Log
 
 This file records the decision process rather than only the final model. A rerunnable model is not the same as a reproducible decision.

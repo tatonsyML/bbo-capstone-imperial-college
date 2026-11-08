@@ -36,3 +36,14 @@ Readers who want the implementation can then move to:
 - [tests](../tests/)
 
 The main project files remain current. Earlier module folders provide the chronological history of how the approach developed.
+
+
+## New evidence after Round 10
+
+| Round | Record | Result |
+|---|---|---|
+| 11 | [returned observations](../experiments/round_11/notes.md) | F1–F4 personal bests |
+| 12 | [returned observations](../experiments/round_12/notes.md) | F6 and F7 personal bests; four repeated coordinates |
+| 13 | [retrospective](../submissions/stage_2/component_25_1/retrospective.md) | Prospective decision discussion; portal returns not verified |
+
+The [current bests](../reports/current_best_after_week12.csv) and [provenance](evidence_provenance.md) supersede older status statements without erasing historical evidence.

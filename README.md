@@ -1,104 +1,58 @@
 # Black-Box Optimisation Capstone
 
-Imperial College London — Professional Certificate in Machine Learning and Artificial Intelligence
+Imperial College London | Professional Certificate in Machine Learning and Artificial Intelligence
 
-## Module 21.2 assessment: Datasheet and model card
+**Latest verified evidence: Round 12.** The project contains 175 course-provided starting observations and 96 returned personal queries (12 rounds × eight functions), totalling **271 evaluations**, including repeated input locations. No Round 13 returns are represented as observed.
 
-**Reviewer quick start:** These two linked documents address the full 22-point rubric. They explain the data and model for readers without a technical background, then link to supporting code and evidence.
+## Start here
 
-- **[Datasheet](docs/datasheet.md)** — what data I used, how it was collected and its limitations.
-- **[Model card](docs/model_card.md)** — how the optimisation approach works, how it evolved, how it performed and where it remains uncertain.
+1. **[Final Stage 2 retrospective](submissions/stage_2/component_25_1/retrospective.md)** — the full story and five assessment criteria.
+2. [Evidence and results](docs/round12_evidence.md) — exact outcomes, the late-stage turnaround and the F2/F4/F8 diagnostic cases.
+3. [Mathematical reconstruction](docs/structural_reconstruction.md) — the four supported function families, limitations and reproducible F8 test.
+4. [Data provenance](docs/evidence_provenance.md) — personal evaluations versus course and publicly shared external records.
+5. [Model card](docs/model_card.md) · [Datasheet](docs/datasheet.md) · [Decision log](docs/decision_log.md) · [Project journey](docs/project_journey.md).
 
-Supporting material:
+## Confirmed results
 
-- [Decision log](docs/decision_log.md)
-- [Project journey](docs/project_journey.md)
-- [Module 21.2 assessment copies](submissions/stage_2/module_21/component_21_2/)
-- [Round 10 confirmed portal inputs](experiments/round_10/queries.txt)
-- [Round 10 revision and external-source audit](reports/round10_revision_audit.md)
+| Function | Initial best | Best after R9 | Best through R12 | First achieved |
+|---|---:|---:|---:|---:|
+| F1 | 7.71e-16 | 1.92e-15 | **1.999999999676** | R11 |
+| F2 | 0.611205 | 0.691315 | **0.695337** | R11 |
+| F3 | -0.034835 | -0.020856 | **-0.005709** | R11 |
+| F4 | -4.025542 | 0.658933 | **0.730459** | R11 |
+| F5 | 1,088.860 | 6,583.561 | **8,662.405** | R10 |
+| F6 | -0.714265 | -0.541448 | **-0.037519** | R12 |
+| F7 | 1.364968 | 1.786338 | **3.322368** | R12 |
+| F8 | 9.598482 | 9.932443 | **10.000000** | R10 |
 
-## Project in plain English
+All eight final confirmed bests were established in R10–R12. These are *best-so-far portal returns*, not scores from a single round. Function scores use different scales and must not be summed.
 
-This project asks a simple question with a difficult constraint: how do you find the best setting when you cannot see the formula and every test is expensive? I optimise eight hidden functions using a small number of experiments. I began with Gaussian-process Bayesian optimisation, then changed the method as evidence accumulated. Some functions responded well to local refinement; others needed broader exploration. I now compare model suggestions with direct experimental patterns and recorded forecasts before deciding what to test next. The repository keeps the data, code, results and decision history together so the progress can be followed from the first query to the current round.
+[Machine-readable bests](reports/current_best_after_week12.csv) · [Actual Round 11–12 returns](data/portal_rounds_11_12.csv)
 
-## Progress through Week 10
+## Three lessons from the experiments
 
-The project started with 175 programme-supplied observations. Ten completed query rounds added 80 observations, giving **255 observed evaluations**.
+- **Prediction reliability (F2):** pre-outcome forecast 0.730502, observed 0.505526. The error was approximately 0.225.
+- **Search quality (F4):** a local forecast was accurate to about 1.6e-9, but tiny local steps held the search near 0.659. A larger movement scored 0.730459.
+- **Mathematical suitability (F8):** an additive 17-coefficient quadratic explains the observed response and identifies the optimum of 10. A later initial-40-only retrospective fit predicts 12 subsequent returns to floating-point precision.
 
-| Function | Initial best | Best through Week 10 | Where the current best was found |
-|---|---:|---:|---|
-| F1 | 7.7109e-16 | 7.2640e-6 | Week 10 |
-| F2 | 0.611205 | 0.691315 | Week 6 |
-| F3 | -0.034835 | -0.014603 | Week 10 |
-| F4 | -4.025542 | 0.658962 | Week 10 |
-| F5 | 1088.860 | 8662.405 | Week 10 |
-| F6 | -0.714265 | -0.285656 | Week 10 |
-| F7 | 1.364968 | 3.149459 | Week 10 |
-| F8 | 9.598482 | 10.000000 | Week 10 |
+A good prediction, a good query and a suitable model representation are different achievements.
 
-**Round 10 has completed and its eight portal-returned scores are recorded.** [Week 10 outputs](experiments/round_10/outputs.txt) and [cumulative observations through Week 10](data/accumulated/history_through_week10.csv) are authoritative for the current measured bests. **Round 11 portal inputs have been submitted. Their coordinates are withheld from the public repository until the final assessment submission; no Round 11 outputs are recorded yet.** The [revision audit](reports/round10_revision_audit.md) records superseded provisional ideas and explains the provenance and limits of external evidence used to inform some choices.
+## Reproduce the strongest mathematical claim
 
-## What this project shows
+The repository includes [52 F8 observations](data/accumulated/function_8/observations_through_week12.csv): **40 initial** and **12 later personal** evaluations, with repeats retained. The script below fits the quadratic *only on the 40 starting observations*, then predicts the later 12. It also checks the F5 boundary score.
 
-**A more sophisticated model does not automatically deserve more trust.** In Week 9, a simple local model forecast the F4 result to within about 1.6 × 10⁻⁹, while the F2 forecast missed by approximately 0.225. The project now compares candidates from different methods, reviews forecasting reliability and chooses experiments for improvement or information value.
-
-The eight functions are not equivalent: F5 has shown nine consecutive measured improvements near a boundary, while F8's 17-coefficient additive quadratic vertex returned a portal-confirmed score of **10** in Week 10. F5 also reached **8,662.405** at its permitted upper corner. No unreturned score is represented as achieved.
-
-## How the approach evolved
-
-| Phase | Main idea |
-|---|---|
-| Early rounds | Gaussian-process surrogate models and acquisition functions to balance exploration and exploitation |
-| Middle rounds | Function-specific diagnostics, alternative kernels, SVM and small neural-network checks |
-| Later rounds | Controlled local experiments, quadratic fits and forecasts recorded before results |
-| Current | Evidence-gated decisions: GP, local models, HEBO-inspired and TuRBO-style challengers compete with direct observed patterns |
-
-The important change is that there is no longer one universal rule for all eight functions. Each function earns a different strategy from its own evidence.
-
-## Where to start
-
-If you want the **shortest non-technical route**, read:
-
-1. [Project journey](docs/project_journey.md)
-2. [Datasheet](docs/datasheet.md)
-3. [Model card](docs/model_card.md)
-
-If you want the **round-by-round history**, use:
-
-- [Stage 2 module archive](submissions/stage_2/modules/README.md)
-- [Query experiments](experiments/)
-
-If you want the **technical implementation**, use:
-
-- [Notebooks](notebooks/)
-- [Reusable Python code](src/)
-- [Reports and result tables](reports/)
-- [Tests](tests/)
-
-## Repository map
-
-```text
-bbo-capstone-imperial-college/
-├── README.md                 ← start here
-├── docs/                     ← datasheet, model card, decision log, project journey
-├── submissions/              ← module-by-module capstone history
-├── experiments/              ← queries, returned outputs and round notes
-├── data/                     ← accumulated observation history
-├── notebooks/                ← exploratory and model-comparison notebooks
-├── reports/                  ← forecasts, current bests and challenger results
-├── src/                      ← reusable optimisation code
-├── tests/                    ← basic reproducibility checks
-└── configs/                  ← optimisation settings
-```
-
-## Reproducibility
-
-Core dependencies are listed in [requirements.txt](requirements.txt). Optional advanced optimisation packages are listed in [requirements-advanced.txt](requirements-advanced.txt).
-
-```bash
+~~~bash
 python -m pip install -r requirements.txt
-PYTHONPATH=src python -m bbo.pipeline
-python -m pytest -q
-```
+PYTHONPATH=src python -m bbo.structural_validation
+PYTHONPATH=src python -m pytest -q
+~~~
 
-The repository keeps current project files separate from the module-by-module history so the latest work remains easy to find without losing the development path.
+The original optimisation demo remains available via PYTHONPATH=src python -m bbo.pipeline, but its previously published data cut ends at Week 10. It is not a reproduction of every later retrospective experiment.
+
+## Evidence and limitations
+
+The leaderboard provided comparisons of attained outputs. A smaller number of public input-output records also helped redirect later candidates and validate some structural models. These were not counted as personal evaluations; their sources remain in the [historical Round 10 audit](reports/round10_revision_audit.md). The official complete HEBO and TuRBO implementations were not benchmarked: the project evaluated selected inspired mechanisms.
+
+The source audit confirms Round 11 F7's *output* but does not preserve its exact input coordinates. The [Round 11–12 CSV](data/portal_rounds_11_12.csv) leaves this coordinate empty rather than fabricating one. An earlier proposed Round 12 shortlist differs from the actual submitted F2, F3 and F6 queries; only observed portal returns are used in the results.
+
+Historical files including the [model card](docs/model_card.md), [datasheet](docs/datasheet.md) and [older modules](submissions/stage_2/modules/) preserve their original dated evidence cuts. A statement such as “Round 10 pending” in an archived document is not the current repository status.

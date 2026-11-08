@@ -1,3 +1,5 @@
+> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the verified status through Round 12, use the [current evidence](round12_evidence.md), [README](../README.md) and [provenance](evidence_provenance.md). Statements that Round 10 was pending are historical, not current.
+
 # Datasheet | Black-Box Optimisation Query History
 
 **Dataset version:** Module 21, observed through Week 9 (18 October 2026 documentation update)  
