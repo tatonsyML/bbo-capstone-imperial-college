@@ -1,172 +1,290 @@
-# Function 3: inputs, outputs and model evidence
+# Function 3 · Learning when a fitted local peak is misleading
 
-**3 input dimensions · 15 starting observations · 13 submitted queries · best observed output `-0.00375309691871926`.**
+[← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
-Negative scores, local paths and alternative regions tested the limits of an assumed smooth surrogate.
+**3 inputs · 15 starting observations · 13 rounds**
 
-## Every weekly portal submission
+| Initial best | Final best | First achieved | Best input |
+|---:|---:|:---:|---|
+| `-0.034835313350078584` | **`-0.0037530969187192596`** | **Round 13** | `0.197280-0.523429-0.470094` |
 
-Each output is **measured**, not a GP prediction. **↑** marks a new best relative to all earlier real observations, including the course starting data. The third column shows the actual Round score; the fourth shows best-so-far, which is different.
+## Understanding this function
 
-| Round | Actual submitted coordinates | Actual portal output | Best so far | Historical rationale and available code |
-|---:|---|---:|---:|---|
-| [1](../../journey/round_01/README.md) | `0.5-0.5-0.345` | `-0.0437772384849064` | `-0.03483531335` | [Evidence](../../journey/round_01/README.md) |
-| [2](../../journey/round_02/README.md) | `0.993188-0.591985-0.00028` | `-0.1064950977729621` | `-0.03483531335` | [Evidence](../../journey/round_02/README.md) · [code](../../journey/round_02/week2_ucb_course_aligned.py) |
-| [3](../../journey/round_03/README.md) | `0.496377-0.564413-0.34369` | `-0.0427365723752823` | `-0.03483531335` | [Evidence](../../journey/round_03/README.md) |
-| [4](../../journey/round_04/README.md) | `0.49-0.62-0.36` | `-0.0312815968234451` **↑** | `-0.03128159682` | [Evidence](../../journey/round_04/README.md) · [code](../../journey/round_04/capstone_bbo_week4_module15.py) |
-| [5](../../journey/round_05/README.md) | `0.483623-0.675587-0.37631` | `-0.0334231088352711` | `-0.03128159682` | [Evidence](../../journey/round_05/README.md) |
-| [6](../../journey/round_06/README.md) | `0.487816-0.639038-0.365586` | `-0.0208561545295093` **↑** | `-0.02085615453` | [Evidence](../../journey/round_06/README.md) · [code](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) |
-| [7](../../journey/round_07/README.md) | `0.486949-0.646592-0.367803` | `-0.0279111486430777` | `-0.02085615453` | [Evidence](../../journey/round_07/README.md) |
-| [8](../../journey/round_08/README.md) | `0.488344-0.634434-0.364235` | `-0.0296632773887996` | `-0.02085615453` | [Evidence](../../journey/round_08/results/round8_queries.csv) · [code](../../journey/round_08/capstone_bbo_module19_round8.py) |
-| [9](../../journey/round_09/README.md) | `0.487611-0.640821-0.366109` | `-0.0258164064206346` | `-0.02085615453` | [Evidence](../../journey/round_09/results/round9_queries.csv) · [code](../../journey/round_09/round9_controlled_fits.py) |
-| [10](../../journey/round_10/README.md) | `0.469634-0.620072-0.416672` | `-0.014602810625106634` **↑** | `-0.01460281063` | [Evidence](../../journey/round_10/round10_candidates.csv) · [code](../../src/bbo/optimizer.py) |
-| [11](../../journey/round_11/README.md) | `0.445500-0.593000-0.420000` | `-0.005709220275560069` **↑** | `-0.005709220276` | [Evidence](../../journey/round_11/README.md) |
-| [12](../../journey/round_12/README.md) | `0.313581-0.474345-0.485191` | `-0.0226526646178297` | `-0.005709220276` | [Evidence](../../journey/round_12/README.md) |
-| [13](../../journey/round_13/README.md) | `0.197280-0.523429-0.470094` | `-0.0037530969187192596` **↑** | `-0.003753096919` | [Evidence](../../journey/round_13/README.md) |
+The response is negative, so higher (closer to zero) is better. Local searches found partial gains but repeatedly failed to generalise. Alternative regional inputs in R10/R11 and again in R13 improved the best substantially. No underlying analytical formula was established.
 
-## Week-by-week development: actual inputs, outputs, strategy, code and lessons
+### Score progression from real evaluations
 
-Follow the same function from Round 1 to Round 13. The **portal input and output** are observed evidence, while the **lesson learnt** is retrospective interpretation. Strategy descriptions reproduce the available decision ledger; they do not assert that every related script generated the exact submitted point. Later structural reconstructions are never passed off as pre-result models. Read the table above for a compact results history, or use the sections below for the decision narrative.
+![Function 3 measured best-so-far history](progress.svg)
 
-### Round 1
+The chart tracks measured best-so-far results. A flat interval means no improvement to the incumbent, not that a model predicted a constant function.
+
+## Weekly development · expand a round
+
+Each round shows **what was known or being tested, what was submitted, what returned, and what was learnt**. The original 52-page weekly reflection is the narrative foundation; the decision ledger, surviving code and official portal records establish what was actually submitted. An exact historic kernel/seed/forecast appears only if retained. Where early rationale was reconstructed later, it is explicitly labelled in the ledger.
+
+<details>
+<summary><strong>Round 1 · Opening hypothesis</strong> — -0.0437772385</summary>
+
+**Original learning context:** The original first reflection noted that the best outputs were already close to zero and favoured cautious exploitation while retaining a promising coordinate.
+
+**Strategy / candidate-selection evidence:** GP and acquisition baseline (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.5-0.5-0.345`  
-**Actual portal return:** `-0.0437772384849064`  
-**Progress:** no new best; incumbent `-0.0348353134` retained.  
-**Strategy evidence:** GP and acquisition baseline (retrospective).  
-**Lesson learnt (retrospective):** The initial query underperformed the original best.  
-**Source:** [round 1 evidence](../../journey/round_01/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.0437772384849064`  
+**Best observed before → after:** `-0.034835313350078584` → `-0.034835313350078584`.
 
-### Round 2
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. Second round: GP/UCB with per-function exploration weights; deterministic candidate grids or pools.
+
+**Supporting material:** [Round 1 evidence](../../journey/round_01/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 2 · GP and UCB working package</strong> — -0.106495098</summary>
+
+**Original learning context:** The first return was close to, but worse than, the starting best; Week 2 used a balanced UCB setting κ=2.0.
+
+**Strategy / candidate-selection evidence:** GP and UCB working package *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.993188-0.591985-0.00028`  
-**Actual portal return:** `-0.1064950977729621`  
-**Progress:** no new best; incumbent `-0.0348353134` retained.  
-**Strategy evidence:** GP and UCB working package.  
-**Lesson learnt (retrospective):** A boundary-oriented proposal performed substantially worse.  
-**Source:** [round 2 evidence](../../journey/round_02/README.md) · [related preserved code](../../journey/round_02/week2_ucb_course_aligned.py) (*related historical script not verified exact*).
+**Actual portal result:** `-0.1064950977729621`  
+**Best observed before → after:** `-0.034835313350078584` → `-0.034835313350078584`.
 
-### Round 3
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. The Week 3 plan explicitly selected local predicted-mean optimisation for F3, not the globally exploratory EI used for F2.
+
+**Supporting material:** [Round 2 evidence](../../journey/round_02/README.md) · [Related surviving script/notebook](../../journey/round_02/week2_ucb_course_aligned.py) (related historical script not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 3 · Function-specific EI or wider search (retrospective)</strong> — -0.0427365724</summary>
+
+**Original learning context:** The Week 3 plan explicitly selected local predicted-mean optimisation for F3, not the globally exploratory EI used for F2.
+
+**Strategy / candidate-selection evidence:** Function-specific EI or wider search (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.496377-0.564413-0.34369`  
-**Actual portal return:** `-0.0427365723752823`  
-**Progress:** no new best; incumbent `-0.0348353134` retained.  
-**Strategy evidence:** Function-specific EI or wider search (retrospective).  
-**Lesson learnt (retrospective):** A more central point improved on the last response but not the incumbent.  
-**Source:** [round 3 evidence](../../journey/round_03/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.0427365723752823`  
+**Best observed before → after:** `-0.034835313350078584` → `-0.034835313350078584`.
 
-### Round 4
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. After the model comparison, the original reflection noted new records in F3 among others, supporting GP-led adaptation with SVM checks as secondary evidence.
+
+**Supporting material:** [Round 3 evidence](../../journey/round_03/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 4 · GP, SVM and neural-network diagnostics</strong> — -0.0312815968 ★ new best</summary>
+
+**Original learning context:** After the model comparison, the original reflection noted new records in F3 among others, supporting GP-led adaptation with SVM checks as secondary evidence.
+
+**Strategy / candidate-selection evidence:** GP, SVM and neural-network diagnostics *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.49-0.62-0.36`  
-**Actual portal return:** `-0.0312815968234451`  
-**Progress:** new best `-0.03128159682` (previous `-0.034835313`).  
-**Strategy evidence:** GP, SVM and neural-network diagnostics.  
-**Lesson learnt (retrospective):** A target-region probe finally raised the best to -0.031282.  
-**Source:** [round 4 evidence](../../journey/round_04/README.md) · [related preserved code](../../journey/round_04/capstone_bbo_week4_module15.py) (*related historical analysis not verified exact*).
+**Actual portal result:** `-0.0312815968234451`  
+**Best observed before → after:** `-0.034835313350078584` → `-0.0312815968234451`.
 
-### Round 5
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
+
+**Supporting material:** [Round 4 evidence](../../journey/round_04/README.md) · [Related surviving script/notebook](../../journey/round_04/capstone_bbo_week4_module15.py) (related historical analysis not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 5 · Controlled coordinate probes (retrospective)</strong> — -0.0334231088</summary>
+
+**Original learning context:** Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
+
+**Strategy / candidate-selection evidence:** Controlled coordinate probes (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.483623-0.675587-0.37631`  
-**Actual portal return:** `-0.0334231088352711`  
-**Progress:** no new best; incumbent `-0.0312815968` retained.  
-**Strategy evidence:** Controlled coordinate probes (retrospective).  
-**Lesson learnt (retrospective):** The next refinement lost ground; the local direction was not consistent.  
-**Source:** [round 5 evidence](../../journey/round_05/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.0334231088352711`  
+**Best observed before → after:** `-0.0312815968234451` → `-0.0312815968234451`.
 
-### Round 6
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. Original five-fold validation found that a small MLP slightly outperformed the GP on F3, unlike F7/F8. This challenged uncritical model preference.
+
+**Supporting material:** [Round 5 evidence](../../journey/round_05/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 6 · GP, ridge and MLP comparison; controlled local fit</strong> — -0.0208561545 ★ new best</summary>
+
+**Original learning context:** Original five-fold validation found that a small MLP slightly outperformed the GP on F3, unlike F7/F8. This challenged uncritical model preference.
+
+**Strategy / candidate-selection evidence:** GP, ridge and MLP comparison; controlled local fit *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.487816-0.639038-0.365586`  
-**Actual portal return:** `-0.0208561545295093`  
-**Progress:** new best `-0.02085615453` (previous `-0.031281597`).  
-**Strategy evidence:** GP, ridge and MLP comparison; controlled local fit.  
-**Lesson learnt (retrospective):** A different local candidate improved to -0.020856.  
-**Source:** [round 6 evidence](../../journey/round_06/README.md) · [related preserved code](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) (*related notebook original fitter missing*).
+**Actual portal result:** `-0.0208561545295093`  
+**Best observed before → after:** `-0.0312815968234451` → `-0.0208561545295093`.
 
-### Round 7
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
+
+**Supporting material:** [Round 6 evidence](../../journey/round_06/README.md) · [Related surviving script/notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) (related notebook original fitter missing, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 7 · ARD and local forecast investigations (retrospective)</strong> — -0.0279111486</summary>
+
+**Original learning context:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
+
+**Strategy / candidate-selection evidence:** ARD and local forecast investigations (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.486949-0.646592-0.367803`  
-**Actual portal return:** `-0.0279111486430777`  
-**Progress:** no new best; incumbent `-0.0208561545` retained.  
-**Strategy evidence:** ARD and local forecast investigations (retrospective).  
-**Lesson learnt (retrospective):** The next trial regressed, weakening a smooth trajectory assumption.  
-**Source:** [round 7 evidence](../../journey/round_07/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.0279111486430777`  
+**Best observed before → after:** `-0.0208561545295093` → `-0.0208561545295093`.
 
-### Round 8
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. The original Week 8 reflection reported a failed F3 local prediction and increased emphasis on pre-recorded forecasts and numerical checks.
+
+**Supporting material:** [Round 7 evidence](../../journey/round_07/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 8 · Week 7 overshot the Week 6 local best. A quadratic through the left bracket…</strong> — -0.0296632774</summary>
+
+**Original learning context:** The original Week 8 reflection reported a failed F3 local prediction and increased emphasis on pre-recorded forecasts and numerical checks.
+
+**Strategy / candidate-selection evidence:** Week 7 overshot the Week 6 local best. A quadratic through the left bracket, Week 6 best and Week 7 point places the local vertex back at t≈0.260 on the controlled path..
 
 **Submitted input:** `0.488344-0.634434-0.364235`  
-**Actual portal return:** `-0.0296632773887996`  
-**Progress:** no new best; incumbent `-0.0208561545` retained.  
-**Strategy evidence:** Week 7 overshot the Week 6 local best. A quadratic through the left bracket, Week 6 best and Week 7 point places the local vertex back at t≈0.260 on the controlled path..  
-**Lesson learnt (retrospective):** A quadratic-bracket proposal also failed to improve.  
-**Source:** [round 8 evidence](../../journey/round_08/README.md) · [related preserved code](../../journey/round_08/capstone_bbo_module19_round8.py) (*related historical analysis not verified exact*).
+**Actual portal result:** `-0.0296632773887996`  
+**Best observed before → after:** `-0.0208561545295093` → `-0.0208561545295093`.
 
-### Round 9
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. The original Week 9 reflection warned that an optimistic F3 forecast near -0.01968 had returned around -0.02966.
+
+**Supporting material:** [Round 8 evidence](../../journey/round_08/README.md) · [Related surviving script/notebook](../../journey/round_08/capstone_bbo_module19_round8.py) (related historical analysis not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 9 · Updated local-path quadratic using Week 8, Week 6 and Week 7 places the vert…</strong> — -0.0258164064</summary>
+
+**Original learning context:** The original Week 9 reflection warned that an optimistic F3 forecast near -0.01968 had returned around -0.02966.
+
+**Strategy / candidate-selection evidence:** Updated local-path quadratic using Week 8, Week 6 and Week 7 places the vertex near this point, predicting about -0.02011. This is a tighter bracket after two forecast misses..
 
 **Submitted input:** `0.487611-0.640821-0.366109`  
-**Actual portal return:** `-0.0258164064206346`  
-**Progress:** no new best; incumbent `-0.0208561545` retained.  
-**Strategy evidence:** Updated local-path quadratic using Week 8, Week 6 and Week 7 places the vertex near this point, predicting about -0.02011. This is a tighter bracket after two forecast misses..  
-**Forecast recorded before outcome:** `-0.02011192237870145`.  
-**Lesson learnt (retrospective):** Another fitted local candidate missed its predicted improvement.  
-**Source:** [round 9 evidence](../../journey/round_09/README.md) · [related preserved code](../../journey/round_09/round9_controlled_fits.py) (*related historical analysis not verified exact*).
+**Actual portal result:** `-0.0258164064206346`  
+**Best observed before → after:** `-0.0208561545295093` → `-0.0208561545295093`.
 
-### Round 10
+**Pre-result numerical forecast:** `-0.02011192237870145` (recorded before return).
+
+**After the result:** The submitted point did not beat the incumbent. The Week 10 submission describes rejecting a speculative restart in favour of an alternative x3 region, partly informed by separately attributed external data.
+
+**Supporting material:** [Round 9 evidence](../../journey/round_09/README.md) · [Related surviving script/notebook](../../journey/round_09/round9_controlled_fits.py) (related historical analysis not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 10 · Alternative-region local interpolation; external evidence; uncertain</strong> — -0.0146028106 ★ new best</summary>
+
+**Original learning context:** The Week 10 submission describes rejecting a speculative restart in favour of an alternative x3 region, partly informed by separately attributed external data.
+
+**Strategy / candidate-selection evidence:** Alternative-region local interpolation; external evidence; uncertain.
 
 **Submitted input:** `0.469634-0.620072-0.416672`  
-**Actual portal return:** `-0.014602810625106634`  
-**Progress:** new best `-0.01460281063` (previous `-0.020856155`).  
-**Strategy evidence:** Alternative-region local interpolation; external evidence; uncertain.  
-**Lesson learnt (retrospective):** Alternative regional evidence supported a new best at -0.014603.  
-**Source:** [round 10 evidence](../../journey/round_10/README.md) · [related preserved code](../../src/bbo/optimizer.py) (*related challenger not verified exact*).
+**Actual portal result:** `-0.014602810625106634`  
+**Best observed before → after:** `-0.0208561545295093` → `-0.014602810625106634`.
 
-### Round 11
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Eleventh round: analyse density with DBSCAN but do not confuse sampled clusters with high-performing regions.
+
+**Supporting material:** [Round 10 evidence](../../journey/round_10/README.md) · [Related surviving script/notebook](../../src/bbo/optimizer.py) (related challenger not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 11 · Alternative-region exploration and structural investigations</strong> — -0.00570922028 ★ new best</summary>
+
+**Original learning context:** Eleventh round: analyse density with DBSCAN but do not confuse sampled clusters with high-performing regions.
+
+**Strategy / candidate-selection evidence:** Alternative-region exploration and structural investigations.
 
 **Submitted input:** `0.445500-0.593000-0.420000`  
-**Actual portal return:** `-0.005709220275560069`  
-**Progress:** new best `-0.005709220276` (previous `-0.014602811`).  
-**Strategy evidence:** Alternative-region exploration and structural investigations.  
-**Lesson learnt (retrospective):** A further region improved to -0.005709.  
-**Source:** [round 11 evidence](../../journey/round_11/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.005709220275560069`  
+**Best observed before → after:** `-0.014602810625106634` → `-0.005709220275560069`.
 
-### Round 12
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. The R12 candidate returned a worse value than the R11 incumbent, showing that a wider search also incurs cost.
+
+**Supporting material:** [Round 11 evidence](../../journey/round_11/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 12 · Controlled probes, repeats and structural investigations</strong> — -0.0226526646</summary>
+
+**Original learning context:** The R12 candidate returned a worse value than the R11 incumbent, showing that a wider search also incurs cost.
+
+**Strategy / candidate-selection evidence:** Controlled probes, repeats and structural investigations.
 
 **Submitted input:** `0.313581-0.474345-0.485191`  
-**Actual portal return:** `-0.0226526646178297`  
-**Progress:** no new best; incumbent `-0.00570922028` retained.  
-**Strategy evidence:** Controlled probes, repeats and structural investigations.  
-**Lesson learnt (retrospective):** An exploratory test moved away from the strongest region.  
-**Source:** [round 12 evidence](../../journey/round_12/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.0226526646178297`  
+**Best observed before → after:** `-0.005709220275560069` → `-0.005709220275560069`.
 
-### Round 13
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. With only one evaluation left, the selected regional input delivered the best of -0.003753; no claim of achieving zero is justified.
+
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 13 · Final decision</strong> — -0.00375309692 ★ new best</summary>
+
+**Original learning context:** With only one evaluation left, the selected regional input delivered the best of -0.003753; no claim of achieving zero is justified.
+
+**Strategy / candidate-selection evidence:** Final exploitation and regional probes.
 
 **Submitted input:** `0.197280-0.523429-0.470094`  
-**Actual portal return:** `-0.0037530969187192596`  
-**Progress:** new best `-0.003753096919` (previous `-0.0057092203`).  
-**Strategy evidence:** Final exploitation and regional probes.  
-**Lesson learnt (retrospective):** The final competing region gave -0.003753, the highest observed value.  
-**Source:** [round 13 evidence](../../journey/round_13/README.md) · Exact original selection script not retained.
+**Actual portal result:** `-0.0037530969187192596`  
+**Best observed before → after:** `-0.005709220275560069` → `-0.0037530969187192596`.
 
-## Per-function evidence
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
-- [All observations](observations.csv): 15 initial records plus 13 submitted and returned scores, preserved at source precision.
-- [Decision and provenance ledger](selection_history.csv): the 13 actual inputs, outcomes, pre-round data counts, rationales, related scripts, code-evidence status and available forecasts.
-- [Replay and fitted-model guidance](model_runs/README.md): how to refit a **new** GP using only observations from before the chosen Round, and inspect learned kernel lengthscales.
+**After the result:** The submitted point established a new personal best. A smooth local curve and an accurate-looking mean can still select an unproductive region. Holdout evidence and alternative basins matter.
 
+**Supporting material:** [Round 13 evidence](../../journey/round_13/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
 
-## Preserved prospective forecasts
+</details>
 
-Recorded pre-result forecasts are distinguished from reconstructed estimates. Blank entries in the CSV mean no such numerical forecast was retained.
+## Visual analysis
 
-| Round | Recorded forecast | Actual result | Status |
-|---:|---:|---:|---|
-| 9 | `-0.02011192237870145` | `-0.0258164064206346` | recorded before return |
+<table><tr><td width="50%"><img src="../../results/figures/f3_2d.svg" width="460" alt="Function 3 two-dimensional representation"></td><td width="50%"><img src="../../results/figures/f3_3d.svg" width="460" alt="Function 3 three-dimensional representation"></td></tr></table>
 
-## Method and code provenance
+**Observed points only.** These 2D/3D views project the real inputs and their returned scores; no smooth objective surface has been invented. Only x1 and x2 appear on the horizontal axes; x3–x3 vary across observations and the plots do not control for them.
 
-Historical code references are linked in the round table where retained. A script related to a round is **not proof that those exact model settings generated every submitted input**. Exact saved GP model objects and per-round fitted lengthscales have not been retained for all 104 decisions.
+[How the visualisations were produced](../../docs/functions.md) · [Graph-generation code](../../results/figures/build_visual_gallery.mjs)
 
-No fully authenticated source equation is claimed for this function.
+## Mathematical evidence and its limits
 
-Our [shared GP code](../../src/bbo/surrogates.py), [acquisition functions](../../src/bbo/acquisition.py) and [candidate-generation utilities](../../src/bbo/search.py) apply to all eight functions with **separate fitted models**. [HEBO-inspired and TuRBO-style challengers](../../src/bbo/optimizer.py) differ from the [later official HEBO / BoTorch TuRBO-1 benchmark](../../research/full_optimisers/README.md); neither full reference engine is claimed as the historical submitter.
+**No validated hidden-function equation is available.** RBF and Matérn GPs, local fits and neural-network challengers are approximate predictive tools, not claims to know the underlying source. The observed maximum in the table is **a personal best**, not a proved global optimum.
 
-[All functions](../README.md) · [Chronological journey](../../journey/README.md) · [Final model card](../../MODEL_CARD.md).
+## Lessons to carry forward
+
+A smooth local curve and an accurate-looking mean can still select an unproductive region. Holdout evidence and alternative basins matter.
+
+**Source discipline:** The originally submitted weekly reflections informed the learning context; the portal results and preserved files establish what actually happened. Historical experiments, post-outcome explanations and model-generated graph values are not interchangeable.
+
+[← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
