@@ -3,7 +3,7 @@
 **Status:** Submitted and user-confirmed in the course portal. Scores are still pending.  
 **Evidence cut:** 247 observed values through Week 9, plus eight unscored Round 10 queries.  
 **Official submitted vectors:** [queries.txt](queries.txt)  
-**Detailed evidence:** [Round 10 revision audit](../../reports/round10_revision_audit.md)
+**Detailed evidence:** [Round 10 revision audit](../../results/round10_revision_audit.md)
 
 ## Decisions and reasoning
 

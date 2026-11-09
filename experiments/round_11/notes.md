@@ -15,4 +15,4 @@
 
 F1–F4 produced new bests. The F7 output is confirmed, but its exact Round 11 input was not recovered in the retained audit.
 
-See [machine-readable observations](../../data/portal_rounds_11_12.csv) and [final bests](../../reports/current_best_after_week12.csv). Do not substitute provisional candidate shortlists for actual submitted inputs.
+See [machine-readable observations](../../data/portal_rounds_11_12.csv) and [final bests](../../results/current_best_after_week12.csv). Do not substitute provisional candidate shortlists for actual submitted inputs.

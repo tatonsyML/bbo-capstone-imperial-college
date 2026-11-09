@@ -1,6 +1,6 @@
 # Round 9 | forecasting accuracy versus search effectiveness
 
-**Portal evidence:** [queries.txt](queries.txt) · [outputs.txt](outputs.txt). Predictions below were recorded before the returned outcomes and are independently listed in the [Week 9 forecast audit](../../reports/week9_forecast_audit.csv).
+**Portal evidence:** [queries.txt](queries.txt) · [outputs.txt](outputs.txt). Predictions below were recorded before the returned outcomes and are independently listed in the [Week 9 forecast audit](../../results/week9_forecast_audit.csv).
 
 | Function | Forecast | Actual output | Interpretation |
 |---|---:|---:|---|
