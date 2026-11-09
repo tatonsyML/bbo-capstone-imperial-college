@@ -58,9 +58,9 @@ function renderGallery(data){
  const frame2=(d,caption)=>{let x0=126,x1=866,y0=120,y1=555,a=d.axes[0]+1,b=d.axes[1]+1,r=`<rect x="${x0}" y="${y0}" width="${x1-x0}" height="${y1-y0}" fill="#fff" stroke="#bdcad8"/>`;
  for(let t=0;t<=4;t++){let x=x0+(x1-x0)*t/4,y=y1-(y1-y0)*t/4;r+=`<line x1="${x}" y1="${y0}" x2="${x}" y2="${y1}" stroke="#e5edf4"/><line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#e5edf4"/><text x="${x}" y="579" font-size="12" text-anchor="middle" fill="#65768a">${(t/4).toFixed(2)}</text><text x="108" y="${y+4}" text-anchor="end" font-size="12" fill="#65768a">${(t/4).toFixed(2)}</text>`;}
  return r+`<text x="495" y="623" font-size="16" fill="#334d66" text-anchor="middle">x${a}</text><text x="42" y="348" transform="rotate(-90,42,348)" font-size="16" text-anchor="middle" fill="#334d66">x${b}</text><text x="50" y="665" font-size="13" fill="#52657b">${textesc(caption)}</text>`;};
- function legend(lo,hi,isLog){let s=`<text x="909" y="136" font-size="12" fill="#334d66">High score</text>`;
+ function legend(lo,hi,functionId){let s=`<text x="909" y="136" font-size="12" fill="#334d66">High score</text>`;
  for(let i=0;i<20;i++)s+=`<rect x="913" y="${150+i*17}" width="23" height="18" fill="${palette(1-i/19)}"/>`;
- s+=`<text x="945" y="163" font-size="11" fill="#53677d">${textesc(isLog?"log":"score")}</text><text x="913" y="505" font-size="12" fill="#53677d">Range</text><text x="913" y="529" font-size="10" fill="#53677d">Min: ${textesc(num(lo))}</text><text x="913" y="551" font-size="10" fill="#53677d">Max: ${textesc(num(hi))}</text>`;return s;}
+ s+=`<text x="945" y="163" font-size="11" fill="#53677d">${textesc(functionId===1?"log10(y)†":functionId===5?"log1p(y)":"score")}</text><text x="913" y="505" font-size="12" fill="#53677d">Range</text><text x="913" y="529" font-size="10" fill="#53677d">Min: ${textesc(num(lo))}</text><text x="913" y="551" font-size="10" fill="#53677d">Max: ${textesc(num(hi))}</text>`;return s;}
  const outputs={};let manifest=[];
  for(const block of data){const id=block.f,d=details[id],observed=d.kind==="observed",pointBest=best[id],cols=d.axes;
    let axisSamples=[],grid=[],limlo=Infinity,limhi=-Infinity;
@@ -80,7 +80,7 @@ function renderGallery(data){
         v2+=`<rect x="${x.toFixed(2)}" y="${yy.toFixed(2)}" width="${(740/N+1).toFixed(2)}" height="${(435/N+1).toFixed(2)}" fill="${palette(nz(av))}"/>`;}
       const [x,y]=pos2(pointBest.x[cols[0]],pointBest.x[cols[1]]);v2+=`<circle cx="${x}" cy="${y}" r="11" fill="none" stroke="white" stroke-width="3"/><circle cx="${x}" cy="${y}" r="6.5" fill="#122c44" stroke="#fff" stroke-width="1.5"/>`;
    }
-   v2+=legend(limlo,limhi,id===1||id===5)+`<text x="907" y="585" font-size="11" fill="#53677d">${textesc(observed?"● darker ring: best":"● model / observed best")}</text></g></svg>`;
+   v2+=legend(limlo,limhi,id)+`<text x="907" y="585" font-size="11" fill="#53677d">${textesc(observed?"● darker ring: best":"● model / observed best")}</text>${id===1?`<text x="907" y="609" font-size="10" fill="#53677d">† nonpositive y clipped</text>`:""}</g></svg>`;
    outputs[`reports/figures/f${id}_2d.svg`]=v2;
    // 3D: projected surface for model; three-dimensional point cloud otherwise (x1, x2, observed y).
    let v3=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img"><title>${textesc(d.title)} — ${observed?"3D observation projection":"3D model slice"}</title><desc>${textesc(d.short)}. ${observed?"A point cloud only; no invented surface.":"Sliced reconstructed mathematical function."}</desc><g font-family="Arial,Helvetica,sans-serif">${basics(d.title,observed?"3D projection of actual observations; no fitted surface":"3D projected surface of the documented equation")}`;

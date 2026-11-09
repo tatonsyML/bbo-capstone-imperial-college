@@ -78,7 +78,7 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 
 **Model:** Gaussian Process models with RBF or Matérn kernels, compared with simpler fitted equations where appropriate. [Model card](MODEL_CARD.md).
 
-**Hyperparameter optimisation:** Kernel lengthscales and noise levels are fitted to the observations available at the relevant stage. Acquisition settings and local-search regions guide proposed queries. [Code and algorithm explanation](docs/optimisation_algorithms.md).
+**Hyperparameter optimisation:** The GP code compares RBF and Matérn 1.5/2.5 kernels, with one lengthscale per input (ARD) and a WhiteKernel noise term. It fits GP parameters by marginal likelihood (four optimiser restarts by default), and supports Yeo–Johnson or signed-log output transformations. Candidate scoring includes UCB with β = 1.96 and Expected Improvement with ξ = 0; the historical TuRBO-style challenger uses a fixed 0.20-width local box. The short notebook demonstration uses zero restarts to execute quickly. [Code and algorithm explanation](docs/optimisation_algorithms.md).
 
 **Contact:** [Open a GitHub issue](https://github.com/tatonsyML/bbo-capstone-imperial-college/issues) for questions about reproducibility.
 
@@ -117,18 +117,26 @@ Run these commands from the repository root in a Unix-like shell. See [reproduct
 ## Where everything lives
 
 ```text
-assets/        Data-derived progress visual
-configs/       Historical optimisation settings
-data/          279-row complete record and historical per-function observations
-docs/          Reading guide, methods, evidence, model card and datasheet
-experiments/   Dated query/return records for rounds 1–13
-notebooks/     Runnable final assessed notebook plus historical explorations
-reports/       Verified results, scientific 2D/3D plots and forecast audits
-scripts/       Reproduce the scientific visual gallery
-src/bbo/       Commented historical GP/acquisition code and structural validation
-benchmarks/    Post-capstone full HEBO / BoTorch TuRBO-1 comparison (not run)
-submissions/   Archived Stage 1 and Stage 2 assessment material
-tests/         Automated checks
+README.md                 Project overview and non-technical introduction
+DATASHEET.md              Final description of the dataset and its limitations
+MODEL_CARD.md             Final explanation of the models, decisions and evidence
+USAGE_AND_PERMISSIONS.md  Data provenance and reuse information
+requirements.txt          Core Python dependencies
+requirements-notebook.txt Notebook and Jupyter dependencies
+requirements-advanced.txt Historical optional dependencies (not the benchmark env)
+pyproject.toml            Plain pytest configuration
+assets/                   Data-derived progress visual
+configs/                  Historical optimisation settings
+data/                     Complete observations and historical records
+docs/                     Assessor guide, methods and detailed evidence
+experiments/              Queries, outputs and notes for all 13 rounds
+notebooks/                Executed final notebook and earlier explorations
+reports/                  Verified results, plots and forecast audits
+scripts/                  Reproduce scientific plots and check links
+src/bbo/                  Commented optimisation code and validation
+benchmarks/               Optional post-capstone HEBO/TuRBO comparison (unrun)
+submissions/              Preserved Stage 1 and Stage 2 coursework
+tests/                    Automated checks
 ```
 
 [Assessment checklist](docs/assessment_25_3.md) · [Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](reports/README.md) · [Assessment archive](submissions/README.md)

@@ -87,6 +87,6 @@ The default output folder is `reports/full_hebo_turbo/`. Results will include:
 - Do not merge peers' public data into personal observations.
 - A run is incomplete if an optional package is absent; **do not invent or prepopulate result CSVs**.
 
-**Status in this repository:** reference code and unit tests added. The complete official HEBO and BoTorch algorithms have **not been executed in the current runtime**, because these optional packages are missing. No comparative numerical performance claim is made.
+**Status in this repository:** reference code and unit tests added. The complete HEBO and BoTorch reference algorithms **have not yet been executed for a published comparison**. No comparative numerical performance claim is made.
 
 For further context, see [the course-time methodology](../../docs/strategy_and_validation.md), [the final portal evidence](../../docs/round13_evidence.md) and [all eight-function visualisations](../../docs/visual_gallery.md).
