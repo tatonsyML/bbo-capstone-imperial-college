@@ -1,0 +1,4 @@
+-r requirements.txt
+nbconvert>=7,<9
+ipykernel>=6,<8
+jupyter-core>=5,<7

@@ -1,0 +1,64 @@
+# Final Datasheet | BBO capstone observations
+
+**Assessment:** Stage 2, Component 25.3 · **Evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
+
+[← For assessors](assessment_25_3.md) · [Complete data CSV](../data/all_observations.csv) · [Final model card](final_model_card.md)
+
+## 1. Motivation and purpose
+
+This dataset supports a sequential black-box optimisation exercise: select one input vector for each of eight hidden functions per round, observe a numeric score, and maximise the best observed output with few evaluations. The initial samples were supplied by the programme; the 13 later rounds of personal portal returns were submitted by the project author.
+
+It is a historical record of *observed evaluations*, not a dataset of the true functions over their full domains.
+
+## 2. Composition and fields
+
+**279 recorded rows:** 175 course-provided initial observations and **104 personal portal evaluations** (13 rounds × 8 functions). The input dimensions are 2, 2, 3, 4, 4, 5, 6 and 8 for F1–F8 respectively.
+
+| Field | Meaning |
+|---|---|
+| `function` | Function identifier, 1–8 |
+| `round` | 0 for the supplied initial observations; 1–13 for personal queries |
+| `stage` | Original source label, such as `Initial` or `Week 13` |
+| `source`, `is_initial` | Distinguish course data from personally submitted queries |
+| `sequence_in_stage` | Original ordering within the source stage |
+| `input_status` | `confirmed` or `missing_input` |
+| `x1`–`x8` | Input coordinates. Unused coordinates are blank for functions with fewer dimensions |
+| `output` | Returned scalar score, preserving source precision where available |
+
+**Known missingness:** The portal output for F7 in Round 11 is **3.27896792623**, but its corresponding submitted coordinates were not preserved. This row has `input_status=missing_input` and blank coordinates. It is included in chronology and score summaries but **excluded** from any input-space modelling or scatter plot that requires a complete vector. There are therefore 279 observed scores but **278 coordinate-complete records**.
+
+No synthetic labels, missing coordinates or unobserved outcomes are filled in.
+
+## 3. Collection process and timing
+
+The programme supplied 175 initial input/output pairs, then the author submitted one new query for each function in each of 13 rounds. The portal returned eight responses per round. The consolidated CSV combines the [per-function history through R10](../data/accumulated/), [R11–12 returns](../data/portal_rounds_11_12.csv) and [R13 returns](../data/portal_rounds_13.csv). Duplicate query locations are retained because they represent actual evaluations.
+
+The repository itself was assembled retrospectively from the preserved records. Its Git commit dates are **not** a contemporaneous timestamp for the original R1–R9 experiments.
+
+## 4. Preparation and transformations
+
+The CSV is a tidy union of already recorded numeric outputs, with provenance columns and unused dimensions left empty. It does **not** normalise response values, replace missing inputs or deduplicate repeated portal queries.
+
+The working GP pipeline optionally applies Yeo–Johnson or signed-log transformations, and some visualisations use log-labelled scales. Those are *analysis and display choices*, not changes to the original `output` column.
+
+## 5. Biases, limitations and appropriate use
+
+Initial samples are sparse in high dimensions; later queries were selected adaptively and favour regions already thought promising. The result is **not a uniform representative sample** of each function. F1 contains extremely small outputs, F5 has a large response scale, and some series cluster strongly near incumbents. Cross-function raw scores cannot sensibly be averaged.
+
+**Appropriate:** learning GP optimisation, auditing query selection, reproducing historical bests, testing simple surrogate hypotheses and evaluating held-out prediction.
+
+**Inappropriate:** claiming a global optimum for unresolved functions, fitting the F8 model to all 53 points and calling the later 13 independent validation, or attributing peers' results to this participant. Chronological model-selection tests must avoid future-information leakage.
+
+## 6. Distribution, permissions and privacy
+
+The original course-provided `.npy` files are **not hosted here**. However, the **175 course-provided numerical observations do appear in public CSV files**. Permission to redistribute these numeric values has **not been independently verified**. The author should check the course's terms and, if necessary, restrict publication or replace the course rows with an authorised retrieval link. Do not infer an open data licence from this repository.
+
+The dataset contains no reported personal identifiers or health records. Any external observations used in research should remain separately attributed and are excluded from these 279 rows.
+
+## 7. Maintenance and reproducibility
+
+The [full CSV](../data/all_observations.csv) is the final complete record. Earlier dated CSVs, forecasts and assessed submissions are retained as historical snapshots. The [Jupyter walkthrough](../notebooks/Capstone_Final_Walkthrough.ipynb) verifies counts, chronology, final bests and the F5/F8 structural checks. [Automated tests](../tests/) and [GitHub Actions](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) provide independent verification.
+
+**Maintainer:** repository owner. Update only against new authoritative portal or course evidence, with a recorded source and a descriptive commit.
+
+[← Assessment map](assessment_25_3.md)
