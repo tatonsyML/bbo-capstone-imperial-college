@@ -22,7 +22,7 @@ Clone the public repository, open a terminal in its root, and use a compatible P
 python -m pip install -r requirements-notebook.txt
 python -m jupyter nbconvert --to notebook --execute notebooks/Capstone_Final_Walkthrough.ipynb --output Capstone_Final_Walkthrough_executed.ipynb
 python -m pytest -q
-python -m bbo.structural_validation
+python src/bbo/structural_validation.py
 ```
 
 The source notebook finds the repository root from its working directory. The executed notebook contains the generated tables, plots and numerical checks. A [notebook execution workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/notebook-25-3.yml) runs it on a clean GitHub runner and uploads an executed notebook artifact. The existing [core tests](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) independently verify code and structural results.
