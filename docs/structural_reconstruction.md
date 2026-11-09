@@ -12,9 +12,9 @@ f8(x) = 10 - Σ[j=1..8] w[j] (x[j] - c[j])²
 
 An additive eight-variable quadratic has 17 linear regression coefficients: a constant, eight linear terms and eight squared terms. Since all weights are positive, the fitted equation's unique maximum on the legal domain is **10** at c.
 
-**Chronology:** A model was fitted using accumulated personal records and corroborated with five public external input-output records before submitting the predicted vertex in Round 10; the portal confirmed 10. *Retrospectively*, refitting the same structure on only the **original 40 course observations** predicted the 12 later personal returns with maximum absolute error below **2e-15**. This did not happen before Round 1.
+**Chronology:** A model was fitted using accumulated personal records and corroborated with five public external input-output records before submitting the predicted vertex in Round 10; the portal confirmed 10. *Retrospectively*, refitting the same structure on only the **original 40 course observations** predicted the 13 later personal returns with maximum absolute error below **2e-15**. This did not happen before Round 1.
 
-**Reproduce:** run PYTHONPATH=src python -m bbo.structural_validation with the [52-row evidence file](../data/accumulated/function_8/observations_through_week12.csv). The code fits with the initial records only and reports held-out residuals.
+**Reproduce:** run PYTHONPATH=src python -m bbo.structural_validation with the [53-row evidence file](../data/accumulated/function_8/observations_through_week13.csv). The code fits with the initial records only and reports held-out residuals.
 
 ## F5: interacting power-sum equation
 
@@ -24,7 +24,7 @@ where b = (7.5, 16, 40, 120). Squared power sums introduce interactions between 
 
 ## F7: positive Hartmann-6
 
-The function agrees numerically with the positive Hartmann-6 benchmark in the tested observations. The Round 12 structural candidate predicted **3.32236801 before evaluation**; the portal returned **3.3223680113931557**. This is supported prediction and numerical agreement, not proof of identity everywhere.
+The function agrees numerically with the positive Hartmann-6 benchmark in the tested observations. The Round 12 structural candidate predicted **3.32236801 before evaluation**; the portal returned **3.3223680113931557**. The R13 query shifted x1 by 0.000001 and returned 3.322368011392718, approximately 4.38 × 10⁻¹³ below the R12 result. This is supported prediction and numerical agreement, not proof of identity everywhere.
 
 ## F1: Gaussian-modulated oscillations
 
@@ -34,4 +34,4 @@ A numerically validated oscillatory response with two narrow, Gaussian-modulated
 
 F2 and F3 have unstable regions and unverified structural alternatives; F4 remains model-disagreement-sensitive; F6 has imperfect approximate fits. None is labelled mathematically solved.
 
-**Executable in this repository:** F8's initial-data-only fit and 12-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../reports/round10_revision_audit.md); identifying source references should be retained separately for authorised attribution.
+**Executable in this repository:** F8's initial-data-only fit and 13-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../reports/round10_revision_audit.md); identifying source references should be retained separately for authorised attribution.

@@ -2,13 +2,13 @@
 
 **Imperial College London · Professional Certificate in Machine Learning and Artificial Intelligence**
 
-**8 hidden functions** · **2–8 input dimensions** · **12 rounds with verified results** · **271 recorded evaluations**
+**8 hidden functions** · **2–8 input dimensions** · **13 completed rounds** · **279 recorded evaluations**
 
 > **The question:** With only one evaluation per function per round, how do you decide which experiment is worth running next?
 
 This project documents an evidence-led black-box optimisation capstone. I started with Gaussian-process-based Bayesian optimisation, tested alternative models and acquisition rules, and eventually used mathematical reconstruction where the observations supported it. The central result is not a single winning algorithm: **predicting a point accurately, searching the right region and understanding the underlying structure are different achievements.**
 
-**Evidence status (9 November 2026):** 175 course-provided initial observations plus 96 returned personal evaluations (Rounds 1–12, eight functions) = **271 records**, including repeats. **Round 13 results are not verified** and are not presented as outcomes.
+**Final evidence status (9 November 2026):** 175 course-provided initial observations plus 104 returned personal evaluations (13 rounds × eight functions) = **279 records**, including repeats. All eight final outputs have been verified.
 
 ## Choose your reading route
 
@@ -17,7 +17,7 @@ This project documents an evidence-led black-box optimisation capstone. I starte
 | Understand the project in two minutes | [Plain-English introduction](#the-challenge-in-plain-english) and [results](#results-at-a-glance) |
 | Find the best input for a function | [Function-by-function guide](docs/function_guide.md) |
 | Understand what changed across rounds | [Project journey](docs/project_journey.md) |
-| Examine the strongest evidence | [Validation and strategy](docs/strategy_and_validation.md) · [Reconstructed functions](docs/structural_reconstruction.md) |
+| Examine the strongest evidence | [Round 13 evidence](docs/round13_evidence.md) · [Validation and strategy](docs/strategy_and_validation.md) · [Reconstructed functions](docs/structural_reconstruction.md) |
 | Run the checked mathematical experiment | [Reproduction guide](docs/reproduce.md) |
 | Review assessed work and historical material | [Assessment archive](submissions/README.md) |
 | Check data origin, bias or limitations | [Data guide](data/README.md) · [Provenance](docs/evidence_provenance.md) |
@@ -34,30 +34,32 @@ For readers new to Bayesian optimisation: the model proposes where to experiment
 
 ![Cumulative best scores for F1 to F8, each on its own scale](assets/progress.svg)
 
-The diagram tracks the **best observed score so far** from the initial data to Round 12. **Each tile has a separate vertical scale**: it shows *progress*, not a valid numerical comparison between functions.
+The diagram tracks the **best observed score so far** from the initial data to Round 13. **Each tile has a separate vertical scale**: it shows *progress*, not a valid numerical comparison between functions.
 
-| Function | Inputs | Initial best | Best confirmed through R12 | First attained | Evidence |
+| Function | Inputs | Initial best | Final best through R13 | First attained | Evidence |
 |:--|--:|--:|--:|:--:|:--|
 | [F1](docs/function_guide.md#f1--finding-a-narrow-signal) | 2 | 7.71 × 10⁻¹⁶ | **1.999999999676** | R11 | Portal |
-| [F2](docs/function_guide.md#f2--an-unreliable-local-forecast) | 2 | 0.611205 | **0.695337** | R11 | Portal |
-| [F3](docs/function_guide.md#f3--improving-a-negative-valued-objective) | 3 | −0.034835 | **−0.005709** | R11 | Portal |
-| [F4](docs/function_guide.md#f4--accurate-prediction-poor-search) | 4 | −4.025542 | **0.730459** | R11 | Portal |
+| [F2](docs/function_guide.md#f2--an-unreliable-local-forecast) | 2 | 0.611205 | **0.744250** | R13 | Portal |
+| [F3](docs/function_guide.md#f3--improving-a-negative-valued-objective) | 3 | −0.034835 | **−0.003753** | R13 | Portal |
+| [F4](docs/function_guide.md#f4--accurate-prediction-poor-search) | 4 | −4.025542 | **0.746898** | R13 | Portal |
 | [F5](docs/function_guide.md#f5--the-feasible-boundary) | 4 | 1,088.860 | **8,662.405** | R10 | Portal |
 | [F6](docs/function_guide.md#f6--challenging-unstable-local-models) | 5 | −0.714265 | **−0.037519** | R12 | Portal |
 | [F7](docs/function_guide.md#f7--a-structural-forecast-confirmed) | 6 | 1.364968 | **3.322368** | R12 | Portal |
 | [F8](docs/function_guide.md#f8--the-17-coefficient-quadratic) | 8 | 9.598482 | **10.000000** | R10 | Portal |
 
-All eight confirmed personal bests first appeared in **Rounds 10–12**. These are best-so-far observations, not one-round scores. Their scales differ and must not be added or averaged.
+The final round established **three additional personal bests**: F2, F3 and F4. The other five were first achieved in R10–R12. These are best-so-far observations, not one-round scores. Their scales differ and must not be added or averaged.
 
-[Exact scores and inputs (CSV)](reports/current_best_after_week12.csv) · [Latest direct portal returns](data/portal_rounds_11_12.csv)
+[Final bests and inputs (CSV)](reports/current_best_after_week13.csv) · [Round 13 portal returns](data/portal_rounds_13.csv) · [Final-round evidence](docs/round13_evidence.md)
 
 ## Three discoveries worth reading
 
-**1. A confident prediction can be wrong (F2).** A forecast of **0.730502** returned **0.505526**. This was an important reason to test the reliability of models before allowing them to direct queries.
+**Final-round update:** F2 **0.695337 → 0.744250**; F3 **−0.005709 → −0.003753**; F4 **0.730459 → 0.746898**. [Read the R13 result audit](docs/round13_evidence.md).
 
-**2. An accurate forecast can still lead to the wrong decision (F4).** A local prediction missed by only about **1.6 × 10⁻⁹**, yet microscopic steps kept the search near **0.659**. A wider local proposal later returned **0.730459**.
+**1. A failed forecast does not prove convergence (F2).** A prediction of **0.730502** returned **0.505526**, but a different R13 region subsequently returned **0.744250**. Model trust and search coverage must be checked separately.
 
-**3. The simplest suitable model can outperform further search (F8).** A fitted **17-coefficient additive quadratic** identified an interior vertex with value **10**. A *separate retrospective check* fitted that model to **only 40 starting observations** and predicted the next **12 personal portal returns** to numerical precision. The fit from only the starting data was performed *after* the optimisation, not during Round 1.
+**2. An accurate forecast can still lead to the wrong decision (F4).** A local prediction missed by only about **1.6 × 10⁻⁹**, yet microscopic steps kept the search near **0.659**. A wider R11 move returned **0.730459**, followed by another improvement to **0.746898** in R13.
+
+**3. The simplest suitable model can outperform further search (F8).** A fitted **17-coefficient additive quadratic** identified an interior vertex with value **10**. A *separate retrospective check* fitted that model to **only 40 starting observations** and predicted the next **13 personal portal returns** to numerical precision. The fit from only the starting data was performed *after* the optimisation, not during Round 1.
 
 [Read the complete case studies](docs/function_guide.md) · [Read the evidence and chronology](docs/round12_evidence.md)
 
@@ -75,7 +77,7 @@ All eight confirmed personal bests first appeared in **Rounds 10–12**. These a
 
 ## Reproduce the strongest reproducible result
 
-The checked experiment fits the F8 quadratic using **40 initial observations only**, tests its predictions against **12 later portal returns**, and verifies the F5 permitted-corner value.
+The checked experiment fits the F8 quadratic using **40 initial observations only**, tests its predictions against **13 later portal returns**, and verifies the F5 permitted-corner value.
 
 ```bash
 python -m pip install -r requirements.txt
@@ -92,7 +94,7 @@ assets/        Data-derived progress visual
 configs/       Historical optimisation settings
 data/          Initial-data descriptions and observed query histories
 docs/          Reading guide, methods, evidence, model card and datasheet
-experiments/   Dated query/return records for rounds 1–12
+experiments/   Dated query/return records for rounds 1–13
 notebooks/     Exploratory analysis; some notebooks are historical snapshots
 reports/       Results, forecasts and method-comparison tables
 src/bbo/       Optimisation utilities and checked structural validation
@@ -107,7 +109,7 @@ tests/         Automated checks
 - **Not every equation is solved.** F1, F5, F7 and F8 have supported reconstructed forms, with different evidence strengths; F2, F3, F4 and F6 remain unresolved.
 - **Source matters.** Course-supplied starting observations, personal portal returns, prospective predictions, retrospective analysis and external published observations are not interchangeable. External results informed some choices but do not count as my personal evaluations.
 - **History is not overwritten.** Early model cards, submissions and notebooks are dated snapshots and can contain statements that were correct when written but are superseded by later returns.
-- **Known gaps are visible.** The exact Round 11 F7 input is missing from the retained log. Round 13 outcomes are unverified. The GP pipeline demonstration uses an earlier data cut, not the complete 12-round history.
+- **Known gaps are visible.** The exact Round 11 F7 input is missing from the retained log. Round 13 outcomes are verified. The GP pipeline demonstration uses an earlier data cut, not the complete 13-round history.
 
 [Data provenance](docs/evidence_provenance.md) · [Evidence limitations](docs/round12_evidence.md) · [Reproduction scope](docs/reproduce.md)
 

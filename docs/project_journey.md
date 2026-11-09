@@ -16,7 +16,7 @@ This is the human-readable timeline. It links the decisions to preserved records
 | **R10** | 21 | Model challengers, revised regions; F5/F8 records | [Round 10](../experiments/round_10/) · [revision audit](../reports/round10_revision_audit.md) |
 | **R11** | — | Structural F1; wider F4; F1–F4 new bests | [Round 11](../experiments/round_11/) |
 | **R12** | — | Structural F7 forecast; F6/F7 new bests; four repeats | [Round 12](../experiments/round_12/) · [full evidence](round12_evidence.md) |
-| **R13** | — | Final-horizon planning discussed retrospectively | [Component 25.1](../submissions/stage_2/component_25_1/retrospective.md); **returned results unverified** |
+| **R13** | — | New bests for F2/F3/F4; all eight final outputs received | [Round 13 inputs and outputs](../experiments/round_13/) · [final evidence](round13_evidence.md) · [retrospective addendum](../submissions/stage_2/component_25_1/round13_addendum.md) |
 
 ## Three turning points
 
@@ -24,11 +24,11 @@ This is the human-readable timeline. It links the decisions to preserved records
 
 **Changing the search policy.** F4 improved sharply only after the search moved beyond excessively tiny local steps. F5 and F7 benefited from testing regions beyond earlier incumbents.
 
-**Testing structure rather than endlessly tuning kernels.** F1, F5, F7 and F8 received numerical reconstructions with different levels of independent validation. F8 is particularly reproducible because the initial-40-only quadratic test and 12 later returns are present in this repository.
+**Testing structure rather than endlessly tuning kernels.** F1, F5, F7 and F8 received numerical reconstructions with different levels of independent validation. F8 is particularly reproducible because the initial-40-only quadratic test and 13 later returns are present in this repository.
 
 ## What counts as a record?
 
-The [experiments](../experiments/) folder preserves dated query and return files where available. [Stage 2 module submissions](../submissions/stage_2/modules/README.md) are historical course artefacts. [Current results](../reports/current_best_after_week12.csv) and [provenance](evidence_provenance.md) describe what is verified now.
+The [experiments](../experiments/) folder preserves dated query and return files where available. [Stage 2 module submissions](../submissions/stage_2/modules/README.md) are historical course artefacts. [Current results](../reports/current_best_after_week13.csv) and [provenance](evidence_provenance.md) describe what is verified now.
 
 **Do not treat a dated forecast, proposed input or peer observation as an observed personal score.**
 

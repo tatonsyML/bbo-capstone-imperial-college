@@ -1,5 +1,7 @@
 # When the Prediction Was Right but the Decision Was Wrong: Thirteen Rounds of Black-Box Optimisation
 
+> **Update:** This reflection predates receipt of final portal returns. See the [verified Round 13 addendum](round13_addendum.md) for the new results without changing the original pre-result interpretation.
+
 One of my most accurate predictions was also a warning that I was optimising badly. On F4, a local surrogate predicted the next result within **1.6 × 10⁻⁹**. Yet I was taking steps so small that the score remained around 0.659. A wider move later returned **0.730459**.
 
 Elsewhere the problem was different. On F2, a forecast of **0.730502** returned **0.505526**. On F8, the predictions were good, but I eventually found that a simple quadratic explained the function and identified its maximum of **10**.
