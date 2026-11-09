@@ -64,7 +64,7 @@ The [executable notebook](notebooks/Capstone_Final_Walkthrough.ipynb) reproduces
 | [Charts and their meanings](docs/functions.md) | Which plots show measured points and which show model slices |
 | [Older material and supplementary work](archive/README.md) | Historical snapshots and documents kept out of the main path |
 
-**Evidence matters.** The original weekly reflections establish what was intended. The portal returns establish what was submitted and measured. Some scripts or forecasts are missing, and later structural explanations are marked as retrospective. External published points are separately attributed and are not counted among my 104 returns.
+**[How the evidence is handled](docs/EVIDENCE_RULES.md).** The original weekly reflections establish what was intended. The portal returns establish what was submitted and measured. Some scripts or forecasts are missing, and later structural explanations are marked as retrospective. External published points are separately attributed and are not counted among my 104 returns.
 
 **Data rights:** Course-supplied observations are included in the current public dataset. Permission to redistribute them has not been independently verified; see [usage and permissions](USAGE_AND_PERMISSIONS.md) before reusing those values.
 
