@@ -21,7 +21,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D observed-point map | 3D measured-point projection |
 |---|---|
-| [![F1 2D chart](../reports/figures/f1_2d.svg)](../reports/figures/f1_2d.svg) | [![F1 3D chart](../reports/figures/f1_3d.svg)](../reports/figures/f1_3d.svg) |
+| [![F1 2D chart](../results/figures/f1_2d.svg)](../results/figures/f1_2d.svg) | [![F1 3D chart](../results/figures/f1_3d.svg)](../results/figures/f1_3d.svg) |
 
 **What we know so far.** The two-input function returns near-zero scores over much of the tested domain, while the Round 11 point (0.628540, 0.628540) returned 1.9999999996761817. The documented Gaussian-modulated oscillatory explanation was informed by supplementary evidence.
 
@@ -29,7 +29,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** An almost-flat-looking response can hide useful structure.
 
-[Detailed F1 discussion](function_guide.md#f1--finding-a-narrow-signal) · [2D image](../reports/figures/f1_2d.svg) · [3D image](../reports/figures/f1_3d.svg)
+[Detailed F1 discussion](function_guide.md#f1--finding-a-narrow-signal) · [2D image](../results/figures/f1_2d.svg) · [3D image](../results/figures/f1_3d.svg)
 
 ---
 
@@ -39,7 +39,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D observed-point map | 3D measured-point projection |
 |---|---|
-| [![F2 2D chart](../reports/figures/f2_2d.svg)](../reports/figures/f2_2d.svg) | [![F2 3D chart](../reports/figures/f2_3d.svg)](../reports/figures/f2_3d.svg) |
+| [![F2 2D chart](../results/figures/f2_2d.svg)](../results/figures/f2_2d.svg) | [![F2 3D chart](../results/figures/f2_3d.svg)](../results/figures/f2_3d.svg) |
 
 **What we know so far.** The Round 13 input (0.864900, 0.500000) beat the R12 best of 0.6953368270741286. Both input dimensions are visible in the scatter map, which shows measured scores without interpolation.
 
@@ -47,7 +47,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** An apparent plateau does not prove global convergence.
 
-[Detailed F2 discussion](function_guide.md#f2--an-unreliable-local-forecast) · [2D image](../reports/figures/f2_2d.svg) · [3D image](../reports/figures/f2_3d.svg)
+[Detailed F2 discussion](function_guide.md#f2--an-unreliable-local-forecast) · [2D image](../results/figures/f2_2d.svg) · [3D image](../results/figures/f2_3d.svg)
 
 ---
 
@@ -57,7 +57,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D observed-point map | 3D measured-point projection |
 |---|---|
-| [![F3 2D chart](../reports/figures/f3_2d.svg)](../reports/figures/f3_2d.svg) | [![F3 3D chart](../reports/figures/f3_3d.svg)](../reports/figures/f3_3d.svg) |
+| [![F3 2D chart](../results/figures/f3_2d.svg)](../results/figures/f3_2d.svg) | [![F3 3D chart](../results/figures/f3_3d.svg)](../results/figures/f3_3d.svg) |
 
 **What we know so far.** The final-round point (0.197280, 0.523429, 0.470094) improved the previous best −0.005709220275560069. The charts project measured scores onto x1 and x2.
 
@@ -65,7 +65,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** A better measured result is valuable even when the global model remains unresolved.
 
-[Detailed F3 discussion](function_guide.md#f3--improving-a-negative-valued-objective) · [2D image](../reports/figures/f3_2d.svg) · [3D image](../reports/figures/f3_3d.svg)
+[Detailed F3 discussion](function_guide.md#f3--improving-a-negative-valued-objective) · [2D image](../results/figures/f3_2d.svg) · [3D image](../results/figures/f3_3d.svg)
 
 ---
 
@@ -75,7 +75,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D observed-point map | 3D measured-point projection |
 |---|---|
-| [![F4 2D chart](../reports/figures/f4_2d.svg)](../reports/figures/f4_2d.svg) | [![F4 3D chart](../reports/figures/f4_3d.svg)](../reports/figures/f4_3d.svg) |
+| [![F4 2D chart](../results/figures/f4_2d.svg)](../results/figures/f4_2d.svg) | [![F4 3D chart](../results/figures/f4_3d.svg)](../results/figures/f4_3d.svg) |
 
 **What we know so far.** A GP forecast matched one local return to around 1.6 × 10⁻⁹, but microscopic steps stayed near 0.659. A wider move reached 0.730459 in R11 and a further R13 step returned 0.7468979113807426.
 
@@ -83,7 +83,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** Good point predictions and a good search policy are separate achievements.
 
-[Detailed F4 discussion](function_guide.md#f4--accurate-prediction-poor-search) · [2D image](../reports/figures/f4_2d.svg) · [3D image](../reports/figures/f4_3d.svg)
+[Detailed F4 discussion](function_guide.md#f4--accurate-prediction-poor-search) · [2D image](../results/figures/f4_2d.svg) · [3D image](../results/figures/f4_3d.svg)
 
 ---
 
@@ -93,7 +93,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D model heatmap | 3D model surface |
 |---|---|
-| [![F5 2D chart](../reports/figures/f5_2d.svg)](../reports/figures/f5_2d.svg) | [![F5 3D chart](../reports/figures/f5_3d.svg)](../reports/figures/f5_3d.svg) |
+| [![F5 2D chart](../results/figures/f5_2d.svg)](../results/figures/f5_2d.svg) | [![F5 3D chart](../results/figures/f5_3d.svg)](../results/figures/f5_3d.svg) |
 
 **What we know so far.** The plotted equation holds x3 = x4 = 0.999999 while x1 and x2 vary over the permitted domain. Its boundary value 8662.405001248297 matches the R10 portal return. Squared power sums couple coordinates and produce a steep boundary response.
 
@@ -101,7 +101,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** The boundary and variable interactions matter, but this is retrospective explanation rather than a claim of having known the equation earlier.
 
-[Detailed F5 discussion](function_guide.md#f5--the-feasible-boundary) · [2D image](../reports/figures/f5_2d.svg) · [3D image](../reports/figures/f5_3d.svg)
+[Detailed F5 discussion](function_guide.md#f5--the-feasible-boundary) · [2D image](../results/figures/f5_2d.svg) · [3D image](../results/figures/f5_3d.svg)
 
 ---
 
@@ -111,7 +111,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D observed-point map | 3D measured-point projection |
 |---|---|
-| [![F6 2D chart](../reports/figures/f6_2d.svg)](../reports/figures/f6_2d.svg) | [![F6 3D chart](../reports/figures/f6_3d.svg)](../reports/figures/f6_3d.svg) |
+| [![F6 2D chart](../results/figures/f6_2d.svg)](../results/figures/f6_2d.svg) | [![F6 3D chart](../results/figures/f6_3d.svg)](../results/figures/f6_3d.svg) |
 
 **What we know so far.** The best result remains −0.03751864724436928 from R12. The R13 input returned −0.07698028695699928 and did not improve it. The two charts display measured x1 and x2 coordinates and observed outputs.
 
@@ -119,7 +119,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** A failed final experiment still belongs in an auditable search history.
 
-[Detailed F6 discussion](function_guide.md#f6--challenging-unstable-local-models) · [2D image](../reports/figures/f6_2d.svg) · [3D image](../reports/figures/f6_3d.svg)
+[Detailed F6 discussion](function_guide.md#f6--challenging-unstable-local-models) · [2D image](../results/figures/f6_2d.svg) · [3D image](../results/figures/f6_3d.svg)
 
 ---
 
@@ -129,7 +129,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D model heatmap | 3D model surface |
 |---|---|
-| [![F7 2D chart](../reports/figures/f7_2d.svg)](../reports/figures/f7_2d.svg) | [![F7 3D chart](../reports/figures/f7_3d.svg)](../reports/figures/f7_3d.svg) |
+| [![F7 2D chart](../results/figures/f7_2d.svg)](../results/figures/f7_2d.svg) | [![F7 3D chart](../results/figures/f7_3d.svg)](../results/figures/f7_3d.svg) |
 
 **What we know so far.** The standard positive Hartmann-6 expression exactly reproduces the R12 and R13 returns at their documented inputs. The figure varies x1 and x2 while x3–x6 are fixed at (0.476874, 0.275332, 0.311652, 0.657301). A structural forecast preceded the R12 return.
 
@@ -137,7 +137,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** A pre-result structural forecast is stronger evidence than a retrospective match alone.
 
-[Detailed F7 discussion](function_guide.md#f7--a-structural-forecast-confirmed) · [2D image](../reports/figures/f7_2d.svg) · [3D image](../reports/figures/f7_3d.svg)
+[Detailed F7 discussion](function_guide.md#f7--a-structural-forecast-confirmed) · [2D image](../results/figures/f7_2d.svg) · [3D image](../results/figures/f7_3d.svg)
 
 ---
 
@@ -147,7 +147,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 | 2D model heatmap | 3D model surface |
 |---|---|
-| [![F8 2D chart](../reports/figures/f8_2d.svg)](../reports/figures/f8_2d.svg) | [![F8 3D chart](../reports/figures/f8_3d.svg)](../reports/figures/f8_3d.svg) |
+| [![F8 2D chart](../results/figures/f8_2d.svg)](../results/figures/f8_2d.svg) | [![F8 3D chart](../results/figures/f8_3d.svg)](../results/figures/f8_3d.svg) |
 
 **What we know so far.** The 17-coefficient additive quadratic fitted to the original 40 supplied observations predicts 13 later personal portal returns to numerical precision. The slice varies x3 and x8, holding the other inputs at the fitted vertex. Its maximum is 10.
 
@@ -155,7 +155,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **Optimisation lesson.** Try simple, interpretable challengers early when out-of-sample evidence justifies them.
 
-[Detailed F8 discussion](function_guide.md#f8--the-17-coefficient-quadratic) · [2D image](../reports/figures/f8_2d.svg) · [3D image](../reports/figures/f8_3d.svg)
+[Detailed F8 discussion](function_guide.md#f8--the-17-coefficient-quadratic) · [2D image](../results/figures/f8_2d.svg) · [3D image](../results/figures/f8_3d.svg)
 
 ---
 
@@ -164,9 +164,9 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 All 16 SVG figures are built from the repository's versioned observation CSVs and the F5/F7/F8 reconstructed expressions with a dependency-free Node.js generator:
 
 ```bash
-node scripts/build_visual_gallery.mjs
+node results/figures/build_visual_gallery.mjs
 ```
 
-Run from the repository root with Node.js 18+. The script rebuilds the [figure manifest](../reports/figures/gallery_manifest.json) and checks the F5, F7 and F8 expressions against confirmed portal returns. The 3D charts are static projected views, not interactive rotation controls. Full source: [scripts/build_visual_gallery.mjs](../scripts/build_visual_gallery.mjs).
+Run from the repository root with Node.js 18+. The script rebuilds the [figure manifest](../results/figures/gallery_manifest.json) and checks the F5, F7 and F8 expressions against confirmed portal returns. The 3D charts are static projected views, not interactive rotation controls. Full source: [results/figures/build_visual_gallery.mjs](../results/figures/build_visual_gallery.mjs).
 
 **Do not relabel these charts as the original hidden equations.** The structural expressions are supported reconstructions, and five functions are plotted only as empirical evidence. [Back to README](../README.md).

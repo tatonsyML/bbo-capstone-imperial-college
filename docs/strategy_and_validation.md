@@ -33,8 +33,8 @@ The objective was to maximise eight unknown functions within a strict **one-quer
 | GPs with RBF / Matérn ARD kernels | Implemented | Surrogate predictions and comparisons on the retained historical cuts |
 | EI / UCB / local searches | Implemented | Candidate generation and dated returned evaluations |
 | Small neural networks / regressions | Challengers | Per-function comparisons, not universal superiority |
-| HEBO-inspired kernel/transform/acquisition committee | Partial adaptation | Selected mechanisms and [comparison report](../reports/hebo_inspired_committee.csv); **not official HEBO** |
-| TuRBO-style trust regions | Partial adaptation | Selected candidate mechanisms and [comparison report](../reports/turbo_style_challengers.csv); **not official TuRBO** |
+| HEBO-inspired kernel/transform/acquisition committee | Partial adaptation | Selected mechanisms and [comparison report](../results/hebo_inspired_committee.csv); **not official HEBO** |
+| TuRBO-style trust regions | Partial adaptation | Selected candidate mechanisms and [comparison report](../results/turbo_style_challengers.csv); **not official TuRBO** |
 | F8 additive quadratic | Independently testable | Fit only initial 40; validate on 13 later returns |
 | F5 power-sum equation | Independently checkable at corner | Reconstructed after the successful boundary query |
 | F1 / F7 structural explanations | Documented historical analysis | Numerically supported; historical research scripts are not fully captured in this project |
@@ -53,10 +53,10 @@ The last step is especially important with a finite horizon: an exploratory quer
 
 Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
 
-[Provenance and attribution requirements](evidence_provenance.md) · [Dated audit](../reports/round10_revision_audit.md) · [Full model card](model_card.md) · [Final verified results](round13_evidence.md)
+[Provenance and attribution requirements](evidence_provenance.md) · [Dated audit](../results/round10_revision_audit.md) · [Full model card](model_card.md) · [Final verified results](round13_evidence.md)
 
 ## Reproducible code and subsequent research
 
 The [annotated algorithms guide](optimisation_algorithms.md) explains how the original GP, EI/PI/UCB, HEBO-inspired committee and TuRBO-style local search were implemented, and why they differ from the complete reference algorithms.
 
-After the capstone, a separately labelled [official HEBO / BoTorch TuRBO-1 benchmark](../benchmarks/full_optimisers/README.md) was developed. It offers a **controlled F8 quadratic-model simulation** and **unscored** one-step proposals for all eight functions. The optional full algorithms **have not yet been run for a published comparison**. No new real portal outcomes or full-algorithm performance comparisons are claimed.
+After the capstone, a separately labelled [official HEBO / BoTorch TuRBO-1 benchmark](../research/full_optimisers/README.md) was developed. It offers a **controlled F8 quadratic-model simulation** and **unscored** one-step proposals for all eight functions. The optional full algorithms **have not yet been run for a published comparison**. No new real portal outcomes or full-algorithm performance comparisons are claimed.
