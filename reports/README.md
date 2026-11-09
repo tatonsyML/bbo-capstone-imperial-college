@@ -31,3 +31,7 @@ This graph is generated from [historical personal outputs](../data/accumulated/h
 ## Visual analysis
 
 The [16-image scientific gallery](../docs/visual_gallery.md) includes 2D and 3D views for all eight functions, with honest distinctions between model slices and measured-only projections. [Figure index](figures/README.md) · [Regeneration code](../scripts/build_visual_gallery.mjs).
+
+## Post-capstone full optimiser study
+
+[Full HEBO / BoTorch TuRBO-1 benchmark](../benchmarks/full_optimisers/README.md) · [Current execution status](full_hebo_turbo/README.md). Results are **not published** until both optional engines have run; the proposed F8 comparison uses **simulated** quadratic-model feedback, not the private portal.

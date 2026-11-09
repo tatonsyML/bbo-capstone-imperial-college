@@ -59,3 +59,13 @@ node scripts/build_visual_gallery.mjs
 This rebuilds the [16 SVG images](../reports/figures/README.md) and [manifest](../reports/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 has no preserved input, so it cannot be placed in input space.
 
 The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](visual_gallery.md).
+
+## Full HEBO and TuRBO-1 post-capstone experiment
+
+The [benchmark guide](../benchmarks/full_optimisers/README.md) supplies separated optional requirements, executable code and test cases. First run:
+
+```bash
+python -m pytest -q benchmarks/full_optimisers/test_benchmark.py
+```
+
+The **actual official HEBO and BoTorch/GPyTorch TuRBO-1 engines** require optional dependencies and can be run in separate virtual environments. They evaluate the same **40-starting-point F8 quadratic simulator** with the same query budget; those are **simulated scores**, not real portal evaluations. The one-step F1–F8 proposals are explicitly **unscored**. See [algorithm choices](optimisation_algorithms.md) and [execution limitations](../reports/full_hebo_turbo/README.md).

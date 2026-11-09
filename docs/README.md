@@ -8,6 +8,7 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 | Everyone | **[2D/3D visual gallery](visual_gallery.md)** | What was measured, modelled or left unknown in each function? |
 | Everyone | [Function-by-function guide](function_guide.md) | Which input did best, why, and what is uncertain? |
 | Everyone | [Project journey](project_journey.md) | How did the approach change from Round 1 to Round 13? |
+| Technical reader | **[Optimisation algorithms and code](optimisation_algorithms.md)** | Where are HEBO, TuRBO and GP implemented, and what was used when? |
 | Technical reader | [Strategy and validation](strategy_and_validation.md) | Why GP/EI/UCB, challengers, calibration and structural models? |
 | Technical reader | [Structural reconstruction](structural_reconstruction.md) | Which equations are supported, and how strongly? |
 | Auditor | [Final Round 13 evidence](round13_evidence.md) · [Round 12 snapshot](round12_evidence.md) | What changed, and what was confirmed? |
@@ -20,7 +21,7 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 
 **Short route (about the argument):** [README](../README.md) → [visual gallery](visual_gallery.md) → [function guide](function_guide.md) → [project journey](project_journey.md) → [main retrospective](../submissions/stage_2/component_25_1/retrospective.md).
 
-**Technical route (about the evidence):** [model card](model_card.md) → [validation strategy](strategy_and_validation.md) → [reconstruction](structural_reconstruction.md) → [reproduction](reproduce.md) → [provenance](evidence_provenance.md).
+**Technical route (about the evidence):** [code and algorithms](optimisation_algorithms.md) → [model card](model_card.md) → [validation strategy](strategy_and_validation.md) → [reconstruction](structural_reconstruction.md) → [reproduction](reproduce.md) → [provenance](evidence_provenance.md).
 
 ## Status and versioning
 

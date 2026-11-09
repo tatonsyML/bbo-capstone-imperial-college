@@ -19,6 +19,7 @@ This project documents an evidence-led black-box optimisation capstone. I starte
 | Find the best input for a function | [Function-by-function guide](docs/function_guide.md) |
 | Understand what changed across rounds | [Project journey](docs/project_journey.md) |
 | Examine the strongest evidence | [Round 13 evidence](docs/round13_evidence.md) · [Validation and strategy](docs/strategy_and_validation.md) · [Reconstructed functions](docs/structural_reconstruction.md) |
+| Understand the code, HEBO and TuRBO | **[Optimisation algorithms and code guide](docs/optimisation_algorithms.md)** |
 | Run the checked mathematical experiment | [Reproduction guide](docs/reproduce.md) |
 | Review assessed work and historical material | [Assessment archive](submissions/README.md) |
 | Check data origin, bias or limitations | [Data guide](data/README.md) · [Provenance](docs/evidence_provenance.md) |
@@ -82,10 +83,18 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 | GP with RBF/Matérn kernels and ARD | Baseline predictions, uncertainty and local comparisons | Validate unseen predictions, not just training fit |
 | EI, UCB and local probes | Query selection and exploration–exploitation choices | Search width matters as much as acquisition settings |
 | Small neural-network and polynomial challengers | Test whether the GP representation remains suitable | More complex is not always better |
-| HEBO-inspired committees and TuRBO-style trust regions | Selected experimental challenger mechanisms | **Not** a benchmark of official, complete implementations |
+| HEBO-inspired committees and TuRBO-style trust regions | Original lightweight challenger mechanisms | **Not full official algorithms; see separate post-capstone benchmark** |
 | Structural reconstruction on F1/F5/F7/F8 | Explain observed patterns and propose justified test points | Distinguish prospective successes from retrospective explanations |
 
-[Approach and validation](docs/strategy_and_validation.md) · [Mathematical evidence](docs/structural_reconstruction.md) · [Decision record](docs/decision_log.md)
+[Algorithm and source-code guide](docs/optimisation_algorithms.md) · [Approach and validation](docs/strategy_and_validation.md) · [Mathematical evidence](docs/structural_reconstruction.md) · [Decision record](docs/decision_log.md)
+
+## Source code and algorithm comparison
+
+For the instructor, start with the **[annotated optimisation code guide](docs/optimisation_algorithms.md)**. It explains the original GP/EI/UCB pipeline, the **HEBO-inspired versus official HEBO** distinction, the original **TuRBO-style versus full TuRBO-1** distinction, and why a fair comparison is not the same as claiming a better portal score.
+
+The [post-capstone HEBO and TuRBO-1 benchmark](benchmarks/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The full optional engines have not been executed in this runtime, so no simulated comparison scores are claimed.
+
+[Historical source](src/bbo/README.md) · [Reference comparison source](benchmarks/full_optimisers/benchmark.py) · [Reproduction guide](docs/reproduce.md)
 
 ## Reproduce the strongest reproducible result
 
@@ -110,7 +119,8 @@ experiments/   Dated query/return records for rounds 1–13
 notebooks/     Exploratory analysis; some notebooks are historical snapshots
 reports/       Verified results, scientific 2D/3D plots and forecast audits
 scripts/       Reproduce the scientific visual gallery
-src/bbo/       Optimisation utilities and checked structural validation
+src/bbo/       Commented historical GP/acquisition code and structural validation
+benchmarks/    Post-capstone full HEBO / BoTorch TuRBO-1 comparison (not run)
 submissions/   Archived Stage 1 and Stage 2 assessment material
 tests/         Automated checks
 ```

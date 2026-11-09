@@ -54,3 +54,9 @@ The last step is especially important with a finite horizon: an exploratory quer
 Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
 
 [Provenance and attribution requirements](evidence_provenance.md) · [Dated audit](../reports/round10_revision_audit.md) · [Full model card](model_card.md) · [Final verified results](round13_evidence.md)
+
+## Reproducible code and subsequent research
+
+The [annotated algorithms guide](optimisation_algorithms.md) explains how the original GP, EI/PI/UCB, HEBO-inspired committee and TuRBO-style local search were implemented, and why they differ from the complete reference algorithms.
+
+After the capstone, a separately labelled [official HEBO / BoTorch TuRBO-1 benchmark](../benchmarks/full_optimisers/README.md) was developed. It offers a **controlled F8 quadratic-model simulation** and **unscored** one-step proposals for all eight functions. The optional full algorithms have **not been executed in this runtime**. No new real portal outcomes or full-algorithm performance comparisons are claimed.
