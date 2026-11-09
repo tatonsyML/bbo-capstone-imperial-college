@@ -14,6 +14,6 @@ The recovered package preserves:
 - the Week 1 portal input/output text used by the analysis
 - the original README and an archive-provenance note
 
-Programme-supplied seed arrays and source ZIPs were present in the original working package but are deliberately omitted from this public GitHub copy until redistribution rights are confirmed.
+The programme-supplied original `.npy` seed arrays are **not in this directory**, so the historical script may require those external files to rerun. The 175 numeric starting observations are nevertheless included in [the final consolidated CSV](../../../../data/all_observations.csv); [their redistribution status](../../../../USAGE_AND_PERMISSIONS.md) is separately disclosed.
 
 The method used only the Module 12 concepts: Gaussian Process surrogate modelling, predicted mean, predictive uncertainty, UCB, and grid/random candidate search.

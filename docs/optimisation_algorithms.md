@@ -60,7 +60,7 @@ Read the same **through-Week-9** historical observation snapshot for each functi
 - That simulated F8 objective returns are real portal scores.
 - That a single best candidate would dominate on eight different unknown functions.
 - That a candidate chosen using the final history was actually available before its original submission date.
-- That the optional HEBO and BoTorch engines have been executed here: **their packages are not available in this runtime**, so no numeric algorithm-versus-algorithm verdict is recorded.
+- That the optional HEBO and BoTorch engines have been executed here: **their packages are not available in the checked core CI environment**, so no numeric algorithm-versus-algorithm verdict is recorded.
 
 ## Instructor's code-reading route
 
