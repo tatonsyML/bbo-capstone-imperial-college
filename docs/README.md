@@ -4,6 +4,9 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 
 | Reader | Document | What it answers |
 |---|---|---|
+| Assessor | **[Component 25.3 checklist](assessment_25_3.md)** | Where is each rubric requirement and how do I verify it? |
+| Assessor | [Final executable notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) | Generate the main numerical results from versioned data |
+| Assessor | [Final datasheet](final_datasheet.md) · [final model card](final_model_card.md) | Complete Stage 2 documentation |
 | Everyone | [README](../README.md) | What was the challenge and what happened? |
 | Everyone | **[2D/3D visual gallery](visual_gallery.md)** | What was measured, modelled or left unknown in each function? |
 | Everyone | [Function-by-function guide](function_guide.md) | Which input did best, why, and what is uncertain? |

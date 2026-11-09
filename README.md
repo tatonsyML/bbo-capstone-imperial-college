@@ -12,6 +12,22 @@ This project documents an evidence-led black-box optimisation capstone. I starte
 
 **Final evidence status (9 November 2026):** 175 course-provided initial observations plus 104 returned personal evaluations (13 rounds × eight functions) = **279 records**, including repeats. All eight final outputs have been verified.
 
+## For assessors: Component 25.3
+
+The **[five-criterion assessment checklist](docs/assessment_25_3.md)** is the best place to start. It links each required item to the precise file and explains how to reproduce the evidence.
+
+| Rubric criterion | Direct evidence |
+|---|---|
+| Clear, commented, runnable code and reproducible results | **[Final Jupyter walkthrough](notebooks/Capstone_Final_Walkthrough.ipynb)** · [run instructions](docs/assessment_25_3.md#how-to-reproduce) · [CI checks](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) |
+| Complete datasheet | **[Final datasheet](docs/final_datasheet.md)** |
+| Complete model card | **[Final model card](docs/final_model_card.md)** |
+| Approximately 100-word non-technical explanation | [Read below](#the-project-in-about-100-words) |
+| Organised, complete and linked repository | [Assessment map](docs/assessment_25_3.md) · [data index](data/README.md) · [visual gallery](docs/visual_gallery.md) |
+
+## The project in about 100 words
+
+This project searches for the best settings of eight hidden functions. Each takes between two and eight numbers, but its formula is unknown. I had one query per function in each round, so every experiment mattered. I began with Gaussian Processes to estimate promising settings and uncertainty, then compared their suggestions with controlled tests and simpler mathematical models. Across 13 rounds I recorded 104 returned queries alongside 175 starting observations. My final round improved three functions. For Function 8, a quadratic fitted to the 40 original observations predicted all 13 later returned scores to numerical precision. This repository documents the decisions, results, code and limitations.
+
 ## Choose your reading route
 
 | If you want to… | Start here |
@@ -22,6 +38,7 @@ This project documents an evidence-led black-box optimisation capstone. I starte
 | Understand what changed across rounds | [Project journey](docs/project_journey.md) |
 | Examine the strongest evidence | [Round 13 evidence](docs/round13_evidence.md) · [Validation and strategy](docs/strategy_and_validation.md) · [Reconstructed functions](docs/structural_reconstruction.md) |
 | Understand the code, HEBO and TuRBO | **[Optimisation algorithms and code guide](docs/optimisation_algorithms.md)** |
+| Run the assessed Jupyter walkthrough | **[Final notebook](notebooks/Capstone_Final_Walkthrough.ipynb)** |
 | Run the checked mathematical experiment | [Reproduction guide](docs/reproduce.md) |
 | Review assessed work and historical material | [Assessment archive](submissions/README.md) |
 | Check data origin, bias or limitations | [Data guide](data/README.md) · [Provenance](docs/evidence_provenance.md) |
@@ -115,10 +132,10 @@ Run these commands from the repository root in a Unix-like shell. See [reproduct
 ```text
 assets/        Data-derived progress visual
 configs/       Historical optimisation settings
-data/          Initial-data descriptions and observed query histories
+data/          279-row complete record and historical per-function observations
 docs/          Reading guide, methods, evidence, model card and datasheet
 experiments/   Dated query/return records for rounds 1–13
-notebooks/     Exploratory analysis; some notebooks are historical snapshots
+notebooks/     Runnable final assessed notebook plus historical explorations
 reports/       Verified results, scientific 2D/3D plots and forecast audits
 scripts/       Reproduce the scientific visual gallery
 src/bbo/       Commented historical GP/acquisition code and structural validation
@@ -127,12 +144,12 @@ submissions/   Archived Stage 1 and Stage 2 assessment material
 tests/         Automated checks
 ```
 
-[Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](reports/README.md) · [Assessment archive](submissions/README.md)
+[Assessment checklist](docs/assessment_25_3.md) · [Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](reports/README.md) · [Assessment archive](submissions/README.md)
 
 ## Limitations and responsible interpretation
 
 - **Not every equation is solved.** F1, F5, F7 and F8 have supported reconstructed forms, with different evidence strengths; F2, F3, F4 and F6 remain unresolved.
-- **Source matters.** Course-supplied starting observations, personal portal returns, prospective predictions, retrospective analysis and external published observations are not interchangeable. External results informed some choices but do not count as my personal evaluations.
+- **Source matters.** Course-supplied starting observations, personal portal returns, prospective predictions, retrospective analysis and external published observations are not interchangeable. The [final datasheet](docs/final_datasheet.md) states that the 175 course-supplied numerical values are already in public CSV files, pending a redistribution-permission check. External results informed some choices but do not count as my personal evaluations.
 - **History is not overwritten.** Early model cards, submissions and notebooks are dated snapshots and can contain statements that were correct when written but are superseded by later returns.
 - **Known gaps are visible.** The exact Round 11 F7 input is missing from the retained log. Round 13 outcomes are verified. The GP pipeline demonstration uses an earlier data cut, not the complete 13-round history.
 
