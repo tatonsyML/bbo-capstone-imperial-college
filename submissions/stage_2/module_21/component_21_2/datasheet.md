@@ -43,7 +43,7 @@ One **observation** is one input vector (the settings sent to a function) paired
 - **Public working history:** chronological CSV files in **data/accumulated/function_1/** through **function_8/**, each named **observations_through_week9.csv**.
 - **Columns:** function, stage, sequence_in_stage, is_initial, x1 ... xD, output. The stage separates the initial course sample from Weeks 1–9.
 - **Round evidence:** submitted query strings, returned portal values and notes in **experiments/round_01/** through **round_09/**.
-- **Calculated summaries:** best values, forecast errors and challenger proposals in **reports/**. These are *derived analysis*, not new portal observations.
+- **Calculated summaries:** best values, forecast errors and challenger proposals in **results/**. These are *derived analysis*, not new portal observations.
 
 Input coordinates are bounded between **0.000000 and 0.999999**. Submitted queries contain exactly six decimal places per coordinate. Starting inputs may contain more precision; do not silently round them when reproducing an earlier fit. Scores are real numbers and can be negative or extremely small.
 

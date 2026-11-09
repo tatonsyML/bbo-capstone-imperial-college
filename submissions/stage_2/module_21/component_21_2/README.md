@@ -16,9 +16,9 @@ The documents use **247 observed evaluations through Week 9**. The **eight Round
 Supporting materials:
 
 - [Round 10 submitted inputs](../../../../experiments/round_10/queries.txt)
-- [Revision and external-evidence provenance audit](../../../../reports/round10_revision_audit.md)
+- [Revision and external-evidence provenance audit](../../../../results/round10_revision_audit.md)
 - [Decision log](../../../../docs/decision_log.md)
-- [Results through Week 9](../../../../reports/current_best_after_week9.csv)
+- [Results through Week 9](../../../../results/current_best_after_week9.csv)
 
 ## Rubric coverage (11 criteria)
 

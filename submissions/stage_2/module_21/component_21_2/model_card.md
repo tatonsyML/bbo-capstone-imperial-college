@@ -171,9 +171,9 @@ Useful starting points:
 - [Dataset and provenance](datasheet.md)
 - [Chronological queries and outcomes](../../../../experiments/)
 - [Current implementation](../../../../src/bbo/)
-- [Best measured scores](../../../../reports/current_best_after_week9.csv)
-- [Forecast audit](../../../../reports/week9_forecast_audit.csv)
-- [F8 quadratic coefficients](../../../../reports/f8_additive_quadratic_coefficients.csv)
+- [Best measured scores](../../../../results/current_best_after_week9.csv)
+- [Forecast audit](../../../../results/week9_forecast_audit.csv)
+- [F8 quadratic coefficients](../../../../results/f8_additive_quadratic_coefficients.csv)
 - [Decision log](decision_log.md)
 
 ## 10. Does the model card need more detail?
