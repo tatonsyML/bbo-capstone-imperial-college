@@ -2,7 +2,7 @@
 
 **Assessment:** Stage 2, Component 25.3 · **Evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
 
-[← For assessors](docs/assessment_25_3.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
+[← For assessors](docs/assessment_guide.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
 
 ## 1. Motivation and purpose
 
@@ -58,7 +58,7 @@ The project records **279 outputs** in total: 175 starting observations and 104 
 
 ## 6. Weekly iteration and learning
 
-One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](experiments/README.md) records actual inputs and outputs; the [project journey](docs/project_journey.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
+One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](journey/README.md) records actual inputs and outputs; the [project journey](docs/project_journey.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
 
 ## 7. Biases, limitations and appropriate use
 
@@ -91,4 +91,4 @@ The [full CSV](data/all_observations.csv) is the final complete record. Earlier 
 
 **Maintainer:** repository owner. Update only against new authoritative portal or course evidence, with a recorded source and a descriptive commit.
 
-[← Assessment map](docs/assessment_25_3.md)
+[← Assessment map](docs/assessment_guide.md)

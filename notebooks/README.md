@@ -15,8 +15,8 @@ The three earlier small notebooks are dated explorations that were not saved wit
 
 | Earlier notebook | Purpose | Status |
 |---|---|---|
-| [Exploratory analysis](exploratory_analysis.ipynb) | Week 9 best-so-far diagnostic | Historical helper |
-| [Model comparison](model_comparison.ipynb) | HEBO-inspired and TuRBO-style proposals | Historical helper |
-| [Optimisation review](optimisation_review.ipynb) | Round 10 candidate archive | Historical helper |
+| [Exploratory analysis](../journey/round_10/early_notebooks/exploratory_analysis.ipynb) | Week 9 best-so-far diagnostic | Historical helper |
+| [Model comparison](../journey/round_10/early_notebooks/model_comparison.ipynb) | HEBO-inspired and TuRBO-style proposals | Historical helper |
+| [Optimisation review](../journey/round_10/early_notebooks/optimisation_review.ipynb) | Round 10 candidate archive | Historical helper |
 
-[Assessment map](../docs/assessment_25_3.md) · [Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)
+[Assessment map](../docs/assessment_guide.md) · [Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)

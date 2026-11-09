@@ -24,7 +24,7 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 - **Exact later portal returns and known missing coordinate:** [data/portal_rounds_11_12.csv](portal_rounds_11_12.csv)
 - **Exact Round 13 portal returns:** [data/portal_rounds_13.csv](portal_rounds_13.csv)
 - **F8 initial versus later validation observations:** [data/accumulated/function_8/observations_through_week13.csv](accumulated/function_8/observations_through_week13.csv)
-- **Initial-data source and redistribution caveat:** [data/initial/README.md](initial/README.md)
+- **Initial-data source and redistribution caveat:** [data/initial/README.md](../USAGE_AND_PERMISSIONS.md)
 - **Full dataset description:** [docs/datasheet.md](../DATASHEET.md)
 
 ## Interpretation rules
@@ -37,4 +37,4 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 
 **Known gap:** R11's F7 output is known, but the exact submitted coordinate is not preserved in the available source. It remains missing rather than being imputed.
 
-[Provenance](../docs/evidence_provenance.md) · [Evidence and limitations](../docs/round12_evidence.md) · [Main README](../README.md)
+[Provenance](../DATASHEET.md) · [Evidence and limitations](../journey/round_12/README.md) · [Main README](../README.md)

@@ -13,6 +13,6 @@
 | **Reproducible F8 reconstruction** | [structural_validation.py](structural_validation.py) | 40 initial + 13 later returned observations |
 | **Post-capstone full HEBO / TuRBO-1 comparison** | [benchmark.py](../../research/full_optimisers/benchmark.py) | Official HEBO + BoTorch TuRBO-1, simulated F8 only |
 
-**Read first:** [Algorithm design and instructor explanation](../../docs/optimisation_algorithms.md) · [Benchmark instructions](../../research/full_optimisers/README.md).
+**Read first:** [Algorithm design and instructor explanation](../../docs/methods.md) · [Benchmark instructions](../../research/full_optimisers/README.md).
 
 Historical source files now include detailed function docstrings and comments explaining *why* a model, transformation, acquisition score or trust region was chosen, and where its mathematical assumptions can fail. No model-generated unobserved point is labelled as a portal result.

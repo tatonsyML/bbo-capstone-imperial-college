@@ -22,7 +22,7 @@ The **[five-criterion assessment checklist](docs/assessment_guide.md)** is the b
 | Complete datasheet | **[Final datasheet](DATASHEET.md)** |
 | Complete model card | **[Final model card](MODEL_CARD.md)** |
 | Approximately 100-word non-technical explanation | [Read below](#the-project-in-about-100-words) |
-| Organised, complete and linked repository | [Assessment map](docs/assessment_guide.md) · [data index](data/README.md) · [visual gallery](results/figures/README.md) |
+| Organised, complete and linked repository | [Assessment map](docs/assessment_guide.md) · [data index](data/README.md) · [visual gallery](docs/functions.md) |
 
 ## The project in about 100 words
 
@@ -59,14 +59,14 @@ The [retrospective GP replay](scripts/replay_surrogates.py) uses **only data fro
 
 ## Visualise the eight functions
 
-The **[2D and 3D gallery](results/figures/README.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.
+The **[2D and 3D gallery](docs/functions.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.
 
 <table><tr>
-<td width="50%"><a href="results/figures/README.md#f8-a-testable-additive-quadratic"><img src="results/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
-<td width="50%"><a href="results/figures/README.md#f2-a-different-region-succeeds"><img src="results/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
+<td width="50%"><a href="docs/functions.md"><img src="results/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
+<td width="50%"><a href="docs/functions.md"><img src="results/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
 </tr></table>
 
-[Explore all eight functions](results/figures/README.md) · [Rebuild the graphics](results/figures/build_visual_gallery.mjs)
+[Explore all eight functions](docs/functions.md) · [Rebuild the graphics](results/figures/build_visual_gallery.mjs)
 
 ## Three discoveries worth reading
 
@@ -108,7 +108,7 @@ For the instructor, start with the **[annotated optimisation code guide](docs/me
 
 The [post-capstone HEBO and TuRBO-1 benchmark](research/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The optional full-algorithm comparison has not yet been run, so no simulated comparison scores are claimed.
 
-[Historical source](src/bbo/README.md) · [Reference comparison source](research/full_optimisers/benchmark.py) · [Reproduction guide](docs/reproduce.md)
+[Historical source](src/bbo/README.md) · [Reference comparison source](research/full_optimisers/benchmark.py) · [Reproduction guide](docs/methods.md)
 
 ## Reproduce the strongest reproducible result
 
@@ -120,7 +120,7 @@ PYTHONPATH=src python -m bbo.structural_validation
 PYTHONPATH=src python -m pytest -q
 ```
 
-Run these commands from the repository root in a Unix-like shell. See [reproduction and scope](docs/reproduce.md) for the expected output, other platforms and the distinction between executable tests and archived exploratory work.
+Run these commands from the repository root in a Unix-like shell. See [reproduction and scope](docs/methods.md) for the expected output, other platforms and the distinction between executable tests and archived exploratory work.
 
 ## Where everything lives
 
@@ -147,7 +147,7 @@ submissions/              Preserved Stage 1 and Stage 2 coursework
 tests/                    Automated checks
 ```
 
-[Assessment checklist](docs/assessment_guide.md) · [Full documentation index](docs/README.md) · [Visual gallery](results/figures/README.md) · [Reports index](results/README.md) · [Assessment archive](submissions/README.md)
+[Assessment checklist](docs/assessment_guide.md) · [Full documentation index](docs/assessment_guide.md) · [Visual gallery](docs/functions.md) · [Reports index](docs/methods.md) · [Assessment archive](journey/README.md)
 
 ## Limitations and responsible interpretation
 
@@ -159,7 +159,7 @@ tests/                    Automated checks
 - **History is not overwritten.** Early model cards, submissions and notebooks are dated snapshots and can contain statements that were correct when written but are superseded by later returns.
 - **Known gaps are visible.** The exact Round 11 F7 input is missing from the retained log. Round 13 outcomes are verified. The GP pipeline demonstration uses an earlier data cut, not the complete 13-round history.
 
-[Data provenance](docs/evidence_provenance.md) · [Evidence limitations](journey/round_12/README.md) · [Reproduction scope](docs/reproduce.md)
+[Data provenance](DATASHEET.md) · [Evidence limitations](journey/round_12/README.md) · [Reproduction scope](docs/methods.md)
 
 ---
 
