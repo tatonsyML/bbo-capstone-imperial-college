@@ -16,16 +16,16 @@ def design_matrix(x):
 
 def load_f8(root=None):
     root = Path(root) if root else Path(__file__).resolve().parents[2]
-    path = root / "data/accumulated/function_8/observations_through_week12.csv"
+    path = root / "data/accumulated/function_8/observations_through_week13.csv"
     with path.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
-    if len(rows) != 52:
-        raise ValueError(f"Expected 52 rows, found {len(rows)}")
+    if len(rows) != 53:
+        raise ValueError(f"Expected 53 rows, found {len(rows)}")
     x = np.array([[float(r[f"x{i}"]) for i in range(1,9)] for r in rows])
     y = np.array([float(r["output"]) for r in rows])
     initial = np.array([r["is_initial"].lower() == "true" for r in rows])
-    if initial.sum() != 40 or (~initial).sum() != 12:
-        raise ValueError("Expected exactly 40 initial and 12 held-out rows")
+    if initial.sum() != 40 or (~initial).sum() != 13:
+        raise ValueError("Expected exactly 40 initial and 13 held-out rows")
     return x, y, initial
 
 def recover_f8(root=None):
