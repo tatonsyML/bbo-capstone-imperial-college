@@ -5,6 +5,7 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 | Reader | Document | What it answers |
 |---|---|---|
 | Everyone | [README](../README.md) | What was the challenge and what happened? |
+| Everyone | **[2D/3D visual gallery](visual_gallery.md)** | What was measured, modelled or left unknown in each function? |
 | Everyone | [Function-by-function guide](function_guide.md) | Which input did best, why, and what is uncertain? |
 | Everyone | [Project journey](project_journey.md) | How did the approach change from Round 1 to Round 13? |
 | Technical reader | [Strategy and validation](strategy_and_validation.md) | Why GP/EI/UCB, challengers, calibration and structural models? |
@@ -17,7 +18,7 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 
 ## Two clear reading sequences
 
-**Short route (about the argument):** [README](../README.md) → [function guide](function_guide.md) → [project journey](project_journey.md) → [main retrospective](../submissions/stage_2/component_25_1/retrospective.md).
+**Short route (about the argument):** [README](../README.md) → [visual gallery](visual_gallery.md) → [function guide](function_guide.md) → [project journey](project_journey.md) → [main retrospective](../submissions/stage_2/component_25_1/retrospective.md).
 
 **Technical route (about the evidence):** [model card](model_card.md) → [validation strategy](strategy_and_validation.md) → [reconstruction](structural_reconstruction.md) → [reproduction](reproduce.md) → [provenance](evidence_provenance.md).
 

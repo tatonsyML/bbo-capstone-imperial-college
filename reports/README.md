@@ -27,3 +27,7 @@ This graph is generated from [historical personal outputs](../data/accumulated/h
 **Observed:** a returned personal portal output. **Forecast:** expectation made before a return. **Retrospective:** fitted or analysed later. **External:** public results used for research or validation, not personal outcomes.
 
 [Read the case studies](../docs/function_guide.md) · [Data and methodological limits](../docs/evidence_provenance.md)
+
+## Visual analysis
+
+The [16-image scientific gallery](../docs/visual_gallery.md) includes 2D and 3D views for all eight functions, with honest distinctions between model slices and measured-only projections. [Figure index](figures/README.md) · [Regeneration code](../scripts/build_visual_gallery.mjs).

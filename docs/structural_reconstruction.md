@@ -35,3 +35,7 @@ A numerically validated oscillatory response with two narrow, Gaussian-modulated
 F2 and F3 have unstable regions and unverified structural alternatives; F4 remains model-disagreement-sensitive; F6 has imperfect approximate fits. None is labelled mathematically solved.
 
 **Executable in this repository:** F8's initial-data-only fit and 13-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../reports/round10_revision_audit.md); identifying source references should be retained separately for authorised attribution.
+
+## Visualisation scope
+
+[See the full 2D/3D gallery](visual_gallery.md). F5, F7 and F8 are calculated **model slices** with all other coordinates fixed. For F1, the full fitted oscillatory coefficients are not publicly retained: the charts show observed points instead. F2/F3/F4/F6 similarly show only measured evidence, not invented model surfaces. The [figure generator](../scripts/build_visual_gallery.mjs) includes the standard positive Hartmann-6 numerical coefficients and validates the F7 R12 score.

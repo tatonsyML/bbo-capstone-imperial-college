@@ -17,3 +17,9 @@
 The historical model-card and datasheet documents retain their old time-specific statements. Their “Round 10 pending” language refers to an archived snapshot and does not override the current README.
 
 Public availability of third-party inputs does not override programme collaboration or attribution rules.
+
+## How the visual gallery represents evidence
+
+The [visual gallery](visual_gallery.md) contains model-evaluated surfaces only for the documented F5, F7 and F8 reconstructions. For F1/F2/F3/F4/F6 it shows measured points without interpolation. For F3/F4/F6 the x1–x2 charts are **projections**, not slices with other inputs fixed.
+
+There are **278 plottable input/output pairs** despite **279 returned or supplied evaluations**. The R11 F7 output is recorded but its input is not, so no location is invented. [Figure manifest](../reports/figures/gallery_manifest.json) · [Generator](../scripts/build_visual_gallery.mjs).

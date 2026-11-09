@@ -15,6 +15,7 @@ This project documents an evidence-led black-box optimisation capstone. I starte
 | If you want to… | Start here |
 |---|---|
 | Understand the project in two minutes | [Plain-English introduction](#the-challenge-in-plain-english) and [results](#results-at-a-glance) |
+| Explore all eight 2D/3D visualisations | **[Visual gallery: known versus uncertain](docs/visual_gallery.md)** |
 | Find the best input for a function | [Function-by-function guide](docs/function_guide.md) |
 | Understand what changed across rounds | [Project journey](docs/project_journey.md) |
 | Examine the strongest evidence | [Round 13 evidence](docs/round13_evidence.md) · [Validation and strategy](docs/strategy_and_validation.md) · [Reconstructed functions](docs/structural_reconstruction.md) |
@@ -50,6 +51,17 @@ The diagram tracks the **best observed score so far** from the initial data to R
 The final round established **three additional personal bests**: F2, F3 and F4. The other five were first achieved in R10–R12. These are best-so-far observations, not one-round scores. Their scales differ and must not be added or averaged.
 
 [Final bests and inputs (CSV)](reports/current_best_after_week13.csv) · [Round 13 portal returns](data/portal_rounds_13.csv) · [Final-round evidence](docs/round13_evidence.md)
+
+## Visualise the eight functions
+
+The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.
+
+<table><tr>
+<td width="50%"><a href="docs/visual_gallery.md#f8-a-testable-additive-quadratic"><img src="reports/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
+<td width="50%"><a href="docs/visual_gallery.md#f2-a-different-region-succeeds"><img src="reports/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
+</tr></table>
+
+[Explore all eight functions](docs/visual_gallery.md) · [Rebuild the graphics](scripts/build_visual_gallery.mjs)
 
 ## Three discoveries worth reading
 
@@ -96,13 +108,14 @@ data/          Initial-data descriptions and observed query histories
 docs/          Reading guide, methods, evidence, model card and datasheet
 experiments/   Dated query/return records for rounds 1–13
 notebooks/     Exploratory analysis; some notebooks are historical snapshots
-reports/       Results, forecasts and method-comparison tables
+reports/       Verified results, scientific 2D/3D plots and forecast audits
+scripts/       Reproduce the scientific visual gallery
 src/bbo/       Optimisation utilities and checked structural validation
 submissions/   Archived Stage 1 and Stage 2 assessment material
 tests/         Automated checks
 ```
 
-[Full documentation index](docs/README.md) · [Reports index](reports/README.md) · [Assessment archive](submissions/README.md)
+[Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](reports/README.md) · [Assessment archive](submissions/README.md)
 
 ## Limitations and responsible interpretation
 
