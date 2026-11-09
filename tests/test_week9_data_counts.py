@@ -1,3 +1,4 @@
+"""Historical Week 9 observation counts; not a pipeline execution test."""
 from pathlib import Path
 import pandas as pd
 

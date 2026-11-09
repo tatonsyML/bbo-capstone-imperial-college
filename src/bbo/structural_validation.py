@@ -1,20 +1,30 @@
-"""Fit F8 from 40 course observations and test later returns; verify F5 corner."""
+"""Reproduce F8 from 40 starting points and check 13 later observations.
+
+F8 basis: intercept + eight linear + eight quadratic terms (17 parameters).
+F5 reconstructed power-sum equation was identified *after* the R10 query.
+This code does not claim access to any hidden source implementation.
+"""
 from __future__ import annotations
 import csv
 from pathlib import Path
 import numpy as np
 
+# Expected F8 vertex c in 10 - sum(w[j] * (x[j] - c[j])**2).
 F8_C = np.array([.10,.15,.13,.15,.80,.50,.20,.60], dtype=float)
+# Positive F8 curvature weights; x3 weight is 30 times x8 weight.
 F8_W = np.array([2,1,3,1,.5,1,2,.1], dtype=float)
+# F5 power-sum targets: 0.01*sum_k((sum_j((4*x[j])**k)-b[k])**2).
 F5_B = np.array([7.5,16,40,120], dtype=float)
 
 def design_matrix(x):
+    """Build 17 F8 regression columns."""
     x = np.atleast_2d(np.asarray(x, dtype=float))
     if x.shape[1] != 8:
         raise ValueError("F8 needs eight coordinates")
     return np.column_stack([np.ones(len(x)), x, x*x])
 
 def load_f8(root=None):
+    """Load the original 40 and later 13 portal scores."""
     root = Path(root) if root else Path(__file__).resolve().parents[2]
     path = root / "data/accumulated/function_8/observations_through_week13.csv"
     with path.open(newline="", encoding="utf-8") as stream:
@@ -29,6 +39,7 @@ def load_f8(root=None):
     return x, y, initial
 
 def recover_f8(root=None):
+    """Fit 40 points and independently predict the later 13."""
     x, y, initial = load_f8(root)
     coefficients, _, rank, _ = np.linalg.lstsq(design_matrix(x[initial]), y[initial], rcond=None)
     if rank != 17:
@@ -44,6 +55,7 @@ def recover_f8(root=None):
                 max_holdout_error=float(np.max(np.abs(prediction-y[~initial]))))
 
 def f5_at(x):
+    """Evaluate the retrospectively recovered F5 equation at legal coordinates."""
     x = np.asarray(x, dtype=float)
     if x.shape != (4,):
         raise ValueError("F5 needs four coordinates")
