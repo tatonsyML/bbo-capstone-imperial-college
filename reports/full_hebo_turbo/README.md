@@ -4,6 +4,8 @@
 
 A [manual benchmark workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/full-optimisers.yml) is available for actual execution and downloadable evidence artifacts.
 
+The [core GitHub Actions checks](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) passed the standard unit tests, syntax checks and structural validation. This is separate from running the optional full HEBO and BoTorch engines.
+
 The implementation and explanatory unit tests are in [benchmarks/full_optimisers](../../benchmarks/full_optimisers/). The current working runtime lacks both the official HEBO package and BoTorch/GPyTorch; therefore **there are no simulated comparison scores to publish here**. The presence of this directory must not be interpreted as a completed benchmark.
 
 After independently running the two engines, \`benchmark.py --mode compare\` will create \`f8_simulation_comparison.csv\` from the recorded per-engine simulated evaluations. The one-step proposals for F1–F8 remain **unscored** unless the real portal has returned those exact candidate inputs, which this benchmark does not assume.

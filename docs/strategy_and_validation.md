@@ -20,7 +20,7 @@ The objective was to maximise eight unknown functions within a strict **one-quer
 
 **Search adequacy — F4.** Forecast error near **1.6 × 10⁻⁹**, while repeated microsteps left the best near **0.659**. Widening the local search returned **0.730459**. Accurate prediction and good query selection are different tests.
 
-**Representation — F8.** A GP forecast could be accurate while an additive quadratic supplied a more complete mathematical explanation and identified a vertex of **10**. The original-40-only test was performed **retrospectively** and predicted the next 12 observations at numerical precision.
+**Representation — F8.** A GP forecast could be accurate while an additive quadratic supplied a more complete mathematical explanation and identified a vertex of **10**. The original-40-only test was performed **retrospectively** and predicted the next 13 returned observations at numerical precision.
 
 ## Final-round findings
 
