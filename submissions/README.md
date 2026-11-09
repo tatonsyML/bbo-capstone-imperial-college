@@ -1,6 +1,6 @@
 # Assessed work and historical submissions
 
-This folder preserves materials by **stage, module and component**. A dated assessed submission is a snapshot of what was known at the time. Current results and live analysis live in [reports](../reports/) and [docs](../docs/README.md), not by silently changing older evidence.
+This folder preserves materials by **stage, module and component**. A dated assessed submission is a snapshot of what was known at the time. Current results and live analysis live in [reports](../results/) and [docs](../docs/README.md), not by silently changing older evidence.
 
 ## Start with these
 
