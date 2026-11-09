@@ -12,7 +12,7 @@ f8(x) = 10 - Σ[j=1..8] w[j] (x[j] - c[j])²
 
 An additive eight-variable quadratic has 17 linear regression coefficients: a constant, eight linear terms and eight squared terms. Since all weights are positive, the fitted equation's unique maximum on the legal domain is **10** at c.
 
-**Chronology:** A model was fitted using accumulated personal records and corroborated with five public external input-output records before submitting the predicted vertex in Round 10; the portal confirmed 10. *Retrospectively*, refitting the same structure on only the **original 40 course observations** predicted the 13 later personal returns with maximum absolute error approximately **8.88 × 10⁻¹⁵** (13 later returns). This did not happen before Round 1.
+**Chronology:** A model was fitted using accumulated personal records and corroborated with five public external input-output records before submitting the predicted vertex in Round 10; the portal confirmed 10. *Retrospectively*, refitting the same structure on only the **original 40 course observations** predicted the 13 later personal returns with maximum absolute prediction error **below 2 × 10⁻¹⁴** across 13 later returns (floating-point rounding may vary by environment). This did not happen before Round 1.
 
 **Reproduce:** run PYTHONPATH=src python -m bbo.structural_validation with the [53-row evidence file](../data/accumulated/function_8/observations_through_week13.csv). The code fits with the initial records only and reports held-out residuals.
 

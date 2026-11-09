@@ -44,7 +44,7 @@ This table separates the strategy I was considering from the **results the porta
 
 The [round-by-round archive](experiments/README.md) and [project journey](docs/project_journey.md) distinguish recorded returns from retrospective interpretation.
 
-## 9. Trade-offs and decisions
+## 5. Trade-offs and decisions
 
 | Choice | Benefit | Cost or risk | My response |
 |---|---|---|---|
@@ -56,7 +56,7 @@ The [round-by-round archive](experiments/README.md) and [project journey](docs/p
 
 **Interpretation:** there was no universal winning optimiser. The most useful method was the one whose assumptions, search region and predicted results were supported by the next observed return.
 
-## 10. Measured results (final confirmed personal bests)
+## 6. Measured results (final confirmed personal bests)
 
 | Function | Inputs | Best confirmed output | First attained |
 |---|---:|---:|---|
@@ -77,15 +77,15 @@ All values are personally confirmed portal results. They differ drastically in s
 - **F4:** one local forecast was accurate to about 1.6 × 10⁻⁹, yet tiny search steps stagnated near 0.659. A wider strategy found 0.730459, followed by 0.746898 in R13.
 - **F5:** a boundary query achieved 8662.405 at the legal upper coordinates. Its power-sum explanation was reconstructed *after* the successful query.
 - **F7:** a positive Hartmann-6 structural forecast of 3.32236801 was recorded before the R12 portal return of 3.322368011393.
-- **F8:** an additive 17-parameter quadratic located 10 at an interior vertex. A *separate retrospective* fit using only the 40 supplied starting observations recovered a full-rank model and predicted 13 later portal returns with maximum absolute error about **8.88 × 10⁻¹⁵**. This does not mean the equation was identified in R1.
+- **F8:** an additive 17-parameter quadratic located 10 at an interior vertex. A *separate retrospective* fit using only the 40 supplied starting observations recovered a full-rank model and predicted 13 later portal returns with maximum absolute error **below 2 × 10⁻¹⁴** across the 13 later scores (the last displayed digits can vary slightly by numerical environment). This does not mean the equation was identified in R1.
 
-## 5. Quantitative validation and test coverage
+## 7. Quantitative validation and test coverage
 
 The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes counts, historical bests, GP illustrative decisions and F8/F5 structural checks from versioned data. [Automated tests](tests/) independently check numerical calculations. F8's 13 future observations are held out from the 40-point fit.
 
 **Forecast accuracy and finding a good region are different tests.** Some GP predictions were precise locally while failing to locate better regions. The capstone did not provide an unbiased global-optimiser ranking of HEBO versus TuRBO: unsubmitted candidates have unknown true outputs.
 
-## 6. Assumptions, limitations and potential failure modes
+## 8. Assumptions, limitations and potential failure modes
 
 - GP kernels assume a degree of smoothness or local similarity that sharp peaks, interactions or heteroscedastic noise can violate.
 - GP fitted uncertainty is conditional on model assumptions; calibration has to be checked on later portal returns.
@@ -95,13 +95,13 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 - F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
 - The input for the R11 F7 return was not retained; the score is recorded but the location is not invented.
 
-## 7. Ethics, access and redistribution
+## 9. Ethics, access and redistribution
 
 No reported personal data is required to run the optimisation. Course-provided numerical starting observations are currently included in public CSVs, while original course binary files are not hosted. **Redistribution permission for the numerical starting data remains to be checked**. External peer observations are not counted among the user's own 104 returns.
 
 The same approach would require additional validation, security checks and hard operational limits before use in payroll or other high-consequence systems.
 
-## 8. Reproducibility and maintenance
+## 10. Reproducibility and maintenance
 
 **Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/reproduce.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](reports/current_best_after_week13.csv) and the [visual gallery](docs/visual_gallery.md) allow a reviewer to verify the claims.
 

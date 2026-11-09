@@ -41,7 +41,7 @@ The CSV is a tidy union of already recorded numeric outputs, with provenance col
 
 The working GP pipeline optionally applies Yeo–Johnson or signed-log transformations, and some visualisations use log-labelled scales. Those are *analysis and display choices*, not changes to the original `output` column.
 
-## Performance and results
+## 5. Performance and results
 
 The project records **279 outputs** in total: 175 starting observations and 104 personal portal returns. The final observed maxima are summarised below. Different functions have different scales; these values are not combined into one score.
 
@@ -56,7 +56,7 @@ The project records **279 outputs** in total: 175 starting observations and 104 
 | F7 | 3.3223680113931557 | R12 |
 | F8 | 10 | R10 |
 
-## Weekly iteration and learning
+## 6. Weekly iteration and learning
 
 One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](experiments/README.md) records actual inputs and outputs; the [project journey](docs/project_journey.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
 

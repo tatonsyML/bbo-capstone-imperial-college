@@ -59,4 +59,4 @@ Published external input-output records helped check some equations and influenc
 
 The [annotated algorithms guide](optimisation_algorithms.md) explains how the original GP, EI/PI/UCB, HEBO-inspired committee and TuRBO-style local search were implemented, and why they differ from the complete reference algorithms.
 
-After the capstone, a separately labelled [official HEBO / BoTorch TuRBO-1 benchmark](../benchmarks/full_optimisers/README.md) was developed. It offers a **controlled F8 quadratic-model simulation** and **unscored** one-step proposals for all eight functions. The optional full algorithms have **not been executed in this runtime**. No new real portal outcomes or full-algorithm performance comparisons are claimed.
+After the capstone, a separately labelled [official HEBO / BoTorch TuRBO-1 benchmark](../benchmarks/full_optimisers/README.md) was developed. It offers a **controlled F8 quadratic-model simulation** and **unscored** one-step proposals for all eight functions. The optional full algorithms **have not yet been run for a published comparison**. No new real portal outcomes or full-algorithm performance comparisons are claimed.
