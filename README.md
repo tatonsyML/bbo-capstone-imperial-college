@@ -148,6 +148,9 @@ tests/         Automated checks
 
 ## Limitations and responsible interpretation
 
+**Usage and data permissions:** [Read the publication and course-data statement](USAGE_AND_PERMISSIONS.md). Original course-supplied numeric observations are already included in public CSVs; redistribution permission requires confirmation.
+
+
 - **Not every equation is solved.** F1, F5, F7 and F8 have supported reconstructed forms, with different evidence strengths; F2, F3, F4 and F6 remain unresolved.
 - **Source matters.** Course-supplied starting observations, personal portal returns, prospective predictions, retrospective analysis and external published observations are not interchangeable. The [final datasheet](docs/final_datasheet.md) states that the 175 course-supplied numerical values are already in public CSV files, pending a redistribution-permission check. External results informed some choices but do not count as my personal evaluations.
 - **History is not overwritten.** Early model cards, submissions and notebooks are dated snapshots and can contain statements that were correct when written but are superseded by later returns.
