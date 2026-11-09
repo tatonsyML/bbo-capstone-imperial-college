@@ -1,8 +1,8 @@
 # Final Datasheet | BBO capstone observations
 
-**Assessment:** Stage 2, Component 25.3 · **Evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
+**Evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
 
-[← For assessors](docs/assessment_guide.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
+[← Project home](README.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
 
 ## 1. Motivation and purpose
 
@@ -91,4 +91,4 @@ The [full CSV](data/all_observations.csv) is the final complete record. Earlier 
 
 **Maintainer:** repository owner. Update only against new authoritative portal or course evidence, with a recorded source and a descriptive commit.
 
-[← Assessment map](docs/assessment_guide.md)
+[← Project home](README.md)

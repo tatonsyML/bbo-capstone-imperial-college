@@ -1,4 +1,4 @@
-"""Check local Markdown links throughout the project, including assessed copies.
+"""Check local Markdown links throughout the project, including archived notes.
 
 Only path existence is checked: fragment anchors may differ in GitHub's
 rendering and are deliberately ignored to avoid false positive warnings.

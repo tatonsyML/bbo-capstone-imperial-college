@@ -1,8 +1,8 @@
 # Final Model Card | Evidence-led Black-Box Optimisation
 
-**Version:** Final, 13 returned rounds (9 November 2026) · **Assessment:** Component 25.3 · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
+**Version:** Final, 13 returned rounds (9 November 2026) · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
 
-[← For assessors](docs/assessment_guide.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
+[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
 
 ## 1. Model summary
 
@@ -107,4 +107,4 @@ The same approach would require additional validation, security checks and hard 
 
 Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
 
-[← Assessment map](docs/assessment_guide.md)
+[← Project home](README.md)

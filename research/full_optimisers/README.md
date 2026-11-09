@@ -1,6 +1,6 @@
 # Post-capstone full HEBO and TuRBO-1 comparison
 
-**This code was added after the 13-round assessment.** It does **not** replace or retroactively claim to have generated the historical capstone queries.
+**This code was added after the 13-round challenge.** It does **not** replace or retroactively claim to have generated the historical capstone queries.
 
 The original project used [HEBO-inspired and TuRBO-style experiments](../../src/bbo/optimizer.py). This folder provides a separately labelled, reproducible **reference comparison** using (a) the **official HEBO Python package** and (b) a **BoTorch/GPyTorch TuRBO-1 implementation** based on the published BoTorch tutorial.
 
@@ -23,7 +23,7 @@ TuRBO-1 uses lengthscale-weighted ARD Matérn regions, Thompson sampling, feedba
 
 The [manual HEBO / TuRBO-1 benchmark workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/full-optimisers.yml) runs the two engines in separate Python environments, stores both sets of **model-simulated** F8 results and produces a downloadable comparison artifact only after equal-budget checks. Use **Run workflow** to select a budget and `f8`, `proposals` or `all`.
 
-This is post-capstone research, not automatic assessment code. Any upstream package or model failure is exposed rather than silently replaced with a lightweight imitation.
+This is post-capstone research, not historical query-selection code. Any upstream package or model failure is exposed rather than silently replaced with a lightweight imitation.
 
 ## Run the dependency-free unit tests
 

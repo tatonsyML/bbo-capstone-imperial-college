@@ -1,6 +1,6 @@
 # Final reproducible notebook
 
-**Start here for Component 25.3:** [Capstone_Final_Walkthrough.ipynb](Capstone_Final_Walkthrough.ipynb). It describes and executes the core data audit, verified results, Gaussian Process decision demonstration and independently testable F5/F8 evidence.
+**Start with the executable notebook:** [Capstone_Final_Walkthrough.ipynb](Capstone_Final_Walkthrough.ipynb). It describes and executes the core data audit, verified results, Gaussian Process decision demonstration and independently testable F5/F8 evidence.
 
 Run it from the repository root or the `notebooks/` folder:
 
@@ -19,4 +19,4 @@ The three earlier small notebooks are dated explorations that were not saved wit
 | [Model comparison](../journey/round_10/early_notebooks/model_comparison.ipynb) | HEBO-inspired and TuRBO-style proposals | Historical helper |
 | [Optimisation review](../journey/round_10/early_notebooks/optimisation_review.ipynb) | Round 10 candidate archive | Historical helper |
 
-[Assessment map](../docs/assessment_guide.md) · [Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)
+[Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)

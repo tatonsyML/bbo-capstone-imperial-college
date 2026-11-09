@@ -18,7 +18,7 @@ This is the **single chronological home** for the capstone. Each round has one p
 | **12** | — | F6/F7 structural confirmation | F6/F7 improvements with structural evidence | [Open R12](round_12/README.md) |
 | **13** | — | Final F2/F3/F4 gains | F2/F3/F4 improved again in final round | [Open R13](round_13/README.md) |
 
-## Original work and assessment snapshots
+## Original work and historical snapshots
 
 - [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the subsequently recovered F7 R11 coordinates from the official results email.
 - [Module 21.2 original assessed datasheet/model card/decision log](round_10/archive/component_21_2/), preserved as historical evidence.
@@ -27,4 +27,4 @@ This is the **single chronological home** for the capstone. Each round has one p
 
 **Chronology warning:** repository commits were assembled later from surviving data and notebooks; Git creation dates must not be read as the original experimental execution dates. A retrospective model fit is not represented as a prospective forecast.
 
-[Main project](../README.md) · [Final reproducible notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) · [Course assessment guide](../docs/assessment_guide.md).
+[Main project](../README.md) · [Final reproducible notebook](../notebooks/Capstone_Final_Walkthrough.ipynb).

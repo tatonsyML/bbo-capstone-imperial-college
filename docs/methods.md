@@ -4,7 +4,7 @@
 
 ## What was implemented and when?
 
-**The capstone and the later benchmark are deliberately separate.** During the 13-round challenge I used Gaussian-process surrogate models, acquisition functions, controlled probes, structural investigations and *HEBO-inspired* / *TuRBO-style* challenger mechanisms. The **full official-HEBO / BoTorch TuRBO-1 comparison code was added after the challenge**. It was not used to pick historical portal inputs. This distinction matters for an instructor reviewing methodological evidence.
+**The capstone and the later benchmark are deliberately separate.** During the 13-round challenge I used Gaussian-process surrogate models, acquisition functions, controlled probes, structural investigations and *HEBO-inspired* / *TuRBO-style* challenger mechanisms. The **full official-HEBO / BoTorch TuRBO-1 comparison code was added after the challenge**. It was not used to pick historical portal inputs. This distinction matters when checking methodology against the historical evidence.
 
 | Method | Code | What it actually does | Status |
 |---|---|---|---|
@@ -62,7 +62,7 @@ Read the same **through-Week-9** historical observation snapshot for each functi
 - That a candidate chosen using the final history was actually available before its original submission date.
 - That the optional HEBO and BoTorch engines have been executed here: **their packages are not available during the code review**, so no numeric algorithm-versus-algorithm verdict is recorded.
 
-## Instructor's code-reading route
+## Code-reading route
 
 1. [optimizer.py](../src/bbo/optimizer.py): historical mechanisms, input, output and explanatory comments.
 2. [surrogates.py](../src/bbo/surrogates.py) + [acquisition.py](../src/bbo/acquisition.py): model assumptions and the exploration/exploitation trade-off.
@@ -173,4 +173,4 @@ The 3D pictures are static SVG projections, intended to render directly in GitHu
 
 
 
-The optional full HEBO / BoTorch TuRBO-1 simulation remains separate: [research/full_optimisers](../research/full_optimisers/README.md). Its synthetic F8 evaluations are not portal outcomes. [Final notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) is the main assessment reproduction route.
+The optional full HEBO / BoTorch TuRBO-1 simulation remains separate: [research/full_optimisers](../research/full_optimisers/README.md). Its synthetic F8 evaluations are not portal outcomes. [Final notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) is the main reproducible walkthrough.

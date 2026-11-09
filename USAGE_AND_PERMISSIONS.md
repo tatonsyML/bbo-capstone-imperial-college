@@ -1,6 +1,6 @@
 # Usage, attribution and course data
 
-This repository is public to support course assessment, reproducibility and portfolio review.
+This repository is public to document reproducible optimisation research, explain decisions and share a technical learning journey.
 
 **Source code:** No open-source software licence has been selected. Public availability alone does not grant a licence for unrestricted reuse. Contact the repository owner if you need permission for reuse outside normal reading and academic review.
 
