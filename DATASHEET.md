@@ -58,7 +58,7 @@ The project records **279 outputs** in total: 175 starting observations and 104 
 
 ## 6. Weekly iteration and learning
 
-One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](journey/README.md) records actual inputs and outputs; the [project journey](docs/project_journey.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
+One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](journey/README.md) records actual inputs and outputs; the [project journey](archive/notes/early_project_timeline.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
 
 ## 7. Biases, limitations and appropriate use
 

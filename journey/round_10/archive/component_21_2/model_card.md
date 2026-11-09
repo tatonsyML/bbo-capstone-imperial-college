@@ -171,7 +171,7 @@ Useful starting points:
 - [Dataset and provenance](datasheet.md)
 - [Chronological queries and outcomes](../../../README.md)
 - [Current implementation](../../../../src/bbo/)
-- [Best measured scores](../../../../results/current_best_after_week9.csv)
+- [Best measured scores](../../../../archive/results/current_best_after_week9.csv)
 - [Forecast audit](../../../../results/week9_forecast_audit.csv)
 - [F8 quadratic coefficients](../../../../results/f8_additive_quadratic_coefficients.csv)
 - [Decision log](decision_log.md)

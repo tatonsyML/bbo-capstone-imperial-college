@@ -42,7 +42,7 @@ This table separates the strategy I was considering from the **results the porta
 | **12** | Structural forecast checks and further local tests | F6 reached −0.037519; F7's pre-result Hartmann-6 prediction closely matched 3.322368 |
 | **13** | Final exploitation and selected alternative regions | F2, F3 and F4 reached new personal bests. F1/F5/F8 repeated earlier scores, F7 remained numerically equivalent and F6 did not improve |
 
-The [round-by-round archive](journey/README.md) and [project journey](docs/project_journey.md) distinguish recorded returns from retrospective interpretation.
+The [round-by-round archive](journey/README.md) and [project journey](archive/notes/early_project_timeline.md) distinguish recorded returns from retrospective interpretation.
 
 ## 5. Trade-offs and decisions
 

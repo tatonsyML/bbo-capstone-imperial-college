@@ -32,4 +32,4 @@ The [experiments](../../journey/README.md) folder preserves dated query and retu
 
 **Do not treat a dated forecast, proposed input or peer observation as an observed personal score.**
 
-[Back to overview](../../README.md) · [Function guide](functions.md) · [Reproduction](methods.md)
+[Back to overview](../../README.md) · [Function guide](../../docs/functions.md) · [Reproduction](../../docs/methods.md)
