@@ -216,7 +216,7 @@ An additive eight-variable quadratic has 17 linear regression coefficients: a co
 
 F2 and F3 have unstable regions and unverified structural alternatives; F4 remains model-disagreement-sensitive; F6 has imperfect approximate fits. None is labelled mathematically solved.
 
-**Executable in this repository:** F8's initial-data-only fit and 13-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../results/round10_revision_audit.md); identifying source references should be retained separately for authorised attribution.
+**Executable in this repository:** F8's initial-data-only fit and 13-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../journey/round_10/README.md); identifying source references should be retained separately for authorised attribution.
 
 ## Visualisation scope
 

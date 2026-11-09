@@ -109,7 +109,7 @@ The last step is especially important with a finite horizon: an exploratory quer
 
 Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
 
-[Provenance and attribution requirements](../DATASHEET.md) · [Dated audit](../results/round10_revision_audit.md) · [Full model card](model_card.md) · [Final verified results](../journey/round_13/README.md)
+[Provenance and attribution requirements](../DATASHEET.md) · [Dated audit](../journey/round_10/README.md) · [Full model card](../MODEL_CARD.md) · [Final verified results](../journey/round_13/README.md)
 
 ## Reproduce the supported results
 
@@ -140,7 +140,7 @@ The test demonstrates a strong retrospective fit and held-out prediction for tha
 
 ### Other source material
 
-The historical GP and acquisition pipeline is available in [src/bbo](../src/bbo/) with [python -m bbo.pipeline](../python -m bbo.pipeline), [notebooks](../notebooks/) and [configs](../configs/optimisation.yaml).
+The historical GP and acquisition pipeline is available in [src/bbo](../src/bbo/) with [python -m bbo.pipeline](../src/bbo/pipeline.py), [notebooks](../notebooks/) and [configs](../journey/round_10/optimisation.yaml).
 
 ```bash
 PYTHONPATH=src python -m bbo.pipeline
@@ -157,7 +157,7 @@ PYTHONPATH=src python -m bbo.pipeline
 - Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
 - Starting observations and past bests are distinct from an individual round's returned outcome.
 
-For a short explanation start with [the README](../README.md), then consult [methods](strategy_and_validation.md), [mathematical reconstruction](functions.md) and [data provenance](../DATASHEET.md).
+For a short explanation start with [the README](../README.md), then consult [methods](methods.md), [mathematical reconstruction](functions.md) and [data provenance](../DATASHEET.md).
 
 ### Regenerate the visual gallery
 
@@ -167,7 +167,7 @@ From the repository root, with **Node.js 18+**, without installing further packa
 node results/figures/build_visual_gallery.mjs
 ```
 
-This rebuilds the [16 SVG images](../results/figures/README.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 has no preserved input, so it cannot be placed in input space.
+This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 has no preserved input, so it cannot be placed in input space.
 
 The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](functions.md).
 

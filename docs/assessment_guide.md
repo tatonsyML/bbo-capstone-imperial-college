@@ -12,7 +12,7 @@
 | **Complete datasheet** | **[Final datasheet](../DATASHEET.md)** | Origin, composition, collection, preparation, missing inputs, bias, permitted use and distribution |
 | **Complete model card** | **[Final model card](../MODEL_CARD.md)** | GP assumptions, strategy evolution, results, quantitative validation, failure modes and maintenance |
 | **Approximately 100-word explanation** | [README introduction](../README.md#the-project-in-about-100-words) | 105 words in clear general-audience English |
-| **Well-organised repository and linked data** | [README](../README.md) · [279-row CSV](../data/all_observations.csv) · [visualisations](visual_gallery.md) · [assessment archive](../submissions/README.md) | All current deliverables linked directly; historical documents separately indexed |
+| **Well-organised repository and linked data** | [README](../README.md) · [279-row CSV](../data/all_observations.csv) · [visualisations](functions.md) · [assessment archive](../journey/README.md) | All current deliverables linked directly; historical documents separately indexed |
 
 ## How to reproduce
 
