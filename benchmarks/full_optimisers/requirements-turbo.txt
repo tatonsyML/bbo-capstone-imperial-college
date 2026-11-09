@@ -1,0 +1,6 @@
+-r requirements-core.txt
+# BoTorch implementation of TuRBO-1 from the published tutorial.
+# Check version compatibility when installing these optional libraries.
+torch>=2.2
+botorch>=0.16,<0.19
+gpytorch>=1.14
