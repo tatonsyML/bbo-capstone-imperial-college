@@ -22,13 +22,13 @@ jobs:
       - name: Install core project dependencies
         run: python -m pip install -r requirements.txt
       - name: Check Python module syntax
-        run: python -m compileall -q src/bbo benchmarks/full_optimisers
+        run: python -m compileall -q src/bbo research/full_optimisers
       - name: Run core and post-capstone unit tests
         env:
           PYTHONPATH: src
-        run: python -m pytest -q tests benchmarks/full_optimisers/test_benchmark.py
+        run: python -m pytest -q tests research/full_optimisers/test_benchmark.py
       - name: Check all internal Markdown file links
-        run: python scripts/check_internal_links.py
+        run: python tests/check_internal_links.py
       - name: Confirm structural F8 and F5 calculations
         env:
           PYTHONPATH: src

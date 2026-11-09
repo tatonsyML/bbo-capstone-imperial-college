@@ -28,4 +28,4 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 
 ## Status and versioning
 
-**All 13 rounds are confirmed:** 175 initial and 104 personal returns (279 evaluations). [Final bests](../reports/current_best_after_week13.csv) and [Round 13 evidence](round13_evidence.md) supersede dated snapshots. Historical files preserve what was recorded or submitted at the time and are not silently rewritten.
+**All 13 rounds are confirmed:** 175 initial and 104 personal returns (279 evaluations). [Final bests](../results/current_best_after_week13.csv) and [Round 13 evidence](round13_evidence.md) supersede dated snapshots. Historical files preserve what was recorded or submitted at the time and are not silently rewritten.

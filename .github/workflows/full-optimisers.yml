@@ -26,13 +26,13 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install official HEBO dependencies
-        run: python -m pip install -r benchmarks/full_optimisers/requirements-hebo.txt
+        run: python -m pip install -r research/full_optimisers/requirements-hebo.txt
       - name: Run HEBO on fixed data and model-only feedback
-        run: python benchmarks/full_optimisers/benchmark.py --engine hebo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
+        run: python research/full_optimisers/benchmark.py --engine hebo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
       - uses: actions/upload-artifact@v4
         with:
           name: hebo-records
-          path: reports/full_hebo_turbo/
+          path: results/full_hebo_turbo/
           if-no-files-found: error
 
   turbo:
@@ -45,13 +45,13 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install BoTorch and GPyTorch
-        run: python -m pip install -r benchmarks/full_optimisers/requirements-turbo.txt
+        run: python -m pip install -r research/full_optimisers/requirements-turbo.txt
       - name: Run TuRBO-1 on identical data and model-only feedback
-        run: python benchmarks/full_optimisers/benchmark.py --engine turbo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
+        run: python research/full_optimisers/benchmark.py --engine turbo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
       - uses: actions/upload-artifact@v4
         with:
           name: turbo-records
-          path: reports/full_hebo_turbo/
+          path: results/full_hebo_turbo/
           if-no-files-found: error
 
   compare:
@@ -65,16 +65,16 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install core CSV dependencies
-        run: python -m pip install -r benchmarks/full_optimisers/requirements-core.txt
+        run: python -m pip install -r research/full_optimisers/requirements-core.txt
       - uses: actions/download-artifact@v4
         with:
           pattern: '*-records'
-          path: reports/full_hebo_turbo/
+          path: results/full_hebo_turbo/
           merge-multiple: true
       - name: Validate fairness and create summary
-        run: python benchmarks/full_optimisers/benchmark.py --mode compare
+        run: python research/full_optimisers/benchmark.py --mode compare
       - uses: actions/upload-artifact@v4
         with:
           name: f8-model-comparison
-          path: reports/full_hebo_turbo/
+          path: results/full_hebo_turbo/
           if-no-files-found: error

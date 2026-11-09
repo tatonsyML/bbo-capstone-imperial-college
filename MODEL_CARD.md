@@ -26,7 +26,7 @@ My baseline uses Gaussian Process (GP) surrogates with RBF/Matérn kernels and a
 4. **Structure test:** try a simple explanatory equation when the numerical evidence justifies it. Record whether its prediction was made before the portal response or reconstructed afterwards.
 5. **Budget-aware selection:** one query per function per round requires a clear improvement or information rationale; repeats consume the same limited evaluations.
 
-The historically implemented **HEBO-inspired** committee and **TuRBO-style** trust region are adaptations, not complete official HEBO or TuRBO. Full reference-algorithm code was added *after* the capstone and is separated in [benchmarks](benchmarks/full_optimisers/README.md).
+The historically implemented **HEBO-inspired** committee and **TuRBO-style** trust region are adaptations, not complete official HEBO or TuRBO. Full reference-algorithm code was added *after* the capstone and is separated in [benchmarks](research/full_optimisers/README.md).
 
 ## 4. Development timeline: Rounds 1–13
 
@@ -103,7 +103,7 @@ The same approach would require additional validation, security checks and hard 
 
 ## 10. Reproducibility and maintenance
 
-**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/reproduce.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](reports/current_best_after_week13.csv) and the [visual gallery](docs/visual_gallery.md) allow a reviewer to verify the claims.
+**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/reproduce.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/visual_gallery.md) allow a reviewer to verify the claims.
 
 Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
 
