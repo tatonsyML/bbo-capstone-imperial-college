@@ -27,6 +27,8 @@ jobs:
         env:
           PYTHONPATH: src
         run: python -m pytest -q tests benchmarks/full_optimisers/test_benchmark.py
+      - name: Check all internal Markdown file links
+        run: python scripts/check_internal_links.py
       - name: Confirm structural F8 and F5 calculations
         env:
           PYTHONPATH: src
