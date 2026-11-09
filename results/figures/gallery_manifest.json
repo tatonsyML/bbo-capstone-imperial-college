@@ -10,8 +10,8 @@
     "fixed": null,
     "note": "Observed points; log10(score) clipped at 10^-60",
     "assets": [
-      "reports/figures/f1_2d.svg",
-      "reports/figures/f1_3d.svg"
+      "results/figures/f1_2d.svg",
+      "results/figures/f1_3d.svg"
     ]
   },
   {
@@ -25,8 +25,8 @@
     "fixed": null,
     "note": "Observed points; values are raw portal scores",
     "assets": [
-      "reports/figures/f2_2d.svg",
-      "reports/figures/f2_3d.svg"
+      "results/figures/f2_2d.svg",
+      "results/figures/f2_3d.svg"
     ]
   },
   {
@@ -40,8 +40,8 @@
     "fixed": null,
     "note": "Projection only: x3 varies across points",
     "assets": [
-      "reports/figures/f3_2d.svg",
-      "reports/figures/f3_3d.svg"
+      "results/figures/f3_2d.svg",
+      "results/figures/f3_3d.svg"
     ]
   },
   {
@@ -55,8 +55,8 @@
     "fixed": null,
     "note": "Projection only: x3 and x4 vary across points",
     "assets": [
-      "reports/figures/f4_2d.svg",
-      "reports/figures/f4_3d.svg"
+      "results/figures/f4_2d.svg",
+      "results/figures/f4_3d.svg"
     ]
   },
   {
@@ -75,8 +75,8 @@
     ],
     "note": "Equation slice; x3=x4=0.999999; display uses log1p(score)",
     "assets": [
-      "reports/figures/f5_2d.svg",
-      "reports/figures/f5_3d.svg"
+      "results/figures/f5_2d.svg",
+      "results/figures/f5_3d.svg"
     ]
   },
   {
@@ -90,8 +90,8 @@
     "fixed": null,
     "note": "Projection only: x3, x4 and x5 vary across points",
     "assets": [
-      "reports/figures/f6_2d.svg",
-      "reports/figures/f6_3d.svg"
+      "results/figures/f6_2d.svg",
+      "results/figures/f6_3d.svg"
     ]
   },
   {
@@ -112,8 +112,8 @@
     ],
     "note": "Benchmark-model slice; x3...x6 fixed at best R12 values",
     "assets": [
-      "reports/figures/f7_2d.svg",
-      "reports/figures/f7_3d.svg"
+      "results/figures/f7_2d.svg",
+      "results/figures/f7_3d.svg"
     ]
   },
   {
@@ -136,8 +136,8 @@
     ],
     "note": "Equation slice; all other inputs fixed at fitted vertex",
     "assets": [
-      "reports/figures/f8_2d.svg",
-      "reports/figures/f8_3d.svg"
+      "results/figures/f8_2d.svg",
+      "results/figures/f8_3d.svg"
     ]
   }
 ]
