@@ -2,6 +2,8 @@
 
 **Imperial College London · Professional Certificate in Machine Learning and Artificial Intelligence**
 
+[![Core Python tests](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml/badge.svg)](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml)
+
 **8 hidden functions** · **2–8 input dimensions** · **13 completed rounds** · **279 recorded evaluations**
 
 > **The question:** With only one evaluation per function per round, how do you decide which experiment is worth running next?

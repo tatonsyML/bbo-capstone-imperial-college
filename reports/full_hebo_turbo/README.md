@@ -1,6 +1,8 @@
 # Full HEBO / TuRBO-1 benchmark results
 
-**Execution status: NOT RUN with full optional engines.**
+**Full-engine results are not yet confirmed here.**
+
+A [manual benchmark workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/full-optimisers.yml) is available for actual execution and downloadable evidence artifacts.
 
 The implementation and explanatory unit tests are in [benchmarks/full_optimisers](../../benchmarks/full_optimisers/). The current working runtime lacks both the official HEBO package and BoTorch/GPyTorch; therefore **there are no simulated comparison scores to publish here**. The presence of this directory must not be interpreted as a completed benchmark.
 

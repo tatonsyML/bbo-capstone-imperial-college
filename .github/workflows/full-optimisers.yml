@@ -1,0 +1,80 @@
+# Optional POST-CAPSTONE benchmark. Only manual dispatch; no fabricated portal scores.
+name: Full HEBO vs TuRBO-1 (simulated F8)
+
+on:
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "New model-simulator evaluations per engine and seed"
+        type: number
+        required: true
+        default: 12
+      mode:
+        description: "F8 simulation, eight unscored proposals, or both"
+        type: choice
+        options: [f8, proposals, all]
+        default: f8
+
+jobs:
+  hebo:
+    name: Official HEBO
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install official HEBO dependencies
+        run: python -m pip install -r benchmarks/full_optimisers/requirements-hebo.txt
+      - name: Run HEBO on fixed data and model-only feedback
+        run: python benchmarks/full_optimisers/benchmark.py --engine hebo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hebo-records
+          path: reports/full_hebo_turbo/
+          if-no-files-found: error
+
+  turbo:
+    name: BoTorch TuRBO-1
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install BoTorch and GPyTorch
+        run: python -m pip install -r benchmarks/full_optimisers/requirements-turbo.txt
+      - name: Run TuRBO-1 on identical data and model-only feedback
+        run: python benchmarks/full_optimisers/benchmark.py --engine turbo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: turbo-records
+          path: reports/full_hebo_turbo/
+          if-no-files-found: error
+
+  compare:
+    name: Compare equal-budget simulated results
+    needs: [hebo, turbo]
+    if: ${{ inputs.mode }} != 'proposals'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install core CSV dependencies
+        run: python -m pip install -r benchmarks/full_optimisers/requirements-core.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: '*-records'
+          path: reports/full_hebo_turbo/
+          merge-multiple: true
+      - name: Validate fairness and create summary
+        run: python benchmarks/full_optimisers/benchmark.py --mode compare
+      - uses: actions/upload-artifact@v4
+        with:
+          name: f8-model-comparison
+          path: reports/full_hebo_turbo/
+          if-no-files-found: error
