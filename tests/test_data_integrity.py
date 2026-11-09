@@ -11,7 +11,7 @@ def test_full_inventory():
     assert (data.source == "course_initial").sum() == 175
     assert (data.source == "personal_portal").sum() == 104
     assert data.output.notna().all()
-    assert all(len(data[(data.function == f) & (data.round > 0)]) == 13 for f in range(1, 9))
+    assert all(len(data[(data.function == f) & (data['round'] > 0)]) == 13 for f in range(1, 9))
 
 def test_missing_f7_input_not_reconstructed():
     data = pd.read_csv(ROOT / "data/all_observations.csv")
