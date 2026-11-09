@@ -19,37 +19,14 @@ The **[five-criterion assessment checklist](docs/assessment_25_3.md)** is the be
 | Rubric criterion | Direct evidence |
 |---|---|
 | Clear, commented, runnable code and reproducible results | **[Final Jupyter walkthrough](notebooks/Capstone_Final_Walkthrough.ipynb)** · [run instructions](docs/assessment_25_3.md#how-to-reproduce) · [CI checks](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) |
-| Complete datasheet | **[Final datasheet](docs/final_datasheet.md)** |
-| Complete model card | **[Final model card](docs/final_model_card.md)** |
+| Complete datasheet | **[Final datasheet](DATASHEET.md)** |
+| Complete model card | **[Final model card](MODEL_CARD.md)** |
 | Approximately 100-word non-technical explanation | [Read below](#the-project-in-about-100-words) |
 | Organised, complete and linked repository | [Assessment map](docs/assessment_25_3.md) · [data index](data/README.md) · [visual gallery](docs/visual_gallery.md) |
 
 ## The project in about 100 words
 
-This project searches for the best settings of eight hidden functions. Each takes between two and eight numbers, but its formula is unknown. I had one query per function in each round, so every experiment mattered. I began with Gaussian Processes to estimate promising settings and uncertainty, then compared their suggestions with controlled tests and simpler mathematical models. Across 13 rounds I recorded 104 returned queries alongside 175 starting observations. My final round improved three functions. For Function 8, a quadratic fitted to the 40 original observations predicted all 13 later returned scores to numerical precision. This repository documents the decisions, results, code and limitations.
-
-## Choose your reading route
-
-| If you want to… | Start here |
-|---|---|
-| Understand the project in two minutes | [Plain-English introduction](#the-challenge-in-plain-english) and [results](#results-at-a-glance) |
-| Explore all eight 2D/3D visualisations | **[Visual gallery: known versus uncertain](docs/visual_gallery.md)** |
-| Find the best input for a function | [Function-by-function guide](docs/function_guide.md) |
-| Understand what changed across rounds | [Project journey](docs/project_journey.md) |
-| Examine the strongest evidence | [Round 13 evidence](docs/round13_evidence.md) · [Validation and strategy](docs/strategy_and_validation.md) · [Reconstructed functions](docs/structural_reconstruction.md) |
-| Understand the code, HEBO and TuRBO | **[Optimisation algorithms and code guide](docs/optimisation_algorithms.md)** |
-| Run the assessed Jupyter walkthrough | **[Final notebook](notebooks/Capstone_Final_Walkthrough.ipynb)** |
-| Run the checked mathematical experiment | [Reproduction guide](docs/reproduce.md) |
-| Review assessed work and historical material | [Assessment archive](submissions/README.md) |
-| Check data origin, bias or limitations | [Data guide](data/README.md) · [Provenance](docs/evidence_provenance.md) |
-
-## The challenge in plain English
-
-Imagine eight sealed machines, each with between two and eight controls. You choose a setting, submit it and receive one score. You cannot inspect the hidden mechanism or calculate its gradient. You have **one new query for each machine per round**, so wasting an evaluation matters.
-
-I used **Gaussian processes (GPs)** to predict results and uncertainty from the observations available at each stage. **Expected Improvement (EI)** and **Upper Confidence Bound (UCB)** helped suggest where to explore or refine. I compared those proposals with local experiments, model challengers and eventually equations reconstructed from the measured behaviour. Not every method worked on every function.
-
-For readers new to Bayesian optimisation: the model proposes where to experiment; the portal returns the real score; the next decision should depend on how well the model's expectations survived that test.
+This project searches for the best settings of eight hidden functions. Each takes between two and eight numbers, but its formula is unknown. I had one query per function in each round, so every experiment mattered. I began with a statistical model to estimate promising settings and how uncertain those predictions were, then compared its suggestions with controlled tests and simpler formulas. Across 13 rounds I recorded 104 returned queries alongside 175 starting observations. My final round improved three functions. For Function 8, a simple formula fitted to 40 original observations predicted all 13 later scores almost exactly. This repository documents the decisions, results, code and limitations.
 
 ## Results at a glance
 
@@ -95,6 +72,16 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 
 [Read the complete case studies](docs/function_guide.md) · [Read the evidence and chronology](docs/round12_evidence.md)
 
+## Data, model and optimisation settings
+
+**Data:** The complete dataset has **279 rows and is about 40 KB**, so it is stored directly in this repository. No large datasets are hosted here. [Data guide](data/README.md) · [Final datasheet](DATASHEET.md).
+
+**Model:** Gaussian Process models with RBF or Matérn kernels, compared with simpler fitted equations where appropriate. [Model card](MODEL_CARD.md).
+
+**Hyperparameter optimisation:** Kernel lengthscales and noise levels are fitted to the observations available at the relevant stage. Acquisition settings and local-search regions guide proposed queries. [Code and algorithm explanation](docs/optimisation_algorithms.md).
+
+**Contact:** [Open a GitHub issue](https://github.com/tatonsyML/bbo-capstone-imperial-college/issues) for questions about reproducibility.
+
 ## Methods, in one view
 
 | Approach | Role in this project | Lesson |
@@ -111,7 +98,7 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 
 For the instructor, start with the **[annotated optimisation code guide](docs/optimisation_algorithms.md)**. It explains the original GP/EI/UCB pipeline, the **HEBO-inspired versus official HEBO** distinction, the original **TuRBO-style versus full TuRBO-1** distinction, and why a fair comparison is not the same as claiming a better portal score.
 
-The [post-capstone HEBO and TuRBO-1 benchmark](benchmarks/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The full optional engines have not been executed in this runtime, so no simulated comparison scores are claimed.
+The [post-capstone HEBO and TuRBO-1 benchmark](benchmarks/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The optional full-algorithm comparison has not yet been run, so no simulated comparison scores are claimed.
 
 [Historical source](src/bbo/README.md) · [Reference comparison source](benchmarks/full_optimisers/benchmark.py) · [Reproduction guide](docs/reproduce.md)
 
@@ -152,7 +139,7 @@ tests/         Automated checks
 
 
 - **Not every equation is solved.** F1, F5, F7 and F8 have supported reconstructed forms, with different evidence strengths; F2, F3, F4 and F6 remain unresolved.
-- **Source matters.** Course-supplied starting observations, personal portal returns, prospective predictions, retrospective analysis and external published observations are not interchangeable. The [final datasheet](docs/final_datasheet.md) states that the 175 course-supplied numerical values are already in public CSV files, pending a redistribution-permission check. External results informed some choices but do not count as my personal evaluations.
+- **Source matters.** Course-supplied starting observations, personal portal returns, prospective predictions, retrospective analysis and external published observations are not interchangeable. The [final datasheet](DATASHEET.md) states that the 175 course-supplied numerical values are already in public CSV files, pending a redistribution-permission check. External results informed some choices but do not count as my personal evaluations.
 - **History is not overwritten.** Early model cards, submissions and notebooks are dated snapshots and can contain statements that were correct when written but are superseded by later returns.
 - **Known gaps are visible.** The exact Round 11 F7 input is missing from the retained log. Round 13 outcomes are verified. The GP pipeline demonstration uses an earlier data cut, not the complete 13-round history.
 

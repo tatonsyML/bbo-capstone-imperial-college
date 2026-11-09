@@ -9,7 +9,7 @@ python -m pip install -r requirements-notebook.txt
 python -m jupyter nbconvert --to notebook --execute notebooks/Capstone_Final_Walkthrough.ipynb --output Capstone_Final_Walkthrough_executed.ipynb
 ```
 
-The output notebook is generated locally. The [automated notebook job](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/notebook-25-3.yml) executes the same cells and saves a downloadable notebook artifact. The source notebook stores no invented outputs.
+The output notebook is generated locally. The [automated notebook job](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/notebook-25-3.yml) executes the same cells and saves a downloadable notebook artifact. The published notebook includes executed outputs after the dedicated notebook verification workflow completes.
 
 The three earlier small notebooks are dated explorations that were not saved with output cells. They are not the assessed 25.3 reproduction path.
 
@@ -19,4 +19,4 @@ The three earlier small notebooks are dated explorations that were not saved wit
 | [Model comparison](model_comparison.ipynb) | HEBO-inspired and TuRBO-style proposals | Historical helper |
 | [Optimisation review](optimisation_review.ipynb) | Round 10 candidate archive | Historical helper |
 
-[Assessment map](../docs/assessment_25_3.md) · [Datasheet](../docs/final_datasheet.md) · [Model card](../docs/final_model_card.md)
+[Assessment map](../docs/assessment_25_3.md) · [Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)

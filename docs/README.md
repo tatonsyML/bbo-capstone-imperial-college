@@ -6,7 +6,7 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 |---|---|---|
 | Assessor | **[Component 25.3 checklist](assessment_25_3.md)** | Where is each rubric requirement and how do I verify it? |
 | Assessor | [Final executable notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) | Generate the main numerical results from versioned data |
-| Assessor | [Final datasheet](final_datasheet.md) · [final model card](final_model_card.md) | Complete Stage 2 documentation |
+| Assessor | [Final datasheet](../DATASHEET.md) · [final model card](../MODEL_CARD.md) | Complete Stage 2 documentation |
 | Everyone | [README](../README.md) | What was the challenge and what happened? |
 | Everyone | **[2D/3D visual gallery](visual_gallery.md)** | What was measured, modelled or left unknown in each function? |
 | Everyone | [Function-by-function guide](function_guide.md) | Which input did best, why, and what is uncertain? |
@@ -18,13 +18,13 @@ Choose the level of detail you need. Each page has a distinct purpose so the mai
 | Auditor | [Provenance](evidence_provenance.md) | What originated with the course, this participant or external publications? |
 | Auditor | [Decision log](decision_log.md) | How did evidence affect important query decisions? |
 | Reproducer | [Run and reproduce](reproduce.md) | Which code is checked and what remains historical? |
-| Researcher | [Model card](model_card.md) · [Datasheet](datasheet.md) | Full modelling and dataset documentation |
+| Researcher | [Final model card](../MODEL_CARD.md) · [Final datasheet](../DATASHEET.md) | Full current modelling and dataset documentation |
 
 ## Two clear reading sequences
 
 **Short route (about the argument):** [README](../README.md) → [visual gallery](visual_gallery.md) → [function guide](function_guide.md) → [project journey](project_journey.md) → [main retrospective](../submissions/stage_2/component_25_1/retrospective.md).
 
-**Technical route (about the evidence):** [code and algorithms](optimisation_algorithms.md) → [model card](model_card.md) → [validation strategy](strategy_and_validation.md) → [reconstruction](structural_reconstruction.md) → [reproduction](reproduce.md) → [provenance](evidence_provenance.md).
+**Technical route (about the evidence):** [code and algorithms](optimisation_algorithms.md) → [model card](../MODEL_CARD.md) → [validation strategy](strategy_and_validation.md) → [reconstruction](structural_reconstruction.md) → [reproduction](reproduce.md) → [provenance](evidence_provenance.md).
 
 ## Status and versioning
 

@@ -9,8 +9,8 @@
 | Requirement | File to assess | Verification |
 |---|---|---|
 | **Commented code, easy to run, results reproducible** | **[Final Jupyter notebook](../notebooks/Capstone_Final_Walkthrough.ipynb)**; [source code](../src/bbo/README.md); [tests](../tests/) | Run All and confirm 279 observations, eight bests, F8's 40/13 holdout, F5 boundary |
-| **Complete datasheet** | **[Final datasheet](final_datasheet.md)** | Origin, composition, collection, preparation, missing inputs, bias, permitted use and distribution |
-| **Complete model card** | **[Final model card](final_model_card.md)** | GP assumptions, strategy evolution, results, quantitative validation, failure modes and maintenance |
+| **Complete datasheet** | **[Final datasheet](../DATASHEET.md)** | Origin, composition, collection, preparation, missing inputs, bias, permitted use and distribution |
+| **Complete model card** | **[Final model card](../MODEL_CARD.md)** | GP assumptions, strategy evolution, results, quantitative validation, failure modes and maintenance |
 | **Approximately 100-word explanation** | [README introduction](../README.md#the-project-in-about-100-words) | 105 words in clear general-audience English |
 | **Well-organised repository and linked data** | [README](../README.md) · [279-row CSV](../data/all_observations.csv) · [visualisations](visual_gallery.md) · [assessment archive](../submissions/README.md) | All current deliverables linked directly; historical documents separately indexed |
 
@@ -29,7 +29,7 @@ The source notebook finds the repository root from its working directory. The ex
 
 ## What the assessor should know
 
-- **279 observed outputs:** 175 supplied starting observations and 104 personally returned queries. [Data provenance](final_datasheet.md).
+- **279 observed outputs:** 175 supplied starting observations and 104 personally returned queries. [Data provenance](../DATASHEET.md).
 - **One missing F7 input:** the Round 11 score is known; its input coordinates are unavailable and have not been guessed.
 - **F8 validation:** 17-coefficient additive quadratic fitted to 40 initial observations; 13 later returns excluded from fitting. This experiment is retrospective.
 - **F5 validation:** permitted boundary 0.999999 in each coordinate, rather than the mathematical 1.0 corner.

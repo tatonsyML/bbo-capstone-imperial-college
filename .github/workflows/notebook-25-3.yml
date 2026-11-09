@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - review/capstone-25-3-rubric-finalisation
+      - main
     paths:
       - "notebooks/Capstone_Final_Walkthrough.ipynb"
       - "data/all_observations.csv"

@@ -2,6 +2,8 @@
 
 ## What is actually recorded?
 
+The complete dataset contains **279 rows (approximately 40 KB)** and is stored in this repository. No large datasets are hosted here. External datasets, if needed for further research, should be linked rather than committed.
+
 | Source | Count | Use |
 |---|---:|---|
 | Course-provided initial observations | **175** | Starting evidence across eight functions |
@@ -23,7 +25,7 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 - **Exact Round 13 portal returns:** [data/portal_rounds_13.csv](portal_rounds_13.csv)
 - **F8 initial versus later validation observations:** [data/accumulated/function_8/observations_through_week13.csv](accumulated/function_8/observations_through_week13.csv)
 - **Initial-data source and redistribution caveat:** [data/initial/README.md](initial/README.md)
-- **Full dataset description:** [docs/datasheet.md](../docs/datasheet.md)
+- **Full dataset description:** [docs/datasheet.md](../DATASHEET.md)
 
 ## Interpretation rules
 
