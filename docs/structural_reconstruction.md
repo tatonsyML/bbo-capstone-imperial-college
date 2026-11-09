@@ -24,6 +24,8 @@ where b = (7.5, 16, 40, 120). Squared power sums introduce interactions between 
 
 ## F7: positive Hartmann-6
 
+The [Hartmann-6 benchmark reference](https://www.sfu.ca/~ssurjano/hart6.html) describes the conventional minimisation form; the reconstructed response uses its sign-reversed positive maximisation form. Its benchmark coefficients are documented in the [reproducible figure script](../scripts/build_visual_gallery.mjs).
+
 The function agrees numerically with the positive Hartmann-6 benchmark in the tested observations. The Round 12 structural candidate predicted **3.32236801 before evaluation**; the portal returned **3.3223680113931557**. The R13 query shifted x1 by 0.000001 and returned 3.322368011392718, approximately 4.38 × 10⁻¹³ below the R12 result. This is supported prediction and numerical agreement, not proof of identity everywhere.
 
 ## F1: Gaussian-modulated oscillations

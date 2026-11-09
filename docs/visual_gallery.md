@@ -133,7 +133,7 @@ For F1 the historic oscillatory explanation lacks complete public parameters, so
 
 **What we know so far.** The standard positive Hartmann-6 expression exactly reproduces the R12 and R13 returns at their documented inputs. The figure varies x1 and x2 while x3–x6 are fixed at (0.476874, 0.275332, 0.311652, 0.657301). A structural forecast preceded the R12 return.
 
-**What remains uncertain.** Agreement at tested inputs does not authenticate the hidden source everywhere. The two-dimensional slice does not show all six-dimensional basins. The missing R11 F7 input has not been invented or plotted.
+**What remains uncertain.** The [Hartmann-6 benchmark reference](https://www.sfu.ca/~ssurjano/hart6.html) defines the usual minimisation function; the plotted expression uses the corresponding **positive** value for this maximisation challenge. Agreement at tested inputs does not authenticate the hidden source everywhere. The two-dimensional slice does not show all six-dimensional basins. The missing R11 F7 input has not been invented or plotted.
 
 **Optimisation lesson.** A pre-result structural forecast is stronger evidence than a retrospective match alone.
 
