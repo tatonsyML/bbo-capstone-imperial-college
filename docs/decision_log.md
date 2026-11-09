@@ -37,7 +37,7 @@ Retrospective analysis never overwrites the historical record, and unsubmitted c
 
 Each proposed query must have a credible prospect of improvement **or** produce information that changes a later decision. Historical forecast accuracy and direct observations take precedence over algorithm prestige. This is a documented human review policy rather than a calibrated automatic acceptance rule.
 
-**The Round 10 vectors are now confirmed as submitted**, but none has an observed score in the dataset. Four earlier provisional ideas (F1, F3, F6 and F7) were replaced. The old points are preserved alongside final choices and their evidential rationale in [the revision audit](../reports/round10_revision_audit.md). F2, F4, F5 and F8 were unchanged.
+**The Round 10 vectors are now confirmed as submitted**, but none has an observed score in the dataset. Four earlier provisional ideas (F1, F3, F6 and F7) were replaced. The old points are preserved alongside final choices and their evidential rationale in [the revision audit](../results/round10_revision_audit.md). F2, F4, F5 and F8 were unchanged.
 
 **F8's predicted output of 10 remains a structural model result until the portal returns its score.** F6 and F7's higher model-predicted means are not measured improvements. Some exploratory candidate selection was informed by public classmates' evaluated data; these are external benchmarks, not observations collected by this participant, and their assessed use is subject to the course collaboration rules.
 

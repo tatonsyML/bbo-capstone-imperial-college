@@ -2,7 +2,7 @@
 
 These small functions document mechanisms explored around Round 10.
 They are NOT the full reference HEBO/TuRBO implementations. Those appear in
-benchmarks/full_optimisers/ and were added for post-capstone comparison.
+research/full_optimisers/ and were added for post-capstone comparison.
 
 Workflow: fit -> score candidates -> select one -> submit to portal -> observe.
 This module stops at selection; it NEVER invents a portal return.
@@ -123,7 +123,7 @@ def official_hebo_suggest(X, y):
 
     HEBO is written as a MINIMISER; the sign change below converts our
     maximisation objective. The post-capstone comparison has a more
-    complete warm-start/feedback loop at benchmarks/full_optimisers/.
+    complete warm-start/feedback loop at research/full_optimisers/.
     """
     try:
         from hebo.design_space.design_space import DesignSpace

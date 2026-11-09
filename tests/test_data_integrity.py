@@ -25,7 +25,7 @@ def test_missing_f7_input_not_reconstructed():
 
 def test_final_best_scores_derived_from_all_observations():
     data = pd.read_csv(ROOT / "data/all_observations.csv")
-    report = pd.read_csv(ROOT / "reports/current_best_after_week13.csv")
+    report = pd.read_csv(ROOT / "results/current_best_after_week13.csv")
     actual = data.groupby("function")["output"].max().sort_index()
     expected = report.set_index("Function")["Final_Best"].sort_index()
     np.testing.assert_allclose(actual.to_numpy(), expected.to_numpy(), atol=1e-12)

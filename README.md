@@ -30,7 +30,7 @@ This project searches for the best settings of eight hidden functions. Each take
 
 ## Results at a glance
 
-![Cumulative best scores for F1 to F8, each on its own scale](assets/progress.svg)
+![Cumulative best scores for F1 to F8, each on its own scale](results/figures/progress.svg)
 
 The diagram tracks the **best observed score so far** from the initial data to Round 13. **Each tile has a separate vertical scale**: it shows *progress*, not a valid numerical comparison between functions.
 
@@ -47,18 +47,18 @@ The diagram tracks the **best observed score so far** from the initial data to R
 
 The final round established **three additional personal bests**: F2, F3 and F4. The other five were first achieved in R10–R12. These are best-so-far observations, not one-round scores. Their scales differ and must not be added or averaged.
 
-[Final bests and inputs (CSV)](reports/current_best_after_week13.csv) · [Round 13 portal returns](data/portal_rounds_13.csv) · [Final-round evidence](docs/round13_evidence.md)
+[Final bests and inputs (CSV)](results/current_best_after_week13.csv) · [Round 13 portal returns](data/portal_rounds_13.csv) · [Final-round evidence](docs/round13_evidence.md)
 
 ## Visualise the eight functions
 
 The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.
 
 <table><tr>
-<td width="50%"><a href="docs/visual_gallery.md#f8-a-testable-additive-quadratic"><img src="reports/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
-<td width="50%"><a href="docs/visual_gallery.md#f2-a-different-region-succeeds"><img src="reports/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
+<td width="50%"><a href="docs/visual_gallery.md#f8-a-testable-additive-quadratic"><img src="results/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
+<td width="50%"><a href="docs/visual_gallery.md#f2-a-different-region-succeeds"><img src="results/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
 </tr></table>
 
-[Explore all eight functions](docs/visual_gallery.md) · [Rebuild the graphics](scripts/build_visual_gallery.mjs)
+[Explore all eight functions](docs/visual_gallery.md) · [Rebuild the graphics](results/figures/build_visual_gallery.mjs)
 
 ## Three discoveries worth reading
 
@@ -98,9 +98,9 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 
 For the instructor, start with the **[annotated optimisation code guide](docs/optimisation_algorithms.md)**. It explains the original GP/EI/UCB pipeline, the **HEBO-inspired versus official HEBO** distinction, the original **TuRBO-style versus full TuRBO-1** distinction, and why a fair comparison is not the same as claiming a better portal score.
 
-The [post-capstone HEBO and TuRBO-1 benchmark](benchmarks/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The optional full-algorithm comparison has not yet been run, so no simulated comparison scores are claimed.
+The [post-capstone HEBO and TuRBO-1 benchmark](research/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The optional full-algorithm comparison has not yet been run, so no simulated comparison scores are claimed.
 
-[Historical source](src/bbo/README.md) · [Reference comparison source](benchmarks/full_optimisers/benchmark.py) · [Reproduction guide](docs/reproduce.md)
+[Historical source](src/bbo/README.md) · [Reference comparison source](research/full_optimisers/benchmark.py) · [Reproduction guide](docs/reproduce.md)
 
 ## Reproduce the strongest reproducible result
 
@@ -131,7 +131,7 @@ data/                     Complete observations and historical records
 docs/                     Assessor guide, methods and detailed evidence
 experiments/              Queries, outputs and notes for all 13 rounds
 notebooks/                Executed final notebook and earlier explorations
-reports/                  Verified results, plots and forecast audits
+results/                  Verified results, plots and forecast audits
 scripts/                  Reproduce scientific plots and check links
 src/bbo/                  Commented optimisation code and validation
 benchmarks/               Optional post-capstone HEBO/TuRBO comparison (unrun)
@@ -139,7 +139,7 @@ submissions/              Preserved Stage 1 and Stage 2 coursework
 tests/                    Automated checks
 ```
 
-[Assessment checklist](docs/assessment_25_3.md) · [Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](reports/README.md) · [Assessment archive](submissions/README.md)
+[Assessment checklist](docs/assessment_25_3.md) · [Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](results/README.md) · [Assessment archive](submissions/README.md)
 
 ## Limitations and responsible interpretation
 

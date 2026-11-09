@@ -10,4 +10,4 @@ This repository is public to support course assessment, reproducibility and port
 
 **External evidence:** Publicly shared peer observations used during analysis remain external research evidence and are not included in the personal-return count.
 
-The course's data-sharing policy should be confirmed before a permanent public release tag is created. See the [final datasheet](docs/final_datasheet.md) and [evidence provenance](docs/evidence_provenance.md).
+The course's data-sharing policy should be confirmed before a permanent public release tag is created. See the [final datasheet](DATASHEET.md) and [evidence categories](DATASHEET.md#evidence-provenance-and-historical-context).

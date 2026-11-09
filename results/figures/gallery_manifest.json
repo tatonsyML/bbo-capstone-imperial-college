@@ -1,0 +1,143 @@
+[
+  {
+    "function": 1,
+    "kind": "measured-points-only",
+    "observationsPlotted": 23,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": null,
+    "note": "Observed points; log10(score) clipped at 10^-60",
+    "assets": [
+      "results/figures/f1_2d.svg",
+      "results/figures/f1_3d.svg"
+    ]
+  },
+  {
+    "function": 2,
+    "kind": "measured-points-only",
+    "observationsPlotted": 23,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": null,
+    "note": "Observed points; values are raw portal scores",
+    "assets": [
+      "results/figures/f2_2d.svg",
+      "results/figures/f2_3d.svg"
+    ]
+  },
+  {
+    "function": 3,
+    "kind": "measured-points-only",
+    "observationsPlotted": 28,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": null,
+    "note": "Projection only: x3 varies across points",
+    "assets": [
+      "results/figures/f3_2d.svg",
+      "results/figures/f3_3d.svg"
+    ]
+  },
+  {
+    "function": 4,
+    "kind": "measured-points-only",
+    "observationsPlotted": 43,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": null,
+    "note": "Projection only: x3 and x4 vary across points",
+    "assets": [
+      "results/figures/f4_2d.svg",
+      "results/figures/f4_3d.svg"
+    ]
+  },
+  {
+    "function": 5,
+    "kind": "reconstructed-model-slice",
+    "observationsPlotted": 33,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": [
+      0.999999,
+      0.999999,
+      0.999999,
+      0.999999
+    ],
+    "note": "Equation slice; x3=x4=0.999999; display uses log1p(score)",
+    "assets": [
+      "results/figures/f5_2d.svg",
+      "results/figures/f5_3d.svg"
+    ]
+  },
+  {
+    "function": 6,
+    "kind": "measured-points-only",
+    "observationsPlotted": 33,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": null,
+    "note": "Projection only: x3, x4 and x5 vary across points",
+    "assets": [
+      "results/figures/f6_2d.svg",
+      "results/figures/f6_3d.svg"
+    ]
+  },
+  {
+    "function": 7,
+    "kind": "reconstructed-model-slice",
+    "observationsPlotted": 42,
+    "axes": [
+      1,
+      2
+    ],
+    "fixed": [
+      0.201689,
+      0.150011,
+      0.476874,
+      0.275332,
+      0.311652,
+      0.657301
+    ],
+    "note": "Benchmark-model slice; x3...x6 fixed at best R12 values",
+    "assets": [
+      "results/figures/f7_2d.svg",
+      "results/figures/f7_3d.svg"
+    ]
+  },
+  {
+    "function": 8,
+    "kind": "reconstructed-model-slice",
+    "observationsPlotted": 53,
+    "axes": [
+      3,
+      8
+    ],
+    "fixed": [
+      0.1,
+      0.15,
+      0.13,
+      0.15,
+      0.8,
+      0.5,
+      0.2,
+      0.6
+    ],
+    "note": "Equation slice; all other inputs fixed at fitted vertex",
+    "assets": [
+      "results/figures/f8_2d.svg",
+      "results/figures/f8_3d.svg"
+    ]
+  }
+]

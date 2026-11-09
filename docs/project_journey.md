@@ -12,8 +12,8 @@ This is the human-readable timeline. It links the decisions to preserved records
 | **R6** | 17 | Compare GP vs MLP; controlled local experiments | [Module 17](../submissions/stage_2/modules/module_17_round_6/) |
 | **R7** | 18 | ARD kernels and sequential forecast checks | [Round 7](../experiments/round_07/) |
 | **R8** | 19 | Wider experimental audits and local search | [Module 19](../submissions/stage_2/modules/module_19_round_8/) |
-| **R9** | 20 | Forecast failures and stalled local gains | [Module 20](../submissions/stage_2/modules/module_20_round_9/) · [audit CSV](../reports/week9_forecast_audit.csv) |
-| **R10** | 21 | Model challengers, revised regions; F5/F8 records | [Round 10](../experiments/round_10/) · [revision audit](../reports/round10_revision_audit.md) |
+| **R9** | 20 | Forecast failures and stalled local gains | [Module 20](../submissions/stage_2/modules/module_20_round_9/) · [audit CSV](../results/week9_forecast_audit.csv) |
+| **R10** | 21 | Model challengers, revised regions; F5/F8 records | [Round 10](../experiments/round_10/) · [revision audit](../results/round10_revision_audit.md) |
 | **R11** | — | Structural F1; wider F4; F1–F4 new bests | [Round 11](../experiments/round_11/) |
 | **R12** | — | Structural F7 forecast; F6/F7 new bests; four repeats | [Round 12](../experiments/round_12/) · [full evidence](round12_evidence.md) |
 | **R13** | — | New bests for F2/F3/F4; all eight final outputs received | [Round 13 inputs and outputs](../experiments/round_13/) · [final evidence](round13_evidence.md) · [retrospective addendum](../submissions/stage_2/component_25_1/round13_addendum.md) |
@@ -28,7 +28,7 @@ This is the human-readable timeline. It links the decisions to preserved records
 
 ## What counts as a record?
 
-The [experiments](../experiments/) folder preserves dated query and return files where available. [Stage 2 module submissions](../submissions/stage_2/modules/README.md) are historical course artefacts. [Current results](../reports/current_best_after_week13.csv) and [provenance](evidence_provenance.md) describe what is verified now.
+The [experiments](../experiments/) folder preserves dated query and return files where available. [Stage 2 module submissions](../submissions/stage_2/modules/README.md) are historical course artefacts. [Current results](../results/current_best_after_week13.csv) and [provenance](evidence_provenance.md) describe what is verified now.
 
 **Do not treat a dated forecast, proposed input or peer observation as an observed personal score.**
 
