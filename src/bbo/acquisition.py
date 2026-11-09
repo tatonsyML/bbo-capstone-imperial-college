@@ -1,18 +1,33 @@
+"""Acquisition scores for maximising an unknown black-box objective.
+
+The GP supplies the predicted mean and standard deviation. An acquisition
+function ranks *candidate inputs*, but does not observe their true outcomes.
+"""
 from __future__ import annotations
 import numpy as np
 from scipy.stats import norm
 
 
 def expected_improvement(mu, sigma, best, xi=0.0):
-    mu=np.asarray(mu,float); sigma=np.maximum(np.asarray(sigma,float),1e-12)
-    imp=mu-best-xi; z=imp/sigma
-    return imp*norm.cdf(z)+sigma*norm.pdf(z)
+    """Expected positive improvement over the current observed incumbent.
+
+    Smaller xi favours exploiting a predicted high score; larger xi requires
+    more improvement and often promotes exploration. Sigma is clipped to
+    prevent division by zero at already explored locations.
+    """
+    mu = np.asarray(mu, float)
+    sigma = np.maximum(np.asarray(sigma, float), 1e-12)
+    improvement = mu - best - xi
+    z = improvement / sigma
+    return improvement * norm.cdf(z) + sigma * norm.pdf(z)
 
 
 def probability_improvement(mu, sigma, best, xi=0.0):
-    sigma=np.maximum(np.asarray(sigma,float),1e-12)
-    return norm.cdf((np.asarray(mu,float)-best-xi)/sigma)
+    """Probability that a GP prediction improves on the incumbent."""
+    sigma = np.maximum(np.asarray(sigma, float), 1e-12)
+    return norm.cdf((np.asarray(mu, float) - best - xi) / sigma)
 
 
 def upper_confidence_bound(mu, sigma, beta=1.96):
-    return np.asarray(mu,float)+float(beta)*np.asarray(sigma,float)
+    """Exploration/exploitation score = predicted mean + beta × uncertainty."""
+    return np.asarray(mu, float) + float(beta) * np.asarray(sigma, float)

@@ -1,21 +1,34 @@
+"""Candidate generation and legal-domain utilities for capstone models."""
 from __future__ import annotations
 import numpy as np
 from scipy.stats import qmc
 
 
 def portal_string(x):
-    return '-'.join(f'{float(v):.6f}' for v in x)
+    """Format a proposed input as the course's six-decimal dash-separated text."""
+    return "-".join(f"{float(value):.6f}" for value in x)
 
 
 def sobol_points(d, n_power=15, seed=0):
-    return np.clip(qmc.Sobol(d=d,scramble=True,seed=seed).random_base2(n_power),1e-6,.999999)
+    """Reproducible low-discrepancy pool; 2**n_power input points."""
+    candidates = qmc.Sobol(d=d, scramble=True, seed=seed).random_base2(n_power)
+    return np.clip(candidates, 1e-6, 0.999999)
 
 
 def trust_region_bounds(center, length):
-    c=np.asarray(center,float)
-    return np.maximum(0.0,c-length/2), np.minimum(.999999,c+length/2)
+    """Restrict search around a measured incumbent, respecting portal bounds.
+
+    This static box is NOT the full adaptive TuRBO trust-region mechanism.
+    """
+    centre = np.asarray(center, float)
+    return np.maximum(0.0, centre - length / 2), np.minimum(
+        0.999999, centre + length / 2
+    )
 
 
 def scale_to_box(unit_points, lower, upper):
-    u=np.asarray(unit_points,float); lo=np.asarray(lower,float); hi=np.asarray(upper,float)
-    return lo+(hi-lo)*u
+    """Map Sobol points from [0,1]^d into a chosen feasible local box."""
+    unit = np.asarray(unit_points, float)
+    lo = np.asarray(lower, float)
+    hi = np.asarray(upper, float)
+    return lo + (hi - lo) * unit
