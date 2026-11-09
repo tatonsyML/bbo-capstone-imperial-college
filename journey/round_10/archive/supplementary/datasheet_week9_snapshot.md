@@ -1,4 +1,4 @@
-> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](round13_evidence.md), [README](../README.md) and [provenance](evidence_provenance.md). Statements that Round 10 was pending are historical, not current.
+> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](../../../round_13/README.md), [README](../../README.md) and [provenance](../../../../DATASHEET.md). Statements that Round 10 was pending are historical, not current.
 
 # Datasheet | Black-Box Optimisation Query History
 
@@ -119,10 +119,10 @@ A collection of YouTube videos covering Gaussian Processes, Bayesian Optimisatio
 ## 6. Where is it available, and under what terms?
 
 - **Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college
-- **Working data:** [data/accumulated/](../data/accumulated/)
-- **Round records:** [experiments/](../experiments/)
-- **Model card:** [docs/model_card.md](model_card.md)
-- **Decision log:** [docs/decision_log.md](decision_log.md)
+- **Working data:** [data/accumulated/](../../../../data/accumulated)
+- **Round records:** [experiments/](../../../README.md)
+- **Model card:** [docs/model_card.md](model_card_week9_snapshot.md)
+- **Decision log:** [docs/decision_log.md](../component_21_2/decision_log.md)
 
 The repository is shared for educational review. **No blanket open-source licence is asserted for the programme's starting data, objective functions or any third-party observations.** Permissions to redistribute or reuse those assets must be checked with their respective rights holders. The repository does not presently declare a general licence for its contents.
 

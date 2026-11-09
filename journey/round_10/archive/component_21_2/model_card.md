@@ -112,7 +112,7 @@ Its fitted score is **10**. This remains a **predicted**, not a portal-returned,
 
 ## 6. The Round 10 submission: decisions, not outcomes
 
-The final [Round 10 query record](../../../../experiments/round_10/queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
+The final [Round 10 query record](../../queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
 
 | Function | Decision | Evidence and uncertainty |
 |---|---|---|
@@ -169,11 +169,11 @@ In manufacturing, agriculture or clinical research, an optimisation query might 
 
 Useful starting points:
 - [Dataset and provenance](datasheet.md)
-- [Chronological queries and outcomes](../../../../experiments/)
+- [Chronological queries and outcomes](../../../README.md)
 - [Current implementation](../../../../src/bbo/)
-- [Best measured scores](../../../../reports/current_best_after_week9.csv)
-- [Forecast audit](../../../../reports/week9_forecast_audit.csv)
-- [F8 quadratic coefficients](../../../../reports/f8_additive_quadratic_coefficients.csv)
+- [Best measured scores](../../../../results/current_best_after_week9.csv)
+- [Forecast audit](../../../../results/week9_forecast_audit.csv)
+- [F8 quadratic coefficients](../../../../results/f8_additive_quadratic_coefficients.csv)
 - [Decision log](decision_log.md)
 
 ## 10. Does the model card need more detail?
