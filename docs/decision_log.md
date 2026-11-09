@@ -1,4 +1,4 @@
-> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the verified status through Round 12, use the [current evidence](round12_evidence.md), [README](../README.md) and [provenance](evidence_provenance.md). Statements that Round 10 was pending are historical, not current.
+> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](round13_evidence.md), [README](../README.md) and [provenance](evidence_provenance.md). Statements that Round 10 was pending are historical, not current.
 
 # Decision Log
 

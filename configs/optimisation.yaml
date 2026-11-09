@@ -1,3 +1,6 @@
+# Historical Round 10 planning snapshot, preserved for chronology.
+# Pending statuses below describe decision-time knowledge, not final R13 outcomes.
+# This file is not loaded by the current pipeline or final notebook.
 # Round 10 portal-submitted choices; measured results through Week 9 only
 project:
   objective: maximise

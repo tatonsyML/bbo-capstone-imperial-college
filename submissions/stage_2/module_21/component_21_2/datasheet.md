@@ -103,8 +103,8 @@ The **authoritative history keeps the actual portal outputs**. No score is repla
 ## 6. Where is it available, and under what terms?
 
 - **Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college
-- **Working data:** [data/accumulated/](../data/accumulated/)
-- **Round records:** [experiments/](../experiments/)
+- **Working data:** [data/accumulated/](../../../../data/accumulated/)
+- **Round records:** [experiments/](../../../../experiments/)
 - **Model card:** [docs/model_card.md](model_card.md)
 - **Decision log:** [docs/decision_log.md](decision_log.md)
 

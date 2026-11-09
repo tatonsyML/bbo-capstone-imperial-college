@@ -35,7 +35,7 @@ The historical GP and acquisition pipeline is available in [src/bbo](../src/bbo/
 PYTHONPATH=src python -m bbo.pipeline
 ```
 
-**Scope:** the pipeline is a preserved older demonstration with a data cut through Week 10. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
+**Scope:** the pipeline is a preserved older demonstration with a data cut through Week 9. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
 
 ## Evidence and limitations
 
