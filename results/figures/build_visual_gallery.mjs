@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Rebuild the documented figures from the repository's returned observations.
 // Node.js 18+; no external JavaScript dependencies.
-// Run from the repository root: node scripts/build_visual_gallery.mjs
+// Run from the repository root: node results/figures/build_visual_gallery.mjs
 import fs from "node:fs";
 import path from "node:path";
 const dims=[2,2,3,4,4,5,6,8];
@@ -81,7 +81,7 @@ function renderGallery(data){
       const [x,y]=pos2(pointBest.x[cols[0]],pointBest.x[cols[1]]);v2+=`<circle cx="${x}" cy="${y}" r="11" fill="none" stroke="white" stroke-width="3"/><circle cx="${x}" cy="${y}" r="6.5" fill="#122c44" stroke="#fff" stroke-width="1.5"/>`;
    }
    v2+=legend(limlo,limhi,id)+`<text x="907" y="585" font-size="11" fill="#53677d">${textesc(observed?"● darker ring: best":"● model / observed best")}</text>${id===1?`<text x="907" y="609" font-size="10" fill="#53677d">† nonpositive y clipped</text>`:""}</g></svg>`;
-   outputs[`reports/figures/f${id}_2d.svg`]=v2;
+   outputs[`results/figures/f${id}_2d.svg`]=v2;
    // 3D: projected surface for model; three-dimensional point cloud otherwise (x1, x2, observed y).
    let v3=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img"><title>${textesc(d.title)} — ${observed?"3D observation projection":"3D model slice"}</title><desc>${textesc(d.short)}. ${observed?"A point cloud only; no invented surface.":"Sliced reconstructed mathematical function."}</desc><g font-family="Arial,Helvetica,sans-serif">${basics(d.title,observed?"3D projection of actual observations; no fitted surface":"3D projected surface of the documented equation")}`;
    const [p00,p10,p01,p11]=[[0,0,0],[1,0,0],[0,1,0],[1,1,0]].map(x=>project(...x));
@@ -101,8 +101,8 @@ function renderGallery(data){
        v3+=`<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${q.mark?8:5.5}" fill="${palette(nz(q.h))}" stroke="${q.mark?"#0b2036":"#fff"}" stroke-width="${q.mark?2.5:1}" opacity=".93"/>`;}
    }
    v3+=`<line x1="${p00[0]}" y1="${p00[1]}" x2="${p10[0]}" y2="${p10[1]}" stroke="#64798c" stroke-width="2"/><line x1="${p00[0]}" y1="${p00[1]}" x2="${p01[0]}" y2="${p01[1]}" stroke="#64798c" stroke-width="2"/><text x="${p10[0]+9}" y="${p10[1]+8}" font-size="14" fill="#29455e">x${cols[0]+1}</text><text x="${p01[0]-29}" y="${p01[1]+10}" font-size="14" fill="#29455e">x${cols[1]+1}</text><text x="905" y="210" font-size="12" fill="#455f74">${textesc(id===1?"z: log10(y), clipped":id===5?"z: log1p(y)":"z: output")}</text><text x="50" y="660" font-size="13" fill="#52657b">${textesc(observed?`${block.rows.length} observed points; higher-dimensional coordinates vary · ${d.short}`:`Reconstructed model · ${d.short}`)}</text></g></svg>`;
-   outputs[`reports/figures/f${id}_3d.svg`]=v3;
-   manifest.push({function:id,kind:d.kind==="model"?"reconstructed-model-slice":"measured-points-only",observationsPlotted:block.rows.length,axes:cols.map(i=>i+1),fixed:d.fixed,note:d.short,assets:[`reports/figures/f${id}_2d.svg`,`reports/figures/f${id}_3d.svg`]});
+   outputs[`results/figures/f${id}_3d.svg`]=v3;
+   manifest.push({function:id,kind:d.kind==="model"?"reconstructed-model-slice":"measured-points-only",observationsPlotted:block.rows.length,axes:cols.map(i=>i+1),fixed:d.fixed,note:d.short,assets:[`results/figures/f${id}_2d.svg`,`results/figures/f${id}_3d.svg`]});
  }
  return {files:outputs,manifest,modelChecks:{f5:f([.999999,.999999,.999999,.999999],5),f7:f([.201689,.150011,.476874,.275332,.311652,.657301],7),f8:f(centre,8)}};
 }
@@ -111,7 +111,7 @@ for(const [filename,svg] of Object.entries(output.files)){
   fs.mkdirSync(path.dirname(filename),{recursive:true});
   fs.writeFileSync(filename,svg+"\n","utf8");
 }
-fs.writeFileSync("reports/figures/gallery_manifest.json",JSON.stringify(output.manifest,null,2)+"\n","utf8");
+fs.writeFileSync("results/figures/gallery_manifest.json",JSON.stringify(output.manifest,null,2)+"\n","utf8");
 const {f5,f7,f8}=output.modelChecks;
 if(Math.abs(f5-8662.405001248297)>1e-9||
    Math.abs(f7-3.3223680113931557)>1e-12||Math.abs(f8-10)>1e-12)

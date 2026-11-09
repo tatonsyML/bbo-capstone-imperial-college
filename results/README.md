@@ -18,7 +18,7 @@
 
 ## Reading the figures
 
-![Best confirmed score trajectories for F1–F8](../assets/progress.svg)
+![Best confirmed score trajectories for F1–F8](../results/figures/progress.svg)
 
 This graph is generated from [historical personal outputs](../data/accumulated/history_through_week10.csv) [returned R11–R12 outputs](../data/portal_rounds_11_12.csv) and [R13 returns](../data/portal_rounds_13.csv). Each mini-chart uses its own y-axis scale. The raw values are given in the [current bests](current_best_after_week13.csv).
 
@@ -30,8 +30,8 @@ This graph is generated from [historical personal outputs](../data/accumulated/h
 
 ## Visual analysis
 
-The [16-image scientific gallery](../docs/visual_gallery.md) includes 2D and 3D views for all eight functions, with honest distinctions between model slices and measured-only projections. [Figure index](figures/README.md) · [Regeneration code](../scripts/build_visual_gallery.mjs).
+The [16-image scientific gallery](../docs/visual_gallery.md) includes 2D and 3D views for all eight functions, with honest distinctions between model slices and measured-only projections. [Figure index](figures/README.md) · [Regeneration code](../results/figures/build_visual_gallery.mjs).
 
 ## Post-capstone full optimiser study
 
-[Full HEBO / BoTorch TuRBO-1 benchmark](../benchmarks/full_optimisers/README.md) · [Current execution status](full_hebo_turbo/README.md). Results are **not published** until both optional engines have run; the proposed F8 comparison uses **simulated** quadratic-model feedback, not the private portal.
+[Full HEBO / BoTorch TuRBO-1 benchmark](../research/full_optimisers/README.md) · [Current execution status](full_hebo_turbo/README.md). Results are **not published** until both optional engines have run; the proposed F8 comparison uses **simulated** quadratic-model feedback, not the private portal.

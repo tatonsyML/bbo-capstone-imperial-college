@@ -4,7 +4,7 @@
 
 The original project used [HEBO-inspired and TuRBO-style experiments](../../src/bbo/optimizer.py). This folder provides a separately labelled, reproducible **reference comparison** using (a) the **official HEBO Python package** and (b) a **BoTorch/GPyTorch TuRBO-1 implementation** based on the published BoTorch tutorial.
 
-[Main source: benchmark.py](benchmark.py) · [Code walkthrough](../../docs/optimisation_algorithms.md) · [Unit tests](test_benchmark.py) · [Experiment status](../../reports/full_hebo_turbo/README.md)
+[Main source: benchmark.py](benchmark.py) · [Code walkthrough](../../docs/optimisation_algorithms.md) · [Unit tests](test_benchmark.py) · [Experiment status](../../results/full_hebo_turbo/README.md)
 
 ## Study design
 
@@ -30,7 +30,7 @@ This is post-capstone research, not automatic assessment code. Any upstream pack
 From the capstone repository root, with NumPy, pandas and pytest installed:
 
 ```bash
-python -m pytest -q benchmarks/full_optimisers/test_benchmark.py
+python -m pytest -q research/full_optimisers/test_benchmark.py
 ```
 
 The tests check F8 held-out reconstruction, the 17-feature basis, six-decimal bounds, TuRBO length adaptation and fair-budget rejection. They do **not** execute HEBO or BoTorch.
@@ -44,8 +44,8 @@ Because older official HEBO versions and current BoTorch/GPyTorch releases have 
 ```bash
 python -m venv .venv-hebo
 source .venv-hebo/bin/activate
-python -m pip install -r benchmarks/full_optimisers/requirements-hebo.txt
-python benchmarks/full_optimisers/benchmark.py --engine hebo --mode all --budget 12 --seeds 0 1 2
+python -m pip install -r research/full_optimisers/requirements-hebo.txt
+python research/full_optimisers/benchmark.py --engine hebo --mode all --budget 12 --seeds 0 1 2
 deactivate
 ```
 
@@ -54,20 +54,20 @@ deactivate
 ```bash
 python -m venv .venv-turbo
 source .venv-turbo/bin/activate
-python -m pip install -r benchmarks/full_optimisers/requirements-turbo.txt
-python benchmarks/full_optimisers/benchmark.py --engine turbo --mode all --budget 12 --seeds 0 1 2
+python -m pip install -r research/full_optimisers/requirements-turbo.txt
+python research/full_optimisers/benchmark.py --engine turbo --mode all --budget 12 --seeds 0 1 2
 deactivate
 ```
 
 **Compare only after both runs complete:**
 
 ```bash
-python benchmarks/full_optimisers/benchmark.py --mode compare
+python research/full_optimisers/benchmark.py --mode compare
 ```
 
 On Windows, activate the environments using the appropriate `.venv-*/Scripts/activate` command. To reduce run time for a smoke test, run `--mode f8 --budget 2 --seeds 0` in both environments. Avoid treating that tiny budget as a meaningful algorithm ranking.
 
-The default output folder is `reports/full_hebo_turbo/`. Results will include:
+The default output folder is `results/full_hebo_turbo/`. Results will include:
 
 | Generated file | Meaning |
 |---|---|

@@ -416,7 +416,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."),
                         help="Capstone repository root containing data/accumulated")
-    parser.add_argument("--out", type=Path, default=Path("reports/full_hebo_turbo"))
+    parser.add_argument("--out", type=Path, default=Path("results/full_hebo_turbo"))
     parser.add_argument("--engine", choices=["hebo", "turbo", "both"], default="both")
     parser.add_argument("--mode", choices=["f8", "proposals", "all", "compare"], default="all")
     parser.add_argument("--budget", type=int, default=12)
