@@ -1,21 +1,33 @@
-# Verified evidence through Round 12
+# Round 12 | Structural forecast verification and F6 recovery
 
-The latest verified evidence includes 175 initial course observations plus 12 returned rounds × eight functions = **271 evaluations**, including repeated coordinates. Round 13 outputs are not verified.
+**Status:** The eight returned portal scores were confirmed. R12 improved F6 and F7, while several functions repeated earlier inputs.
 
-## Best-so-far outcomes
+## What I did and what happened
 
-| Function | Final verified best | First attained |
-|---|---:|---|
-| F1 | 1.9999999996761817 | R11 |
-| F2 | 0.6953368270741286 | R11 |
-| F3 | -0.005709220275560069 | R11 |
-| F4 | 0.7304594213260924 | R11 |
-| F5 | 8662.405001248297 | R10 |
-| F6 | -0.03751864724436928 | R12 |
-| F7 | 3.3223680113931557 | R12 |
-| F8 | 10 | R10 |
+| Function | Actual input | Returned score |
+|---|---|---:|
+| F1 | 0.628540-0.628540 | 1.9999999996761817 |
+| F2 | 0.684399-0.368552 | 0.660671151390024 |
+| F3 | 0.313581-0.474345-0.485191 | -0.0226526646178297 |
+| F4 | 0.415000-0.417000-0.366500-0.413000 | 0.7304594213260924 |
+| F5 | 0.999999-0.999999-0.999999-0.999999 | 8662.405001248297 |
+| F6 | 0.415080-0.344119-0.644062-0.776818-0.076258 | -0.03751864724436928 |
+| F7 | 0.201689-0.150011-0.476874-0.275332-0.311652-0.657301 | 3.3223680113931557 |
+| F8 | 0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000 | 10 |
 
-All eight final bests were established during Rounds 10–12. [Full result CSV](../results/current_best_after_week12.csv) includes inputs and Round 9 comparisons. Scores use different scales and should not be aggregated.
+F7's positive Hartmann-6 forecast of about **3.32236801** was recorded before receiving the Round 12 score of **3.3223680113931557**.
+
+## What I learnt
+
+Repeats confirmed the same values without exploring new input regions. A pre-result structural forecast is more informative than matching a function only after seeing its score.
+
+## Original evidence
+
+[Returned values](outputs.txt) · [R11–12 portal CSV](../../data/portal_rounds_11_12.csv) · [observed history](../../data/all_observations.csv). The full Round 12 input list is captured in the combined portal file.
+
+## Detailed Round 12 analysis (dated snapshot)
+
+The following evidence was recorded with **271 known scores** before the Round 13 returns arrived. It is retained as the analysis available at that stage, not the current final-best table.
 
 ## Three different problems, three evidence-based changes
 
@@ -44,4 +56,5 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 
 **Portal:** personally selected, returned result. **Prospective:** forecast recorded before result. **Retrospective:** equation fit or analysis performed afterwards. **External:** publicly shared results used for model comparisons or checking, not counted as personal queries. **Hypothesis:** unconfirmed conjecture or Round 13 candidate.
 
-[Provenance](evidence_provenance.md) · [Structural reconstruction](structural_reconstruction.md) · [Portal log](../data/portal_rounds_11_12.csv).
+[Provenance](../../DATASHEET.md) · [Structural reconstruction](../../docs/functions.md) · [Portal log](../../data/portal_rounds_11_12.csv).
+
