@@ -2,6 +2,10 @@
 
 This guide distinguishes **tests that are executable from this repository** from **historical experiments whose exact environment or scripts are not fully retained**.
 
+## Final Component 25.3: start here
+
+Use the [annotated final notebook](../notebooks/Capstone_Final_Walkthrough.ipynb), [complete observed data](../data/all_observations.csv), [final model card](final_model_card.md) and [final datasheet](final_datasheet.md). The [five-criterion checklist](assessment_25_3.md) is the instructor's entry point. The older Week 9 pipeline is a preserved historical experiment, not a complete 13-round replay.
+
 ## Quick start
 
 Requirements: Python, pip, a shell and access to the repository root. The package dependencies are pinned in [requirements.txt](../requirements.txt), except for the minimum pytest version.
@@ -35,7 +39,7 @@ The historical GP and acquisition pipeline is available in [src/bbo](../src/bbo/
 PYTHONPATH=src python -m bbo.pipeline
 ```
 
-**Scope:** the pipeline is a preserved older demonstration with a data cut through Week 10. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
+**Scope:** the pipeline is a preserved older demonstration with a data cut through Week 9. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
 
 ## Evidence and limitations
 

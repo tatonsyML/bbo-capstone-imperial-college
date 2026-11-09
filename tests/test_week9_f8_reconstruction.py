@@ -1,3 +1,4 @@
+"""Historical Week 9 F8 fit; not the 40/13 held-out check."""
 from pathlib import Path
 import numpy as np
 from bbo.diagnostics import f8_additive_quadratic

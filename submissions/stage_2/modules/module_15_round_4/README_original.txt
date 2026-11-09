@@ -1,3 +1,8 @@
+ARCHIVED PACKAGE MANIFEST — HISTORICAL ONLY
+The following inventory describes the original Module 15 working package.
+Some files and folders, especially source_data/ and original .npy arrays,
+are NOT present in the current public repository.
+
 Capstone BBO Week 4 / Module 15
 ================================
 

@@ -1,6 +1,6 @@
 # Component 21.1 archive
 
-**Artifact status:** exact final draft recovered from the project conversation.  
+**Artifact status:** exact final draft assembled from the retained historical evidence.  
 **Submission status:** not independently verified in this repository.  
 **Evidence cut:** portal observations through Week 9; Round 10 remained prospective.
 

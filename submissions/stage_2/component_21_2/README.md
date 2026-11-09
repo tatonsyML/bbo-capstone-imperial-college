@@ -1,11 +1,7 @@
-# Component 21.2 status
+# Component 21.2: assessment snapshot
 
-**Status:** current working/finalisation stage, not frozen as a historical submission.
+The original Module 21.2 assessment material is preserved in [Module 21 / Component 21.2](../module_21/component_21_2/), with the observations available **through Week 9** and the Round 10 proposals still pending at the time.
 
-The live deliverables are:
+For the **final 25.3 submission**, use the [final datasheet](../../../docs/final_datasheet.md), [final model card](../../../docs/final_model_card.md) and [reproducible notebook](../../../notebooks/Capstone_Final_Walkthrough.ipynb). These include all 13 returned rounds.
 
-- [Datasheet](../../../docs/datasheet.md)
-- [Model card](../../../docs/model_card.md)
-- [Decision log](../../../docs/decision_log.md)
-
-Once submission is confirmed, the exact submitted versions will be copied into this folder and then left unchanged. Until then, this folder deliberately does not pretend the current files are a historical submission snapshot.
+The original documents remain dated evidence. Their historical statements are not a current progress report.

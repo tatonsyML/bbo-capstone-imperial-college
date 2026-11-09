@@ -2,6 +2,8 @@
 
 ## What is actually recorded?
 
+The complete dataset contains **279 rows (approximately 40 KB)** and is stored in this repository. No large datasets are hosted here. External datasets, if needed for further research, should be linked rather than committed.
+
 | Source | Count | Use |
 |---|---:|---|
 | Course-provided initial observations | **175** | Starting evidence across eight functions |
@@ -12,6 +14,8 @@
 
 All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175 initial supplied observations.
 
+**Complete observational record:** [279 rows in one tidy CSV](all_observations.csv), comprising 175 course-provided and 104 personal portal outcomes. One F7 row has a returned score but missing coordinates.
+
 ## Find the right data file
 
 - **Best inputs and results:** [reports/current_best_after_week13.csv](../reports/current_best_after_week13.csv)
@@ -19,9 +23,9 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 - **Historical portal scores through R10:** [data/accumulated/history_through_week10.csv](accumulated/history_through_week10.csv)
 - **Exact later portal returns and known missing coordinate:** [data/portal_rounds_11_12.csv](portal_rounds_11_12.csv)
 - **Exact Round 13 portal returns:** [data/portal_rounds_13.csv](portal_rounds_13.csv)
-- **F8 initial versus later validation observations:** [data/accumulated/function_8/observations_through_week13.csv](accumulated/function_8/observations_through_week12.csv)
+- **F8 initial versus later validation observations:** [data/accumulated/function_8/observations_through_week13.csv](accumulated/function_8/observations_through_week13.csv)
 - **Initial-data source and redistribution caveat:** [data/initial/README.md](initial/README.md)
-- **Full dataset description:** [docs/datasheet.md](../docs/datasheet.md)
+- **Full dataset description:** [docs/datasheet.md](../DATASHEET.md)
 
 ## Interpretation rules
 

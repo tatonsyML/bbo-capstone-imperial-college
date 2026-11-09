@@ -1,2 +1,8 @@
-...                                                                      [100%]
+Historical test snapshot (not the current suite)
+
+Original archived output:
+... [100%]
 3 passed in 0.82s
+
+Use live GitHub Actions for the present test status:
+https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml
