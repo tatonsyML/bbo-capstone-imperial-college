@@ -1,6 +1,6 @@
-# Optimisation algorithms: source code, rationale and honest comparisons
+# Optimisation methods, source code and reproduction
 
-[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Original model-card](model_card.md) · [Round 13 verified results](round13_evidence.md)
+[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Original model-card](../MODEL_CARD.md) · [Round 13 verified results](../journey/round_13/README.md)
 
 ## What was implemented and when?
 
@@ -79,3 +79,98 @@ Read the same **through-Week-9** historical observation snapshot for each functi
 - Cowen-Rivers et al., *HEBO: Pushing the Limits of Sample-Efficient Hyperparameter Optimisation*.
 
 [← Back to homepage](../README.md)
+
+
+---
+
+## How the evidence changed my decisions
+
+Across the thirteen rounds I did not adopt one immutable optimiser. The [chronological journey](../journey/README.md) records when I trusted a GP forecast, tested a controlled local step or changed the representation entirely. Three checks mattered most:
+
+### The three decision checks
+
+**Prediction reliability — F2.** Pre-outcome forecast **0.730502**, returned **0.505526**. A single miss challenges this local forecast; it does not by itself establish a noise model.
+
+**Search adequacy — F4.** Forecast error near **1.6 × 10⁻⁹**, while repeated microsteps left the best near **0.659**. Widening the local search returned **0.730459**. Accurate prediction and good query selection are different tests.
+
+**Representation — F8.** A GP forecast could be accurate while an additive quadratic supplied a more complete mathematical explanation and identified a vertex of **10**. The original-40-only test was performed **retrospectively** and predicted the next 13 returned observations at numerical precision.
+
+### Practical model-selection rule
+
+1. Keep a simple baseline and a probabilistic model.
+2. Record the proposed query, forecast and reason **before** the result.
+3. Evaluate on points not used for fitting, preferably in chronological order.
+4. When a simpler model consistently predicts better and survives a targeted structural check, consider promoting it to candidate selection.
+5. Use any remaining evaluation budget in proportion to what a result could change.
+
+The last step is especially important with a finite horizon: an exploratory query in R13 cannot provide knowledge for an R14 that does not exist.
+
+### External evidence and provenance
+
+Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
+
+[Provenance and attribution requirements](../DATASHEET.md) · [Dated audit](../results/round10_revision_audit.md) · [Full model card](model_card.md) · [Final verified results](../journey/round_13/README.md)
+
+## Reproduce the supported results
+
+### Quick start
+
+Requirements: Python, pip, a shell and access to the repository root. The package dependencies are pinned in [requirements.txt](../requirements.txt), except for the minimum pytest version.
+
+```bash
+python -m pip install -r requirements.txt
+PYTHONPATH=src python -m bbo.structural_validation
+PYTHONPATH=src python -m pytest -q
+```
+
+On Windows PowerShell, replace `PYTHONPATH=src <command>` with `$env:PYTHONPATH = 'src'` followed by the command.
+
+### What the structural validation checks
+
+| Check | Input | Expected conclusion |
+|---|---|---|
+| F8 full-rank fit | 40 initial course observations | 17 identifiable coefficients |
+| F8 post-fit validation | 13 later personal portal returns, excluded from fit | Maximum absolute error under `2e-14` (test threshold) |
+| F8 predicted vertex | Recovered quadratic | Centre approximately `(0.10,0.15,0.13,0.15,0.80,0.50,0.20,0.60)`, maximum approximately 10 |
+| F5 permitted corner | Four inputs of `0.999999` | Approximately `8662.405001248297` |
+
+The code is in [src/bbo/structural_validation.py](../src/bbo/structural_validation.py) and tests in [tests/test_structural_validation.py](../tests/test_structural_validation.py). The [F8 CSV](../data/accumulated/function_8/observations_through_week13.csv) labels initial versus later points. The model fits **only the initial 40**.
+
+The test demonstrates a strong retrospective fit and held-out prediction for that equation family. It is not evidence that this model was used in Round 1.
+
+### Other source material
+
+The historical GP and acquisition pipeline is available in [src/bbo](../src/bbo/) with [python -m bbo.pipeline](../python -m bbo.pipeline), [notebooks](../notebooks/) and [configs](../configs/optimisation.yaml).
+
+```bash
+PYTHONPATH=src python -m bbo.pipeline
+```
+
+**Scope:** the pipeline is a preserved older demonstration with a data cut through Week 9. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
+
+### Evidence and limitations
+
+- Latest verified status: **all 13 rounds**, or 104 personal portal evaluations.
+- The [Round 13 input/output log](../data/portal_rounds_13.csv) and [final audit](../journey/round_13/README.md) are verified.
+- The exact R11 input on F7 is missing from the available retained sources; its returned score was recorded.
+- Published external examples informed later investigations but must not be mixed into the personal returns dataset without source labelling and any required academic attribution.
+- Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
+- Starting observations and past bests are distinct from an individual round's returned outcome.
+
+For a short explanation start with [the README](../README.md), then consult [methods](strategy_and_validation.md), [mathematical reconstruction](functions.md) and [data provenance](../DATASHEET.md).
+
+### Regenerate the visual gallery
+
+From the repository root, with **Node.js 18+**, without installing further packages:
+
+```bash
+node results/figures/build_visual_gallery.mjs
+```
+
+This rebuilds the [16 SVG images](../results/figures/README.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 has no preserved input, so it cannot be placed in input space.
+
+The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](functions.md).
+
+
+
+The optional full HEBO / BoTorch TuRBO-1 simulation remains separate: [research/full_optimisers](../research/full_optimisers/README.md). Its synthetic F8 evaluations are not portal outcomes. [Final notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) is the main assessment reproduction route.
