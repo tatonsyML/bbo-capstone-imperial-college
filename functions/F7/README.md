@@ -2,7 +2,7 @@
 
 **6 input dimensions · 30 starting observations · 13 submitted queries · best observed output `3.32236801139316`.**
 
-F7's Round 12 pre-result structural forecast succeeded. The exact R11 input was not preserved.
+F7's Round 12 pre-result structural forecast succeeded. The Round 11 coordinates were subsequently recovered from the official course-results email; the original selection script is still unavailable.
 
 ## Every weekly portal submission
 
@@ -20,7 +20,7 @@ Each output is **measured**, not a GP prediction. **↑** marks a new best relat
 | [8](../../journey/round_08/README.md) | `0.23407-0.36927-0.256273-0.262985-0.391467-0.834089` | `1.785862549726479` **↑** | `1.785862550` | [Evidence](../../journey/round_08/results/round8_queries.csv) · [code](../../journey/round_08/capstone_bbo_module19_round8.py) |
 | [9](../../journey/round_09/README.md) | `0.228702-0.36927-0.256273-0.262985-0.391467-0.834089` | `1.786338197796892` **↑** | `1.786338198` | [Evidence](../../journey/round_09/results/round9_queries.csv) · [code](../../journey/round_09/round9_controlled_fits.py) |
 | [10](../../journey/round_10/README.md) | `0.190478-0.171014-0.347582-0.283057-0.283946-0.639922` | `3.149458800087033` **↑** | `3.149458800` | [Evidence](../../journey/round_10/round10_candidates.csv) · [code](../../src/bbo/optimizer.py) |
-| [11](../../journey/round_11/README.md) | **Missing input** | `3.27896792623` **↑** | `3.278967926` | [Evidence](../../journey/round_11/README.md) |
+| [11](../../journey/round_11/README.md) | `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` | `3.278967926227992` **↑** | `3.278967926` | [Evidence](../../journey/round_11/README.md) |
 | [12](../../journey/round_12/README.md) | `0.201689-0.150011-0.476874-0.275332-0.311652-0.657301` | `3.3223680113931557` **↑** | `3.322368011` | [Evidence](../../journey/round_12/README.md) |
 | [13](../../journey/round_13/README.md) | `0.201690-0.150011-0.476874-0.275332-0.311652-0.657301` | `3.322368011392718` | `3.322368011` | [Evidence](../../journey/round_13/README.md) |
 

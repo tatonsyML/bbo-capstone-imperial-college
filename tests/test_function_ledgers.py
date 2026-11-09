@@ -57,23 +57,23 @@ def test_round_histories_match_only_known_pre_round_scores():
             ).lower()
 
 
-def test_missing_f7_r11_coordinates_not_inferred():
+def test_f7_r11_official_email_recovery():
     rows = read(ROOT / "functions" / "F7" / "selection_history.csv")
     assert rows[10]["round"] == "11"
-    assert rows[10]["input_status"] == "missing_input"
-    assert rows[10]["submitted_input"] == ""
-    assert rows[10]["actual_output"] == "3.27896792623"
+    assert rows[10]["input_status"] == "confirmed"
+    assert rows[10]["submitted_input"] == "0.233000-0.128000-0.522000-0.276000-0.310000-0.667000"
+    assert rows[10]["actual_output"] == "3.278967926227992"
     assert rows[11]["scores_available_before"] == "41"
-    assert rows[11]["usable_pairs_before"] == "40"
+    assert rows[11]["usable_pairs_before"] == "41"
 
 
-def test_replay_excludes_unknown_coordinates_and_future_returns():
+def test_replay_uses_recovered_coordinates_and_excludes_future_returns():
     from scripts.replay_surrogates import load_before_round
     X, y, omitted, earlier = load_before_round(7, 12)
-    assert X.shape == (40, 6)
-    assert len(y) == 40
+    assert X.shape == (41, 6)
+    assert len(y) == 41
     assert len(earlier) == 41
-    assert omitted == 1
+    assert omitted == 0
     x1, y1, omitted1, _ = load_before_round(1, 1)
     assert x1.shape == (10, 2)
     assert len(y1) == 10
