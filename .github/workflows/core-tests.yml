@@ -1,0 +1,33 @@
+# Check code syntax and capstone-specific reasoning without installing the
+# heavyweight HEBO and BoTorch optional optimisation engines.
+name: Core capstone and benchmark unit tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Fetch repository
+        uses: actions/checkout@v4
+      - name: Use Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install core project dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check Python module syntax
+        run: python -m compileall -q src/bbo benchmarks/full_optimisers
+      - name: Run core and post-capstone unit tests
+        env:
+          PYTHONPATH: src
+        run: python -m pytest -q tests benchmarks/full_optimisers/test_benchmark.py
+      - name: Confirm structural F8 and F5 calculations
+        env:
+          PYTHONPATH: src
+        run: python -m bbo.structural_validation
