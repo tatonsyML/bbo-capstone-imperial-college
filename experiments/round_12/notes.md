@@ -15,4 +15,4 @@
 
 F6 and F7 improved. F1, F4, F5 and F8 were identical repeats; F2 and F3 were lower at their new inputs. The Week 12 portal processing message was received on 3 November 2026.
 
-See [machine-readable observations](../../data/portal_rounds_11_12.csv) and [final bests](../../reports/current_best_after_week12.csv). Do not substitute provisional candidate shortlists for actual submitted inputs.
+See [machine-readable observations](../../data/portal_rounds_11_12.csv) and [final bests](../../results/current_best_after_week12.csv). Do not substitute provisional candidate shortlists for actual submitted inputs.

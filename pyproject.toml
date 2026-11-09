@@ -1,4 +1,4 @@
 [tool.pytest.ini_options]
 pythonpath = ["src"]
-testpaths = ["tests", "benchmarks/full_optimisers"]
+testpaths = ["tests", "research/full_optimisers"]
 addopts = "-ra"

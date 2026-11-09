@@ -17,4 +17,4 @@
 
 This is a **post-result audit**, not proof that the eventual results were prospectively predicted. Do not infer global optimality or a noise mechanism from this one round.
 
-[Final detailed evidence](../../docs/round13_evidence.md) · [CSV](../../data/portal_rounds_13.csv) · [Final bests](../../reports/current_best_after_week13.csv)
+[Final detailed evidence](../../docs/round13_evidence.md) · [CSV](../../data/portal_rounds_13.csv) · [Final bests](../../results/current_best_after_week13.csv)
