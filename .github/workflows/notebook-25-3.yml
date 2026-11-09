@@ -12,6 +12,7 @@ on:
       - "src/bbo/**"
       - "requirements-notebook.txt"
       - "pyproject.toml"
+      - "tests/**"
       - ".github/workflows/notebook-25-3.yml"
   pull_request:
     branches: [main]
