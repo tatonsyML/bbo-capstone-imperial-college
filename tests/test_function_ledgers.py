@@ -78,3 +78,23 @@ def test_replay_excludes_unknown_coordinates_and_future_returns():
     assert x1.shape == (10, 2)
     assert len(y1) == 10
     assert omitted1 == 0
+
+
+def test_replay_refits_and_labels_an_unscored_proposal():
+    """Smoke-test the full GP fitting route on a cheap pre-round snapshot."""
+    from scripts.replay_surrogates import replay
+
+    report = replay(
+        function=2, round_number=9, kernel="Matern25",
+        acquisition="EI", restarts=0, seed=909, n_power=4,
+        beta=1.96, xi=0.0,
+    )
+    assert report["provenance"] == "RETROSPECTIVE_COUNTERFACTUAL_NOT_ORIGINAL_SUBMISSION"
+    assert report["earlier_observed_scores"] == 18
+    assert report["usable_training_pairs"] == 18
+    assert len(report["learned_ard_lengthscales"]) == 2
+    assert report["logged_submission_retrospective_prediction"] is not None
+    suggestion = report["NEW_UNOBSERVED_counterfactual_candidate"]
+    assert suggestion["real_portal_score"] is None
+    assert len(suggestion["coordinates"]) == 2
+    assert all(0 <= x <= 0.999999 for x in suggestion["coordinates"])
