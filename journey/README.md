@@ -20,7 +20,7 @@ This is the **single chronological home** for the capstone. Each round has one p
 
 ## Original work and assessment snapshots
 
-- [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including one R11 F7 score whose coordinates were not retained.
+- [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the subsequently recovered F7 R11 coordinates from the official results email.
 - [Module 21.2 original assessed datasheet/model card/decision log](round_10/archive/component_21_2/), preserved as historical evidence.
 - [Module 21.1 original reflection](round_10/archive/component_21_1/submission.md) and [Component 25.1 retrospective](final_reflection/retrospective.md).
 - [Stage 1 and missing component index](stage_1/README.md).

@@ -93,7 +93,7 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 - Repeated locations spend evaluation budget while adding limited new spatial information.
 - F2/F3/F4/F6 remain without confirmed closed-form expressions. F1's historical oscillatory reconstruction lacks fully retained public parameters.
 - F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
-- The input for the R11 F7 return was not retained; the score is recorded but the location is not invented.
+- F7's R11 inputs and full-precision output were recovered from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
 
 ## 9. Ethics, access and redistribution
 

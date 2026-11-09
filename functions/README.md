@@ -15,9 +15,11 @@ These pages present the **same experimental history** as the [13-round journey](
 
 ## How to use the function pages
 
+**Function first, week by week:** each F1–F8 page contains the complete 13-round portal table and a further **week-by-week development** section recording submitted coordinates, measured output, incumbent progress, historical strategy evidence, related surviving code and the lesson learnt. The separate [chronological archive](../journey/README.md) preserves the original round context.
+
 Open F1–F8 for all 13 submitted coordinate vectors, actual returned scores and links to the underlying Round evidence. Each directory has a full-precision `observations.csv`, a 13-row `selection_history.csv` with decision and code provenance, and a `model_runs/README.md` explaining how to refit a surrogate without future information.
 
-**What is missing:** The exact submitted input for F7 Round 11, although its output is known. Several original optimisation scripts and fitted kernel objects were never retained. No invented coordinates, fitted parameters or unobserved function scores are added.
+**Source recovery:** F7 Round 11's input and output are now verified from the official results email. Some original optimisation scripts and fitted GP objects were never retained; they are not replaced with invented historical settings.
 
 ## One codebase, separately fitted models
 

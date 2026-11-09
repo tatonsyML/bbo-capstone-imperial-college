@@ -12,7 +12,7 @@
 | **Complete datasheet** | **[Final datasheet](../DATASHEET.md)** | Origin, composition, collection, preparation, missing inputs, bias, permitted use and distribution |
 | **Complete model card** | **[Final model card](../MODEL_CARD.md)** | GP assumptions, strategy evolution, results, quantitative validation, failure modes and maintenance |
 | **Approximately 100-word explanation** | [README introduction](../README.md#the-project-in-about-100-words) | 105 words in clear general-audience English |
-| **Well-organised repository and linked data** | [README](../README.md) · [279-row CSV](../data/all_observations.csv) · [visualisations](functions.md) · [assessment archive](../journey/README.md) | All current deliverables linked directly; historical documents separately indexed |
+| **Well-organised repository and linked data** | [README](../README.md) · [13-round narratives for each function](../functions/README.md) · [279-row CSV](../data/all_observations.csv) · [visualisations](functions.md) · [assessment archive](../journey/README.md) | All current deliverables linked directly; historical documents separately indexed |
 
 ## How to reproduce
 
@@ -30,7 +30,7 @@ The source notebook finds the repository root from its working directory. The ex
 ## What the assessor should know
 
 - **279 observed outputs:** 175 supplied starting observations and 104 personally returned queries. [Data provenance](../DATASHEET.md).
-- **One missing F7 input:** the Round 11 score is known; its input coordinates are unavailable and have not been guessed.
+- **All 104 returned inputs verified:** the formerly incomplete F7 R11 coordinates were recovered from the official results email; the original selection script is not misrepresented.
 - **F8 validation:** 17-coefficient additive quadratic fitted to 40 initial observations; 13 later returns excluded from fitting. This experiment is retrospective.
 - **F5 validation:** permitted boundary 0.999999 in each coordinate, rather than the mathematical 1.0 corner.
 - **Not full hidden-source recovery:** F2/F3/F4/F6 have no confirmed closed-form reconstruction. F1 has incomplete historical reconstruction parameters.

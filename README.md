@@ -57,6 +57,10 @@ The [retrospective GP replay](scripts/replay_surrogates.py) uses **only data fro
 
 [Start with F2](functions/F2/README.md) · [Explore F8](functions/F8/README.md) · [All eight function histories](functions/README.md).
 
+## Trace every function from Round 1 to Round 13
+
+Start with **[the eight function-by-function experiment ledgers](functions/README.md)**. Each function has an auditable 13-round history of actual submitted inputs, actual returned scores, code links, strategy evidence and lessons learnt. The parallel **[chronological journey](journey/README.md)** preserves original files by round. For reproducible modelling with no future-data leakage, use the clearly labelled [retrospective GP replay](scripts/replay_surrogates.py); it is not claimed as the historical candidate generator.
+
 ## Visualise the eight functions
 
 The **[2D and 3D gallery](docs/functions.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.

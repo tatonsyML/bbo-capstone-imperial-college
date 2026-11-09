@@ -14,14 +14,14 @@ The complete dataset contains **279 rows (approximately 40 KB)** and is stored i
 
 All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175 initial supplied observations.
 
-**Complete observational record:** [279 rows in one tidy CSV](all_observations.csv), comprising 175 course-provided and 104 personal portal outcomes. One F7 row has a returned score but missing coordinates.
+**Complete observational record:** [279 rows in one tidy CSV](all_observations.csv), comprising 175 course-provided and 104 personal portal outcomes. All 104 personal portal returns have confirmed input coordinates.
 
 ## Find the right data file
 
 - **Best inputs and results:** [results/current_best_after_week13.csv](../results/current_best_after_week13.csv)
 - **Full cumulative history through R13:** [data/accumulated/history_through_week13.csv](accumulated/history_through_week13.csv)
 - **Historical portal scores through R10:** [data/accumulated/history_through_week10.csv](accumulated/history_through_week10.csv)
-- **Exact later portal returns and known missing coordinate:** [data/portal_rounds_11_12.csv](portal_rounds_11_12.csv)
+- **Exact later portal returns, including recovered F7 R11 coordinates:** [data/portal_rounds_11_12.csv](portal_rounds_11_12.csv)
 - **Exact Round 13 portal returns:** [data/portal_rounds_13.csv](portal_rounds_13.csv)
 - **F8 initial versus later validation observations:** [data/accumulated/function_8/observations_through_week13.csv](accumulated/function_8/observations_through_week13.csv)
 - **Initial-data source and redistribution caveat:** [data/initial/README.md](../USAGE_AND_PERMISSIONS.md)
@@ -35,6 +35,6 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 4. External published observations can inform model comparisons but must remain separately attributed and **must not be counted as personal returns**.
 5. Historical CSVs and models were created at different dates. Prefer the **through-R13** results for current reporting; retain earlier snapshots to document the sequence of decisions.
 
-**Known gap:** R11's F7 output is known, but the exact submitted coordinate is not preserved in the available source. It remains missing rather than being imputed.
+**Resolved source gap:** The official Round 11 results email confirms F7 input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` and score `3.278967926227992`. The initial draft retained the score alone; the verified source later supplied the coordinates without numerical imputation.
 
 [Provenance](../DATASHEET.md) · [Evidence and limitations](../journey/round_12/README.md) · [Main README](../README.md)
