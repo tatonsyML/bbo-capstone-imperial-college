@@ -6,7 +6,7 @@
 
 **Public leaderboard:** its after-Round-9 snapshot ranked this project first on F8, seventh on F4, tenth on F7 and 29th on F6 among 39 participants. It generally showed *attained scores*, not the inputs needed to achieve them.
 
-**Externally published observations:** limited public input-output records informed some later F1, F3 and F6 queries and F5/F7 challenger models; five external F8 records supported a fitted quadratic before the Round 10 submission. They were never counted as this author's portal queries. Source categories and methodological cautions are retained in the [anonymised Round 10 audit](../reports/round10_revision_audit.md). Identifying source citations are excluded from the published repository and should be supplied separately if programme rules require them.
+**Externally published observations:** limited public input-output records informed some later F1, F3 and F6 queries and F5/F7 challenger models; five external F8 records supported a fitted quadratic before the Round 10 submission. They were never counted as this author's portal queries. Source categories and methodological cautions are retained in the [anonymised Round 10 audit](../results/round10_revision_audit.md). Identifying source citations are excluded from the published repository and should be supplied separately if programme rules require them.
 
 **F8 provenance:** fit on accumulated personal records → check against five public external returns → submit model vertex → receive portal score 10 → later refit on the original 40 supplied course records alone → check against 13 later personal outputs. The final refit is *retrospective*, not a prior prospective decision.
 
@@ -22,4 +22,4 @@ Public availability of third-party inputs does not override programme collaborat
 
 The [visual gallery](visual_gallery.md) contains model-evaluated surfaces only for the documented F5, F7 and F8 reconstructions. For F1/F2/F3/F4/F6 it shows measured points without interpolation. For F3/F4/F6 the x1–x2 charts are **projections**, not slices with other inputs fixed.
 
-There are **278 plottable input/output pairs** despite **279 returned or supplied evaluations**. The R11 F7 output is recorded but its input is not, so no location is invented. [Figure manifest](../reports/figures/gallery_manifest.json) · [Generator](../scripts/build_visual_gallery.mjs).
+There are **278 plottable input/output pairs** despite **279 returned or supplied evaluations**. The R11 F7 output is recorded but its input is not, so no location is invented. [Figure manifest](../results/figures/gallery_manifest.json) · [Generator](../results/figures/build_visual_gallery.mjs).

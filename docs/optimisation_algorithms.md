@@ -1,6 +1,6 @@
 # Optimisation algorithms: source code, rationale and honest comparisons
 
-[← Main README](../README.md) · [How to run the benchmark](../benchmarks/full_optimisers/README.md) · [Original model-card](model_card.md) · [Round 13 verified results](round13_evidence.md)
+[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Original model-card](model_card.md) · [Round 13 verified results](round13_evidence.md)
 
 ## What was implemented and when?
 
@@ -13,8 +13,8 @@
 | Sobol / local bounds | [search.py](../src/bbo/search.py) | Generates feasible candidate pools | Historical implementation |
 | HEBO-inspired committee | [optimizer.py: hebo_inspired_committee](../src/bbo/optimizer.py) | Compares three kernels with transformed EI/PI/UCB rank consensus | **Not official HEBO** |
 | TuRBO-style local candidate | [optimizer.py: turbo_style_candidate](../src/bbo/optimizer.py) | Fits a GP and maximises EI inside one fixed incumbent-centred box | **Not full TuRBO** |
-| Actual HEBO library | [benchmark.py: new_hebo](../benchmarks/full_optimisers/benchmark.py) | Calls `HEBO`, supplies observed negative scores, and feeds back subsequent simulated evaluations | Post-capstone reference engine |
-| BoTorch-based TuRBO-1 | [benchmark.py: TurboState/turbo_next](../benchmarks/full_optimisers/benchmark.py) | Uses ARD Matérn GP, Thompson-sampling candidates, adaptive trust-region length and budgeted restarts | Post-capstone reference implementation |
+| Actual HEBO library | [benchmark.py: new_hebo](../research/full_optimisers/benchmark.py) | Calls `HEBO`, supplies observed negative scores, and feeds back subsequent simulated evaluations | Post-capstone reference engine |
+| BoTorch-based TuRBO-1 | [benchmark.py: TurboState/turbo_next](../research/full_optimisers/benchmark.py) | Uses ARD Matérn GP, Thompson-sampling candidates, adaptive trust-region length and budgeted restarts | Post-capstone reference implementation |
 | F8 structural challenger | [structural_validation.py](../src/bbo/structural_validation.py) | Fit 17 coefficients to original 40 and predict 13 later returned portal scores | Retrospective independent test |
 
 ## The logic behind the code
@@ -67,9 +67,9 @@ Read the same **through-Week-9** historical observation snapshot for each functi
 1. [optimizer.py](../src/bbo/optimizer.py): historical mechanisms, input, output and explanatory comments.
 2. [surrogates.py](../src/bbo/surrogates.py) + [acquisition.py](../src/bbo/acquisition.py): model assumptions and the exploration/exploitation trade-off.
 3. [Historical pipeline](../src/bbo/pipeline.py): how candidates were generated from the Week 9 snapshot.
-4. [Full comparison benchmark](../benchmarks/full_optimisers/benchmark.py): model simulation, feedback loop, fair budgets and restarts.
-5. [Benchmark unit tests](../benchmarks/full_optimisers/test_benchmark.py): the 17-parameter model, exact held-out check, trust-region state and failure tests.
-6. [Run instructions and interpretation](../benchmarks/full_optimisers/README.md).
+4. [Full comparison benchmark](../research/full_optimisers/benchmark.py): model simulation, feedback loop, fair budgets and restarts.
+5. [Benchmark unit tests](../research/full_optimisers/test_benchmark.py): the 17-parameter model, exact held-out check, trust-region state and failure tests.
+6. [Run instructions and interpretation](../research/full_optimisers/README.md).
 
 ## Technical sources
 

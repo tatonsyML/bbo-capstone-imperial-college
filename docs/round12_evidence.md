@@ -15,7 +15,7 @@ The latest verified evidence includes 175 initial course observations plus 12 re
 | F7 | 3.3223680113931557 | R12 |
 | F8 | 10 | R10 |
 
-All eight final bests were established during Rounds 10–12. [Full result CSV](../reports/current_best_after_week12.csv) includes inputs and Round 9 comparisons. Scores use different scales and should not be aggregated.
+All eight final bests were established during Rounds 10–12. [Full result CSV](../results/current_best_after_week12.csv) includes inputs and Round 9 comparisons. Scores use different scales and should not be aggregated.
 
 ## Three different problems, three evidence-based changes
 

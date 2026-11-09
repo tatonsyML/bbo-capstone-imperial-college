@@ -4,14 +4,14 @@ Each card uses **portal-observed best through Round 13**. An equation or diagnos
 
 | Function | Best verified | First achieved | Central problem | Visuals |
 |---|---:|---:|---|---|
-| F1 | 1.999999999676 | R11 | Near-zero signal hid sharp structure | [2D](../reports/figures/f1_2d.svg) · [3D](../reports/figures/f1_3d.svg) |
-| F2 | **0.744250** | **R13** | Local forecasts could fail severely | [2D](../reports/figures/f2_2d.svg) · [3D](../reports/figures/f2_3d.svg) |
-| F3 | **−0.003753** | **R13** | Negative-valued response and difficult search | [2D](../reports/figures/f3_2d.svg) · [3D](../reports/figures/f3_3d.svg) |
-| F4 | **0.746898** | **R13** | Accurate local prediction did not imply adequate search | [2D](../reports/figures/f4_2d.svg) · [3D](../reports/figures/f4_3d.svg) |
-| F5 | 8,662.405 | R10 | Feasible boundary was more productive than local interior | [2D](../reports/figures/f5_2d.svg) · [3D](../reports/figures/f5_3d.svg) |
-| F6 | −0.037519 | R12 | Weak models required fresh candidate regions | [2D](../reports/figures/f6_2d.svg) · [3D](../reports/figures/f6_3d.svg) |
-| F7 | 3.322368 | R12 | Structural, prospective prediction succeeded | [2D](../reports/figures/f7_2d.svg) · [3D](../reports/figures/f7_3d.svg) |
-| F8 | 10.000000 | R10 | Simple quadratic explained an 8D objective | [2D](../reports/figures/f8_2d.svg) · [3D](../reports/figures/f8_3d.svg) |
+| F1 | 1.999999999676 | R11 | Near-zero signal hid sharp structure | [2D](../results/figures/f1_2d.svg) · [3D](../results/figures/f1_3d.svg) |
+| F2 | **0.744250** | **R13** | Local forecasts could fail severely | [2D](../results/figures/f2_2d.svg) · [3D](../results/figures/f2_3d.svg) |
+| F3 | **−0.003753** | **R13** | Negative-valued response and difficult search | [2D](../results/figures/f3_2d.svg) · [3D](../results/figures/f3_3d.svg) |
+| F4 | **0.746898** | **R13** | Accurate local prediction did not imply adequate search | [2D](../results/figures/f4_2d.svg) · [3D](../results/figures/f4_3d.svg) |
+| F5 | 8,662.405 | R10 | Feasible boundary was more productive than local interior | [2D](../results/figures/f5_2d.svg) · [3D](../results/figures/f5_3d.svg) |
+| F6 | −0.037519 | R12 | Weak models required fresh candidate regions | [2D](../results/figures/f6_2d.svg) · [3D](../results/figures/f6_3d.svg) |
+| F7 | 3.322368 | R12 | Structural, prospective prediction succeeded | [2D](../results/figures/f7_2d.svg) · [3D](../results/figures/f7_3d.svg) |
+| F8 | 10.000000 | R10 | Simple quadratic explained an 8D objective | [2D](../results/figures/f8_2d.svg) · [3D](../results/figures/f8_3d.svg) |
 
 ## F1 — Finding a narrow signal
 
@@ -89,4 +89,4 @@ An additive quadratic with eight linear, eight squared and one constant coeffici
 
 ---
 
-[Visual gallery and evidence status](visual_gallery.md) · [Final results CSV](../reports/current_best_after_week13.csv) · [R13 evidence](round13_evidence.md) · [Forecast and portal evidence](round12_evidence.md) · [Reproducible mathematical checks](reproduce.md) · [Return to project overview](../README.md)
+[Visual gallery and evidence status](visual_gallery.md) · [Final results CSV](../results/current_best_after_week13.csv) · [R13 evidence](round13_evidence.md) · [Forecast and portal evidence](round12_evidence.md) · [Reproducible mathematical checks](reproduce.md) · [Return to project overview](../README.md)
