@@ -1,49 +1,35 @@
-# Project journey
+# Project journey: from GP recommendations to evidence-gated decisions
 
-This page gives a quick route through the capstone without requiring the reader to understand the code first.
+This is the human-readable timeline. It links the decisions to preserved records without pretending every historical script is a complete reproduction.
 
-| Module | Query round | What is easiest to inspect |
-|---|---:|---|
-| 12 | 1 | First portal query/output record and early GP-based workflow |
-| 13 | 2 | Week 2 notebook, Python script, UCB results and portal-ready values |
-| 14 | 3 | Portal query/output record and round notes |
-| 15 | 4 | Full Week 4 notebook and hybrid GP/SVM/neural-network analysis |
-| 16 | 5 | Portal query/output record and round evidence |
-| 17 | 6 | Model comparison, controlled local fits, rationale and Round 6 queries |
-| 18 | 7 | Portal query/output record and round evidence |
-| 19 | 8 | Round 8 analysis code, results and prospective evidence |
-| 20 | 9 | Round 9 controlled fits, forecast audit and results |
-| 21 | 10 | Datasheet, model card, decision log and Round 10 preparation |
+| Round | Module | What changed | Evidence to inspect |
+|---|---:|---|---|
+| **R1** | 12 | Baseline review and first portal queries | [Round 1](../experiments/round_01/) |
+| **R2** | 13 | UCB candidates, including wider searches | [Round 2](../experiments/round_02/) · [module package](../submissions/stage_2/modules/module_13_round_2/) |
+| **R3** | 14 | EI and function-specific proposal policies | [Round 3](../experiments/round_03/) |
+| **R4** | 15 | Hybrid GP/SVM/neural-network challenges | [Module 15 notebook](../submissions/stage_2/modules/module_15_round_4/) |
+| **R5** | 16 | Controlled coordinate changes | [Round 5](../experiments/round_05/) |
+| **R6** | 17 | Compare GP vs MLP; controlled local experiments | [Module 17](../submissions/stage_2/modules/module_17_round_6/) |
+| **R7** | 18 | ARD kernels and sequential forecast checks | [Round 7](../experiments/round_07/) |
+| **R8** | 19 | Wider experimental audits and local search | [Module 19](../submissions/stage_2/modules/module_19_round_8/) |
+| **R9** | 20 | Forecast failures and stalled local gains | [Module 20](../submissions/stage_2/modules/module_20_round_9/) · [audit CSV](../reports/week9_forecast_audit.csv) |
+| **R10** | 21 | Model challengers, revised regions; F5/F8 records | [Round 10](../experiments/round_10/) · [revision audit](../reports/round10_revision_audit.md) |
+| **R11** | — | Structural F1; wider F4; F1–F4 new bests | [Round 11](../experiments/round_11/) |
+| **R12** | — | Structural F7 forecast; F6/F7 new bests; four repeats | [Round 12](../experiments/round_12/) · [full evidence](round12_evidence.md) |
+| **R13** | — | Final-horizon planning discussed retrospectively | [Component 25.1](../submissions/stage_2/component_25_1/retrospective.md); **returned results unverified** |
 
-## Start with the story
+## Three turning points
 
-For a non-technical reading order:
+**Moving beyond the model's suggestion.** Controlled coordinate probes and forecast-versus-return checks showed that small predicted gains were not always achieved.
 
-1. [Main README](../README.md) — what the project is and what has happened so far.
-2. [Datasheet](datasheet.md) — where the data came from, what it contains and its limitations.
-3. [Model card](model_card.md) — how the optimisation approach works, how it changed and where it can fail.
-4. [Decision log](decision_log.md) — how evidence affected important choices.
-5. [Stage 2 module archive](../submissions/stage_2/modules/README.md) — the round-by-round project history.
+**Changing the search policy.** F4 improved sharply only after the search moved beyond excessively tiny local steps. F5 and F7 benefited from testing regions beyond earlier incumbents.
 
-## Technical route
+**Testing structure rather than endlessly tuning kernels.** F1, F5, F7 and F8 received numerical reconstructions with different levels of independent validation. F8 is particularly reproducible because the initial-40-only quadratic test and 12 later returns are present in this repository.
 
-Readers who want the implementation can then move to:
+## What counts as a record?
 
-- [notebooks](../notebooks/)
-- [source code](../src/)
-- [experiments](../experiments/)
-- [reports](../reports/)
-- [tests](../tests/)
+The [experiments](../experiments/) folder preserves dated query and return files where available. [Stage 2 module submissions](../submissions/stage_2/modules/README.md) are historical course artefacts. [Current results](../reports/current_best_after_week12.csv) and [provenance](evidence_provenance.md) describe what is verified now.
 
-The main project files remain current. Earlier module folders provide the chronological history of how the approach developed.
+**Do not treat a dated forecast, proposed input or peer observation as an observed personal score.**
 
-
-## New evidence after Round 10
-
-| Round | Record | Result |
-|---|---|---|
-| 11 | [returned observations](../experiments/round_11/notes.md) | F1–F4 personal bests |
-| 12 | [returned observations](../experiments/round_12/notes.md) | F6 and F7 personal bests; four repeated coordinates |
-| 13 | [retrospective](../submissions/stage_2/component_25_1/retrospective.md) | Prospective decision discussion; portal returns not verified |
-
-The [current bests](../reports/current_best_after_week12.csv) and [provenance](evidence_provenance.md) supersede older status statements without erasing historical evidence.
+[Back to overview](../README.md) · [Function guide](function_guide.md) · [Reproduction](reproduce.md)

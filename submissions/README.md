@@ -1,16 +1,25 @@
-# Capstone submissions
+# Assessed work and historical submissions
 
-This area keeps the capstone history organised by stage and module.
+This folder preserves materials by **stage, module and component**. A dated assessed submission is a snapshot of what was known at the time. Current results and live analysis live in [reports](../reports/) and [docs](../docs/README.md), not by silently changing older evidence.
 
-## Current assessment
+## Start with these
 
-For this week's Module 21 work, use:
+| Submission | What it contains | Status |
+|---|---|---|
+| [Component 25.1 — retrospective](stage_2/component_25_1/retrospective.md) | Thirteen-round reflection, decision changes and lessons | Archived draft / retrospective; R13 results not verified |
+| [Module 21 — Component 21.1](stage_2/module_21/component_21_1/submission.md) | Stage 2 model and optimisation reflection | Historical |
+| [Module 21 — Component 21.2](stage_2/module_21/component_21_2/) | Datasheet, model card, decisions and supporting evidence | Historical |
 
-- [Component 21.1](stage_2/module_21/component_21_1/)
-- [Component 21.2](stage_2/module_21/component_21_2/)
+The separate Component 25.2 discussion reflection is **not yet stored here**. No file is linked until an appropriate public version is available.
 
-## Stage 2 round history
+## Navigate earlier work
 
-The clearest chronological route is the [Stage 2 module archive](stage_2/modules/README.md), covering Modules 12–21 and query Rounds 1–10.
+- [Stage 2 module archive, Rounds 1–10](stage_2/modules/README.md)
+- [Stage 1 component records](stage_1/)
+- [Stage 2 component folders](stage_2/)
+- [Experiment results, Rounds 1–12](../experiments/)
+- [Project journey with direct round links](../docs/project_journey.md)
 
-Earlier working files and packages are being added as they are recovered from the project history. The current Module 21 material is complete enough for this week's GitHub submission; older archive housekeeping can continue separately.
+## How this archive differs from the current documents
+
+The [main README](../README.md) gives verified current results through R12. Some archived notes were written when later rounds were pending or earlier models appeared more credible. They remain useful as evidence of the *decision at the time*, not claims about today's state. Where an exact original artefact was not retained, the folder indicates the scope of the recovered material rather than fabricating a complete notebook or result.
