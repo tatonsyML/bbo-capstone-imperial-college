@@ -9,7 +9,7 @@ python -m pip install -r requirements-notebook.txt
 python -m jupyter nbconvert --to notebook --execute notebooks/Capstone_Final_Walkthrough.ipynb --output Capstone_Final_Walkthrough_executed.ipynb
 ```
 
-The output notebook is generated locally. The [automated notebook job](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/notebook-25-3.yml) executes the same cells and saves a downloadable notebook artifact. The published notebook includes executed outputs after the dedicated notebook verification workflow completes.
+The output notebook is generated locally or by GitHub Actions. On the review branch, the workflow also commits a verified executed copy, so tables and figures remain visible when opening the source notebook on GitHub. The [automated notebook job](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/notebook-25-3.yml) executes the same cells and saves a downloadable notebook artifact. The published notebook includes executed outputs after the dedicated notebook verification workflow completes.
 
 The three earlier small notebooks are dated explorations that were not saved with output cells. They are not the assessed 25.3 reproduction path.
 

@@ -19,6 +19,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   notebook:
     runs-on: ubuntu-latest
@@ -38,6 +41,17 @@ jobs:
           python -m jupyter nbconvert --to notebook --execute notebooks/Capstone_Final_Walkthrough.ipynb --output Capstone_Final_Walkthrough_executed.ipynb --output-dir reports/notebook_output --ExecutePreprocessor.timeout=180
       - name: Check source and data using plain pytest
         run: python -m pytest -q
+      - name: Commit executed outputs to the review branch
+        if: github.event_name == 'push' && github.ref_name == 'review/capstone-25-3-rubric-finalisation'
+        run: |
+          cp reports/notebook_output/Capstone_Final_Walkthrough_executed.ipynb notebooks/Capstone_Final_Walkthrough.ipynb
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add notebooks/Capstone_Final_Walkthrough.ipynb
+          if ! git diff --cached --quiet; then
+            git commit -m "Save executed capstone notebook with figures and tables [skip ci]"
+            git push origin HEAD:review/capstone-25-3-rubric-finalisation
+          fi
       - name: Save executed notebook for the assessor
         uses: actions/upload-artifact@v4
         with:
