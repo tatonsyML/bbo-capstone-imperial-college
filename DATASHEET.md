@@ -72,7 +72,18 @@ Initial samples are sparse in high dimensions; later queries were selected adapt
 
 The original course-provided `.npy` files are **not hosted here**. However, the **175 course-provided numerical observations do appear in public CSV files**. Permission to redistribute these numeric values has **not been independently verified**. The author should check the course's terms and, if necessary, restrict publication or replace the course rows with an authorised retrieval link. Do not infer an open data licence from this repository.
 
-The dataset contains no reported personal identifiers or health records. Any external observations used in research should remain separately attributed and are excluded from these 279 rows.
+The dataset contains no reported personal identifiers or health records. The 175 supplied starting observations and 104 personally returned queries have separate source flags. External observations used as research evidence are **not** included among these 279 rows. [Data-use and redistribution statement](USAGE_AND_PERMISSIONS.md).
+
+### Evidence provenance and historical context
+
+- **Prospective evidence** means a query or forecast recorded *before* seeing its portal return. **Retrospective evidence** means a later model or explanation fitted with already available results. Unsubmitted candidates do not receive invented scores.
+- A public leaderboard snapshot after Round 9 reported rank **1st on F8, 7th on F4, 10th on F7 and 29th on F6** among 39 participants. Rankings compare achieved scores, not verified input vectors, and are historical context only.
+- Limited externally published observations informed supplementary exploration of F1/F3/F6, F5/F7 challenger models and five F8 structural corroboration checks. Those records were **never counted as my own portal observations**. The source types and limitations were documented in the [original Round 10 decision audit](journey/round_10/README.md).
+- **F8 chronology:** fit a quadratic on the accumulated observations available before Round 10; compare five external responses; submit the predicted vertex; receive a score of 10. Only **later** did I refit using the original 40 supplied observations alone and test it on 13 subsequent personal returns.
+- Known gaps: the R11 F7 **output** exists without its exact input; one Round 12 pre-result F2/F3/F6 shortlist was superseded before final submission. No missing vector is guessed.
+- Figure provenance is explained in [the function guide](docs/functions.md): F5/F7/F8 show fixed-coordinate mathematical slices, while F1/F2/F3/F4/F6 show observed points only.
+
+External source use remains subject to the programme's collaboration and attribution rules. The complete redistribution position is stated in [USAGE_AND_PERMISSIONS.md](USAGE_AND_PERMISSIONS.md).
 
 ## 9. Maintenance and reproducibility
 

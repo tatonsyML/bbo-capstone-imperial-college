@@ -90,3 +90,8 @@ The default output folder is `results/full_hebo_turbo/`. Results will include:
 **Status in this repository:** reference code and unit tests added. The complete HEBO and BoTorch reference algorithms **have not yet been executed for a published comparison**. No comparative numerical performance claim is made.
 
 For further context, see [the course-time methodology](../../docs/strategy_and_validation.md), [the final portal evidence](../../docs/round13_evidence.md) and [all eight-function visualisations](../../docs/visual_gallery.md).
+
+
+## Results status
+
+The official HEBO and BoTorch TuRBO-1 engines have **not yet produced a published matched-budget comparison**. Running the standard project unit tests is not a substitute for executing the optional full engines. The [manual GitHub workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/full-optimisers.yml) preserves genuine simulation outputs as artifacts when run. No F1–F8 unobserved proposal is labelled as a portal result.
