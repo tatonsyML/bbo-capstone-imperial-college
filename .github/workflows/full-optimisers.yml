@@ -57,7 +57,7 @@ jobs:
   compare:
     name: Compare equal-budget simulated results
     needs: [hebo, turbo]
-    if: ${{ inputs.mode }} != 'proposals'
+    if: ${{ inputs.mode != 'proposals' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
