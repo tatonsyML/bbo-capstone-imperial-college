@@ -1,6 +1,6 @@
 # Stage 2: Required Capstone Component 21.1
 
-> **Historical submission note (18 October 2026):** The reflection below preserves the earlier discussion-board text written before the final Round 10 portal edits. Its F1, F3, F6 and F7 proposal descriptions refer to **superseded working candidates**, not the actual inputs confirmed in the portal. The [final submitted inputs](../../../../experiments/round_10/queries.txt) and [revision audit](../../../../results/round10_revision_audit.md) document the subsequent changes. No Round 10 output has yet been observed. This note does not retroactively rewrite the original reflection.
+> **Historical submission note (18 October 2026):** The reflection below preserves the earlier discussion-board text written before the final Round 10 portal edits. Its F1, F3, F6 and F7 proposal descriptions refer to **superseded working candidates**, not the actual inputs confirmed in the portal. The [final submitted inputs](../../queries.txt) and [revision audit](../../README.md) document the subsequent changes. No Round 10 output has yet been observed. This note does not retroactively rewrite the original reflection.
 
 ## 1. Reasoning behind Round 10
 

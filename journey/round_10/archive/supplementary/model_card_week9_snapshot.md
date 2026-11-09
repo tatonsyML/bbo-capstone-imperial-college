@@ -1,4 +1,4 @@
-> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](round13_evidence.md), [README](../README.md) and [provenance](evidence_provenance.md). Statements that Round 10 was pending are historical, not current.
+> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](../../../round_13/README.md), [README](../../README.md) and [provenance](../../../../DATASHEET.md). Statements that Round 10 was pending are historical, not current.
 
 # Model Card | Evidence-Gated, Function-Specific Black-Box Optimisation
 
@@ -7,7 +7,7 @@
 **Version:** 4.1, Module 21 / Round 10 submitted  
 **Developer and maintainer:** Project author  
 **Evidence cut:** Portal-returned results through **Week 9** (247 evaluations); **Round 10 scores pending**  
-**Code:** [src/bbo/](../src/bbo/) | **Data:** [docs/datasheet.md](datasheet.md) | **Decisions:** [docs/decision_log.md](decision_log.md)
+**Code:** [src/bbo/](../../../../src/bbo) | **Data:** [docs/datasheet.md](datasheet_week9_snapshot.md) | **Decisions:** [docs/decision_log.md](../component_21_2/decision_log.md)
 
 > **In plain English:** When every experiment is expensive and the formula is hidden, an algorithm predicts which setting to try next. This project goes one step further: it checks whether that algorithm has been reliable *before* allowing its prediction to drive the next experiment.
 
@@ -53,7 +53,7 @@ The pipeline combines **measured results**, **model-generated candidates** and *
 
 ### What HEBO-inspired and TuRBO-style mean here
 
-The implementation in [src/bbo/optimizer.py](../src/bbo/optimizer.py) makes the distinction auditable:
+The implementation in [src/bbo/optimizer.py](../../../../src/bbo/optimizer.py) makes the distinction auditable:
 
 - **HEBO-inspired:** Fits RBF, Matérn 1.5 and Matérn 2.5 GPs with a Yeo–Johnson transformation. It evaluates EI, PI and UCB over a seeded Sobol candidate pool and compares robust candidate ranks. This is **not** a complete implementation of HEBO.
 - **TuRBO-style:** Fits a GP and evaluates EI over a Sobol pool restricted to a region around the best observed point. The coded default region width is **0.20** in normalised input space. This is a local challenger, **not** the complete TuRBO method with automatic expansion, contraction and restarts.
@@ -114,7 +114,7 @@ Its fitted score is **10**. This remains a **predicted**, not a portal-returned,
 
 ## 6. The Round 10 submission: decisions, not outcomes
 
-The final [Round 10 query record](../experiments/round_10/queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
+The final [Round 10 query record](../../queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
 
 | Function | Decision | Evidence and uncertainty |
 |---|---|---|
@@ -127,7 +127,7 @@ The final [Round 10 query record](../experiments/round_10/queries.txt) stores ei
 | **F7** | Test a different high-performing region | Ensemble-predicted mean changed from about 1.73 to 2.79; the model range remains wide |
 | **F8** | Query the fitted additive-quadratic vertex | Predicted score 10 with unusually strong external prediction tests |
 
-**External evidence disclosure:** Some Round 10 proposals arose from supplementary experiments informed by publicly shared classmates' evaluated points. These observations were used for **external benchmarking and experimental models**, not merged with the 247 personal portal observations. Sources and their role are documented in the [datasheet](datasheet.md). Their acceptability in assessed query design must be checked against the programme's collaboration requirements.
+**External evidence disclosure:** Some Round 10 proposals arose from supplementary experiments informed by publicly shared classmates' evaluated points. These observations were used for **external benchmarking and experimental models**, not merged with the 247 personal portal observations. Sources and their role are documented in the [datasheet](datasheet_week9_snapshot.md). Their acceptability in assessed query design must be checked against the programme's collaboration requirements.
 
 ## 7. Assumptions, constraints and failure modes
 
@@ -170,13 +170,13 @@ In manufacturing, agriculture or clinical research, an optimisation query might 
 **To reproduce initial source files:** The original programme-distributed NumPy arrays must be obtained through authorised channels. The public project does not claim redistribution rights over them.
 
 Useful starting points:
-- [Dataset and provenance](datasheet.md)
-- [Chronological queries and outcomes](../experiments/)
-- [Current implementation](../src/bbo/)
-- [Best measured scores](../results/current_best_after_week9.csv)
-- [Forecast audit](../results/week9_forecast_audit.csv)
-- [F8 quadratic coefficients](../results/f8_additive_quadratic_coefficients.csv)
-- [Decision log](decision_log.md)
+- [Dataset and provenance](datasheet_week9_snapshot.md)
+- [Chronological queries and outcomes](../../../README.md)
+- [Current implementation](../../../../src/bbo)
+- [Best measured scores](../../../../results/current_best_after_week9.csv)
+- [Forecast audit](../../../../results/week9_forecast_audit.csv)
+- [F8 quadratic coefficients](../../../../results/f8_additive_quadratic_coefficients.csv)
+- [Decision log](../component_21_2/decision_log.md)
 
 ## 10. Does the model card need more detail?
 

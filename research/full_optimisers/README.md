@@ -4,7 +4,7 @@
 
 The original project used [HEBO-inspired and TuRBO-style experiments](../../src/bbo/optimizer.py). This folder provides a separately labelled, reproducible **reference comparison** using (a) the **official HEBO Python package** and (b) a **BoTorch/GPyTorch TuRBO-1 implementation** based on the published BoTorch tutorial.
 
-[Main source: benchmark.py](benchmark.py) · [Code walkthrough](../../docs/optimisation_algorithms.md) · [Unit tests](test_benchmark.py) · [Experiment status](../../results/full_hebo_turbo/README.md)
+[Main source: benchmark.py](benchmark.py) · [Code walkthrough](../../docs/methods.md) · [Unit tests](test_benchmark.py) · [Experiment status](README.md)
 
 ## Study design
 
@@ -89,7 +89,7 @@ The default output folder is `results/full_hebo_turbo/`. Results will include:
 
 **Status in this repository:** reference code and unit tests added. The complete HEBO and BoTorch reference algorithms **have not yet been executed for a published comparison**. No comparative numerical performance claim is made.
 
-For further context, see [the course-time methodology](../../docs/strategy_and_validation.md), [the final portal evidence](../../docs/round13_evidence.md) and [all eight-function visualisations](../../docs/visual_gallery.md).
+For further context, see [the course-time methodology](../../docs/methods.md), [the final portal evidence](../../journey/round_13/README.md) and [all eight-function visualisations](../../docs/functions.md).
 
 
 ## Results status

@@ -2,7 +2,7 @@
 
 **Assessment:** Stage 2, Component 25.3 · **Evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
 
-[← For assessors](docs/assessment_25_3.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
+[← For assessors](docs/assessment_guide.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
 
 ## 1. Motivation and purpose
 
@@ -21,11 +21,11 @@ It is a historical record of *observed evaluations*, not a dataset of the true f
 | `stage` | Original source label, such as `Initial` or `Week 13` |
 | `source`, `is_initial` | Distinguish course data from personally submitted queries |
 | `sequence_in_stage` | Original ordering within the source stage |
-| `input_status` | `confirmed` or `missing_input` |
+| `input_status` | `confirmed` for all currently recorded inputs; `missing_input` was a transitional provenance status before recovery |
 | `x1`–`x8` | Input coordinates. Unused coordinates are blank for functions with fewer dimensions |
 | `output` | Returned scalar score, preserving source precision where available |
 
-**Known missingness:** The portal output for F7 in Round 11 is **3.27896792623**, but its corresponding submitted coordinates were not preserved. This row has `input_status=missing_input` and blank coordinates. It is included in chronology and score summaries but **excluded** from any input-space modelling or scatter plot that requires a complete vector. There are therefore 279 observed scores but **278 coordinate-complete records**.
+**Recovered missingness:** An official Round 11 results email confirmed F7's submitted input (`0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`) and precise return (`3.278967926227992`). Earlier drafts contained the output without its coordinates; this gap was fixed from the original email, not inferred from a model. All **279 observed scores now have complete input vectors** within their respective function dimensions.
 
 No synthetic labels, missing coordinates or unobserved outcomes are filled in.
 
@@ -58,7 +58,7 @@ The project records **279 outputs** in total: 175 starting observations and 104 
 
 ## 6. Weekly iteration and learning
 
-One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](experiments/README.md) records actual inputs and outputs; the [project journey](docs/project_journey.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
+One personally submitted evaluation per function was returned in each of **13 rounds**. The [round archive](journey/README.md) records actual inputs and outputs; the [project journey](docs/project_journey.md) explains how the search policy changed. Early rounds used GP and UCB/EI suggestions, later rounds included controlled probes and structural hypotheses, and the final round improved F2, F3 and F4. Retrospective explanations are labelled rather than passed off as pre-submission predictions.
 
 ## 7. Biases, limitations and appropriate use
 
@@ -80,7 +80,7 @@ The dataset contains no reported personal identifiers or health records. The 175
 - A public leaderboard snapshot after Round 9 reported rank **1st on F8, 7th on F4, 10th on F7 and 29th on F6** among 39 participants. Rankings compare achieved scores, not verified input vectors, and are historical context only.
 - Limited externally published observations informed supplementary exploration of F1/F3/F6, F5/F7 challenger models and five F8 structural corroboration checks. Those records were **never counted as my own portal observations**. The source types and limitations were documented in the [original Round 10 decision audit](journey/round_10/README.md).
 - **F8 chronology:** fit a quadratic on the accumulated observations available before Round 10; compare five external responses; submit the predicted vertex; receive a score of 10. Only **later** did I refit using the original 40 supplied observations alone and test it on 13 subsequent personal returns.
-- Known gaps: the R11 F7 **output** exists without its exact input; one Round 12 pre-result F2/F3/F6 shortlist was superseded before final submission. No missing vector is guessed.
+- Resolved gap: the R11 F7 coordinates were recovered from the official results email. A Round 12 F2/F3/F6 shortlist was superseded before final submission; unsubmitted alternatives have no invented portal scores.
 - Figure provenance is explained in [the function guide](docs/functions.md): F5/F7/F8 show fixed-coordinate mathematical slices, while F1/F2/F3/F4/F6 show observed points only.
 
 External source use remains subject to the programme's collaboration and attribution rules. The complete redistribution position is stated in [USAGE_AND_PERMISSIONS.md](USAGE_AND_PERMISSIONS.md).
@@ -91,4 +91,4 @@ The [full CSV](data/all_observations.csv) is the final complete record. Earlier 
 
 **Maintainer:** repository owner. Update only against new authoritative portal or course evidence, with a recorded source and a descriptive commit.
 
-[← Assessment map](docs/assessment_25_3.md)
+[← Assessment map](docs/assessment_guide.md)

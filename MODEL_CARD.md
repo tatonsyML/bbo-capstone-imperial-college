@@ -2,7 +2,7 @@
 
 **Version:** Final, 13 returned rounds (9 November 2026) · **Assessment:** Component 25.3 · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
 
-[← For assessors](docs/assessment_25_3.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
+[← For assessors](docs/assessment_guide.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
 
 ## 1. Model summary
 
@@ -42,7 +42,7 @@ This table separates the strategy I was considering from the **results the porta
 | **12** | Structural forecast checks and further local tests | F6 reached −0.037519; F7's pre-result Hartmann-6 prediction closely matched 3.322368 |
 | **13** | Final exploitation and selected alternative regions | F2, F3 and F4 reached new personal bests. F1/F5/F8 repeated earlier scores, F7 remained numerically equivalent and F6 did not improve |
 
-The [round-by-round archive](experiments/README.md) and [project journey](docs/project_journey.md) distinguish recorded returns from retrospective interpretation.
+The [round-by-round archive](journey/README.md) and [project journey](docs/project_journey.md) distinguish recorded returns from retrospective interpretation.
 
 ## 5. Trade-offs and decisions
 
@@ -93,7 +93,7 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 - Repeated locations spend evaluation budget while adding limited new spatial information.
 - F2/F3/F4/F6 remain without confirmed closed-form expressions. F1's historical oscillatory reconstruction lacks fully retained public parameters.
 - F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
-- The input for the R11 F7 return was not retained; the score is recorded but the location is not invented.
+- F7's R11 inputs and full-precision output were recovered from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
 
 ## 9. Ethics, access and redistribution
 
@@ -103,8 +103,8 @@ The same approach would require additional validation, security checks and hard 
 
 ## 10. Reproducibility and maintenance
 
-**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/reproduce.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/visual_gallery.md) allow a reviewer to verify the claims.
+**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/methods.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/functions.md) allow a reviewer to verify the claims.
 
 Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
 
-[← Assessment map](docs/assessment_25_3.md)
+[← Assessment map](docs/assessment_guide.md)

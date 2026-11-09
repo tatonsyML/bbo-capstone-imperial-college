@@ -1,6 +1,6 @@
 # Round 11 | F1 breakthrough and stronger local search
 
-**Status:** Observed portal results, not predictions. Round 11's F7 score is known but its input coordinates were not retained.
+**Status:** Observed portal results, not predictions. F7's input and full-precision score were later recovered from the official results email, rather than inferred from its score. The original selection code remains unavailable.
 
 ## What I did
 
@@ -16,15 +16,15 @@ I challenged the nearly flat F1 response near the earlier incumbent and explored
 | F4 | 0.415000-0.417000-0.366500-0.413000 | 0.7304594213260924 |
 | F5 | 0.999999-0.999999-0.999999-0.999999 | 8662.405001248297 |
 | F6 | 0.457000-0.370000-0.642000-0.738000-0.020000 | -0.12376148016289273 |
-| F7 | Not retained | 3.27896792623 |
+| F7 | 0.233000-0.128000-0.522000-0.276000-0.310000-0.667000 | 3.278967926227992 |
 | F8 | 0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000 | 10 |
 
 **New bests:** F1, F2, F3 and F4. F5 and F8 repeated earlier successes.
 
 ## What I learnt
 
-A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the **3.27896792623** output is preserved with missing coordinates rather than an invented input.
+A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are recovered from the official course email, not model-generated.
 
 ## Original evidence
 
-[Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No complete Round 11 query text survived as a separate file.
+[Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query text survived as a separate file; F7's vector was added later from verified course evidence.

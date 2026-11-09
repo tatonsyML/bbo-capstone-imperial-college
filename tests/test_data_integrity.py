@@ -13,15 +13,17 @@ def test_full_inventory():
     assert data.output.notna().all()
     assert all(len(data[(data.function == f) & (data['round'] > 0)]) == 13 for f in range(1, 9))
 
-def test_missing_f7_input_not_reconstructed():
+def test_all_portal_inputs_verified_including_f7_r11():
     data = pd.read_csv(ROOT / "data/all_observations.csv")
-    missing = data[data.input_status == "missing_input"]
-    assert len(missing) == 1
-    row = missing.iloc[0]
-    assert int(row["function"]) == 7
-    assert int(row["round"]) == 11
-    assert abs(float(row["output"]) - 3.27896792623) < 1e-12
-    assert row[[f"x{i}" for i in range(1, 7)]].isna().all()
+    assert (data.input_status == "confirmed").all()
+    for function, dim in {1:2,2:2,3:3,4:4,5:4,6:5,7:6,8:8}.items():
+        rows = data[data.function == function]
+        assert rows[[f"x{i}" for i in range(1, dim+1)]].notna().all().all()
+    row = data[(data.function == 7) & (data["round"] == 11)].iloc[0]
+    np.testing.assert_allclose(
+        row[[f"x{i}" for i in range(1, 7)]].astype(float).to_numpy(),
+        [0.233, 0.128, 0.522, 0.276, 0.310, 0.667], rtol=0, atol=1e-15)
+    assert abs(float(row["output"]) - 3.278967926227992) < 1e-14
 
 def test_final_best_scores_derived_from_all_observations():
     data = pd.read_csv(ROOT / "data/all_observations.csv")

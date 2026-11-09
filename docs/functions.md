@@ -11,7 +11,7 @@ This is the **single function-by-function guide** for the final 13-round capston
 | **F1, F2, F3, F4, F6** | Observed input/output points only | 2D/3D projections omit other input coordinates, which may vary between observations |
 | **F5, F7, F8** | Fixed-coordinate slices of a documented fitted equation | Slices do not show the entire high-dimensional function |
 
-The dataset has **279 returned or supplied scores** but only **278 known input vectors**. F7's Round 11 return is known, but its input was not retained. The F1 display uses a clipped log10 scale; F5's model uses log1p(score), with labels on the published figures.
+The dataset has **279 returned or supplied scores and 279 known input vectors** within their declared dimensions. The Round 11 F7 coordinates were recovered from the official course-results email after an earlier draft omitted them. The F1 display uses a clipped log10 scale; F5's model uses log1p(score), with labels on the published figures.
 
 | Function | Best verified | First achieved | Central problem | Visuals |
 |---|---:|---:|---|---|
@@ -152,7 +152,7 @@ Earlier local forecasts and proposals were weak. An externally informed suppleme
 
 The best after R9 was `1.786338`. A revised R10 candidate returned `3.149459`; the R11 result was `3.27896792623`; and the R12 portal result matched a **pre-recorded positive Hartmann-6 prediction** of `3.32236801`.
 
-**Known gap:** the exact R11 F7 input coordinate was not preserved in the retained source. This does not invalidate the output, but prevents precise reproduction of that query.
+**Resolved source gap:** the official results email confirms the R11 F7 input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` and return `3.278967926227992`. The query and output can now be replayed; the exact original selection script was not retained.
 
 **Final check:** R13 shifted x1 from `0.201689` to `0.201690`, returning `3.322368011392718`, approximately `4.38 × 10⁻¹³` below the R12 value.
 
@@ -216,7 +216,7 @@ An additive eight-variable quadratic has 17 linear regression coefficients: a co
 
 F2 and F3 have unstable regions and unverified structural alternatives; F4 remains model-disagreement-sensitive; F6 has imperfect approximate fits. None is labelled mathematically solved.
 
-**Executable in this repository:** F8's initial-data-only fit and 13-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../results/round10_revision_audit.md); identifying source references should be retained separately for authorised attribution.
+**Executable in this repository:** F8's initial-data-only fit and 13-return check, plus F5's boundary equation check. The historical fitting procedures for F1/F5/F7 are documented findings, not claimed to be wholly reproducible from this newly added script. The types and roles of external research are documented in the [anonymised Round 10 revision audit](../journey/round_10/README.md); identifying source references should be retained separately for authorised attribution.
 
 ## Visualisation scope
 

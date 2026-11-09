@@ -1,0 +1,24 @@
+function,round,stage,source,sequence_in_stage,is_initial,input_status,x1,x2,x3,x4,x5,x6,x7,x8,output
+2,0,Initial,course_initial,1,True,confirmed,0.6657995800131589,0.12396912767534907,,,,,,,0.5389961189269181
+2,0,Initial,course_initial,2,True,confirmed,0.8777909889953304,0.7786275008473289,,,,,,,0.42058623962798264
+2,0,Initial,course_initial,3,True,confirmed,0.14269907423594608,0.34900513057320015,,,,,,,-0.06562362443733738
+2,0,Initial,course_initial,4,True,confirmed,0.8452754286767249,0.7111202665952655,,,,,,,0.293992912410866
+2,0,Initial,course_initial,5,True,confirmed,0.45464714105124415,0.2904551797740609,,,,,,,0.2149645101004509
+2,0,Initial,course_initial,6,True,confirmed,0.5777128444074784,0.7719731841154063,,,,,,,0.023105549798190586
+2,0,Initial,course_initial,7,True,confirmed,0.4381660616117107,0.6850182567997548,,,,,,,0.24461934400448035
+2,0,Initial,course_initial,8,True,confirmed,0.34174959302885033,0.028697719822277867,,,,,,,0.0387490151561584
+2,0,Initial,course_initial,9,True,confirmed,0.33864815688701766,0.21386724563864368,,,,,,,-0.013857618149729824
+2,0,Initial,course_initial,10,True,confirmed,0.7026365569244406,0.9265641975455574,,,,,,,0.6112052157614438
+2,1,Week 1,personal_portal,1,False,confirmed,0.7,0.5,,,,,,,0.379063270240082
+2,2,Week 2,personal_portal,1,False,confirmed,0.672,0.999999,,,,,,,0.5860547049641637
+2,3,Week 3,personal_portal,1,False,confirmed,0.7015,0.957999,,,,,,,0.653867607133911
+2,4,Week 4,personal_portal,1,False,confirmed,0.705,0.999999,,,,,,,0.5912856598404541
+2,5,Week 5,personal_portal,1,False,confirmed,0.7015,0.959409,,,,,,,0.6548498709022528
+2,6,Week 6,personal_portal,1,False,confirmed,0.7015,0.959816,,,,,,,0.6913148663237587
+2,7,Week 7,personal_portal,1,False,confirmed,0.7015,0.960223,,,,,,,0.5893476079120687
+2,8,Week 8,personal_portal,1,False,confirmed,0.7015,0.95972,,,,,,,0.6130861312279376
+2,9,Week 9,personal_portal,1,False,confirmed,0.7015,0.959912,,,,,,,0.5055255161847483
+2,10,Week 10,personal_portal,1,False,confirmed,0.701500,0.959796,,,,,,,0.617259927400158
+2,11,Week 11,personal_portal,1,False,confirmed,0.692000,0.366000,,,,,,,0.6953368270741286
+2,12,Week 12,personal_portal,1,False,confirmed,0.684399,0.368552,,,,,,,0.660671151390024
+2,13,Week 13,personal_portal,1,False,confirmed,0.864900,0.500000,,,,,,,0.7442504263021256

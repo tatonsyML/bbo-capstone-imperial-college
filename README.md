@@ -14,15 +14,15 @@ This project documents an evidence-led black-box optimisation capstone. I starte
 
 ## For assessors: Component 25.3
 
-The **[five-criterion assessment checklist](docs/assessment_25_3.md)** is the best place to start. It links each required item to the precise file and explains how to reproduce the evidence.
+The **[five-criterion assessment checklist](docs/assessment_guide.md)** is the best place to start. It links each required item to the precise file and explains how to reproduce the evidence.
 
 | Rubric criterion | Direct evidence |
 |---|---|
-| Clear, commented, runnable code and reproducible results | **[Final Jupyter walkthrough](notebooks/Capstone_Final_Walkthrough.ipynb)** · [run instructions](docs/assessment_25_3.md#how-to-reproduce) · [CI checks](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) |
+| Clear, commented, runnable code and reproducible results | **[Final Jupyter walkthrough](notebooks/Capstone_Final_Walkthrough.ipynb)** · [run instructions](docs/assessment_guide.md) · [CI checks](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) |
 | Complete datasheet | **[Final datasheet](DATASHEET.md)** |
 | Complete model card | **[Final model card](MODEL_CARD.md)** |
 | Approximately 100-word non-technical explanation | [Read below](#the-project-in-about-100-words) |
-| Organised, complete and linked repository | [Assessment map](docs/assessment_25_3.md) · [data index](data/README.md) · [visual gallery](docs/visual_gallery.md) |
+| Organised, complete and linked repository | [Assessment map](docs/assessment_guide.md) · [data index](data/README.md) · [visual gallery](docs/functions.md) |
 
 ## The project in about 100 words
 
@@ -36,33 +36,45 @@ The diagram tracks the **best observed score so far** from the initial data to R
 
 | Function | Inputs | Initial best | Final best through R13 | First attained | Evidence |
 |:--|--:|--:|--:|:--:|:--|
-| [F1](docs/function_guide.md#f1--finding-a-narrow-signal) | 2 | 7.71 × 10⁻¹⁶ | **1.999999999676** | R11 | Portal |
-| [F2](docs/function_guide.md#f2--an-unreliable-local-forecast) | 2 | 0.611205 | **0.744250** | R13 | Portal |
-| [F3](docs/function_guide.md#f3--improving-a-negative-valued-objective) | 3 | −0.034835 | **−0.003753** | R13 | Portal |
-| [F4](docs/function_guide.md#f4--accurate-prediction-poor-search) | 4 | −4.025542 | **0.746898** | R13 | Portal |
-| [F5](docs/function_guide.md#f5--the-feasible-boundary) | 4 | 1,088.860 | **8,662.405** | R10 | Portal |
-| [F6](docs/function_guide.md#f6--challenging-unstable-local-models) | 5 | −0.714265 | **−0.037519** | R12 | Portal |
-| [F7](docs/function_guide.md#f7--a-structural-forecast-confirmed) | 6 | 1.364968 | **3.322368** | R12 | Portal |
-| [F8](docs/function_guide.md#f8--the-17-coefficient-quadratic) | 8 | 9.598482 | **10.000000** | R10 | Portal |
+| [F1](functions/F1/README.md) | 2 | 7.71 × 10⁻¹⁶ | **1.999999999676** | R11 | Portal |
+| [F2](functions/F2/README.md) | 2 | 0.611205 | **0.744250** | R13 | Portal |
+| [F3](functions/F3/README.md) | 3 | −0.034835 | **−0.003753** | R13 | Portal |
+| [F4](functions/F4/README.md) | 4 | −4.025542 | **0.746898** | R13 | Portal |
+| [F5](functions/F5/README.md) | 4 | 1,088.860 | **8,662.405** | R10 | Portal |
+| [F6](functions/F6/README.md) | 5 | −0.714265 | **−0.037519** | R12 | Portal |
+| [F7](functions/F7/README.md) | 6 | 1.364968 | **3.322368** | R12 | Portal |
+| [F8](functions/F8/README.md) | 8 | 9.598482 | **10.000000** | R10 | Portal |
 
 The final round established **three additional personal bests**: F2, F3 and F4. The other five were first achieved in R10–R12. These are best-so-far observations, not one-round scores. Their scales differ and must not be added or averaged.
 
-[Final bests and inputs (CSV)](results/current_best_after_week13.csv) · [Round 13 portal returns](data/portal_rounds_13.csv) · [Final-round evidence](docs/round13_evidence.md)
+[Final bests and inputs (CSV)](results/current_best_after_week13.csv) · [Round 13 portal returns](data/portal_rounds_13.csv) · [Final-round evidence](journey/round_13/README.md)
+
+## Explore each function, round by round
+
+The **[eight function experiment ledgers](functions/README.md)** place all 13 submitted inputs and real portal outputs alongside best-so-far results, the available original forecasts and source-code evidence. Each includes **full-precision starting observations**, a separate 13-decision provenance CSV and instructions for inspecting fitted GP hyperparameters.
+
+The [retrospective GP replay](scripts/replay_surrogates.py) uses **only data from before the selected round** and reports learned kernel lengthscales, noise and a counterfactual suggestion. It is not presented as the original decision-making script. The full HEBO / TuRBO engines were added later, not used for historical portal submissions.
+
+[Start with F2](functions/F2/README.md) · [Explore F8](functions/F8/README.md) · [All eight function histories](functions/README.md).
+
+## Trace every function from Round 1 to Round 13
+
+Start with **[the eight function-by-function experiment ledgers](functions/README.md)**. Each function has an auditable 13-round history of actual submitted inputs, actual returned scores, code links, strategy evidence and lessons learnt. The parallel **[chronological journey](journey/README.md)** preserves original files by round. For reproducible modelling with no future-data leakage, use the clearly labelled [retrospective GP replay](scripts/replay_surrogates.py); it is not claimed as the historical candidate generator.
 
 ## Visualise the eight functions
 
-The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.
+The **[2D and 3D gallery](docs/functions.md)** includes reconstructed mathematical slices for F5, F7 and F8, and actual observation-only plots for F1, F2, F3, F4 and F6. Each function has a plain-English explanation of its characteristics and the remaining uncertainty.
 
 <table><tr>
-<td width="50%"><a href="docs/visual_gallery.md#f8-a-testable-additive-quadratic"><img src="results/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
-<td width="50%"><a href="docs/visual_gallery.md#f2-a-different-region-succeeds"><img src="results/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
+<td width="50%"><a href="docs/functions.md"><img src="results/figures/f8_3d.svg" width="450" alt="F8 reconstructed quadratic surface, x3 and x8 varied"></a><p><strong>F8:</strong> documented model slice</p></td>
+<td width="50%"><a href="docs/functions.md"><img src="results/figures/f2_2d.svg" width="450" alt="F2 observed input positions, no invented surface"></a><p><strong>F2:</strong> measured observations only</p></td>
 </tr></table>
 
-[Explore all eight functions](docs/visual_gallery.md) · [Rebuild the graphics](results/figures/build_visual_gallery.mjs)
+[Explore all eight functions](docs/functions.md) · [Rebuild the graphics](results/figures/build_visual_gallery.mjs)
 
 ## Three discoveries worth reading
 
-**Final-round update:** F2 **0.695337 → 0.744250**; F3 **−0.005709 → −0.003753**; F4 **0.730459 → 0.746898**. [Read the R13 result audit](docs/round13_evidence.md).
+**Final-round update:** F2 **0.695337 → 0.744250**; F3 **−0.005709 → −0.003753**; F4 **0.730459 → 0.746898**. [Read the R13 result audit](journey/round_13/README.md).
 
 **1. A failed forecast does not prove convergence (F2).** A prediction of **0.730502** returned **0.505526**, but a different R13 region subsequently returned **0.744250**. Model trust and search coverage must be checked separately.
 
@@ -70,7 +82,7 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 
 **3. The simplest suitable model can outperform further search (F8).** A fitted **17-coefficient additive quadratic** identified an interior vertex with value **10**. A *separate retrospective check* fitted that model to **only 40 starting observations** and predicted the next **13 personal portal returns** to numerical precision. The fit from only the starting data was performed *after* the optimisation, not during Round 1.
 
-[Read the complete case studies](docs/function_guide.md) · [Read the evidence and chronology](docs/round12_evidence.md)
+[Read the complete case studies](docs/functions.md) · [Read the evidence and chronology](journey/round_12/README.md)
 
 ## Data, model and optimisation settings
 
@@ -78,7 +90,7 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 
 **Model:** Gaussian Process models with RBF or Matérn kernels, compared with simpler fitted equations where appropriate. [Model card](MODEL_CARD.md).
 
-**Hyperparameter optimisation:** The GP code compares RBF and Matérn 1.5/2.5 kernels, with one lengthscale per input (ARD) and a WhiteKernel noise term. It fits GP parameters by marginal likelihood (four optimiser restarts by default), and supports Yeo–Johnson or signed-log output transformations. Candidate scoring includes UCB with β = 1.96 and Expected Improvement with ξ = 0; the historical TuRBO-style challenger uses a fixed 0.20-width local box. The short notebook demonstration uses zero restarts to execute quickly. [Code and algorithm explanation](docs/optimisation_algorithms.md).
+**Hyperparameter optimisation:** The GP code compares RBF and Matérn 1.5/2.5 kernels, with one lengthscale per input (ARD) and a WhiteKernel noise term. It fits GP parameters by marginal likelihood (four optimiser restarts by default), and supports Yeo–Johnson or signed-log output transformations. Candidate scoring includes UCB with β = 1.96 and Expected Improvement with ξ = 0; the historical TuRBO-style challenger uses a fixed 0.20-width local box. The short notebook demonstration uses zero restarts to execute quickly. [Code and algorithm explanation](docs/methods.md).
 
 **Contact:** [Open a GitHub issue](https://github.com/tatonsyML/bbo-capstone-imperial-college/issues) for questions about reproducibility.
 
@@ -92,15 +104,15 @@ The **[2D and 3D gallery](docs/visual_gallery.md)** includes reconstructed mathe
 | HEBO-inspired committees and TuRBO-style trust regions | Original lightweight challenger mechanisms | **Not full official algorithms; see separate post-capstone benchmark** |
 | Structural reconstruction on F1/F5/F7/F8 | Explain observed patterns and propose justified test points | Distinguish prospective successes from retrospective explanations |
 
-[Algorithm and source-code guide](docs/optimisation_algorithms.md) · [Approach and validation](docs/strategy_and_validation.md) · [Mathematical evidence](docs/structural_reconstruction.md) · [Decision record](docs/decision_log.md)
+[Algorithm and source-code guide](docs/methods.md) · [Approach and validation](docs/methods.md) · [Mathematical evidence](docs/functions.md) · [Decision record](docs/decision_log.md)
 
 ## Source code and algorithm comparison
 
-For the instructor, start with the **[annotated optimisation code guide](docs/optimisation_algorithms.md)**. It explains the original GP/EI/UCB pipeline, the **HEBO-inspired versus official HEBO** distinction, the original **TuRBO-style versus full TuRBO-1** distinction, and why a fair comparison is not the same as claiming a better portal score.
+For the instructor, start with the **[annotated optimisation code guide](docs/methods.md)**. It explains the original GP/EI/UCB pipeline, the **HEBO-inspired versus official HEBO** distinction, the original **TuRBO-style versus full TuRBO-1** distinction, and why a fair comparison is not the same as claiming a better portal score.
 
 The [post-capstone HEBO and TuRBO-1 benchmark](research/full_optimisers/README.md) provides commented source and tests for an **equal-budget simulation on the F8 reconstructed quadratic**. The optional full-algorithm comparison has not yet been run, so no simulated comparison scores are claimed.
 
-[Historical source](src/bbo/README.md) · [Reference comparison source](research/full_optimisers/benchmark.py) · [Reproduction guide](docs/reproduce.md)
+[Historical source](src/bbo/README.md) · [Reference comparison source](research/full_optimisers/benchmark.py) · [Reproduction guide](docs/methods.md)
 
 ## Reproduce the strongest reproducible result
 
@@ -112,7 +124,7 @@ PYTHONPATH=src python -m bbo.structural_validation
 PYTHONPATH=src python -m pytest -q
 ```
 
-Run these commands from the repository root in a Unix-like shell. See [reproduction and scope](docs/reproduce.md) for the expected output, other platforms and the distinction between executable tests and archived exploratory work.
+Run these commands from the repository root in a Unix-like shell. See [reproduction and scope](docs/methods.md) for the expected output, other platforms and the distinction between executable tests and archived exploratory work.
 
 ## Where everything lives
 
@@ -139,7 +151,7 @@ submissions/              Preserved Stage 1 and Stage 2 coursework
 tests/                    Automated checks
 ```
 
-[Assessment checklist](docs/assessment_25_3.md) · [Full documentation index](docs/README.md) · [Visual gallery](docs/visual_gallery.md) · [Reports index](results/README.md) · [Assessment archive](submissions/README.md)
+[Assessment checklist](docs/assessment_guide.md) · [Full documentation index](docs/assessment_guide.md) · [Visual gallery](docs/functions.md) · [Reports index](docs/methods.md) · [Assessment archive](journey/README.md)
 
 ## Limitations and responsible interpretation
 
@@ -151,7 +163,7 @@ tests/                    Automated checks
 - **History is not overwritten.** Early model cards, submissions and notebooks are dated snapshots and can contain statements that were correct when written but are superseded by later returns.
 - **Known gaps are visible.** The exact Round 11 F7 input is missing from the retained log. Round 13 outcomes are verified. The GP pipeline demonstration uses an earlier data cut, not the complete 13-round history.
 
-[Data provenance](docs/evidence_provenance.md) · [Evidence limitations](docs/round12_evidence.md) · [Reproduction scope](docs/reproduce.md)
+[Data provenance](DATASHEET.md) · [Evidence limitations](journey/round_12/README.md) · [Reproduction scope](docs/methods.md)
 
 ---
 

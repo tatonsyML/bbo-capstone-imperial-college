@@ -8,4 +8,4 @@ The results strengthen the argument against equating a plateau with convergence.
 
 **Final observed record:** 175 course-provided initial observations plus 104 personal returned evaluations, totalling **279**.
 
-[Original reflective essay](retrospective.md) · [Full Round 13 evidence](../../../docs/round13_evidence.md) · [Final bests](../../../results/current_best_after_week13.csv)
+[Original reflective essay](retrospective.md) · [Full Round 13 evidence](../round_13/README.md) · [Final bests](../../results/current_best_after_week13.csv)
