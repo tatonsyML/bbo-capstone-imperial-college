@@ -18,6 +18,8 @@ This is the **single chronological home** for the capstone. Each round has one p
 | **12** | — | F6/F7 structural confirmation | F6/F7 improvements with structural evidence | [Open R12](round_12/README.md) |
 | **13** | — | Final F2/F3/F4 gains | F2/F3/F4 improved again in final round | [Open R13](round_13/README.md) |
 
+**[Which round-specific code actually survives?](CODE_AVAILABILITY.md)** This inventory distinguishes linked analysis scripts from the exact source that selected a portal input.
+
 ## Original work and historical snapshots
 
 - [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the subsequently recovered F7 R11 coordinates from the official results email.

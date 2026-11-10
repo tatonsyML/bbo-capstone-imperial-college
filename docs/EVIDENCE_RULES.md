@@ -27,6 +27,8 @@ This repository is organised **by function first**. The eight `functions/F1`–`
 
 No reconstructed model is labelled an authenticated copy of undisclosed source code. Samples cannot prove a global optimum for functions without a sufficiently validated global structure.
 
+The exact availability of weekly source files is documented in the [historical code inventory](../journey/CODE_AVAILABILITY.md). A related script is not automatically evidence of the original query-selection calculation.
+
 ## Editing rules
 
 Maintain thirteen expandable rounds per function and keep the sequence explicit: **known → predicted → submitted → observed → learnt**. Update data once in the canonical CSV. Prefer links to historical scripts rather than copying them into 104 different directories. When a record conflicts with a retrospective reflection, describe the discrepancy, do not silently rewrite the original.

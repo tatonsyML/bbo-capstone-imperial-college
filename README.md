@@ -48,7 +48,7 @@ Python 3.11 is recommended. From the repository root:
 ```bash
 python -m pip install -r requirements-notebook.txt
 python -m pytest -q
-jupyter notebook notebooks/Capstone_Final_Walkthrough.ipynb
+jupyter lab notebooks/Capstone_Final_Walkthrough.ipynb
 ```
 
 The [executable notebook](notebooks/Capstone_Final_Walkthrough.ipynb) reproduces the main data checks and mathematical validations. The [source modules](src/bbo/README.md) and [methods guide](docs/methods.md) explain the GP, acquisition functions and later challengers. Retrospective code is **never** presented as the unrecorded generator of an original query.
@@ -59,7 +59,8 @@ The [executable notebook](notebooks/Capstone_Final_Walkthrough.ipynb) reproduces
 |---|---|
 | [Function stories](functions/README.md) | The main reading experience, one function through 13 rounds |
 | [Complete observations](data/all_observations.csv) | **175 original** and **104 personal portal** input/output records, repeats retained |
-| [Historical round archive](journey/README.md) | Original code, notes and outputs organised by week |
+| [Historical round archive](journey/README.md) | Original notes and portal evidence organised by week |
+| [Historical code availability](journey/CODE_AVAILABILITY.md) | Exactly which scripts and notebooks survive, and where original query-selection code remains unverified |
 | [Datasheet](DATASHEET.md) · [Model card](MODEL_CARD.md) | Data provenance, model choices, limitations and validation |
 | [Charts and their meanings](docs/functions.md) | Which plots show measured points and which show model slices |
 | [Older material and supplementary work](archive/README.md) | Historical snapshots and documents kept out of the main path |
