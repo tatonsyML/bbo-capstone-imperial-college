@@ -27,4 +27,4 @@ A high-accuracy GP forecast is not enough if I confine the search to an unproduc
 
 ## Original evidence
 
-[Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query text survived as a separate file; F7's vector was added later from verified course evidence.
+[Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query-selection file survived. [Verified inputs reconstructed from the portal records](queries_verified_from_portal.txt) provide all eight submitted vectors; this is not the original candidate-selection script.

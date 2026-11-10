@@ -152,7 +152,7 @@ PYTHONPATH=src python -m bbo.pipeline
 
 - Latest verified status: **all 13 rounds**, or 104 personal portal evaluations.
 - The [Round 13 input/output log](../data/portal_rounds_13.csv) and [final audit](../journey/round_13/README.md) are verified.
-- The exact R11 input on F7 is missing from the available retained sources; its returned score was recorded.
+- The exact R11 F7 submitted coordinates and score were recovered from the official results email. The original candidate-selection script was not retained; the recovered input is **verified**, not model-imputed.
 - Published external examples informed later investigations but must not be mixed into the personal returns dataset without source labelling and any required academic attribution.
 - Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
 - Starting observations and past bests are distinct from an individual round's returned outcome.
@@ -167,7 +167,7 @@ From the repository root, with **Node.js 18+**, without installing further packa
 node results/figures/build_visual_gallery.mjs
 ```
 
-This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 has no preserved input, so it cannot be placed in input space.
+This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 is included using its verified six-coordinate input, recovered from the original portal-results email.
 
 The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](functions.md).
 

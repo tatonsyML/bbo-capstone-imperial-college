@@ -23,7 +23,7 @@ Repeats confirmed the same values without exploring new input regions. A pre-res
 
 ## Original evidence
 
-[Returned values](outputs.txt) · [R11–12 portal CSV](../../data/portal_rounds_11_12.csv) · [observed history](../../data/all_observations.csv). The full Round 12 input list is captured in the combined portal file.
+[Returned values](outputs.txt) · [R11–12 portal CSV](../../data/portal_rounds_11_12.csv) · [observed history](../../data/all_observations.csv). The [eight verified submitted inputs](queries_verified_from_portal.txt) were compiled from that portal file and are distinguished from any lost contemporary selection code.
 
 ## Detailed Round 12 analysis (dated snapshot)
 
@@ -50,7 +50,7 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 - Four input repeats (F1, F4, F5 and F8) returned identical scores, confirming repeatability at those settings without exploring nearby inputs.
 - Four new points returned two gains (F6, F7) and two worse scores (F2, F3).
 - The actual submitted F2/F3/F6 inputs differ from an older R12 modelled shortlist; do not attach those older means to the actual portal returns.
-- Round 11 F7's return was 3.27896792623, but its exact coordinate is missing from the source snapshot. This gap is flagged, not filled with a guessed point.
+- The earlier working snapshot lacked the Round 11 F7 coordinate. The official results email subsequently confirmed `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` → `3.278967926227992`. The canonical dataset includes the verified vector, not a guessed input.
 
 ## Evidence categories
 

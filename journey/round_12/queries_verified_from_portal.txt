@@ -1,0 +1,12 @@
+# Verified Round 12 queries
+# Compiled from official portal-results records after the round.
+# This is NOT the contemporaneous original query-selection file and contains NO inferred inputs.
+# Canonical source: ../../data/portal_rounds_11_12.csv
+F1: 0.628540-0.628540
+F2: 0.684399-0.368552
+F3: 0.313581-0.474345-0.485191
+F4: 0.415000-0.417000-0.366500-0.413000
+F5: 0.999999-0.999999-0.999999-0.999999
+F6: 0.415080-0.344119-0.644062-0.776818-0.076258
+F7: 0.201689-0.150011-0.476874-0.275332-0.311652-0.657301
+F8: 0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000

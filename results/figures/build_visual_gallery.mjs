@@ -20,7 +20,7 @@ const data=Array.from({length:8},(_,i)=>{
 });
 for (const source of ["data/portal_rounds_11_12.csv","data/portal_rounds_13.csv"]){
   for (const row of parseCsv(source)){
-    if(!row.Input) continue; // exact R11 F7 input not preserved
+    if(!row.Input) throw new Error(`Verified portal record missing input: ${source}, F${row.Function} R${row.Round}`);
     data[Number(row.Function)-1].rows.push({
       x:row.Input.split("-").map(Number),y:Number(row.Output),stage:"R"+row.Round
     });
