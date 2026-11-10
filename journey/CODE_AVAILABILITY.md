@@ -16,7 +16,7 @@
 | 8 | [Module 19 Python](round_08/capstone_bbo_module19_round8.py) | Related historical analysis |
 | 9 | [Controlled-fit Python](round_09/round9_controlled_fits.py) | Related historical analysis |
 | 10 | [Exploratory](round_10/early_notebooks/exploratory_analysis.ipynb), [model-comparison](round_10/early_notebooks/model_comparison.ipynb), [optimisation-review](round_10/early_notebooks/optimisation_review.ipynb) notebooks and [shared optimiser](../src/bbo/optimizer.py) | Related or reconstructed implementation; not exact generator proof |
-| 11 | [Actual round evidence](round_11/README.md), [verified queries](round_11/queries_verified_from_portal.txt) | Original selector unverified; additional clustering source exists in separately retained working files |
+| 11 | [Actual round evidence](round_11/README.md), [verified queries](round_11/queries_verified_from_portal.txt), [recovered clustering and F1/F8 diagnostic](round_11/supplementary_analysis/bbo_clustering_audit.py) | Recovered October analysis **transcribed from indexed text**, not byte-identical certified, nor verified as the original selector |
 | 12 | [Actual round evidence](round_12/README.md), [verified queries](round_12/queries_verified_from_portal.txt) | Original selector not located in published tree |
 | 13 | [Actual round evidence](round_13/README.md) | Original selector not located in published tree |
 
@@ -30,6 +30,6 @@ The [retrospective GP replay](../scripts/replay_surrogates.py) fits an entirely 
 
 ## What remains to recover
 
-Additional archived working packages were identified outside GitHub, including an October clustering script, an R7 documentation package, and retrospective Week 12 PCA analyses. The R7 package explicitly says it contains **no original R7 selector**; the Week 12 analyses are retrospective. Source code should only be added once its contents, runnable dependencies, intended round and provenance are confirmed. Do not manufacture scripts to fill an empty week.
+Additional archived working packages were identified outside GitHub, including an R7 documentation package and retrospective Week 12 PCA analyses. The October clustering script is now available as a [provenance-labelled transcription](round_11/supplementary_analysis/bbo_clustering_audit.py). The R7 package explicitly says it contains **no original R7 selector**; the Week 12 analyses are retrospective. Source code should only be added once its contents, runnable dependencies, intended round and provenance are confirmed. Do not manufacture scripts to fill an empty week.
 
 [Evidence standards](../docs/EVIDENCE_RULES.md) · [Full chronological journey](README.md)

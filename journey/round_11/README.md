@@ -25,6 +25,10 @@ I challenged the nearly flat F1 response near the earlier incumbent and explored
 
 A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are recovered from the official course email, not model-generated.
 
+## Supplementary recovered Python analysis
+
+The [October clustering audit](supplementary_analysis/bbo_clustering_audit.py) evaluates DBSCAN neighbourhoods and numerical F1/F8 reconstruction against observations available through Round 10. It was transcribed from a separately retained Python file whose raw export was unavailable. It is **not confirmed as the exact source that selected Round 11 portal queries**. [See source-code availability by round](../CODE_AVAILABILITY.md).
+
 ## Original evidence
 
 [Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query-selection file survived. [Verified inputs reconstructed from the portal records](queries_verified_from_portal.txt) provide all eight submitted vectors; this is not the original candidate-selection script.

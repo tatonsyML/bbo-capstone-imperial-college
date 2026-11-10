@@ -5,6 +5,7 @@ authoritative observations. This test specifically protects the F7 R11 fix.
 """
 from __future__ import annotations
 
+import ast
 import csv
 import json
 from pathlib import Path
@@ -60,3 +61,11 @@ def test_all_13_rounds_are_in_historical_code_inventory():
         assert f"| {round_number} |" in text
     assert "exact" in text.lower()
     assert "not" in text.lower()
+
+
+def test_recovered_analysis_is_valid_python_and_marked_non_original():
+    path = ROOT / "journey/round_11/supplementary_analysis/bbo_clustering_audit.py"
+    source = path.read_text(encoding="utf-8")
+    ast.parse(source, filename=str(path))
+    assert "not the original Round 11" in source
+    assert "not verified byte-for-byte" in source

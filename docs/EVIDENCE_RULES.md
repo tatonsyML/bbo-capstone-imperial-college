@@ -18,7 +18,7 @@ This repository is organised **by function first**. The eight `functions/F1`–`
 
 ## Mathematical claims
 
-- **F1:** Empirically supported, externally informed oscillatory reconstruction. The complete coefficients are not retained publicly.
+- **F1:** Empirically supported, externally informed oscillatory reconstruction. A [provenance-labelled October clustering script](../journey/round_11/supplementary_analysis/bbo_clustering_audit.py) now contains one complete parameterised hypothesis. It is not authenticated hidden-source code or proven to be the original query generator.
 - **F2/F3/F4:** No validated closed-form underlying equation.
 - **F5:** Power-sum reconstruction supports the boundary behaviour; recovered after the boundary query.
 - **F6:** Competing local/GP hypotheses; no proven response equation.

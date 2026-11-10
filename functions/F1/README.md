@@ -279,7 +279,13 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 ## Mathematical evidence and its limits
 
-The F1 structure was interpreted as a **two-component Gaussian-modulated oscillatory response**. A subsequently checked model agreed numerically with recorded samples and guided R11 towards **(0.628540, 0.628540)**, returning **1.9999999996761817**. It used supplementary evidence beyond personal portal queries. Because the complete fitted coefficients are not publicly retained, I do **not** publish an unsupported exact equation or a smooth invented surface.
+The F1 structure was interpreted as a **two-component Gaussian-modulated oscillatory response**. A subsequently checked model agreed numerically with recorded samples and guided R11 towards **(0.628540, 0.628540)**, returning **1.9999999996761817**. It used supplementary evidence beyond personal portal queries. A [recovered October analytical script](../../journey/round_11/supplementary_analysis/bbo_clustering_audit.py) now records a fully parameterised hypothesis: 
+
+$
+\hat f_1(\mathbf x)=g(\mathbf x;0.5-\pi/40)+2g(\mathbf x;0.55+\pi/40),\quad g(\mathbf x;c)=e^{-1600\sum_i(x_i-c)^2}\prod_i\cos(40(x_i-c)).
+$
+
+This expression is supported by observations and supplementary information; it is **not** an authenticated copy of the hidden implementation, and the recovered script has not been verified byte-for-byte against the original raw file. The 2D/3D plots above continue to show **measured points only**, not an invented smooth surface.
 
 ## Lessons to carry forward
 
