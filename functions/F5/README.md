@@ -1,172 +1,296 @@
-# Function 5: inputs, outputs and model evidence
+# Function 5 · Controlled steps to a productive boundary
 
-**4 input dimensions · 20 starting observations · 13 submitted queries · best observed output `8662.40500124830`.**
+[← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
-Measured boundary changes culminated in a Round 10 legal-upper-corner improvement.
+**4 inputs · 20 starting observations · 13 rounds**
 
-## Every weekly portal submission
+| Initial best | Final best | First achieved | Best input |
+|---:|---:|:---:|---|
+| `1088.8596181962705` | **`8662.405001248297`** | **Round 10** | `0.999999-0.999999-0.999999-0.999999` |
 
-Each output is **measured**, not a GP prediction. **↑** marks a new best relative to all earlier real observations, including the course starting data. The third column shows the actual Round score; the fourth shows best-so-far, which is different.
+## Understanding this function
 
-| Round | Actual submitted coordinates | Actual portal output | Best so far | Historical rationale and available code |
-|---:|---|---:|---:|---|
-| [1](../../journey/round_01/README.md) | `0.1-0.75-0.9-0.98` | `1426.0897645116545` **↑** | `1426.089765` | [Evidence](../../journey/round_01/README.md) |
-| [2](../../journey/round_02/README.md) | `0.522156-0.922246-0.999259-0.99589` | `3722.27447382346` **↑** | `3722.274474` | [Evidence](../../journey/round_02/README.md) · [code](../../journey/round_02/week2_ucb_course_aligned.py) |
-| [3](../../journey/round_03/README.md) | `0.508373-0.970147-0.999999-0.999999` | `4295.86773060836` **↑** | `4295.867731` | [Evidence](../../journey/round_03/README.md) |
-| [4](../../journey/round_04/README.md) | `0.508373-0.999999-0.999999-0.999999` | `4694.317308235808` **↑** | `4694.317308` | [Evidence](../../journey/round_04/README.md) · [code](../../journey/round_04/capstone_bbo_week4_module15.py) |
-| [5](../../journey/round_05/README.md) | `0.558373-0.999999-0.999999-0.999999` | `4807.986076589498` **↑** | `4807.986077` | [Evidence](../../journey/round_05/README.md) |
-| [6](../../journey/round_06/README.md) | `0.608373-0.999999-0.999999-0.999999` | `4957.571711515816` **↑** | `4957.571712` | [Evidence](../../journey/round_06/README.md) · [code](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) |
-| [7](../../journey/round_07/README.md) | `0.658373-0.999999-0.999999-0.999999` | `5151.047725485012` **↑** | `5151.047725` | [Evidence](../../journey/round_07/README.md) |
-| [8](../../journey/round_08/README.md) | `0.758373-0.999999-0.999999-0.999999` | `5709.3613198927205` **↑** | `5709.361320` | [Evidence](../../journey/round_08/results/round8_queries.csv) · [code](../../journey/round_08/capstone_bbo_module19_round8.py) |
-| [9](../../journey/round_09/README.md) | `0.858373-0.999999-0.999999-0.999999` | `6583.56144525802` **↑** | `6583.561445` | [Evidence](../../journey/round_09/results/round9_queries.csv) · [code](../../journey/round_09/round9_controlled_fits.py) |
-| [10](../../journey/round_10/README.md) | `0.999999-0.999999-0.999999-0.999999` | `8662.405001248297` **↑** | `8662.405001` | [Evidence](../../journey/round_10/round10_candidates.csv) · [code](../../src/bbo/optimizer.py) |
-| [11](../../journey/round_11/README.md) | `0.999999-0.999999-0.999999-0.999999` | `8662.405001248297` | `8662.405001` | [Evidence](../../journey/round_11/README.md) |
-| [12](../../journey/round_12/README.md) | `0.999999-0.999999-0.999999-0.999999` | `8662.405001248297` | `8662.405001` | [Evidence](../../journey/round_12/README.md) |
-| [13](../../journey/round_13/README.md) | `0.999999-0.999999-0.999999-0.999999` | `8662.405001248297` | `8662.405001` | [Evidence](../../journey/round_13/README.md) |
+F5 had a strong directional signal. A sequence of controlled coordinate changes showed increasing scores towards the legal upper boundary; R10 tested (0.999999)⁴ and returned 8662.405. The full interacting power-sum equation was reconstructed **after** the boundary query, so it explains rather than caused that decision.
 
-## Week-by-week development: actual inputs, outputs, strategy, code and lessons
+### Score progression from real evaluations
 
-Follow the same function from Round 1 to Round 13. The **portal input and output** are observed evidence, while the **lesson learnt** is retrospective interpretation. Strategy descriptions reproduce the available decision ledger; they do not assert that every related script generated the exact submitted point. Later structural reconstructions are never passed off as pre-result models. Read the table above for a compact results history, or use the sections below for the decision narrative.
+![Function 5 measured best-so-far history](progress.svg)
 
-### Round 1
+The chart tracks measured best-so-far results. A flat interval means no improvement to the incumbent, not that a model predicted a constant function.
+
+## Weekly development · expand a round
+
+Each round shows **what was known or being tested, what was submitted, what returned, and what was learnt**. The original 52-page weekly reflection is the narrative foundation; the decision ledger, surviving code and official portal records establish what was actually submitted. An exact historic kernel/seed/forecast appears only if retained. Where early rationale was reconstructed later, it is explicitly labelled in the ledger.
+
+<details>
+<summary><strong>Round 1 · Opening hypothesis</strong> — 1426.08976 ★ new best</summary>
+
+**Original learning context:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
+
+**Strategy / candidate-selection evidence:** GP and acquisition baseline (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.1-0.75-0.9-0.98`  
-**Actual portal return:** `1426.0897645116545`  
-**Progress:** new best `1426.089765` (previous `1088.8596`).  
-**Strategy evidence:** GP and acquisition baseline (retrospective).  
-**Lesson learnt (retrospective):** A first selected point established a higher best.  
-**Source:** [round 1 evidence](../../journey/round_01/README.md) · Exact original selection script not retained.
+**Actual portal result:** `1426.0897645116545`  
+**Best observed before → after:** `1088.8596181962705` → `1426.0897645116545`.
 
-### Round 2
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Second round: GP/UCB with per-function exploration weights; deterministic candidate grids or pools.
+
+**Supporting material:** [Round 1 evidence](../../journey/round_01/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 2 · GP and UCB working package</strong> — 3722.27447 ★ new best</summary>
+
+**Original learning context:** After R1 improved to 1426.09, Week 2 gave F5 the exploitative UCB κ=1.0 and noted that later coordinates near their upper bounds were important.
+
+**Strategy / candidate-selection evidence:** GP and UCB working package *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.522156-0.922246-0.999259-0.99589`  
-**Actual portal return:** `3722.27447382346`  
-**Progress:** new best `3722.274474` (previous `1426.0898`).  
-**Strategy evidence:** GP and UCB working package.  
-**Lesson learnt (retrospective):** The next query rose sharply to 3722.274, showing strong upper-coordinate potential.  
-**Source:** [round 2 evidence](../../journey/round_02/README.md) · [related preserved code](../../journey/round_02/week2_ucb_course_aligned.py) (*related historical script not verified exact*).
+**Actual portal result:** `3722.27447382346`  
+**Best observed before → after:** `1426.0897645116545` → `3722.27447382346`.
 
-### Round 3
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
+
+**Supporting material:** [Round 2 evidence](../../journey/round_02/README.md) · [Related surviving script/notebook](../../journey/round_02/week2_ucb_course_aligned.py) (related historical script not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 3 · Function-specific EI or wider search (retrospective)</strong> — 4295.86773 ★ new best</summary>
+
+**Original learning context:** The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
+
+**Strategy / candidate-selection evidence:** Function-specific EI or wider search (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.508373-0.970147-0.999999-0.999999`  
-**Actual portal return:** `4295.86773060836`  
-**Progress:** new best `4295.867731` (previous `3722.2745`).  
-**Strategy evidence:** Function-specific EI or wider search (retrospective).  
-**Lesson learnt (retrospective):** Further movement towards the boundary returned 4295.868.  
-**Source:** [round 3 evidence](../../journey/round_03/README.md) · Exact original selection script not retained.
+**Actual portal result:** `4295.86773060836`  
+**Best observed before → after:** `3722.27447382346` → `4295.86773060836`.
 
-### Round 4
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. The Week 5 original reflection documents the R4 single-coordinate test: x2 moved from 0.970147 to 0.999999, raising 4295.87 to 4694.32.
+
+**Supporting material:** [Round 3 evidence](../../journey/round_03/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 4 · GP, SVM and neural-network diagnostics</strong> — 4694.31731 ★ new best</summary>
+
+**Original learning context:** The Week 5 original reflection documents the R4 single-coordinate test: x2 moved from 0.970147 to 0.999999, raising 4295.87 to 4694.32.
+
+**Strategy / candidate-selection evidence:** GP, SVM and neural-network diagnostics *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.508373-0.999999-0.999999-0.999999`  
-**Actual portal return:** `4694.317308235808`  
-**Progress:** new best `4694.317308` (previous `4295.8677`).  
-**Strategy evidence:** GP, SVM and neural-network diagnostics.  
-**Lesson learnt (retrospective):** Increasing x2 alone to its legal upper bound returned 4694.317.  
-**Source:** [round 4 evidence](../../journey/round_04/README.md) · [related preserved code](../../journey/round_04/capstone_bbo_week4_module15.py) (*related historical analysis not verified exact*).
+**Actual portal result:** `4694.317308235808`  
+**Best observed before → after:** `4295.86773060836` → `4694.317308235808`.
 
-### Round 5
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. The next controlled x1 increase, holding x2–x4 fixed, improved the score again.
+
+**Supporting material:** [Round 4 evidence](../../journey/round_04/README.md) · [Related surviving script/notebook](../../journey/round_04/capstone_bbo_week4_module15.py) (related historical analysis not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 5 · Controlled coordinate probes (retrospective)</strong> — 4807.98608 ★ new best</summary>
+
+**Original learning context:** The next controlled x1 increase, holding x2–x4 fixed, improved the score again.
+
+**Strategy / candidate-selection evidence:** Controlled coordinate probes (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.558373-0.999999-0.999999-0.999999`  
-**Actual portal return:** `4807.986076589498`  
-**Progress:** new best `4807.986077` (previous `4694.3173`).  
-**Strategy evidence:** Controlled coordinate probes (retrospective).  
-**Lesson learnt (retrospective):** Increasing x1 with other coordinates fixed returned 4807.986.  
-**Source:** [round 5 evidence](../../journey/round_05/README.md) · Exact original selection script not retained.
+**Actual portal result:** `4807.986076589498`  
+**Best observed before → after:** `4694.317308235808` → `4807.986076589498`.
 
-### Round 6
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
+
+**Supporting material:** [Round 5 evidence](../../journey/round_05/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 6 · GP, ridge and MLP comparison; controlled local fit</strong> — 4957.57171 ★ new best</summary>
+
+**Original learning context:** Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
+
+**Strategy / candidate-selection evidence:** GP, ridge and MLP comparison; controlled local fit *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.608373-0.999999-0.999999-0.999999`  
-**Actual portal return:** `4957.571711515816`  
-**Progress:** new best `4957.571712` (previous `4807.9861`).  
-**Strategy evidence:** GP, ridge and MLP comparison; controlled local fit.  
-**Lesson learnt (retrospective):** Another controlled x1 increase made a further gain.  
-**Source:** [round 6 evidence](../../journey/round_06/README.md) · [related preserved code](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) (*related notebook original fitter missing*).
+**Actual portal result:** `4957.571711515816`  
+**Best observed before → after:** `4807.986076589498` → `4957.571711515816`.
 
-### Round 7
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
+
+**Supporting material:** [Round 6 evidence](../../journey/round_06/README.md) · [Related surviving script/notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) (related notebook original fitter missing, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 7 · ARD and local forecast investigations (retrospective)</strong> — 5151.04773 ★ new best</summary>
+
+**Original learning context:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
+
+**Strategy / candidate-selection evidence:** ARD and local forecast investigations (retrospective) *(early-round attribution partly retrospective)*.
 
 **Submitted input:** `0.658373-0.999999-0.999999-0.999999`  
-**Actual portal return:** `5151.047725485012`  
-**Progress:** new best `5151.047725` (previous `4957.5717`).  
-**Strategy evidence:** ARD and local forecast investigations (retrospective).  
-**Lesson learnt (retrospective):** The monotonic x1 trend continued.  
-**Source:** [round 7 evidence](../../journey/round_07/README.md) · Exact original selection script not retained.
+**Actual portal result:** `5151.047725485012`  
+**Best observed before → after:** `4957.571711515816` → `5151.047725485012`.
 
-### Round 8
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. The Week 8/9 reflections showed gains accelerating along the same x1 path; smaller steps were not automatically safer or better.
+
+**Supporting material:** [Round 7 evidence](../../journey/round_07/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 8 · The controlled x1 series remains monotonic with accelerating gains. Increase…</strong> — 5709.36132 ★ new best</summary>
+
+**Original learning context:** The Week 8/9 reflections showed gains accelerating along the same x1 path; smaller steps were not automatically safer or better.
+
+**Strategy / candidate-selection evidence:** The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary..
 
 **Submitted input:** `0.758373-0.999999-0.999999-0.999999`  
-**Actual portal return:** `5709.3613198927205`  
-**Progress:** new best `5709.361320` (previous `5151.0477`).  
-**Strategy evidence:** The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary..  
-**Lesson learnt (retrospective):** A larger x1 step yielded a larger absolute gain.  
-**Source:** [round 8 evidence](../../journey/round_08/README.md) · [related preserved code](../../journey/round_08/capstone_bbo_module19_round8.py) (*related historical analysis not verified exact*).
+**Actual portal result:** `5709.3613198927205`  
+**Best observed before → after:** `5151.047725485012` → `5709.3613198927205`.
 
-### Round 9
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
+
+**Supporting material:** [Round 8 evidence](../../journey/round_08/README.md) · [Related surviving script/notebook](../../journey/round_08/capstone_bbo_module19_round8.py) (related historical analysis not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 9 · Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gai…</strong> — 6583.56145 ★ new best</summary>
+
+**Original learning context:** Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
+
+**Strategy / candidate-selection evidence:** Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gain per unit x1 has been increasing, and independent local quadratic / GP checks both forecast roughly 6454..
 
 **Submitted input:** `0.858373-0.999999-0.999999-0.999999`  
-**Actual portal return:** `6583.56144525802`  
-**Progress:** new best `6583.561445` (previous `5709.3613`).  
-**Strategy evidence:** Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gain per unit x1 has been increasing, and independent local quadratic / GP checks both forecast roughly 6454..  
-**Forecast recorded before outcome:** `6454.0`.  
-**Lesson learnt (retrospective):** Another 0.10 x1 increase returned 6583.561.  
-**Source:** [round 9 evidence](../../journey/round_09/README.md) · [related preserved code](../../journey/round_09/round9_controlled_fits.py) (*related historical analysis not verified exact*).
+**Actual portal result:** `6583.56144525802`  
+**Best observed before → after:** `5709.3613198927205` → `6583.56144525802`.
 
-### Round 10
+**Pre-result numerical forecast:** `6454.0` (recorded before return).
 
-**Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
-**Actual portal return:** `8662.405001248297`  
-**Progress:** new best `8662.405001` (previous `6583.5614`).  
-**Strategy evidence:** Upper-bound exploitation supported by nine observed gains and cubic challenger.  
-**Lesson learnt (retrospective):** Testing the legal upper corner returned 8662.405; the full equation came later.  
-**Source:** [round 10 evidence](../../journey/round_10/README.md) · [related preserved code](../../src/bbo/optimizer.py) (*related challenger not verified exact*).
+**After the result:** The submitted point established a new personal best. The original Round 10 decision says that nine successive gains justified testing every coordinate at the legal upper corner, with external cubic/challenger support.
 
-### Round 11
+**Supporting material:** [Round 9 evidence](../../journey/round_09/README.md) · [Related surviving script/notebook](../../journey/round_09/round9_controlled_fits.py) (related historical analysis not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
 
-**Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
-**Actual portal return:** `8662.405001248297`  
-**Progress:** no new best; incumbent `8662.40500` retained.  
-**Strategy evidence:** Alternative-region exploration and structural investigations.  
-**Lesson learnt (retrospective):** The repeated corner reproduced the best but did not test other regions.  
-**Source:** [round 11 evidence](../../journey/round_11/README.md) · Exact original selection script not retained.
+</details>
 
-### Round 12
+<details>
+<summary><strong>Round 10 · Upper-bound exploitation supported by nine observed gains and cubic challenger</strong> — 8662.40500 ★ new best</summary>
+
+**Original learning context:** The original Round 10 decision says that nine successive gains justified testing every coordinate at the legal upper corner, with external cubic/challenger support.
+
+**Strategy / candidate-selection evidence:** Upper-bound exploitation supported by nine observed gains and cubic challenger.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
-**Actual portal return:** `8662.405001248297`  
-**Progress:** no new best; incumbent `8662.40500` retained.  
-**Strategy evidence:** Controlled probes, repeats and structural investigations.  
-**Lesson learnt (retrospective):** Another repeat confirmed the score at the same input only.  
-**Source:** [round 12 evidence](../../journey/round_12/README.md) · Exact original selection script not retained.
+**Actual portal result:** `8662.405001248297`  
+**Best observed before → after:** `6583.56144525802` → `8662.405001248297`.
 
-### Round 13
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point established a new personal best. Repeating the confirmed boundary score did not establish a hidden-source global optimum.
+
+**Supporting material:** [Round 10 evidence](../../journey/round_10/README.md) · [Related surviving script/notebook](../../src/bbo/optimizer.py) (related challenger not verified exact, not necessarily the exact historical candidate generator) · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 11 · Alternative-region exploration and structural investigations</strong> — 8662.40500</summary>
+
+**Original learning context:** Repeating the confirmed boundary score did not establish a hidden-source global optimum.
+
+**Strategy / candidate-selection evidence:** Alternative-region exploration and structural investigations.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
-**Actual portal return:** `8662.405001248297`  
-**Progress:** no new best; incumbent `8662.40500` retained.  
-**Strategy evidence:** Final exploitation and regional probes.  
-**Lesson learnt (retrospective):** The best legal input was retained; global optimality for the hidden code was not established.  
-**Source:** [round 13 evidence](../../journey/round_13/README.md) · Exact original selection script not retained.
+**Actual portal result:** `8662.405001248297`  
+**Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
 
-## Per-function evidence
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
-- [All observations](observations.csv): 20 initial records plus 13 submitted and returned scores, preserved at source precision.
-- [Decision and provenance ledger](selection_history.csv): the 13 actual inputs, outcomes, pre-round data counts, rationales, related scripts, code-evidence status and available forecasts.
-- [Replay and fitted-model guidance](model_runs/README.md): how to refit a **new** GP using only observations from before the chosen Round, and inspect learned kernel lengthscales.
+**After the result:** The submitted point did not beat the incumbent. Another repeat held the incumbent while teaching little about other inputs.
 
+**Supporting material:** [Round 11 evidence](../../journey/round_11/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
 
-## Preserved prospective forecasts
+</details>
 
-Recorded pre-result forecasts are distinguished from reconstructed estimates. Blank entries in the CSV mean no such numerical forecast was retained.
+<details>
+<summary><strong>Round 12 · Controlled probes, repeats and structural investigations</strong> — 8662.40500</summary>
 
-| Round | Recorded forecast | Actual result | Status |
-|---:|---:|---:|---|
-| 9 | `6454.0` | `6583.56144525802` | recorded before return |
+**Original learning context:** Another repeat held the incumbent while teaching little about other inputs.
 
-## Method and code provenance
+**Strategy / candidate-selection evidence:** Controlled probes, repeats and structural investigations.
 
-Historical code references are linked in the round table where retained. A script related to a round is **not proof that those exact model settings generated every submitted input**. Exact saved GP model objects and per-round fitted lengthscales have not been retained for all 104 decisions.
+**Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
+**Actual portal result:** `8662.405001248297`  
+**Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
 
-[F5 structural validation](../../src/bbo/structural_validation.py) documents a later analytic reconstruction.
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
-Our [shared GP code](../../src/bbo/surrogates.py), [acquisition functions](../../src/bbo/acquisition.py) and [candidate-generation utilities](../../src/bbo/search.py) apply to all eight functions with **separate fitted models**. [HEBO-inspired and TuRBO-style challengers](../../src/bbo/optimizer.py) differ from the [later official HEBO / BoTorch TuRBO-1 benchmark](../../research/full_optimisers/README.md); neither full reference engine is claimed as the historical submitter.
+**After the result:** The submitted point did not beat the incumbent. The final record again retained the highest legal tested point; the mathematically reconstructed power-sum function came from later analysis.
 
-[All functions](../README.md) · [Chronological journey](../../journey/README.md) · [Final model card](../../MODEL_CARD.md).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+<details>
+<summary><strong>Round 13 · Final decision</strong> — 8662.40500</summary>
+
+**Original learning context:** The final record again retained the highest legal tested point; the mathematically reconstructed power-sum function came from later analysis.
+
+**Strategy / candidate-selection evidence:** Final exploitation and regional probes.
+
+**Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
+**Actual portal result:** `8662.405001248297`  
+**Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
+
+**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
+
+**After the result:** The submitted point did not beat the incumbent. Boundary tests are justified when they answer a concrete, evidence-supported question. Avoid claiming that a retrospective equation drove an earlier query.
+
+**Supporting material:** [Round 13 evidence](../../journey/round_13/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+
+</details>
+
+## Visual analysis
+
+<table><tr><td width="50%"><img src="../../results/figures/f5_2d.svg" width="460" alt="Function 5 two-dimensional representation"></td><td width="50%"><img src="../../results/figures/f5_3d.svg" width="460" alt="Function 5 three-dimensional representation"></td></tr></table>
+
+**Model slices, not additional observations:** the two charts vary x1 and x2, holding **x3=x4=0.999999**. The graph shows **log1p(output)** to make the steep response readable. The real measured points are in the ledger above.
+
+[How the visualisations were produced](../../docs/functions.md) · [Graph-generation code](../../results/figures/build_visual_gallery.mjs)
+
+## Mathematical evidence and its limits
+
+A retrospective reconstruction of F5 is the interacting power-sum expression:
+
+$$
+\hat f_5(\mathbf{x}) = 0.01\sum_{k=1}^{4}\left[\sum_{j=1}^{4}(4x_j)^k-b_k\right]^2,\quad\mathbf{b}=(7.5,16,40,120).
+$$
+
+At the legal upper input of **(0.999999)⁴**, the equation returns **8662.405001248297**, matching the portal. At the unpermitted (1,1,1,1), it predicts 8662.4825. **This equation was recovered after R10 and did not select the original boundary query.** It is corroborated on tested inputs, not proven to be the undisclosed implementation globally.
+
+## Lessons to carry forward
+
+Boundary tests are justified when they answer a concrete, evidence-supported question. Avoid claiming that a retrospective equation drove an earlier query.
+
+**Source discipline:** The originally submitted weekly reflections informed the learning context; the portal results and preserved files establish what actually happened. Historical experiments, post-outcome explanations and model-generated graph values are not interchangeable.
+
+[← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)

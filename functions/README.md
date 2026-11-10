@@ -1,37 +1,36 @@
-# Complete function-by-function experiment ledgers
+# Explore the eight function stories
 
-These pages present the **same experimental history** as the [13-round journey](../journey/README.md), reorganised by function without replacing the original documents. The single source of truth remains [all_observations.csv](../data/all_observations.csv): **175 course-provided starting observations plus 104 personal portal returns, 279 total.**
+[← Project homepage](../README.md) · [Complete data](../data/all_observations.csv) · [Historical archive](../journey/README.md)
 
-| Function | Dimensions | Initial observations | Real portal rounds | Best measured result | Decision ledger |
-|---|---:|---:|---:|---:|---|
-| [F1](F1/README.md) | 2 | 10 | 13 | `1.999999999676` | [CSV](F1/selection_history.csv) |
-| [F2](F2/README.md) | 2 | 10 | 13 | `0.7442504263021` | [CSV](F2/selection_history.csv) |
-| [F3](F3/README.md) | 3 | 15 | 13 | `-0.003753096918719` | [CSV](F3/selection_history.csv) |
-| [F4](F4/README.md) | 4 | 30 | 13 | `0.7468979113807` | [CSV](F4/selection_history.csv) |
-| [F5](F5/README.md) | 4 | 20 | 13 | `8662.405001248` | [CSV](F5/selection_history.csv) |
-| [F6](F6/README.md) | 5 | 20 | 13 | `-0.03751864724437` | [CSV](F6/selection_history.csv) |
-| [F7](F7/README.md) | 6 | 30 | 13 | `3.322368011393` | [CSV](F7/selection_history.csv) |
-| [F8](F8/README.md) | 8 | 40 | 13 | `10.00000000000` | [CSV](F8/selection_history.csv) |
+**One function, thirteen decisions.** Start with the behaviour and final result, open any weekly section, then inspect the progress chart, original evidence, model code and 2D/3D visualisations. The weekly sections collapse by default so the page stays readable.
 
-## How to use the function pages
+| Function | What to look for | Final best | First reached |
+|---|---|---:|:---:|
+| [F1 · Finding the signal](F1/README.md) | Near-zero outputs, target scaling, oscillatory reconstruction | **1.999999999676** | R11 |
+| [F2 · When the forecast failed](F2/README.md) | EI/UCB evolution, miscalibration and competing regions | **0.744250426302** | R13 |
+| [F3 · Brittle local peaks](F3/README.md) | Controlled local tests versus alternative regions | **−0.003753096919** | R13 |
+| [F4 · Precise but unproductive](F4/README.md) | Tiny accurate steps and a later wider search | **0.746897911381** | R13 |
+| [F5 · Towards the boundary](F5/README.md) | Controlled coordinate changes and later power-sum reconstruction | **8,662.405001** | R10 |
+| [F6 · Unstable local behaviour](F6/README.md) | Failed predictions and regional changes | **−0.037518647244** | R12 |
+| [F7 · From local to structural](F7/README.md) | One-coordinate path, alternative basin and Hartmann-6 forecast | **3.322368011393** | R12 |
+| [F8 · Quadratic recovery](F8/README.md) | GP refinement, mathematical solution and held-out validation | **10.000000** | R10 |
 
-**Function first, week by week:** each F1–F8 page contains the complete 13-round portal table and a further **week-by-week development** section recording submitted coordinates, measured output, incumbent progress, historical strategy evidence, related surviving code and the lesson learnt. The separate [chronological archive](../journey/README.md) preserves the original round context.
+[Evidence and editorial standards](../docs/EVIDENCE_RULES.md)
 
-Open F1–F8 for all 13 submitted coordinate vectors, actual returned scores and links to the underlying Round evidence. Each directory has a full-precision `observations.csv`, a 13-row `selection_history.csv` with decision and code provenance, and a `model_runs/README.md` explaining how to refit a surrogate without future information.
+## How to read a round
 
-**Source recovery:** F7 Round 11's input and output are now verified from the official results email. Some original optimisation scripts and fitted GP objects were never retained; they are not replaced with invented historical settings.
+Each expandable section separates the same five things:
 
-## One codebase, separately fitted models
+**What was known → What was predicted → What was submitted → What was observed → What changed afterwards.**
 
-The [shared GP](../src/bbo/surrogates.py), [acquisition functions](../src/bbo/acquisition.py), and [candidate search](../src/bbo/search.py) are common to F1–F8. Each function has its own dimension, training observations, fitted hyperparameters and acquisition scores. A single new [GP replay script](../scripts/replay_surrogates.py) handles `--function 1` through `--function 8` and `--round 1` through `--round 13`.
+Where a model hyperparameter, seed or exact selection script was not retained, it is described as **not retained**. The detailed [decision ledgers](F2/selection_history.csv), [historical code](../journey/README.md) and [279-row master dataset](../data/all_observations.csv) provide a numerical audit without requiring readers to navigate duplicate CSV files first.
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/replay_surrogates.py --function 2 --round 9 --kernel Matern25 --acquisition EI --restarts 0
-```
+## How to interpret the graphics
 
-The replay uses **only the original observations available before the target Round** and labels its trained kernel parameters and suggested candidate `retrospective_counterfactual`. It does **not** claim to reproduce the original portal-selection process.
+- **Progress:** best observed score after each round, including the initial supplied best.
+- **F1/F2/F3/F4/F6:** scatter or 3D projections of observed points only; not invented continuous surfaces.
+- **F5/F7/F8:** clearly labelled fixed-coordinate slices of reconstructed mathematical functions. Only two inputs vary in each slice.
 
-The [historical lightweight HEBO-inspired / TuRBO-style code](../src/bbo/optimizer.py) is not full HEBO or TuRBO. The [later reference benchmark](../research/full_optimisers/README.md) includes official HEBO and BoTorch-based TuRBO-1 implementations, but was **not used to generate the historic 104 submissions** and has no published full-engine comparison results.
+[Graph descriptions and assumptions](../docs/functions.md) · [Rebuild graph source](../results/figures/build_visual_gallery.mjs)
 
-[Main README](../README.md) · [Round-first journey](../journey/README.md) · [Methodology](../docs/methods.md).
+The project history remains intact in [journey/](../journey/README.md). It is an evidence archive, **not** a second set of independently edited experimental results.

@@ -1,4 +1,4 @@
-> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](../journey/round_13/README.md), [README](../README.md) and [provenance](../DATASHEET.md). Statements that Round 10 was pending are historical, not current.
+> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](../../journey/round_13/README.md), [README](../../README.md) and [provenance](../../DATASHEET.md). Statements that Round 10 was pending are historical, not current.
 
 # Decision Log
 
@@ -37,10 +37,10 @@ Retrospective analysis never overwrites the historical record, and unsubmitted c
 
 Each proposed query must have a credible prospect of improvement **or** produce information that changes a later decision. Historical forecast accuracy and direct observations take precedence over algorithm prestige. This is a documented human review policy rather than a calibrated automatic acceptance rule.
 
-**The Round 10 vectors are now confirmed as submitted**, but none has an observed score in the dataset. Four earlier provisional ideas (F1, F3, F6 and F7) were replaced. The old points are preserved alongside final choices and their evidential rationale in [the revision audit](../journey/round_10/README.md). F2, F4, F5 and F8 were unchanged.
+**The Round 10 vectors are now confirmed as submitted**, but none has an observed score in the dataset. Four earlier provisional ideas (F1, F3, F6 and F7) were replaced. The old points are preserved alongside final choices and their evidential rationale in [the revision audit](../../journey/round_10/README.md). F2, F4, F5 and F8 were unchanged.
 
 **F8's predicted output of 10 remains a structural model result until the portal returns its score.** F6 and F7's higher model-predicted means are not measured improvements. Some exploratory candidate selection was informed by public classmates' evaluated data; these are external benchmarks, not observations collected by this participant, and their assessed use is subject to the course collaboration rules.
 
-[The exact submitted vectors](../journey/round_10/queries.txt) are recorded separately from observed results. The archive of Weeks 1–9 has not been rewritten.
+[The exact submitted vectors](../../journey/round_10/queries.txt) are recorded separately from observed results. The archive of Weeks 1–9 has not been rewritten.
 
 Transparency is the ability to tell what was known, what was assumed, what was decided and what happened next, rather than the volume of generated documentation.

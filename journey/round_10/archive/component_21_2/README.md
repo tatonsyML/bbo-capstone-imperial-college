@@ -17,8 +17,8 @@ Supporting materials:
 
 - [Round 10 submitted inputs](../../queries.txt)
 - [Revision and external-evidence provenance audit](../../README.md)
-- [Decision log](../../../../docs/decision_log.md)
-- [Results through Week 9](../../../../results/current_best_after_week9.csv)
+- [Decision log](../../../../archive/notes/early_decision_log.md)
+- [Results through Week 9](../../../../archive/results/current_best_after_week9.csv)
 
 ## Rubric coverage (11 criteria)
 

@@ -1,8 +1,8 @@
 # Final Model Card | Evidence-led Black-Box Optimisation
 
-**Version:** Final, 13 returned rounds (9 November 2026) · **Assessment:** Component 25.3 · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
+**Version:** Final, 13 returned rounds (9 November 2026) · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
 
-[← For assessors](docs/assessment_guide.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
+[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
 
 ## 1. Model summary
 
@@ -42,7 +42,7 @@ This table separates the strategy I was considering from the **results the porta
 | **12** | Structural forecast checks and further local tests | F6 reached −0.037519; F7's pre-result Hartmann-6 prediction closely matched 3.322368 |
 | **13** | Final exploitation and selected alternative regions | F2, F3 and F4 reached new personal bests. F1/F5/F8 repeated earlier scores, F7 remained numerically equivalent and F6 did not improve |
 
-The [round-by-round archive](journey/README.md) and [project journey](docs/project_journey.md) distinguish recorded returns from retrospective interpretation.
+The [round-by-round archive](journey/README.md) and [project journey](archive/notes/early_project_timeline.md) distinguish recorded returns from retrospective interpretation.
 
 ## 5. Trade-offs and decisions
 
@@ -107,4 +107,4 @@ The same approach would require additional validation, security checks and hard 
 
 Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
 
-[← Assessment map](docs/assessment_guide.md)
+[← Project home](README.md)
