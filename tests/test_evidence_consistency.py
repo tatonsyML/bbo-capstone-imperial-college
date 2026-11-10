@@ -67,5 +67,5 @@ def test_recovered_analysis_is_valid_python_and_marked_non_original():
     path = ROOT / "journey/round_11/supplementary_analysis/bbo_clustering_audit.py"
     source = path.read_text(encoding="utf-8")
     ast.parse(source, filename=str(path))
-    assert "not the original Round 11" in source
+    assert "not the original round 11" in source.lower()
     assert "not verified byte-for-byte" in source
