@@ -20,11 +20,15 @@ This is the **single chronological home** for the capstone. Each round links the
 | **12** | 23 | **GP ensembles, PCA/kernel PCA, Optuna TPE, warping and trust-region Thompson sampling** | Four Python implementations, candidate comparisons and new F6/F7 bests | [Open R12](round_12/README.md) |
 | **13** | 24 | Final F2/F3/F4 gains | F2/F3/F4 improved again in final round | [Open R13](round_13/README.md) |
 
+## Final reflection
+
+[**When the Prediction Was Right but the Decision Was Wrong: Thirteen Rounds of Black-Box Optimisation**](final_reflection/README.md) draws together the strategy changes, final results, mathematical reconstructions and main lessons from all thirteen rounds.
+
 ## Original work and historical snapshots
 
 - [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the confirmed F7 Round 11 coordinates.
 - [Module 21.2 original assessed datasheet/model card/decision log](round_10/archive/component_21_2/), preserved as historical evidence.
-- [Module 21.1 original reflection](round_10/archive/component_21_1/submission.md) and [Component 25.1 retrospective](final_reflection/retrospective.md).
+- [Module 21.1 original reflection](round_10/archive/component_21_1/submission.md).
 - [Stage 1 and missing component index](stage_1/README.md).
 
 **Research evidence:** The portal history records actual evaluations. Later model reconstructions are distinguished from predictions made before the corresponding results.
