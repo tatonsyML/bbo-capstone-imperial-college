@@ -21,6 +21,14 @@ I began with Gaussian Process models and acquisition functions. As new observati
 
 This repository documents **what I tried, what worked, what failed and how my reasoning evolved across thirteen rounds**. It preserves the original experiments, code and results while distinguishing historical decisions from subsequent research.
 
+### Why black-box optimisation matters
+
+Black-box optimisation (BBO) helps solve real-world problems where the relationship between inputs and outcomes is unknown, difficult to model or expensive to evaluate.
+
+It is used in engineering to improve designs, in machine learning to tune model parameters, in manufacturing to optimise production processes, and in scientific research to identify promising experiments.
+
+Rather than testing every possible combination, BBO uses the results of previous evaluations to guide the next experiment. This makes it particularly valuable when time, cost or available evaluations are limited.
+
 ### What is in the evidence
 
 - **175** course-supplied initial observations and **104** personal portal evaluations, including repeated queries.
