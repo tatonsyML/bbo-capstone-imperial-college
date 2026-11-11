@@ -21,11 +21,10 @@ F7's positive Hartmann-6 forecast of about **3.32236801** was recorded before re
 
 Repeats confirmed the same values without exploring new input regions. A pre-result structural forecast is more informative than matching a function only after seeing its score.
 
-## Original weekly submission perspective
+## How I approached this round
 
-**Original Week 12 submission perspective:** I tested whether PCA retained useful search information. For F8, two PCs captured **48.8%** of the input variance and seven captured **95.3%**, but constraining the quadratic reduced the modelled maximum to **9.955973** (two PCs) or **9.999974** (seven) rather than **10**. The reflection also recorded **F6/F7 improvements**, **four repeats** and underperforming F2/F3 queries. The [recovered original modelling scripts](original/review_round12.py) document implementation work separately from these written reflections.
+I tested whether PCA retained useful search information. For F8, two PCs captured **48.8%** of the input variance and seven captured **95.3%**, but constraining the quadratic reduced the modelled maximum to **9.955973** (two PCs) or **9.999974** (seven) rather than **10**. The portal recorded **F6/F7 improvements**, repeated inputs and underperforming F2/F3 queries. The [recovered modelling scripts](original/review_round12.py) document the optimisation experiments used in this round.
 
-*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support historical reasoning but do not replace portal returns or missing original scripts.*
 
 ## Original evidence
 

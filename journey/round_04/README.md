@@ -14,11 +14,10 @@ F3 → -0.031281597; F5 → 4694.3173; F6 → -0.54144783; F8 → 9.8754708. Tha
 
 The F5 score increased through a controlled region change, while some apparently plausible proposals failed. Classification and model agreement were treated as diagnostics, not substitutes for returned scores.
 
-## Original weekly submission perspective
+## How I approached this round
 
-**Original Week 4 submission perspective:** I compared GP-led reasoning with logistic regression, linear/RBF SVM and a small neural network for **high-/low-performing classification**. I also examined **surrogate gradients**, including F7's sensitivity to x1 and x6. Classification was deliberately a *second opinion*: false negatives might exclude the best region, and classification scores did not replace measured function scores.
+I compared GP-led reasoning with logistic regression, linear/RBF SVM and a small neural network for **high-/low-performing classification**. I also examined **surrogate gradients**, including F7's sensitivity to x1 and x6. Classification was deliberately a *second opinion*: false negatives might exclude the best region, and classification scores did not replace measured function scores.
 
-*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
 
 ## Source and limitations
 

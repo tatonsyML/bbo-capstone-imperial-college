@@ -1,8 +1,8 @@
 # Development journey | 13 returned rounds
 
-[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Original weekly submission cross-check](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../methods/README.md) · [Final code](../final/README.md)
+[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../methods/README.md) · [Final code](../final/README.md)
 
-This is the **single chronological home** for the capstone. Each round has one principal README linking its portal results, surviving code, notebooks, forecast evidence and lessons. Some early explanations were reconstructed **retrospectively**, and are labelled accordingly. The original thirteen weekly discussion/reflection texts survive together in the author's **private 52-page Word collection**. Their reasoning has now been reconciled with these public pages via the [source-to-publication audit](../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The full private document is not reproduced here.
+This is the **single chronological home** for the capstone. Each round links the submitted inputs, returned scores, surviving code, forecasts and lessons. The [week-by-week research summary](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) highlights the main method changes across the thirteen rounds. Later reconstructions are labelled separately from the original experiments.
 
 | Round | Module | Main method or question | Evidence and lesson | Source folder |
 |---|---:|---|---|---|

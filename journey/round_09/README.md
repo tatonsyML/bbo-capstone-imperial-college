@@ -23,11 +23,10 @@ No reliable scalar forecast for F1 or F6 was retained.
 
 F4's exceptionally accurate local result did not identify a better search region, while F2's large miss undermined confidence in a narrow forecast. I began separating **prediction calibration** from **candidate selection quality**.
 
-## Original weekly submission perspective
+## How I approached this round
 
-**Original Week 9 submission perspective:** I considered the *value of one more expensive query*, using **Week 8 forecast errors** as evidence. F2 had been forecast near **0.69519** and returned **0.61309**; F3 had been forecast near **−0.01968** and returned **−0.02966**. These observations belong to the preceding round and must not be confused with the **separate Round 9 F2 forecast** of ~**0.730502**, which later returned ~**0.505526**.
+I considered the *value of one more expensive query*, using **Week 8 forecast errors** as evidence. F2 had been forecast near **0.69519** and returned **0.61309**; F3 had been forecast near **−0.01968** and returned **−0.02966**. These observations belong to the preceding round and must not be confused with the **separate Round 9 F2 forecast** of ~**0.730502**, which later returned ~**0.505526**.
 
-*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
 
 ## Files
 
