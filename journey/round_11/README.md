@@ -25,6 +25,10 @@ I challenged the nearly flat F1 response near the earlier incumbent and explored
 
 A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are recovered from the official course email, not model-generated.
 
+## Supporting research using the Round 10 cutoff
+
+A [retrospective DBSCAN clustering diagnostic](../../research/diagnostics/clustering/README.md) analyses the **255 observations available through Round 10** to distinguish densely sampled input regions from isolated experiments. It includes a [reproducible F1 figure](../../research/diagnostics/clustering/f1_clustering_diagnostic.png) separating actual sampled points from a **later** reconstructed F1 surface. This diagnostic was **not part of the original Round 11 candidate-selection implementation** and must not be read as evidence of a prospective F1 forecast.
+
 ## Original evidence
 
 [Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query text survived as a separate file; F7's vector was added later from verified course evidence.
