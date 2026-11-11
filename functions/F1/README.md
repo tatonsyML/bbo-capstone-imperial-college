@@ -317,7 +317,7 @@ The provided model family originated in separately recovered working code. **Its
 
 <table><tr><td width="50%"><img src="../../results/figures/f1_model_2d.svg" width="460" alt="Two-dimensional heatmap of F1 reconstructed model"></td><td width="50%"><img src="../../results/figures/f1_model_3d.svg" width="460" alt="Three-dimensional surface of F1 reconstructed model"></td></tr></table>
 
-**Predicted values only:** these mathematical-model plots zoom to `0.32 ≤ x1,x2 ≤ 0.74` so both response regions are visible. They are **not additional portal measurements**. Compare with the observed-data plots immediately above. [Rebuild model figures](../../results/figures/build_f1_reconstruction.mjs) · [Reconstruction index](../../reconstruction/README.md).
+**Predicted values only:** these mathematical-model plots zoom to `0.32 ≤ x1,x2 ≤ 0.74` so both response regions are visible. The 3D camera has been rotated **45°** from the earlier view to separate the minor and major peaks on screen. They are **not additional portal measurements**. Compare with the observed-data plots immediately above. [Rebuild model figures](../../results/figures/build_f1_reconstruction.mjs) · [Reconstruction index](../../reconstruction/README.md).
 
 ## Lessons to carry forward
 
