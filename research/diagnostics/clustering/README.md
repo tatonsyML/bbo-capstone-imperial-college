@@ -1,8 +1,8 @@
-# Input-space clustering | retrospective diagnostic
+# Input-space clustering | contemporary research, retrospective code
 
 [← Methods and experiments](../../../methods/README.md) · [Round 11 evidence](../../../journey/round_11/README.md) · [F1 research](../../../functions/F1/README.md)
 
-This diagnostic asks **where the experiment inputs were concentrated before Round 11**, not what the hidden objective's entire response surface looks like. It is **supporting research undertaken retrospectively using data available through Round 10**. It was **not used as the original Round 11 candidate generator**.
+The author's **original Week 11 submission describes applying DBSCAN** to the 255 observations available through Round 10, including numerical cluster findings. **Clustering was therefore part of the contemporary Week 11 research.** The reproducible Python diagnostic in this folder was assembled and executed **later**, and its original relationship to the Week 11 implementation is not established. It was **not the verified original Round 11 candidate generator**. The [weekly-submission audit](../../../docs/WEEKLY_SUBMISSION_EVIDENCE.md) records this source distinction.
 
 The analysis uses **only my 255 historical observations**: 175 course-supplied starting evaluations and 80 personal portal evaluations (10 rounds × 8 functions). No peer observations or additional oracle queries enter this clustering analysis. The source CSVs stay in their existing [`data/accumulated/function_N/` folders](../../../data/accumulated/), **not duplicated here**.
 
@@ -47,6 +47,6 @@ This writes three files beside the script:
 - [`selected_cluster_summary.csv`](selected_cluster_summary.csv): the 8 best observed points and 8 selected density clusters, with observed score summaries.
 - [`f1_clustering_diagnostic.png`](f1_clustering_diagnostic.png): regenerated, clearly separated observed input and later model views.
 
-The code was adapted from the recovered `bbo_clustering_audit.py` supporting package. Its duplicate **F1/F8 equations, equation-validation CSVs and residual calculations were deliberately excluded**. This script uses the repository's existing F1 model only to draw the explanatory background; it does not re-fit F1 or reconstruct historical selection scripts.
+The executable code was later adapted from the recovered `bbo_clustering_audit.py` supporting package. The Week 11 *written analysis* preceded this repackaging; neither the original executable script nor its role in selecting all eight submitted queries has been independently authenticated. Its duplicate **F1/F8 equations, equation-validation CSVs and residual calculations were deliberately excluded**. This script uses the repository's existing F1 model only to draw the explanatory background; it does not re-fit F1 or reconstruct historical selection scripts.
 
 [Original Round 11 evidence](../../../journey/round_11/README.md) · [Full observed dataset](../../../data/all_observations.csv) · [Evidence provenance](../../../docs/EVIDENCE_RULES.md).
