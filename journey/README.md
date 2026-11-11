@@ -1,6 +1,6 @@
 # Development journey | 13 returned rounds
 
-[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../methods/README.md) · [Final code](../final/README.md)
+[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../docs/methods.md) · [Final code](../notebooks/README.md)
 
 This is the **single chronological home** for the capstone. Each round links the submitted inputs, returned scores, surviving code, forecasts and lessons. The [week-by-week research summary](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) highlights the main method changes across the thirteen rounds. Later reconstructions are labelled separately from the original experiments.
 
