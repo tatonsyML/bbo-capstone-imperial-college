@@ -14,11 +14,10 @@ F4 → -1.9105442; F5 → 1426.0898; F6 → -0.60398063; F8 → 9.8321124. That 
 
 The returns did not support using the same exploration weight everywhere. F1 stayed near zero, while F5 and F8 showed much stronger signal.
 
-## Original weekly submission perspective
+## How I approached this round
 
-**Original Week 1 submission perspective:** I began with the 175 supplied observations and chose a different exploratory question for each function, guided by observed bests, sparsely sampled regions and **GP/EI ideas**. F1 needed signal detection; F8 remained difficult because 40 starting points covered eight dimensions sparsely. The submission does **not** establish that a complete Python GP/acquisition candidate generator was executed or preserved for this round.
+I began with the 175 supplied observations and chose a different exploratory question for each function, guided by observed bests, sparsely sampled regions and **GP/EI ideas**. F1 needed signal detection; F8 remained difficult because 40 starting points covered eight dimensions sparsely. The submission does **not** establish that a complete Python GP/acquisition candidate generator was executed or preserved for this round.
 
-*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
 
 ## Source and limitations
 
