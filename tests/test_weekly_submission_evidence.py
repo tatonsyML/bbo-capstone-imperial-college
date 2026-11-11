@@ -48,7 +48,7 @@ def test_week13_f8_intention_is_not_mislabelled_a_portal_query():
     page = (ROOT / "journey/round_13/README.md").read_text(encoding="utf-8")
     assert "intended distinct" in audit and "exactly repeated" in audit
     assert "intended **small distinct F8 step**" in page
-    assert "actual Round 13 input exactly repeated" in page
+    assert "**actual Round 13 input exactly repeated**" in page
 
     with (ROOT / "data/all_observations.csv").open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
