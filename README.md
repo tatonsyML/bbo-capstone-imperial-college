@@ -3,6 +3,8 @@
 
 **Imperial College London · Machine Learning & AI capstone**
 
+[MIT Licence](LICENSE) · [Reuse and attribution](USAGE_AND_PERMISSIONS.md)
+
 [![Python tests](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml/badge.svg)](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml)
 
 **8 functions** · **2–8 input dimensions** · **13 rounds** · **279 recorded evaluations**
@@ -134,11 +136,11 @@ jupyter notebook notebooks/Capstone_Final_Walkthrough.ipynb
 | [MODEL_CARD.md](MODEL_CARD.md) | Models, use, validation, limitations and evaluation |
 | [DATASHEET.md](DATASHEET.md) | Dataset composition, sources, provenance and limitations |
 | [Evidence principles](docs/EVIDENCE_RULES.md) | Contemporary records versus retrospective analysis |
-| [Usage and permissions](USAGE_AND_PERMISSIONS.md) | Data rights, attribution and restrictions |
-| [LICENSE](LICENSE) | **All rights reserved at present**; no open-source permission has yet been granted |
+| [Usage and permissions](USAGE_AND_PERMISSIONS.md) | MIT reuse rights, source attribution and third-party data restrictions |
+| [LICENSE](LICENSE) | **MIT Licence**: original code and documentation may be copied, modified, shared and commercially reused |
 | [CITATION.cff](CITATION.cff) | Suggested citation metadata for the repository |
 
-**Rights notice:** the 175 course-supplied observations are currently included in the public CSV, but permission to redistribute them has not been independently verified. Their availability does not mean unrestricted reuse is authorised.
+**Reuse:** The original code and documentation are released under the [MIT Licence](LICENSE). You may copy, modify, distribute and use that work, including commercially, provided the copyright and licence notices are retained. **Data exception:** the 175 course-supplied observations and externally sourced peer evidence are not relicensed by MIT. Their redistribution rights remain subject to the original sources. [Read the permissions guide](USAGE_AND_PERMISSIONS.md).
 
 ## What this work taught me
 
