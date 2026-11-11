@@ -13,7 +13,9 @@
 
 ## The project
 
-I set out to maximise eight unknown mathematical functions. Each accepted between two and eight inputs and returned a score. I had only **one new evaluation per function per round**.
+I set out to maximise eight unknown mathematical functions. Each function accepted between two and eight numerical inputs, each ranging from **0.000000 to 0.999999 (six decimal places)**, and returned a numerical score.
+
+My objective was to identify the combination of inputs that produced the highest score. I was allowed **one evaluation per function per round**, making every decision important.
 
 I began with Gaussian Process models and acquisition functions. As observations arrived, I challenged their predictions with alternative models, neural-network diagnostics, local search, controlled experiments and mathematical reconstruction. Some highly accurate forecasts were poor optimisation decisions. In other cases, a simple structural explanation was more useful than another complicated model.
 
