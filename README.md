@@ -36,7 +36,7 @@ Rather than testing every possible combination, BBO uses the results of previous
 - Thirteen chronological round records, with surviving historical code and notes where available.
 - Reproducible code for selected mathematical checks, plus a separately labelled post-capstone HEBO/TuRBO comparison.
 
-[Read the dataset](data/all_observations.csv) · [How the evidence is handled](docs/EVIDENCE_RULES.md)
+[Read the dataset](data/all_observations.csv) · [Verified facts and recovered F7 R11 input](docs/VERIFIED_FACTS.md) · [How the evidence is handled](docs/EVIDENCE_RULES.md)
 
 ## Choose your route
 
