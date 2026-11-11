@@ -25,6 +25,12 @@ I retained three high-scoring settings and used remaining queries to test new in
 
 An apparent plateau is not evidence of global convergence. Changes in search region still produced useful improvements even in the final round.
 
+## Original weekly submission perspective
+
+**Original Week 13 submission perspective:** **_The trouble with the sixth decimal_** explained how repeated millionth-size F4 moves produced tiny gains and why a later wider step helped. It discussed error-driven model adjustments and final-round exploitation. **Source/portal discrepancy:** the reflection described an intended **small distinct F8 step** near the optimum, but the **actual Round 13 input exactly repeated** the F8 vertex at score 10. The [official input record](queries.txt) takes precedence; intention is not a confirmed submission. This reflection is **not** a retrospective report of the later Round 13 returns.
+
+*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support historical reasoning but do not replace portal returns or missing original scripts.*
+
 ## Original evidence
 
 [Submitted inputs](queries.txt) · [returned outputs](outputs.txt) · [Week 13 portal CSV](../../data/portal_rounds_13.csv) · [verified bests](../../results/current_best_after_week13.csv).
