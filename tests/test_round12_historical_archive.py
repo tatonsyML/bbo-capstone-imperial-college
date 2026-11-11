@@ -20,7 +20,7 @@ NAMES = [
     "trust_region_ts.py",
 ]
 ORIGINAL_SHA256 = {
-    "review_round12.py": "d70bd3b992c152d76b824bcecacd58dc13457ada3f8ba94629a29e6a8a2537",
+    "review_round12.py": "d70bd3b992c152d76b824bcecacd58dc13457ada3f8ba94629a29f3b6e8a2537",
     "robust_and_warp.py": "b9725881c963321e069bd7ae8ac68f472b6a979b1ee36d6ad72c6add4dfa9133",
     "tpe_local.py": "98a43bbb1ba2abd8021868254e6a18eb1c6b87ca8e3ff64b83d0f21ce9fe0707",
     "trust_region_ts.py": "768425c1fe721719a71934e31641201c718b884da74bf6c041e47253d562f96d",
