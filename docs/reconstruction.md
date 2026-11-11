@@ -93,4 +93,4 @@ The positive Hartmann-6 reconstruction forecast approximately **3.32236801** bef
 - **Published observations from other participants** are external supporting evidence and must be credited to their original sources when identifiable. They are not counted as the author's 104 personal portal evaluations.
 - **Graph surfaces** from reconstructed models are model predictions. For 3D or higher-dimensional functions, a 2D/3D plot shows selected coordinates or a fixed-coordinate slice, not the entire landscape.
 
-[Datasheet and provenance](../DATASHEET.md) · [Evidence rules](../docs/EVIDENCE_RULES.md) · [All visualisations](../visualisations/README.md)
+[Datasheet and provenance](../DATASHEET.md) · [Evidence rules](../docs/EVIDENCE_RULES.md) · [All visualisations](visualisations.md)

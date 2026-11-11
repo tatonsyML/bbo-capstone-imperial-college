@@ -25,4 +25,4 @@ Each line shows the cumulative best **measured** score, including supplied start
 
 **Interpretation:** observed projections and reconstructed surfaces are different kinds of evidence. Where only two coordinates are plotted, higher-dimensional variables are either omitted from the projection or held fixed in a model slice. Do not interpret any surface as a complete depiction of the hidden function.
 
-[Observed-figure generation script](../results/figures/build_visual_gallery.mjs) · [F1 reconstructed-figure generator](../results/figures/build_f1_reconstruction.mjs) · [Data and numerical records](../data/all_observations.csv) · [Reconstruction methods](../reconstruction/README.md)
+[Observed-figure generation script](../results/figures/build_visual_gallery.mjs) · [F1 reconstructed-figure generator](../results/figures/build_f1_reconstruction.mjs) · [Data and numerical records](../data/all_observations.csv) · [Reconstruction methods](reconstruction.md)
