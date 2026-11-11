@@ -8,6 +8,7 @@ on:
       - review/capstone-25-3-rubric-finalisation
       - polish/capstone-25-3-final-audit
       - feature/function-experiment-ledgers
+      - improve/final-notebook-provenance-20261111
       - main
     paths:
       - "notebooks/Capstone_Final_Walkthrough.ipynb"
@@ -44,7 +45,7 @@ jobs:
       - name: Check source and data using plain pytest
         run: python -m pytest -q
       - name: Commit executed notebook outputs to the active review branch
-        if: ${{ github.event_name == 'push' && (github.ref_name == 'review/capstone-25-3-rubric-finalisation' || github.ref_name == 'polish/capstone-25-3-final-audit' || github.ref_name == 'feature/function-experiment-ledgers') }}
+        if: ${{ github.event_name == 'push' && (github.ref_name == 'review/capstone-25-3-rubric-finalisation' || github.ref_name == 'polish/capstone-25-3-final-audit' || github.ref_name == 'feature/function-experiment-ledgers' || github.ref_name == 'improve/final-notebook-provenance-20261111') }}
         run: |
           cp results/notebook_output/Capstone_Final_Walkthrough_executed.ipynb notebooks/Capstone_Final_Walkthrough.ipynb
           git config user.name "github-actions[bot]"
