@@ -20,7 +20,7 @@ const data=Array.from({length:8},(_,i)=>{
 });
 for (const source of ["data/portal_rounds_11_12.csv","data/portal_rounds_13.csv"]){
   for (const row of parseCsv(source)){
-    if(!row.Input) continue; // exact R11 F7 input not preserved
+    // All R11/R12 submitted coordinates are confirmed, including F7 R11.\n    if(!row.Input) throw Error(`Missing confirmed input for F${row.Function} Round ${row.Round}`);
     data[Number(row.Function)-1].rows.push({
       x:row.Input.split("-").map(Number),y:Number(row.Output),stage:"R"+row.Round
     });
