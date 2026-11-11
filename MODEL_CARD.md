@@ -67,11 +67,11 @@ The [round-by-round archive](journey/README.md) and [project journey](archive/no
 | F5 | 4 | 8662.405001248297 | R10 |
 | F6 | 5 | −0.03751864724436928 | R12 |
 | F7 | 6 | 3.3223680113931557 | R12 |
-
-**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was recovered from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
 | F8 | 8 | 10.0 | R10 |
 
 All values are personally confirmed portal results. They differ drastically in scale; no overall sum or average is meaningful.
+
+**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was recovered from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
 
 **Evidence-specific observations:**
 
