@@ -40,6 +40,12 @@ F2, F4, F5 and F8 were retained unchanged. The external data used for some exper
 
 F5's legal all-upper-bound input improved decisively and F8's 17-coefficient quadratic identified a confirmed peak. The later portal outcomes distinguish correct forecasts from speculative GP rankings. A model-generated candidate is not an observation until evaluated.
 
+## Original weekly submission perspective
+
+**Original Week 10 submission perspective:** I described an **evidence-gated** comparison among GP, regional polynomial, **HEBO-inspired** committees and a **TuRBO-style** search with a fixed width of **0.20**. These were *adaptations*, not full library implementations. F5's four-coordinate boundary query and F8's quadratic vertex were **prospective hypotheses** here; only the subsequent portal returns established the reported scores.
+
+*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
+
 ## Original assessed work
 
 The **unchanged** Module 21.2 assessment documents are retained under [archive/component_21_2/](archive/component_21_2/), including the [datasheet](archive/component_21_2/datasheet.md), [model card](archive/component_21_2/model_card.md) and [decision log](archive/component_21_2/decision_log.md). The original [21.1 reflection](archive/component_21_1/submission.md) is a dated submission snapshot, separate from the final model card. An [alternative recovered draft](archive/component_21_1/alternate_recovered_draft.md) is preserved as a distinct historical reconstruction; its precise submission status was not independently verified.
