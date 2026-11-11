@@ -23,9 +23,9 @@ The equations below describe **supported reconstructions or hypotheses**, not au
 
 The recovered model family is
 
-$
+$$
 \hat f_1(x_1,x_2)=\sum_{(c,A)\in\{(c_1,1),(c_2,2)\}} A\,e^{-1600[(x_1-c)^2+(x_2-c)^2]}\cos[40(x_1-c)]\cos[40(x_2-c)],
-$
+$$
 
 with \(c_1=0.5-\pi/40\) and \(c_2=0.55+\pi/40\). Its major centre is near **0.6285398163**. At the permitted six-decimal submission `[0.628540, 0.628540]`, the portal returned **1.9999999996761817**, matching the equation.
 
