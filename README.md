@@ -87,7 +87,7 @@ The [chronological journey](journey/README.md) preserves **Round 1 through Round
 
 **How to read an entry:** *What was known → What was predicted (if retained) → What was submitted → What returned → What changed afterwards.* Retrospective reasoning is labelled; a later reconstruction is never presented as an earlier forecast.
 
-[Open all thirteen rounds](journey/README.md) · [Compare original weekly submissions](docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Read the provenance rules](docs/EVIDENCE_RULES.md)
+[Open all thirteen rounds](journey/README.md) · [Follow the research decisions](docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Read the provenance rules](docs/EVIDENCE_RULES.md)
 
 ## 3. Mathematical reconstruction and visual evidence
 
