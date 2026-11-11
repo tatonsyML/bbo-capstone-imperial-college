@@ -91,7 +91,7 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 - GP fitted uncertainty is conditional on model assumptions; calibration has to be checked on later portal returns.
 - With 2–8 dimensions and few points, adaptive sampling concentrates near previous successes, producing selection bias.
 - Repeated locations spend evaluation budget while adding limited new spatial information.
-- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1's historical oscillatory reconstruction lacks fully retained public parameters.
+- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1 now has a published **retrospective Gaussian–cosine reconstruction**, [six fitted coefficients and a reproducible 10-initial/13-holdout test](src/bbo/f1_reconstruction.py). Its functional family was provided by separately recovered code and did not emerge from a blind fit; the historical Round 11 provenance remains separate.
 - F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
 - F7's R11 inputs and full-precision output were recovered from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
 

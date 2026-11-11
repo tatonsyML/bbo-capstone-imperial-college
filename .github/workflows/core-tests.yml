@@ -4,6 +4,7 @@ name: Core capstone and benchmark unit tests
 
 on:
   push:
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -29,6 +30,14 @@ jobs:
         run: python -m pytest -q tests research/full_optimisers/test_benchmark.py
       - name: Check all internal Markdown file links
         run: python tests/check_internal_links.py
+      - name: Confirm reproducible F1 model figures
+        run: |
+          node results/figures/build_f1_reconstruction.mjs
+          git diff --exit-code -- results/figures/f1_model_2d.svg results/figures/f1_model_3d.svg
+      - name: Fit F1 from 10 initial records and validate 13 held-out returns
+        env:
+          PYTHONPATH: src
+        run: python -m bbo.f1_reconstruction
       - name: Confirm structural F8 and F5 calculations
         env:
           PYTHONPATH: src

@@ -14,7 +14,7 @@ Each line shows the cumulative best **measured** score, including supplied start
 
 | Function | 2D view | 3D view | What is shown |
 |---|---|---|---|
-| [F1](../functions/F1/README.md) | [2D](../results/figures/f1_2d.svg) | [3D](../results/figures/f1_3d.svg) | Observed points |
+| [F1](../functions/F1/README.md) | [Observed 2D](../results/figures/f1_2d.svg) · [Model 2D](../results/figures/f1_model_2d.svg) | [Observed 3D](../results/figures/f1_3d.svg) · [Model 3D](../results/figures/f1_model_3d.svg) | Observed points kept distinct from reconstructed model estimates |
 | [F2](../functions/F2/README.md) | [2D](../results/figures/f2_2d.svg) | [3D](../results/figures/f2_3d.svg) | Observed points |
 | [F3](../functions/F3/README.md) | [2D](../results/figures/f3_2d.svg) | [3D](../results/figures/f3_3d.svg) | Observed projection |
 | [F4](../functions/F4/README.md) | [2D](../results/figures/f4_2d.svg) | [3D](../results/figures/f4_3d.svg) | Observed projection |
@@ -25,4 +25,4 @@ Each line shows the cumulative best **measured** score, including supplied start
 
 **Interpretation:** observed projections and reconstructed surfaces are different kinds of evidence. Where only two coordinates are plotted, higher-dimensional variables are either omitted from the projection or held fixed in a model slice. Do not interpret any surface as a complete depiction of the hidden function.
 
-[Graph generation script](../results/figures/build_visual_gallery.mjs) · [Data and numerical records](../data/all_observations.csv) · [Reconstruction methods](../reconstruction/README.md)
+[Observed-figure generation script](../results/figures/build_visual_gallery.mjs) · [F1 reconstructed-figure generator](../results/figures/build_f1_reconstruction.mjs) · [Data and numerical records](../data/all_observations.csv) · [Reconstruction methods](../reconstruction/README.md)

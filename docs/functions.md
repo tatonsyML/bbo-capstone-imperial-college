@@ -6,7 +6,7 @@ Every [function page](../functions/README.md) displays three types of visual evi
 
 | Function | 2D/3D plot type | Axes and interpretation |
 |---|---|---|
-| [F1](../functions/F1/README.md) | **Observed data only** | x1, x2 and returned values; signed/dynamic-range scaling highlights a nearly invisible signal |
+| [F1](../functions/F1/README.md) | **Observed points, plus separate reconstructed-model plots** | Original x1/x2 observed scores are preserved; additional model-only 2D/3D graphics zoom to [0.32, 0.74] to display both Gabor-type components |
 | [F2](../functions/F2/README.md) | **Observed data only** | x1, x2 and measured score; no smooth function surface is implied |
 | [F3](../functions/F3/README.md) | **Observed projection** | x1 and x2 are displayed; x3 differs between samples |
 | [F4](../functions/F4/README.md) | **Observed projection** | x1 and x2 are displayed; x3 and x4 also vary |
@@ -22,6 +22,7 @@ Every [function page](../functions/README.md) displays three types of visual evi
 - [Observed inputs and outputs](../data/all_observations.csv) is the authoritative 279-row dataset.
 - [Graph-generation script](../results/figures/build_visual_gallery.mjs) produces the 2D/3D gallery.
 - Each `functions/F*/progress.svg` chart plots actual cumulative bests from the matching [selection history](../functions/F8/selection_history.csv), beginning with that function's supplied starting best.
+- [F1 retrospective model and check](../src/bbo/f1_reconstruction.py) plus [modelled plot generator](../results/figures/build_f1_reconstruction.mjs) use no peer data. The new [F1 2D](../results/figures/f1_model_2d.svg) and [3D](../results/figures/f1_model_3d.svg) plots show predictions, not measurements.
 - [F8 structural validation code](../src/bbo/structural_validation.py) tests the equation against observations withheld from its retrospective initial-40 fit.
 
 The charts do not invent confidence percentages or turn modelled points into portal observations. For exact coordinates and scores, open each function's decision ledger.

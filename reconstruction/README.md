@@ -10,7 +10,7 @@ The equations below describe **supported reconstructions or hypotheses**, not au
 
 | Function | Evidence status | Equation / analysis / graph |
 |---|---|---|
-| [F1](../functions/F1/README.md) | Gaussian-modulated oscillatory reconstruction informed by supplementary published points; full coefficients not published | [F1 research and observed plot](../functions/F1/README.md) |
+| [F1](../functions/F1/README.md) | Explicit two-component Gabor-type model, six coefficients fitted from 10 initial samples; 13 later personal portal results checked independently of the fit | [F1 equation, code and plots](../functions/F1/README.md) |
 | [F2](../functions/F2/README.md) | No complete equation validated | [Observed behaviour](../functions/F2/README.md) |
 | [F3](../functions/F3/README.md) | Local hypotheses, not a validated global equation | [Observed projections](../functions/F3/README.md) |
 | [F4](../functions/F4/README.md) | Local sensitivity investigation; no complete equation validated | [Observed projections](../functions/F4/README.md) |
@@ -18,6 +18,26 @@ The equations below describe **supported reconstructions or hypotheses**, not au
 | [F6](../functions/F6/README.md) | Local/regional models; no complete equation validated | [Observed projections](../functions/F6/README.md) |
 | [F7](../functions/F7/README.md) | Positive Hartmann-6 reconstruction with a confirmed prospective R12 forecast | [Evidence and model slices](../functions/F7/README.md) |
 | [F8](../functions/F8/README.md) | Strongly validated 17-parameter additive quadratic | [Equation and model slices](../functions/F8/README.md) |
+
+## F1: two Gaussian-modulated cosine components
+
+The recovered model family is
+
+$$
+\hat f_1(x_1,x_2)=\sum_{(c,A)\in\{(c_1,1),(c_2,2)\}} A\,e^{-1600[(x_1-c)^2+(x_2-c)^2]}\cos[40(x_1-c)]\cos[40(x_2-c)],
+$$
+
+with \(c_1=0.5-\pi/40\) and \(c_2=0.55+\pi/40\). Its major centre is near **0.6285398163**. At the permitted six-decimal submission `[0.628540, 0.628540]`, the portal returned **1.9999999996761817**, matching the equation.
+
+**Retrospective, own-data-only numerical check:** the [F1 fitting script](../src/bbo/f1_reconstruction.py) estimates all six coefficients from the **10 original supplied F1 input/output pairs**, with an *informed initial guess* based on the previously proposed family. The **13 personal portal observations** are then evaluated as hold-out checks. No peer observations are loaded, copied or used for fitting or validating this new reconstruction. The form and its initialisation were supplied by separately recovered working code, so **this is not a blind functional-form discovery**.
+
+The script and code do not prove the model is identical to the undisclosed original. Historical use of external explorations in the original capstone is described separately and has not been reattributed to this later experiment.
+
+[Full F1 explanation](../functions/F1/README.md) · [Reproduce fit and hold-out validation](../src/bbo/f1_reconstruction.py) · [Automated tests](../tests/test_f1_reconstruction.py) · [Figure generator](../results/figures/build_f1_reconstruction.mjs)
+
+<table><tr><td width="50%"><img src="../results/figures/f1_model_2d.svg" width="460" alt="Retrospective F1 model 2D heatmap"></td><td width="50%"><img src="../results/figures/f1_model_3d.svg" width="460" alt="Retrospective F1 model 3D surface"></td></tr></table>
+
+*Both figures are model-generated and cropped to the informative region, not additional observed evaluations.*
 
 ## F8: an explicitly testable quadratic
 

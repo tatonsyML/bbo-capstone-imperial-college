@@ -93,7 +93,7 @@ The objective began as finding high-scoring inputs. For some functions I later t
 
 | Function | Current mathematical evidence | Explore |
 |---|---|---|
-| F1 | Oscillatory, Gaussian-modulated reconstruction, informed by supplementary published observations; complete coefficients are not published here | [F1](functions/F1/README.md) |
+| F1 | Explicit two-component Gaussian–cosine reconstruction; fitted using 10 starting observations and checked against 13 later personal results, with no peer data in this retrospective fit | [F1 equation, validation and plots](functions/F1/README.md) |
 | F2, F3, F4, F6 | Local models, observations and projections; no validated complete hidden-function equation is claimed | [Function index](functions/README.md) |
 | F5 | Retrospective interacting power-sum representation, recovered **after** its R10 boundary query | [Equation and graph](functions/F5/README.md) |
 | F7 | Positive Hartmann-6 reconstruction with a successful **pre-result** R12 forecast | [Equation evidence and graph](functions/F7/README.md) |
