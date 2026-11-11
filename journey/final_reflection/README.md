@@ -1,4 +1,4 @@
-# Stage 2 Component 25.1 | Retrospective and results addendum
+# Retrospective and results addendum
 
 The original [retrospective essay](retrospective.md) discusses the strategy through 13 rounds and deliberately predates the final Round 13 portal email. The separate [Round 13 addendum](round13_addendum.md) records what actually happened afterwards, keeping the original reasoning unchanged.
 
