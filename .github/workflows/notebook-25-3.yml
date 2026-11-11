@@ -1,14 +1,11 @@
-# Run the final Stage 2, Component 25.3 Jupyter artefact on a clean machine.
-# Unlike the historical notebook snapshots, this one is executed and archived.
+# Execute the final Jupyter notebook and preserve its outputs as a CI artifact.
+# Do not commit back to review branches: the versioned notebook in main is
+# already executed, and bot pushes created extra workflow runs and conflicts.
 name: Final capstone notebook reproduction
 
 on:
   push:
-    branches:
-      - review/capstone-25-3-rubric-finalisation
-      - polish/capstone-25-3-final-audit
-      - feature/function-experiment-ledgers
-      - main
+    branches: [main]
     paths:
       - "notebooks/Capstone_Final_Walkthrough.ipynb"
       - "data/all_observations.csv"
@@ -19,10 +16,22 @@ on:
       - ".github/workflows/notebook-25-3.yml"
   pull_request:
     branches: [main]
+    paths:
+      - "notebooks/Capstone_Final_Walkthrough.ipynb"
+      - "data/all_observations.csv"
+      - "src/bbo/**"
+      - "requirements-notebook.txt"
+      - "pyproject.toml"
+      - "tests/**"
+      - ".github/workflows/notebook-25-3.yml"
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   notebook:
@@ -43,18 +52,7 @@ jobs:
           python -m jupyter nbconvert --to notebook --execute notebooks/Capstone_Final_Walkthrough.ipynb --output Capstone_Final_Walkthrough_executed.ipynb --output-dir results/notebook_output --ExecutePreprocessor.timeout=180
       - name: Check source and data using plain pytest
         run: python -m pytest -q
-      - name: Commit executed notebook outputs to the active review branch
-        if: ${{ github.event_name == 'push' && (github.ref_name == 'review/capstone-25-3-rubric-finalisation' || github.ref_name == 'polish/capstone-25-3-final-audit' || github.ref_name == 'feature/function-experiment-ledgers') }}
-        run: |
-          cp results/notebook_output/Capstone_Final_Walkthrough_executed.ipynb notebooks/Capstone_Final_Walkthrough.ipynb
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add notebooks/Capstone_Final_Walkthrough.ipynb
-          if ! git diff --cached --quiet; then
-            git commit -m "Save executed capstone notebook with figures and tables [skip ci]"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
-      - name: Save executed notebook for the assessor
+      - name: Save executed notebook as an artifact
         uses: actions/upload-artifact@v4
         with:
           name: capstone-25-3-executed-notebook
