@@ -31,6 +31,10 @@ jupyter notebook notebooks/Capstone_Final_Walkthrough.ipynb
 | F1 coefficient fit and validation | [f1_reconstruction.py](../src/bbo/f1_reconstruction.py) |
 | F7 positive Hartmann-6 check | [f7_reconstruction.py](../src/bbo/f7_reconstruction.py) |
 
+## Recovered historical Round 12 source
+
+The [four original 2 November analysis scripts](../journey/round_12/README.md#recovered-original-week-12-python-analysis) are now preserved verbatim, alongside portable working-directory copies and a checksum-verified archive of the original numerical transcripts and saved JSON results. They implement the actual Week 12 modelling study (GPs, PCA/kernel PCA, model ranking, Optuna TPE, input/output warping and trust-region Thompson sampling). The earlier notebook's later demonstration code is **not** a replacement for these historical scripts. See [the original round archive](../journey/round_12/README.md) for authentic evidence and execution limits.
+
 ## What the final notebook actually reproduces
 
 The final walkthrough has three distinct evidence routes:
