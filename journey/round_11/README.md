@@ -25,9 +25,17 @@ I challenged the nearly flat F1 response near the earlier incumbent and explored
 
 A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are recovered from the official course email, not model-generated.
 
-## Supporting research using the Round 10 cutoff
+## Original weekly submission perspective
 
-A [retrospective DBSCAN clustering diagnostic](../../research/diagnostics/clustering/README.md) analyses the **255 observations available through Round 10** to distinguish densely sampled input regions from isolated experiments. It includes a [reproducible F1 figure](../../research/diagnostics/clustering/f1_clustering_diagnostic.png) separating actual sampled points from a **later** reconstructed F1 surface. This diagnostic was **not part of the original Round 11 candidate-selection implementation** and must not be read as evidence of a prospective F1 forecast.
+**Original Week 11 submission perspective:** My submitted reflection explicitly states **I applied DBSCAN** to the **255 own observations then available**, with Euclidean distance, **min_samples=3** and a neighbourhood-radius sensitivity sweep. For F1, **ε=0.02** gave one **five-point cluster** and **15 unclustered observations**; the best observed score was **outside** that cluster. This establishes the *contemporaneous clustering investigation*, not the exact provenance of the later repackaged Python audit. The Word submission also describes F1's two-component reconstruction and the measured F8 optimum.
+
+*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support historical reasoning but do not replace portal returns or missing original scripts.*
+
+## Contemporary clustering research and later executable diagnostic
+
+**The original Week 11 submission explicitly discusses an applied DBSCAN investigation** of the **255 observations available through Round 10**, including Euclidean distance, radius sensitivity and observed cluster behaviour. This establishes a contemporaneous research account, although the exact original clustering script has not been authenticated.
+
+The [published reproducible clustering diagnostic](../../research/diagnostics/clustering/README.md) was rebuilt **retrospectively** and is **not** the original candidate-selection implementation. Its [F1 figure](../../research/diagnostics/clustering/f1_clustering_diagnostic.png) separates actual prior inputs from a **later reconstructed model surface**. Neither the later code nor the smooth model overlay is presented as a prospective Round 11 forecast.
 
 ## Original evidence
 

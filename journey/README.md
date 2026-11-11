@@ -1,8 +1,8 @@
 # Development journey | 13 returned rounds
 
-[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Methods and experiments](../methods/README.md) · [Final code](../final/README.md)
+[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Original weekly submission cross-check](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../methods/README.md) · [Final code](../final/README.md)
 
-This is the **single chronological home** for the capstone. Each round has one principal README linking its portal results, surviving code, notebooks, forecast evidence and lessons. Some early explanations were reconstructed **retrospectively**, and are labelled accordingly. Historical submitted reflections are preserved unchanged where the original files survive.
+This is the **single chronological home** for the capstone. Each round has one principal README linking its portal results, surviving code, notebooks, forecast evidence and lessons. Some early explanations were reconstructed **retrospectively**, and are labelled accordingly. The original thirteen weekly discussion/reflection texts survive together in the author's **private 52-page Word collection**. Their reasoning has now been reconciled with these public pages via the [source-to-publication audit](../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The full private document is not reproduced here.
 
 | Round | Module | Main method or question | Evidence and lesson | Source folder |
 |---|---:|---|---|---|
@@ -16,7 +16,7 @@ This is the **single chronological home** for the capstone. Each round has one p
 | **8** | 19 | Prospective forecasts and adaptive experiments | Forecast hypotheses prepared before results | [Open R8](round_08/README.md) |
 | **9** | 20 | Forecast error versus search region | F2 forecast failed; F4 forecast was locally precise | [Open R9](round_09/README.md) |
 | **10** | 21 | Boundary and quadratic structural tests | F5 legal boundary and F8 fitted vertex verified | [Open R10](round_10/README.md) |
-| **11** | — | F1 and F2–F4 gains | F1 breakthrough; F2–F4 new bests | [Open R11](round_11/README.md) |
+| **11** | — | **Contemporary DBSCAN analysis**, F1 and F2–F4 gains | Five-point F1 cluster did not contain best observed score; F1 breakthrough and F2–F4 new bests | [Open R11](round_11/README.md) |
 | **12** | — | **Recovered original code:** GP and model ensembles, PCA/kernel PCA, Optuna TPE, warping and trust-region Thompson sampling | Four preserved scripts and saved pre-return candidates; F6/F7 portal improvements | [Open R12](round_12/README.md) |
 | **13** | — | Final F2/F3/F4 gains | F2/F3/F4 improved again in final round | [Open R13](round_13/README.md) |
 

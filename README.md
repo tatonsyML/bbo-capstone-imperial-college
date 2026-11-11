@@ -19,7 +19,7 @@ I set out to maximise eight unknown mathematical functions. Each function accept
 
 My objective was to find the combination of inputs that produced the highest score. With only **one evaluation per function per round**, every decision mattered.
 
-I began with Gaussian Process models and acquisition functions. As new observations arrived, I challenged their predictions using alternative models, neural networks, local search, controlled experiments and mathematical reconstruction. Some remarkably accurate predictions led to little improvement, while simpler mathematical explanations sometimes proved more useful than complex models.
+I began by examining the supplied observations and selecting function-specific exploratory queries, guided by Gaussian Process and Expected Improvement ideas. From Week 2, I developed a more consistent GP/UCB workflow. As evidence accumulated, I challenged model predictions using alternative surrogates, neural networks, local search, controlled experiments and mathematical reconstruction. Some remarkably accurate predictions led to little improvement, while simpler mathematical explanations sometimes proved more useful than complex models.
 
 This repository documents **what I tried, what worked, what failed and how my reasoning evolved across thirteen rounds**. It preserves the original experiments, code and results while distinguishing historical decisions from subsequent research.
 
@@ -87,7 +87,7 @@ The [chronological journey](journey/README.md) preserves **Round 1 through Round
 
 **How to read an entry:** *What was known → What was predicted (if retained) → What was submitted → What returned → What changed afterwards.* Retrospective reasoning is labelled; a later reconstruction is never presented as an earlier forecast.
 
-[Open all thirteen rounds](journey/README.md) · [Read the provenance rules](docs/EVIDENCE_RULES.md)
+[Open all thirteen rounds](journey/README.md) · [Compare original weekly submissions](docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Read the provenance rules](docs/EVIDENCE_RULES.md)
 
 ## 3. Mathematical reconstruction and visual evidence
 
