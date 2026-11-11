@@ -10,7 +10,7 @@
 
 ## Understanding this function
 
-Almost every early response was extremely close to zero. The first GP and UCB proposals could not locate a useful region, and local improvements around a weak incumbent were misleading. A later oscillatory, Gaussian-modulated structural reconstruction, informed by supplementary published evidence, guided Round 11 to almost 2. The reconstruction was checked numerically but its complete coefficients are not published here.
+Almost every early response was extremely close to zero. The first GP and UCB proposals could not locate a useful region, and local improvements around a weak incumbent were misleading. Contemporary notes describe a Gaussian-modulated structural hypothesis and some external exploration around Round 10–11; those historical records are preserved below. **A separate retrospective reconstruction is now fully reproducible using only my own recorded F1 observations.** Its mathematical form came from subsequently recovered working code; this new experiment must not be mistaken for the original Round 11 candidate generator.
 
 ### Score progression from real evaluations
 
@@ -279,7 +279,39 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 ## Mathematical evidence and its limits
 
-The F1 structure was interpreted as a **two-component Gaussian-modulated oscillatory response**. A subsequently checked model agreed numerically with recorded samples and guided R11 towards **(0.628540, 0.628540)**, returning **1.9999999996761817**. It used supplementary evidence beyond personal portal queries. Because the complete fitted coefficients are not publicly retained, I do **not** publish an unsupported exact equation or a smooth invented surface.
+The recoverable model is the **two-component Gaussian-modulated cosine (Gabor-type) hypothesis**:
+
+$
+\hat f_1(x_1,x_2)=\sum_{(c,A)\in\{(c_1,1),(c_2,2)\}} A\,e^{-1600[(x_1-c)^2+(x_2-c)^2]}\cos[40(x_1-c)]\cos[40(x_2-c)].
+$
+
+Its centre coordinates are
+
+$
+c_1=0.5-\frac{\pi}{40}\approx0.421460183660255,\qquad
+c_2=0.55+\frac{\pi}{40}\approx0.628539816339745.
+$
+
+| Coefficient | Value | Meaning |
+|---|---:|---|
+| Minor component amplitude | 1 | Smaller response region |
+| Major component amplitude | 2 | Higher response region |
+| Gaussian decay | 1600 | Rapid fall-off away from the centres |
+| Cosine frequency | 40 | Oscillatory sign changes |
+| Minor centre | 0.421460183660255 | Both inputs |
+| Major centre | 0.628539816339745 | Both inputs |
+
+**New retrospective validation, no peer observations:** [the executable fitting script](../../src/bbo/f1_reconstruction.py) fits these **six free parameters** using only the **10 course-supplied F1 observations in my dataset**, then evaluates **all 13 later personal portal results** without using those results for parameter fitting. The fit uses an **informed starting guess and an already proposed functional family**, not an uninformed discovery of a mathematical form. It reproduces the observations to approximately floating-point precision, including the zero return. [Automated regression tests](../../tests/test_f1_reconstruction.py) preserve the numerical check.
+
+The returned Round 11 score at `[0.628540, 0.628540]` was **1.9999999996761817**. The reconstructed expression predicts the same value to the published precision. This is a **strong observational match**, not proof of identity with the undisclosed course source at every possible input, nor a certified global maximum on the full search domain.
+
+The provided model family originated in separately recovered working code. **Its original derivation and authorship are not independently verified.** Historic Round 10–11 notes include earlier use of external exploratory evidence; these retrospective coefficient-fitting and validation tests **exclude all peer data** and do not rewrite the original chronology.
+
+### Reconstructed function: modelled 2D/3D views
+
+<table><tr><td width="50%"><img src="../../results/figures/f1_model_2d.svg" width="460" alt="Two-dimensional heatmap of F1 reconstructed model"></td><td width="50%"><img src="../../results/figures/f1_model_3d.svg" width="460" alt="Three-dimensional surface of F1 reconstructed model"></td></tr></table>
+
+**Predicted values only:** these mathematical-model plots zoom to `0.32 ≤ x1,x2 ≤ 0.74` so both response regions are visible. They are **not additional portal measurements**. Compare with the observed-data plots immediately above. [Rebuild model figures](../../results/figures/build_f1_reconstruction.mjs) · [Reconstruction index](../../reconstruction/README.md).
 
 ## Lessons to carry forward
 
