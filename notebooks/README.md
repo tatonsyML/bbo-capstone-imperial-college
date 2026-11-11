@@ -1,6 +1,6 @@
 # Final reproducible notebook
 
-**Start with the executable notebook:** [Capstone_Final_Walkthrough.ipynb](Capstone_Final_Walkthrough.ipynb). It describes and executes the core data audit, verified results, Gaussian Process decision demonstration and independently testable F5/F8 evidence.
+**Start with the executable notebook:** [Capstone_Final_Walkthrough.ipynb](Capstone_Final_Walkthrough.ipynb). It audits all 104 historical submitted queries against their decision ledgers, links surviving code, demonstrates working GP/EI and simplified HEBO/TuRBO-style suggestions, verifies results, and reproduces retrospective F1/F5/F7/F8 mathematical investigations. It does not claim to regenerate all historical candidate choices.
 
 Run it from the repository root or the `notebooks/` folder:
 
@@ -19,4 +19,4 @@ The three earlier small notebooks are dated explorations that were not saved wit
 | [Model comparison](../journey/round_10/early_notebooks/model_comparison.ipynb) | HEBO-inspired and TuRBO-style proposals | Historical helper |
 | [Optimisation review](../journey/round_10/early_notebooks/optimisation_review.ipynb) | Round 10 candidate archive | Historical helper |
 
-[Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)
+[Verified F7 R11 and all 104 portal records](../docs/VERIFIED_FACTS.md) · [Datasheet](../DATASHEET.md) · [Model card](../MODEL_CARD.md)
