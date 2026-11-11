@@ -1,6 +1,6 @@
 # Explore the eight function stories
 
-[← Project homepage](../README.md) · [Original weekly submission cross-check](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Mathematical reconstructions](../reconstruction/README.md) · [Visual gallery](../visualisations/README.md) · [Historical archive](../journey/README.md) · [Complete data](../data/all_observations.csv)
+[← Project homepage](../README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Mathematical reconstructions](../reconstruction/README.md) · [Visual gallery](../visualisations/README.md) · [Historical archive](../journey/README.md) · [Complete data](../data/all_observations.csv)
 
 **One function, thirteen decisions.** Start with the behaviour and final result, open any weekly section, then inspect the progress chart, original evidence, model code and 2D/3D visualisations. The weekly sections collapse by default so the page stays readable.
 
