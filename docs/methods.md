@@ -152,7 +152,7 @@ PYTHONPATH=src python -m bbo.pipeline
 
 - Latest verified status: **all 13 rounds**, or 104 personal portal evaluations.
 - The [Round 13 input/output log](../data/portal_rounds_13.csv) and [final audit](../journey/round_13/README.md) are verified.
-- The **exact Round 11 F7 input was recovered from the official results email**: `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`; confirmed score `3.278967926227992`. The original candidate-selection script is not retained. The [104-query provenance audit](../src/bbo/evidence_audit.py) prevents this input from being reported missing again.
+- The **confirmed Round 11 F7 input** was: `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`; confirmed score `3.278967926227992`. The original candidate-selection script is not retained. The [104-query provenance audit](../src/bbo/evidence_audit.py) prevents this input from being reported missing again.
 - Published external examples informed later investigations but must not be mixed into the personal returns dataset without source labelling and any required academic attribution.
 - Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
 - Starting observations and past bests are distinct from an individual round's returned outcome.

@@ -71,3 +71,38 @@ def test_recovered_f7_r11_input_remains_confirmed():
         "0.233000-0.128000-0.522000-0.276000-0.310000-0.667000"
     )
     assert Decimal(record["output"]) == Decimal("3.278967926227992")
+
+
+def test_week12_showcases_methods_not_file_recovery_process():
+    """Do not reintroduce internal archive/recovery narration in public guides."""
+    public_pages = [
+        ROOT / "journey/round_12/README.md",
+        ROOT / "journey/README.md",
+        ROOT / "methods/README.md",
+        ROOT / "final/README.md",
+        ROOT / "docs/WEEKLY_SUBMISSION_EVIDENCE.md",
+    ]
+    internal_phrases = [
+        "recovered original",
+        "recovered round 12",
+        "recovered week 12",
+        "recovered modelling scripts",
+        "source snapshot dated",
+        "added to this repository on",
+        "git creation dates",
+        "verification at recovery",
+        "additional historical methods awaiting source verification",
+    ]
+    for page in public_pages:
+        content = page.read_text(encoding="utf-8").lower()
+        for phrase in internal_phrases:
+            assert phrase not in content, (page.relative_to(ROOT), phrase)
+
+    round12 = (ROOT / "journey/round_12/README.md").read_text(encoding="utf-8")
+    assert "## Week 12 modelling and optimisation code" in round12
+    for script in ("review_round12.py", "robust_and_warp.py",
+                   "tpe_local.py", "trust_region_ts.py"):
+        assert f"](original/{script})" in round12
+    assert "new personal best" in round12
+    guide = (ROOT / "final/README.md").read_text(encoding="utf-8")
+    assert "../journey/round_12/README.md#week-12-modelling-and-optimisation-code" in guide

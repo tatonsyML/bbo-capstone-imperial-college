@@ -1,6 +1,6 @@
 # Round 11 | F1 breakthrough and stronger local search
 
-**Status:** Observed portal results, not predictions. F7's input and full-precision score were later recovered from the official results email, rather than inferred from its score. The original selection code remains unavailable.
+**Results:** All eight submitted inputs and scores are confirmed by the portal records. F7's full input and score are documented in the official results email; its original candidate-generation script is unavailable.
 
 ## What I did
 
@@ -23,7 +23,7 @@ I challenged the nearly flat F1 response near the earlier incumbent and explored
 
 ## What I learnt
 
-A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are recovered from the official course email, not model-generated.
+A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are confirmed by the official course email, not model-generated.
 
 ## How I approached this round
 

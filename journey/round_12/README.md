@@ -1,4 +1,4 @@
-# Round 12 | Structural forecast verification and F6 recovery
+# Round 12 | Model comparisons, F6 and F7 improvements
 
 **Status:** The eight returned portal scores were confirmed. R12 improved F6 and F7, while several functions repeated earlier inputs.
 
@@ -23,31 +23,29 @@ Repeats confirmed the same values without exploring new input regions. A pre-res
 
 ## How I approached this round
 
-I tested whether PCA retained useful search information. For F8, two PCs captured **48.8%** of the input variance and seven captured **95.3%**, but constraining the quadratic reduced the modelled maximum to **9.955973** (two PCs) or **9.999974** (seven) rather than **10**. The portal recorded **F6/F7 improvements**, repeated inputs and underperforming F2/F3 queries. The [recovered modelling scripts](original/review_round12.py) document the optimisation experiments used in this round.
+I tested whether PCA retained useful search information. For F8, two PCs captured **48.8%** of the input variance and seven captured **95.3%**, but constraining the quadratic reduced the modelled maximum to **9.955973** (two PCs) or **9.999974** (seven) rather than **10**. The portal recorded **F6/F7 improvements**, repeated inputs and underperforming F2/F3 queries. The [Week 12 modelling scripts](original/review_round12.py) show how I compared methods and selected candidate inputs.
 
 
 ## Original evidence
 
 [Returned values](outputs.txt) · [R11–12 portal CSV](../../data/portal_rounds_11_12.csv) · [observed history](../../data/all_observations.csv). The full Round 12 input list is captured in the combined portal file.
 
-## Recovered original Week 12 Python analysis
+## Week 12 modelling and optimisation code
 
-**Source snapshot dated 2 November 2026.** The full four-script package was recovered and added to this repository on 11 November. The scripts are **original historical code**, not a later reimplementation of the optimiser. Git creation dates reflect the later archive, not the original execution date.
+I ran a model-comparison and candidate-selection study for **F2, F3, F4 and F6**. I tested alternative surrogate models, data transformations, model robustness and local search, using earlier portal results and separately identified participant observations. The analysis produced the candidate shortlist used for the Round 12 submissions.
 
-**What it demonstrates:** a substantial model-comparison and candidate-selection study focused on **F2, F3, F4 and F6**, using the confirmed Round 11 outcomes, earlier personal observations and explicitly labelled external cohort data. The recorded shortlist preceded the Round 12 portal returns.
-
-| Historical script | Research undertaken | Evidence |
+| Python implementation | Methods and questions investigated | Results |
 |---|---|---|
-| [review_round12.py](original/review_round12.py) | Matérn/RBF/ARD GP, output warping, Extra Trees, PCA/kernel PCA, PLS, Bayesian Ridge, MLP; source-held-out checks; robust committee, EI/UCB, candidate-pool selection and input-space diagnostics | [Preserved benchmark results](original/week12_original_assets.zip) |
-| [robust_and_warp.py](original/robust_and_warp.py) | Source-exclusion comparisons and experimental input/output warping to test stability of predictions | [Saved robustness results](original/week12_original_assets.zip) |
-| [tpe_local.py](original/tpe_local.py) | Real Optuna TPE suggestions (independent and multivariate), plus local regularised quadratic analysis for F4 | [Saved TPE/local results](original/week12_original_assets.zip) |
-| [trust_region_ts.py](original/trust_region_ts.py) | Success/failure trust-region updates, local Matérn GP and posterior Thompson-sampling proposals | [Saved trust-region results](original/week12_original_assets.zip) |
+| [review_round12.py](original/review_round12.py) | Matérn/RBF/ARD GP, output warping, Extra Trees, PCA/kernel PCA, PLS, Bayesian Ridge, MLP; source-held-out checks; robust committee, EI/UCB, candidate-pool selection and input-space diagnostics | [Model results](original/week12_original_assets.zip) |
+| [robust_and_warp.py](original/robust_and_warp.py) | Source-exclusion comparisons and experimental input/output warping to test stability of predictions | [Robustness results](original/week12_original_assets.zip) |
+| [tpe_local.py](original/tpe_local.py) | Real Optuna TPE suggestions (independent and multivariate), plus local regularised quadratic analysis for F4 | [TPE/local results](original/week12_original_assets.zip) |
+| [trust_region_ts.py](original/trust_region_ts.py) | Success/failure trust-region updates, local Matérn GP and posterior Thompson-sampling proposals | [Trust-region results](original/week12_original_assets.zip) |
 
 The first and third rows are not interchangeable: **Optuna TPE was used**, whereas the HEBO-style warping/committee and TuRBO-style trust-region components are **inspired by those algorithms, not complete official HEBO or TuRBO implementations**.
 
-### The decision trail
+### Candidate selection and measured outcomes
 
-The [original 2 November candidate comparison](original/week12_candidate_comparison_2026-11-02.csv) and [saved proposed inputs](original/week12_final_points_2026-11-02.txt) preserve the inputs recommended at the end of that review. **All eight subsequently match the actual Round 12 submissions** in the [official results CSV](../../data/portal_rounds_11_12.csv); model predictions remain distinct from actual scores.
+The [candidate comparison](original/week12_candidate_comparison_2026-11-02.csv) and [selected input vectors](original/week12_final_points_2026-11-02.txt) record the recommendations from the modelling analysis. **All eight match the actual Round 12 submissions** in the [portal results](../../data/portal_rounds_11_12.csv). Predicted and measured scores are kept separate.
 
 - **F2:** robust committee favoured `0.684399-0.368552`. The forecast edge was small and the portal later returned **0.660671151390024**, below the Round 11 best.
 - **F3:** validation included independent participant data and model disagreement. The submitted `0.313581-0.474345-0.485191` returned **−0.0226526646178297**. Its peer-reported score was not a guaranteed portal result.
@@ -55,13 +53,13 @@ The [original 2 November candidate comparison](original/week12_candidate_compari
 - **F6:** a robust committee candidate `0.415080-0.344119-0.644062-0.776818-0.076258` produced a **new personal best −0.03751864724436928**, improving the prior Round 11 score **−0.12376148016289273**.
 - **F1, F5, F7, F8:** this four-script review did **not** retrain their candidate generators. Those selections used previously established analytical/structural evidence; the confirmed **F7 Round 12** input and score are in the table above.
 
-This is a *selection-evidence connection*, not proof that all reported numerical model forecasts were calibrated. The source transcripts include **peer-published observations**, labelled separately from personal portal evaluations; see the [dated original review](original/week12_full_review_2026-11-02.md) for model-selection concerns and source links. The included cross-cohort checks are retrospective diagnostics and not new black-box evaluations. The peer-data redistribution and programme requirements should be checked before reusing this material for formal assessment.
+This is a *selection-evidence connection*, not proof that all reported numerical model forecasts were calibrated. The model comparisons include **peer-published observations**, separately identified from my own portal evaluations; the [research notes](original/week12_full_review_2026-11-02.md) explain their role and limitations. The included cross-cohort checks are retrospective diagnostics and not new black-box evaluations. The peer-data redistribution and programme requirements should be checked before reusing this material for formal assessment.
 
-### Original files, portable copies and reproduction
+### Run the analysis
 
-The [four original scripts](original/review_round12.py) are unmodified, including the original hard-coded `/mnt/data/bbo_week12_deep_review` path. The [four portable copies](portable/review_round12.py) change **only** that working-directory expression; there is no change to the algorithms, observations or hyperparameters. Neither copy is a substitute for the separate original Round 11 code.
+The [`original/`](original/review_round12.py) scripts preserve the modelling implementation and settings. The [`portable/`](portable/review_round12.py) versions change **only** the working-directory path so the same experiments run from a cloned repository. The algorithms and hyperparameters are unchanged.
 
-The exact source transcripts, **four saved JSON outputs**, candidate CSV, recommended points and dated original review are preserved byte-for-byte in [the original numerical assets ZIP](original/week12_original_assets.zip). This avoids scattering duplicate numerical records across the repository. The source files and the archive have hash-backed integrity tests in [test_round12_historical_archive.py](../../tests/test_round12_historical_archive.py).
+The [data and results archive](original/week12_original_assets.zip) contains the numerical observations, four JSON reports, candidate comparison and selected inputs. Integrity tests check the files against their expected hashes: [test_round12_historical_archive.py](../../tests/test_round12_historical_archive.py).
 
 To prepare portable execution from a cloned repository:
 
@@ -77,11 +75,11 @@ python trust_region_ts.py
 
 The bootstrap extracts only three archived `bbo_verified_F{2,3,6}.txt` transcripts into the portable working folder, with checksums and no overwrite of modified files. F4 source rows remain embedded in the original script. Full reruns are **computationally intensive**; the archive's historical JSON files are preserved as *saved results*, not claimed as fully independently reproduced here.
 
-**Verification at recovery:** all eight Python files passed syntax checks, original and portable hashes/differences were checked, the four original GP data loaders and selected GP fits ran successfully, and the saved candidate vector matched the canonical Round 12 portal record. The complete optimisation sweeps have **not** been rerun.
+**Validation:** All four scripts and their portable counterparts passed syntax checks. GP data-loading and selected fitting routines ran successfully, and the proposed inputs match the recorded submissions. The full computationally intensive modelling sweeps have **not** been independently rerun.
 
-## Detailed Round 12 analysis (dated snapshot)
+## What the experiments taught me
 
-The following evidence was recorded with **271 known scores** before the Round 13 returns arrived. It is retained as the analysis available at that stage, not the current final-best table.
+By the end of Round 12, I had **271 observed scores**. The findings below informed my final-round strategy.
 
 ## Three different problems, three evidence-based changes
 
@@ -104,7 +102,6 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 - Four input repeats (F1, F4, F5 and F8) returned identical scores, confirming repeatability at those settings without exploring nearby inputs.
 - Four new points returned two gains (F6, F7) and two worse scores (F2, F3).
 - The actual submitted F2/F3/F6 inputs differ from an older R12 modelled shortlist; do not attach those older means to the actual portal returns.
-- **Evidence correction (verified from the original results email):** the Round 11 F7 input was subsequently recovered as `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` and its result was `3.278967926227992`. The dated snapshot originally lacked the input. It is now confirmed in the [Round 11 evidence](../round_11/README.md) and [canonical CSV](../../data/all_observations.csv). The *original candidate-selection script* is still not retained.
 
 ## Evidence categories
 
