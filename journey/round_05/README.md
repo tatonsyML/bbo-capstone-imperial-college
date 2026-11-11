@@ -14,9 +14,15 @@ F2 → 0.65484987; F4 → 0.65892696; F5 → 4807.9861; F7 → 1.6384401; F8 →
 
 F4 reached about 0.658927 while F5, F7 and F8 also improved. A local response pattern is useful, but not proof that a larger optimum has been found.
 
+## Original weekly submission perspective
+
+**Original Week 5 submission perspective:** I distinguished genuine coordinate evidence from claims about deep neural-network feature hierarchies. The reflection specifically revisits **Round 4 F5**, where increasing only **x2 from 0.970147 to 0.999999** while holding the other three coordinates fixed raised the score **4295.87 → 4694.32**. This was evidence from a controlled prior-round experiment, *not* proof that a CNN or newly trained network generated the Week 5 submissions.
+
+*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
+
 ## Source and limitations
 
-The exact standalone Module 16 submission and Component 16.2 response were not retained. The work had shifted from one general optimiser rule towards controlled, function-specific experiments. Later explanations are marked retrospective.
+The original **Week 5 Component 16.1 reflection survives** in the private Word collection, although an exact standalone Week 5 candidate-selection script is not retained. The submission distinguishes prior measured controlled tests from conceptual neural-network analogies. Later explanations remain labelled retrospective.
 
 ## Original files and evidence
 
