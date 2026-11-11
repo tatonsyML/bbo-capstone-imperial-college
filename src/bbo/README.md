@@ -10,6 +10,7 @@
 | **Acquisition functions** | [acquisition.py](acquisition.py) | EI, PI, UCB and their intended trade-offs |
 | **Sobol and local search utilities** | [search.py](search.py) | Legal-domain candidate generation |
 | **Loaders and historical F8 checks** | [diagnostics.py](diagnostics.py) | Week 9 evidence cut |
+| **Reproducible F1 retrospective reconstruction** | [f1_reconstruction.py](f1_reconstruction.py) | Fit six coefficients from own 10 initial F1 rows; validate 13 portal returns without peer data |
 | **Reproducible F8 reconstruction** | [structural_validation.py](structural_validation.py) | 40 initial + 13 later returned observations |
 | **Post-capstone full HEBO / TuRBO-1 comparison** | [benchmark.py](../../research/full_optimisers/benchmark.py) | Official HEBO + BoTorch TuRBO-1, simulated F8 only |
 
