@@ -2,10 +2,23 @@
 # heavyweight HEBO and BoTorch optional optimisation engines.
 name: Core capstone and benchmark unit tests
 
+# Only validate the published branch and proposed changes to it.
+# A pull request already covers updates on its feature branch: running on both
+# push and pull_request caused duplicate checks and failure-notification noise.
 on:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
   workflow_dispatch:
+
+# Superseded runs on the same PR/branch are no longer useful.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   test:
