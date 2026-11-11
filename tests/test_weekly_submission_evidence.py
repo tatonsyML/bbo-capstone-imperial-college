@@ -78,8 +78,8 @@ def test_week12_showcases_methods_not_file_recovery_process():
     public_pages = [
         ROOT / "journey/round_12/README.md",
         ROOT / "journey/README.md",
-        ROOT / "methods/README.md",
-        ROOT / "final/README.md",
+        ROOT / "docs/methods.md",
+        ROOT / "notebooks/README.md",
         ROOT / "docs/WEEKLY_SUBMISSION_EVIDENCE.md",
     ]
     internal_phrases = [
@@ -104,5 +104,5 @@ def test_week12_showcases_methods_not_file_recovery_process():
                    "tpe_local.py", "trust_region_ts.py"):
         assert f"](original/{script})" in round12
     assert "new personal best" in round12
-    guide = (ROOT / "final/README.md").read_text(encoding="utf-8")
+    guide = (ROOT / "notebooks/README.md").read_text(encoding="utf-8")
     assert "../journey/round_12/README.md#week-12-modelling-and-optimisation-code" in guide
