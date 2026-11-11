@@ -281,16 +281,16 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 The recoverable model is the **two-component Gaussian-modulated cosine (Gabor-type) hypothesis**:
 
-$
+$$
 \hat f_1(x_1,x_2)=\sum_{(c,A)\in\{(c_1,1),(c_2,2)\}} A\,e^{-1600[(x_1-c)^2+(x_2-c)^2]}\cos[40(x_1-c)]\cos[40(x_2-c)].
-$
+$$
 
 Its centre coordinates are
 
-$
+$$
 c_1=0.5-\frac{\pi}{40}\approx0.421460183660255,\qquad
 c_2=0.55+\frac{\pi}{40}\approx0.628539816339745.
-$
+$$
 
 | Coefficient | Value | Meaning |
 |---|---:|---|
@@ -302,6 +302,12 @@ $
 | Major centre | 0.628539816339745 | Both inputs |
 
 **New retrospective validation, no peer observations:** [the executable fitting script](../../src/bbo/f1_reconstruction.py) fits these **six free parameters** using only the **10 course-supplied F1 observations in my dataset**, then evaluates **all 13 later personal portal results** without using those results for parameter fitting. The fit uses an **informed starting guess and an already proposed functional family**, not an uninformed discovery of a mathematical form. It reproduces the observations to approximately floating-point precision, including the zero return. [Automated regression tests](../../tests/test_f1_reconstruction.py) preserve the numerical check.
+
+Run from the repository root after installing `requirements.txt`:
+
+```bash
+PYTHONPATH=src python -m bbo.f1_reconstruction
+```
 
 The returned Round 11 score at `[0.628540, 0.628540]` was **1.9999999996761817**. The reconstructed expression predicts the same value to the published precision. This is a **strong observational match**, not proof of identity with the undisclosed course source at every possible input, nor a certified global maximum on the full search domain.
 
