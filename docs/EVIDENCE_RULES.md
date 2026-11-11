@@ -18,7 +18,7 @@ This repository is organised **by function first**. The eight `functions/F1`–`
 
 ## Mathematical claims
 
-- **F1:** Empirically supported, externally informed oscillatory reconstruction. The complete coefficients are not retained publicly.
+- **F1:** A previously proposed two-component Gaussian–cosine family is now published with six explicit fitted coefficients. A **new retrospective fit uses only the author's 10 course-provided F1 observations**, and checks the 13 later personal portal returns as hold-out results. This does not establish blind discovery of the family or rewrite earlier, separately documented exploratory history. The source of the supplied model family has not been independently verified.
 - **F2/F3/F4:** No validated closed-form underlying equation.
 - **F5:** Power-sum reconstruction supports the boundary behaviour; recovered after the boundary query.
 - **F6:** Competing local/GP hypotheses; no proven response equation.
