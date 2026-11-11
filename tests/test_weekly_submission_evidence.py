@@ -1,9 +1,4 @@
-"""Regression checks for public evidence reconciled with private weekly reflections.
-
-The 52-page original Word file remains private; these tests check the
-published audit, cross-links, known source/portal contradiction and canonical
-portal records. They do not claim to automatically verify private source text.
-"""
+"""Regression checks for clear public research narratives and portal evidence."""
 from __future__ import annotations
 
 import csv
@@ -13,15 +8,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_all_thirteen_rounds_have_source_qualified_notes():
+def test_all_thirteen_rounds_present_research_decisions_without_internal_footnotes():
     audit = (ROOT / "docs/WEEKLY_SUBMISSION_EVIDENCE.md").read_text(encoding="utf-8")
-    assert "52-page" in audit
-    assert "not redistributed" in audit
+    assert "# Research decisions across thirteen rounds" in audit
+    assert "Capstone Project.docx" not in audit
+    assert "52-page" not in audit
     for n in range(1, 14):
         page = ROOT / f"journey/round_{n:02d}/README.md"
         text = page.read_text(encoding="utf-8")
-        assert "## Original weekly submission perspective" in text, page.name
-        assert "docs/WEEKLY_SUBMISSION_EVIDENCE.md" in text, str(page)
+        assert "## How I approached this round" in text, str(page)
+        assert "52-page private" not in text
+        assert "*Source: the author" not in text
+        assert "Capstone Project.docx" not in text
         assert f"[{n}](../journey/round_{n:02d}/README.md)" in audit
 
 
@@ -37,7 +35,7 @@ def test_week11_clustering_reflection_and_later_code_are_separate():
     diagnostic = (ROOT / "research/diagnostics/clustering/README.md").read_text(
         encoding="utf-8"
     )
-    assert "original Week 11 submission explicitly discusses an applied DBSCAN" in page
+    assert "DBSCAN investigation examined" in page
     assert "rebuilt **retrospectively**" in page
     assert "original Week 11 submission describes applying DBSCAN" in diagnostic
     assert "not the verified original Round 11 candidate generator" in diagnostic
@@ -46,9 +44,10 @@ def test_week11_clustering_reflection_and_later_code_are_separate():
 def test_week13_f8_intention_is_not_mislabelled_a_portal_query():
     audit = (ROOT / "docs/WEEKLY_SUBMISSION_EVIDENCE.md").read_text(encoding="utf-8")
     page = (ROOT / "journey/round_13/README.md").read_text(encoding="utf-8")
-    assert "intended distinct" in audit and "exactly repeated" in audit
-    assert "intended **small distinct F8 step**" in page
-    assert "**actual Round 13 input exactly repeated**" in page
+    assert "distinct near-optimum F8 query" in audit
+    assert "submitted R13 input repeated" in audit
+    assert "considered a **small distinct F8 step**" in page
+    assert "**submitted the same vertex**" in page
 
     with (ROOT / "data/all_observations.csv").open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
