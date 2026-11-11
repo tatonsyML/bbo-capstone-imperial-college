@@ -2,6 +2,24 @@
 
 **Status:** Confirmed eight portal outputs. This closes the thirteen-round challenge.
 
+> **About this account:** Edited from my Week 13 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
+
+## My reasoning at the time
+
+One of my clearest lessons came from F4. Between Rounds 8 and 10, I changed a coordinate by as little as 0.000001. The score moved only from about 0.658930 to 0.658962. A later, wider step within the promising region returned 0.730459. A model might predict a tiny move with extraordinary accuracy while the underlying decision remained unproductive. Prediction error and decision value are separate questions.
+
+My exploration strategy had changed with the budget. Early queries could be valuable because they improved knowledge used in several later rounds. Near the last evaluation, a new point needed a plausible chance of improving the incumbent immediately. F5 had shown the value of controlled single-coordinate changes, which eventually supported an upper-boundary score above 8,662. F2 demanded competing regions rather than endless trust in a narrow local fit. The Week 9 F2 prediction around 0.731, followed by a 0.506 return, had made me discount that model.
+
+I considered reinforcement-learning ideas in the reflection as comparisons, not algorithms I had implemented. A Q-learning update uses observed reward and a discounted next-state value. My Gaussian Process instead updated predictions of immediate outputs and their related uncertainty. The procedure resembled one-step model-based experiment selection. A single portal score belonged to a selected query, so feedback could inform the next round but did not create an extended sequential reward path.
+
+Round 12's four exact repeats provided repeatability evidence without discovering new nearby behaviour. F7 improved from about 3.278968 to 3.322368, consistent with a forecast recorded in advance, which strengthened the case for its local structural model. I became more sceptical of exact repeats without a specific measurement reason.
+
+An important correction separates this contemporaneous intention from the saved result. I wrote that the final F8 point would be a small, distinct neighbouring query. The archived Round 13 input instead exactly repeats the previous successful vector (0.100000, 0.150000, 0.130000, 0.150000, 0.800000, 0.500000, 0.200000, 0.600000), and the portal returned 10 again. The submitted evidence takes precedence over the earlier plan. Round 13 improved F2, F3 and F4, but not F6 or F7.
+
+I also considered how the discipline might transfer to tuning an Oracle HCM data extract: testing batch size and concurrency, verifying full reconciliation, and rewarding genuine runtime improvements per experiment rather than a promising forecast alone. That was a proposed application, not a deployed solution. My closing lesson was to preserve the full chain from hypothesis to query to result, and to challenge decisions even when the surrogate appeared accurate.
+
+## Verified results, methods and original evidence
+
 ## What I did
 
 I retained three high-scoring settings and used remaining queries to test new input regions for F2, F3, F4, F6 and a microscopic coordinate change for F7.
@@ -53,4 +71,3 @@ Final dataset: **175 supplied initial observations + 104 personal returned queri
 The result email contains observed scores, not prior model predictions. These post-result interpretations **do not establish prospective forecasts** or global optimality for unresolved functions.
 
 [Round 13 inputs/outputs](../../data/portal_rounds_13.csv) · [Final best scores and inputs](../../results/current_best_after_week13.csv) · [Cumulative history](../../data/accumulated/history_through_week13.csv) · [Provenance](../../DATASHEET.md) · [Final reflection](../final_reflection/README.md)
-
