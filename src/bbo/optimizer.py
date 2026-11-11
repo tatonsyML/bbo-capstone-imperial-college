@@ -80,11 +80,11 @@ def hebo_inspired_committee(X, y, seed=100, n_power=15):
     return pd.DataFrame(rows)
 
 
-def turbo_style_candidate(X, y, length=0.20, seed=900):
+def turbo_style_candidate(X, y, length=0.20, seed=900, n_power=15):
     """Choose local EI candidate inside a fixed incumbent-centred box.
 
     This implements *one* idea from TuRBO, namely restricted local sampling.
-    It lacks full trust-region adaptation and restarts. See the separate
+    It lacks full trust-region adaptation and restarts. n_power controls the\n    Sobol-pool size (default 15, unchanged for existing callers). See the separate
     BoTorch-based TuRBO-1 benchmark for those mechanisms.
     """
     X = np.asarray(X, dtype=float)
@@ -98,7 +98,7 @@ def turbo_style_candidate(X, y, length=0.20, seed=900):
     # Sobol points fill the local box more evenly than ordinary random draws.
     unit_points = qmc.Sobol(
         d=dimension, scramble=True, seed=seed
-    ).random_base2(15)
+    ).random_base2(n_power)
     candidate_pool = scale_to_box(unit_points, lower, upper)
 
     gp, transformation, transformed_y = fit_gp(

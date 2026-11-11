@@ -27,6 +27,19 @@ jupyter notebook notebooks/Capstone_Final_Walkthrough.ipynb
 | Candidate search | [search.py](../src/bbo/search.py) |
 | Historical HEBO-inspired and TuRBO-style adaptations | [optimizer.py](../src/bbo/optimizer.py) |
 | F8 model reconstruction and F5 numerical validation | [structural_validation.py](../src/bbo/structural_validation.py) |
+| Full historical query evidence audit | [evidence_audit.py](../src/bbo/evidence_audit.py) |
+| F1 coefficient fit and validation | [f1_reconstruction.py](../src/bbo/f1_reconstruction.py) |
+| F7 positive Hartmann-6 check | [f7_reconstruction.py](../src/bbo/f7_reconstruction.py) |
+
+## What the final notebook actually reproduces
+
+The final walkthrough has three distinct evidence routes:
+
+- **Historical decision audit:** verify each of the **104 personal portal inputs/outputs** against the eight function-specific decision ledgers. Follow links to surviving course-time scripts (for example, Round 2 UCB and Round 9 local fits). Some originals require course seed files not redistributed here; the notebook does **not** claim to regenerate all 104 choices.
+- **Working optimisation examples:** run GP/EI, HEBO-inspired committee and a TuRBO-style candidate search using a historical data cutoff. These are **retrospective demonstrations of method mechanics**, not proven reproductions of the specific historical inputs submitted.
+- **Mathematical investigations:** fit F1 from 10 initial observations and check 13 later returns; evaluate the positive Hartmann-6 F7 reconstruction against 43 recorded points; fit F8 from 40 initial observations and validate 13 later returns; evaluate F5 at the recorded boundary. Label prospective and retrospective evidence separately.
+
+**Confirmed F7 R11 input:** `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`. The original **selection script** is missing, **not the input**. [Authoritative verified facts](../docs/VERIFIED_FACTS.md).
 
 ## Separate post-capstone comparison
 

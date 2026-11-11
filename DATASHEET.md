@@ -25,7 +25,7 @@ It is a historical record of *observed evaluations*, not a dataset of the true f
 | `x1`–`x8` | Input coordinates. Unused coordinates are blank for functions with fewer dimensions |
 | `output` | Returned scalar score, preserving source precision where available |
 
-**Recovered missingness:** An official Round 11 results email confirmed F7's submitted input (`0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`) and precise return (`3.278967926227992`). Earlier drafts contained the output without its coordinates; this gap was fixed from the original email, not inferred from a model. All **279 observed scores now have complete input vectors** within their respective function dimensions.
+**Recovered missingness ([canonical verified facts](docs/VERIFIED_FACTS.md)):** An official Round 11 results email confirmed F7's submitted input (`0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`) and precise return (`3.278967926227992`). Earlier drafts contained the output without its coordinates; this gap was fixed from the original email, not inferred from a model. All **279 observed scores now have complete input vectors** within their respective function dimensions.
 
 No synthetic labels, missing coordinates or unobserved outcomes are filled in.
 

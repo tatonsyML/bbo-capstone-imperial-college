@@ -81,7 +81,7 @@ It reproduces the recorded value **8662.405001248297** at the permitted boundary
 
 The positive Hartmann-6 reconstruction forecast approximately **3.32236801** before Round 12. The portal returned **3.3223680113931557** at the proposed input. This is more persuasive than a post-result fit, although the hidden function remains unauthenticated at untested points.
 
-[Full F7 narrative](../functions/F7/README.md) · [Plotted model implementation](../results/figures/build_visual_gallery.mjs)
+[Full F7 narrative](../functions/F7/README.md) · [Reproducible Python equation check](../src/bbo/f7_reconstruction.py) · [Plotted model implementation](../results/figures/build_visual_gallery.mjs)
 
 ![F7 reconstructed two-dimensional slice](../results/figures/f7_2d.svg)
 

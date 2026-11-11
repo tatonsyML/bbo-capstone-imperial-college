@@ -71,6 +71,8 @@ The [round-by-round archive](journey/README.md) and [project journey](archive/no
 
 All values are personally confirmed portal results. They differ drastically in scale; no overall sum or average is meaningful.
 
+**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was recovered from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
+
 **Evidence-specific observations:**
 
 - **F2:** one forecast of 0.730502 returned 0.505526. A different final-round region later returned 0.744250. A poor local forecast did not imply global convergence.
