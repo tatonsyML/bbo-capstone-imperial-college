@@ -2,9 +2,9 @@
 
 [← Project home](../README.md) · [Final notebook](../notebooks/Capstone_Final_Walkthrough.ipynb) · [F7 evidence](../journey/round_11/README.md)
 
-This is the **current canonical register** for numerical facts in the public repository. Historical submissions and dated snapshots are retained as evidence, but an older statement of missing information must **not override later source recovery**.
+This page summarises confirmed numerical results and key modelling distinctions. All **104 personal portal submissions** have verified input vectors and returned scores.
 
-## Confirmed F7 Round 11 input from the official results email
+## Function 7 · Round 11 confirmed input and result
 
 | Field | Authoritative value |
 |---|---|
@@ -12,12 +12,12 @@ This is the **current canonical register** for numerical facts in the public rep
 | Round | **11** |
 | Input | **`0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`** |
 | Returned score | **`3.278967926227992`** |
-| Source | Official Round 11 programme results email, recovered after earlier incomplete local snapshots |
+| Source | Official Round 11 programme results email |
 | Verification | [R11–12 portal CSV](../data/portal_rounds_11_12.csv), [canonical observations](../data/all_observations.csv), [F7 decision ledger](../functions/F7/selection_history.csv), [Round 11 page](../journey/round_11/README.md) |
 
-**Only the exact original Round 11 candidate-selection script is unavailable. The submitted F7 input and returned score are fully known.** Do not conflate those facts.
+**The submitted F7 input and returned score are confirmed.** The precise Python script that generated this candidate is not available.
 
-The [automated evidence audit](../src/bbo/evidence_audit.py) checks this exact input and score in multiple files on every test run, alongside all 104 personal submissions. The [regression tests](../tests/test_verified_history.py) also scan active documentation and the final notebook for contradictory claims. Older working snapshots under `archive/` remain dated evidence rather than the current state.
+The [automated evidence audit](../src/bbo/evidence_audit.py) checks this exact input and score alongside all 104 submissions; [regression tests](../tests/test_verified_history.py) verify consistency across the active documentation and final notebook.
 
 ## Other verified points
 
