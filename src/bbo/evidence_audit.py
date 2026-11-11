@@ -8,6 +8,7 @@ the decision that led to it.
 from __future__ import annotations
 
 import csv
+import re
 from decimal import Decimal
 from pathlib import Path
 
@@ -58,7 +59,7 @@ def audit_portal_history(root=None):
             key = (function, int(item["round"]))
             record = portal[key]
             observed = [Decimal(record[f"x{i}"]) for i in range(1, dims + 1)]
-            recorded = [Decimal(value) for value in item["submitted_input"].split("-")]
+            recorded = [Decimal(value) for value in re.split(r"(?<![eE])-", item["submitted_input"])]
             if observed != recorded:
                 raise AssertionError(f"Submitted coordinates disagree at F{function} R{key[1]}.")
             if Decimal(record["output"]) != Decimal(item["actual_output"]):
