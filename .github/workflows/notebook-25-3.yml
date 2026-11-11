@@ -32,6 +32,9 @@ jobs:
     steps:
       - name: Checkout versioned evidence and code
         uses: actions/checkout@v4
+        with:
+          # Test and, when permitted, save the same PR head rather than a synthetic merge commit.
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref_name }}
       - name: Configure Python 3.11
         uses: actions/setup-python@v5
         with:
@@ -45,7 +48,7 @@ jobs:
       - name: Check source and data using plain pytest
         run: python -m pytest -q
       - name: Commit executed notebook outputs to the active review branch
-        if: ${{ github.event_name == 'push' && (github.ref_name == 'review/capstone-25-3-rubric-finalisation' || github.ref_name == 'polish/capstone-25-3-final-audit' || github.ref_name == 'feature/function-experiment-ledgers' || github.ref_name == 'improve/final-notebook-provenance-20261111') }}
+        if: ${{ github.event_name == 'push' && (github.ref_name == 'review/capstone-25-3-rubric-finalisation' || github.ref_name == 'polish/capstone-25-3-final-audit' || github.ref_name == 'feature/function-experiment-ledgers' || github.ref_name == 'improve/final-notebook-provenance-20261111') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'improve/final-notebook-provenance-20261111') }}
         run: |
           cp results/notebook_output/Capstone_Final_Walkthrough_executed.ipynb notebooks/Capstone_Final_Walkthrough.ipynb
           git config user.name "github-actions[bot]"
@@ -53,7 +56,7 @@ jobs:
           git add notebooks/Capstone_Final_Walkthrough.ipynb
           if ! git diff --cached --quiet; then
             git commit -m "Save executed capstone notebook with figures and tables [skip ci]"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
           fi
       - name: Save executed notebook for the assessor
         uses: actions/upload-artifact@v4
