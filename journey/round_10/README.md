@@ -2,6 +2,22 @@
 
 **What happened:** The [submitted inputs](queries.txt) and [returned outputs](outputs.txt) are confirmed portal results. F5 reached **8662.405001248297** at the feasible boundary and F8 reached **10** at the fitted quadratic vertex. The document below also retains decision-time predictions that **preceded** the portal outputs.
 
+> **About this account:** Edited from my Week 10 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
+
+## My reasoning at the time
+
+After nine rounds I no longer asked only which candidate had the highest acquisition value. My central question was what evidence earned the model the right to influence an expensive portal query. I compared Gaussian Process EI and UCB proposals with controlled path fits, structural hypotheses, HEBO-inspired model committees and TuRBO-style local challengers. These were selected mechanisms, not complete official HEBO or TuRBO runs.
+
+Prospective forecast accuracy had become a gate on model authority. F4's local prediction was accurate to about 1.6 × 10⁻⁹; F2's missed its return by roughly 0.225. The accuracy of the F4 fit supported another local diagnostic, though later evidence showed that the steps were too small. For F2 I reduced trust in the local interpolation and treated the next candidate as a test of the assumptions behind it.
+
+I made eight distinct decisions. F1 required another chance to locate a positive-response region rather than continue polishing microscopic outputs. F3 warranted a targeted alternative basin, with external evidence attributed separately. F5's sequence of improvements suggested the upper boundary, leading me to submit four coordinates at 0.999999. F6 called for comparison with a peer-informed proposal rather than another unexamined local extrapolation. F7's speculative local vertex was challenged by an alternative region with greater potential. F8 suggested that a much simpler additive quadratic with 17 coefficients might explain the score more effectively than a complex GP.
+
+I regarded provenance as part of the method. A reproducible record needs chronological inputs and returns, dates on pre-result forecasts, code revisions, transformations, random seeds and a clear division between my own observations and external evidence. Adaptively selected data were concentrated near places I had chosen to investigate; they did not describe the entire input space. The underlying assumption of local smoothness remained uncertain outside tested regions.
+
+This reflection was written before the round's results. The later F5 boundary return and F8 score of 10 belong to the confirmed technical record below, not to the certainty I held at the decision point. The week's central achievement was to make each query an accountable hypothesis.
+
+## Verified results, methods and original evidence
+
 ## What I did
 
 I compared controlled local experiments with GP/ARD forecasts, HEBO-inspired model committees, TuRBO-style local challengers, candidate-region changes and structural polynomial hypotheses. Module 21 focused on transparency, interpretability and reporting model limitations.

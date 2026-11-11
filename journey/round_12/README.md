@@ -2,6 +2,22 @@
 
 **Status:** The eight returned portal scores were confirmed. R12 improved F6 and F7, while several functions repeated earlier inputs.
 
+> **About this account:** Edited from my Week 12 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
+
+## My reasoning at the time
+
+I began the challenge with broad Gaussian-process searches and substantial kernel tuning. By this week I separated data preparation, prospective validation and candidate selection. F2's Week 9 forecast of about 0.731 and return near 0.506 had made me much less willing to trust an attractive predicted improvement without chronological testing and sensitivity checks.
+
+Principal Component Analysis was useful precisely because it challenged a tempting simplification. For F8 I analysed 52 input vectors: 40 starting observations and 12 submitted queries. Two principal components retained 48.8% of sampled input variance, while seven retained 95.3%. PC1 gave substantial weights to inputs 1 and 3, approximately 0.493 and 0.430; PC2 weighted input 8 strongly, approximately 0.630. Yet input variance is not the same as objective sensitivity. My fitted quadratic suggested a direction could matter greatly to the score even when it accounted for little variation in the sampled inputs.
+
+I tested compression within the fitted quadratic. Restricting the modelled search to the first two PCs limited the maximum to 9.955973. Seven components allowed 9.999974, still below the unconstrained value of 10. A separate retrospective fit based on the original forty F8 observations accurately reproduced later returns. That supported the structural explanation but had to remain labelled retrospective: it was a different evidential claim from a forecast recorded before submission.
+
+Other functions supplied complementary lessons. F4 had stalled near 0.659 during microscopic steps, while a wider local movement eventually reached 0.730459. F6 improved from about −0.123761 to −0.037519 through a coordinated change, but because several inputs moved together I did not attribute the gain to a single coordinate. F7 reached another measured best. Four repeated queries confirmed their previous values but added no new locations to the input history.
+
+For the final round I wanted to compare predicted improvement with known forecast error and use remaining queries to test the highest-value unresolved questions. Simplification was worthwhile only when it preserved decisions. In a practical analogy from payroll-risk analytics, a low-variance input may represent a rare and costly signal, and discarding it because PCA gives it little weight would be a mistake. I had learnt to simplify the representation only after checking what the simplification lost.
+
+## Verified results, methods and original evidence
+
 ## What I did and what happened
 
 | Function | Actual input | Returned score |
@@ -108,4 +124,3 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 **Portal:** personally selected, returned result. **Prospective:** forecast recorded before result. **Retrospective:** equation fit or analysis performed afterwards. **External:** publicly shared results used for model comparisons or checking, not counted as personal queries. **Hypothesis:** unconfirmed conjecture or Round 13 candidate.
 
 [Provenance](../../DATASHEET.md) · [Structural reconstruction](../../docs/functions.md) · [Portal log](../../data/portal_rounds_11_12.csv).
-
