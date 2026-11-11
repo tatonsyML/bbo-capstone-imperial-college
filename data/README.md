@@ -16,6 +16,8 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 
 **Complete observational record:** [279 rows in one tidy CSV](all_observations.csv), comprising 175 course-provided and 104 personal portal outcomes. All 104 personal portal returns have confirmed input coordinates.
 
+**Source of truth:** `data/all_observations.csv` is the authoritative complete dataset. Each `functions/F1/observations.csv` through `functions/F8/observations.csv` is an exact function-specific partition for convenient reading. [Automated ledger tests](../tests/test_function_ledgers.py) check that these copies match the master record row for row. Earlier `data/accumulated/` cut-offs remain available for reproducing the evidence available at different rounds; they are not interchangeable with the completed dataset.
+
 ## Find the right data file
 
 - **Best inputs and results:** [results/current_best_after_week13.csv](../results/current_best_after_week13.csv)
@@ -35,6 +37,6 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 4. External published observations can inform model comparisons but must remain separately attributed and **must not be counted as personal returns**.
 5. Historical CSVs and models were created at different dates. Prefer the **through-R13** results for current reporting; retain earlier snapshots to document the sequence of decisions.
 
-**Resolved source gap:** The official Round 11 results email confirms F7 input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` and score `3.278967926227992`. The initial draft retained the score alone; the verified source later supplied the coordinates without numerical imputation.
+**Function 7, Round 11:** The confirmed portal input was `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, returning `3.278967926227992`. All 104 submitted vectors are present in the complete dataset.
 
 [Provenance](../DATASHEET.md) · [Evidence and limitations](../journey/round_12/README.md) · [Main README](../README.md)
