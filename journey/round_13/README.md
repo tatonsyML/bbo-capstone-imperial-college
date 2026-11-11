@@ -48,7 +48,7 @@ Repeated millionth-size F4 moves produced tiny gains, while a later wider step h
 
 ## Evidence and limitations
 
-Final dataset: **175 supplied initial observations + 104 personal returned queries (13 rounds × eight functions) = 279 observed records**, including repeated settings. Publicly reported peer observations do not count as personal returns. The Round 11 F7 input was recovered from the official results email: `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, returning `3.278967926227992`. It is confirmed in the [canonical observations](../../data/all_observations.csv) and [Round 11 record](../round_11/README.md). The original script that selected that input was not retained.
+Final dataset: **175 supplied initial observations + 104 personal returned queries (13 rounds × eight functions) = 279 observed records**, including repeated settings. Publicly reported peer observations do not count as personal returns. The confirmed Round 11 F7 input was `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, returning `3.278967926227992`. It is confirmed in the [canonical observations](../../data/all_observations.csv) and [Round 11 record](../round_11/README.md). The original candidate-selection script is not available.
 
 The result email contains observed scores, not prior model predictions. These post-result interpretations **do not establish prospective forecasts** or global optimality for unresolved functions.
 
