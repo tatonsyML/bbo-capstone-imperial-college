@@ -1,4 +1,4 @@
-# Mathematical reconstruction
+# Mathematical reconstruction of the eight functions
 
 [← Project overview](../README.md) · [Eight functions](../functions/README.md) · [Graph methodology](../docs/functions.md)
 
@@ -21,7 +21,7 @@ The equations below describe **supported reconstructions or hypotheses**, not au
 
 ## F1: two Gaussian-modulated cosine components
 
-The recovered model family is
+The tested model family is
 
 $$
 \hat f_1(x_1,x_2)=\sum_{(c,A)\in\{(c_1,1),(c_2,2)\}} A\,e^{-1600[(x_1-c)^2+(x_2-c)^2]}\cos[40(x_1-c)]\cos[40(x_2-c)],
@@ -29,7 +29,7 @@ $$
 
 with \(c_1=0.5-\pi/40\) and \(c_2=0.55+\pi/40\). Its major centre is near **0.6285398163**. At the permitted six-decimal submission `[0.628540, 0.628540]`, the portal returned **1.9999999996761817**, matching the equation.
 
-**Retrospective, own-data-only numerical check:** the [F1 fitting script](../src/bbo/f1_reconstruction.py) estimates all six coefficients from the **10 original supplied F1 input/output pairs**, with an *informed initial guess* based on the previously proposed family. The **13 personal portal observations** are then evaluated as hold-out checks. No peer observations are loaded, copied or used for fitting or validating this new reconstruction. The form and its initialisation were supplied by separately recovered working code, so **this is not a blind functional-form discovery**.
+**Retrospective, own-data-only numerical check:** the [F1 fitting script](../src/bbo/f1_reconstruction.py) estimates all six coefficients from the **10 original supplied F1 input/output pairs**, with an *informed initial guess* based on the previously proposed family. The **13 personal portal observations** are then evaluated as hold-out checks. No peer observations are loaded, copied or used for fitting or validating this new reconstruction. The form and its initialisation were supplied by separate working code, so **this is not a blind functional-form discovery**.
 
 The script and code do not prove the model is identical to the undisclosed original. Historical use of external explorations in the original capstone is described separately and has not been reattributed to this later experiment.
 

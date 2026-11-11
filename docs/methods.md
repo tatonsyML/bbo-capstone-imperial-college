@@ -16,6 +16,12 @@
 | Actual HEBO library | [benchmark.py: new_hebo](../research/full_optimisers/benchmark.py) | Calls `HEBO`, supplies observed negative scores, and feeds back subsequent simulated evaluations | Post-capstone reference engine |
 | BoTorch-based TuRBO-1 | [benchmark.py: TurboState/turbo_next](../research/full_optimisers/benchmark.py) | Uses ARD Matérn GP, Thompson-sampling candidates, adaptive trust-region length and budgeted restarts | Post-capstone reference implementation |
 | F8 structural challenger | [structural_validation.py](../src/bbo/structural_validation.py) | Fit 17 coefficients to original 40 and predict 13 later returned portal scores | Retrospective independent test |
+| GP robustness and input/output warping | [robust_and_warp.py](../journey/round_12/original/robust_and_warp.py) | Test how transformations and excluded sources affect GP predictions | Week 12 analysis |
+| PCA, kernel PCA, Extra Trees, MLP, PLS and Bayesian Ridge | [review_round12.py](../journey/round_12/original/review_round12.py) | Compare model families and dimensional structure | Week 12 analysis |
+| Optuna TPE and local quadratic fits | [tpe_local.py](../journey/round_12/original/tpe_local.py) | Propose candidates using TPE and study F4 local curvature | Week 12 analysis |
+| Trust-region Thompson sampling | [trust_region_ts.py](../journey/round_12/original/trust_region_ts.py) | Test feedback-dependent trust-region proposals | Week 12 analysis |
+| Controlled coordinate probes | [Round 5](../journey/round_05/README.md) · [F5](../functions/F5/README.md) | Assess local sensitivity and boundary effects | Original round experiments |
+| DBSCAN analysis of search density | [Clustering study](../research/diagnostics/clustering/README.md) | Compare observed clusters with high-scoring points; published code is a later reproducible diagnostic | Week 11 analysis, later diagnostic |
 
 ## The logic behind the code
 
