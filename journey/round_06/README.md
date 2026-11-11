@@ -14,11 +14,10 @@ F2 → 0.69131487; F3 → -0.020856155; F5 → 4957.5717; F7 → 1.7006597; F8 �
 
 F2 improved to 0.691315 and F3 to −0.020856, while F6 weakened. The value of an alternative model depends on its out-of-sample evidence, not complexity.
 
-## Original weekly submission perspective
+## How I approached this round
 
-**Original Week 6 submission perspective:** With five-fold validation after Round 5, I reported **GP vs small MLP normalised RMSE** of **0.112 vs 0.314** for F7 and **0.051 vs 0.157** for F8. F6's next controlled move contradicted a simple local extrapolation. I rejected convolutional models for these tabular coordinates and treated **held-out loss** as more reliable than complexity alone.
+With five-fold validation after Round 5, I reported **GP vs small MLP normalised RMSE** of **0.112 vs 0.314** for F7 and **0.051 vs 0.157** for F8. F6's next controlled move contradicted a simple local extrapolation. I rejected convolutional models for these tabular coordinates and treated **held-out loss** as more reliable than complexity alone.
 
-*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
 
 ## Source and limitations
 
