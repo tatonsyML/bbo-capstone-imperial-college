@@ -50,7 +50,7 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 - Four input repeats (F1, F4, F5 and F8) returned identical scores, confirming repeatability at those settings without exploring nearby inputs.
 - Four new points returned two gains (F6, F7) and two worse scores (F2, F3).
 - The actual submitted F2/F3/F6 inputs differ from an older R12 modelled shortlist; do not attach those older means to the actual portal returns.
-- Round 11 F7's return was 3.27896792623, but its exact coordinate is missing from the source snapshot. This gap is flagged, not filled with a guessed point.
+- **Evidence correction (verified from the original results email):** the Round 11 F7 input was subsequently recovered as `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000` and its result was `3.278967926227992`. The dated snapshot originally lacked the input. It is now confirmed in the [Round 11 evidence](../round_11/README.md) and [canonical CSV](../../data/all_observations.csv). The *original candidate-selection script* is still not retained.
 
 ## Evidence categories
 
