@@ -4,7 +4,7 @@
 
 This is the **current canonical register** for numerical facts in the public repository. Historical submissions and dated snapshots are retained as evidence, but an older statement of missing information must **not override later source recovery**.
 
-## Confirmed F7 Round 11 input (DO NOT REOPEN AS MISSING)
+## Confirmed F7 Round 11 input from the official results email
 
 | Field | Authoritative value |
 |---|---|
