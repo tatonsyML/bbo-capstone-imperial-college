@@ -28,7 +28,8 @@ Where a model hyperparameter, seed or exact selection script was not retained, i
 ## How to interpret the graphics
 
 - **Progress:** best observed score after each round, including the initial supplied best.
-- **F1/F2/F3/F4/F6:** scatter or 3D projections of observed points only; not invented continuous surfaces.
+- **F1:** original observed-point projections remain available. Separately labelled [reconstructed 2D/3D charts](F1/README.md#reconstructed-function-modelled-2d3d-views) show model predictions, not portal observations.
+- **F2/F3/F4/F6:** scatter or 3D projections of observed points only; no invented continuous surfaces.
 - **F5/F7/F8:** clearly labelled fixed-coordinate slices of reconstructed mathematical functions. Only two inputs vary in each slice.
 
 [Graph descriptions and assumptions](../docs/functions.md) · [Rebuild graph source](../results/figures/build_visual_gallery.mjs)
