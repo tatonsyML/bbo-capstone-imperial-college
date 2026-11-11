@@ -1,5 +1,7 @@
 # Development journey | 13 returned rounds
 
+[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Methods and experiments](../methods/README.md) · [Final code](../final/README.md)
+
 This is the **single chronological home** for the capstone. Each round has one principal README linking its portal results, surviving code, notebooks, forecast evidence and lessons. Some early explanations were reconstructed **retrospectively**, and are labelled accordingly. Historical submitted reflections are preserved unchanged where the original files survive.
 
 | Round | Module | Main method or question | Evidence and lesson | Source folder |
