@@ -14,11 +14,10 @@ F4 → 0.64755427; F5 → 3722.2745. That is 2 new personal bests in this round.
 
 F4 and F5 improved, while most other functions did not. A GP recommendation is only a hypothesis until the portal returns its value.
 
-## Original weekly submission perspective
+## How I approached this round
 
-**Original Week 2 submission perspective:** After receiving Week 1 returns, I moved from function-specific heuristics to a more consistent **GP/UCB** selection process. The recorded exploration weights were **κ = 3.0** (F1), **2.5** (F2), **2.0** (F3/F7), **1.0** (F4/F5/F6) and **1.5** (F8). Larger κ rewarded uncertainty; smaller values favoured promising incumbents. The original [working script](week2_ucb_course_aligned.py) survives separately.
+After receiving Week 1 returns, I moved from function-specific heuristics to a more consistent **GP/UCB** selection process. The recorded exploration weights were **κ = 3.0** (F1), **2.5** (F2), **2.0** (F3/F7), **1.0** (F4/F5/F6) and **1.5** (F8). Larger κ rewarded uncertainty; smaller values favoured promising incumbents. The original [working script](week2_ucb_course_aligned.py) survives separately.
 
-*Source: the author's 52-page private `Capstone Project.docx` collection of weekly submissions, reviewed during the [13-week evidence reconciliation](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md). The original document remains private. Its reflections support the historical reasoning but do not replace portal returns or missing original scripts.*
 
 ## Source and limitations
 
