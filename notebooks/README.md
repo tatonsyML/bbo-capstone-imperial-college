@@ -37,6 +37,14 @@ The [four Week 12 optimisation scripts](../journey/round_12/README.md#week-12-mo
 
 The full HEBO and BoTorch TuRBO-1 [comparison](../research/full_optimisers/README.md) is a separate **post-capstone** experiment using a fitted simulator, not additional portal results.
 
+## What the notebook verifies
+
+The final walkthrough provides three complementary checks. **First**, it cross-checks the **104 personal portal submissions** against function-specific ledgers without substituting predictions for actual returned scores. **Second**, it illustrates GP/EI, HEBO-inspired and TuRBO-style candidate-selection mechanics using available historical cutoffs, not a claim to regenerate every original submitted vector. **Third**, it performs retrospective numerical investigations of F1, F5, F7 and F8; where a forecast preceded its return, that timing is labelled separately.
+
+The **F7 Round 11 input** is confirmed as `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, with portal score `3.278967926227992`. It is not a missing observation; the precise original selection script is unavailable. See [verified numerical facts](../docs/VERIFIED_FACTS.md).
+
+For deeper implementation explanations see [optimisation methods](../docs/methods.md), [mathematical reconstruction](../docs/reconstruction.md) and the [code-by-round record](../journey/README.md). The full HEBO / BoTorch TuRBO-1 comparison is a [separate model-based experiment](../research/full_optimisers/README.md) rather than additional portal evaluations.
+
 ## Earlier exploratory notebooks
 
 | Notebook | Scope |

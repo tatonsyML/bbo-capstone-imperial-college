@@ -32,10 +32,10 @@ BBO balances **exploration** (learning about uncertain regions) with **exploitat
 |---|---|
 | **[Eight function investigations](functions/README.md)** | Each function's behaviour, decisions, results, progress and mathematical evidence |
 | **[Thirteen-round journey](journey/README.md)** | How the strategy evolved, with submitted inputs, actual returns and surviving code |
-| **[Methods and experiments](methods/README.md)** | Gaussian Processes, acquisition functions, model comparisons, local search and alternatives |
+| **[Methods and experiments](docs/methods.md)** | Gaussian Processes, acquisition functions, model comparisons, local search and alternatives |
 | **[Run the final notebook](notebooks/Capstone_Final_Walkthrough.ipynb)** | Reproducible analyses, numerical checks and working optimisation examples |
 
-[Mathematical reconstructions](reconstruction/README.md) · [Visual gallery](visualisations/README.md) · [Complete observations](data/all_observations.csv)
+[Mathematical reconstructions](docs/reconstruction.md) · [Visual gallery](docs/visualisations.md) · [Complete observations](data/all_observations.csv)
 
 ## Eight functions, eight investigations
 
@@ -73,7 +73,7 @@ The [full chronological record](journey/README.md) shows what I knew before each
 
 **The best strategy depends on the function.** Narrow peaks, boundaries, interacting coordinates and unstable local behaviour required different methods and different levels of exploration.
 
-Some equations were investigated or validated **after** the relevant portal submissions. The [reconstruction guide](reconstruction/README.md) distinguishes these later analyses from forecasts made during the challenge. The separate [full HEBO and TuRBO-1 comparison](research/full_optimisers/README.md) is post-capstone research using model-based feedback, not new portal evaluations.
+Some equations were investigated or validated **after** the relevant portal submissions. The [reconstruction guide](docs/reconstruction.md) distinguishes these later analyses from forecasts made during the challenge. The separate [full HEBO and TuRBO-1 comparison](research/full_optimisers/README.md) is post-capstone research using model-based feedback, not new portal evaluations.
 
 ## Run the research
 

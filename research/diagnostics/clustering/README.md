@@ -1,6 +1,6 @@
 # Input-space clustering | contemporary research, retrospective code
 
-[← Methods and experiments](../../../methods/README.md) · [Round 11 evidence](../../../journey/round_11/README.md) · [F1 research](../../../functions/F1/README.md)
+[← Methods and experiments](../../../docs/methods.md) · [Round 11 evidence](../../../journey/round_11/README.md) · [F1 research](../../../functions/F1/README.md)
 
 The author's **original Week 11 submission describes applying DBSCAN** to the 255 observations available through Round 10, including numerical cluster findings. **Clustering was therefore part of the contemporary Week 11 research.** The reproducible Python diagnostic in this folder was assembled and executed **later**, and its original relationship to the Week 11 implementation is not established. It was **not the verified original Round 11 candidate generator**. The [weekly-submission audit](../../../docs/WEEKLY_SUBMISSION_EVIDENCE.md) records this source distinction.
 
