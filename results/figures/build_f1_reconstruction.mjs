@@ -44,21 +44,35 @@ const renderF1 = function renderF1(){
   const project=(u,v,z)=>[436+(u-v)*260,520+(u+v)*90-z*240];
   let base='<polygon points="436,520 696,610 436,700 176,610" fill="#fff" stroke="#d1dfeb"/>';
   // Note: bottom can reach y=700; footnote will appear above; adjust coordinate.
+  // Orbit the camera 45 degrees around the vertical axis: 45° -> 90°.
+  // The old view projected both centres (x1 = x2) onto the same screen
+  // column, obscuring the separation between the two modelled peaks.
+  // Preserve the same data, model, plot bounds, and vertical exaggeration.
+  const cameraYaw = Math.PI / 4 + Math.PI / 4;
+  const cosYaw = Math.cos(cameraYaw), sinYaw = Math.sin(cameraYaw);
+  const horizontalScale = 248 / Math.SQRT1_2;
+  const depthScale = 82 / Math.SQRT1_2;
   const pp=(x,y,z)=>{
-    const u=(x-low)/span, v=(y-low)/span;
-    return [430+(u-v)*248,465+(u+v)*82-z*200]
+    const u=(x-low)/span - .5, v=(y-low)/span - .5;
+    return [
+      430 + horizontalScale*(u*cosYaw-v*sinYaw),
+      547 + depthScale*(u*sinYaw+v*cosYaw)-z*200
+    ];
   };
   for(let i=0;i<M;i++)for(let j=0;j<M;j++){
     let xs=[low+i/M*span,low+(i+1)/M*span],ys=[low+j/M*span,low+(j+1)/M*span];
     const q=[[xs[0],ys[0]],[xs[1],ys[0]],[xs[1],ys[1]],[xs[0],ys[1]]];
     let vals=q.map(([x,y])=>fn(x,y)),points=q.map(([x,y],k)=>pp(x,y,vals[k]/2));
     const poly=points.map(([x,y])=>`${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
-    cells.push({depth:i+j,markup:`<polygon points="${poly}" fill="${colour(vals.reduce((a,b)=>a+b,0)/4)}" stroke="#f3f8fc" stroke-width=".45" stroke-opacity=".55"/>`});
+    // Sort by camera-space depth rather than the old fixed i+j order.
+    const depth=(i+.5)*sinYaw+(j+.5)*cosYaw;
+    cells.push({depth,markup:`<polygon points="${poly}" fill="${colour(vals.reduce((a,b)=>a+b,0)/4)}" stroke="#f3f8fc" stroke-width=".45" stroke-opacity=".55"/>`});
   }
   cells.sort((a,b)=>a.depth-b.depth);
   let sur=`<polygon points="${[[0,0],[1,0],[1,1],[0,1]].map(([u,v])=>pp(low+u*span,low+v*span,0).map(z=>z.toFixed(1)).join(",")).join(" ")}" fill="#eef2f7" stroke="#b5c7d9"/>`+cells.map(c=>c.markup).join("");
-  sur+=`<text x="690" y="520" font-size="17" fill="#25425e">x1</text><text x="175" y="520" font-size="17" fill="#25425e">x2</text><text x="435" y="178" font-size="17" fill="#25425e">Predicted score</text><text x="730" y="220" font-size="14" fill="#19354f">High peak ≈ 2.0</text><text x="730" y="245" font-size="14" fill="#19354f">Minor peak ≈ 1.0</text><text x="730" y="285" font-size="13" fill="#405974">Gaussian envelopes with</text><text x="730" y="304" font-size="13" fill="#405974">cosine oscillations</text>`;
-  const three=wrap(sur,"3D model surface · cropped to show the two response regions");
+  const x1End=pp(high,low,0), x2End=pp(low,high,0);
+  sur+=`<text x="${(x1End[0]+35).toFixed(1)}" y="${(x1End[1]+20).toFixed(1)}" font-size="17" fill="#25425e">x1</text><text x="${(x2End[0]-35).toFixed(1)}" y="${(x2End[1]-15).toFixed(1)}" font-size="17" fill="#25425e">x2</text><text x="435" y="178" font-size="17" fill="#25425e">Predicted score</text><text x="730" y="220" font-size="14" fill="#19354f">High peak ≈ 2.0</text><text x="730" y="245" font-size="14" fill="#19354f">Minor peak ≈ 1.0</text><text x="730" y="285" font-size="13" fill="#405974">Gaussian envelopes with</text><text x="730" y="304" font-size="13" fill="#405974">cosine oscillations</text>`;
+  const three=wrap(sur,"3D reconstructed model · camera rotated 45° · two response regions");
   return {"results/figures/f1_model_2d.svg":two,"results/figures/f1_model_3d.svg":three};
 };
 for(const [filename,contents] of Object.entries(renderF1())){
