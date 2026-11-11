@@ -13,13 +13,13 @@
 
 ## The project
 
-I set out to maximise eight unknown mathematical functions. Each function accepted between two and eight numerical inputs, each ranging from **0.000000 to 0.999999 (six decimal places)**, and returned a numerical score.
+I set out to maximise eight unknown mathematical functions. Each function accepted between two and eight numerical inputs, with each value ranging from **0.000000 to 0.999999 (six decimal places)**, and returned a single score.
 
-My objective was to identify the combination of inputs that produced the highest score. I was allowed **one evaluation per function per round**, making every decision important.
+My objective was to find the combination of inputs that produced the highest score. With only **one evaluation per function per round**, every decision mattered.
 
-I began with Gaussian Process models and acquisition functions. As observations arrived, I challenged their predictions with alternative models, neural-network diagnostics, local search, controlled experiments and mathematical reconstruction. Some highly accurate forecasts were poor optimisation decisions. In other cases, a simple structural explanation was more useful than another complicated model.
+I began with Gaussian Process models and acquisition functions. As new observations arrived, I challenged their predictions using alternative models, neural networks, local search, controlled experiments and mathematical reconstruction. Some remarkably accurate predictions led to little improvement, while simpler mathematical explanations sometimes proved more useful than complex models.
 
-This repository shows **what I tried, what actually happened, what failed and how my decisions changed**. It also separates experiments performed during the challenge from subsequent research.
+This repository documents **what I tried, what worked, what failed and how my reasoning evolved across thirteen rounds**. It preserves the original experiments, code and results while distinguishing historical decisions from subsequent research.
 
 ### What is in the evidence
 
