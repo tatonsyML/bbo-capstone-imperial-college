@@ -10,13 +10,9 @@
 
 ## The project
 
-I set out to maximise eight unknown mathematical functions. Each function accepted between two and eight numerical inputs, with each value ranging from **0.000000 to 0.999999 (six decimal places)**, and returned a single score.
+I investigated how to maximise eight unknown mathematical functions when I was allowed one new evaluation per function in each round. Each function accepted between two and eight numerical inputs and returned a score. Over thirteen rounds, I moved from exploratory searches to Gaussian Process models, controlled experiments and mathematical reconstruction. Some forecasts were accurate; others failed badly. I learnt that predicting a result precisely does not always identify the most useful experiment. This repository shares my submitted inputs, actual scores, Python code, visualisations and the decisions that shaped the search, including mistakes and subsequent improvements.
 
-I could evaluate each function **only once per round**. With no access to the underlying equations and a limited number of evaluations, I needed to decide where to explore, when to exploit promising regions and how much confidence to place in model predictions.
-
-I began by examining the supplied observations and choosing function-specific exploratory inputs. I then introduced Gaussian Process models and acquisition functions, compared alternative models, tested controlled changes and investigated mathematical structure. As the evidence grew, I adapted the strategy to each function rather than forcing one method across all eight.
-
-This repository documents **what I tried, what worked, what failed and how my reasoning evolved across thirteen rounds**. It brings together the submissions, observed results, Python code, model comparisons, visualisations and subsequent mathematical investigations.
+**Technical scope:** Inputs were continuous values in the permitted range 0–0.999999 (six decimal places); observed results and later model predictions are kept separate.
 
 ## Why black-box optimisation matters
 
@@ -67,6 +63,10 @@ BBO balances **exploration** (learning about uncertain regions) with **exploitat
 
 The [full chronological record](journey/README.md) shows what I knew before each query, what I submitted, what the portal returned and how the result influenced the next decision.
 
+## Models and hyperparameter choices
+
+I used function-specific Gaussian Process surrogates with RBF and Matérn kernel alternatives and automatic relevance determination (ARD) lengthscales. Candidate searches considered Expected Improvement (EI), Upper Confidence Bound (UCB) and model-based or controlled probes. The historical UCB exploration weight **κ varied by function**, including documented Round 2 settings from **1.0 to 3.0**. Later experiments tested kernel family, noise assumptions, output transforms, acquisition parameters and candidate-search size. These decisions were guided by observed improvements and chronological forecast checks, not a single universally tuned configuration. [Methods and recorded choices](docs/methods.md) · [Function-specific evidence](functions/README.md).
+
 ## What the experiments taught me
 
 **A good prediction is not necessarily a good decision.** For F4, extremely accurate local predictions produced little improvement until I widened the search.
@@ -95,7 +95,7 @@ The notebook reproduces supported analyses and demonstrates optimisation methods
 
 The record contains **175 course-provided initial observations** and **104 personal portal evaluations**, including repeated queries. Inputs and actual returns remain distinct from fitted-model predictions and externally reported participant observations.
 
-[Dataset datasheet](DATASHEET.md) · [Model card](MODEL_CARD.md) · [Evidence and limitations](docs/EVIDENCE_RULES.md) · [Citation](CITATION.cff)
+[Dataset datasheet](DATASHEET.md) · [Eight function-specific datasheets](docs/function_datasheets.md) · [Model card](MODEL_CARD.md) · [Evidence and limitations](docs/EVIDENCE_RULES.md) · [Citation](CITATION.cff)
 
 My original code and documentation are available under the **[MIT Licence](LICENSE)**, which permits copying, modification and reuse, including commercially, with the required copyright and licence notices. Course-supplied and third-party data are **not** relicensed under MIT. See [usage and permissions](USAGE_AND_PERMISSIONS.md).
 

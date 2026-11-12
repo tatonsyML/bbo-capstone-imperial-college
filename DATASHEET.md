@@ -1,10 +1,12 @@
-# Final Datasheet | BBO capstone observations
+# Dataset Datasheet | Black-Box Optimisation Capstone
 
-**Capstone evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
+*Imperial College London · Professional Certificate in Machine Learning and Artificial Intelligence*
 
-**Post-capstone documentation update (12 November 2026):** The [official HEBO/TuRBO-1 comparison](research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) used simulated F8 model feedback. It did not change the 279 recorded observations or any original portal results.
+This datasheet documents the **279 observed input/output pairs** used during the thirteen-round capstone, completed in November 2026: **175 course-provided starting observations** and **104 personal portal evaluations**. It explains their origin, collection, preparation, limitations, performance and permissible use.
 
-[← Project home](README.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
+The supplied Module 25 datasheet template asks for answers **for each function**, not solely for the dataset as a whole. Those answers are provided in the [eight function-specific datasheets](docs/function_datasheets.md), covering function overview, data behaviour, strategy, preprocessing, weekly learning, results and practical implications. No unverified real-world meaning is assigned to the anonymous objectives.
+
+[← Project home](README.md) · [Complete data CSV](data/all_observations.csv) · [Function-specific datasheets](docs/function_datasheets.md) · [Model card](MODEL_CARD.md)
 
 ## 1. Motivation and purpose
 
@@ -57,6 +59,8 @@ The project records **279 outputs** in total: 175 starting observations and 104 
 | F6 | −0.03751864724436928 | R12 |
 | F7 | 3.3223680113931557 | R12 |
 | F8 | 10 | R10 |
+
+Each function-specific record also states its **best input vector**, initial NumPy array dimensions, observed behaviour, evidence for or against repeatability and limits on confidence in the global maximum. See the [eight function-specific datasheets](docs/function_datasheets.md).
 
 ## 6. Weekly iteration and learning
 
