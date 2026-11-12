@@ -115,7 +115,7 @@ The last step is especially important with a finite horizon: an exploratory quer
 
 Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
 
-[Provenance and attribution requirements](../DATASHEET.md) · [Dated audit](../journey/round_10/README.md) · [Full model card](../MODEL_CARD.md) · [Final verified results](../journey/round_13/README.md)
+[Provenance and attribution requirements](../DATASHEET.md) · [Round 10 research](../journey/round_10/README.md) · [Full model card](../MODEL_CARD.md) · [Final verified results](../journey/round_13/README.md)
 
 ## Reproduce the supported results
 
@@ -154,16 +154,11 @@ PYTHONPATH=src python -m bbo.pipeline
 
 **Scope:** the pipeline is a preserved older demonstration with a data cut through Week 9. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
 
-### Evidence and limitations
+### Reading model outputs
 
-- Latest verified status: **all 13 rounds**, or 104 personal portal evaluations.
-- The [Round 13 input/output log](../data/portal_rounds_13.csv) and [final audit](../journey/round_13/README.md) are verified.
-- The **confirmed Round 11 F7 input** was: `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`; confirmed score `3.278967926227992`. The original candidate-selection script is not retained. The [104-query provenance audit](../src/bbo/evidence_audit.py) prevents this input from being reported missing again.
-- Published external examples informed later investigations but must not be mixed into the personal returns dataset without source labelling and any required academic attribution.
-- Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
-- Starting observations and past bests are distinct from an individual round's returned outcome.
+Use the [279-row recorded dataset](../data/all_observations.csv) for measured scores. The [function pages](../functions/README.md) distinguish submitted portal inputs from model proposals, and the [round-by-round account](../journey/README.md#how-to-read-the-results) distinguishes prospective forecasts from later structural reconstructions. External participant observations used in exploratory comparisons are not counted as personal returns.
 
-For a short explanation start with [the README](../README.md), then consult [methods](methods.md), [mathematical reconstruction](functions.md) and [data provenance](../DATASHEET.md).
+The Round 11 F7 input was `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, returning `3.278967926227992`. This confirmed result belongs to the historical dataset, independently of which original selector script survives.
 
 ### Regenerate the visual gallery
 
@@ -173,7 +168,7 @@ From the repository root, with **Node.js 18+**, without installing further packa
 node results/figures/build_visual_gallery.mjs
 ```
 
-This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 now has a confirmed input from the original results email and is included in the canonical data. Only its exact historical candidate-generator remains unavailable.
+This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. F7's Round 11 result is included in the measured-data charts.
 
 The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](functions.md).
 

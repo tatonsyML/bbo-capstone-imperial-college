@@ -2,7 +2,7 @@
 
 **Eight unknown functions. Thirteen rounds. An evolving approach to making better decisions under uncertainty.**
 
-**Black-Box Optimisation capstone · Imperial College London's [25-week Professional Certificate in Machine Learning and Artificial Intelligence](https://www.imperial.ac.uk/lifelong-learning/courses/professional-certificate-ml-and-ai/?utm_source=tatonsyml&utm_medium=github&utm_campaign=bbo-capstone)**
+**Black-Box Optimisation capstone · Imperial College London's [25-week Professional Certificate in Machine Learning and Artificial Intelligence](https://www.imperial.ac.uk/lifelong-learning/courses/professional-certificate-ml-and-ai/)**
 
 [![Python tests](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml/badge.svg)](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) · [MIT Licence](LICENSE) · [Reuse and attribution](USAGE_AND_PERMISSIONS.md)
 
@@ -24,7 +24,7 @@ BBO balances **exploration** (learning about uncertain regions) with **exploitat
 
 ## Explore the research
 
-**Suggested reading order:** Start with the [eight function results](functions/README.md), follow the [thirteen-round methodology and decisions](journey/README.md), then examine the [recorded evidence and reproducible notebook](notebooks/README.md). The [complete observations](data/all_observations.csv) are available for independent checks.
+**Suggested reading order:** Start with the [eight function investigations](functions/README.md), follow the [thirteen-round journey](journey/README.md), then [run the final notebook](notebooks/README.md). The [complete observations](data/all_observations.csv) are available for analysis.
 
 | Start here | What you will find |
 |---|---|
@@ -95,7 +95,7 @@ The notebook reproduces supported analyses and demonstrates optimisation methods
 
 The record contains **175 course-provided initial observations** and **104 personal portal evaluations**, including repeated queries. Inputs and actual returns remain distinct from fitted-model predictions and externally reported participant observations.
 
-[Dataset datasheet and function-specific data notes](DATASHEET.md) · [Model card](MODEL_CARD.md) · [Evidence and limitations](docs/EVIDENCE_RULES.md) · [Citation](CITATION.cff)
+[Dataset datasheet and function-specific data notes](DATASHEET.md) · [Model card](MODEL_CARD.md) · [How to read the results](journey/README.md#how-to-read-the-results) · [Citation](CITATION.cff)
 
 My original code and documentation are available under the **[MIT Licence](LICENSE)**, which permits copying, modification and reuse, including commercially, with the required copyright and licence notices. Course-supplied and third-party data are **not** relicensed under MIT. See [usage and permissions](USAGE_AND_PERMISSIONS.md).
 

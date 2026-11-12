@@ -49,4 +49,4 @@ This writes three files beside the script:
 
 This executable diagnostic is based on the later `bbo_clustering_audit.py` analysis. The **DBSCAN investigation was part of Week 11**, but this particular script is not verified as the original candidate-selection implementation. Its duplicate **F1/F8 equations, equation-validation CSVs and residual calculations were deliberately excluded**. This script uses the repository's existing F1 model only to draw the explanatory background; it does not re-fit F1 or reconstruct historical selection scripts.
 
-[Original Round 11 evidence](../../../journey/round_11/README.md) · [Full observed dataset](../../../data/all_observations.csv) · [Evidence provenance](../../../docs/EVIDENCE_RULES.md).
+[Original Round 11 evidence](../../../journey/round_11/README.md) · [Full observed dataset](../../../data/all_observations.csv) · [Measured and modelled results](../../../journey/README.md#how-to-read-the-results).

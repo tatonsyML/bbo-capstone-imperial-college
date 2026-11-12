@@ -65,9 +65,9 @@ The **unchanged** Module 21.2 assessment documents are retained under [archive/c
 
 Other records include the [Round 10 optimisation snapshot](optimisation.yaml), [candidate CSV](round10_candidates.csv) and [early exploratory notebooks](early_notebooks/).
 
-## Supporting Round 10 revision audit (dated before outputs)
+## Candidate comparisons recorded before the Round 10 outputs
 
-## 2. Evidence comparison, without treating predictions as portal scores
+### Model forecasts and observed returns
 
 | Function | Comparison | Interpretation |
 |---|---|---|
@@ -82,7 +82,7 @@ Other records include the [Round 10 optimisation snapshot](optimisation.yaml), [
 
 The F5 all-upper-bound choice remains 0.999999 in each coordinate; its cubic model predicts approximately **8,489** there, but the real output has not been returned.
 
-## 3. External evidence and provenance
+### Independent comparisons and their limits
 
 Classmates' publicly shared records informed supplementary **experimental models** and helped reveal underexplored areas; they have **not** been counted as this participant's own portal observations.
 
@@ -96,9 +96,9 @@ The supplementary research used publicly shared input-output histories, model-ca
 
 **Academic-use note:** Public accessibility is not consent for unrestricted assessed use. The participant must comply with programme collaboration and attribution rules when applying peer-observed outputs to assessed query design.
 
-## 4. Reproducibility status
+### Reproducing these comparisons
 
-The authoritative personal observation CSV files, main GP/acquisition code and Round 10 submitted inputs are in this repository. This audit captures the supplementary parameter families, types of external evidence, predictions and chosen coordinates, without identifying individual contributors. The detailed ad-hoc external test scripts were developed separately from the versioned project pipeline; the **exact supplementary analysis is not yet fully reproducible from this repository alone**. Any future publication should add the tested script revisions, dependencies, seeds and permitted source-retrieval instructions and an appropriate attribution register for authorised review.
+The authoritative personal observation CSV files, main GP/acquisition code and Round 10 submitted inputs are in this repository. The comparisons describe the parameter families, model predictions and chosen coordinates without naming individual contributors. The detailed ad-hoc external test scripts were developed separately from the versioned project pipeline; the **exact supplementary analysis is not yet fully reproducible from this repository alone**. Any future publication should add the tested script revisions, dependencies, seeds and permitted source-retrieval instructions and an appropriate attribution register for authorised review.
 
 This document makes no claim that F3, F6, F7 or F8 achieved the forecast scores; only new portal outputs can establish that.
 

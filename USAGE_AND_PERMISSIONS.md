@@ -23,7 +23,7 @@ If you are reusing the code, you can substitute your own or otherwise authorised
 
 ## Provenance and reproducibility
 
-The [full dataset](data/all_observations.csv) distinguishes the **175 starting observations** from **104 personal portal evaluations**. A reconstructed mathematical surface or retrospective optimiser suggestion is not a new portal evaluation. See the [datasheet](DATASHEET.md) and [evidence rules](docs/EVIDENCE_RULES.md) for methodology and limitations.
+The [full dataset](data/all_observations.csv) distinguishes the **175 starting observations** from **104 personal portal evaluations**. A reconstructed mathematical surface or retrospective optimiser suggestion is not a new portal evaluation. See the [datasheet](DATASHEET.md) and [guide to reading the results](journey/README.md#how-to-read-the-results) for methodology and limitations.
 
 The course's **public-repository submission instructions support publication of this project and its numerical evidence for assessment**. They are not a general open-data licence. The MIT licence applies to my original work only and does not override any separate rights in course or peer material.
 
