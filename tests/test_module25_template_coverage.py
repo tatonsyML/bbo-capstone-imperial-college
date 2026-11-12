@@ -91,21 +91,41 @@ def test_all_eight_function_stories_preserve_canonical_best_results():
         assert documented_vector == expected_vector, function
 
 
-def test_model_card_has_explicit_template_fields_graph_and_evaluation():
-    model = (ROOT / "MODEL_CARD.md").read_text(encoding="utf-8")
-    for label in (
-        "**Inputs:**",
-        "**Outputs:**",
-        "**Model architecture:**",
-        "## 5. Trade-offs and decisions",
-        "## 6. Performance:",
-        "## 7. Evaluation methods and quantitative validation",
-        "## 8. Assumptions, limitations and potential failure modes",
+def test_model_card_follows_mitchell_and_course_template():
+    """One model card reports nine Mitchell sections and four course fields."""
+    card = (ROOT / "MODEL_CARD.md").read_text(encoding="utf-8")
+    sections = (
+        "Model Details",
+        "Intended Use",
+        "Factors Affecting Performance",
+        "Metrics",
+        "Evaluation Data",
+        "Training Data",
+        "Quantitative Analyses",
+        "Ethical Considerations",
+        "Caveats and Recommendations",
+    )
+    for number, name in enumerate(sections, start=1):
+        assert f"## {number}. {name}" in card, name
+
+    for text in (
+        "**Input:**",
+        "**Output:**",
+        "**Model Architecture:**",
+        "## Module 25 template coverage",
         "results/figures/progress.svg",
         "40 initial F8 observations",
         "13 later F8 returns",
+        "Mitchell, M.",
+        "Model Cards for Model Reporting",
+        "Trade-offs",
     ):
-        assert label in model, label
+        assert text in card, text
+
+    assert card.count("| [F") >= 8
+    assert "DATASHEET.md" in card
+    assert "functions/README.md" in card
+    assert "notebooks/Capstone_Final_Walkthrough.ipynb" in card
 
 
 def test_readme_has_roughly_hundred_word_public_explanation_and_hyperparameters():
