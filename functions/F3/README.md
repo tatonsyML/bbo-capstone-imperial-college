@@ -1,5 +1,6 @@
 # Function 3 · Learning when a fitted local peak is misleading
 
+**Function navigation (3/8):** [← Previous: F2](../F2/README.md) · [All eight functions](../README.md) · [Next: F4 →](../F4/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
 **3 inputs · 15 starting observations · 13 rounds**
@@ -263,3 +264,5 @@ A smooth local curve and an accurate-looking mean can still select an unproducti
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
+
+**Function navigation (3/8):** [← Previous: F2](../F2/README.md) · [All eight functions](../README.md) · [Next: F4 →](../F4/README.md)

@@ -1,5 +1,6 @@
 # Round 13 | Three new records and the final portal return
 
+**Round navigation (13/13):** [← Previous: Round 12](../round_12/README.md) · [All thirteen rounds](../README.md)
 **Status:** Confirmed eight portal outputs. This closes the thirteen-round challenge.
 
 ## My reasoning at the time
@@ -67,3 +68,5 @@ Final dataset: **175 supplied initial observations + 104 personal returned queri
 The result email contains observed scores, not prior model predictions. These post-result interpretations **do not establish prospective forecasts** or global optimality for unresolved functions.
 
 [Round 13 inputs/outputs](../../data/portal_rounds_13.csv) · [Final best scores and inputs](../../results/current_best_after_week13.csv) · [Cumulative history](../../data/accumulated/history_through_week13.csv) · [Provenance](../../DATASHEET.md) · [Final reflection](../final_reflection/README.md)
+
+**Round navigation (13/13):** [← Previous: Round 12](../round_12/README.md) · [All thirteen rounds](../README.md)

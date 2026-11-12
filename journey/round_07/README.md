@@ -1,5 +1,6 @@
 # Round 7 · Module 18 | ARD models and prospective checks
 
+**Round navigation (7/13):** [← Previous: Round 6](../round_06/README.md) · [All thirteen rounds](../README.md) · [Next: Round 8 →](../round_08/README.md)
 **Evidence:** The [eight submitted inputs](queries.txt) and [eight returned outputs](outputs.txt) are historical portal records. The interpretation below is retrospective.
 
 ## My reasoning at the time
@@ -34,3 +35,5 @@ I tuned GP kernel family, smoothness, noise, restarts and local-search width, an
 The Week 7 analysis covers rolling-origin validation and comparative forecast evidence. The standalone Module 18 candidate-generating package has not been retained, so these documented methods are not presented as a reproduced original script.
 
 **Files:** [queries.txt](queries.txt) · [outputs.txt](outputs.txt) · [279-row dataset](../../data/all_observations.csv).
+
+**Round navigation (7/13):** [← Previous: Round 6](../round_06/README.md) · [All thirteen rounds](../README.md) · [Next: Round 8 →](../round_08/README.md)

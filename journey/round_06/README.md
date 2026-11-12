@@ -1,5 +1,6 @@
 # Round 6 · Module 17 | Model comparison and local path fitting
 
+**Round navigation (6/13):** [← Previous: Round 5](../round_05/README.md) · [All thirteen rounds](../README.md) · [Next: Round 7 →](../round_07/README.md)
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
@@ -47,3 +48,5 @@ The [eight saved Round 6 inputs](results/round6_queries.csv) and [per-function r
 | [results/round6_queries.csv](results/round6_queries.csv) | CSV | saved query rationale |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)
+
+**Round navigation (6/13):** [← Previous: Round 5](../round_05/README.md) · [All thirteen rounds](../README.md) · [Next: Round 7 →](../round_07/README.md)

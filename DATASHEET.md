@@ -135,6 +135,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 
 **Interpretation and limits:** A conventional smooth fit near almost-zero observations may overlook a narrow positive region. The separate mathematical reconstruction is a later validation of an already proposed family, not the original candidate-selection method. The limited record does not prove a global optimum. [Full F1 research](functions/F1/README.md) · [F1 observations](functions/F1/observations.csv).
 
+**Optimisation strategy and outcome:** I began with manual exploration, then tested GP/UCB and EI ideas. Near-zero scores made exploitation around the apparent incumbent unreliable, so identifying a genuine signal mattered more than fine-tuning local points. Continued near-zero returns challenged the surrogate rather than establishing a local optimum. **Best measured input:** `0.628540-0.628540`. **Best measured output:** `1.9999999996761817`. **Confidence:** Confirmed portal result, repeated in Rounds 12–13; no global maximum has been proved.
+
 ### F2 · Forecast error and missing coverage
 
 **What the data contain:** Two inputs, 10 starting observations and 13 portal evaluations. The highest recorded score increased from `0.6112052157614438` to `0.7442504263021256` in Round 13. Scores are numerical rewards with no published physical units.
@@ -142,6 +144,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 **Data treatment and quality:** Adaptive choices placed more observations in previously promising areas, not uniformly across the input square. GP and local polynomial experiments used stored observations with model-specific transformations. There is no exact repeated-input experiment sufficient to quantify observation noise.
 
 **Interpretation and limits:** One prospective model forecast around `0.730502` was followed by an actual return around `0.505526`. That discrepancy demonstrates poor prediction for the tested input, not necessarily a stochastic objective. Unsampled regions remain uncertain, and the best observed score does not certify a global maximum. F2 is useful for testing chronological calibration and the consequences of local extrapolation. [Full F2 research](functions/F2/README.md) · [F2 observations](functions/F2/observations.csv).
+
+**Optimisation strategy and outcome:** Initial UCB exploration progressed to global EI and locally focused GP forecasts. A poor prospective prediction and repeated searches within one neighbourhood suggested the local model was untrustworthy, not that a mathematical local optimum had been proved. Testing a different region in Round 13 raised the incumbent. **Best measured input:** `0.864900-0.500000`. **Best measured output:** `0.7442504263021256`. **Confidence:** Confirmed portal measurement; sparse coverage prevents any claim of a global maximum.
 
 ### F3 · Negative outputs and local search bias
 
@@ -151,6 +155,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 
 **Interpretation and limits:** The record contains insufficient independent coverage to conclude that a fitted local peak is the true maximum. No validated analytical source equation or exact-input replication series establishes noise properties. F3 is suitable for examining selection bias, the risk of local optimisation and whether exploring another region improves a previously strong incumbent. [Full F3 research](functions/F3/README.md) · [F3 observations](functions/F3/observations.csv).
 
+**Optimisation strategy and outcome:** I used cautious local predicted-mean and EI searches before testing alternative regions as earlier local fits failed to improve reliably. Worse-than-expected returns and later gains outside the original neighbourhood warned of local-search bias; they did not identify every local optimum. **Best measured input:** `0.197280-0.523429-0.470094`. **Best measured output:** `-0.0037530969187192596`. **Confidence:** Confirmed Round 13 portal measurement, not a certified global optimum.
+
 ### F4 · Local precision without decision value
 
 **What the data contain:** Four inputs, 30 starting observations and 13 evaluations. The best measured output improved from `-4.025542281908162` to `0.7468979113807426`, first achieved in Round 13.
@@ -158,6 +164,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 **Data treatment and quality:** Several late inputs concentrated around one promising region. This increases local information without establishing how the rest of the domain behaves. One contemporaneous forecast differed from the returned score by approximately `1.6 × 10⁻⁹`, while tiny candidate changes brought little improvement. The same Round 11 and Round 12 input yielded the same measured value.
 
 **Interpretation and limits:** Prediction accuracy and optimisation success must be assessed separately. A model which reproduces local changes can still guide inefficient experiments. Model target scaling and GP fitting do not change original scores, and repeated data at one point do not establish global determinism. The recorded incumbent is not a proof of the undisclosed function's maximum. [Full F4 research](functions/F4/README.md) · [F4 observations](functions/F4/observations.csv).
+
+**Optimisation strategy and outcome:** GP-guided acquisition initially exploited a productive region. Near 0.659, increasingly small steps were predicted precisely but yielded negligible improvement. This exposed an unproductive local search, not a proved mathematical local optimum; widening the tested region improved the incumbent in Rounds 11 and 13. **Best measured input:** `0.416903-0.415704-0.360320-0.415205`. **Best measured output:** `0.7468979113807426`. **Confidence:** Confirmed portal result; the undisclosed function's global maximum is not established.
 
 ### F5 · Large scores and boundary measurements
 
@@ -167,6 +175,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 
 **Interpretation and limits:** The later power-sum reconstruction closely matches tested returns but was developed after the original boundary decision. Its fitted behaviour is not independently authenticated across every possible input. Repeat measurements provide local consistency rather than broader sampling coverage. F5 illustrates the consequences of output scale, strong boundary trends and spending later evaluation budgets on repeats. [Full F5 research](functions/F5/README.md) · [F5 observations](functions/F5/observations.csv).
 
+**Optimisation strategy and outcome:** GP/UCB and EI proposals were supplemented by controlled one-coordinate changes. Repeated measured gains when moving towards upper bounds justified exploiting the legal boundary rather than an unsupported global search. A high boundary score and repeated returns do not exclude better unsampled regions or prove a local/global optimum. **Best measured input:** `0.999999-0.999999-0.999999-0.999999`. **Best measured output:** `8662.405001248297`. **Confidence:** Confirmed Round 10 return, reproduced at the same input in Rounds 11–13; global optimality is unverified.
+
 ### F6 · Nearby points with differing responses
 
 **What the data contain:** Five inputs, 20 starting observations and 13 subsequent returns. All measured scores are negative, with the incumbent improving from `-0.7142649478202404` to `-0.03751864724436928` in Round 12.
@@ -174,6 +184,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 **Data treatment and quality:** Some inputs close in coordinate space produce substantially different outcomes. Local GPs, neural-network challengers and controlled probes were analytical tools; the original numerical measurements remain unchanged. No exact-repeat series permits a reliable separation of steep deterministic response from stochastic noise.
 
 **Interpretation and limits:** With five dimensions, twenty initial samples offer limited coverage. A two-dimensional scatter projection does not hold the other three coordinates constant and should not be interpreted as a full surface. A narrow fitted neighbourhood may understate uncertainty elsewhere, and the highest measured result is not a certified global optimum. F6 is especially useful for evaluating sensitivity checks and when to abandon a locally unreliable predictor. [Full F6 research](functions/F6/README.md) · [F6 observations](functions/F6/observations.csv).
+
+**Optimisation strategy and outcome:** GP-led proposals and local tests explored promising coordinates, but nearby inputs sometimes returned sharply different scores. The unreliable local forecasts argued against continued narrow exploitation and motivated alternative-region tests followed by refinement. This is evidence of sensitivity, not proof of noise or a particular local optimum. **Best measured input:** `0.415080-0.344119-0.644062-0.776818-0.076258`. **Best measured output:** `-0.03751864724436928`. **Confidence:** Confirmed Round 12 return; no known global optimum or validated hidden equation.
 
 ### F7 · Structural hypothesis in six dimensions
 
@@ -183,6 +195,8 @@ The seven sections above describe the data shared by all eight functions. The pr
 
 **Interpretation and limits:** A close prediction at one tested point strengthens a specific hypothesis; it does not establish the undisclosed equation everywhere. The six-dimensional domain is sparsely observed. Modelled plots holding four coordinates fixed are different from projections of actual observations. F7 supports study of testable structural forecasts, local sensitivity and the costs of exploring higher dimensions. [Full F7 research](functions/F7/README.md) · [F7 observations](functions/F7/observations.csv).
 
+**Optimisation strategy and outcome:** I first exploited an improving one-coordinate path using controlled local probes, then explored a different region in Round 10 when those gains became modest. A positive Hartmann-6 hypothesis supplied a prospective Round 12 prediction, which the portal closely confirmed. A narrow local path had not proved a local optimum. **Best measured input:** `0.201689-0.150011-0.476874-0.275332-0.311652-0.657301`. **Best measured output:** `3.3223680113931557`. **Confidence:** Confirmed Round 12 measurement and close prior forecast; no proof of global identity or optimality.
+
 ### F8 · Sparse eight-dimensional data with a simple fitted model
 
 **What the data contain:** Eight inputs, 40 initial observations and 13 personal returns. The starting best was `9.598482002566342`; the portal returned `10` at a fitted vertex in Round 10.
@@ -191,20 +205,22 @@ The seven sections above describe the data shared by all eight functions. The pr
 
 **Interpretation and limits:** The fitted quadratic has a mathematically established maximum at its vertex. That does not certify the undisclosed source equation over all possible inputs. Eight-dimensional coverage remains sparse despite strong numerical agreement. F8 illustrates interpretable modelling, the importance of chronological validation and the risks of unnecessary surrogate complexity. [Full F8 research](functions/F8/README.md) · [F8 observations](functions/F8/observations.csv).
 
+**Optimisation strategy and outcome:** GP-guided local search progressively improved the score in an eight-dimensional space where broad exploration was costly. A simpler fitted additive quadratic then identified a model vertex, tested successfully in Round 10. The fit challenged further local GP refinement; it did not prove that other hidden-function regions were inferior. **Best measured input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`. **Best measured output:** `10`. **Confidence:** Confirmed portal return and fitted-model optimum; the true undisclosed global maximum remains unverified.
+
 **Scope:** These are descriptions of the recorded data, not substitutes for the function histories or model card.
 
 ## Appendix B. Module 25 template coverage
 
-The course template contains **29 questions across seven sections**. Shared questions are answered in Sections 1–7; the eight profiles in [Appendix A](#appendix-a-function-specific-data-profiles) supply additional function-level data detail. For method and weekly-iteration questions, follow the existing investigations instead of duplicating thirteen rounds.
+The course template contains **29 questions across seven sections**. Shared questions are answered in Sections 1–7; the eight profiles in [Appendix A](#appendix-a-function-specific-data-profiles) supply additional function-level data detail. The strategy-and-outcome paragraphs in Appendix A give each function's approach, exploration versus exploitation, local-search limitations, best measured input/output and confidence directly in this datasheet. The linked investigations retain the detailed thirteen-round decisions and evidence.
 
 | Template section | Questions | Answer location |
 |---|---:|---|
 | **Function overview** | 5 | [Composition](#2-composition) (identifier, dimensions, initial shapes, output meaning, unverified original-brief context) and each [function introduction](functions/README.md) |
 | **Nature of the data** | 4 | [Composition](#2-composition) (structure, sampling and coverage), [Appendix A](#appendix-a-function-specific-data-profiles) (repeatability and noise), and each function's observed progress and analysis |
-| **Optimisation strategy** | 4 | [Function stories](functions/README.md), especially each expandable thirteen-round development section and recorded strategy changes |
+| **Optimisation strategy** | 4 | The eight [strategy-and-outcome summaries](#appendix-a-function-specific-data-profiles) explain each function's approach, exploration/exploitation balance and local-search constraints; the [function stories](functions/README.md) contain detailed decisions |
 | **Data handling and preprocessing** | 4 | [Preprocessing](#4-preprocessing-cleaning-and-labelling), [methods](docs/methods.md), and original modelling evidence linked in the function stories |
-| **Weekly iteration and learning** | 4 | Each function's thirteen-round development and closing lessons; restart improvements are explicit in [Appendix A](#appendix-a-function-specific-data-profiles) |
-| **Performance and results** | 4 | The best input and output table, chart and mathematical analysis at the top of **each function page**; confidence limits and missing physical targets are described [above](#5-uses) and in Appendix A |
+| **Weekly iteration and learning** | 4 | [Appendix A](#appendix-a-function-specific-data-profiles) summarises how strategy changed for each function; the [thirteen-round journey](journey/README.md) and [function histories](functions/README.md) provide the full chronology |
+| **Performance and results** | 4 | Every [Appendix A profile](#appendix-a-function-specific-data-profiles) gives its best **measured input and output**, plus the evidence-based confidence limit; the [function pages](functions/README.md) show graphs and full round-by-round performance |
 | **Ethical, practical and general considerations** | 4 | [Uses](#5-uses), [Distribution](#6-distribution) and the linked function conclusions, including limits on scaling to expensive real-world settings |
 | **Total** | **29** | One datasheet plus eight complete function investigations |
 

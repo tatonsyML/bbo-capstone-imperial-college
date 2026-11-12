@@ -1,5 +1,6 @@
 # Round 11 | F1 breakthrough and stronger local search
 
+**Round navigation (11/13):** [← Previous: Round 10](../round_10/README.md) · [All thirteen rounds](../README.md) · [Next: Round 12 →](../round_12/README.md)
 **Results:** All eight submitted inputs and scores are confirmed by the portal records. F7's full input and score are documented in the official results email; its original candidate-generation script is unavailable.
 
 ## My reasoning at the time
@@ -51,3 +52,5 @@ The [published reproducible clustering diagnostic](../../research/diagnostics/cl
 ## Original evidence
 
 [Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query text survived as a separate file; F7's vector was added later from verified course evidence.
+
+**Round navigation (11/13):** [← Previous: Round 10](../round_10/README.md) · [All thirteen rounds](../README.md) · [Next: Round 12 →](../round_12/README.md)

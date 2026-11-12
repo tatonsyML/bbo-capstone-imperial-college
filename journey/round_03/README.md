@@ -1,5 +1,6 @@
 # Round 3 · Module 14 | Function-specific acquisition choices
 
+**Round navigation (3/13):** [← Previous: Round 2](../round_02/README.md) · [All thirteen rounds](../README.md) · [Next: Round 4 →](../round_04/README.md)
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
@@ -41,3 +42,5 @@ The Week 3 method settings are documented, but the exact standalone query-genera
 | [outputs.txt](outputs.txt) | returned output values | portal observation, historical |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)
+
+**Round navigation (3/13):** [← Previous: Round 2](../round_02/README.md) · [All thirteen rounds](../README.md) · [Next: Round 4 →](../round_04/README.md)

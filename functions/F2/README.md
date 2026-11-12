@@ -1,5 +1,6 @@
 # Function 2 · When a convincing forecast was wrong
 
+**Function navigation (2/8):** [← Previous: F1](../F1/README.md) · [All eight functions](../README.md) · [Next: F3 →](../F3/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Source observations](observations.csv) · [Full decision ledger](selection_history.csv)
 
 **2 inputs · 10 starting observations · 13 evaluated rounds**
@@ -267,3 +268,5 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 
 [← Function index](../README.md) · [Data provenance](../../DATASHEET.md) · [Model limitations](../../MODEL_CARD.md)
+
+**Function navigation (2/8):** [← Previous: F1](../F1/README.md) · [All eight functions](../README.md) · [Next: F3 →](../F3/README.md)

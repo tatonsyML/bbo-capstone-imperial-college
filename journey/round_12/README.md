@@ -1,5 +1,6 @@
 # Round 12 | Model comparisons, F6 and F7 improvements
 
+**Round navigation (12/13):** [← Previous: Round 11](../round_11/README.md) · [All thirteen rounds](../README.md) · [Next: Round 13 →](../round_13/README.md)
 **Status:** The eight returned portal scores were confirmed. R12 improved F6 and F7, while several functions repeated earlier inputs.
 
 ## My reasoning at the time
@@ -120,3 +121,5 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 **Portal:** personally selected, returned result. **Prospective:** forecast recorded before result. **Retrospective:** equation fit or analysis performed afterwards. **External:** publicly shared results used for model comparisons or checking, not counted as personal queries. **Hypothesis:** unconfirmed conjecture or Round 13 candidate.
 
 [Provenance](../../DATASHEET.md) · [Structural reconstruction](../../docs/functions.md) · [Portal log](../../data/portal_rounds_11_12.csv).
+
+**Round navigation (12/13):** [← Previous: Round 11](../round_11/README.md) · [All thirteen rounds](../README.md) · [Next: Round 13 →](../round_13/README.md)

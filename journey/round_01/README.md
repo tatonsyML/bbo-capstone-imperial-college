@@ -1,5 +1,6 @@
 # Round 1 · Module 12 | An initial GP and acquisition baseline
 
+**Round navigation (1/13):** [All thirteen rounds](../README.md) · [Next: Round 2 →](../round_02/README.md)
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
@@ -44,3 +45,5 @@ Module 12 introduced Gaussian Process surrogates, prediction uncertainty and exp
 | [supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb](supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb) | coursework notebook | original exercise artefact |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)
+
+**Round navigation (1/13):** [All thirteen rounds](../README.md) · [Next: Round 2 →](../round_02/README.md)

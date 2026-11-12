@@ -4,6 +4,8 @@
 
 **One function, thirteen decisions.** Start with the behaviour and final result, open any weekly section, then inspect the progress chart, original evidence, model code and 2D/3D visualisations. The weekly sections collapse by default so the page stays readable.
 
+**Read in order:** [Start with Function 1](F1/README.md). Every function page provides Previous and Next links at the top and bottom, ending at Function 8.
+
 | Function | What to look for | Final best | First reached |
 |---|---|---:|:---:|
 | [F1 · Finding the signal](F1/README.md) | Near-zero outputs, target scaling, oscillatory reconstruction | **1.999999999676** | R11 |

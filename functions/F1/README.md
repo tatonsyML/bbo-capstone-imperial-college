@@ -1,5 +1,6 @@
 # Function 1 · Finding a signal in apparent numerical silence
 
+**Function navigation (1/8):** [All eight functions](../README.md) · [Next: F2 →](../F2/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
 **2 inputs · 10 starting observations · 13 rounds**
@@ -297,3 +298,5 @@ A weak GP on a numerically compressed target is a reason to challenge the repres
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
+
+**Function navigation (1/8):** [All eight functions](../README.md) · [Next: F2 →](../F2/README.md)

@@ -1,5 +1,6 @@
 # Function 7 · From one-coordinate refinement to structural prediction
 
+**Function navigation (7/8):** [← Previous: F6](../F6/README.md) · [All eight functions](../README.md) · [Next: F8 →](../F8/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
 **6 inputs · 30 starting observations · 13 rounds**
@@ -267,3 +268,5 @@ Controlled probes explain local coordinate effects, but alternative regions can 
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
+
+**Function navigation (7/8):** [← Previous: F6](../F6/README.md) · [All eight functions](../README.md) · [Next: F8 →](../F8/README.md)
