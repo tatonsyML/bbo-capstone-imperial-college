@@ -143,7 +143,8 @@ def test_datasheet_question_2_4_classifies_apparent_function_behaviour():
         assert 40 <= len(description.split()) <= 115, function
         assert any(term in description.lower() for term in (
             "unverified", "unknown", "cannot", "not proved",
-            "not establish", "do not establish", "not proof"
+            "not establish", "do not establish", "not proof",
+            "not authenticated"
         )), function
 
     # Particularly important: an apparently sensitive surface is not
