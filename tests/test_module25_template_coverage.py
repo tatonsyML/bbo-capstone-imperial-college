@@ -94,6 +94,36 @@ def test_datasheet_strategy_outcomes_match_canonical_measurements():
         assert Decimal(found_output.group(1)) == Decimal(best["output"])
 
 
+def test_all_eight_function_profiles_explicitly_answer_restart_question_5_4():
+    """Require eight separate retrospective improvements, not just a coverage claim."""
+    datasheet = (ROOT / "DATASHEET.md").read_text(encoding="utf-8")
+    assert "**Template question 5.4 — If you restarted, what would you do differently?**" in datasheet
+    assert datasheet.count("**If I restarted:**") == 8
+
+    # Distinct evidence from each function prevents a generic boilerplate
+    # paragraph from silently replacing its actual research-specific lesson.
+    required_clues = (
+        ("near-zero", "signal"),
+        ("Round 9", "competing regions"),
+        ("final-round", "local"),
+        ("0.659", "tiny"),
+        ("boundary", "repeat"),
+        ("sensitivity", "interactions"),
+        ("Hartmann-6", "prospective"),
+        ("quadratic", "vertex"),
+    )
+    for function, clues in enumerate(required_clues, start=1):
+        section = datasheet.split(f"### F{function} ·", 1)[1].split(
+            f"### F{function + 1} ·" if function < 8 else "**Scope:**", 1
+        )[0]
+        assert section.count("**If I restarted:**") == 1, function
+        lesson = section.split("**If I restarted:**", 1)[1].strip()
+        assert 20 <= len(lesson.split()) <= 100, function
+        for clue in clues:
+            assert clue in lesson, (function, clue)
+
+
+
 def test_all_eight_function_stories_preserve_canonical_best_results():
     """Score and exact six-decimal vector stay authoritative in function pages."""
     with (ROOT / "data/all_observations.csv").open(
