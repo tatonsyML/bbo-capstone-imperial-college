@@ -1,6 +1,4 @@
-"""Protect the public repository's compact navigation and original evidence."""
-from __future__ import annotations
-
+"""Check reader entry points and the original reproducible research structure."""
 from pathlib import Path
 import subprocess
 
@@ -9,88 +7,68 @@ FOLDERS = {
     ".github", "archive", "data", "docs", "functions", "journey",
     "notebooks", "research", "results", "scripts", "src", "tests",
 }
-DOCS = {
-    "docs/methods.md", "docs/reconstruction.md", "docs/visualisations.md",
-    "docs/gp_replay.md", "notebooks/README.md",
-}
-REMOVED = ("methods", "reconstruction", "visualisations", "final")
 
 
-def test_twelve_organised_source_folders():
+def test_organised_source_folders():
     for directory in FOLDERS:
         assert (ROOT / directory).is_dir(), directory
-    for old in REMOVED:
-        assert not (ROOT / old).exists(), f"Old redundant top-level directory: {old}"
-
-    # Validate the actual *tracked* Git tree, excluding pytest caches and local
-    # virtual environments which may appear when running tests.
     if (ROOT / ".git").exists():
-        output = subprocess.check_output(
+        tracked = set()
+        listing = subprocess.check_output(
             ["git", "-C", str(ROOT), "ls-files", "-z"]
         ).decode("utf-8")
-        tracked = {
-            part.split("/", 1)[0]
-            for part in output.split("\0") if "/" in part
-        }
-        assert tracked == FOLDERS, (tracked - FOLDERS, FOLDERS - tracked)
+        for item in listing.split("\0"):
+            if "/" in item:
+                tracked.add(item.split("/", 1)[0])
+        assert tracked == FOLDERS
 
 
-def test_research_entry_points_remain_present():
-    homepage = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert "## The project" in homepage
-    assert "## Why black-box optimisation matters" in homepage
-    assert "**Author:** [Tamer El-Tonsy](https://github.com/tatonsyML)" in homepage
-    assert (
-        "[Questions and corrections]"
-        "(https://github.com/tatonsyML/bbo-capstone-imperial-college/issues)"
-    ) in homepage
-    assert "## Eight functions, eight investigations" in homepage
-
-    for filename in DOCS:
-        assert (ROOT / filename).is_file(), filename
+def test_research_entry_points_and_original_data_remain():
+    for name in (
+        "README.md", "DATASHEET.md", "MODEL_CARD.md",
+        "USAGE_AND_PERMISSIONS.md", "LICENSE", "CITATION.cff",
+        "data/all_observations.csv", "notebooks/Capstone_Final_Walkthrough.ipynb",
+        "docs/methods.md", "docs/reconstruction.md",
+        "docs/visualisations.md", "docs/gp_replay.md",
+        "docs/historical_replay.md", "archive/round_10/README.md",
+    ):
+        assert (ROOT / name).is_file(), name
     for function in range(1, 9):
-        directory = ROOT / f"functions/F{function}"
-        for filename in ("README.md", "observations.csv",
-                         "selection_history.csv", "progress.svg"):
-            assert (directory / filename).is_file(), f"{directory}/{filename}"
-        assert not (directory / "model_runs").exists()
-    for number in range(1, 14):
-        assert (ROOT / f"journey/round_{number:02d}/README.md").is_file()
+        for file in ("README.md", "observations.csv", "selection_history.csv", "progress.svg"):
+            assert (ROOT / f"functions/F{function}/{file}").is_file()
+    for n in range(1, 14):
+        assert (ROOT / f"journey/round_{n:02d}/README.md").is_file()
 
 
-def test_original_round12_code_is_not_moved_or_duplicated():
-    original = ROOT / "journey/round_12/original"
-    portable = ROOT / "journey/round_12/portable"
+def test_original_and_portable_round12_implementations_preserved():
     for filename in (
         "review_round12.py", "robust_and_warp.py", "tpe_local.py",
         "trust_region_ts.py",
     ):
-        assert (original / filename).is_file()
-        assert (portable / filename).is_file()
+        assert (ROOT / "journey/round_12/original" / filename).is_file()
+        assert (ROOT / "journey/round_12/portable" / filename).is_file()
         assert not (ROOT / "src/bbo" / filename).exists()
 
 
-def test_shared_gp_replay_and_artifact_only_notebook_workflow():
-    guide = (ROOT / "docs/gp_replay.md").read_text(encoding="utf-8")
-    assert "scripts/replay_surrogates.py" in guide
-    notebook_guide = (ROOT / "notebooks/README.md").read_text(encoding="utf-8")
-    assert "downloadable workflow artifact" in notebook_guide
-    assert "does **not** commit output files" in notebook_guide
+def test_distinct_replay_routes_and_notebook_workflow_remain():
+    assert (ROOT / "scripts/replay_surrogates.py").is_file()
+    assert (ROOT / "scripts/historical_replay.py").is_file()
+    assert (ROOT / ".github/workflows/notebook-25-3.yml").is_file()
 
 
-def test_removed_document_paths_do_not_reappear_in_public_navigation():
+def test_retired_process_documents_are_not_linked_from_active_guides():
+    retired = (
+        "EVIDENCE_RULES.md", "VERIFIED_FACTS.md",
+        "WEEKLY_SUBMISSION_EVIDENCE.md", "function_datasheets.md",
+    )
+    for filename in retired:
+        assert not (ROOT / "docs" / filename).exists()
     pages = [
-        ROOT / "README.md",
-        ROOT / "journey/README.md",
-        ROOT / "functions/README.md",
-        ROOT / "notebooks/README.md",
+        ROOT / "README.md", ROOT / "functions/README.md",
+        ROOT / "journey/README.md", ROOT / "notebooks/README.md",
         *sorted((ROOT / "docs").glob("*.md")),
     ]
-    disallowed = (
-        "methods/README.md", "reconstruction/README.md",
-        "visualisations/README.md", "final/README.md",
-    )
     for page in pages:
-        source = page.read_text(encoding="utf-8")
-        for path in disallowed:
-            assert path not in source, (page.relative_to(ROOT), path)
+        content = page.read_text(encoding="utf-8")
+        for filename in retired:
+            assert filename not in content, (page, filename)

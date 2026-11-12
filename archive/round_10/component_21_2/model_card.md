@@ -5,7 +5,7 @@
 **Version:** 4.1, Module 21 / Round 10 submitted  
 **Developer and maintainer:** Project author  
 **Evidence cut:** Portal-returned results through **Week 9** (247 evaluations); **Round 10 scores pending**  
-**Code:** [src/bbo/](../../../../src/bbo/) | **Data:** [docs/datasheet.md](datasheet.md) | **Decisions:** [docs/decision_log.md](decision_log.md)
+**Code:** [src/bbo/](../../../src/bbo/) | **Data:** [docs/datasheet.md](datasheet.md) | **Decisions:** [docs/decision_log.md](decision_log.md)
 
 > **In plain English:** When every experiment is expensive and the formula is hidden, an algorithm predicts which setting to try next. This project goes one step further: it checks whether that algorithm has been reliable *before* allowing its prediction to drive the next experiment.
 
@@ -51,7 +51,7 @@ The pipeline combines **measured results**, **model-generated candidates** and *
 
 ### What HEBO-inspired and TuRBO-style mean here
 
-The implementation in [src/bbo/optimizer.py](../../../../src/bbo/optimizer.py) makes the distinction auditable:
+The implementation in [src/bbo/optimizer.py](../../../src/bbo/optimizer.py) makes the distinction auditable:
 
 - **HEBO-inspired:** Fits RBF, Matérn 1.5 and Matérn 2.5 GPs with a Yeo–Johnson transformation. It evaluates EI, PI and UCB over a seeded Sobol candidate pool and compares robust candidate ranks. This is **not** a complete implementation of HEBO.
 - **TuRBO-style:** Fits a GP and evaluates EI over a Sobol pool restricted to a region around the best observed point. The coded default region width is **0.20** in normalised input space. This is a local challenger, **not** the complete TuRBO method with automatic expansion, contraction and restarts.
@@ -112,7 +112,7 @@ Its fitted score is **10**. This remains a **predicted**, not a portal-returned,
 
 ## 6. The Round 10 submission: decisions, not outcomes
 
-The final [Round 10 query record](../../queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
+The final [Round 10 query record](../../../journey/round_10/queries.txt) stores eight six-decimal input strings. Their rationale is summarised below.
 
 | Function | Decision | Evidence and uncertainty |
 |---|---|---|
@@ -169,11 +169,11 @@ In manufacturing, agriculture or clinical research, an optimisation query might 
 
 Useful starting points:
 - [Dataset and provenance](datasheet.md)
-- [Chronological queries and outcomes](../../../README.md)
-- [Current implementation](../../../../src/bbo/)
-- [Best measured scores](../../../../archive/results/current_best_after_week9.csv)
-- [Forecast audit](../../../../results/week9_forecast_audit.csv)
-- [F8 quadratic coefficients](../../../../results/f8_additive_quadratic_coefficients.csv)
+- [Chronological queries and outcomes](../../../journey/README.md)
+- [Current implementation](../../../src/bbo/)
+- [Best measured scores](../../results/current_best_after_week9.csv)
+- [Forecast audit](../../../results/week9_forecast_audit.csv)
+- [F8 quadratic coefficients](../../../results/f8_additive_quadratic_coefficients.csv)
 - [Decision log](decision_log.md)
 
 ## 10. Does the model card need more detail?

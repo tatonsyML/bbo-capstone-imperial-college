@@ -7,7 +7,7 @@ This is the **assessment-facing** folder for Stage 2, Required Capstone Componen
 - **[Datasheet](datasheet.md)**: Why the dataset exists; size and contents; sampling and collection; processing, uses, distribution, terms and maintenance.
 - **[Model card](model_card.md)**: Name, type and version; appropriate and inappropriate uses; strategy evolution; observed performance; assumptions, failure modes, ethics and reproducibility.
 
-The same current documents are linked near the top of the [main project README](../../../../README.md), through [docs/datasheet.md](../../../../DATASHEET.md) and [docs/model_card.md](../../../../MODEL_CARD.md).
+The same current documents are linked near the top of the [main project README](../../../README.md), through [docs/datasheet.md](../../../DATASHEET.md) and [docs/model_card.md](../../../MODEL_CARD.md).
 
 ## Assessment snapshot
 
@@ -15,10 +15,10 @@ The documents use **247 observed evaluations through Week 9**. The **eight Round
 
 Supporting materials:
 
-- [Round 10 submitted inputs](../../queries.txt)
-- [Revision and external-evidence provenance audit](../../README.md)
-- [Decision log](../../../../archive/notes/early_decision_log.md)
-- [Results through Week 9](../../../../archive/results/current_best_after_week9.csv)
+- [Round 10 submitted inputs](../../../journey/round_10/queries.txt)
+- [Revision and external-evidence provenance audit](../../../journey/round_10/README.md)
+- [Decision log](../../notes/early_decision_log.md)
+- [Results through Week 9](../../results/current_best_after_week9.csv)
 
 ## Rubric coverage (11 criteria)
 

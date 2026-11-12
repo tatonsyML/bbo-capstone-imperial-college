@@ -10,6 +10,7 @@ The **main reading experience** is [the eight function stories](../functions/REA
 - [Data snapshots](../data/accumulated/): earlier observations and score histories retained to reproduce chronological decisions.
 - [Older decision log](notes/early_decision_log.md) and [project timeline](notes/early_project_timeline.md): useful historical viewpoints that may not reflect the final 13-round results.
 - [Legacy coursework checklist](coursework/legacy_checklist.md): superseded documentation, preserved only as historical context.
+- [Round 10 coursework submissions and dated drafts](round_10/): earlier assessed datasheet, model card, decision log and reflections. These reflect their original research cutoff, not the final 13-round results.
 - [Post-capstone comparison research](../research/full_optimisers/README.md): later full HEBO and TuRBO-1 reference implementations, not original historical query generators.
 
 ### What is canonical now?

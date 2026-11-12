@@ -1,6 +1,6 @@
 # Optimisation methods, source code and reproduction
 
-[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Original model-card](../MODEL_CARD.md) · [Round 13 verified results](../journey/round_13/README.md)
+[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Model card](../MODEL_CARD.md) · [Final measured results](../journey/round_13/README.md)
 
 ## What was implemented and when?
 
@@ -23,6 +23,8 @@
 | Controlled coordinate probes | [Round 5](../journey/round_05/README.md) · [F5](../functions/F5/README.md) | Assess local sensitivity and boundary effects | Original round experiments |
 | DBSCAN analysis of search density | [Clustering study](../research/diagnostics/clustering/README.md) | Compare observed clusters with high-scoring points; published code is a later reproducible diagnostic | Week 11 analysis, later diagnostic |
 
+**Saved historical candidate comparisons:** [HEBO-inspired committee suggestions](../results/hebo_inspired_committee.csv), [TuRBO-style local proposals](../results/turbo_style_challengers.csv) and [structural candidate alternatives](../results/structural_challengers.csv). These contain model proposals and forecasts, **not additional portal measurements**. The [279 observed returns and starting points](../data/all_observations.csv) remain the source for measured outcomes.
+
 ## The logic behind the code
 
 ### 1. GP modelling
@@ -33,7 +35,7 @@ Each function has only a small number of observations relative to its dimension.
 
 ### 2. Choosing one query
 
-EI combines predicted improvement with uncertainty. PI considers the probability of beating an incumbent. UCB gives additional value to uncertainty. Their numerical units differ, so the custom committee **ranks** candidates within each acquisition function instead of directly adding raw acquisition values. The original course permitted only one query per function per round, making it important to audit the choice.
+EI combines predicted improvement with uncertainty. PI considers the probability of beating an incumbent. UCB gives additional value to uncertainty. Their numerical units differ, so the custom committee **ranks** candidates within each acquisition function instead of directly adding raw acquisition values. The original course permitted only one query per function per round, making each selected input worth its limited evaluation budget.
 
 ### 3. What the original 'TuRBO-style' code missed
 
@@ -66,7 +68,7 @@ Read the same **through-Week-9** historical observation snapshot for each functi
 - That simulated F8 objective returns are real portal scores.
 - That a single best candidate would dominate on eight different unknown functions.
 - That a candidate chosen using the final history was actually available before its original submission date.
-- That the optional HEBO and BoTorch engines have been executed here: **their packages are not available during the code review**, so no numeric algorithm-versus-algorithm verdict is recorded.
+- That the executed HEBO/TuRBO-1 benchmark establishes superiority on the undisclosed functions. The [12 November 2026 comparison](../research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) used simulated feedback from the fitted F8 model and three random seeds; the unscored F1–F8 proposal mode remains untested.
 
 ## Code-reading route
 
@@ -115,7 +117,7 @@ The last step is especially important with a finite horizon: an exploratory quer
 
 Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
 
-[Provenance and attribution requirements](../DATASHEET.md) · [Dated audit](../journey/round_10/README.md) · [Full model card](../MODEL_CARD.md) · [Final verified results](../journey/round_13/README.md)
+[Provenance and attribution requirements](../DATASHEET.md) · [Round 10 research](../journey/round_10/README.md) · [Full model card](../MODEL_CARD.md) · [Final verified results](../journey/round_13/README.md)
 
 ## Reproduce the supported results
 
@@ -154,16 +156,11 @@ PYTHONPATH=src python -m bbo.pipeline
 
 **Scope:** the pipeline is a preserved older demonstration with a data cut through Week 9. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
 
-### Evidence and limitations
+### Reading model outputs
 
-- Latest verified status: **all 13 rounds**, or 104 personal portal evaluations.
-- The [Round 13 input/output log](../data/portal_rounds_13.csv) and [final audit](../journey/round_13/README.md) are verified.
-- The **confirmed Round 11 F7 input** was: `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`; confirmed score `3.278967926227992`. The original candidate-selection script is not retained. The [104-query provenance audit](../src/bbo/evidence_audit.py) prevents this input from being reported missing again.
-- Published external examples informed later investigations but must not be mixed into the personal returns dataset without source labelling and any required academic attribution.
-- Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
-- Starting observations and past bests are distinct from an individual round's returned outcome.
+Use the [279-row recorded dataset](../data/all_observations.csv) for measured scores. The [function pages](../functions/README.md) distinguish submitted portal inputs from model proposals, and the [round-by-round account](../journey/README.md#how-to-read-the-results) distinguishes prospective forecasts from later structural reconstructions. External participant observations used in exploratory comparisons are not counted as personal returns.
 
-For a short explanation start with [the README](../README.md), then consult [methods](methods.md), [mathematical reconstruction](functions.md) and [data provenance](../DATASHEET.md).
+The Round 11 F7 input was `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, returning `3.278967926227992`. This confirmed result belongs to the historical dataset, independently of which original selector script survives.
 
 ### Regenerate the visual gallery
 
@@ -173,7 +170,7 @@ From the repository root, with **Node.js 18+**, without installing further packa
 node results/figures/build_visual_gallery.mjs
 ```
 
-This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 now has a confirmed input from the original results email and is included in the canonical data. Only its exact historical candidate-generator remains unavailable.
+This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. F7's Round 11 result is included in the measured-data charts.
 
 The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](functions.md).
 
