@@ -1,6 +1,8 @@
 # Final Datasheet | BBO capstone observations
 
-**Evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
+**Capstone evidence through:** Round 13, 9 November 2026 · **Status:** Final documentation of the verified record
+
+**Post-capstone documentation update (12 November 2026):** The [official HEBO/TuRBO-1 comparison](research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) used simulated F8 model feedback. It did not change the 279 recorded observations or any original portal results.
 
 [← Project home](README.md) · [Complete data CSV](data/all_observations.csv) · [Final model card](MODEL_CARD.md)
 

@@ -28,6 +28,8 @@ BBO balances **exploration** (learning about uncertain regions) with **exploitat
 
 ## Explore the research
 
+**Suggested reading order:** Start with the [eight function results](functions/README.md), follow the [thirteen-round methodology and decisions](journey/README.md), then examine the [recorded evidence and reproducible notebook](notebooks/README.md). The [complete observations](data/all_observations.csv) are available for independent checks.
+
 | Start here | What you will find |
 |---|---|
 | **[Eight function investigations](functions/README.md)** | Each function's behaviour, decisions, results, progress and mathematical evidence |

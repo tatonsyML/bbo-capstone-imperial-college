@@ -2,6 +2,8 @@
 
 **Version:** Final, 13 returned rounds (9 November 2026) · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
 
+**Post-capstone documentation update (12 November 2026):** The [official HEBO/TuRBO-1 benchmark](research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) is a separate F8 model-only simulation, not part of the original thirteen-round selection process.
+
 [← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
 
 ## 1. Model summary
@@ -105,7 +107,7 @@ The same approach would require additional validation, security checks and hard 
 
 ## 10. Reproducibility and maintenance
 
-**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/methods.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/functions.md) allow a reviewer to verify the claims.
+**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/methods.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/visualisations.md) allow a reviewer to verify the claims.
 
 Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
 
