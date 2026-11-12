@@ -4,7 +4,7 @@
 
 This model card describes my function-specific optimisation workflow across **eight black-box objectives and thirteen returned rounds**, completed in November 2026. It covers what the models accept and predict, how candidate decisions were made, performance against actual portal outcomes, limitations and trade-offs. The later [HEBO/TuRBO-1 simulator benchmark](research/full_optimisers/README.md) is independent post-capstone research, not an additional set of original portal evaluations.
 
-[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Dataset datasheet](DATASHEET.md) · [Function-specific datasheets](docs/function_datasheets.md)
+[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Dataset datasheet and function-specific data notes](DATASHEET.md)
 
 ## 1. Model summary
 
