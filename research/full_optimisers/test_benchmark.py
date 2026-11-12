@@ -16,6 +16,7 @@ from benchmark import (TurboState, build_f8_simulator, f8_design,
 ROOT = Path(__file__).resolve().parents[2]
 
 
+@pytest.mark.filterwarnings("error:Conversion of an array with ndim > 0 to a scalar is deprecated:DeprecationWarning")
 def test_f8_original_40_predict_thirteen_returned_points():
     x, y, coef, meta = build_f8_simulator(ROOT)
     assert x.shape == (40, 8)
