@@ -2,8 +2,6 @@
 
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
-> **About this account:** Edited from my Week 2 reflection in the 52-page *Capstone Project* document. It describes my thinking at the time. The technical record below preserves the confirmed portal returns, original artefacts and evidence limitations. Any difference between a prospective claim and a returned result must be resolved using the portal record.
-
 ## My reasoning at the time
 
 I began this round by adding the eight returned Week 1 input-output pairs to the starting observations and refitting the surrogate models. My first round had relied heavily on different heuristics. Now I tried to use a more consistent computational rule: Gaussian Process prediction with an Upper Confidence Bound (UCB) acquisition function. I varied the exploration weight, κ, by function rather than assuming a single universal setting.
@@ -13,8 +11,6 @@ The first returns provided a useful challenge to my assumptions. F1 again produc
 Other functions gave firmer grounds for exploitation. F4 improved from approximately **−4.0255 to −1.9105**, and F5 from **1,088.86 to 1,426.09**; I used **κ = 1.0** for each. F6's less-negative return also supported refining a direction while keeping possible coordinate interactions in mind. F8 improved from about **9.5985 to 9.8321** but still carried substantial eight-dimensional uncertainty, so **κ = 1.5** balanced its promising region with exploration. F3 and F7 retained intermediate settings, **κ = 2.0**.
 
 The practical calculation differed by dimension. For two-input functions I examined UCB over a dense grid; for higher dimensions I used a reproducible random candidate pool of **300,000** points. That gave a tractable comparison without pretending to exhaust the search space. I treated feature-level trends as diagnostic checks rather than sufficient evidence to select a point, because the interaction among coordinates could matter more than any one input. This was a first attempt to impose a repeatable decision process, while allowing the observations to challenge its predictions.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

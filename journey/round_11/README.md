@@ -2,8 +2,6 @@
 
 **Results:** All eight submitted inputs and scores are confirmed by the portal records. F7's full input and score are documented in the official results email; its original candidate-generation script is unavailable.
 
-> **About this account:** Edited from my Week 11 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
-
 ## My reasoning at the time
 
 After ten rounds I had 255 evaluated input-output pairs: 175 starting observations and 80 submitted queries. Week 10 had produced several personal bests, but no universal search pattern. F5 rose from about 6,583.56 to 8,662.41 near the legal boundary. F6 and F7 improved after relatively large movements from their previous incumbents. That contradicted the notion that refinement should always mean reducing step size. F2 still produced inconsistent scores for closely spaced inputs.
@@ -15,8 +13,6 @@ DBSCAN's noise label refers to low point density, not noisy objective measuremen
 F1 also led me to test structural and mathematical explanations. Outputs varying across many orders of magnitude made ordinary smooth GP interpolation difficult. A signed-log display offered a more useful view but did not prove a global equation. I distinguished numerical consistency on the available samples from genuine identification of the hidden function, and kept outside participants' observations separate from my own.
 
 My next steps were to refine only where predictions had earned trust, challenge strong out-of-cluster observations and reassess models when observed errors exceeded plausible gains. I ended with three different maps in mind: where I had sampled, where the function performed well and where my predictions were reliable. They must not be confused.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

@@ -2,8 +2,6 @@
 
 **Evidence:** [Submitted inputs](queries.txt) and [returned outputs](outputs.txt) are the observed portal record. The forecasts below were recorded before the result, as documented in the [Week 9 audit](../../results/week9_forecast_audit.csv).
 
-> **About this account:** Edited from my Week 9 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
-
 ## My reasoning at the time
 
 I began to consider the marginal value of another query. The portal evaluation budget was limited; offline fitting cost less, but adding models could also consume time and create confidence without improving a decision. I used scaling as an analogy for marginal return, not as a claim that a small Gaussian Process obeyed the scaling laws of a large language model.
@@ -15,8 +13,6 @@ I separated unexpected behaviour from the technical meaning of emergence in lang
 This round sharpened the distinction between numerical accuracy and query value. F2 demonstrated how a confident local forecast might fail badly. On F4, a highly accurate local model might still suggest a step too small to produce useful progress. F8 provided an example where agreement across alternative kernels supported an actionable choice. Robustness sometimes meant doing less: record a forecast before the return, change one coordinate when this gives an informative experiment, and stop adding complexity when it does not change the decision.
 
 My remaining-budget principle was that a query should either improve the objective or reduce a specific uncertainty that would influence a later choice. Near the final evaluation, information with no further chance of application had less value. I no longer regarded exploitation, exploration or extra modelling effort as automatically desirable; each had to justify its cost.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

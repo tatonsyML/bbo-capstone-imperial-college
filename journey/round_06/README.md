@@ -2,8 +2,6 @@
 
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
-> **About this account:** Edited from my Week 6 reflection in the 52-page *Capstone Project* document. It describes my thinking at the time. The technical record below preserves the confirmed portal returns, original artefacts and evidence limitations. Any difference between a prospective claim and a returned result must be resolved using the portal record.
-
 ## My reasoning at the time
 
 I returned to the distinction between importing a machine-learning idea and importing an unsuitable architecture. My inputs were tabular coordinates with no translation-invariant structure, so CNN layers would impose an assumption the data had not earned. The useful lesson from progressive feature extraction was a **hierarchy of evidence**: raw returns, controlled coordinate changes, local interactions, surrogate validation and only then the next query.
@@ -13,8 +11,6 @@ F7 helped make this concrete. Holding the other coordinates fixed while increasi
 I compared the GP with simpler and more flexible alternatives under five-fold validation. For F7, the GP's normalised RMSE was approximately **0.112** versus **0.314** for a small MLP; for F8, approximately **0.051** versus **0.157**. These checks favoured the GP in those measured comparisons, not as a universal theorem. More complexity and additional random initialisations were only worthwhile if held-out performance or a proposed experiment improved. A CNN was not a serious candidate for these unstructured vectors.
 
 The contemporaneous technical note also explained my choice of tools and the need for modular, reproducible work. I wanted to separate the code that fits and diagnoses a surrogate from the decisions that spend a portal query; keep package assumptions and chronological data visible; and distinguish reviewed evidence from hypotheses suggested by reading or a model. I considered comparison with established optimisation and black-box benchmarks, including BoTorch and COCO/BBOB, as a future validation exercise rather than a completed historical benchmark. The practical lesson was to let research narrow the next experiment, not decorate a README.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

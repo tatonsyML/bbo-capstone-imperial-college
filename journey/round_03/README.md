@@ -2,8 +2,6 @@
 
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
-> **About this account:** Edited from my Week 3 reflection in the 52-page *Capstone Project* document. It describes my thinking at the time. The technical record below preserves the confirmed portal returns, original artefacts and evidence limitations. Any difference between a prospective claim and a returned result must be resolved using the portal record.
-
 ## My reasoning at the time
 
 By the third round, I had stopped believing that a common exploration policy deserved equal authority on every function. Earlier returns were uneven. F4 had moved from roughly **−4.03 to −1.91**, F5 from about **1,089 to 1,426**, and F8 from **9.60 to 9.83**, while F1 remained nearly flat and F2, F3 and F7 had failed to improve at different points. A Gaussian Process could report uncertainty confidently without supplying enough evidence that its proposed region was useful.
@@ -13,8 +11,6 @@ I therefore separated acquisition strategies by function. I used **maximin explo
 I understood exploitation as an evidence-dependent choice, not the default objective. Promising regions in F4, F5, F6 and F8 merited attention, yet even there an excessively large local jump risked abandoning useful information. F1 still needed exploration; F2, F3 and F7 needed a mixture of local testing and alternatives. The limited query budget made indiscriminate exploration costly, while pure exploitation presumed that the current best region contained the global maximum.
 
 I also investigated whether a Support Vector Machine could support the search. A soft-margin or RBF SVM might classify candidate inputs as promising or unpromising, particularly where response regions were curved. But **classification is not maximisation**, and an SVM supplies neither the continuous maximum nor the GP's uncertainty estimate. I considered it a secondary filter or challenge to the GP. False negatives would be especially costly if they excluded the best basin. The change in judgement was more significant than any particular model: I wanted a policy that could be defended function by function and revised after each new return.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

@@ -2,8 +2,6 @@
 
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
-> **About this account:** Edited from my Week 5 reflection in the 52-page *Capstone Project* document. It describes my thinking at the time. The technical record below preserves the confirmed portal returns, original artefacts and evidence limitations. Any difference between a prospective claim and a returned result must be resolved using the portal record.
-
 ## My reasoning at the time
 
 I used the idea of hierarchical feature learning to question my earlier tendency to treat every input coordinate as equally influential. Image networks progress from simple features to more complex patterns, but my BBO vectors are not images and have no natural spatial hierarchy. I did not introduce convolution merely to imitate a course topic. Instead I made the **analysis** hierarchical: individual inputs, controlled interactions, promising regions, model diagnostics and finally the query decision.
@@ -13,8 +11,6 @@ F5 supplied unusually direct evidence. In Round 4, changing **only x2 from 0.970
 I contrasted this measured progress with less reliable explorations. A distant F1 probe found almost no useful signal. F4's sensitivity warned against assuming that any plausible local move would improve the score. The lesson I took from AlexNet and ImageNet was not to import an image architecture, but to understand how the interaction of method, data and computing resources affects performance. A sophisticated network is not necessarily an efficient or defensible use of a small, expensive black-box dataset.
 
 I also began distinguishing a research prototype from a reproducible software project. A collection of notebooks was no longer enough to explain the process to another reader. My contemporary software-design notes proposed separating data, reusable modelling functions, candidate decisions and results, together with a record of why I changed direction. That was an **early design intention**, not a description of the repository's final directory structure. My standard for success broadened: the code should work, but the experiments and the reasoning behind each submitted point also needed to be auditable.
-
-## Verified results, methods and original evidence
 
 ## What I did
 
