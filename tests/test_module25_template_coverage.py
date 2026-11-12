@@ -124,6 +124,37 @@ def test_all_eight_function_profiles_explicitly_answer_restart_question_5_4():
 
 
 
+def test_datasheet_question_2_4_classifies_apparent_function_behaviour():
+    """Check all eight evidence-qualified answers and model/oracle distinctions."""
+    datasheet = (ROOT / "DATASHEET.md").read_text(encoding="utf-8")
+    assert "**Template question 2.4 — Does the function appear unimodal, multimodal, noisy or smooth?**" in datasheet
+    assert datasheet.count("**Apparent function behaviour (question 2.4):**") == 8
+
+    for function in range(1, 9):
+        section = datasheet.split(f"### F{function} ·", 1)[1].split(
+            f"### F{function + 1} ·" if function < 8 else "**Scope:**", 1
+        )[0]
+        assert section.count("**Apparent function behaviour (question 2.4):**") == 1
+        description = section.split(
+            "**Apparent function behaviour (question 2.4):**", 1
+        )[1].split("**Optimisation strategy and outcome:**", 1)[0]
+        for category in ("**Unimodal or multimodal:**", "**Smooth:**", "**Noisy:**"):
+            assert description.count(category) == 1, (function, category)
+        assert 40 <= len(description.split()) <= 115, function
+        assert any(term in description.lower() for term in (
+            "unverified", "unknown", "cannot", "not proved",
+            "not establish", "do not establish", "not proof"
+        )), function
+
+    # Particularly important: an apparently sensitive surface is not
+    # necessarily a random one, and a retrospective equation is not
+    # authenticated source code.
+    f6 = datasheet.split("### F6 ·", 1)[1].split("### F7 ·", 1)[0]
+    f8 = datasheet.split("### F8 ·", 1)[1].split("**Scope:**", 1)[0]
+    assert "not necessarily a discontinuity" in f6
+    assert "not proved globally unimodal" in f8
+
+
 def test_all_eight_function_stories_preserve_canonical_best_results():
     """Score and exact six-decimal vector stay authoritative in function pages."""
     with (ROOT / "data/all_observations.csv").open(
