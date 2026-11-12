@@ -71,7 +71,7 @@ The [round-by-round archive](journey/README.md) and [project journey](archive/no
 
 All values are personally confirmed portal results. They differ drastically in scale; no overall sum or average is meaningful.
 
-**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was recovered from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
+**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was confirmed from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
 
 **Evidence-specific observations:**
 
@@ -79,7 +79,7 @@ All values are personally confirmed portal results. They differ drastically in s
 - **F4:** one local forecast was accurate to about 1.6 × 10⁻⁹, yet tiny search steps stagnated near 0.659. A wider strategy found 0.730459, followed by 0.746898 in R13.
 - **F5:** a boundary query achieved 8662.405 at the legal upper coordinates. Its power-sum explanation was reconstructed *after* the successful query.
 - **F7:** a positive Hartmann-6 structural forecast of 3.32236801 was recorded before the R12 portal return of 3.322368011393.
-- **F8:** an additive 17-parameter quadratic located 10 at an interior vertex. A *separate retrospective* fit using only the 40 supplied starting observations recovered a full-rank model and predicted 13 later portal returns with maximum absolute error **below 2 × 10⁻¹⁴** across the 13 later scores (the last displayed digits can vary slightly by numerical environment). This does not mean the equation was identified in R1.
+- **F8:** an additive 17-parameter quadratic located 10 at an interior vertex. A *separate retrospective* fit using only the 40 supplied starting observations fitted a full-rank model and predicted 13 later portal returns with maximum absolute error **below 2 × 10⁻¹⁴** across the 13 later scores (the last displayed digits can vary slightly by numerical environment). This does not mean the equation was identified in R1.
 
 ## 7. Quantitative validation and test coverage
 
@@ -93,9 +93,9 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 - GP fitted uncertainty is conditional on model assumptions; calibration has to be checked on later portal returns.
 - With 2–8 dimensions and few points, adaptive sampling concentrates near previous successes, producing selection bias.
 - Repeated locations spend evaluation budget while adding limited new spatial information.
-- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1 now has a published **retrospective Gaussian–cosine reconstruction**, [six fitted coefficients and a reproducible 10-initial/13-holdout test](src/bbo/f1_reconstruction.py). Its functional family was provided by separately recovered code and did not emerge from a blind fit; the historical Round 11 provenance remains separate.
+- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1 now has a published **retrospective Gaussian–cosine reconstruction**, [six fitted coefficients and a reproducible 10-initial/13-holdout test](src/bbo/f1_reconstruction.py). Its functional family was provided by separate working code and did not emerge from a blind fit; the historical Round 11 provenance remains separate.
 - F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
-- F7's R11 inputs and full-precision output were recovered from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
+- F7's R11 inputs and full-precision output were confirmed from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
 
 ## 9. Ethics, access and redistribution
 

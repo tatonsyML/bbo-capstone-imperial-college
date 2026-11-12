@@ -23,7 +23,7 @@ All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175
 - **Best inputs and results:** [results/current_best_after_week13.csv](../results/current_best_after_week13.csv)
 - **Full cumulative history through R13:** [data/accumulated/history_through_week13.csv](accumulated/history_through_week13.csv)
 - **Historical portal scores through R10:** [data/accumulated/history_through_week10.csv](accumulated/history_through_week10.csv)
-- **Exact later portal returns, including recovered F7 R11 coordinates:** [data/portal_rounds_11_12.csv](portal_rounds_11_12.csv)
+- **Exact later portal returns, including confirmed F7 R11 coordinates:** [data/portal_rounds_11_12.csv](portal_rounds_11_12.csv)
 - **Exact Round 13 portal returns:** [data/portal_rounds_13.csv](portal_rounds_13.csv)
 - **F8 initial versus later validation observations:** [data/accumulated/function_8/observations_through_week13.csv](accumulated/function_8/observations_through_week13.csv)
 - **Original-data provenance and redistribution caveat:** [usage and permissions](../USAGE_AND_PERMISSIONS.md)

@@ -287,7 +287,7 @@ $$
 \hat f_5(\mathbf{x}) = 0.01\sum_{k=1}^{4}\left[\sum_{j=1}^{4}(4x_j)^k-b_k\right]^2,\quad\mathbf{b}=(7.5,16,40,120).
 $$
 
-At the legal upper input of **(0.999999)⁴**, the equation returns **8662.405001248297**, matching the portal. At the unpermitted (1,1,1,1), it predicts 8662.4825. **This equation was recovered after R10 and did not select the original boundary query.** It is corroborated on tested inputs, not proven to be the undisclosed implementation globally.
+At the legal upper input of **(0.999999)⁴**, the equation returns **8662.405001248297**, matching the portal. At the unpermitted (1,1,1,1), it predicts 8662.4825. **This equation was reconstructed after R10 and did not select the original boundary query.** It is corroborated on tested inputs, not proven to be the undisclosed implementation globally.
 
 ## Lessons to carry forward
 

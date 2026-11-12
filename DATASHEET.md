@@ -21,11 +21,11 @@ It is a historical record of *observed evaluations*, not a dataset of the true f
 | `stage` | Original source label, such as `Initial` or `Week 13` |
 | `source`, `is_initial` | Distinguish course data from personally submitted queries |
 | `sequence_in_stage` | Original ordering within the source stage |
-| `input_status` | `confirmed` for all currently recorded inputs; `missing_input` was a transitional provenance status before recovery |
+| `input_status` | `confirmed` for all currently recorded inputs; `missing_input` was a transitional provenance status before confirmation |
 | `x1`–`x8` | Input coordinates. Unused coordinates are blank for functions with fewer dimensions |
 | `output` | Returned scalar score, preserving source precision where available |
 
-**Recovered missingness ([canonical verified facts](docs/VERIFIED_FACTS.md)):** An official Round 11 results email confirmed F7's submitted input (`0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`) and precise return (`3.278967926227992`). Earlier drafts contained the output without its coordinates; this gap was fixed from the original email, not inferred from a model. All **279 observed scores now have complete input vectors** within their respective function dimensions.
+**Previously incomplete input record ([canonical verified facts](docs/VERIFIED_FACTS.md)):** An official Round 11 results email confirmed F7's submitted input (`0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`) and precise return (`3.278967926227992`). Earlier drafts contained the output without its coordinates; this gap was fixed from the original email, not inferred from a model. All **279 observed scores now have complete input vectors** within their respective function dimensions.
 
 No synthetic labels, missing coordinates or unobserved outcomes are filled in.
 
@@ -80,7 +80,7 @@ The dataset contains no reported personal identifiers or health records. The 175
 - A public leaderboard snapshot after Round 9 reported rank **1st on F8, 7th on F4, 10th on F7 and 29th on F6** among 39 participants. Rankings compare achieved scores, not verified input vectors, and are historical context only.
 - Limited externally published observations informed supplementary exploration of F1/F3/F6, F5/F7 challenger models and five F8 structural corroboration checks. Those records were **never counted as my own portal observations**. The source types and limitations were documented in the [original Round 10 decision audit](journey/round_10/README.md).
 - **F8 chronology:** fit a quadratic on the accumulated observations available before Round 10; compare five external responses; submit the predicted vertex; receive a score of 10. Only **later** did I refit using the original 40 supplied observations alone and test it on 13 subsequent personal returns.
-- Resolved gap: the R11 F7 coordinates were recovered from the official results email. A Round 12 F2/F3/F6 shortlist was superseded before final submission; unsubmitted alternatives have no invented portal scores.
+- Resolved gap: the R11 F7 coordinates were confirmed from the official results email. A Round 12 F2/F3/F6 shortlist was superseded before final submission; unsubmitted alternatives have no invented portal scores.
 - Figure provenance is explained in [the function guide](docs/functions.md): F5/F7/F8 show fixed-coordinate mathematical slices. F1/F2/F3/F4/F6 retain the observed-only charts, and F1 now has **separate, explicitly labelled retrospective reconstructed-model plots**, not portal observations. The new [F1 numerical check](src/bbo/f1_reconstruction.py) uses only 10 supplied F1 rows for coefficient fitting and the 13 personal portal rows for hold-out evaluation; no peer observations enter that experiment.
 
 External source use remains subject to the programme's collaboration and attribution rules. The complete redistribution position is stated in [USAGE_AND_PERMISSIONS.md](USAGE_AND_PERMISSIONS.md).

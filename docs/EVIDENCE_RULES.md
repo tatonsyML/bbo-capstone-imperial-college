@@ -20,7 +20,7 @@ This repository is organised **by function first**. The eight `functions/F1`–`
 
 - **F1:** A previously proposed two-component Gaussian–cosine family is now published with six explicit fitted coefficients. A **new retrospective fit uses only the author's 10 course-provided F1 observations**, and checks the 13 later personal portal returns as hold-out results. This does not establish blind discovery of the family or rewrite earlier, separately documented exploratory history. The source of the supplied model family has not been independently verified.
 - **F2/F3/F4:** No validated closed-form underlying equation.
-- **F5:** Power-sum reconstruction supports the boundary behaviour; recovered after the boundary query.
+- **F5:** Power-sum reconstruction supports the boundary behaviour; reconstructed after the boundary query.
 - **F6:** Competing local/GP hypotheses; no proven response equation.
 - **F7:** Positive Hartmann-6 hypothesis, supported by a prediction recorded before R12.
 - **F8:** Fitted 17-coefficient additive quadratic with a negative-definite Hessian and tested vertex of 10. Independent prediction of later portal returns is retrospective when fitted on only 40 starting samples.

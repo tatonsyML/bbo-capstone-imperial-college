@@ -13,7 +13,7 @@
 | [F5 · Towards the boundary](F5/README.md) | Controlled coordinate changes and later power-sum reconstruction | **8,662.405001** | R10 |
 | [F6 · Unstable local behaviour](F6/README.md) | Failed predictions and regional changes | **−0.037518647244** | R12 |
 | [F7 · From local to structural](F7/README.md) | One-coordinate path, alternative basin and Hartmann-6 forecast | **3.322368011393** | R12 |
-| [F8 · Quadratic recovery](F8/README.md) | GP refinement, mathematical solution and held-out validation | **10.000000** | R10 |
+| [F8 · Quadratic reconstruction](F8/README.md) | GP refinement, mathematical solution and held-out validation | **10.000000** | R10 |
 
 [Evidence and editorial standards](../docs/EVIDENCE_RULES.md)
 

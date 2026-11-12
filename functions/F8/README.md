@@ -63,7 +63,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 </details>
 
 <details>
-<summary><strong>Round 3 · Can local EI recover after a poor broad step?</strong> — 9.86347856 ★ new best</summary>
+<summary><strong>Round 3 · Can local EI improve after a poor broad step?</strong> — 9.86347856 ★ new best</summary>
 
 **Question and context:** **Historical evidence:** The Week 3 strategy used local EI on F8, with output normalisation and multiple optimiser restarts in the GP pipeline.
 
