@@ -4,6 +4,8 @@
 
 This is the **single chronological home** for the capstone. Each round links the submitted inputs, returned scores, surviving code, forecasts and lessons. The [week-by-week research summary](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) highlights the main method changes across the thirteen rounds. Later reconstructions are labelled separately from the original experiments.
 
+**Numbering:** *Week* and *Round* refer to the same evaluation cycle (Week 1 = Round 1). *Module* refers to the course module covering that round. For example, Round 1 belongs to Module 12, and Round 13 belongs to Module 24. Labels such as **Module 21.2** identify an assessment component within a course module, not a separate optimisation round.
+
 | Round | Module | Main method or question | Evidence and lesson | Source folder |
 |---|---:|---|---|---|
 | **1** | 12 | Initial GP/acquisition baseline | Model strength differed sharply by function | [Open R1](round_01/README.md) |
