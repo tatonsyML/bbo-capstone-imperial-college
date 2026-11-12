@@ -246,7 +246,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point established a new personal best. A change of one millionth in x1 returned a marginally lower score; R12 remains the measured best.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F7 Hartmann-6-based choice; the recovered four-script suite does not establish a separate F7 generator) · [Numerical provenance](selection_history.csv).
 
 </details>
 

@@ -246,7 +246,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point did not beat the incumbent. The Week 13 reflection discussed allocating the final budget according to immediate benefit; the submitted point was a repeat of the R11 best.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (documents the deliberate F1 repeat; the recovered four-script suite did not separately generate this point) · [Numerical provenance](selection_history.csv).
 
 </details>
 

@@ -246,7 +246,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point established a new personal best. The final query returned -0.076980, below the incumbent: prefer best-so-far, not final-query value.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Recovered original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original robustness and warping tests](../../journey/round_12/original/robust_and_warp.py) · [Original trust-region/Thompson-sampling tests](../../journey/round_12/original/trust_region_ts.py) · [Dated F6 candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
 
 </details>
 

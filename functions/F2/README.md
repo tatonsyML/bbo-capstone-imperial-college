@@ -246,7 +246,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** With the final evaluation, favour an alternative with credible immediate upside.
 
-**Code and evidence:** [Round 12 records](../../journey/round_12/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 12 records](../../journey/round_12/README.md) · [Recovered original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original robustness/warping analysis](../../journey/round_12/original/robust_and_warp.py) · [Dated candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Machine-readable provenance](selection_history.csv).
 
 </details>
 
