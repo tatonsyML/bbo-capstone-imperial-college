@@ -1,6 +1,9 @@
+
 cff-version: 1.2.0
 message: "If you use this repository in your research, please cite it."
 type: software
+version: "1.0.0"
+date-released: "2026-11-12"
 license: "MIT"
 title: "Black-Box Optimisation: Eight Unknown Functions and Thirteen Rounds"
 authors:
@@ -9,3 +12,4 @@ authors:
 repository-code: "https://github.com/tatonsyML/bbo-capstone-imperial-college"
 url: "https://github.com/tatonsyML/bbo-capstone-imperial-college"
 abstract: "An evidence-led account of optimisation experiments across eight hidden functions and thirteen rounds, with historical code, numerical results and mathematical reconstructions."
+
