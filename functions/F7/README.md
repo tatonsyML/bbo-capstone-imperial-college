@@ -26,7 +26,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The Week 1 reflection started from strong observed configurations but changed several coordinates to test whether the good region extended further.
 
-**Approach considered:** Manual exploration informed by the starting observations.
+**Approach considered:** Explore around strong initial configurations by changing several coordinates; GP/EI guided the reasoning without a confirmed complete first-round selector.
 
 **Submitted input:** `0.034737-0.246867-0.265123-0.307852-0.362506-0.937209`  
 **Actual portal result:** `1.3605555033645358`  
@@ -43,7 +43,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After R1 returned 1.3606, only slightly below the original best, Week 2 used UCB κ=2.0 to balance exploration and exploitation.
 
-**Approach considered:** GP and UCB working package
+**Approach considered:** GP/UCB with κ=2.0 balanced exploration and exploitation after the first portal query nearly matched, but did not beat, the supplied best.
 
 **Submitted input:** `0.074002-0.315323-0.247287-0.026732-0.35885-0.832838`  
 **Actual portal result:** `1.020402279048806`  
@@ -60,7 +60,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Original Week 3 methodology used a local EI approach as the signal became clearer.
 
-**Approach considered:** Function-specific EI or wider search
+**Approach considered:** Local Expected Improvement refined the promising region using observed data and a cautious uncertainty allowance.
 
 **Submitted input:** `0.046316-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.6137963046751616`  
@@ -77,7 +77,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The Week 4 reflection reported that neural-network gradients highlighted x1 and x6 as potentially influential, alongside SVM and GP challengers.
 
-**Approach considered:** GP, SVM and neural-network diagnostics
+**Approach considered:** GP remained primary; SVM boundaries and small-neural-network gradients, notably x1 and x6 sensitivity, offered secondary guidance.
 
 **Submitted input:** `0.015-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.5516324818204723`  
@@ -94,7 +94,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The early probes suggested x1 was worth isolating, so I varied that coordinate while holding the others fixed.
 
-**Approach considered:** Controlled coordinate probes
+**Approach considered:** Controlled x1 movement with the other five inputs fixed tested an empirical direction without claiming its effects were globally independent.
 
 **Submitted input:** `0.06-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.638440146032503`  
@@ -111,7 +111,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Five-fold cross-validation after R5 showed GP NRMSE 0.112 compared with 0.314 for the small MLP, supporting the simpler GP on F7.
 
-**Approach considered:** GP, ridge and MLP comparison; controlled local fit
+**Approach considered:** Five-fold validation favoured GP over small MLP for F7 (NRMSE 0.112 versus 0.314); continue the evidence-backed x1 path instead of imposing a CNN architecture.
 
 **Submitted input:** `0.1-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.7006596900158717`  
@@ -128,7 +128,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
 
-**Approach considered:** ARD and local forecast investigations
+**Approach considered:** RBF/Matérn, ARD, noise/restart and rolling-origin comparisons checked local forecast reliability while the x1-only path remained productive.
 
 **Submitted input:** `0.15-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.7557182120997592`  
@@ -145,13 +145,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** A one-dimensional quadratic through the x1 trajectory suggested a local vertex near 0.234, but this concerned only a restricted path.
 
-**Approach:** The x1-only controlled path continues to fit a stable concave quadratic. The last three points place the estimated vertex at x1≈0.234070.
+**Approach considered:** The x1-only controlled path continues to fit a stable concave quadratic. The last three points place the estimated vertex at x1≈0.234070.
 
 **Submitted input:** `0.23407-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.785862549726479`  
 **Best observed before → after:** `1.7557182120997592` → `1.785862549726479`.
 
-**Forecast preserved before the Round 8 return:** approximately `1.791396` (local quadratic; see [Round 8 forecast table](../../journey/round_08/README.md)).
+**Pre-result forecast:** approximately `1.791396` (local quadratic; see [Round 8 forecast table](../../journey/round_08/README.md)).
 
 **What I learnt:** The local-path query improved the score, while its pre-result quadratic forecast remained approximate.
 
@@ -164,13 +164,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The measured local progression began to flatten; further one-coordinate adjustments offered little upside.
 
-**Approach:** The updated quadratic across the controlled x1 series places the local vertex near x1=0.228702, with only about 0.00055 predicted headroom. This is deliberate precision, not broad exploration.
+**Approach considered:** The updated quadratic across the controlled x1 series places the local vertex near x1=0.228702, with only about 0.00055 predicted headroom. This is deliberate precision, not broad exploration.
 
 **Submitted input:** `0.228702-0.36927-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.786338197796892`  
 **Best observed before → after:** `1.785862549726479` → `1.786338197796892`.
 
-**Pre-result numerical forecast:** `1.786415130748528` (recorded before return).
+**Pre-result forecast:** `1.786415130748528` (recorded before return).
 
 **What I learnt:** A small x1 adjustment produced only a marginal gain, suggesting little headroom in that one-coordinate path.
 
@@ -183,7 +183,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original Round 10 plan explicitly stopped polishing the local vertex and proposed a different multi-coordinate region, whose expected mean was about 2.79 versus 1.73 locally.
 
-**Approach:** Alternative basin; peer-informed ensemble; substantial uncertainty.
+**Approach considered:** Alternative basin; peer-informed ensemble; substantial uncertainty.
 
 **Submitted input:** `0.190478-0.171014-0.347582-0.283057-0.283946-0.639922`  
 **Actual portal result:** `3.149458800087033`  
@@ -200,7 +200,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Round 10's alternative region returned 3.149459, far above the earlier one-coordinate path. I tested another input in this broader region.
 
-**Approach:** Another test in a stronger alternative region.
+**Approach considered:** Another test in a stronger alternative region.
 
 **Submitted input:** `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`  
 **Actual portal result:** `3.278967926227992`  
@@ -217,13 +217,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** I used a positive Hartmann-6 structural hypothesis to forecast approximately 3.32236801 for this input, then submitted it to test the prediction.
 
-**Approach:** Prospective Hartmann-6 structural prediction.
+**Approach considered:** Prospective Hartmann-6 structural prediction.
 
 **Submitted input:** `0.201689-0.150011-0.476874-0.275332-0.311652-0.657301`  
 **Actual portal result:** `3.3223680113931557`  
 **Best observed before → after:** `3.278967926227992` → `3.3223680113931557`.
 
-**Pre-result numerical forecast:** `3.32236801` (approximate pre result forecast in round 12 notes).
+**Pre-result forecast:** `3.32236801` (approximate pre result forecast in round 12 notes).
 
 **What I learnt:** The positive Hartmann-6 forecast of about 3.32236801 closely matched the subsequent portal result.
 
@@ -236,7 +236,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** With the Round 12 result at 3.322368, I changed x1 by one millionth while keeping the other coordinates fixed to test local sensitivity.
 
-**Approach:** One-millionth change to x1.
+**Approach considered:** One-millionth change to x1.
 
 **Submitted input:** `0.201690-0.150011-0.476874-0.275332-0.311652-0.657301`  
 **Actual portal result:** `3.322368011392718`  

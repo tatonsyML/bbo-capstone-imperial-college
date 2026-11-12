@@ -3,7 +3,7 @@
 **Function navigation (8/8):** [← Previous: F7](../F7/README.md) · [All eight functions](../README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Source observations](observations.csv) · [Full decision ledger](selection_history.csv)
 
-**8 inputs · 40 starting observations · 13 evaluated rounds**
+**8 inputs · 40 starting observations · 13 rounds**
 
 | Initial best | Final best | First achieved | Actual final input |
 |---:|---:|:---:|---|
@@ -13,28 +13,28 @@
 
 Eight inputs made global exploration expensive. GP-guided local steps raised the initial best from **9.598482** to **9.932443**. By Round 10, a fitted 17-coefficient additive quadratic explained the recorded response, identified an interior maximum of **10**, and the portal confirmed it. Its fit is examined in the mathematical analysis below.
 
-### Best-so-far performance
+### Score progression from real evaluations
 
 ![Measured best-so-far history for Function 8](progress.svg)
 
 The line uses **real observed scores only**, starting with the course-provided best. A flat section means the incumbent did not improve, not that the proposed model predicted a flat surface.
 
-## Weekly development · open any round
+## Weekly development · expand a round
 
 Open a round to follow the question, submitted input, measured score and what changed in the next decision. Stars mark new personal bests.
 
 <details>
 <summary><strong>Round 1 · How to explore with eight inputs and only 40 observations?</strong> — 9.83211236 ★ new best</summary>
 
-**Decision context:** My first reflection described F8 as the most uncertain query: even 40 starting records provide sparse coverage in eight dimensions. I retained coordinate patterns from stronger observations but deliberately explored.
+**Why this input:** My first reflection described F8 as the most uncertain query: even 40 starting records provide sparse coverage in eight dimensions. I retained coordinate patterns from stronger observations but deliberately explored.
+
+**Approach considered:** Explore the sparse eight-dimensional space while retaining favourable starting-coordinate patterns; GP/EI were decision ideas rather than an authenticated full first-round selector.
 
 **Submitted input:** `0.088526-0.03196-0.048494-0.063991-0.991333-0.224689-0.073759-0.537568`  
-**Actual portal output:** `9.8321123600691`  
-**Best before → after:** `9.598482002566342` → `9.8321123600691`.
+**Actual portal result:** `9.8321123600691`  
+**Best observed before → after:** `9.598482002566342` → `9.8321123600691`.
 
-**Evaluation:** The first returned query improved to 9.832112, identifying a more useful region.
-
-**What changed for the next round:** Shift towards local exploitation while retaining some uncertainty-driven search.
+**What I learnt:** The first returned query improved to 9.832112, identifying a more useful region. Next decision: Shift towards local exploitation while retaining some uncertainty-driven search.
 
 **Code and data:** [Round notes](../../journey/round_01/README.md) · [Inputs](../../journey/round_01/queries.txt) · [Outputs](../../journey/round_01/outputs.txt) · [Coursework notebook](../../journey/round_01/supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb).
 
@@ -43,15 +43,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 2 · Does the early good region justify lower exploration?</strong> — 9.49774899</summary>
 
-**Decision context:** The Week 2 reflection set **UCB κ=1.5** for F8 and used a reproducible random pool of 300,000 candidates for higher-dimensional functions.
+**Why this input:** The Week 2 reflection set **UCB κ=1.5** for F8 and used a reproducible random pool of 300,000 candidates for higher-dimensional functions.
+
+**Approach considered:** GP/UCB with κ=1.5 ranked 300,000 reproducible higher-dimensional candidates, emphasising promising scores while retaining uncertainty.
 
 **Submitted input:** `0.321822-0.045429-0.355724-0.015612-0.965914-0.090106-0.138377-0.028859`  
-**Actual portal output:** `9.4977489881389`  
-**Best before → after:** `9.8321123600691` → `9.8321123600691`.
+**Actual portal result:** `9.4977489881389`  
+**Best observed before → after:** `9.8321123600691` → `9.8321123600691`.
 
-**Evaluation:** The exploratory candidate returned 9.497749, below the standing best.
-
-**What changed for the next round:** Move to a function-specific, more local Expected Improvement search.
+**What I learnt:** The exploratory candidate returned 9.497749, below the standing best. Next decision: Move to a function-specific, more local Expected Improvement search.
 
 **Code and data:** [Round notes](../../journey/round_02/README.md) · [Inputs](../../journey/round_02/queries.txt) · [Outputs](../../journey/round_02/outputs.txt) · [GP/UCB Python code](../../journey/round_02/week2_ucb_course_aligned.py) · [Saved candidates](../../journey/round_02/week2_ucb_results.csv) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb).
 
@@ -60,15 +60,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 3 · Can local EI improve after a poor broad step?</strong> — 9.86347856 ★ new best</summary>
 
-**Decision context:** The Week 3 strategy used local EI on F8, with output normalisation and multiple optimiser restarts in the GP pipeline.
+**Why this input:** The Week 3 strategy used local EI on F8, with output normalisation and multiple optimiser restarts in the GP pipeline.
+
+**Approach considered:** Local Expected Improvement with normalised targets and multiple GP restarts exploited the improving region.
 
 **Submitted input:** `0.099253-0.051531-0.055571-0.074437-0.985751-0.228722-0.118577-0.53735`  
-**Actual portal output:** `9.8634785625365`  
-**Best before → after:** `9.8321123600691` → `9.8634785625365`.
+**Actual portal result:** `9.8634785625365`  
+**Best observed before → after:** `9.8321123600691` → `9.8634785625365`.
 
-**Evaluation:** The query produced 9.863479, a new personal best.
-
-**What changed for the next round:** Keep refining while challenging the GP with alternative models.
+**What I learnt:** The query produced 9.863479, a new personal best. Next decision: Keep refining while challenging the GP with alternative models.
 
 **Code and data:** [Round notes](../../journey/round_03/README.md) · [Inputs](../../journey/round_03/queries.txt) · [Outputs](../../journey/round_03/outputs.txt).
 
@@ -77,15 +77,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 4 · Does model complexity improve the query?</strong> — 9.87547078 ★ new best</summary>
 
-**Decision context:** The Week 4 reflections compared GP, SVM decision boundaries and small neural-network gradients. The GP remained primary because it supplied predictive uncertainty; alternative models were secondary checks.
+**Why this input:** The Week 4 reflections compared GP, SVM decision boundaries and small neural-network gradients. The GP remained primary because it supplied predictive uncertainty; alternative models were secondary checks.
+
+**Approach considered:** GP remained the main uncertainty-aware surrogate; SVM classification and small-neural-network gradients were secondary model checks.
 
 **Submitted input:** `0.104617-0.061316-0.05911-0.07966-0.98296-0.230739-0.140986-0.537241`  
-**Actual portal output:** `9.8754707823449`  
-**Best before → after:** `9.8634785625365` → `9.8754707823449`.
+**Actual portal result:** `9.8754707823449`  
+**Best observed before → after:** `9.8634785625365` → `9.8754707823449`.
 
-**Evaluation:** The submitted point improved to 9.875471.
-
-**What changed for the next round:** Use controlled local changes rather than automatically following more complex challengers.
+**What I learnt:** The submitted point improved to 9.875471. Next decision: Use controlled local changes rather than automatically following more complex challengers.
 
 **Code and data:** [Round notes](../../journey/round_04/README.md) · [Inputs](../../journey/round_04/queries.txt) · [Outputs](../../journey/round_04/outputs.txt) · [Python analysis](../../journey/round_04/capstone_bbo_week4_module15.py) · [Notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb).
 
@@ -94,15 +94,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 5 · Are repeated small steps productive?</strong> — 9.88500213 ★ new best</summary>
 
-**Decision context:** The Week 5 reflection favoured progressive empirical changes and warned against inventing feature hierarchies for ordinary continuous inputs.
+**Why this input:** The Week 5 reflection favoured progressive empirical changes and warned against inventing feature hierarchies for ordinary continuous inputs.
+
+**Approach considered:** Controlled local changes continued the measured improvement trend; image-style convolution or assumed feature hierarchies were not justified.
 
 **Submitted input:** `0.109981-0.071101-0.062649-0.084883-0.980169-0.232756-0.163395-0.537132`  
-**Actual portal output:** `9.8850021313761`  
-**Best before → after:** `9.8754707823449` → `9.8850021313761`.
+**Actual portal result:** `9.8850021313761`  
+**Best observed before → after:** `9.8754707823449` → `9.8850021313761`.
 
-**Evaluation:** The output reached 9.885002, continuing a measured improvement trend.
-
-**What changed for the next round:** Compare cross-validated GP and neural-network accuracy before changing model families.
+**What I learnt:** The output reached 9.885002, continuing a measured improvement trend. Next decision: Compare cross-validated GP and neural-network accuracy before changing model families.
 
 **Code and data:** [Round notes](../../journey/round_05/README.md) · [Inputs](../../journey/round_05/queries.txt) · [Outputs](../../journey/round_05/outputs.txt).
 
@@ -111,15 +111,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 6 · Do GPs outperform the neural-network challenger?</strong> — 9.89207261 ★ new best</summary>
 
-**Decision context:** Five-fold cross-validation after Round 5 gave **GP NRMSE 0.051** versus **small-MLP 0.157** on F8. The GP retained the main decision role.
+**Why this input:** Five-fold cross-validation after Round 5 gave **GP NRMSE 0.051** versus **small-MLP 0.157** on F8. The GP retained the main decision role.
+
+**Approach considered:** Five-fold validation favoured the GP over a small MLP (F8 NRMSE 0.051 versus 0.157), supporting GP-led local refinement.
 
 **Submitted input:** `0.115345-0.080886-0.066188-0.090106-0.977378-0.234773-0.185804-0.537023`  
-**Actual portal output:** `9.8920726096301`  
-**Best before → after:** `9.8850021313761` → `9.8920726096301`.
+**Actual portal result:** `9.8920726096301`  
+**Best observed before → after:** `9.8850021313761` → `9.8920726096301`.
 
-**Evaluation:** The submitted point returned 9.89207261; the pre-result forecast quoted later was about 9.892098, an error near 0.000025.
-
-**What changed for the next round:** Compare later portal returns with forecasts made before those returns, rather than relying on training fit.
+**What I learnt:** The submitted point returned 9.89207261; the pre-result forecast quoted later was about 9.892098, an error near 0.000025. Next decision: Compare later portal returns with forecasts made before those returns, rather than relying on training fit.
 
 **Code and data:** [Round notes](../../journey/round_06/README.md) · [Inputs](../../journey/round_06/queries.txt) · [Outputs](../../journey/round_06/outputs.txt) · [Notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision notes](../../journey/round_06/results/round6_query_rationale.csv).
 
@@ -128,15 +128,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 7 · Does the local forecast remain reliable?</strong> — 9.89900201 ★ new best</summary>
 
-**Decision context:** The Week 7 reflection compared RBF and Matérn kernels, ARD lengthscales, noise and chronological forecasts. The previous F8 error was only 0.000025.
+**Why this input:** The Week 7 reflection compared RBF and Matérn kernels, ARD lengthscales, noise and chronological forecasts. The previous F8 error was only 0.000025.
+
+**Approach considered:** RBF/Matérn kernel, ARD/noise and rolling-origin checks supported cautious exploitation after a close prospective Week 6 forecast.
 
 **Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.23956-0.238989-0.536764`  
-**Actual portal output:** `9.8990020095864`  
-**Best before → after:** `9.8920726096301` → `9.8990020095864`.
+**Actual portal result:** `9.8990020095864`  
+**Best observed before → after:** `9.8920726096301` → `9.8990020095864`.
 
-**Evaluation:** The observed value rose to **9.899002010**; the recorded prediction of roughly 9.899002015 was almost exact.
-
-**What changed for the next round:** Test whether moving off the established path along a single coordinate improves the score.
+**What I learnt:** The observed value rose to **9.899002010**; the recorded prediction of roughly 9.899002015 was almost exact. Next decision: Test whether moving off the established path along a single coordinate improves the score.
 
 **Code and data:** [Round notes](../../journey/round_07/README.md) · [Inputs](../../journey/round_07/queries.txt) · [Outputs](../../journey/round_07/outputs.txt) · [Forecast comparison](../../journey/round_08/results/week7_audit.csv).
 
@@ -145,17 +145,17 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 8 · Can an orthogonal coordinate improve a near-plateau?</strong> — 9.91139901 ★ new best</summary>
 
-**Decision context:** The Round 8 decision kept seven coordinates fixed and increased **x6 by 0.025**, with agreement among GP-kernel challengers on potential gain.
+**Why this input:** The Round 8 decision kept seven coordinates fixed and increased **x6 by 0.025**, with agreement among GP-kernel challengers on potential gain.
+
+**Approach considered:** Three GP-kernel forecasts supported a controlled +0.025 change to x6 while holding seven inputs fixed.
 
 **Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.26456-0.238989-0.536764`  
-**Actual portal output:** `9.9113990095864`  
-**Best before → after:** `9.8990020095864` → `9.9113990095864`.
+**Actual portal result:** `9.9113990095864`  
+**Best observed before → after:** `9.8990020095864` → `9.9113990095864`.
 
-**Prospective GP-kernel predictions:** approximately `9.902821`, `9.906066` and `9.907368` from three kernels (not a single agreed scalar forecast; see [Round 8 forecast table](../../journey/round_08/README.md)).
+**Pre-result forecast:** approximately `9.902821`, `9.906066` and `9.907368` from three kernels (not a single agreed scalar forecast; see [Round 8 forecast table](../../journey/round_08/README.md)).
 
-**Evaluation:** The output rose from 9.899002 to **9.911399**. A controlled one-coordinate test produced interpretable evidence.
-
-**What changed for the next round:** Try a larger x6 step while monitoring predictive stability.
+**What I learnt:** The output rose from 9.899002 to **9.911399**. A controlled one-coordinate test produced interpretable evidence. Next decision: Try a larger x6 step while monitoring predictive stability.
 
 **Code and data:** [Round notes](../../journey/round_08/README.md) · [Inputs](../../journey/round_08/queries.txt) · [Outputs](../../journey/round_08/outputs.txt) · [Python analysis](../../journey/round_08/capstone_bbo_module19_round8.py) · [Saved candidates](../../journey/round_08/results/round8_queries.csv).
 
@@ -164,17 +164,17 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 9 · Will the x6 direction keep improving?</strong> — 9.93244301 ★ new best</summary>
 
-**Decision context:** Three GP kernels supported increasing **x6 by 0.05**, with a saved mean forecast around **9.9335**. The original Week 9 reflection treated this as an instance where extra modelling earned its cost.
+**Why this input:** Three GP kernels supported increasing **x6 by 0.05**, with a saved mean forecast around **9.9335**. The original Week 9 reflection treated this as an instance where extra modelling earned its cost.
+
+**Approach considered:** Agreement across three GP-kernel challengers supported a further +0.05 x6 step, with the forecast recorded before the portal return.
 
 **Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.31456-0.238989-0.536764`  
-**Actual portal output:** `9.9324430095864`  
-**Best before → after:** `9.9113990095864` → `9.9324430095864`.
+**Actual portal result:** `9.9324430095864`  
+**Best observed before → after:** `9.9113990095864` → `9.9324430095864`.
 
-**Forecast preserved before the return:** `9.933511308824693` (recorded before return).
+**Pre-result forecast:** `9.933511308824693` (recorded before return).
 
-**Evaluation:** The portal returned **9.932443**, close to the challenger forecast.
-
-**What changed for the next round:** Test whether a simpler global mathematical form explains the data rather than continue tuning the same local GP.
+**What I learnt:** The portal returned **9.932443**, close to the challenger forecast. Next decision: Test whether a simpler global mathematical form explains the data rather than continue tuning the same local GP.
 
 **Code and data:** [Round notes](../../journey/round_09/README.md) · [Inputs](../../journey/round_09/queries.txt) · [Outputs](../../journey/round_09/outputs.txt) · [Candidate forecasts](../../journey/round_09/results/round9_queries.csv).
 
@@ -183,17 +183,17 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 10 · Can 17 coefficients replace an eight-dimensional search?</strong> — 10.0000000 ★ new best</summary>
 
-**Decision context:** The Week 10 original submission reported fitting an **additive quadratic with 17 coefficients** to 49 personal-plus-initial observations and testing five published external inputs (errors around 10⁻¹⁰). Its vertex forecast **10** before the portal result.
+**Why this input:** The Week 10 original submission reported fitting an **additive quadratic with 17 coefficients** to 49 personal-plus-initial observations and testing five published external inputs (errors around 10⁻¹⁰). Its vertex forecast **10** before the portal result.
+
+**Approach considered:** A 17-coefficient additive quadratic, fitted to observations available then and checked against separate points, proposed a vertex score of 10; full HEBO/TuRBO were not the selector.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
-**Actual portal output:** `10`  
-**Best before → after:** `9.9324430095864` → `10`.
+**Actual portal result:** `10`  
+**Best observed before → after:** `9.9324430095864` → `10`.
 
-**Forecast preserved before the return:** `10` (recorded structural prediction before return).
+**Pre-result forecast:** `10` (recorded structural prediction before return).
 
-**Evaluation:** Submitting the fitted vertex returned **10.000000**. This is the decisive prospective structural result.
-
-**What changed for the next round:** Retain the tested vertex and validate the model separately against withheld historical points.
+**What I learnt:** Submitting the fitted vertex returned **10.000000**. This is the decisive prospective structural result. Next decision: Retain the tested vertex and validate the model separately against withheld historical points.
 
 **Code and data:** [Round notes](../../journey/round_10/README.md) · [Inputs](../../journey/round_10/queries.txt) · [Outputs](../../journey/round_10/outputs.txt) · [Candidate list](../../journey/round_10/round10_candidates.csv) · [Search plan](../../journey/round_10/optimisation.yaml) · [Related optimiser code](../../src/bbo/optimizer.py) · [F8 mathematical check (later)](../../src/bbo/structural_validation.py).
 
@@ -202,15 +202,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 11 · Does dense sampling imply high performance?</strong> — 10.0000000</summary>
 
-**Decision context:** The Week 11 reflection investigated DBSCAN and found cluster membership depended on the radius. The quadratic still explained the observations at floating-point precision.
+**Why this input:** The Week 11 reflection investigated DBSCAN and found cluster membership depended on the radius. The quadratic still explained the observations at floating-point precision.
+
+**Approach considered:** Repeat the measured quadratic vertex; DBSCAN was used to inspect input-density patterns, not to infer a new optimum from clusters.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
-**Actual portal output:** `10`  
-**Best before → after:** `10` → `10`.
+**Actual portal result:** `10`  
+**Best observed before → after:** `10` → `10`.
 
-**Evaluation:** The exact same vertex returned **10**. This confirmed repeatability at that setting but did not explore a new region.
-
-**What changed for the next round:** Assess model sensitivity and whether dimensionality reduction preserves the maximum.
+**What I learnt:** The exact same vertex returned **10**. This confirmed repeatability at that setting but did not explore a new region. Next decision: Assess model sensitivity and whether dimensionality reduction preserves the maximum.
 
 **Code and data:** [Round notes](../../journey/round_11/README.md) · [Portal results](../../data/portal_rounds_11_12.csv) · [Clustering analysis (later reproduction)](../../research/diagnostics/clustering/clustering_audit.py).
 
@@ -219,15 +219,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 12 · Would PCA simplify the model safely?</strong> — 10.0000000</summary>
 
-**Decision context:** The original Week 12 work found **48.8%** of input variance in two principal components, but restricting the fitted quadratic to two PCs reduced its modelled maximum to **9.955973**. The full eight-input vertex remained stronger.
+**Why this input:** The original Week 12 work found **48.8%** of input variance in two principal components, but restricting the fitted quadratic to two PCs reduced its modelled maximum to **9.955973**. The full eight-input vertex remained stronger.
+
+**Approach considered:** Test PCA compression against the fitted quadratic and retain the full eight-input vertex after reduced-dimensional maxima scored lower.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
-**Actual portal output:** `10`  
-**Best before → after:** `10` → `10`.
+**Actual portal result:** `10`  
+**Best observed before → after:** `10` → `10`.
 
-**Evaluation:** The portal again returned **10 at precisely the same input**. PCA variance was not a substitute for objective sensitivity.
-
-**What changed for the next round:** Keep the full coordinates where compression would reduce the objective.
+**What I learnt:** The portal again returned **10 at precisely the same input**. PCA variance was not a substitute for objective sensitivity. Next decision: Keep the full coordinates where compression would reduce the objective.
 
 **Code and data:** [Round notes](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
@@ -236,15 +236,15 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 13 · What is the defensible final decision?</strong> — 10.0000000</summary>
 
-**Decision context:** My final reflection considered a small move away from the vertex, but I ultimately submitted the same input as in Round 10.
+**Why this input:** My final reflection considered a small move away from the vertex, but I ultimately submitted the same input as in Round 10.
+
+**Approach considered:** The final reflection considered a distinct perturbation, but the actual submitted portal vector repeated the validated Round 10 vertex; no new F8 location was evaluated.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
-**Actual portal output:** `10`  
-**Best before → after:** `10` → `10`.
+**Actual portal result:** `10`  
+**Best observed before → after:** `10` → `10`.
 
-**Evaluation:** The unchanged input returned **10** again. No new headroom or neighbouring behaviour was measured.
-
-**What changed for the next round:** A model supported by analytical and held-out checks can justify stopping; repeated inputs need an explicit validation purpose.
+**What I learnt:** The unchanged input returned **10** again. No new headroom or neighbouring behaviour was measured. For future work: A model supported by analytical and held-out checks can justify stopping; repeated inputs need an explicit validation purpose.
 
 **Code and data:** [Round notes](../../journey/round_13/README.md) · [Inputs](../../journey/round_13/queries.txt) · [Outputs](../../journey/round_13/outputs.txt) · [Final reflection](../../journey/final_reflection/README.md).
 
@@ -258,7 +258,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 [Visualisation methodology](../../docs/functions.md) · [Rebuild the gallery](../../results/figures/build_visual_gallery.mjs)
 
-## Equation and strength of evidence
+## Mathematical evidence and its limits
 
 The reconstructed additive quadratic is:
 
@@ -272,7 +272,7 @@ For each input, \(\partial\hat f_8/\partial x_i=-2w_i(x_i-c_i)\). The diagonal H
 
 **Validation:** fitted to 49 accumulated personal-plus-starting observations by R10, checked against five external published input/output examples. A later **retrospective experiment** fitted the same 17-parameter form using **only the original 40 observations** and predicted 13 subsequent returns to floating-point precision. Neither check authenticates the undisclosed source function everywhere. [Reproduce the held-out test](../../src/bbo/structural_validation.py) · [Coefficients](../../results/f8_additive_quadratic_coefficients.csv).
 
-## What this function taught me
+## Lessons to carry forward
 
 **Representation can matter more than optimiser complexity.** The original 40 observations already contained enough information to identify a simple model, but I recognised it late. PCA compression preserved input variance without preserving the model's optimum.
 
