@@ -61,7 +61,7 @@ I described an **evidence-gated** comparison among GP, regional polynomial, **HE
 
 ## Original assessed work
 
-The **unchanged** Module 21.2 assessment documents are retained under [archive/component_21_2/](archive/component_21_2/), including the [datasheet](archive/component_21_2/datasheet.md), [model card](archive/component_21_2/model_card.md) and [decision log](archive/component_21_2/decision_log.md). The original [21.1 reflection](archive/component_21_1/submission.md) is a dated submission snapshot, separate from the final model card. An [alternative draft](archive/component_21_1/alternate_draft.md) is preserved as a distinct historical reconstruction; its precise submission status was not independently verified.
+The original Module 21.2 assessment documents are available under [archive/component_21_2/](../../archive/round_10/component_21_2/), including the [datasheet](../../archive/round_10/component_21_2/datasheet.md), [model card](../../archive/round_10/component_21_2/model_card.md) and [decision log](../../archive/round_10/component_21_2/decision_log.md). The original [21.1 reflection](../../archive/round_10/component_21_1/submission.md) is a dated submission snapshot, separate from the final model card. A [separate draft](../../archive/round_10/component_21_1/alternate_draft.md) is preserved as a distinct historical reconstruction; its precise submission status was not independently verified.
 
 Other records include the [Round 10 optimisation snapshot](optimisation.yaml), [candidate CSV](round10_candidates.csv) and [early exploratory notebooks](early_notebooks/).
 

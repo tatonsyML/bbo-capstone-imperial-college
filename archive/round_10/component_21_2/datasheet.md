@@ -1,5 +1,3 @@
-> **Historical snapshot:** This document describes an earlier evidence cut (around Round 9/10). For the final status through Round 13, use the [current evidence](../../../round_13/README.md), [README](../../README.md) and [provenance](../../../../DATASHEET.md). Statements that Round 10 was pending are historical, not current.
-
 # Datasheet | Black-Box Optimisation Query History
 
 **Dataset version:** Module 21, observed through Week 9 (18 October 2026 documentation update)  
@@ -7,7 +5,7 @@
 **Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college  
 **Important status:** Round 10 inputs have been submitted, but their outputs have not yet been received or added to the observed dataset.
 
-> This is a record of 247 experiments on eight unknown functions. It shows what settings were tried, what scores came back, and how those results shaped the next experiments. It is a record of a *search*, not a map of every possible outcome.
+> **In plain English:** This is a record of 247 experiments on eight unknown functions. It shows what settings were tried, what scores came back, and how those results shaped the next experiments. It is a record of a *search*, not a map of every possible outcome.
 
 ## 1. Why was this dataset created?
 
@@ -45,7 +43,7 @@ One **observation** is one input vector (the settings sent to a function) paired
 - **Public working history:** chronological CSV files in **data/accumulated/function_1/** through **function_8/**, each named **observations_through_week9.csv**.
 - **Columns:** function, stage, sequence_in_stage, is_initial, x1 ... xD, output. The stage separates the initial course sample from Weeks 1–9.
 - **Round evidence:** submitted query strings, returned portal values and notes in **experiments/round_01/** through **round_09/**.
-- **Calculated summaries:** best values, forecast errors and challenger proposals in **results/**. These are *derived analysis*, not new portal observations.
+- **Calculated summaries:** best values, forecast errors and challenger proposals in **reports/**. These are *derived analysis*, not new portal observations.
 
 Input coordinates are bounded between **0.000000 and 0.999999**. Submitted queries contain exactly six decimal places per coordinate. Starting inputs may contain more precision; do not silently round them when reproducing an earlier fit. Scores are real numbers and can be negative or extremely small.
 
@@ -92,21 +90,7 @@ The **authoritative history keeps the actual portal outputs**. No score is repla
 - Proposals are clipped to legal bounds and formatted to six decimal places **before submission**.
 - Modelling experiments and peer-informed tests are distinguished from the participant's own portal-returned observations.
 
-**Additional provenance:** Supplementary retrospective research compared this history against publicly shared classmates' query/output records. Those peer observations were used as **external research evidence**, not inserted into my 247-row dataset or mislabelled as my own results. 
-
-**Additional resources:** 
-
-A collection of YouTube videos covering Gaussian Processes, Bayesian Optimisation, surrogate modelling and Bayesian Deep Learning.
-
-| Order | Video | Duration | Learning Objective |
-|---|---|---|---|
-| 1 | [Bayesian Optimisation](https://www.youtube.com/watch?v=M-NTkxfd7-8) | 9:50 | Understand the overall optimisation process, acquisition functions, and exploration versus exploitation. |
-| 2 | [Gaussian Processes](https://www.youtube.com/watch?v=UBDgSHPxVME) | 23:47 | Understand predictive distributions, uncertainty, and how Gaussian Processes support optimisation. |
-| 3 | [Gaussian Processes: Data Science Concepts](https://www.youtube.com/watch?v=HA-VHNVbvwQ) | 24:47 | Explore GP regression, covariance, and kernel functions. |
-| 4 | [Bayesian Optimisation with scikit-learn](https://www.youtube.com/watch?v=jtRPxRnOXnk) | 39:21 | Learn practical implementation techniques. |
-| 5 | [Bayesian Optimisation with Gaussian Processes](https://www.youtube.com/watch?v=VWLI1jthE24) | 1:05:56 | Develop a deeper understanding of surrogate models and sequential optimisation. |
-| 6 | [Modeling Complex Data with Deep Gaussian Processes](https://youtu.be/9CdfO_R2_lg) | Not verified | Understand how Deep Gaussian Processes extend standard GPs to model more complex functions and uncertainty. Advanced / Optional. |
-
+**Additional provenance:** Supplementary retrospective research compared this history against publicly shared classmates' query/output records. Those peer observations were used as **external research evidence**, not inserted into my 247-row dataset or mislabelled as my own results. Some revised Round 10 candidates were informed by this research. The supporting public sources comprised selected participant query histories and model documentation. This public-facing repository deliberately omits individual names, profile identifiers and third-party repository links; a separate source register should be retained for authorised academic attribution where required. The use of evaluated peer outcomes for assessed work remains subject to programme collaboration rules; publicly readable data is not automatically unrestricted for reuse.
 
 ## 5. Intended uses and uses to avoid
 
@@ -119,10 +103,10 @@ A collection of YouTube videos covering Gaussian Processes, Bayesian Optimisatio
 ## 6. Where is it available, and under what terms?
 
 - **Repository:** https://github.com/tatonsyML/bbo-capstone-imperial-college
-- **Working data:** [data/accumulated/](../../../../data/accumulated)
-- **Round records:** [experiments/](../../../README.md)
-- **Model card:** [docs/model_card.md](model_card_week9_snapshot.md)
-- **Decision log:** [docs/decision_log.md](../component_21_2/decision_log.md)
+- **Working data:** [data/accumulated/](../../../data/accumulated/)
+- **Round records:** [experiments/](../../../journey/README.md)
+- **Model card:** [docs/model_card.md](model_card.md)
+- **Decision log:** [docs/decision_log.md](decision_log.md)
 
 The repository is shared for educational review. **No blanket open-source licence is asserted for the programme's starting data, objective functions or any third-party observations.** Permissions to redistribute or reuse those assets must be checked with their respective rights holders. The repository does not presently declare a general licence for its contents.
 

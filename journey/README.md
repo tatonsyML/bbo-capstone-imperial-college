@@ -53,8 +53,8 @@ For reproducible runs of the original weekly source using compatible published-d
 ## Original work and historical snapshots
 
 - [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the confirmed F7 Round 11 coordinates.
-- [Module 21.2 original assessed datasheet/model card/decision log](round_10/archive/component_21_2/), preserved as historical evidence.
-- [Module 21.1 original reflection](round_10/archive/component_21_1/submission.md).
+- [Module 21.2 original assessed datasheet/model card/decision log](../archive/round_10/component_21_2/), preserved as historical evidence.
+- [Module 21.1 original reflection](../archive/round_10/component_21_1/submission.md).
 - [Stage 1 and missing component index](stage_1/README.md).
 
 **Research evidence:** The portal history records actual evaluations. Later model reconstructions are distinguished from predictions made before the corresponding results.
