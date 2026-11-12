@@ -246,7 +246,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Keep the full coordinates where compression would reduce the objective.
 
-**Code and evidence:** [Round 12 records](../../journey/round_12/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 12 records](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F8 quadratic-vertex repeat; the recovered four-script suite does not establish a separate F8 generator) · [Machine-readable provenance](selection_history.csv).
 
 </details>
 

@@ -246,7 +246,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point did not beat the incumbent. With a finite horizon, the final non-identical local configuration produced the new best, 0.746898.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · No exact original candidate-selection script retained · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Recovered original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original local quadratic/TPE diagnostics](../../journey/round_12/original/tpe_local.py) · [Dated rationale for repeating the incumbent](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
 
 </details>
 
