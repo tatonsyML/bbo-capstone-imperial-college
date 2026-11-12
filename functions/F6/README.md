@@ -28,7 +28,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** An exploratory move tested high x4 and low x5 with remaining coordinates informed by stronger starting observations; no full first-round automated GP selector is established.
 
-**Submitted input:** `0.440752-0.249118-0.839948-0.999999-1e-06`  
+**Submitted input:** `0.440752-0.249118-0.839948-0.999999-0.000001`  
 **Actual portal result:** `-0.6039806265819045`  
 **Best observed before → after:** `-0.7142649478202404` → `-0.6039806265819045`.
 
@@ -45,7 +45,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP/UCB with κ=1.0 emphasised exploitation after a less-negative first return, while treating possible coordinate interactions cautiously.
 
-**Submitted input:** `0.436716-0.004631-0.398416-0.895113-0.03487`  
+**Submitted input:** `0.436716-0.004631-0.398416-0.895113-0.034870`  
 **Actual portal result:** `-0.7529878928551597`  
 **Best observed before → after:** `-0.6039806265819045` → `-0.6039806265819045`.
 
@@ -62,7 +62,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Local Expected Improvement searched the stronger region, with output normalisation and no assumption of separable effects.
 
-**Submitted input:** `0.467823-0.254239-0.82281-0.999999-0.03819`  
+**Submitted input:** `0.467823-0.254239-0.822810-0.999999-0.038190`  
 **Actual portal result:** `-0.5697790503980307`  
 **Best observed before → after:** `-0.6039806265819045` → `-0.5697790503980307`.
 
@@ -79,7 +79,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP was primary, with SVM high/low classification and small-neural-network sensitivity as secondary candidate checks.
 
-**Submitted input:** `0.481359-0.2568-0.814241-0.999999-0.057285`  
+**Submitted input:** `0.481359-0.256800-0.814241-0.999999-0.057285`  
 **Actual portal result:** `-0.5414478319707962`  
 **Best observed before → after:** `-0.5697790503980307` → `-0.5414478319707962`.
 
@@ -96,7 +96,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Controlled local changes tested whether Round 4's improved direction persisted; a poorer return weakened its justification.
 
-**Submitted input:** `0.494895-0.259361-0.805672-0.999999-0.07638`  
+**Submitted input:** `0.494895-0.259361-0.805672-0.999999-0.076380`  
 **Actual portal result:** `-0.5729927758567235`  
 **Best observed before → after:** `-0.5414478319707962` → `-0.5414478319707962`.
 
@@ -130,7 +130,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** RBF/Matérn, ARD, noise and rolling-origin checks accompanied a near-incumbent stability probe after an unexpectedly large local forecast miss.
 
-**Submitted input:** `0.48136-0.2568-0.814241-0.999999-0.057285`  
+**Submitted input:** `0.481360-0.256800-0.814241-0.999999-0.057285`  
 **Actual portal result:** `-0.5903792900833394`  
 **Best observed before → after:** `-0.5414478319707962` → `-0.5414478319707962`.
 
@@ -147,7 +147,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Week 7 changed x1 by only +0.000001 from the Week 4 incumbent but lost about 0.049. Test the symmetric -0.000001 side to distinguish a razor-sharp local feature from instability/noise.
 
-**Submitted input:** `0.481358-0.2568-0.814241-0.999999-0.057285`  
+**Submitted input:** `0.481358-0.256800-0.814241-0.999999-0.057285`  
 **Actual portal result:** `-0.6337817154897656`  
 **Best observed before → after:** `-0.5414478319707962` → `-0.5414478319707962`.
 
@@ -164,7 +164,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Hold the razor-sharp x1 incumbent exactly and move only x5 by +0.000001. This tests whether the Week 4 high value lies on a narrow ridge rather than repeating the same point.
 
-**Submitted input:** `0.481359-0.2568-0.814241-0.999999-0.057286`  
+**Submitted input:** `0.481359-0.256800-0.814241-0.999999-0.057286`  
 **Actual portal result:** `-0.5512864477685001`  
 **Best observed before → after:** `-0.5414478319707962` → `-0.5414478319707962`.
 

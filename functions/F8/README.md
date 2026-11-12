@@ -30,7 +30,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Explore the sparse eight-dimensional space while retaining favourable starting-coordinate patterns; GP/EI were decision ideas rather than an authenticated full first-round selector.
 
-**Submitted input:** `0.088526-0.03196-0.048494-0.063991-0.991333-0.224689-0.073759-0.537568`  
+**Submitted input:** `0.088526-0.031960-0.048494-0.063991-0.991333-0.224689-0.073759-0.537568`  
 **Actual portal result:** `9.8321123600691`  
 **Best observed before → after:** `9.598482002566342` → `9.8321123600691`.
 
@@ -64,7 +64,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Local Expected Improvement with normalised targets and multiple GP restarts exploited the improving region.
 
-**Submitted input:** `0.099253-0.051531-0.055571-0.074437-0.985751-0.228722-0.118577-0.53735`  
+**Submitted input:** `0.099253-0.051531-0.055571-0.074437-0.985751-0.228722-0.118577-0.537350`  
 **Actual portal result:** `9.8634785625365`  
 **Best observed before → after:** `9.8321123600691` → `9.8634785625365`.
 
@@ -81,7 +81,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** GP remained the main uncertainty-aware surrogate; SVM classification and small-neural-network gradients were secondary model checks.
 
-**Submitted input:** `0.104617-0.061316-0.05911-0.07966-0.98296-0.230739-0.140986-0.537241`  
+**Submitted input:** `0.104617-0.061316-0.059110-0.079660-0.982960-0.230739-0.140986-0.537241`  
 **Actual portal result:** `9.8754707823449`  
 **Best observed before → after:** `9.8634785625365` → `9.8754707823449`.
 
@@ -132,7 +132,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** RBF/Matérn kernel, ARD/noise and rolling-origin checks supported cautious exploitation after a close prospective Week 6 forecast.
 
-**Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.23956-0.238989-0.536764`  
+**Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.239560-0.238989-0.536764`  
 **Actual portal result:** `9.8990020095864`  
 **Best observed before → after:** `9.8920726096301` → `9.8990020095864`.
 
@@ -149,7 +149,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Three GP-kernel forecasts supported a controlled +0.025 change to x6 while holding seven inputs fixed.
 
-**Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.26456-0.238989-0.536764`  
+**Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.264560-0.238989-0.536764`  
 **Actual portal result:** `9.9113990095864`  
 **Best observed before → after:** `9.8990020095864` → `9.9113990095864`.
 
@@ -168,7 +168,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Agreement across three GP-kernel challengers supported a further +0.05 x6 step, with the forecast recorded before the portal return.
 
-**Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.31456-0.238989-0.536764`  
+**Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.314560-0.238989-0.536764`  
 **Actual portal result:** `9.9324430095864`  
 **Best observed before → after:** `9.9113990095864` → `9.9324430095864`.
 

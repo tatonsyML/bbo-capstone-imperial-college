@@ -30,7 +30,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** An intermediate x2 probe between strong starting points tested whether they belonged to one ridge or separate regions; GP/EI were decision ideas, not an authenticated first-round generator.
 
-**Submitted input:** `0.7-0.5`  
+**Submitted input:** `0.700000-0.500000`  
 **Actual portal result:** `0.379063270240082`  
 **Best observed before → after:** `0.6112052157614438` → `0.6112052157614438`.
 
@@ -47,7 +47,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** GP/UCB with κ=2.5 on a 501×501 grid put extra weight on uncertainty after the failed midpoint.
 
-**Submitted input:** `0.672-0.999999`  
+**Submitted input:** `0.672000-0.999999`  
 **Actual portal result:** `0.5860547049641637`  
 **Best observed before → after:** `0.6112052157614438` → `0.6112052157614438`.
 
@@ -64,7 +64,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Global Expected Improvement, target normalisation and an exploration margin of 1% of observed-output SD; exact historical candidate-generation code is not preserved.
 
-**Submitted input:** `0.7015-0.957999`  
+**Submitted input:** `0.701500-0.957999`  
 **Actual portal result:** `0.653867607133911`  
 **Best observed before → after:** `0.6112052157614438` → `0.653867607133911`.
 
@@ -81,7 +81,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** GP predictions remained primary; soft-margin SVM good/bad classification and small-network gradients were supporting checks, not an automatic exclusion rule.
 
-**Submitted input:** `0.705-0.999999`  
+**Submitted input:** `0.705000-0.999999`  
 **Actual portal result:** `0.5912856598404541`  
 **Best observed before → after:** `0.653867607133911` → `0.653867607133911`.
 
@@ -98,7 +98,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Controlled x2 refinement held x1 fixed to test a local response while avoiding an unsupported smoothness assumption.
 
-**Submitted input:** `0.7015-0.959409`  
+**Submitted input:** `0.701500-0.959409`  
 **Actual portal result:** `0.6548498709022528`  
 **Best observed before → after:** `0.653867607133911` → `0.6548498709022528`.
 
@@ -115,7 +115,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** GP-led local refinement was cross-checked against a small MLP, which performed slightly better on F2 in five-fold validation; the GP was not replaced automatically.
 
-**Submitted input:** `0.7015-0.959816`  
+**Submitted input:** `0.701500-0.959816`  
 **Actual portal result:** `0.6913148663237587`  
 **Best observed before → after:** `0.6548498709022528` → `0.6913148663237587`.
 
@@ -132,7 +132,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** RBF/Matérn kernels, ARD, noise and rolling-origin checks examined unstable local predictions before trusting another small step.
 
-**Submitted input:** `0.7015-0.960223`  
+**Submitted input:** `0.701500-0.960223`  
 **Actual portal result:** `0.5893476079120687`  
 **Best observed before → after:** `0.6913148663237587` → `0.6913148663237587`.
 
@@ -149,7 +149,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** Three-point x2 quadratic interpolation held x1 fixed and tested a local crest hypothesis; the pre-result forecast was recorded.
 
-**Submitted input:** `0.7015-0.95972`  
+**Submitted input:** `0.701500-0.959720`  
 **Actual portal result:** `0.6130861312279376`  
 **Best observed before → after:** `0.6913148663237587` → `0.6913148663237587`.
 
@@ -168,7 +168,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Approach considered:** A symmetric x2 microstep tested the local fitted curve with a numerical forecast recorded before the portal result.
 
-**Submitted input:** `0.7015-0.959912`  
+**Submitted input:** `0.701500-0.959912`  
 **Actual portal result:** `0.5055255161847483`  
 **Best observed before → after:** `0.6913148663237587` → `0.6913148663237587`.
 

@@ -28,7 +28,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Sparse-region signal search based on starting observations; GP/EI guided the reasoning but no complete original selector is established for this first round.
 
-**Submitted input:** `0.02-0.98`  
+**Submitted input:** `0.020000-0.980000`  
 **Actual portal result:** `0.0`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
@@ -96,7 +96,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Controlled coordinate probes and alternative areas tested whether the near-zero pattern could be escaped; no meaningful local incumbent had emerged.
 
-**Submitted input:** `0.75-0.75`  
+**Submitted input:** `0.750000-0.750000`  
 **Actual portal result:** `1.3319145509281447e-22`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
@@ -113,7 +113,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP versus MLP and controlled local tests challenged the usefulness of further refinement when almost all F1 responses remained tiny.
 
-**Submitted input:** `0.732524-0.7389`  
+**Submitted input:** `0.732524-0.738900`  
 **Actual portal result:** `3.2554751168755075e-17`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
@@ -130,7 +130,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** ARD RBF/Matérn kernel, noise and rolling-origin investigations assessed whether a local GP forecast deserved trust despite the weak signal.
 
-**Submitted input:** `0.730874-0.7318`  
+**Submitted input:** `0.730874-0.731800`  
 **Actual portal result:** `1.3142529628112004e-15`  
 **Best observed before → after:** `7.710875114502849e-16` → `1.3142529628112004e-15`.
 
@@ -164,7 +164,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** One-coordinate probe: move x1 down by 0.001 from the Week 7 incumbent while holding x2 fixed. The updated rank-GP committee favours lower x1, but the output scale is too pathological for a trustworthy numeric forecast.
 
-**Submitted input:** `0.729874-0.7318`  
+**Submitted input:** `0.729874-0.731800`  
 **Actual portal result:** `1.921280788064022e-15`  
 **Best observed before → after:** `1.3142529628112004e-15` → `1.921280788064022e-15`.
 

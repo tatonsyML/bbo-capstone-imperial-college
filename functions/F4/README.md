@@ -28,7 +28,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Local exploration near a stronger starting observation, balancing promising evidence with a small variation; GP/EI were considered rather than established as a complete first-round selector.
 
-**Submitted input:** `0.5315-0.448817-0.362651-0.331977`  
+**Submitted input:** `0.531500-0.448817-0.362651-0.331977`  
 **Actual portal result:** `-1.910544236949021`  
 **Best observed before → after:** `-4.025542281908162` → `-1.910544236949021`.
 
@@ -113,7 +113,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP-versus-MLP cross-validation favoured a GP-led local strategy while actual nearby returns limited confidence in a smooth surface.
 
-**Submitted input:** `0.42029-0.427795-0.368797-0.412509`  
+**Submitted input:** `0.420290-0.427795-0.368797-0.412509`  
 **Actual portal result:** `0.6589225038891553`  
 **Best observed before → after:** `0.6589269585907762` → `0.6589269585907762`.
 
@@ -164,7 +164,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Continue the controlled x1 micro-step. The last three comparable observations are almost perfectly linear; the extrapolated forecast at x1=0.420380 is about 0.65893287.
 
-**Submitted input:** `0.42038-0.427768-0.368794-0.412497`  
+**Submitted input:** `0.420380-0.427768-0.368794-0.412497`  
 **Actual portal result:** `0.6589328672210581`  
 **Best observed before → after:** `0.6589299133743123` → `0.6589328672210581`.
 

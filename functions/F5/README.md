@@ -28,7 +28,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Exploitation near high-scoring initial observations; a single prominent peak was a working hypothesis, not a verified property of the hidden objective.
 
-**Submitted input:** `0.1-0.75-0.9-0.98`  
+**Submitted input:** `0.100000-0.750000-0.900000-0.980000`  
 **Actual portal result:** `1426.0897645116545`  
 **Best observed before → after:** `1088.8596181962705` → `1426.0897645116545`.
 
@@ -45,7 +45,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP/UCB with κ=1.0 favoured exploitation after the largest first-round improvement, while checking high later-coordinate values.
 
-**Submitted input:** `0.522156-0.922246-0.999259-0.99589`  
+**Submitted input:** `0.522156-0.922246-0.999259-0.995890`  
 **Actual portal result:** `3722.27447382346`  
 **Best observed before → after:** `1426.0897645116545` → `3722.27447382346`.
 

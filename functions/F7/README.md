@@ -45,7 +45,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP/UCB with κ=2.0 balanced exploration and exploitation after the first portal query nearly matched, but did not beat, the supplied best.
 
-**Submitted input:** `0.074002-0.315323-0.247287-0.026732-0.35885-0.832838`  
+**Submitted input:** `0.074002-0.315323-0.247287-0.026732-0.358850-0.832838`  
 **Actual portal result:** `1.020402279048806`  
 **Best observed before → after:** `1.3649683044991994` → `1.3649683044991994`.
 
@@ -62,7 +62,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Local Expected Improvement refined the promising region using observed data and a cautious uncertainty allowance.
 
-**Submitted input:** `0.046316-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.046316-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.6137963046751616`  
 **Best observed before → after:** `1.3649683044991994` → `1.6137963046751616`.
 
@@ -79,7 +79,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP remained primary; SVM boundaries and small-neural-network gradients, notably x1 and x6 sensitivity, offered secondary guidance.
 
-**Submitted input:** `0.015-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.015000-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.5516324818204723`  
 **Best observed before → after:** `1.6137963046751616` → `1.6137963046751616`.
 
@@ -96,7 +96,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Controlled x1 movement with the other five inputs fixed tested an empirical direction without claiming its effects were globally independent.
 
-**Submitted input:** `0.06-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.060000-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.638440146032503`  
 **Best observed before → after:** `1.6137963046751616` → `1.638440146032503`.
 
@@ -113,7 +113,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Five-fold validation favoured GP over small MLP for F7 (NRMSE 0.112 versus 0.314); continue the evidence-backed x1 path instead of imposing a CNN architecture.
 
-**Submitted input:** `0.1-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.100000-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.7006596900158717`  
 **Best observed before → after:** `1.638440146032503` → `1.7006596900158717`.
 
@@ -130,7 +130,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** RBF/Matérn, ARD, noise/restart and rolling-origin comparisons checked local forecast reliability while the x1-only path remained productive.
 
-**Submitted input:** `0.15-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.150000-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.7557182120997592`  
 **Best observed before → after:** `1.7006596900158717` → `1.7557182120997592`.
 
@@ -147,7 +147,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** The x1-only controlled path continues to fit a stable concave quadratic. The last three points place the estimated vertex at x1≈0.234070.
 
-**Submitted input:** `0.23407-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.234070-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.785862549726479`  
 **Best observed before → after:** `1.7557182120997592` → `1.785862549726479`.
 
@@ -166,7 +166,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** The updated quadratic across the controlled x1 series places the local vertex near x1=0.228702, with only about 0.00055 predicted headroom. This is deliberate precision, not broad exploration.
 
-**Submitted input:** `0.228702-0.36927-0.256273-0.262985-0.391467-0.834089`  
+**Submitted input:** `0.228702-0.369270-0.256273-0.262985-0.391467-0.834089`  
 **Actual portal result:** `1.786338197796892`  
 **Best observed before → after:** `1.785862549726479` → `1.786338197796892`.
 
