@@ -2,7 +2,7 @@
 
 [← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../docs/methods.md) · [Final code](../notebooks/README.md)
 
-This is the **single chronological home** for the capstone. Each round links the submitted inputs, returned scores, surviving code, forecasts and lessons. The [week-by-week research summary](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) highlights the main method changes across the thirteen rounds. Later reconstructions are labelled separately from the original experiments.
+This is the chronological record of my thirteen-round optimisation project. Each round draws on my research notes and links the submitted inputs, observed results and surviving code. The [week-by-week research summary](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) traces changes in strategy. Later mathematical reconstructions are identified separately from forecasts recorded before portal returns.
 
 **Numbering:** *Week* and *Round* refer to the same evaluation cycle (Week 1 = Round 1). *Module* refers to the course module covering that round. For example, Round 1 belongs to Module 12, and Round 13 belongs to Module 24. Labels such as **Module 21.2** identify an assessment component within a course module, not a separate optimisation round.
 

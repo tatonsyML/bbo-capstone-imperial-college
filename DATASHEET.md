@@ -35,7 +35,7 @@ No synthetic labels, missing coordinates or unobserved outcomes are filled in.
 
 The programme supplied 175 initial input/output pairs, then the author submitted one new query for each function in each of 13 rounds. The portal returned eight responses per round. The consolidated CSV combines the [per-function history through R10](data/accumulated/), [R11–12 returns](data/portal_rounds_11_12.csv) and [R13 returns](data/portal_rounds_13.csv). Duplicate query locations are retained because they represent actual evaluations.
 
-The repository itself was assembled retrospectively from the preserved records. Its Git commit dates are **not** a contemporaneous timestamp for the original R1–R9 experiments.
+**Historical dates:** Git commits record when material was published to this repository, not necessarily when Rounds 1–9 took place. The round records and dated submissions document the actual research sequence.
 
 ## 4. Preparation and transformations
 

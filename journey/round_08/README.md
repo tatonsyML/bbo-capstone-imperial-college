@@ -2,8 +2,6 @@
 
 **Evidence:** [Submitted inputs](queries.txt) and [returned outputs](outputs.txt) are real portal records. The forecasts below were recorded before receiving the corresponding return.
 
-> **About this account:** Edited from my Week 8 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
-
 ## My reasoning at the time
 
 The LLM had become an analytical partner, but not my numerical optimiser. Early prompts were open-ended: I presented the observations and asked what they suggested. By this week I used a more disciplined pattern: verified observations, the previous query and its return, forecasts written before the return arrived, model diagnostics and competing candidates. I stopped asking one prompt to audit the data, choose a model, propose a point and judge its own work.
@@ -13,8 +11,6 @@ Deterministic Python code remained responsible for numerical fitting, candidate 
 The eight functions required different questions. For F1 I considered rank-based GP ideas because most observed responses were nearly zero. F2 and F3 called for local brackets and interpolation checks. F5 and F7 supplied paths along which controlled trends were more informative than a large global search. On F8 I compared three GP kernels rather than assuming a single covariance function was correct. I kept F4 and F6 as controlled tests even where a trustworthy numerical forecast was unavailable.
 
 I wanted each candidate to be falsifiable. Before submission, a record should identify the chosen point, the incumbent best, the predicted output where defensible, model disagreement and the specific claim the query would test. After receiving the portal score, I could compare the forecast with the return rather than quietly revising the explanation. This was the principal change in my use of AI: it widened the hypotheses I considered, while the numerical tools and returned observations determined which claims I believed.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

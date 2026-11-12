@@ -2,8 +2,6 @@
 
 **Evidence:** The [eight submitted inputs](queries.txt) and [eight returned outputs](outputs.txt) are historical portal records. The interpretation below is retrospective.
 
-> **About this account:** Edited from my Week 7 reflection in the 52-page *Capstone Project* document. It describes my thinking at the time. The technical record below preserves the confirmed portal returns, original artefacts and evidence limitations. Any difference between a prospective claim and a returned result must be resolved using the portal record.
-
 ## My reasoning at the time
 
 My attention shifted towards the hyperparameters that genuinely changed a query: **kernel family and smoothness, noise or regularisation, optimiser restarts and local-region width**. For F5, the large scale of the output also made the log transformation a modelling decision worth retaining and testing. I wanted to know not simply which Gaussian Process fitted existing points, but whether a change of setting produced a stable, better-informed next candidate.
@@ -13,8 +11,6 @@ I increasingly used **rolling-origin validation**. I could fit on observations t
 F8 gave an instructive contrast: a Week 6 forecast of about **9.892098** was close to the actual **9.892073**. That strengthened confidence in the particular local pattern being tested, without proving the model globally correct. F1 still offered too little useful signal for ordinary local refinement. I continued to compare Matérn and RBF options, ARD length-scales and local-search geometry, but I wanted to stop tuning when plausible settings became indistinguishable in their decisions.
 
 The strongest lesson in my weekly reflection was about **false precision**. An incomplete model should not be presented as more certain simply because its numerical predictions contain many decimal places. When a proposed gain is smaller than typical prospective forecast error, I should reconsider whether the portal query would answer anything useful. The original candidate-generating package for this particular round is not present in the surviving repository; the recorded methods and measured outputs are therefore evidence of my evolving approach, not proof of a newly reconstructed executable historical script.
-
-## Verified results, methods and original evidence
 
 ## What I did
 

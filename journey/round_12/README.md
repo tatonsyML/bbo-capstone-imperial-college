@@ -2,8 +2,6 @@
 
 **Status:** The eight returned portal scores were confirmed. R12 improved F6 and F7, while several functions repeated earlier inputs.
 
-> **About this account:** Edited from my Week 12 entry in the 52-page *Capstone Project* reflection document. It preserves the reasoning available at the time; the confirmed portal results, historical source files and later provenance checks are retained below. Where an intention differs from a submitted input, the portal record is authoritative.
-
 ## My reasoning at the time
 
 I began the challenge with broad Gaussian-process searches and substantial kernel tuning. By this week I separated data preparation, prospective validation and candidate selection. F2's Week 9 forecast of about 0.731 and return near 0.506 had made me much less willing to trust an attractive predicted improvement without chronological testing and sensitivity checks.
@@ -15,8 +13,6 @@ I tested compression within the fitted quadratic. Restricting the modelled searc
 Other functions supplied complementary lessons. F4 had stalled near 0.659 during microscopic steps, while a wider local movement eventually reached 0.730459. F6 improved from about −0.123761 to −0.037519 through a coordinated change, but because several inputs moved together I did not attribute the gain to a single coordinate. F7 reached another measured best. Four repeated queries confirmed their previous values but added no new locations to the input history.
 
 For the final round I wanted to compare predicted improvement with known forecast error and use remaining queries to test the highest-value unresolved questions. Simplification was worthwhile only when it preserved decisions. In a practical analogy from payroll-risk analytics, a low-variance input may represent a rare and costly signal, and discarding it because PCA gives it little weight would be a mistake. I had learnt to simplify the representation only after checking what the simplification lost.
-
-## Verified results, methods and original evidence
 
 ## What I did and what happened
 

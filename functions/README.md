@@ -23,7 +23,7 @@ Each expandable section separates the same five things:
 
 **What was known → What was predicted → What was submitted → What was observed → What changed afterwards.**
 
-The [round-by-round code and decision audit](../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) distinguishes surviving original selection code, notebooks that record decisions, code written later to reproduce an analysis, and rounds without an authenticated generator. The detailed [decision ledgers](F2/selection_history.csv), [historical code](../journey/README.md) and [279-row master dataset](../data/all_observations.csv) provide a numerical audit without requiring readers to navigate duplicate CSV files first.
+**Forecasts and evidence:** Numerical forecasts appear in function stories only when documented before the corresponding portal return. Missing forecasts are noted in the linked [decision ledgers](F2/selection_history.csv), not repeated as a notice under every round. The [source evidence audit](../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) distinguishes contemporary candidate-selection work from later reconstructions. The detailed [decision ledgers](F2/selection_history.csv), [historical code](../journey/README.md) and [279-row master dataset](../data/all_observations.csv) provide a numerical audit without requiring readers to navigate duplicate CSV files first.
 
 ## How to interpret the graphics
 
