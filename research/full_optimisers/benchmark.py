@@ -107,7 +107,7 @@ def build_f8_simulator(root: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray, 
         raise ValueError(f"F8 simulator fails held-out validation: {error}")
     linear, quadratic = coef[1::2], coef[2::2]
     centre = -linear / (2 * quadratic)
-    peak = float(f8_design(centre) @ coef)
+    peak = (f8_design(centre) @ coef).item()
     meta = {"initial_points": len(x0), "held_out_points": len(xh),
             "max_holdout_error": error, "fitted_peak": peak,
             "centre": portal_text(centre)}
@@ -116,7 +116,7 @@ def build_f8_simulator(root: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray, 
 
 def simulated_f8_score(coefficients: np.ndarray, query: np.ndarray) -> float:
     """F8 QUADRATIC MODEL prediction, never a private portal return."""
-    return float((f8_design(portal_point(query)) @ coefficients)[0])
+    return (f8_design(portal_point(query)) @ coefficients).item()
 
 
 def set_seed(seed: int) -> None:

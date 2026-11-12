@@ -39,9 +39,9 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout versioned evidence and code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Configure Python 3.11
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - name: Install notebook and modelling dependencies
@@ -53,7 +53,7 @@ jobs:
       - name: Check source and data using plain pytest
         run: python -m pytest -q
       - name: Save executed notebook as an artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: capstone-25-3-executed-notebook
           path: results/notebook_output/Capstone_Final_Walkthrough_executed.ipynb

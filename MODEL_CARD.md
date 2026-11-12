@@ -101,7 +101,7 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 
 ## 9. Ethics, access and redistribution
 
-No reported personal data is required to run the optimisation. Course-provided numerical starting observations are currently included in public CSVs, while original course binary files are not hosted. **Redistribution permission for the numerical starting data remains to be checked**. External peer observations are not counted among the user's own 104 returns.
+No reported personal data is required to run the optimisation. The 175 supplied starting observations are included in public CSVs as part of the **public GitHub capstone deliverable required by Stage 2, Component 25.3**; original course binary files are not hosted. The course's publication instructions are not a licence for unrestricted third-party reuse of those observations. The [usage and permissions statement](USAGE_AND_PERMISSIONS.md) explains this distinction. External peer observations are not counted among my own 104 portal returns.
 
 The same approach would require additional validation, security checks and hard operational limits before use in payroll or other high-consequence systems.
 

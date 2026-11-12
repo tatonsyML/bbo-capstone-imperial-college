@@ -16,6 +16,7 @@ from benchmark import (TurboState, build_f8_simulator, f8_design,
 ROOT = Path(__file__).resolve().parents[2]
 
 
+@pytest.mark.filterwarnings("error:Conversion of an array with ndim > 0 to a scalar is deprecated:DeprecationWarning")
 def test_f8_original_40_predict_thirteen_returned_points():
     x, y, coef, meta = build_f8_simulator(ROOT)
     assert x.shape == (40, 8)
@@ -23,6 +24,13 @@ def test_f8_original_40_predict_thirteen_returned_points():
     assert meta["held_out_points"] == 13
     assert meta["max_holdout_error"] < 2e-14
     assert abs(simulated_f8_score(coef, np.array([.10,.15,.13,.15,.8,.5,.2,.6])) - 10) < 1e-12
+
+
+def test_simulated_f8_score_returns_python_float():
+    """Avoid deprecated NumPy array-to-scalar conversion."""
+    _, _, coefficients, _ = build_f8_simulator(ROOT)
+    query = np.array([.10, .15, .13, .15, .8, .5, .2, .6])
+    assert type(simulated_f8_score(coefficients, query)) is float
 
 
 def test_f8_design_has_seventeen_features():
