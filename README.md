@@ -2,7 +2,7 @@
 
 **Eight unknown functions. Thirteen rounds. An evolving approach to making better decisions under uncertainty.**
 
-**Imperial College London · Machine Learning & AI capstone**
+**Black-Box Optimisation capstone · Imperial College London's [25-week Professional Certificate in Machine Learning and Artificial Intelligence](https://www.imperial.ac.uk/lifelong-learning/courses/professional-certificate-ml-and-ai/)**
 
 [![Python tests](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml/badge.svg)](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) · [MIT Licence](LICENSE) · [Reuse and attribution](USAGE_AND_PERMISSIONS.md)
 
