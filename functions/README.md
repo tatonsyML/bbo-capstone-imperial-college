@@ -15,7 +15,7 @@
 | [F7 · From local to structural](F7/README.md) | One-coordinate path, alternative basin and Hartmann-6 forecast | **3.322368011393** | R12 |
 | [F8 · Quadratic reconstruction](F8/README.md) | GP refinement, mathematical solution and held-out validation | **10.000000** | R10 |
 
-[Function-specific dataset profiles](../docs/function_datasheets.md) · [Evidence and editorial standards](../docs/EVIDENCE_RULES.md)
+[Function-specific dataset notes](../DATASHEET.md#appendix-a-function-specific-dataset-notes) · [Evidence and editorial standards](../docs/EVIDENCE_RULES.md)
 
 ## How to read a round
 

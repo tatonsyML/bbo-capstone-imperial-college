@@ -95,7 +95,7 @@ The notebook reproduces supported analyses and demonstrates optimisation methods
 
 The record contains **175 course-provided initial observations** and **104 personal portal evaluations**, including repeated queries. Inputs and actual returns remain distinct from fitted-model predictions and externally reported participant observations.
 
-[Dataset datasheet](DATASHEET.md) · [Eight function-specific datasheets](docs/function_datasheets.md) · [Model card](MODEL_CARD.md) · [Evidence and limitations](docs/EVIDENCE_RULES.md) · [Citation](CITATION.cff)
+[Dataset datasheet and function-specific data notes](DATASHEET.md) · [Model card](MODEL_CARD.md) · [Evidence and limitations](docs/EVIDENCE_RULES.md) · [Citation](CITATION.cff)
 
 My original code and documentation are available under the **[MIT Licence](LICENSE)**, which permits copying, modification and reuse, including commercially, with the required copyright and licence notices. Course-supplied and third-party data are **not** relicensed under MIT. See [usage and permissions](USAGE_AND_PERMISSIONS.md).
 
