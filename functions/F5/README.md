@@ -26,7 +26,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
 
-**Approach considered:** Exploitation near strong chemical-yield starting observations; the expected single peak was a working scenario assumption, not a proven hidden-function property.
+**Approach considered:** Exploitation near high-scoring initial observations; a single prominent peak was a working hypothesis, not a verified property of the hidden objective.
 
 **Submitted input:** `0.1-0.75-0.9-0.98`  
 **Actual portal result:** `1426.0897645116545`  

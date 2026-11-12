@@ -21,9 +21,9 @@
 
 ## How to read a round
 
-Each expandable section separates the same five things:
+Every expandable round uses consistent labels for **Why this input**, **Approach considered**, **Submitted input**, **Actual portal result**, **Best observed before → after**, **What I learnt** and **Code and data**. A **Pre-result forecast** appears only where a forecast was recorded before the portal return.
 
-**What was known → What was predicted → What was submitted → What was observed → What changed afterwards.**
+The underlying research sequence remains **what was known → what was considered → what was submitted → what was observed → what changed afterwards**. The term *considered* distinguishes a method discussed or compared from a method verified to have selected the submitted query.
 
 **Measured or modelled?** The [decision ledgers](F2/selection_history.csv) record submitted inputs, returned scores and forecasts when one was documented before the result. The [research journey](../journey/README.md) links the corresponding Python work. Mathematical reconstructions and later model tests are identified separately from measured portal evaluations.
 
