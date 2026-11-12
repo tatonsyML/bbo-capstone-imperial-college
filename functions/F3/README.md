@@ -77,7 +77,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point did not beat the incumbent. After the model comparison, the original reflection noted new records in F3 among others, supporting GP-led adaptation with SVM checks as secondary evidence.
 
-**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; a standalone generator was not recovered · [Function-specific decision ledger](selection_history.csv).
+**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; no standalone original query generator is preserved for this round · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -248,7 +248,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point did not beat the incumbent. With only one evaluation left, the selected regional input delivered the best of -0.003753; no claim of achieving zero is justified.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Recovered original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original TPE and local-model comparisons](../../journey/round_12/original/tpe_local.py) · [Dated candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original TPE and local-model comparisons](../../journey/round_12/original/tpe_local.py) · [Dated candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
 
 </details>
 

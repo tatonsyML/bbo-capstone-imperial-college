@@ -77,7 +77,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point established a new personal best. The Week 4 reflection reported that neural-network gradients highlighted x1 and x6 as potentially influential, alongside SVM and GP challengers.
 
-**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; a standalone generator was not recovered · [Function-specific decision ledger](selection_history.csv).
+**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; no standalone original query generator is preserved for this round · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -248,7 +248,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point established a new personal best. A change of one millionth in x1 returned a marginally lower score; R12 remains the measured best.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F7 Hartmann-6-based choice; the recovered four-script suite does not establish a separate F7 generator) · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F7 Hartmann-6-based choice; the four original Week 12 analysis scripts does not establish a separate F7 generator) · [Numerical provenance](selection_history.csv).
 
 </details>
 
