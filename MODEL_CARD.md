@@ -1,16 +1,20 @@
-# Final Model Card | Evidence-led Black-Box Optimisation
+# Model Card | Black-Box Optimisation Methods
 
-**Version:** Final, 13 returned rounds (9 November 2026) · **Model type:** Function-specific Bayesian optimisation with controlled probes, surrogate challengers and selective mathematical reconstruction
+*Imperial College London · Professional Certificate in Machine Learning and Artificial Intelligence*
 
-**Post-capstone documentation update (12 November 2026):** The [official HEBO/TuRBO-1 benchmark](research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) is a separate F8 model-only simulation, not part of the original thirteen-round selection process.
+This model card describes my function-specific optimisation workflow across **eight black-box objectives and thirteen returned rounds**, completed in November 2026. It covers what the models accept and predict, how candidate decisions were made, performance against actual portal outcomes, limitations and trade-offs. The later [HEBO/TuRBO-1 simulator benchmark](research/full_optimisers/README.md) is independent post-capstone research, not an additional set of original portal evaluations.
 
-[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Final datasheet](DATASHEET.md)
+[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Dataset datasheet](DATASHEET.md) · [Function-specific datasheets](docs/function_datasheets.md)
 
 ## 1. Model summary
 
-The goal was to maximise eight different hidden functions, each with 2–8 inputs in the legal coordinate range `[0, 0.999999]`, while receiving only one returned query per function per round. There was no direct access to a gradient or the hidden implementation.
+**Inputs:** One function identifier (F1–F8) and a continuous candidate vector of **2–8 coordinates** in the legal range `[0, 0.999999]`. Surrogate fitting uses only historical input/output observations available at the particular decision point, not later portal returns.
 
-My baseline uses Gaussian Process (GP) surrogates with RBF/Matérn kernels and automatic relevance determination (separate input lengthscales). EI, PI and UCB acquisition scores balance predicted returns and uncertainty. I also used controlled coordinate experiments, small alternative models, regional searches and later mathematical reconstruction where the evidence supported it.
+**Outputs:** A Gaussian Process produces a **predicted score (mean) and uncertainty estimate** for candidate inputs. Acquisition functions produce a ranking or next-query proposal; the external portal separately returns the **measured scalar objective score**. Predictions are not measured results.
+
+**Model architecture:** This is not a single neural network or an unchanged automated optimiser. The baseline comprises **function-specific Gaussian Process surrogates** with RBF/Matérn kernels and automatic relevance determination (ARD) lengthscales. Expected Improvement (EI), Probability of Improvement (PI) and Upper Confidence Bound (UCB) balance predicted reward against uncertainty. Controlled coordinate experiments, alternative models and later mathematical reconstructions were also assessed.
+
+The goal was to maximise the unknown functions within one paid portal evaluation per function per round. There was no access to their underlying source equations or gradients.
 
 **This is not one fully automated policy used unchanged for 13 rounds.** The human-reviewed, function-specific decision process is itself a feature of the project.
 
@@ -58,7 +62,7 @@ The [round-by-round archive](journey/README.md) and [project journey](archive/no
 
 **Interpretation:** there was no universal winning optimiser. The most useful method was the one whose assumptions, search region and predicted results were supported by the next observed return.
 
-## 6. Measured results (final confirmed personal bests)
+## 6. Performance: measured results (final confirmed personal bests)
 
 | Function | Inputs | Best confirmed output | First attained |
 |---|---:|---:|---|
@@ -71,7 +75,11 @@ The [round-by-round archive](journey/README.md) and [project journey](archive/no
 | F7 | 6 | 3.3223680113931557 | R12 |
 | F8 | 8 | 10.0 | R10 |
 
-All values are personally confirmed portal results. They differ drastically in scale; no overall sum or average is meaningful.
+All values are personally confirmed portal results. They differ drastically in scale; no overall sum or average is meaningful. **Performance is measured by the best observed portal output after each round**, including the supplied initial best; the figure below plots those measured trajectories, not surrogate predictions.
+
+![Best observed output by function over thirteen rounds, with separate vertical scales](results/figures/progress.svg)
+
+*Each function has its own vertical scale. For numerical comparisons use the values and the [279-row observation dataset](data/all_observations.csv), not the apparent relative heights of lines across functions.*
 
 **F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was confirmed from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
 
@@ -83,9 +91,11 @@ All values are personally confirmed portal results. They differ drastically in s
 - **F7:** a positive Hartmann-6 structural forecast of 3.32236801 was recorded before the R12 portal return of 3.322368011393.
 - **F8:** an additive 17-parameter quadratic located 10 at an interior vertex. A *separate retrospective* fit using only the 40 supplied starting observations fitted a full-rank model and predicted 13 later portal returns with maximum absolute error **below 2 × 10⁻¹⁴** across the 13 later scores (the last displayed digits can vary slightly by numerical environment). This does not mean the equation was identified in R1.
 
-## 7. Quantitative validation and test coverage
+## 7. Evaluation methods and quantitative validation
 
-The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes counts, historical bests, GP illustrative decisions and F8/F5 structural checks from versioned data. [Automated tests](tests/) independently check numerical calculations. F8's 13 future observations are held out from the 40-point fit.
+The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes counts, historical bests, GP illustrative decisions and F8/F5 structural checks from versioned data. [Automated tests](tests/) independently check numerical calculations. Performance evidence comes from **175 course-provided starting inputs and 104 personally evaluated portal inputs**, not simulated scores. Forecast errors are compared only against subsequently observed returns.
+
+**Examples of predictive performance:** F2's prospective 0.730502 forecast returned 0.505526 (absolute error about **0.225**). F4 had a local forecast error near **1.6 × 10⁻⁹** without materially improving the objective. In a separate **retrospective** F8 structural test, a 17-coefficient quadratic fitted to the **40 initial F8 observations** predicted the **13 later F8 returns** with maximum absolute error below **2 × 10⁻¹⁴**; those thirteen returns were held out from coefficient fitting. These measure different kinds of performance and must not be combined into a single optimiser accuracy score.
 
 **Forecast accuracy and finding a good region are different tests.** Some GP predictions were precise locally while failing to locate better regions. The capstone did not provide an unbiased global-optimiser ranking of HEBO versus TuRBO: unsubmitted candidates have unknown true outputs.
 

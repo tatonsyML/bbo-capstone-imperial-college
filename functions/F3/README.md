@@ -249,7 +249,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 <table><tr><td width="50%"><img src="../../results/figures/f3_2d.svg" width="460" alt="Function 3 two-dimensional representation"></td><td width="50%"><img src="../../results/figures/f3_3d.svg" width="460" alt="Function 3 three-dimensional representation"></td></tr></table>
 
-**Observed points only.** These 2D/3D views project the real inputs and their returned scores; no smooth objective surface has been invented. Only x1 and x2 appear on the horizontal axes; x3–x3 vary across observations and the plots do not control for them.
+**Observed points only.** These 2D/3D views project the real inputs and their returned scores; no smooth objective surface has been invented. Only x1 and x2 appear on the horizontal axes; x3 varies across observations and the plots do not control for them.
 
 [How the visualisations were produced](../../docs/functions.md) · [Graph-generation code](../../results/figures/build_visual_gallery.mjs)
 
