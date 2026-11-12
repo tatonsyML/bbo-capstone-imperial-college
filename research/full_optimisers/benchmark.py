@@ -116,7 +116,7 @@ def build_f8_simulator(root: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray, 
 
 def simulated_f8_score(coefficients: np.ndarray, query: np.ndarray) -> float:
     """F8 QUADRATIC MODEL prediction, never a private portal return."""
-    return float((f8_design(portal_point(query)) @ coefficients)[0])
+    return (f8_design(portal_point(query)) @ coefficients).item()
 
 
 def set_seed(seed: int) -> None:

@@ -25,6 +25,13 @@ def test_f8_original_40_predict_thirteen_returned_points():
     assert abs(simulated_f8_score(coef, np.array([.10,.15,.13,.15,.8,.5,.2,.6])) - 10) < 1e-12
 
 
+def test_simulated_f8_score_returns_python_float():
+    """Avoid deprecated NumPy array-to-scalar conversion."""
+    _, _, coefficients, _ = build_f8_simulator(ROOT)
+    query = np.array([.10, .15, .13, .15, .8, .5, .2, .6])
+    assert type(simulated_f8_score(coefficients, query)) is float
+
+
 def test_f8_design_has_seventeen_features():
     assert f8_design(np.zeros((3, 8))).shape == (3, 17)
 
