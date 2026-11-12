@@ -10,7 +10,7 @@
 
 ## Understanding this function
 
-F5 had a strong directional signal. A sequence of controlled coordinate changes showed increasing scores towards the legal upper boundary; R10 tested (0.999999)⁴ and returned 8662.405. The full interacting power-sum equation was reconstructed **after** the boundary query, so it explains rather than caused that decision.
+F5 had a strong directional signal. A sequence of controlled coordinate changes showed increasing scores towards the legal upper boundary; R10 tested (0.999999)⁴ and returned 8662.405. A power-sum mathematical reconstruction, examined below, helps explain the measured boundary trend.
 
 ### Score progression from real evaluations
 
@@ -23,128 +23,128 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 <details>
 <summary><strong>Round 1 · Opening hypothesis</strong> — 1426.08976 ★ new best</summary>
 
-**Original learning context:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
+**Why this input:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
 
-**Strategy / candidate-selection evidence:** GP and acquisition baseline (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.1-0.75-0.9-0.98`  
 **Actual portal result:** `1426.0897645116545`  
 **Best observed before → after:** `1088.8596181962705` → `1426.0897645116545`.
 
-**After the result:** The submitted point established a new personal best. Second round: GP/UCB with per-function exploration weights; deterministic candidate grids or pools.
+**What I learnt:** The first input improved the starting best and supported investigating the higher-coordinate region.
 
-**Code and evidence:** [Round 1 reflection and portal evidence](../../journey/round_01/README.md) · [Submitted inputs](../../journey/round_01/queries.txt) · [Returned scores](../../journey/round_01/outputs.txt) · [Original coursework notebook](../../journey/round_01/supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb) (coursework, not a verified portal generator) · No separate candidate-generator source authenticated · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_01/README.md) · [Inputs](../../journey/round_01/queries.txt) · [Outputs](../../journey/round_01/outputs.txt) · [Coursework notebook](../../journey/round_01/supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb).
 
 </details>
 
 <details>
 <summary><strong>Round 2 · GP and UCB working package</strong> — 3722.27447 ★ new best</summary>
 
-**Original learning context:** After R1 improved to 1426.09, Week 2 gave F5 the exploitative UCB κ=1.0 and noted that later coordinates near their upper bounds were important.
+**Why this input:** After R1 improved to 1426.09, Week 2 gave F5 the exploitative UCB κ=1.0 and noted that later coordinates near their upper bounds were important.
 
-**Strategy / candidate-selection evidence:** GP and UCB working package *(early-round attribution partly retrospective)*.
+**Approach considered:** GP and UCB working package
 
 **Submitted input:** `0.522156-0.922246-0.999259-0.99589`  
 **Actual portal result:** `3722.27447382346`  
 **Best observed before → after:** `1426.0897645116545` → `3722.27447382346`.
 
-**After the result:** The submitted point established a new personal best. The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
+**What I learnt:** The GP/UCB candidate produced a substantial gain and strengthened the evidence for high input values.
 
-**Code and evidence:** [Round 2 reflection and portal evidence](../../journey/round_02/README.md) · [Submitted inputs](../../journey/round_02/queries.txt) · [Returned scores](../../journey/round_02/outputs.txt) · [Original GP/UCB selection script](../../journey/round_02/week2_ucb_course_aligned.py) · [Eight saved selections](../../journey/round_02/week2_ucb_results.csv) (all eight saved portal values match the submitted record) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_02/README.md) · [Inputs](../../journey/round_02/queries.txt) · [Outputs](../../journey/round_02/outputs.txt) · [GP/UCB Python code](../../journey/round_02/week2_ucb_course_aligned.py) · [Saved candidates](../../journey/round_02/week2_ucb_results.csv) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb).
 
 </details>
 
 <details>
-<summary><strong>Round 3 · Function-specific EI or wider search (retrospective)</strong> — 4295.86773 ★ new best</summary>
+<summary><strong>Round 3 · Function-specific EI or wider search</strong> — 4295.86773 ★ new best</summary>
 
-**Original learning context:** The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
+**Why this input:** The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
 
-**Strategy / candidate-selection evidence:** Function-specific EI or wider search (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** Function-specific EI or wider search
 
 **Submitted input:** `0.508373-0.970147-0.999999-0.999999`  
 **Actual portal result:** `4295.86773060836`  
 **Best observed before → after:** `3722.27447382346` → `4295.86773060836`.
 
-**After the result:** The submitted point established a new personal best. The Week 5 original reflection documents the R4 single-coordinate test: x2 moved from 0.970147 to 0.999999, raising 4295.87 to 4694.32.
+**What I learnt:** Refinement improved the score again, with the later coordinates already near their upper limits.
 
-**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; no standalone original query generator is preserved for this round · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_03/README.md) · [Inputs](../../journey/round_03/queries.txt) · [Outputs](../../journey/round_03/outputs.txt).
 
 </details>
 
 <details>
 <summary><strong>Round 4 · GP, SVM and neural-network diagnostics</strong> — 4694.31731 ★ new best</summary>
 
-**Original learning context:** The Week 5 original reflection documents the R4 single-coordinate test: x2 moved from 0.970147 to 0.999999, raising 4295.87 to 4694.32.
+**Why this input:** The preceding input already placed x3 and x4 at the upper bound. I tested moving x2 to its own maximum while keeping the other coordinates controlled.
 
-**Strategy / candidate-selection evidence:** GP, SVM and neural-network diagnostics *(early-round attribution partly retrospective)*.
+**Approach considered:** GP, SVM and neural-network diagnostics
 
 **Submitted input:** `0.508373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4694.317308235808`  
 **Best observed before → after:** `4295.86773060836` → `4694.317308235808`.
 
-**After the result:** The submitted point established a new personal best. The next controlled x1 increase, holding x2–x4 fixed, improved the score again.
+**What I learnt:** Pushing x2 to the permitted upper value raised the score while the other coordinates remained controlled.
 
-**Code and evidence:** [Round 4 reflection and portal evidence](../../journey/round_04/README.md) · [Submitted inputs](../../journey/round_04/queries.txt) · [Returned scores](../../journey/round_04/outputs.txt) · [Original analysis code](../../journey/round_04/capstone_bbo_week4_module15.py) · [Executed notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb) (final eight inputs stored explicitly; hybrid selection, not an autonomous selector) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_04/README.md) · [Inputs](../../journey/round_04/queries.txt) · [Outputs](../../journey/round_04/outputs.txt) · [Python analysis](../../journey/round_04/capstone_bbo_week4_module15.py) · [Notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb).
 
 </details>
 
 <details>
-<summary><strong>Round 5 · Controlled coordinate probes (retrospective)</strong> — 4807.98608 ★ new best</summary>
+<summary><strong>Round 5 · Controlled coordinate probes</strong> — 4807.98608 ★ new best</summary>
 
-**Original learning context:** The next controlled x1 increase, holding x2–x4 fixed, improved the score again.
+**Why this input:** After Round 4 increased the score, I changed x1 while holding the other coordinates fixed near their upper values.
 
-**Strategy / candidate-selection evidence:** Controlled coordinate probes (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** Controlled coordinate probes
 
 **Submitted input:** `0.558373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4807.986076589498`  
 **Best observed before → after:** `4694.317308235808` → `4807.986076589498`.
 
-**After the result:** The submitted point established a new personal best. Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
+**What I learnt:** A further controlled x1 change produced another improvement along the same path.
 
-**Code and evidence:** [Round 5 reflection and portal evidence](../../journey/round_05/README.md) · [Submitted inputs](../../journey/round_05/queries.txt) · [Returned scores](../../journey/round_05/outputs.txt) · Contemporary reflection and submitted measurements preserved; no standalone selection code authenticated · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_05/README.md) · [Inputs](../../journey/round_05/queries.txt) · [Outputs](../../journey/round_05/outputs.txt).
 
 </details>
 
 <details>
 <summary><strong>Round 6 · GP, ridge and MLP comparison; controlled local fit</strong> — 4957.57171 ★ new best</summary>
 
-**Original learning context:** Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
+**Why this input:** Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
 
-**Strategy / candidate-selection evidence:** GP, ridge and MLP comparison; controlled local fit *(early-round attribution partly retrospective)*.
+**Approach considered:** GP, ridge and MLP comparison; controlled local fit
 
 **Submitted input:** `0.608373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4957.571711515816`  
 **Best observed before → after:** `4807.986076589498` → `4957.571711515816`.
 
-**After the result:** The submitted point established a new personal best. Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
+**What I learnt:** The score rose again, supporting more tests of the directional trend rather than a premature stop.
 
-**Code and evidence:** [Round 6 reflection and portal evidence](../../journey/round_06/README.md) · [Submitted inputs](../../journey/round_06/queries.txt) · [Returned scores](../../journey/round_06/outputs.txt) · [Original Module 17 notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision rationale](../../journey/round_06/results/round6_query_rationale.csv) (standalone fitter source not retained) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_06/README.md) · [Inputs](../../journey/round_06/queries.txt) · [Outputs](../../journey/round_06/outputs.txt) · [Notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision notes](../../journey/round_06/results/round6_query_rationale.csv).
 
 </details>
 
 <details>
-<summary><strong>Round 7 · ARD and local forecast investigations (retrospective)</strong> — 5151.04773 ★ new best</summary>
+<summary><strong>Round 7 · ARD and local forecast investigations</strong> — 5151.04773 ★ new best</summary>
 
-**Original learning context:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
+**Why this input:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
 
-**Strategy / candidate-selection evidence:** ARD and local forecast investigations (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** ARD and local forecast investigations
 
 **Submitted input:** `0.658373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `5151.047725485012`  
 **Best observed before → after:** `4957.571711515816` → `5151.047725485012`.
 
-**After the result:** The submitted point established a new personal best. The Week 8/9 reflections showed gains accelerating along the same x1 path; smaller steps were not automatically safer or better.
+**What I learnt:** The measured improvement continued, although the size of future gains remained uncertain.
 
-**Code and evidence:** [Round 7 reflection and portal evidence](../../journey/round_07/README.md) · [Submitted inputs](../../journey/round_07/queries.txt) · [Returned scores](../../journey/round_07/outputs.txt) · [Next-round audit of Week 7 forecasts](../../journey/round_08/results/week7_audit.csv) (subsequent analysis, not the original Round 7 generator) · No authenticated standalone Round 7 selector · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_07/README.md) · [Inputs](../../journey/round_07/queries.txt) · [Outputs](../../journey/round_07/outputs.txt) · [Forecast comparison](../../journey/round_08/results/week7_audit.csv).
 
 </details>
 
 <details>
 <summary><strong>Round 8 · Extending the improving x1 trajectory</strong> — 5709.36132 ★ new best</summary>
 
-**Original learning context:** The Week 8/9 reflections showed gains accelerating along the same x1 path; smaller steps were not automatically safer or better.
+**Why this input:** The controlled x1 series had improved repeatedly, so I tested a larger step while retaining the other coordinates near the upper bound.
 
-**Strategy / candidate-selection evidence:** The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary..
+**Approach:** The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary.
 
 **Submitted input:** `0.758373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `5709.3613198927205`  
@@ -152,18 +152,18 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Forecast preserved before the Round 8 return:** approximately `5654.123` (local quadratic; see [Round 8 forecast table](../../journey/round_08/README.md)).
 
-**After the result:** The submitted point established a new personal best. Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
+**What I learnt:** A larger x1 step produced a substantial gain. The saved forecast was directionally helpful but not exact.
 
-**Code and evidence:** [Round 8 reflection and portal evidence](../../journey/round_08/README.md) · [Submitted inputs](../../journey/round_08/queries.txt) · [Returned scores](../../journey/round_08/outputs.txt) · [Original Module 19 Python analysis](../../journey/round_08/capstone_bbo_module19_round8.py) · [Original eight-input decision record](../../journey/round_08/results/round8_queries.csv) (all eight match portal inputs) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_08/README.md) · [Inputs](../../journey/round_08/queries.txt) · [Outputs](../../journey/round_08/outputs.txt) · [Python analysis](../../journey/round_08/capstone_bbo_module19_round8.py) · [Saved candidates](../../journey/round_08/results/round8_queries.csv).
 
 </details>
 
 <details>
 <summary><strong>Round 9 · Another step towards the upper boundary</strong> — 6583.56145 ★ new best</summary>
 
-**Original learning context:** Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
+**Why this input:** Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
 
-**Strategy / candidate-selection evidence:** Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gain per unit x1 has been increasing, and independent local quadratic / GP checks both forecast roughly 6454..
+**Approach:** Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gain per unit x1 has been increasing, and independent local quadratic / GP checks both forecast roughly 6454.
 
 **Submitted input:** `0.858373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `6583.56144525802`  
@@ -171,77 +171,77 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Pre-result numerical forecast:** `6454.0` (recorded before return).
 
-**After the result:** The submitted point established a new personal best. The original Round 10 decision says that nine successive gains justified testing every coordinate at the legal upper corner, with external cubic/challenger support.
+**What I learnt:** The next x1 step exceeded the pre-result forecast and strengthened the case for testing the legal corner.
 
-**Code and evidence:** [Round 9 reflection and portal evidence](../../journey/round_09/README.md) · [Submitted inputs](../../journey/round_09/queries.txt) · [Returned scores](../../journey/round_09/outputs.txt) · [Dated eight-input decision and forecast ledger](../../journey/round_09/results/round9_queries.csv) (all eight match portal inputs) · [Original controlled local-fitting code](../../journey/round_09/round9_controlled_fits.py) (includes F5 analysis) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_09/README.md) · [Inputs](../../journey/round_09/queries.txt) · [Outputs](../../journey/round_09/outputs.txt) · [Candidate forecasts](../../journey/round_09/results/round9_queries.csv) · [Original controlled local-fitting code](../../journey/round_09/round9_controlled_fits.py).
 
 </details>
 
 <details>
 <summary><strong>Round 10 · Upper-bound exploitation supported by nine observed gains and cubic challenger</strong> — 8662.40500 ★ new best</summary>
 
-**Original learning context:** The original Round 10 decision says that nine successive gains justified testing every coordinate at the legal upper corner, with external cubic/challenger support.
+**Why this input:** The original Round 10 decision says that nine successive gains justified testing every coordinate at the legal upper corner, with external cubic/challenger support.
 
-**Strategy / candidate-selection evidence:** Upper-bound exploitation supported by nine observed gains and cubic challenger.
+**Approach:** Test the legal upper corner.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `6583.56144525802` → `8662.405001248297`.
 
-**After the result:** The submitted point established a new personal best. Repeating the confirmed boundary score did not establish a hidden-source global optimum.
+**What I learnt:** Testing the maximum permitted coordinates delivered 8662.405, the best recorded score.
 
-**Code and evidence:** [Round 10 reflection and portal evidence](../../journey/round_10/README.md) · [Submitted inputs](../../journey/round_10/queries.txt) · [Returned scores](../../journey/round_10/outputs.txt) · [Dated final candidate list](../../journey/round_10/round10_candidates.csv) · [Pre-result planning snapshot](../../journey/round_10/optimisation.yaml) · [GP/HEBO-inspired/TuRBO-style challenger code](../../src/bbo/optimizer.py) (not proof of the exact final per-function generator) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_10/README.md) · [Inputs](../../journey/round_10/queries.txt) · [Outputs](../../journey/round_10/outputs.txt) · [Candidate list](../../journey/round_10/round10_candidates.csv) · [Search plan](../../journey/round_10/optimisation.yaml) · [Related optimiser code](../../src/bbo/optimizer.py).
 
 </details>
 
 <details>
-<summary><strong>Round 11 · Alternative-region exploration and structural investigations</strong> — 8662.40500</summary>
+<summary><strong>Round 11 · Repeating the legal upper corner</strong> — 8662.40500</summary>
 
-**Original learning context:** Repeating the confirmed boundary score did not establish a hidden-source global optimum.
+**Why this input:** The legal upper-corner query returned 8662.405 in Round 10. I repeated the input to check consistency.
 
-**Strategy / candidate-selection evidence:** Alternative-region exploration and structural investigations.
+**Approach:** Repeat at the measured best.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
 
-**After the result:** The submitted point did not beat the incumbent. Another repeat held the incumbent while teaching little about other inputs.
+**What I learnt:** The same upper-corner input returned the same result; this checks consistency without exploring elsewhere.
 
-**Code and evidence:** [Round 11 reflection and portal evidence](../../journey/round_11/README.md) · [Portal inputs/outputs for R11](../../data/portal_rounds_11_12.csv) · [Later reproducible DBSCAN diagnostic](../../research/diagnostics/clustering/clustering_audit.py) (the clustering study was contemporary; this script was assembled later and was not the original query generator) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_11/README.md) · [Portal results](../../data/portal_rounds_11_12.csv) · [Clustering analysis (later reproduction)](../../research/diagnostics/clustering/clustering_audit.py).
 
 </details>
 
 <details>
-<summary><strong>Round 12 · Controlled probes, repeats and structural investigations</strong> — 8662.40500</summary>
+<summary><strong>Round 12 · Checking the boundary result again</strong> — 8662.40500</summary>
 
-**Original learning context:** Another repeat held the incumbent while teaching little about other inputs.
+**Why this input:** After matching upper-corner returns in Rounds 10 and 11, I retained the same vector.
 
-**Strategy / candidate-selection evidence:** Controlled probes, repeats and structural investigations.
+**Approach:** Repeat at the upper boundary.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
 
-**After the result:** The submitted point did not beat the incumbent. The final record again retained the highest legal tested point; the mathematically reconstructed power-sum function came from later analysis.
+**What I learnt:** Another repeat retained the incumbent but provided no new information about alternative locations.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F5 boundary repeat; it was not generated by a separate script in the four original Week 12 analysis scripts) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 
 <details>
-<summary><strong>Round 13 · Final decision</strong> — 8662.40500</summary>
+<summary><strong>Round 13 · Final boundary repeat</strong> — 8662.40500</summary>
 
-**Original learning context:** The final record again retained the highest legal tested point; the mathematically reconstructed power-sum function came from later analysis.
+**Why this input:** The upper-corner query remained the best measured location. I chose to repeat it in the final round.
 
-**Strategy / candidate-selection evidence:** Final exploitation and regional probes.
+**Approach:** Final repeat of the boundary best.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
 
-**After the result:** The submitted point did not beat the incumbent. Boundary tests are justified when they answer a concrete, evidence-supported question. Avoid claiming that a retrospective equation drove an earlier query.
+**What I learnt:** The final repeat confirmed the measured boundary result, without establishing an unseen global optimum.
 
-**Code and evidence:** [Round 13 reflection and portal evidence](../../journey/round_13/README.md) · [Submitted inputs](../../journey/round_13/queries.txt) · [Returned scores](../../journey/round_13/outputs.txt) · [Final thirteen-round reflection](../../journey/final_reflection/README.md) (final reasoning, not a surviving standalone selector) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_13/README.md) · [Inputs](../../journey/round_13/queries.txt) · [Outputs](../../journey/round_13/outputs.txt) · [Final reflection](../../journey/final_reflection/README.md).
 
 </details>
 
@@ -265,8 +265,7 @@ At the legal upper input of **(0.999999)⁴**, the equation returns **8662.40500
 
 ## Lessons to carry forward
 
-Boundary tests are justified when they answer a concrete, evidence-supported question. Avoid claiming that a retrospective equation drove an earlier query.
+Boundary tests proved productive when supported by successive measured gains. A high boundary score is not a substitute for testing competing regions.
 
-**Source discipline:** The originally submitted weekly reflections informed the learning context; the portal results and preserved files establish what actually happened. Historical experiments, post-outcome explanations and model-generated graph values are not interchangeable.
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
