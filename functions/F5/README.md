@@ -24,7 +24,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 <details>
 <summary><strong>Round 1 · Opening hypothesis</strong> — 1426.08976 ★ new best</summary>
 
-**Why this input:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
+**Why this input:** My original Round 1 reflection used chemical yield as a working analogy and hypothesised one prominent peak. I chose to exploit a stronger area in the supplied observations rather than search globally. The analogy is not verified as the programme's official F5 scenario, and the peak hypothesis was not established by the data.
 
 **Approach considered:** Exploitation near high-scoring initial observations; a single prominent peak was a working hypothesis, not a verified property of the hidden objective.
 
