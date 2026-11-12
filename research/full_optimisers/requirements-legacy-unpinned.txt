@@ -1,5 +1,0 @@
-# Optional challenger engines
-HEBO
-botorch
-gpytorch
-torch
