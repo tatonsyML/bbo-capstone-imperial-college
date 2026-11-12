@@ -68,7 +68,7 @@ Read the same **through-Week-9** historical observation snapshot for each functi
 - That simulated F8 objective returns are real portal scores.
 - That a single best candidate would dominate on eight different unknown functions.
 - That a candidate chosen using the final history was actually available before its original submission date.
-- That the optional HEBO and BoTorch engines have been executed here: **their packages are not available during the code review**, so no numeric algorithm-versus-algorithm verdict is recorded.
+- That the executed HEBO/TuRBO-1 benchmark establishes superiority on the undisclosed functions. The [12 November 2026 comparison](../research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) used simulated feedback from the fitted F8 model and three random seeds; the unscored F1–F8 proposal mode remains untested.
 
 ## Code-reading route
 
