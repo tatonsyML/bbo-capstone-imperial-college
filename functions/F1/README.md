@@ -281,7 +281,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 ## Mathematical evidence and its limits
 
-The recoverable model is the **two-component Gaussian-modulated cosine (Gabor-type) hypothesis**:
+The reconstructed model is the **two-component Gaussian-modulated cosine (Gabor-type) hypothesis**:
 
 $$
 \hat f_1(x_1,x_2)=\sum_{(c,A)\in\{(c_1,1),(c_2,2)\}} A\,e^{-1600[(x_1-c)^2+(x_2-c)^2]}\cos[40(x_1-c)]\cos[40(x_2-c)].

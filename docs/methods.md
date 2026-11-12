@@ -54,7 +54,7 @@ The original committee explored model and acquisition diversity, but does not re
 5. Return numerical feedback from the **fitted F8 quadratic simulator**, not from the private portal.
 6. Compare best simulated value, simulated regret to the fitted peak and duplicate rates. Record package versions and seeds.
 
-**Interpretation:** this tests methods on a **retrospectively fitted model** of F8, not their historical portal performance. Recovering F8 structure from the initial 40 is independently reproducible, but that does not authenticate the undisclosed source formula everywhere.
+**Interpretation:** this tests methods on a **retrospectively fitted model** of F8, not their historical portal performance. Fitting F8 structure from the initial 40 is independently reproducible, but that does not authenticate the undisclosed source formula everywhere.
 
 ### Experiment B: eight one-step, unscored proposals
 
@@ -137,7 +137,7 @@ On Windows PowerShell, replace `PYTHONPATH=src <command>` with `$env:PYTHONPATH 
 |---|---|---|
 | F8 full-rank fit | 40 initial course observations | 17 identifiable coefficients |
 | F8 post-fit validation | 13 later personal portal returns, excluded from fit | Maximum absolute error under `2e-14` (test threshold) |
-| F8 predicted vertex | Recovered quadratic | Centre approximately `(0.10,0.15,0.13,0.15,0.80,0.50,0.20,0.60)`, maximum approximately 10 |
+| F8 predicted vertex | Fitted quadratic | Centre approximately `(0.10,0.15,0.13,0.15,0.80,0.50,0.20,0.60)`, maximum approximately 10 |
 | F5 permitted corner | Four inputs of `0.999999` | Approximately `8662.405001248297` |
 
 The code is in [src/bbo/structural_validation.py](../src/bbo/structural_validation.py) and tests in [tests/test_structural_validation.py](../tests/test_structural_validation.py). The [F8 CSV](../data/accumulated/function_8/observations_through_week13.csv) labels initial versus later points. The model fits **only the initial 40**.

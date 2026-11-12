@@ -64,7 +64,7 @@ Four modifications mattered most:
 
 1. **Structural models:** F8's quadratic yielded the analytic maximum **10**; related reconstruction guided F1 to **1.999999999676** and predicted F7's **3.322368**. My biggest methodological shift.
 2. **Adjustable search width:** Widening F4's stalled search raised **0.659 to 0.730459** (R11); later refinement reached **0.746898** (R13).
-3. **Evidence-led override:** F5's boundary trend justified the upper-corner query (**8,662.405**, R10). Its complete equation was recovered afterwards.
+3. **Evidence-led override:** F5's boundary trend justified the upper-corner query (**8,662.405**, R10). Its complete equation was reconstructed afterwards.
 4. **Chronological validation:** F2's **0.225** forecast error reduced trust in the local GP. Comparing other regions preceded its R13 best of **0.744250**, without proving causation.
 
 Better decisions, rather than added complexity, drove these changes.
@@ -110,7 +110,7 @@ Unlike F8's additive response, F5 took the form:
 
 **f₅(x) = 0.01 Σₖ [Σⱼ(4xⱼ)ᵏ − bₖ]²**, for k and j from 1 to 4, with **b = (7.5, 16, 40, 120)**.
 
-Its squared sums introduce interactions between coordinates and help explain why the permitted upper corner scored so highly. However, I recovered the complete F5 equation *after* obtaining that boundary result. It explains the earlier experiment; it did not generate it.
+Its squared sums introduce interactions between coordinates and help explain why the permitted upper corner scored so highly. However, I reconstructed the complete F5 equation *after* obtaining that boundary result. It explains the earlier experiment; it did not generate it.
 
 F2, F3, F4 and F6 remained unresolved. Numerical agreement with tested observations does not authenticate the hidden source code.
 
@@ -118,7 +118,7 @@ F2, F3, F4 and F6 remained unresolved. Numerical agreement with tested observati
 
 **The trade-off was function-specific**, not simply exploring early and exploiting late. F1 needed a new representation, F4 a wider search, F2 another region and F8 no further search after its confirmed analytical optimum. More models increased complexity and assumptions. In R13, information had no later query to influence; candidates needed credible immediate upside.
 
-**My biggest surprise:** F8's eight-dimensional function yielded a simple quadratic while lower-dimensional functions remained unresolved. Structure mattered more than dimension. Peers reinforced this: Andreia's function-specific BoTorch contrasted with Nayeem's transparent EI; Patrick and Rishin recovered F8's quadratic through different approaches. No optimiser was universally superior.
+**My biggest surprise:** F8's eight-dimensional function yielded a simple quadratic while lower-dimensional functions remained unresolved. Structure mattered more than dimension. Peers reinforced this: Andreia's function-specific BoTorch contrasted with Nayeem's transparent EI; Patrick and Rishin identified F8's quadratic through different approaches. No optimiser was universally superior.
 
 **Starting again**, I would test structural models alongside GPs from R1; record forecasts before outcomes; preserve rejected candidates and settings; audit duplicates; validate chronologically; and benchmark full HEBO/TuRBO rather than confuse them with my adaptations. I would investigate unresolved F2/F3/F4/F6 further.
 

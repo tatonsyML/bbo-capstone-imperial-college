@@ -29,7 +29,7 @@ The [automated evidence audit](../src/bbo/evidence_audit.py) checks this exact i
 - F7 best **3.3223680113931557**, first reached Round 12. The positive Hartmann-6 hypothesis has a documented **pre-result** Round 12 prediction; evaluating it on all 43 known F7 rows is a subsequent retrospective consistency check, not proof that all coefficients were originally known.
 - F8 best **10**, first reached Round 10 at `[0.10, 0.15, 0.13, 0.15, 0.80, 0.50, 0.20, 0.60]`.
 - Some historic candidate-generating scripts are unavailable. Where a script survives but its exact relationship to one particular query is unverified, label it as **related historical code**, not the proven generator.
-- The F1 two-component reconstruction is a later **own-data-only parameter fit** within a supplied model family; the family was recovered from separate working code, not independently discovered from ten observations.
+- The F1 two-component reconstruction is a later **own-data-only parameter fit** within a supplied model family; the family came from separate working code, not independently discovered from ten observations.
 - The F8 40-initial/13-later test is **retrospective**. Full official HEBO and BoTorch TuRBO-1 comparisons are **post-capstone** and use a fitted simulator, not portal outcomes.
 
 ## Publication consistency checklist
