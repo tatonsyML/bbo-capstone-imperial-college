@@ -35,13 +35,15 @@ def test_main_datasheet_maps_template_and_links_complete_function_stories():
     ), start=1):
         assert f"## {number}. {heading}" in datasheet
 
-    assert "## Appendix A. Function-specific dataset notes" in datasheet
+    assert "## Appendix A. Function-specific data profiles" in datasheet
+    assert datasheet.count("### F") == 8
     assert "## Appendix B. Module 25 template coverage" in datasheet
 
     for function in range(1, 9):
         link = f"functions/F{function}/README.md"
         assert f"]({link})" in datasheet, link
-        assert f"| **F{function}** |" in datasheet
+        assert f"### F{function} ·" in datasheet
+        assert f"](functions/F{function}/observations.csv)" in datasheet
         assert f"({STARTING[function-1]}, {DIMS[function-1]})" in datasheet
         assert f"({STARTING[function-1]},)" in datasheet
 
@@ -141,3 +143,6 @@ def test_readme_links_the_research_without_imposing_an_editorial_word_count():
         assert f"]({target})" in readme, target
     assert "Gaussian Process" in readme
     assert "8 functions" in readme.lower()
+    assert "## Non-technical summary" in readme
+    summary = readme.split("## Non-technical summary", 1)[1].split("**Technical scope:**", 1)[0]
+    assert 85 <= len(summary.split()) <= 115

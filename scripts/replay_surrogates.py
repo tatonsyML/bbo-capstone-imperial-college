@@ -65,6 +65,7 @@ def actual_submission(function: int, round_number: int):
 def replay(function: int, round_number: int, kernel: str,
            acquisition: str, restarts: int, seed: int, n_power: int,
            beta: float, xi: float) -> dict:
+    """Fit a new counterfactual model using only pre-round observations."""
     X, y, excluded, earlier = load_before_round(function, round_number)
     gp, transformer, transformed_y = fit_gp(
         X, y, kernel=kernel, transform="yeo-johnson",
@@ -80,6 +81,7 @@ def replay(function: int, round_number: int, kernel: str,
     else:
         acquisition_values = upper_confidence_bound(mu, sd, beta=beta)
 
+    # This is a newly proposed input, not the historical portal submission.
     winner = int(np.argmax(acquisition_values))
     proposal = np.clip(np.round(pool[winner], 6), 0.0, 0.999999)
     posterior_mu, posterior_sd = gp.predict(
@@ -89,6 +91,7 @@ def replay(function: int, round_number: int, kernel: str,
     submitted = actual_submission(function, round_number)
     logged_point_prediction = None
     if submitted is not None:
+        # A refitted prediction at a known point is not an original saved forecast.
         known_mu, known_sd = gp.predict(
             np.asarray(submitted, dtype=float).reshape(1, -1),
             return_std=True,
@@ -152,6 +155,7 @@ def replay(function: int, round_number: int, kernel: str,
 
 
 def main() -> None:
+    """Run the retrospective comparison and optionally save labelled JSON."""
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--function", type=int, required=True, choices=range(1, 9))
     p.add_argument("--round", type=int, required=True, choices=range(1, 14))

@@ -8,9 +8,9 @@
 
 **8 functions** · **2–8 input dimensions** · **13 rounds** · **279 recorded observations**
 
-## The project
+## Non-technical summary
 
-I investigated how to maximise eight unknown mathematical functions when I was allowed one new evaluation per function in each round. Each function accepted between two and eight numerical inputs and returned a score. Over thirteen rounds, I moved from exploratory searches to Gaussian Process models, controlled experiments and mathematical reconstruction. Some forecasts were accurate; others failed badly. I learnt that predicting a result precisely does not always identify the most useful experiment. This repository shares my submitted inputs, actual scores, Python code, visualisations and the decisions that shaped the search, including mistakes and subsequent improvements.
+I explored how to find better settings for eight unknown mathematical functions when each experiment was limited. Every function took between two and eight numbers and returned a score, which I tried to increase. Across thirteen rounds, I tested new settings, used computer models to guide choices and changed direction when predictions failed. All eight functions improved on their starting best scores. Function 8 reached a measured score of 10, while Function 4 improved after I searched beyond a narrow area. The main lesson was that an accurate forecast does not always identify the best next experiment.
 
 **Technical scope:** Inputs were continuous values in the permitted range 0–0.999999 (six decimal places); observed results and later model predictions are kept separate.
 

@@ -31,6 +31,7 @@ def f7_hypothesis(x):
     x = np.atleast_2d(np.asarray(x, dtype=float))
     if x.shape[1] != 6:
         raise ValueError("F7 requires six numeric coordinates.")
+    # Broadcasting compares each candidate with four Hartmann reference centres.
     difference = x[:, None, :] - P[None, :, :]
     distances = np.sum(A[None, :, :] * difference**2, axis=2)
     return np.sum(ALPHA[None, :] * np.exp(-distances), axis=1)
@@ -50,6 +51,7 @@ def validate_recorded_f7(root=None):
         raise AssertionError(f"Expected 43 F7 observations; found {len(rows)}")
     x = np.array([[float(r[f"x{i}"]) for i in range(1, 7)] for r in rows])
     actual = np.array([float(r["output"]) for r in rows])
+    # This checks a published record, not independent performance on new inputs.
     predicted = f7_hypothesis(x)
     max_error = float(np.max(np.abs(predicted - actual)))
     if max_error > 3e-14:

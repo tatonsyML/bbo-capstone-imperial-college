@@ -11,6 +11,7 @@ import pandas as pd
 
 def load_function(repo_root, fn):
     """Load only training observations returned by Week 9."""
+    # Using the Week 9 snapshot prevents later portal results leaking into this fit.
     p=Path(repo_root)/'data'/'accumulated'/f'function_{fn}'/'observations_through_week9.csv'
     df=pd.read_csv(p)
     xs=[c for c in df.columns if c.startswith('x')]
@@ -28,11 +29,13 @@ def f8_additive_quadratic(repo_root):
     for j in range(X.shape[1]):
         cols.extend([X[:,j],X[:,j]**2])
     Z=np.column_stack(cols)
+    # A least-squares explanatory fit is not access to the original hidden formula.
     coef=np.linalg.lstsq(Z,y,rcond=None)[0]
     residual=np.max(np.abs(Z@coef-y))
     opt=[]; k=1
     for j in range(8):
         a,b=coef[k],coef[k+1]; k+=2
+        # Concave coordinate terms peak at their vertex; otherwise examine a boundary.
         x=-a/(2*b) if b<0 else (0.999999 if a+b>0 else 0.0)
         opt.append(float(np.clip(x,0,.999999)))
     z=[1.0]

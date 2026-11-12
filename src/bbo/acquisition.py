@@ -17,6 +17,7 @@ def expected_improvement(mu, sigma, best, xi=0.0):
     """
     mu = np.asarray(mu, float)
     sigma = np.maximum(np.asarray(sigma, float), 1e-12)
+    # EI rewards both the chance of beating the incumbent and the size of the gain.
     improvement = mu - best - xi
     z = improvement / sigma
     return improvement * norm.cdf(z) + sigma * norm.pdf(z)
@@ -25,9 +26,11 @@ def expected_improvement(mu, sigma, best, xi=0.0):
 def probability_improvement(mu, sigma, best, xi=0.0):
     """Probability that a GP prediction improves on the incumbent."""
     sigma = np.maximum(np.asarray(sigma, float), 1e-12)
+    # Unlike EI, PI measures the likelihood of any gain, not how large it might be.
     return norm.cdf((np.asarray(mu, float) - best - xi) / sigma)
 
 
 def upper_confidence_bound(mu, sigma, beta=1.96):
     """Exploration/exploitation score = predicted mean + beta × uncertainty."""
+    # Raising beta increases the value assigned to uncertain, untested regions.
     return np.asarray(mu, float) + float(beta) * np.asarray(sigma, float)
