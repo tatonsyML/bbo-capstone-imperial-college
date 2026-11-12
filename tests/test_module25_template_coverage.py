@@ -59,6 +59,41 @@ def test_main_datasheet_maps_template_and_links_complete_function_stories():
         )
 
 
+def test_datasheet_strategy_outcomes_match_canonical_measurements():
+    """Eight concise profiles contain measured best vectors and evidence limits."""
+    import re
+
+    datasheet = (ROOT / "DATASHEET.md").read_text(encoding="utf-8")
+    with (ROOT / "data/all_observations.csv").open(
+        encoding="utf-8", newline=""
+    ) as handle:
+        all_rows = list(csv.DictReader(handle))
+
+    for function, dimensions in enumerate(DIMS, start=1):
+        heading = f"### F{function} ·"
+        section = datasheet.split(heading, 1)[1].split(
+            f"### F{function + 1} ·" if function < 8 else "**Scope:**", 1
+        )[0]
+        assert section.count("**Optimisation strategy and outcome:**") == 1
+        assert "**Confidence:**" in section and "global" in section.lower()
+        assert "local" in section.lower()
+        assert ("explor" in section.lower() or "region" in section.lower())
+
+        measured = [
+            row for row in all_rows
+            if int(row["function"]) == function
+            and row["source"] == "personal_portal"
+        ]
+        best = max(measured, key=lambda row: Decimal(row["output"]))
+        expected_input = "-".join(
+            f'{Decimal(best[f"x{i}"]):.6f}' for i in range(1, dimensions + 1)
+        )
+        assert f"**Best measured input:** `{expected_input}`" in section
+        found_output = re.search(r"\*\*Best measured output:\*\* `([^`]+)`", section)
+        assert found_output is not None, function
+        assert Decimal(found_output.group(1)) == Decimal(best["output"])
+
+
 def test_all_eight_function_stories_preserve_canonical_best_results():
     """Score and exact six-decimal vector stay authoritative in function pages."""
     with (ROOT / "data/all_observations.csv").open(

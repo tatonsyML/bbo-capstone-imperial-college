@@ -1,5 +1,6 @@
 # Round 2 · Module 13 | UCB experiments and initial candidate selection
 
+**Round navigation (2/13):** [← Previous: Round 1](../round_01/README.md) · [All thirteen rounds](../README.md) · [Next: Round 3 →](../round_03/README.md)
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
@@ -47,3 +48,5 @@ The [Week 2 UCB notebook](Capstone_BBO_Week2_UCB_only.ipynb), [Python script](we
 | [Module13_Round2_Original_Package.zip](Module13_Round2_Original_Package.zip) | original ZIP package | archive package |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)
+
+**Round navigation (2/13):** [← Previous: Round 1](../round_01/README.md) · [All thirteen rounds](../README.md) · [Next: Round 3 →](../round_03/README.md)

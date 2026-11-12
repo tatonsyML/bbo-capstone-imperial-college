@@ -1,5 +1,6 @@
 # Function 6 · Escaping an unstable local region
 
+**Function navigation (6/8):** [← Previous: F5](../F5/README.md) · [All eight functions](../README.md) · [Next: F7 →](../F7/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
 **5 inputs · 20 starting observations · 13 rounds**
@@ -259,3 +260,5 @@ Repeatedly fitting a local model does not fix a locally unreliable response. Cha
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
+
+**Function navigation (6/8):** [← Previous: F5](../F5/README.md) · [All eight functions](../README.md) · [Next: F7 →](../F7/README.md)

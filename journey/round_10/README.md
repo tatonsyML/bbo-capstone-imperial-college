@@ -1,5 +1,6 @@
 # Round 10 · Module 21 | Transparent decisions, F5 boundary and F8 structure
 
+**Round navigation (10/13):** [← Previous: Round 9](../round_09/README.md) · [All thirteen rounds](../README.md) · [Next: Round 11 →](../round_11/README.md)
 **What happened:** The [submitted inputs](queries.txt) and [returned outputs](outputs.txt) are confirmed portal results. F5 reached **8662.405001248297** at the feasible boundary and F8 reached **10** at the fitted quadratic vertex. The document below also retains decision-time predictions that **preceded** the portal outputs.
 
 ## My reasoning at the time
@@ -104,3 +105,5 @@ This document makes no claim that F3, F6, F7 or F8 achieved the forecast scores;
 
 
 [Complete observations](../../data/all_observations.csv) · [F5/F8 validation](../../notebooks/Capstone_Final_Walkthrough.ipynb).
+
+**Round navigation (10/13):** [← Previous: Round 9](../round_09/README.md) · [All thirteen rounds](../README.md) · [Next: Round 11 →](../round_11/README.md)

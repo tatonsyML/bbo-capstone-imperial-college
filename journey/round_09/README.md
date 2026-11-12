@@ -1,5 +1,6 @@
 # Round 9 · Module 20 | A correct forecast can still lead to poor search
 
+**Round navigation (9/13):** [← Previous: Round 8](../round_08/README.md) · [All thirteen rounds](../README.md) · [Next: Round 10 →](../round_10/README.md)
 **Evidence:** [Submitted inputs](queries.txt) and [returned outputs](outputs.txt) are the observed portal record. The forecasts below were recorded before the result, as documented in the [Week 9 audit](../../results/week9_forecast_audit.csv).
 
 ## My reasoning at the time
@@ -43,3 +44,5 @@ I considered the *value of one more expensive query*, using **Week 8 forecast er
 ## Files
 
 [Queries](queries.txt) · [Returns](outputs.txt) · [Week 8 audit](results/week8_audit.csv) · [scaling ledger](results/scaling_ledger.csv) · [cumulative historical records](results/submission_history_through_week8.csv).
+
+**Round navigation (9/13):** [← Previous: Round 8](../round_08/README.md) · [All thirteen rounds](../README.md) · [Next: Round 10 →](../round_10/README.md)

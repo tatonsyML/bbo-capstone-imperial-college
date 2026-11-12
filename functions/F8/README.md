@@ -1,5 +1,6 @@
 # Function 8 · From GP refinement to an exact fitted quadratic
 
+**Function navigation (8/8):** [← Previous: F7](../F7/README.md) · [All eight functions](../README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Source observations](observations.csv) · [Full decision ledger](selection_history.csv)
 
 **8 inputs · 40 starting observations · 13 evaluated rounds**
@@ -277,3 +278,5 @@ For each input, \(\partial\hat f_8/\partial x_i=-2w_i(x_i-c_i)\). The diagonal H
 
 
 [← Function index](../README.md) · [Data provenance](../../DATASHEET.md) · [Model limitations](../../MODEL_CARD.md)
+
+**Function navigation (8/8):** [← Previous: F7](../F7/README.md) · [All eight functions](../README.md)

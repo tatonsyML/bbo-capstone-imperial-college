@@ -1,5 +1,6 @@
 # Round 5 · Module 16 | Controlled coordinate tests
 
+**Round navigation (5/13):** [← Previous: Round 4](../round_04/README.md) · [All thirteen rounds](../README.md) · [Next: Round 6 →](../round_06/README.md)
 **Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
@@ -41,3 +42,5 @@ My Week 5 analysis distinguishes measured, controlled experiments from conceptua
 | [outputs.txt](outputs.txt) | returned output values | portal observation, historical |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)
+
+**Round navigation (5/13):** [← Previous: Round 4](../round_04/README.md) · [All thirteen rounds](../README.md) · [Next: Round 6 →](../round_06/README.md)

@@ -1,5 +1,6 @@
 # Function 4 · When prediction accuracy became the wrong objective
 
+**Function navigation (4/8):** [← Previous: F3](../F3/README.md) · [All eight functions](../README.md) · [Next: F5 →](../F5/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
 **4 inputs · 30 starting observations · 13 rounds**
@@ -261,3 +262,5 @@ The next query must be worthwhile, not merely predictable. Adjust search width w
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
+
+**Function navigation (4/8):** [← Previous: F3](../F3/README.md) · [All eight functions](../README.md) · [Next: F5 →](../F5/README.md)

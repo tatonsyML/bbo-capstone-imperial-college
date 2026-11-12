@@ -4,6 +4,8 @@
 
 This is my chronological account of thirteen rounds of experiments. Each round links the selected inputs, measured results, reasoning and relevant Python code. The function pages explain how the results changed the next decision.
 
+**Read in order:** [Start at Round 1](round_01/README.md). Use Previous and Next at the top or bottom of each round to follow the strategy through Round 13.
+
 **Numbering:** *Week* and *Round* refer to the same evaluation cycle (Week 1 = Round 1). *Module* refers to the course module covering that round. For example, Round 1 belongs to Module 12, and Round 13 belongs to Module 24. Labels such as **Module 21.2** identify an assessment component within a course module, not a separate optimisation round.
 
 | Round | Module | Main method or question | Evidence and lesson | Source folder |

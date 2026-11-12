@@ -1,5 +1,6 @@
 # Function 5 · Controlled steps to a productive boundary
 
+**Function navigation (5/8):** [← Previous: F4](../F4/README.md) · [All eight functions](../README.md) · [Next: F6 →](../F6/README.md)
 [← All functions](../README.md) · [Project home](../../README.md) · [Observed inputs and outputs](observations.csv) · [Complete decision ledger](selection_history.csv)
 
 **4 inputs · 20 starting observations · 13 rounds**
@@ -269,3 +270,5 @@ Boundary tests proved productive when supported by successive measured gains. A 
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
+
+**Function navigation (5/8):** [← Previous: F4](../F4/README.md) · [All eight functions](../README.md) · [Next: F6 →](../F6/README.md)

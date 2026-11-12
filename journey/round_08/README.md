@@ -1,5 +1,6 @@
 # Round 8 · Module 19 | Test forecasts rather than assume they are correct
 
+**Round navigation (8/13):** [← Previous: Round 7](../round_07/README.md) · [All thirteen rounds](../README.md) · [Next: Round 9 →](../round_09/README.md)
 **Evidence:** [Submitted inputs](queries.txt) and [returned outputs](outputs.txt) are real portal records. The forecasts below were recorded before receiving the corresponding return.
 
 ## My reasoning at the time
@@ -40,3 +41,5 @@ I used the LLM as an **analytical assistant**, not as a stochastic numerical opt
 ## Original files and provenance
 
 Archived from the Module 19 ZIP dated **8 October 2026**, with programme-supplied NumPy seed files omitted. [Original analysis](capstone_bbo_module19_round8.py), [Round 8 query record](results/round8_queries.csv), [Week 7 audit](results/week7_audit.csv), [history through Week 7](results/submission_history_through_week7.csv) and [portal observations](../../data/all_observations.csv).
+
+**Round navigation (8/13):** [← Previous: Round 7](../round_07/README.md) · [All thirteen rounds](../README.md) · [Next: Round 9 →](../round_09/README.md)
