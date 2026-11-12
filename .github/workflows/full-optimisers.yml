@@ -1,7 +1,11 @@
-# Optional POST-CAPSTONE benchmark. Only manual dispatch; no fabricated portal scores.
+# Optional POST-CAPSTONE benchmark. Manual dispatch and review-branch validation; no portal scores.
 name: Full HEBO vs TuRBO-1 (simulated F8)
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/full-optimisers.yml'
   workflow_dispatch:
     inputs:
       budget:
@@ -28,7 +32,7 @@ jobs:
       - name: Install official HEBO dependencies
         run: python -m pip install -r research/full_optimisers/requirements-hebo.txt
       - name: Run HEBO on fixed data and model-only feedback
-        run: python research/full_optimisers/benchmark.py --engine hebo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
+        run: python research/full_optimisers/benchmark.py --engine hebo --mode ${{ inputs.mode || 'f8' }} --budget ${{ inputs.budget || 12 }} --seeds 0 1 2
       - uses: actions/upload-artifact@v4
         with:
           name: hebo-records
@@ -47,7 +51,7 @@ jobs:
       - name: Install BoTorch and GPyTorch
         run: python -m pip install -r research/full_optimisers/requirements-turbo.txt
       - name: Run TuRBO-1 on identical data and model-only feedback
-        run: python research/full_optimisers/benchmark.py --engine turbo --mode ${{ inputs.mode }} --budget ${{ inputs.budget }} --seeds 0 1 2
+        run: python research/full_optimisers/benchmark.py --engine turbo --mode ${{ inputs.mode || 'f8' }} --budget ${{ inputs.budget || 12 }} --seeds 0 1 2
       - uses: actions/upload-artifact@v4
         with:
           name: turbo-records
