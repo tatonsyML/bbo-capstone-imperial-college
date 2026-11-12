@@ -1,124 +1,226 @@
-# Model Card | Black-Box Optimisation Methods
+# Model Card | Adaptive Black-Box Optimisation
+
+**Eight unknown functions. Thirteen rounds. Learning to make better decisions under uncertainty.**
 
 *Imperial College London · Professional Certificate in Machine Learning and Artificial Intelligence*
 
-This model card describes my function-specific optimisation workflow across **eight black-box objectives and thirteen returned rounds**, completed in November 2026. It covers what the models accept and predict, how candidate decisions were made, performance against actual portal outcomes, limitations and trade-offs. The later [HEBO/TuRBO-1 simulator benchmark](research/full_optimisers/README.md) is independent post-capstone research, not an additional set of original portal evaluations.
+**Developer:** Tamer El-Tonsy  
+**Model type:** Function-specific, human-guided Bayesian optimisation workflow  
+**Research completed:** 9 November 2026  
+**Card version:** Final capstone research record · November 2026  
+**Status:** Educational and research use
 
-[← Project home](README.md) · [Executable Jupyter notebook](notebooks/Capstone_Final_Walkthrough.ipynb) · [Dataset datasheet and function-specific data notes](DATASHEET.md)
+[← Project home](README.md) · [Dataset datasheet](DATASHEET.md) · [Eight function investigations](functions/README.md) · [Methods and implementation](docs/methods.md) · [Final notebook](notebooks/Capstone_Final_Walkthrough.ipynb)
 
-## 1. Model summary
+This card follows the nine-part structure proposed by **Mitchell et al. (2019), *Model Cards for Model Reporting*** and satisfies Imperial College's Module 25 model-card template: description (input, output and architecture), performance (graph, metrics and data), limitations and trade-offs.
 
-**Inputs:** One function identifier (F1–F8) and a continuous candidate vector of **2–8 coordinates** in the legal range `[0, 0.999999]`. Surrogate fitting uses only historical input/output observations available at the particular decision point, not later portal returns.
+**Scope:** The project developed a changing, **human-guided set of function-specific optimisation methods**, not one fixed model trained once and deployed unchanged. The [function investigations](functions/README.md) are the authoritative accounts of weekly decisions, actual queries, code, plots, mathematical analysis and learning. This card reports on the **modelling and decision-making approach as a whole**, without retelling those thirteen rounds.
 
-**Outputs:** A Gaussian Process produces a **predicted score (mean) and uncertainty estimate** for candidate inputs. Acquisition functions produce a ranking or next-query proposal; the external portal separately returns the **measured scalar objective score**. Predictions are not measured results.
+## 1. Model Details
 
-**Model architecture:** This is not a single neural network or an unchanged automated optimiser. The baseline comprises **function-specific Gaussian Process surrogates** with RBF/Matérn kernels and automatic relevance determination (ARD) lengthscales. Expected Improvement (EI), Probability of Improvement (PI) and Upper Confidence Bound (UCB) balance predicted reward against uncertainty. Controlled coordinate experiments, alternative models and later mathematical reconstructions were also assessed.
+### Developer, model type and purpose
 
-The goal was to maximise the unknown functions within one paid portal evaluation per function per round. There was no access to their underlying source equations or gradients.
+Tamer El-Tonsy developed this sequential, model-assisted optimisation workflow for the Imperial College capstone. The task was to maximise eight unknown numerical functions with **one new paid portal evaluation per function per round**, in thirteen rounds, without access to the underlying equations or gradients.
 
-**This is not one fully automated policy used unchanged for 13 rounds.** The human-reviewed, function-specific decision process is itself a feature of the project.
+**Input:** A function identifier (F1–F8), a continuous numerical candidate vector of 2–8 dimensions, and the input/output observations available **at the point of a decision**. The submitted portal coordinates are restricted to six decimal places within the legal range 0 to 0.999999. Each function is modelled separately.
 
-## 2. Intended use and out-of-scope use
+**Output:** A surrogate produces a **predicted scalar score and a model-dependent uncertainty estimate**. An acquisition function or controlled experiment proposes a candidate input vector. Only the external course portal returns an **actual measured objective score**. Model predictions, simulated results and portal measurements are distinct.
 
-**Intended:** educational sequential optimisation on sparse, relatively expensive numeric evaluations; explaining how evidence changes a query decision; evaluating model fit and candidate-search limits.
+**Model Architecture:** The core workflow uses **Gaussian Process (GP) regression**, with function-specific RBF or Matérn kernel alternatives and automatic relevance determination (ARD) lengthscales. Acquisition functions such as **Expected Improvement (EI)**, **Probability of Improvement (PI)** and **Upper Confidence Bound (UCB)** balance potential reward with uncertainty. Candidate selection also considered controlled coordinate experiments, local or wider searches, alternative surrogate models and mathematical hypotheses when supported by the evidence.
 
-**Not intended:** production risk-critical autonomous control, certified global optimisation, inference of the hidden source code, generalisation to unseen functions without validation, or claiming that the later benchmark implementations generated historical portal submissions.
+The full decision loop is: fit on evidence available so far → estimate mean and uncertainty → compare proposed candidates → make a human-reviewed selection → submit one input to the portal → record the observed result → update the next decision.
 
-## 3. Strategy, decisions and rationale
+There was **no single, unchanging kernel, acquisition rule, hyperparameter configuration or fully automated candidate selector** used for all eight functions or all thirteen rounds.
 
-1. **Initial GP baseline:** fit only the observations available at decision time, predict candidate mean and uncertainty, and rank exploration–exploitation proposals.
-2. **Model challenge:** compare RBF with Matérn 1.5/2.5 and alternative transforms, watching real forecast errors rather than trusting training fit.
-3. **Controlled experiments:** vary promising coordinates or broaden a stagnant local region when a GP becomes overconfident.
-4. **Structure test:** try a simple explanatory equation when the numerical evidence justifies it. Record whether its prediction was made before the portal response or reconstructed afterwards.
-5. **Budget-aware selection:** one query per function per round requires a clear improvement or information rationale; repeats consume the same limited evaluations.
+### Software and research artefacts
 
-The historically implemented **HEBO-inspired** committee and **TuRBO-style** trust region are adaptations, not complete official HEBO or TuRBO. Full reference-algorithm code was added *after* the capstone and is separated in [benchmarks](research/full_optimisers/README.md).
+| Component | Primary reference |
+|---|---|
+| GP surrogate implementations | [Surrogate modelling source](src/bbo/surrogates.py) |
+| EI, PI and UCB implementations | [Acquisition functions](src/bbo/acquisition.py) |
+| Candidate search and challenger mechanisms | [Optimiser source](src/bbo/optimizer.py) |
+| Historical decisions and associated code | [Round-by-round research](journey/README.md) |
+| Function-specific analyses | [Eight function investigations](functions/README.md) |
+| Reproducible numerical examples | [Final Jupyter walkthrough](notebooks/Capstone_Final_Walkthrough.ipynb) |
 
-## 4. Development timeline: Rounds 1–13
+Some historical methods were **HEBO-inspired** or **TuRBO-style**, rather than implementations of the full reference algorithms. A separate [official HEBO and BoTorch TuRBO-1 benchmark](research/full_optimisers/README.md) was added **after** the capstone. Its simulated feedback must not be treated as actual evaluations of the undisclosed portal objectives or as the mechanism behind historical selections.
 
-This table separates the strategy I was considering from the **results the portal actually returned**. Historical notes contain fewer details for the early rounds, so I have not invented a complete decision log.
+**Availability and licences:** The original software and documentation are provided under the [MIT Licence](LICENSE), subject to ownership of the relevant rights. Course observations and third-party material have separate rights: see [usage and permissions](USAGE_AND_PERMISSIONS.md). Corrections and questions can be raised via [GitHub Issues](https://github.com/tatonsyML/bbo-capstone-imperial-college/issues).
 
-| Rounds | Main emphasis | What changed in my understanding |
-|---|---|---|
-| **1–4** | Gaussian Processes, UCB/EI proposals and initial exploration | A shared acquisition policy did not perform equally across functions; some responses were extremely small, while F5 showed strong scale and boundary effects |
-| **5–7** | Controlled local probes, alternative kernel fits and model checks | A good local fit was useful but did not ensure a good next query; F2 and F7 benefited from more targeted investigation |
-| **8–9** | Forecast auditing, ARD GP comparisons and experiment selection | F4's local forecast was accurate to around 1.6 × 10⁻⁹ while F2's missed by 0.224977, showing that prediction reliability differed by function |
-| **10** | Structural investigations and targeted exploitation | F5 reached 8662.405 at the legal boundary; F8 reached 10. The explicit F5 formula and initial-40-only F8 fit were reconstructed retrospectively |
-| **11** | Challenging overly narrow refinements and exploring better regions | F1 reached almost 2 and F4 rose to 0.730459; F2/F3 also improved |
-| **12** | Structural forecast checks and further local tests | F6 reached −0.037519; F7's pre-result Hartmann-6 prediction closely matched 3.322368 |
-| **13** | Final exploitation and selected alternative regions | F2, F3 and F4 reached new personal bests. F1/F5/F8 repeated earlier scores, F7 remained numerically equivalent and F6 did not improve |
+## 2. Intended Use
 
-The [round-by-round archive](journey/README.md) and [project journey](archive/notes/early_project_timeline.md) distinguish recorded returns from retrospective interpretation.
+**Primary uses:** Educational and research exploration of black-box and Bayesian optimisation, sample-efficient experiment design, model calibration, exploration/exploitation, and the relationship between predictive performance and candidate-selection quality.
 
-## 5. Trade-offs and decisions
+**Intended users:** Students, ML researchers, scientific-computing practitioners and developers interested in optimisation with small numerical datasets.
 
-| Choice | Benefit | Cost or risk | My response |
-|---|---|---|---|
-| **Exploration versus exploitation** | Exploring finds regions outside the current best; exploitation refines a promising point | Too much exploration spends scarce queries; too much exploitation causes early stagnation | I moved towards function-specific choices, especially after the F2 forecast miss and F4 local plateau |
-| **GP versus simpler structural models** | A GP provides a flexible prediction and uncertainty; a simpler equation is easier to audit | GP uncertainty depends on its assumptions; an incorrectly chosen equation can look convincing locally | I compared kernels and introduced power-sum/quadratic hypotheses only where the evidence justified them |
-| **Local trust region versus wider search** | Local search can refine an incumbent efficiently | A narrow region can exclude better solutions | F4's improvement after widening its search was a direct example |
-| **Complex ensemble versus a single interpretable fit** | Multiple models expose disagreement | More parameters and search rules increase cost and reduce explainability | For F8, the simple 17-coefficient quadratic gave a particularly strong independently testable account |
-| **Repeat a good point versus test a neighbour** | Repeating checks consistency at one setting | Identical inputs add little spatial information | Repeats were retained in the dataset and counted against the same evaluation budget |
+**Out of scope:** Autonomous safety-critical optimisation, personnel or medical decisions, certified global optimisation, automatic inference of the hidden source code, generalisation to previously unseen functions without validation, and claims that post-capstone benchmarks produced any of the original thirteen rounds.
 
-**Interpretation:** there was no universal winning optimiser. The most useful method was the one whose assumptions, search region and predicted results were supported by the next observed return.
+The project is a **research exercise**, not a production-ready decision or control system.
 
-## 6. Performance: measured results (final confirmed personal bests)
+## 3. Factors Affecting Performance
 
-| Function | Inputs | Best confirmed output | First attained |
+The relevant evaluation factors are **technical attributes of the numerical optimisation tasks**:
+
+| Factor | Influence on modelling and decision quality |
+|---|---|
+| Input dimensionality | Functions span 2–8 dimensions; higher dimensions increase unsampled volume relative to the available observations. |
+| Response geometry | Narrow peaks, competing regions, boundary trends, interaction effects and local sensitivity favour different strategies. |
+| Output magnitude | Near-zero values (F1) and unusually large values (F5) challenge scaling and numerical GP fits. |
+| Initial data volume | Starting samples vary from 10 to 40 observations. |
+| Adaptive data collection | Later queries concentrate around previously promising regions and can distort estimates of global predictive performance. |
+| Kernel and noise assumptions | RBF/Matérn choices, ARD lengthscales, regularisation and target transforms change predicted means and uncertainty. |
+| Search-region policy | Local refinement may improve an incumbent efficiently but exclude better distant regions. |
+| Decision stage | The available evidence and chosen modelling policy changed across rounds. |
+
+**Evaluation groups:** F1–F8 are the meaningful breakdown for this capstone. Human demographic and intersectional fairness comparisons are not applicable to the anonymous mathematical objectives: the models use no personal or protected-characteristic inputs and predict no attributes of people.
+
+## 4. Metrics
+
+### Optimisation performance
+
+The primary outcome is **best observed portal score so far**, separately for each function. If the original observations and all returns through round *t* are indexed by the available set *D(t)*, this is:
+
+**Best(t) = max { observed f(x) : x is in D(t) }**
+
+Further useful measures include improvement over the starting best, improvement from an individual paid query and the number of evaluations spent before reaching the best recorded point. For objectives with negative scores, higher values remain better.
+
+**Raw scores are not aggregated across F1–F8** because the objective scales differ substantially.
+
+### Predictive performance
+
+For forecasts made **before** a return was observed, measure the **absolute error = |observed score − predicted score|**. When enough comparable chronological forecasts exist, bias, mean absolute error and empirical uncertainty coverage offer further diagnostic measures.
+
+An accurate prediction is **not** itself evidence of an effective next-query decision. The project therefore reports predictive fit and optimisation gain separately.
+
+### Uncertainty, variability and decision thresholds
+
+GP predictive intervals are conditional on a chosen surrogate and its assumptions. They are not certified bounds on the undisclosed objective.
+
+Repeated evaluations at identical or near-identical points give **local consistency evidence**, not general noise estimates.
+
+There is **no universal binary decision threshold** or common confidence metric across the whole workflow. Each function had one portal evaluation per round, so the practical choice was which proposed experiment justified spending the limited query budget.
+
+## 5. Evaluation Data
+
+The primary evaluation evidence is the **279-row measured dataset**: 175 course-provided initial observations plus 104 personal portal returns (13 rounds × 8 functions). Its source, schema, completeness, sampling biases and data rights are documented in [DATASHEET.md](DATASHEET.md).
+
+**Evaluation protocol:** Judge a candidate prediction against a later portal return using only information available when the forecast was made. A chronological split is preferred because adaptively selected later points can otherwise leak information into an earlier decision.
+
+**Distinct retrospective test:** For F8, a 17-parameter additive quadratic was separately fitted to the **40 initial F8 observations** and tested on the **13 later F8 returns**, excluded from coefficient fitting. This is held-out prediction validation carried out retrospectively; it does **not** imply that the quadratic model was discovered or used in Round 1.
+
+Externally reported peer observations, model-derived synthetic scores and simulated post-capstone HEBO/TuRBO feedback are **not** members of the original 279-row portal dataset.
+
+## 6. Training Data
+
+The GP surrogates used function-specific observations **available at each decision stage**, not one fixed dataset or one shared cross-function model. Starting dataset sizes ranged from 10 (F1/F2) to 40 (F8); each subsequent real portal return added one observation per function.
+
+Model-specific experiments considered input scaling, target standardisation, signed-log or Yeo–Johnson transforms, RBF and Matérn kernel families, ARD lengthscales, noise/regularisation, GP fitting restarts and acquisition settings. Local polynomial fits, small neural-network challengers, controlled experiments and structural equations were investigated where useful.
+
+**These transformations and fits belong to modelling, not the original observation CSV.** The [datasheet](DATASHEET.md) describes the original and consolidated data. The [methods guide](docs/methods.md) and [function stories](functions/README.md) describe documented modelling choices; no uniform historical parameter configuration is asserted where the record does not support one.
+
+Adaptive observations are concentrated around chosen regions, so small training error or a narrow GP uncertainty interval does not guarantee reliable out-of-region predictions.
+
+## 7. Quantitative Analyses
+
+### 7.1 Measured optimisation results, broken down by objective
+
+The following are the **best actual personally submitted portal outcomes**, not surrogate predictions or simulated scores.
+
+| Function | Input dimensions | Best confirmed portal output | First reached |
 |---|---:|---:|---|
-| F1 | 2 | 1.9999999996761817 | R11 |
-| F2 | 2 | 0.7442504263021256 | R13 |
-| F3 | 3 | −0.0037530969187192596 | R13 |
-| F4 | 4 | 0.7468979113807426 | R13 |
-| F5 | 4 | 8662.405001248297 | R10 |
-| F6 | 5 | −0.03751864724436928 | R12 |
-| F7 | 6 | 3.3223680113931557 | R12 |
-| F8 | 8 | 10.0 | R10 |
+| [F1](functions/F1/README.md) | 2 | 1.9999999996761817 | R11 |
+| [F2](functions/F2/README.md) | 2 | 0.7442504263021256 | R13 |
+| [F3](functions/F3/README.md) | 3 | −0.0037530969187192596 | R13 |
+| [F4](functions/F4/README.md) | 4 | 0.7468979113807426 | R13 |
+| [F5](functions/F5/README.md) | 4 | 8662.405001248297 | R10 |
+| [F6](functions/F6/README.md) | 5 | −0.03751864724436928 | R12 |
+| [F7](functions/F7/README.md) | 6 | 3.3223680113931557 | R12 |
+| [F8](functions/F8/README.md) | 8 | 10.0 | R10 |
 
-All values are personally confirmed portal results. They differ drastically in scale; no overall sum or average is meaningful. **Performance is measured by the best observed portal output after each round**, including the supplied initial best; the figure below plots those measured trajectories, not surrogate predictions.
+![Best measured score so far across eight functions over thirteen rounds](results/figures/progress.svg)
 
-![Best observed output by function over thirteen rounds, with separate vertical scales](results/figures/progress.svg)
+*The graph is derived from recorded observations and uses an independent vertical scale per function. Its lines are not model predictions. For exact inputs, output precision and round-by-round reasoning, open the relevant function page.*
 
-*Each function has its own vertical scale. For numerical comparisons use the values and the [279-row observation dataset](data/all_observations.csv), not the apparent relative heights of lines across functions.*
+**Attribution:** These maxima assess the **combined human-guided optimisation process**. They do not establish a single GP's predictive accuracy or an unbiased competition between EI, UCB, HEBO and TuRBO.
 
-**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was confirmed from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
+### 7.2 Predictive evidence and decision quality
 
-**Evidence-specific observations:**
+| Investigation | Documented outcome | What it tests |
+|---|---|---|
+| **F2: prospective forecast** | Predicted approximately 0.730502; returned 0.505526; absolute error about **0.225**. | A promising local surrogate did not generalise to this proposed point. |
+| **F4: prospective local forecast** | Error around **1.6 × 10⁻⁹**, while tiny search steps left progress near 0.659. | Accurate local prediction did not necessarily identify a valuable experiment. |
+| **F7: structural forecast** | Predicted approximately **3.32236801** before the portal returned **3.3223680113931557**. | A testable mathematical hypothesis matched a later measured observation closely. |
+| **F8: retrospective hold-out** | The 17-coefficient quadratic fitted on 40 starting observations predicted 13 later returns with maximum absolute error below **2 × 10⁻¹⁴**. | Strong validation for the selected mathematical representation over those observations, not proof of discovery in the early rounds. |
 
-- **F2:** one forecast of 0.730502 returned 0.505526. A different final-round region later returned 0.744250. A poor local forecast did not imply global convergence.
-- **F4:** one local forecast was accurate to about 1.6 × 10⁻⁹, yet tiny search steps stagnated near 0.659. A wider strategy found 0.730459, followed by 0.746898 in R13.
-- **F5:** a boundary query achieved 8662.405 at the legal upper coordinates. Its power-sum explanation was reconstructed *after* the successful query.
-- **F7:** a positive Hartmann-6 structural forecast of 3.32236801 was recorded before the R12 portal return of 3.322368011393.
-- **F8:** an additive 17-parameter quadratic located 10 at an interior vertex. A *separate retrospective* fit using only the 40 supplied starting observations fitted a full-rank model and predicted 13 later portal returns with maximum absolute error **below 2 × 10⁻¹⁴** across the 13 later scores (the last displayed digits can vary slightly by numerical environment). This does not mean the equation was identified in R1.
+These examples use **different objectives, model classes and validation conditions**; they are not pooled into a single accuracy or calibration score. Their detailed derivations and experimental context are in the [function stories](functions/README.md).
 
-## 7. Evaluation methods and quantitative validation
+### 7.3 Performance across relevant conditions
 
-The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes counts, historical bests, GP illustrative decisions and F8/F5 structural checks from versioned data. [Automated tests](tests/) independently check numerical calculations. Performance evidence comes from **175 course-provided starting inputs and 104 personally evaluated portal inputs**, not simulated scores. Forecast errors are compared only against subsequently observed returns.
+- **F1:** Very small early outputs limited the usefulness of a conventional smooth local GP search.
+- **F2, F3 and F6:** Local models sometimes extrapolated poorly or made unreliable regional predictions.
+- **F4:** Local predictive precision was exceptional without producing proportionate optimisation improvement.
+- **F5:** Controlled experiments supported productive movement towards a permitted boundary.
+- **F7:** A structural hypothesis generated a closely matched prospective result.
+- **F8:** A simple additive quadratic explained the recorded outcomes especially well.
 
-**Examples of predictive performance:** F2's prospective 0.730502 forecast returned 0.505526 (absolute error about **0.225**). F4 had a local forecast error near **1.6 × 10⁻⁹** without materially improving the objective. In a separate **retrospective** F8 structural test, a 17-coefficient quadratic fitted to the **40 initial F8 observations** predicted the **13 later F8 returns** with maximum absolute error below **2 × 10⁻¹⁴**; those thirteen returns were held out from coefficient fitting. These measure different kinds of performance and must not be combined into a single optimiser accuracy score.
+These are **observed differences between tasks**, not a statistically controlled ranking of optimisation algorithms.
 
-**Forecast accuracy and finding a good region are different tests.** Some GP predictions were precise locally while failing to locate better regions. The capstone did not provide an unbiased global-optimiser ranking of HEBO versus TuRBO: unsubmitted candidates have unknown true outputs.
+## 8. Ethical Considerations
 
-## 8. Assumptions, limitations and potential failure modes
+**Privacy and fairness:** The dataset contains numerical coordinates and function scores, not personal or demographic attributes. Human-group disparities and their intersections are not applicable to this evaluation task.
 
-- GP kernels assume a degree of smoothness or local similarity that sharp peaks, interactions or heteroscedastic noise can violate.
-- GP fitted uncertainty is conditional on model assumptions; calibration has to be checked on later portal returns.
-- With 2–8 dimensions and few points, adaptive sampling concentrates near previous successes, producing selection bias.
-- Repeated locations spend evaluation budget while adding limited new spatial information.
-- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1 now has a published **retrospective Gaussian–cosine reconstruction**, [six fitted coefficients and a reproducible 10-initial/13-holdout test](src/bbo/f1_reconstruction.py). Its functional family was provided by separate working code and did not emerge from a blind fit; the historical Round 11 provenance remains separate.
-- F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
-- F7's R11 inputs and full-precision output were confirmed from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
+**Attribution and rights:** The author's MIT-licensed code does not confer unrestricted rights to 175 course-provided observations or third-party materials. Public submission was required by the programme; broader data reuse rights remain unconfirmed. See [usage and permissions](USAGE_AND_PERMISSIONS.md).
 
-## 9. Ethics, access and redistribution
+**Transparency:** Distinguish measured portal results, saved forecasts, later mathematical reconstructions and post-capstone simulations. A retrospective equation must not be described as the reason an earlier query was chosen unless supported by contemporaneous evidence.
 
-No reported personal data is required to run the optimisation. The 175 supplied starting observations are included in public CSVs as part of the **public GitHub capstone deliverable required by Stage 2, Component 25.3**; original course binary files are not hosted. The course's publication instructions are not a licence for unrestricted third-party reuse of those observations. The [usage and permissions statement](USAGE_AND_PERMISSIONS.md) explains this distinction. External peer observations are not counted among my own 104 portal returns.
+**Downstream risk:** The anonymous objectives lack operating constraints, human impacts or failure costs. Similar methods used in consequential domains would need independent validation, formal constraints, monitoring and human accountability. This capstone provides no production safety assurance.
 
-The same approach would require additional validation, security checks and hard operational limits before use in payroll or other high-consequence systems.
+## 9. Caveats and Recommendations
 
-## 10. Reproducibility and maintenance
+### Main limitations
 
-**Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/methods.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/visualisations.md) allow a reviewer to verify the claims.
+- **Small evaluation budgets:** Thirteen personal returns per function, plus the initial samples, provide incomplete coverage of their domains.
+- **Conditional GP uncertainty:** Kernel misspecification, inadequate regularisation and adaptive sampling can produce overconfident predictions.
+- **Human-guided policies:** Strategies and hyperparameters evolved over time; there was no one frozen optimiser for controlled benchmarking.
+- **Local versus global evidence:** Repeatability, accurate local forecasts and fitted structural equations do not independently authenticate the undisclosed source implementation or certify a global maximum.
+- **Benchmark distinction:** Full official HEBO and BoTorch TuRBO-1 work was performed after the capstone on simulated feedback; no claim is made that those algorithms selected the historical queries.
 
-Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
+### Decision and model trade-offs
 
-[← Project home](README.md)
+| Trade-off | Benefit | Cost or failure mode |
+|---|---|---|
+| Exploration versus exploitation | Explore alternative regions or refine the current best | Too much local refinement misses better regions; too much exploration consumes scarce evaluations |
+| Flexible GP versus interpretable equation | Model complex responses or test a compact structural hypothesis | Flexible models can be poorly calibrated; incorrectly chosen equations can also fit locally and mislead |
+| Local trust region versus global search | Efficient refinement around an incumbent | A narrow region can exclude much stronger candidates |
+| Predictive accuracy versus decision value | Reliable forecasts help understand a local neighbourhood | Precisely predicting a low-value step does not improve the objective |
+| Replication versus new locations | Repeats assess consistency at a measured point | They consume evaluations without broadening domain coverage |
+| Human review versus a frozen algorithm | Challenge models and incorporate structural reasoning | Adds subjectivity and complicates controlled algorithm comparisons |
+
+### Recommendations
+
+For future research, compare candidate-selection methods under equal evaluation budgets, use stricter chronological validation and prospective uncertainty-calibration checks, test alternative regions earlier when local progress stalls, and consider simple polynomial or other interpretable structure before escalating model complexity.
+
+Any application outside this capstone requires representative data, explicit safety and feasibility constraints, independent performance testing and monitored failure handling.
+
+### Reproduce the supported analyses
+
+Start with the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), [methods and code guide](docs/methods.md) and [eight function investigations](functions/README.md). The [dataset datasheet](DATASHEET.md) covers evidence provenance, composition and permissions. The [historical journey](journey/README.md) preserves the available development sequence.
+
+---
+
+## Module 25 template coverage
+
+| Supplied template requirement | Location in this card |
+|---|---|
+| **Model description:** inputs, outputs, architecture | Section 1 |
+| **Performance:** graph, metrics, how measured, evaluation data | Sections 4, 5 and 7 |
+| **Limitations** | Sections 8 and 9 |
+| **Trade-offs and performance issues** | Sections 3, 7 and 9 |
+
+## References
+
+Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., & Gebru, T. (2019). *Model Cards for Model Reporting*. Proceedings of the Conference on Fairness, Accountability, and Transparency (FAccT '19), 220–229. https://doi.org/10.1145/3287560.3287596
+
+Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K. (2021). *Datasheets for Datasets*. *Communications of the ACM*, 64(12), 86–92. https://doi.org/10.1145/3458723
+
+[← Project home](README.md) · [Full function investigations](functions/README.md)
