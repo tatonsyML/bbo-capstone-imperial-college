@@ -24,6 +24,8 @@ This is the **single chronological home** for the capstone. Each round links the
 
 [**When the Prediction Was Right but the Decision Was Wrong: Thirteen Rounds of Black-Box Optimisation**](final_reflection/README.md) draws together the strategy changes, final results, mathematical reconstructions and main lessons from all thirteen rounds.
 
+For reproducible runs of the original weekly source using compatible published-data inputs, see the [historical script replay guide](../docs/historical_replay.md). This is separate from the original portal decisions.
+
 ## Original work and historical snapshots
 
 - [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the confirmed F7 Round 11 coordinates.

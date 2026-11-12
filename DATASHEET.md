@@ -85,6 +85,8 @@ The dataset contains no reported personal identifiers or health records. The 175
 
 External source use remains subject to the programme's collaboration and attribution rules. The complete redistribution position is stated in [USAGE_AND_PERMISSIONS.md](USAGE_AND_PERMISSIONS.md).
 
+The [machine-readable selection histories](functions/README.md) distinguish approximate prospective forecasts, multiple-kernel predictions and related original analysis code. A related script does not establish an identical historical query generator. The [historical replay adapter](docs/historical_replay.md) prepares published-data equivalents for source scripts requiring missing course ZIPs.
+
 ## 9. Maintenance and reproducibility
 
 The [full CSV](data/all_observations.csv) is the final complete record. Earlier dated CSVs, forecasts and assessed submissions are retained as historical snapshots. The [Jupyter walkthrough](notebooks/Capstone_Final_Walkthrough.ipynb) verifies counts, chronology, final bests and the F5/F8 structural checks. [Automated tests](tests/) and [GitHub Actions](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/core-tests.yml) provide independent verification.

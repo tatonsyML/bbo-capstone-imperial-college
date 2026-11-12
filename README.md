@@ -82,7 +82,7 @@ Python **3.11** is recommended. From the repository root:
 ```bash
 python -m pip install -r requirements-notebook.txt
 python -m pytest -q
-jupyter notebook notebooks/Capstone_Final_Walkthrough.ipynb
+jupyter lab notebooks/Capstone_Final_Walkthrough.ipynb
 ```
 
 The notebook reproduces supported analyses and demonstrates optimisation methods. It does **not** claim to regenerate every original candidate choice where the historical selection code is unavailable.
