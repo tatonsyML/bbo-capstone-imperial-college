@@ -1,7 +1,7 @@
 """Retrospective F1 reconstruction using this repository's own observations.
 
 A two-component Gaussian-modulated cosine *model family* was proposed in
-separately recovered working code. Its original derivation and authorship
+separate working code. Its original derivation and authorship
 have not been independently established. This experiment does not claim
 to discover that family blindly or access the undisclosed programme oracle.
 
@@ -150,7 +150,7 @@ def main() -> None:
     fitted = fit_initial_only(x[initial], y[initial])
     result = validate_held_out(x[~initial], y[~initial], fitted)
     print("Fit source: 10 course-supplied F1 observations only")
-    print("Model family: informed by separately recovered code; not blind discovery")
+    print("Model family: informed by separate working code; not blind discovery")
     for name, value in vars(fitted).items():
         print(f"{name}: {value:.16g}")
     print(f"Later portal evaluations checked: {result['count']}")

@@ -35,7 +35,7 @@ With five-fold validation after Round 5, I reported **GP vs small MLP normalised
 
 ## Source and limitations
 
-The [eight saved Round 6 inputs](results/round6_queries.csv) and [per-function rationale](results/round6_query_rationale.csv) match the submitted portal vectors. This preserves the decisions even though the standalone fitting script was not recovered. Surviving course-time work compares Ridge, a small one-layer MLP and a GP using five-fold validation; controlled paths often took priority over a globally smoothed model. CNNs were not used because the numeric coordinate vectors lack an image's translation structure. This archive came from the original Module 17 ZIP dated **3 September 2026**. The original standalone fitting script is missing; the [notebook](Capstone_BBO_Module17_Week6.ipynb) presents recorded CSV comparisons without claiming to rerun the missing code.
+The [eight saved Round 6 inputs](results/round6_queries.csv) and [per-function rationale](results/round6_query_rationale.csv) match the submitted portal vectors. This preserves the decisions even though the standalone fitting script is not preserved. Surviving course-time work compares Ridge, a small one-layer MLP and a GP using five-fold validation; controlled paths often took priority over a globally smoothed model. CNNs were not used because the numeric coordinate vectors lack an image's translation structure. This archive came from the original Module 17 ZIP dated **3 September 2026**. The original standalone fitting script is missing; the [notebook](Capstone_BBO_Module17_Week6.ipynb) presents recorded CSV comparisons without claiming to rerun the missing code.
 
 ## Original files and evidence
 

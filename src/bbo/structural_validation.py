@@ -55,7 +55,7 @@ def recover_f8(root=None):
                 max_holdout_error=float(np.max(np.abs(prediction-y[~initial]))))
 
 def f5_at(x):
-    """Evaluate the retrospectively recovered F5 equation at legal coordinates."""
+    """Evaluate the retrospectively reconstructed F5 equation at legal coordinates."""
     x = np.asarray(x, dtype=float)
     if x.shape != (4,):
         raise ValueError("F5 needs four coordinates")
@@ -65,8 +65,8 @@ def main():
     r = recover_f8()
     print("F8 design rank:", r["rank"], "/17")
     print("Initial observations:", r["initial_count"], "held-out portal queries:", r["holdout_count"])
-    print("Recovered centre:", np.array2string(r["centre"], precision=12))
-    print("Recovered weights:", np.array2string(r["weights"], precision=12))
+    print("Fitted centre:", np.array2string(r["centre"], precision=12))
+    print("Fitted weights:", np.array2string(r["weights"], precision=12))
     print("Fitted maximum:", f'{r["maximum"]:.15f}')
     print("Max later-output absolute error:", f'{r["max_holdout_error"]:.3e}')
     print("F5 at permitted corner:", f'{f5_at(np.full(4,.999999)):.12f}')

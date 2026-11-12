@@ -1,6 +1,6 @@
 """Positive Hartmann-6 hypothesis for capstone Function 7.
 
-This formula represents a reconstructed mathematical family, not recovered
+This formula represents a reconstructed mathematical family, not a copy of the
 official oracle source. The coefficients are those recorded by the project's
 earlier structural investigation/visualisation. The test below checks all
 published personal + course observations. It is retrospective, NOT a claim

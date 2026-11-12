@@ -35,7 +35,7 @@ After receiving Week 1 returns, I moved from function-specific heuristics to a m
 
 ## Source and limitations
 
-The [Week 2 UCB notebook](Capstone_BBO_Week2_UCB_only.ipynb), [Python script](week2_ucb_course_aligned.py), [results CSV](week2_ucb_results.csv) and [archive ZIP](Module13_Round2_Recovered_Package.zip) preserve the working package assembled on 30 July 2026. It used Gaussian Processes, predicted mean and uncertainty, UCB and grid/random search. Original course `.npy` arrays are not included here; the [consolidated observations](../../data/all_observations.csv) are separate. The ZIP is retained as historical evidence rather than assumed expendable.
+The [Week 2 UCB notebook](Capstone_BBO_Week2_UCB_only.ipynb), [Python script](week2_ucb_course_aligned.py), [results CSV](week2_ucb_results.csv) and [archive ZIP](Module13_Round2_Original_Package.zip) preserve the working package assembled on 30 July 2026. It used Gaussian Processes, predicted mean and uncertainty, UCB and grid/random search. Original course `.npy` arrays are not included here; the [consolidated observations](../../data/all_observations.csv) are separate. The ZIP is retained as historical evidence rather than assumed expendable.
 
 ## Original files and evidence
 
@@ -46,6 +46,6 @@ The [Week 2 UCB notebook](Capstone_BBO_Week2_UCB_only.ipynb), [Python script](we
 | [Capstone_BBO_Week2_UCB_only.ipynb](Capstone_BBO_Week2_UCB_only.ipynb) | notebook | archived course-time work |
 | [week2_ucb_course_aligned.py](week2_ucb_course_aligned.py) | Python script | archived course-time work |
 | [week2_ucb_results.csv](week2_ucb_results.csv) | CSV | recorded output |
-| [Module13_Round2_Recovered_Package.zip](Module13_Round2_Recovered_Package.zip) | original ZIP package | archive package |
+| [Module13_Round2_Original_Package.zip](Module13_Round2_Original_Package.zip) | original ZIP package | archive package |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)
