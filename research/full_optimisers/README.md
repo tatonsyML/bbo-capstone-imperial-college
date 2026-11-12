@@ -87,11 +87,31 @@ The default output folder is `results/full_hebo_turbo/`. Results will include:
 - Do not merge peers' public data into personal observations.
 - A run is incomplete if an optional package is absent; **do not invent or prepopulate result CSVs**.
 
-**Status in this repository:** reference code and unit tests added. The complete HEBO and BoTorch reference algorithms **have not yet been executed for a published comparison**. No comparative numerical performance claim is made.
+**Status in this repository:** both official algorithms have now run successfully on the F8 fitted-quadratic simulator. The matched-budget results below are **post-capstone simulations only**; they say nothing about unsubmitted real portal outputs or a global ranking of the methods.
 
 For further context, see [the course-time methodology](../../docs/methods.md), [the final portal evidence](../../journey/round_13/README.md) and [all eight-function visualisations](../../docs/functions.md).
 
 
-## Results status
+## Executed F8 model-only comparison — 12 November 2026
 
-The official HEBO and BoTorch TuRBO-1 engines have **not yet produced a published matched-budget comparison**. Running the standard project unit tests is not a substitute for executing the optional full engines. The [manual GitHub workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/full-optimisers.yml) preserves genuine simulation outputs as artifacts when run. No F1–F8 unobserved proposal is labelled as a portal result.
+The [successful official-engine workflow run](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/runs/43206596923) evaluated HEBO 0.3.6 and BoTorch 0.18.1 / TuRBO-1 on the **same fitted F8 quadratic simulator**, starting from the same 40 supplied observations. Each implementation received 12 *paid simulated* evaluations for seeds 0, 1 and 2. Both produced 36 simulated returns. The equal-budget comparison job passed and found **no duplicate queries**.
+
+| Seed | HEBO final simulated best | TuRBO-1 final simulated best |
+|---:|---:|---:|
+| 0 | 9.964542 | **9.967579** |
+| 1 | 9.937633 | **9.951566** |
+| 2 | 9.961026 | **9.985580** |
+| **Mean across three seeds** | **9.954400** | **9.968242** |
+
+TuRBO-1 performed better on this **specific fitted simulator and three seeds**. This is a small experimental comparison, not evidence of statistical superiority, nor a performance claim for all eight hidden functions. A score of 10 is the fitted simulator peak; **none of these scores is a new course-portal evaluation**.
+
+The exact published per-seed summary and model/environment metadata are available as:
+[comparison CSV](../../results/full_hebo_turbo/f8_simulation_comparison.csv) ·
+[quadratic fit validation](../../results/full_hebo_turbo/f8_oracle_validation.csv) ·
+[HEBO versions](../../results/full_hebo_turbo/versions_hebo.csv) ·
+[TuRBO versions](../../results/full_hebo_turbo/versions_turbo.csv).
+
+The [full 72 simulated evaluation records and source-version files](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/runs/43206596923/artifacts/13937593723) are also attached to the successful workflow as a downloadable artifact. Artifacts may expire under GitHub's retention settings; the six-row comparison above is committed permanently in this repository.
+
+**Not yet tested:** the separate unscored F1–F8 one-step proposal mode. Its suggestions should never be assigned invented portal results.
+

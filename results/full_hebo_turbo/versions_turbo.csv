@@ -1,0 +1,8 @@
+package,version
+HEBO,NOT INSTALLED
+botorch,0.18.1
+gpytorch,1.15.2
+torch,2.15.0
+numpy,1.26.4
+pandas,2.3.3
+scipy,1.14.1
