@@ -22,6 +22,8 @@ The line uses **real observed scores only**, starting with the course-provided b
 
 The titles below show the **actual portal return**, with a star for each new best. Each section distinguishes original reasoning, predictions made *before* the result, observations and what the outcome taught me. Model settings are listed only when supported by a historical record; missing original scripts or parameters are not reconstructed as fact.
 
+**How to read the evidence:** Each round links to its saved inputs, portal returns and the actual code or analysis available for that period. An original script, a notebook with recorded selections, and a later reconstruction are different kinds of evidence. The [round-by-round source audit](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) explains those distinctions.
+
 <details>
 <summary><strong>Round 1 · How to explore with eight inputs and only 40 observations?</strong> — 9.83211236 ★ new best</summary>
 
@@ -37,7 +39,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Shift towards local exploitation while retaining some uncertainty-driven search.
 
-**Code and evidence:** [Round 1 records](../../journey/round_01/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 1 reflection and portal evidence](../../journey/round_01/README.md) · [Submitted inputs](../../journey/round_01/queries.txt) · [Returned scores](../../journey/round_01/outputs.txt) · [Original coursework notebook](../../journey/round_01/supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb) (coursework, not a verified portal generator) · No separate candidate-generator source authenticated · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -56,7 +58,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Move to a function-specific, more local Expected Improvement search.
 
-**Code and evidence:** [Round 2 records](../../journey/round_02/README.md) · [Related surviving code](../../journey/round_02/week2_ucb_course_aligned.py) (related historical script not verified exact) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 2 reflection and portal evidence](../../journey/round_02/README.md) · [Submitted inputs](../../journey/round_02/queries.txt) · [Returned scores](../../journey/round_02/outputs.txt) · [Original GP/UCB selection script](../../journey/round_02/week2_ucb_course_aligned.py) · [Eight saved selections](../../journey/round_02/week2_ucb_results.csv) (all eight saved portal values match the submitted record) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -75,7 +77,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Keep refining while challenging the GP with alternative models.
 
-**Code and evidence:** [Round 3 records](../../journey/round_03/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; a standalone generator was not recovered · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -94,7 +96,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Use controlled local changes rather than automatically following more complex challengers.
 
-**Code and evidence:** [Round 4 records](../../journey/round_04/README.md) · [Related surviving code](../../journey/round_04/capstone_bbo_week4_module15.py) (related historical analysis not verified exact) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 4 reflection and portal evidence](../../journey/round_04/README.md) · [Submitted inputs](../../journey/round_04/queries.txt) · [Returned scores](../../journey/round_04/outputs.txt) · [Original analysis code](../../journey/round_04/capstone_bbo_week4_module15.py) · [Executed notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb) (final eight inputs stored explicitly; hybrid selection, not an autonomous selector) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -113,7 +115,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Compare cross-validated GP and neural-network accuracy before changing model families.
 
-**Code and evidence:** [Round 5 records](../../journey/round_05/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 5 reflection and portal evidence](../../journey/round_05/README.md) · [Submitted inputs](../../journey/round_05/queries.txt) · [Returned scores](../../journey/round_05/outputs.txt) · Contemporary reflection and submitted measurements preserved; no standalone selection code authenticated · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -132,7 +134,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Audit future forecasts chronologically instead of trusting fit quality alone.
 
-**Code and evidence:** [Round 6 records](../../journey/round_06/README.md) · [Related surviving code](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) (related notebook original fitter missing) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 6 reflection and portal evidence](../../journey/round_06/README.md) · [Submitted inputs](../../journey/round_06/queries.txt) · [Returned scores](../../journey/round_06/outputs.txt) · [Original Module 17 notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision rationale](../../journey/round_06/results/round6_query_rationale.csv) (standalone fitter source not retained) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -151,7 +153,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Test whether moving off the established path along a single coordinate improves the score.
 
-**Code and evidence:** [Round 7 records](../../journey/round_07/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 7 reflection and portal evidence](../../journey/round_07/README.md) · [Submitted inputs](../../journey/round_07/queries.txt) · [Returned scores](../../journey/round_07/outputs.txt) · [Next-round audit of Week 7 forecasts](../../journey/round_08/results/week7_audit.csv) (subsequent analysis, not the original Round 7 generator) · No authenticated standalone Round 7 selector · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -164,13 +166,13 @@ The titles below show the **actual portal return**, with a star for each new bes
 **Actual portal output:** `9.9113990095864`  
 **Best before → after:** `9.8990020095864` → `9.9113990095864`.
 
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
+**Prospective GP-kernel predictions:** approximately `9.902821`, `9.906066` and `9.907368` from three kernels (not a single agreed scalar forecast; see [Round 8 forecast table](../../journey/round_08/README.md)).
 
 **Evaluation:** The output rose from 9.899002 to **9.911399**. A controlled one-coordinate test produced interpretable evidence.
 
 **What changed for the next round:** Try a larger x6 step while monitoring predictive stability.
 
-**Code and evidence:** [Round 8 records](../../journey/round_08/README.md) · [Related surviving code](../../journey/round_08/capstone_bbo_module19_round8.py) (related historical analysis not verified exact) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 8 reflection and portal evidence](../../journey/round_08/README.md) · [Submitted inputs](../../journey/round_08/queries.txt) · [Returned scores](../../journey/round_08/outputs.txt) · [Original Module 19 Python analysis](../../journey/round_08/capstone_bbo_module19_round8.py) · [Original eight-input decision record](../../journey/round_08/results/round8_queries.csv) (all eight match portal inputs) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -189,7 +191,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Test whether a simpler global mathematical form explains the data rather than continue tuning the same local GP.
 
-**Code and evidence:** [Round 9 records](../../journey/round_09/README.md) · [Related surviving code](../../journey/round_09/round9_controlled_fits.py) (related historical analysis not verified exact) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 9 reflection and portal evidence](../../journey/round_09/README.md) · [Submitted inputs](../../journey/round_09/queries.txt) · [Returned scores](../../journey/round_09/outputs.txt) · [Dated eight-input decision and forecast ledger](../../journey/round_09/results/round9_queries.csv) (all eight match portal inputs) · Three-kernel F8 forecast recorded in the ledger; not calculated by the five-function local-fitting script · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -208,7 +210,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Retain the tested vertex and validate the model separately against withheld historical points.
 
-**Code and evidence:** [Round 10 records](../../journey/round_10/README.md) · [Related surviving code](../../src/bbo/optimizer.py) (related challenger not verified exact) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 10 reflection and portal evidence](../../journey/round_10/README.md) · [Submitted inputs](../../journey/round_10/queries.txt) · [Returned scores](../../journey/round_10/outputs.txt) · [Dated final candidate list](../../journey/round_10/round10_candidates.csv) · [Pre-result planning snapshot](../../journey/round_10/optimisation.yaml) · [GP/HEBO-inspired/TuRBO-style challenger code](../../src/bbo/optimizer.py) (not proof of the exact final per-function generator) · [Later reproducible F8 structural validation](../../src/bbo/structural_validation.py) (retrospective verification of the quadratic) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -227,7 +229,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Assess model sensitivity and whether dimensionality reduction preserves the maximum.
 
-**Code and evidence:** [Round 11 records](../../journey/round_11/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 11 reflection and portal evidence](../../journey/round_11/README.md) · [Portal inputs/outputs for R11](../../data/portal_rounds_11_12.csv) · [Later reproducible DBSCAN diagnostic](../../research/diagnostics/clustering/clustering_audit.py) (the clustering study was contemporary; this script was assembled later and was not the original query generator) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -265,7 +267,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** A model supported by analytical and held-out checks can justify stopping; repeated inputs need an explicit validation purpose.
 
-**Code and evidence:** [Round 13 records](../../journey/round_13/README.md) · Exact selection script not retained · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 13 reflection and portal evidence](../../journey/round_13/README.md) · [Submitted inputs](../../journey/round_13/queries.txt) · [Returned scores](../../journey/round_13/outputs.txt) · [Final thirteen-round reflection](../../journey/final_reflection/README.md) (final reasoning, not a surviving standalone selector) · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
