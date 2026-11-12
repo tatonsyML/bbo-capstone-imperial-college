@@ -1,10 +1,10 @@
 # Round 8 · Module 19 | Test forecasts rather than assume they are correct
 
-**Round summary:** [Submitted inputs](queries.txt), [measured outputs](outputs.txt) and forecasts used to guide the experiments.
+**Evidence:** [Submitted inputs](queries.txt) and [returned outputs](outputs.txt) are real portal records. The forecasts below were recorded before receiving the corresponding return.
 
 ## My reasoning at the time
 
-The LLM had become an analytical partner, but not my numerical optimiser. Early prompts were open-ended: I presented the observations and asked what they suggested. By this week I used a more disciplined pattern: verified observations, the previous query and its return, forecasts written before the return arrived, model diagnostics and competing candidates. I separated data checks, model selection, candidate proposals and the evaluation of results.
+The LLM had become an analytical partner, but not my numerical optimiser. Early prompts were open-ended: I presented the observations and asked what they suggested. By this week I used a more disciplined pattern: verified observations, the previous query and its return, forecasts written before the return arrived, model diagnostics and competing candidates. I stopped asking one prompt to audit the data, choose a model, propose a point and judge its own work.
 
 Deterministic Python code remained responsible for numerical fitting, candidate generation, duplicate detection and bounds checking. I used language-model assistance to compare explanations, identify assumptions and challenge conclusions. Externally shared observations were supporting evidence, not substitutes for my own portal returns. An attractive explanation was not accepted as a fact until the data supported it.
 
@@ -26,7 +26,7 @@ The retained [Round 8 Python analysis](capstone_bbo_module19_round8.py) tested r
 | F7 | Local quadratic ≈ 1.791396 | Challenge the existing regional model |
 | F8 | Three GP-kernel predictions ≈ 9.902821, 9.906066, 9.907368 | Compare model agreement instead of trusting one kernel |
 
-F1, F4 and F6 were approached through exploration or controlled comparisons instead of a single numeric prediction.
+F1, F4 and F6 had **no reliable scalar forecast retained**; none has been invented.
 
 ## What I learnt
 
@@ -37,6 +37,6 @@ A local forecast needs direct portal validation. Controlled geometry can be more
 I used the LLM as an **analytical assistant**, not as a stochastic numerical optimiser. Structured prompts separated evidence, hypotheses and validation. Python checked final vectors for dimension, legal bounds, six-decimal precision and duplicates. A tiny F2 x2 change exposed a fragile local region; final candidates were chosen using code and recorded results, **not raw generated text**.
 
 
-## Code and results
+## Original files and provenance
 
-Archived from the Module 19 ZIP dated **8 October 2026**, with programme-supplied NumPy seed files omitted. [Original analysis](capstone_bbo_module19_round8.py), [Round 8 query record](results/round8_queries.csv), [Week 7 forecast comparisons](results/week7_audit.csv), [history through Week 7](results/submission_history_through_week7.csv) and [portal observations](../../data/all_observations.csv).
+Archived from the Module 19 ZIP dated **8 October 2026**, with programme-supplied NumPy seed files omitted. [Original analysis](capstone_bbo_module19_round8.py), [Round 8 query record](results/round8_queries.csv), [Week 7 audit](results/week7_audit.csv), [history through Week 7](results/submission_history_through_week7.csv) and [portal observations](../../data/all_observations.csv).

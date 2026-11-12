@@ -1,6 +1,6 @@
 # Round 7 · Module 18 | ARD models and prospective checks
 
-**Round summary:** [Submitted inputs](queries.txt), [measured scores](outputs.txt) and the move towards forecast-based model selection.
+**Evidence:** The [eight submitted inputs](queries.txt) and [eight returned outputs](outputs.txt) are historical portal records. The interpretation below is retrospective.
 
 ## My reasoning at the time
 
@@ -10,7 +10,7 @@ I increasingly used **rolling-origin validation**. I could fit on observations t
 
 F8 gave an instructive contrast: a Week 6 forecast of about **9.892098** was close to the actual **9.892073**. That strengthened confidence in the particular local pattern being tested, without proving the model globally correct. F1 still offered too little useful signal for ordinary local refinement. I continued to compare Matérn and RBF options, ARD length-scales and local-search geometry, but I wanted to stop tuning when plausible settings became indistinguishable in their decisions.
 
-The strongest lesson in my weekly reflection was about **false precision**. An incomplete model should not be presented as more certain simply because its numerical predictions contain many decimal places. When a proposed gain is smaller than typical prospective forecast error, I should reconsider whether the portal query would answer anything useful. This made the evaluation of each new result more important than the apparent certainty of the model.
+The strongest lesson in my weekly reflection was about **false precision**. An incomplete model should not be presented as more certain simply because its numerical predictions contain many decimal places. When a proposed gain is smaller than typical prospective forecast error, I should reconsider whether the portal query would answer anything useful. The original candidate-generating package for this particular round is not present in the surviving repository; the recorded methods and measured outputs are therefore evidence of my evolving approach, not proof of a newly reconstructed executable historical script.
 
 ## What I did
 
@@ -29,6 +29,8 @@ F7 rose to 1.755718 and F5 to 5151.048, while F1 remained numerically negligible
 I tuned GP kernel family, smoothness, noise, restarts and local-search width, and began judging forecasts with **rolling-origin validation**. F2 and F6 experienced errors larger than the models' stated uncertainty. By contrast, F8's Week 6 forecast **9.892098** was close to its actual **9.892073**. The lesson was to let forecast evidence determine how much authority a local model receives.
 
 
-## Inputs and results
+## Historical documentation
+
+The Week 7 analysis covers rolling-origin validation and comparative forecast evidence. The standalone Module 18 candidate-generating package has not been retained, so these documented methods are not presented as a reproduced original script.
 
 **Files:** [queries.txt](queries.txt) · [outputs.txt](outputs.txt) · [279-row dataset](../../data/all_observations.csv).

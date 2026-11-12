@@ -1,8 +1,8 @@
 # Development journey | 13 returned rounds
 
-[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Methods and experiments](../docs/methods.md) · [Final reflection](final_reflection/README.md) · [Final code](../notebooks/README.md)
+[← Project homepage](../README.md) · [Eight function stories](../functions/README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Methods and experiments](../docs/methods.md) · [Final code](../notebooks/README.md)
 
-This is the chronological record of my thirteen-round optimisation project. Each round draws on my research notes and links the submitted inputs, observed results and surviving code. The [methods guide](../docs/methods.md) traces changes in strategy. Later mathematical reconstructions are identified separately from forecasts recorded before portal returns.
+This is the chronological record of my thirteen-round optimisation project. Each round draws on my research notes and links the submitted inputs, observed results and surviving code. The [week-by-week research summary](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) traces changes in strategy. Later mathematical reconstructions are identified separately from forecasts recorded before portal returns.
 
 **Numbering:** *Week* and *Round* refer to the same evaluation cycle (Week 1 = Round 1). *Module* refers to the course module covering that round. For example, Round 1 belongs to Module 12, and Round 13 belongs to Module 24. Labels such as **Module 21.2** identify an assessment component within a course module, not a separate optimisation round.
 
@@ -33,6 +33,7 @@ For reproducible runs of the original weekly source using compatible published-d
 - [Week 1–13 observed inputs and outputs](../data/all_observations.csv), including the confirmed F7 Round 11 coordinates.
 - [Module 21.2 original assessed datasheet/model card/decision log](round_10/archive/component_21_2/), preserved as historical evidence.
 - [Module 21.1 original reflection](round_10/archive/component_21_1/submission.md).
+- [Stage 1 and missing component index](stage_1/README.md).
 
 **Research evidence:** The portal history records actual evaluations. Later model reconstructions are distinguished from predictions made before the corresponding results.
 

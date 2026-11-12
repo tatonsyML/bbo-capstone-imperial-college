@@ -24,12 +24,12 @@ BBO balances **exploration** (learning about uncertain regions) with **exploitat
 
 ## Explore the research
 
-**Suggested reading order:** Start with the [eight function results](functions/README.md), follow the [thirteen-round methodology and decisions](journey/README.md), then examine the [code and reproducible notebook](notebooks/README.md). The [complete observations](data/all_observations.csv) are available for independent checks.
+**Suggested reading order:** Start with the [eight function results](functions/README.md), follow the [thirteen-round methodology and decisions](journey/README.md), then examine the [recorded evidence and reproducible notebook](notebooks/README.md). The [complete observations](data/all_observations.csv) are available for independent checks.
 
 | Start here | What you will find |
 |---|---|
-| **[Eight function investigations](functions/README.md)** | Each function's behaviour, decisions, results, progress and mathematical findings |
-| **[Thirteen-round journey](journey/README.md)** | How the strategy evolved, with submitted inputs, actual returns and available code |
+| **[Eight function investigations](functions/README.md)** | Each function's behaviour, decisions, results, progress and mathematical evidence |
+| **[Thirteen-round journey](journey/README.md)** | How the strategy evolved, with submitted inputs, actual returns and surviving code |
 | **[Methods and experiments](docs/methods.md)** | Gaussian Processes, acquisition functions, model comparisons, local search and alternatives |
 | **[Run the final notebook](notebooks/Capstone_Final_Walkthrough.ipynb)** | Reproducible analyses, numerical checks and working optimisation examples |
 
@@ -65,7 +65,7 @@ The [full chronological record](journey/README.md) shows what I knew before each
 
 ## Models and hyperparameter choices
 
-I used function-specific Gaussian Process surrogates with RBF and Matérn kernel alternatives and automatic relevance determination (ARD) lengthscales. Candidate searches considered Expected Improvement (EI), Upper Confidence Bound (UCB) and model-based or controlled probes. The historical UCB exploration weight **κ varied by function**, including documented Round 2 settings from **1.0 to 3.0**. Later experiments tested kernel family, noise assumptions, output transforms, acquisition parameters and candidate-search size. These decisions were guided by observed improvements and chronological forecast checks, not a single universally tuned configuration. [Methods and recorded choices](docs/methods.md) · [Function investigations](functions/README.md).
+I used function-specific Gaussian Process surrogates with RBF and Matérn kernel alternatives and automatic relevance determination (ARD) lengthscales. Candidate searches considered Expected Improvement (EI), Upper Confidence Bound (UCB) and model-based or controlled probes. The historical UCB exploration weight **κ varied by function**, including documented Round 2 settings from **1.0 to 3.0**. Later experiments tested kernel family, noise assumptions, output transforms, acquisition parameters and candidate-search size. These decisions were guided by observed improvements and chronological forecast checks, not a single universally tuned configuration. [Methods and recorded choices](docs/methods.md) · [Function-specific evidence](functions/README.md).
 
 ## What the experiments taught me
 
@@ -87,7 +87,7 @@ python -m pytest -q
 jupyter lab notebooks/Capstone_Final_Walkthrough.ipynb
 ```
 
-The notebook reproduces the main analyses and demonstrates the optimisation techniques with working Python examples.
+The notebook reproduces supported analyses and demonstrates optimisation methods. It does **not** claim to regenerate every original candidate choice where the historical selection code is unavailable.
 
 [Notebook instructions](notebooks/README.md) · [Python source](src/bbo/README.md) · [Week-by-week code and results](journey/README.md)
 
@@ -95,7 +95,7 @@ The notebook reproduces the main analyses and demonstrates the optimisation tech
 
 The record contains **175 course-provided initial observations** and **104 personal portal evaluations**, including repeated queries. Inputs and actual returns remain distinct from fitted-model predictions and externally reported participant observations.
 
-[Dataset datasheet](DATASHEET.md) · [Eight function-specific datasheets](docs/function_datasheets.md) · [Model card](MODEL_CARD.md) · [Citation](CITATION.cff)
+[Dataset datasheet](DATASHEET.md) · [Eight function-specific datasheets](docs/function_datasheets.md) · [Model card](MODEL_CARD.md) · [Evidence and limitations](docs/EVIDENCE_RULES.md) · [Citation](CITATION.cff)
 
 My original code and documentation are available under the **[MIT Licence](LICENSE)**, which permits copying, modification and reuse, including commercially, with the required copyright and licence notices. Course-supplied and third-party data are **not** relicensed under MIT. See [usage and permissions](USAGE_AND_PERMISSIONS.md).
 

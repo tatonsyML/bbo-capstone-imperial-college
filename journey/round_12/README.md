@@ -1,6 +1,6 @@
 # Round 12 | Model comparisons, F6 and F7 improvements
 
-**Round summary:** F6 and F7 improved. Four other functions repeated their earlier inputs, providing repeatability checks.
+**Status:** The eight returned portal scores were confirmed. R12 improved F6 and F7, while several functions repeated earlier inputs.
 
 ## My reasoning at the time
 
@@ -63,15 +63,15 @@ The [candidate comparison](original/week12_candidate_comparison_2026-11-02.csv) 
 - **F3:** validation included independent participant data and model disagreement. The submitted `0.313581-0.474345-0.485191` returned **−0.0226526646178297**. Its peer-reported score was not a guaranteed portal result.
 - **F4:** cross-model extrapolation was unreliable; the decision was to **repeat** the confirmed Round 11 point at **0.7304594213260924**.
 - **F6:** a robust committee candidate `0.415080-0.344119-0.644062-0.776818-0.076258` produced a **new personal best −0.03751864724436928**, improving the prior Round 11 score **−0.12376148016289273**.
-- **F1, F5, F7, F8:** this four-script review did **not** retrain their candidate generators. Those selections drew on earlier analytical or structural work; F7's measured result is in the table above.
+- **F1, F5, F7, F8:** this four-script review did **not** retrain their candidate generators. Those selections used previously established analytical/structural evidence; the confirmed **F7 Round 12** input and score are in the table above.
 
-The modelling comparisons informed the candidate decisions, while the portal scores supplied the test. The model comparisons include **peer-published observations**, separately identified from my own portal evaluations; the [research notes](original/week12_full_review_2026-11-02.md) explain their role and limitations. The included cross-cohort checks are retrospective diagnostics and not new black-box evaluations. The peer-data redistribution and programme requirements should be checked before reusing this material for formal assessment.
+This is a *selection-evidence connection*, not proof that all reported numerical model forecasts were calibrated. The model comparisons include **peer-published observations**, separately identified from my own portal evaluations; the [research notes](original/week12_full_review_2026-11-02.md) explain their role and limitations. The included cross-cohort checks are retrospective diagnostics and not new black-box evaluations. The peer-data redistribution and programme requirements should be checked before reusing this material for formal assessment.
 
 ### Run the analysis
 
 The [`original/`](original/review_round12.py) scripts preserve the modelling implementation and settings. The [`portable/`](portable/review_round12.py) versions change **only** the working-directory path so the same experiments run from a cloned repository. The algorithms and hyperparameters are unchanged.
 
-The [data and results archive](original/week12_original_assets.zip) contains the numerical observations, four JSON reports, candidate comparison and selected inputs. 
+The [data and results archive](original/week12_original_assets.zip) contains the numerical observations, four JSON reports, candidate comparison and selected inputs. Integrity tests check the files against their expected hashes: [test_round12_historical_archive.py](../../tests/test_round12_historical_archive.py).
 
 To prepare portable execution from a cloned repository:
 
@@ -85,7 +85,9 @@ python tpe_local.py
 python trust_region_ts.py
 ```
 
-The bootstrap prepares the source data required by the scripts. Full modelling runs are computationally intensive; the accompanying JSON and CSV files show the original saved results.
+The bootstrap extracts only three archived `bbo_verified_F{2,3,6}.txt` transcripts into the portable working folder, with checksums and no overwrite of modified files. F4 source rows remain embedded in the original script. Full reruns are **computationally intensive**; the archive's historical JSON files are preserved as *saved results*, not claimed as fully independently reproduced here.
+
+**Validation:** All four scripts and their portable counterparts passed syntax checks. GP data-loading and selected fitting routines ran successfully, and the proposed inputs match the recorded submissions. The full computationally intensive modelling sweeps have **not** been independently rerun.
 
 ## What the experiments taught me
 
@@ -113,5 +115,8 @@ The first two principal components of sampled F8 coordinates explained **48.8% o
 - Four new points returned two gains (F6, F7) and two worse scores (F2, F3).
 - The actual submitted F2/F3/F6 inputs differ from an older R12 modelled shortlist; do not attach those older means to the actual portal returns.
 
+## Evidence categories
 
-[Dataset](../../DATASHEET.md) · [Structural reconstruction](../../docs/functions.md) · [Portal log](../../data/portal_rounds_11_12.csv).
+**Portal:** personally selected, returned result. **Prospective:** forecast recorded before result. **Retrospective:** equation fit or analysis performed afterwards. **External:** publicly shared results used for model comparisons or checking, not counted as personal queries. **Hypothesis:** unconfirmed conjecture or Round 13 candidate.
+
+[Provenance](../../DATASHEET.md) · [Structural reconstruction](../../docs/functions.md) · [Portal log](../../data/portal_rounds_11_12.csv).

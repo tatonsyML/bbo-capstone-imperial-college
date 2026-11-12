@@ -29,7 +29,7 @@ def test_function_pages_do_not_repeat_absence_of_numerical_forecasts():
         assert "Broad modelling discussion is not represented" not in body, page
         assert "**Question and context:** **Historical evidence:**" not in body, page
         assert body.count("<details>") == body.count("</details>") == 13
-        assert len(re.findall(r"^\*\*(?:Code and results|Supporting material):", body,
+        assert len(re.findall(r"^\*\*(?:Code and evidence|Supporting material):", body,
                               flags=re.MULTILINE)) == 13
         assert not any(
             "…" in line
@@ -39,8 +39,8 @@ def test_function_pages_do_not_repeat_absence_of_numerical_forecasts():
 
 def test_real_forecasts_and_source_guidance_remain_available():
     intro = (ROOT / "functions/README.md").read_text(encoding="utf-8")
-    assert "**Forecasts and measured results:**" in intro
-    assert "decision histories" in intro
+    assert "**Forecasts and evidence:**" in intro
+    assert "source evidence audit" in intro
     for function in (2, 3, 5, 7):
         page = (ROOT / f"functions/F{function}/README.md").read_text(
             encoding="utf-8"
@@ -50,31 +50,3 @@ def test_real_forecasts_and_source_guidance_remain_available():
     assert "**Prospective GP-kernel predictions:**" in f8
     for function in (1, 2, 3, 4, 5, 6, 7, 8):
         assert (ROOT / f"functions/F{function}/selection_history.csv").is_file()
-
-
-def test_public_pages_exclude_internal_audit_notices():
-    removed = [
-        "docs/VERIFIED_FACTS.md",
-        "docs/EVIDENCE_RULES.md",
-        "docs/WEEKLY_SUBMISSION_EVIDENCE.md",
-    ]
-    for path in removed:
-        assert not (ROOT / path).exists(), path
-    pages = [ROOT / "README.md", ROOT / "MODEL_CARD.md", ROOT / "DATASHEET.md"]
-    pages += sorted((ROOT / "docs").glob("*.md"))
-    pages += sorted((ROOT / "journey").glob("round_*/README.md"))
-    pages += sorted((ROOT / "functions").glob("F*/README.md"))
-    pages += [ROOT / "functions/README.md", ROOT / "journey/README.md", ROOT / "notebooks/README.md"]
-    banned = (
-        "docs/VERIFIED_FACTS.md", "docs/EVIDENCE_RULES.md",
-        "docs/WEEKLY_SUBMISSION_EVIDENCE.md",
-        "the precise python script that generated this candidate is not available",
-        "the original selection script is not available",
-        "the original selection script is missing",
-        "its exact historical selection script remains unavailable",
-        "source evidence audit",
-    )
-    for path in pages:
-        source = path.read_text(encoding="utf-8").lower()
-        for phrase in banned:
-            assert phrase.lower() not in source, (path.relative_to(ROOT), phrase)

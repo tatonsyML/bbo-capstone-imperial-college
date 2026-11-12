@@ -1,6 +1,6 @@
 # Round 6 · Module 17 | Model comparison and local path fitting
 
-**Round summary:** Eight submitted inputs, eight measured results and the decisions behind them.
+**Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
 
@@ -29,16 +29,18 @@ F2 improved to 0.691315 and F3 to −0.020856, while F6 weakened. The value of a
 With five-fold validation after Round 5, I reported **GP vs small MLP normalised RMSE** of **0.112 vs 0.314** for F7 and **0.051 vs 0.157** for F8. F6's next controlled move contradicted a simple local extrapolation. I rejected convolutional models for these tabular coordinates and treated **held-out loss** as more reliable than complexity alone.
 
 
-## Model comparison and implementation
+## Source and limitations
 
-The [Round 6 input choices](results/round6_queries.csv), [per-function rationale](results/round6_query_rationale.csv) and [modelling notebook](Capstone_BBO_Module17_Week6.ipynb) cover the GP, Ridge and small MLP comparisons. The notebook presents saved five-fold validation and controlled-coordinate results. CNNs were not used because the inputs have no image-like spatial structure.
+The [eight saved Round 6 inputs](results/round6_queries.csv) and [per-function rationale](results/round6_query_rationale.csv) match the submitted portal vectors. This preserves the decisions even though the standalone fitting script is not preserved. Surviving course-time work compares Ridge, a small one-layer MLP and a GP using five-fold validation; controlled paths often took priority over a globally smoothed model. CNNs were not used because the numeric coordinate vectors lack an image's translation structure. This archive came from the original Module 17 ZIP dated **3 September 2026**. The original standalone fitting script is missing; the [notebook](Capstone_BBO_Module17_Week6.ipynb) presents recorded CSV comparisons without claiming to rerun the missing code.
 
-## Inputs, results and code
+**Notebook execution status:** The archived notebook retains one unexecuted cell which displays the preserved model-comparison and controlled-experiment CSVs. Its current file references are runnable, but the original fitting procedure is not reproduced by this cell.
 
-| File | Purpose | Description |
+## Original files and evidence
+
+| File | Purpose | Evidence status |
 |---|---|---|
-| [queries.txt](queries.txt) | submitted input vector | Submitted input |
-| [outputs.txt](outputs.txt) | returned output values | Measured score |
+| [queries.txt](queries.txt) | submitted input vector | portal input, historical |
+| [outputs.txt](outputs.txt) | returned output values | portal observation, historical |
 | [Capstone_BBO_Module17_Week6.ipynb](Capstone_BBO_Module17_Week6.ipynb) | notebook | archive, displays retained results |
 | [results/model_comparison_round5.csv](results/model_comparison_round5.csv) | CSV | saved model comparison |
 | [results/controlled_local_experiments.csv](results/controlled_local_experiments.csv) | CSV | saved controlled tests |

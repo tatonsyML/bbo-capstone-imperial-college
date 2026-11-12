@@ -1,6 +1,6 @@
 # Optimisation methods, source code and reproduction
 
-[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Model card](../MODEL_CARD.md) · [Final results](../journey/round_13/README.md)
+[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Original model-card](../MODEL_CARD.md) · [Round 13 verified results](../journey/round_13/README.md)
 
 ## What was implemented and when?
 
@@ -60,9 +60,13 @@ The original committee explored model and acquisition diversity, but does not re
 
 Read the same **through-Week-9** historical observation snapshot for each function, and ask each algorithm for one counterfactual candidate. These are not scored, because the capstone portal has not returned outputs at those new points. The comparison can report input feasibility and nearest-known-point distance. **Do not claim a method beat another method on F1–F7 from unobserved proposals.**
 
-## Interpretation of the benchmark
+## What this code does *not* establish
 
-The reference HEBO and TuRBO-1 implementations are compared using **fitted F8 model feedback**, not fresh portal calls. Their simulated results measure performance on that model. The other seven functions have no scored algorithm-versus-algorithm benchmark in this project.
+- That complete HEBO or TuRBO was used in any of the user's real submitted rounds.
+- That simulated F8 objective returns are real portal scores.
+- That a single best candidate would dominate on eight different unknown functions.
+- That a candidate chosen using the final history was actually available before its original submission date.
+- That the optional HEBO and BoTorch engines have been executed here: **their packages are not available during the code review**, so no numeric algorithm-versus-algorithm verdict is recorded.
 
 ## Code-reading route
 
@@ -85,7 +89,7 @@ The reference HEBO and TuRBO-1 implementations are compared using **fitted F8 mo
 
 ---
 
-## How the results changed my decisions
+## How the evidence changed my decisions
 
 Across the thirteen rounds I did not adopt one immutable optimiser. The [chronological journey](../journey/README.md) records when I trusted a GP forecast, tested a controlled local step or changed the representation entirely. Three checks mattered most:
 
@@ -107,11 +111,11 @@ Across the thirteen rounds I did not adopt one immutable optimiser. The [chronol
 
 The last step is especially important with a finite horizon: an exploratory query in R13 cannot provide knowledge for an R14 that does not exist.
 
-### Additional comparison data
+### External evidence and provenance
 
 Published external input-output records helped check some equations and influence later candidate regions. These records are **not** personal portal returns. Some later exploratory comparisons used small, adaptively collected holdouts and are **not** unbiased measures of deployment error.
 
-[Dataset datasheet](../DATASHEET.md) · [Round 10 investigation](../journey/round_10/README.md) · [Model card](../MODEL_CARD.md) · [Final results](../journey/round_13/README.md)
+[Provenance and attribution requirements](../DATASHEET.md) · [Dated audit](../journey/round_10/README.md) · [Full model card](../MODEL_CARD.md) · [Final verified results](../journey/round_13/README.md)
 
 ## Reproduce the supported results
 
@@ -148,11 +152,16 @@ The historical GP and acquisition pipeline is available in [src/bbo](../src/bbo/
 PYTHONPATH=src python -m bbo.pipeline
 ```
 
-The pipeline demonstrates the GP approach using observations through Round 9. Later methods and experiments appear on the individual round pages.
+**Scope:** the pipeline is a preserved older demonstration with a data cut through Week 9. It **does not** reproduce every Round 11–13 candidate-selection experiment and must not be presented as such. Some notebooks are short exploratory snapshots rather than polished end-to-end applications.
 
-### Data and scope
+### Evidence and limitations
 
-The repository contains 13 rounds of personal portal evaluations alongside the original course observations. External comparison points and fitted-model results are separate from measured returns. See the [dataset](../data/all_observations.csv) and [datasheet](../DATASHEET.md).
+- Latest verified status: **all 13 rounds**, or 104 personal portal evaluations.
+- The [Round 13 input/output log](../data/portal_rounds_13.csv) and [final audit](../journey/round_13/README.md) are verified.
+- The **confirmed Round 11 F7 input** was: `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`; confirmed score `3.278967926227992`. The original candidate-selection script is not retained. The [104-query provenance audit](../src/bbo/evidence_audit.py) prevents this input from being reported missing again.
+- Published external examples informed later investigations but must not be mixed into the personal returns dataset without source labelling and any required academic attribution.
+- Complete official HEBO and TuRBO frameworks are **not** claimed to have been benchmarked.
+- Starting observations and past bests are distinct from an individual round's returned outcome.
 
 For a short explanation start with [the README](../README.md), then consult [methods](methods.md), [mathematical reconstruction](functions.md) and [data provenance](../DATASHEET.md).
 
@@ -164,7 +173,7 @@ From the repository root, with **Node.js 18+**, without installing further packa
 node results/figures/build_visual_gallery.mjs
 ```
 
-This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces.
+This rebuilds the [16 SVG images](functions.md) and [manifest](../results/figures/gallery_manifest.json) from the available portal histories and the documented F5/F7/F8 equations. It checks these three formula evaluations against confirmed portal returns. F1/F2/F3/F4/F6 images contain **only observed points**, no fitted continuous surfaces. R11 F7 now has a confirmed input from the original results email and is included in the canonical data. Only its exact historical candidate-generator remains unavailable.
 
 The 3D pictures are static SVG projections, intended to render directly in GitHub. [Interpretation and limitations](functions.md).
 

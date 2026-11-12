@@ -42,7 +42,7 @@ This table separates the strategy I was considering from the **results the porta
 |---|---|---|
 | **1–4** | Gaussian Processes, UCB/EI proposals and initial exploration | A shared acquisition policy did not perform equally across functions; some responses were extremely small, while F5 showed strong scale and boundary effects |
 | **5–7** | Controlled local probes, alternative kernel fits and model checks | A good local fit was useful but did not ensure a good next query; F2 and F7 benefited from more targeted investigation |
-| **8–9** | Forecast checks, ARD GP comparisons and experiment selection | F4's local forecast was accurate to around 1.6 × 10⁻⁹ while F2's missed by 0.224977, showing that prediction reliability differed by function |
+| **8–9** | Forecast auditing, ARD GP comparisons and experiment selection | F4's local forecast was accurate to around 1.6 × 10⁻⁹ while F2's missed by 0.224977, showing that prediction reliability differed by function |
 | **10** | Structural investigations and targeted exploitation | F5 reached 8662.405 at the legal boundary; F8 reached 10. The explicit F5 formula and initial-40-only F8 fit were reconstructed retrospectively |
 | **11** | Challenging overly narrow refinements and exploring better regions | F1 reached almost 2 and F4 rose to 0.730459; F2/F3 also improved |
 | **12** | Structural forecast checks and further local tests | F6 reached −0.037519; F7's pre-result Hartmann-6 prediction closely matched 3.322368 |
@@ -55,7 +55,7 @@ The [round-by-round archive](journey/README.md) and [project journey](archive/no
 | Choice | Benefit | Cost or risk | My response |
 |---|---|---|---|
 | **Exploration versus exploitation** | Exploring finds regions outside the current best; exploitation refines a promising point | Too much exploration spends scarce queries; too much exploitation causes early stagnation | I moved towards function-specific choices, especially after the F2 forecast miss and F4 local plateau |
-| **GP versus simpler structural models** | A GP provides a flexible prediction and uncertainty; a simpler equation is easier to explain | GP uncertainty depends on its assumptions; an incorrectly chosen equation can look convincing locally | I compared kernels and introduced power-sum/quadratic hypotheses only where the evidence justified them |
+| **GP versus simpler structural models** | A GP provides a flexible prediction and uncertainty; a simpler equation is easier to audit | GP uncertainty depends on its assumptions; an incorrectly chosen equation can look convincing locally | I compared kernels and introduced power-sum/quadratic hypotheses only where the evidence justified them |
 | **Local trust region versus wider search** | Local search can refine an incumbent efficiently | A narrow region can exclude better solutions | F4's improvement after widening its search was a direct example |
 | **Complex ensemble versus a single interpretable fit** | Multiple models expose disagreement | More parameters and search rules increase cost and reduce explainability | For F8, the simple 17-coefficient quadratic gave a particularly strong independently testable account |
 | **Repeat a good point versus test a neighbour** | Repeating checks consistency at one setting | Identical inputs add little spatial information | Repeats were retained in the dataset and counted against the same evaluation budget |
@@ -81,7 +81,9 @@ All values are personally confirmed portal results. They differ drastically in s
 
 *Each function has its own vertical scale. For numerical comparisons use the values and the [279-row observation dataset](data/all_observations.csv), not the apparent relative heights of lines across functions.*
 
-**Selected results:**
+**F7 evidence correction:** Round 11 submitted input `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, score `3.278967926227992`, was confirmed from the official results email. **The original selection script is missing; the input is not.** See [verified facts](docs/VERIFIED_FACTS.md).
+
+**Evidence-specific observations:**
 
 - **F2:** one forecast of 0.730502 returned 0.505526. A different final-round region later returned 0.744250. A poor local forecast did not imply global convergence.
 - **F4:** one local forecast was accurate to about 1.6 × 10⁻⁹, yet tiny search steps stagnated near 0.659. A wider strategy found 0.730459, followed by 0.746898 in R13.
@@ -103,8 +105,9 @@ The [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb) recomputes coun
 - GP fitted uncertainty is conditional on model assumptions; calibration has to be checked on later portal returns.
 - With 2–8 dimensions and few points, adaptive sampling concentrates near previous successes, producing selection bias.
 - Repeated locations spend evaluation budget while adding limited new spatial information.
-- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1 now has a published **retrospective Gaussian–cosine reconstruction**, [six fitted coefficients and a reproducible 10-initial/13-holdout test](src/bbo/f1_reconstruction.py). Its functional family was provided by separate working code and did not emerge from a blind fit; the model is presented as a later mathematical investigation.
+- F2/F3/F4/F6 remain without confirmed closed-form expressions. F1 now has a published **retrospective Gaussian–cosine reconstruction**, [six fitted coefficients and a reproducible 10-initial/13-holdout test](src/bbo/f1_reconstruction.py). Its functional family was provided by separate working code and did not emerge from a blind fit; the historical Round 11 provenance remains separate.
 - F5/F7/F8 mathematical models are numerically supported but **not authenticated copies of the undisclosed source code**.
+- F7's R11 inputs and full-precision output were confirmed from the official course-results email; they are not surrogate-inferred. Its exact historical selection script remains unavailable.
 
 ## 9. Ethics, access and redistribution
 
@@ -116,6 +119,6 @@ The same approach would require additional validation, security checks and hard 
 
 **Quick start:** install [requirements-notebook.txt](requirements-notebook.txt), run the [final notebook](notebooks/Capstone_Final_Walkthrough.ipynb), then `python -m pytest -q`. The [reproduction guide](docs/methods.md) covers other available scripts. [Full records](data/all_observations.csv), [final inputs](results/current_best_after_week13.csv) and the [visual gallery](docs/visualisations.md) allow a reviewer to verify the claims.
 
-Original portal results, research code and later model experiments are organised separately for readers.
+Historical coursework, original decision evidence and retrospective reference benchmarks are labelled separately. Further changes should document data cutoff, fitted model, package versions and why an algorithm was selected.
 
 [← Project home](README.md)

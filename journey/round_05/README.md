@@ -1,6 +1,6 @@
 # Round 5 · Module 16 | Controlled coordinate tests
 
-**Round summary:** Eight submitted inputs, eight measured results and the decisions behind them.
+**Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
 
 ## My reasoning at the time
 
@@ -10,7 +10,7 @@ F5 supplied unusually direct evidence. In Round 4, changing **only x2 from 0.970
 
 I contrasted this measured progress with less reliable explorations. A distant F1 probe found almost no useful signal. F4's sensitivity warned against assuming that any plausible local move would improve the score. The lesson I took from AlexNet and ImageNet was not to import an image architecture, but to understand how the interaction of method, data and computing resources affects performance. A sophisticated network is not necessarily an efficient or defensible use of a small, expensive black-box dataset.
 
-I also began distinguishing a research prototype from a reproducible software project. A collection of notebooks was no longer enough to explain the process to another reader. My contemporary software-design notes proposed separating data, reusable modelling functions, candidate decisions and results, together with a record of why I changed direction. That was an **early design intention**, not a description of the repository's final directory structure. My standard for success broadened: the code should work, but the experiments and the reasoning behind each submitted point also needed to be understandable.
+I also began distinguishing a research prototype from a reproducible software project. A collection of notebooks was no longer enough to explain the process to another reader. My contemporary software-design notes proposed separating data, reusable modelling functions, candidate decisions and results, together with a record of why I changed direction. That was an **early design intention**, not a description of the repository's final directory structure. My standard for success broadened: the code should work, but the experiments and the reasoning behind each submitted point also needed to be auditable.
 
 ## What I did
 
@@ -29,12 +29,15 @@ F4 reached about 0.658927 while F5, F7 and F8 also improved. A local response pa
 I distinguished genuine coordinate evidence from claims about deep neural-network feature hierarchies. For **Round 4 F5**, where increasing only **x2 from 0.970147 to 0.999999** while holding the other three coordinates fixed raised the score **4295.87 → 4694.32**. This controlled test informed my decisions; I did not treat the deep-learning analogy as proof that a CNN generated the next query.
 
 
+## Source and limitations
 
-## Inputs, results and code
+My Week 5 analysis distinguishes measured, controlled experiments from conceptual neural-network analogies. The exact Week 5 candidate-selection script has not been retained; later explanations remain labelled retrospective.
 
-| File | Purpose | Description |
+## Original files and evidence
+
+| File | Purpose | Evidence status |
 |---|---|---|
-| [queries.txt](queries.txt) | submitted input vector | Submitted input |
-| [outputs.txt](outputs.txt) | returned output values | Measured score |
+| [queries.txt](queries.txt) | submitted input vector | portal input, historical |
+| [outputs.txt](outputs.txt) | returned output values | portal observation, historical |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)

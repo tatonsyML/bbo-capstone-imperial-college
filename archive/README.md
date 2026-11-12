@@ -6,7 +6,7 @@ The **main reading experience** is [the eight function stories](../functions/REA
 
 ### Historical sources
 
-- [Original round files, R1–R13](../journey/README.md): returned values, notebook versions, preserved scripts and round context. The available code and results sit alongside each round's explanation.
+- [Original round files, R1–R13](../journey/README.md): returned values, notebook versions, preserved scripts and round context. Their provenance is retained even where a selection script was lost.
 - [Data snapshots](../data/accumulated/): earlier observations and score histories retained to reproduce chronological decisions.
 - [Older decision log](notes/early_decision_log.md) and [project timeline](notes/early_project_timeline.md): useful historical viewpoints that may not reflect the final 13-round results.
 - [Legacy coursework checklist](coursework/legacy_checklist.md): superseded documentation, preserved only as historical context.
