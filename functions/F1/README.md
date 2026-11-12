@@ -10,7 +10,7 @@
 
 ## Understanding this function
 
-Almost every early response was extremely close to zero. The first GP and UCB proposals could not locate a useful region, and local improvements around a weak incumbent were misleading. Contemporary notes describe a Gaussian-modulated structural hypothesis and some external exploration around Round 10–11; those historical records are preserved below. **A separate retrospective reconstruction is now fully reproducible using only my own recorded F1 observations.** Its mathematical form was supplied separately; this numerical fit does not reproduce the original Round 11 candidate-selection process.
+Almost every early response was extremely close to zero. The first GP and UCB proposals could not locate a useful region, and local improvements around a weak incumbent were misleading. A later mathematical reconstruction helps explain the sharp response pattern and is presented separately below.
 
 ### Score progression from real evaluations
 
@@ -23,221 +23,221 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 <details>
 <summary><strong>Round 1 · Opening hypothesis</strong> — 0.00000000</summary>
 
-**Original learning context:** The first reflection described F1 as nearly all zero and chose an under-sampled area because no useful local peak had been established.
+**Why this input:** The first reflection described F1 as nearly all zero and chose an under-sampled area because no useful local peak had been established.
 
-**Strategy / candidate-selection evidence:** GP and acquisition baseline (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** GP and acquisition baseline
 
 **Submitted input:** `0.02-0.98`  
 **Actual portal result:** `0.0`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
-**After the result:** The submitted point did not beat the incumbent. Second round: GP/UCB with per-function exploration weights; deterministic candidate grids or pools.
+**What I learnt:** The first exploratory point returned zero, leaving the already tiny initial best unchanged.
 
-**Code and evidence:** [Round 1 reflection and portal evidence](../../journey/round_01/README.md) · [Submitted inputs](../../journey/round_01/queries.txt) · [Returned scores](../../journey/round_01/outputs.txt) · [Original coursework notebook](../../journey/round_01/supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb) (coursework, not a verified portal generator) · No separate candidate-generator source authenticated · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_01/README.md) · [Inputs](../../journey/round_01/queries.txt) · [Outputs](../../journey/round_01/outputs.txt) · [Coursework notebook](../../journey/round_01/supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb).
 
 </details>
 
 <details>
 <summary><strong>Round 2 · GP and UCB working package</strong> — -1.96324543e-233</summary>
 
-**Original learning context:** After the first query returned zero, the original Week 2 reflection gave F1 the largest UCB exploration weight, κ=3.0, and considered a future signal/no-signal classifier without claiming it was already implemented.
+**Why this input:** After the first query returned zero, the original Week 2 reflection gave F1 the largest UCB exploration weight, κ=3.0, and considered a future signal/no-signal classifier without claiming it was already implemented.
 
-**Strategy / candidate-selection evidence:** GP and UCB working package *(early-round attribution partly retrospective)*.
+**Approach considered:** GP and UCB working package
 
 **Submitted input:** `0.052001-0.865999`  
 **Actual portal result:** `-1.9632454298284602e-233`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
-**After the result:** The submitted point did not beat the incumbent. Third round: function-specific EI/UCB policy; 1%-of-output-SD EI margin and GP fitting restarts documented at pipeline level.
+**What I learnt:** The uncertainty-led GP/UCB proposal still found no useful signal; a wider search alone did not resolve the near-zero response problem.
 
-**Code and evidence:** [Round 2 reflection and portal evidence](../../journey/round_02/README.md) · [Submitted inputs](../../journey/round_02/queries.txt) · [Returned scores](../../journey/round_02/outputs.txt) · [Original GP/UCB selection script](../../journey/round_02/week2_ucb_course_aligned.py) · [Eight saved selections](../../journey/round_02/week2_ucb_results.csv) (all eight saved portal values match the submitted record) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_02/README.md) · [Inputs](../../journey/round_02/queries.txt) · [Outputs](../../journey/round_02/outputs.txt) · [GP/UCB Python code](../../journey/round_02/week2_ucb_course_aligned.py) · [Saved candidates](../../journey/round_02/week2_ucb_results.csv) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb).
 
 </details>
 
 <details>
-<summary><strong>Round 3 · Function-specific EI or wider search (retrospective)</strong> — 2.69213109e-65</summary>
+<summary><strong>Round 3 · Function-specific EI or wider search</strong> — 2.69213109e-65</summary>
 
-**Original learning context:** Third round: function-specific EI/UCB policy; 1%-of-output-SD EI margin and GP fitting restarts documented at pipeline level.
+**Why this input:** Third round: function-specific EI/UCB policy; 1%-of-output-SD EI margin and GP fitting restarts documented at pipeline level.
 
-**Strategy / candidate-selection evidence:** Function-specific EI or wider search (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** Function-specific EI or wider search
 
 **Submitted input:** `0.636406-0.206433`  
 **Actual portal result:** `2.69213108614911e-65`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
-**After the result:** The submitted point did not beat the incumbent. Fourth round: GP paired with SVM good/bad checks and small neural-network gradient challengers, not hard classifier exclusion.
+**What I learnt:** The new response was negligible, so the search still lacked a promising high-scoring region.
 
-**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; no standalone original query generator is preserved for this round · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_03/README.md) · [Inputs](../../journey/round_03/queries.txt) · [Outputs](../../journey/round_03/outputs.txt).
 
 </details>
 
 <details>
 <summary><strong>Round 4 · GP, SVM and neural-network diagnostics</strong> — 1.51764873e-192</summary>
 
-**Original learning context:** Fourth round: GP paired with SVM good/bad checks and small neural-network gradient challengers, not hard classifier exclusion.
+**Why this input:** Fourth round: GP paired with SVM good/bad checks and small neural-network gradient challengers, not hard classifier exclusion.
 
-**Strategy / candidate-selection evidence:** GP, SVM and neural-network diagnostics *(early-round attribution partly retrospective)*.
+**Approach considered:** GP, SVM and neural-network diagnostics
 
 **Submitted input:** `0.999999-0.999999`  
 **Actual portal result:** `1.517648729565899e-192`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
-**After the result:** The submitted point did not beat the incumbent. Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
+**What I learnt:** The upper-corner test returned essentially zero; extreme coordinates were not a shortcut to a useful score.
 
-**Code and evidence:** [Round 4 reflection and portal evidence](../../journey/round_04/README.md) · [Submitted inputs](../../journey/round_04/queries.txt) · [Returned scores](../../journey/round_04/outputs.txt) · [Original analysis code](../../journey/round_04/capstone_bbo_week4_module15.py) · [Executed notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb) (final eight inputs stored explicitly; hybrid selection, not an autonomous selector) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_04/README.md) · [Inputs](../../journey/round_04/queries.txt) · [Outputs](../../journey/round_04/outputs.txt) · [Python analysis](../../journey/round_04/capstone_bbo_week4_module15.py) · [Notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb).
 
 </details>
 
 <details>
-<summary><strong>Round 5 · Controlled coordinate probes (retrospective)</strong> — 1.33191455e-22</summary>
+<summary><strong>Round 5 · Controlled coordinate probes</strong> — 1.33191455e-22</summary>
 
-**Original learning context:** Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
+**Why this input:** Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
 
-**Strategy / candidate-selection evidence:** Controlled coordinate probes (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** Controlled coordinate probes
 
 **Submitted input:** `0.75-0.75`  
 **Actual portal result:** `1.3319145509281447e-22`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
-**After the result:** The submitted point did not beat the incumbent. Sixth round: compare GP and MLP using five-fold cross-validated error; treat extra model flexibility as something to justify.
+**What I learnt:** This controlled change did not reveal a useful new response region.
 
-**Code and evidence:** [Round 5 reflection and portal evidence](../../journey/round_05/README.md) · [Submitted inputs](../../journey/round_05/queries.txt) · [Returned scores](../../journey/round_05/outputs.txt) · Contemporary reflection and submitted measurements preserved; no standalone selection code authenticated · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_05/README.md) · [Inputs](../../journey/round_05/queries.txt) · [Outputs](../../journey/round_05/outputs.txt).
 
 </details>
 
 <details>
 <summary><strong>Round 6 · GP, ridge and MLP comparison; controlled local fit</strong> — 3.25547512e-17</summary>
 
-**Original learning context:** Sixth round: compare GP and MLP using five-fold cross-validated error; treat extra model flexibility as something to justify.
+**Why this input:** Sixth round: compare GP and MLP using five-fold cross-validated error; treat extra model flexibility as something to justify.
 
-**Strategy / candidate-selection evidence:** GP, ridge and MLP comparison; controlled local fit *(early-round attribution partly retrospective)*.
+**Approach considered:** GP, ridge and MLP comparison; controlled local fit
 
 **Submitted input:** `0.732524-0.7389`  
 **Actual portal result:** `3.2554751168755075e-17`  
 **Best observed before → after:** `7.710875114502849e-16` → `7.710875114502849e-16`.
 
-**After the result:** The submitted point did not beat the incumbent. Near-zero results still held almost no meaningful signal; the Week 7 paper prioritised ARD kernels and checking how well forecasts survived the next portal return.
+**What I learnt:** The alternative local comparison remained in an almost-zero area, showing why response scale mattered.
 
-**Code and evidence:** [Round 6 reflection and portal evidence](../../journey/round_06/README.md) · [Submitted inputs](../../journey/round_06/queries.txt) · [Returned scores](../../journey/round_06/outputs.txt) · [Original Module 17 notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision rationale](../../journey/round_06/results/round6_query_rationale.csv) (standalone fitter source not retained) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_06/README.md) · [Inputs](../../journey/round_06/queries.txt) · [Outputs](../../journey/round_06/outputs.txt) · [Notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision notes](../../journey/round_06/results/round6_query_rationale.csv).
 
 </details>
 
 <details>
-<summary><strong>Round 7 · ARD and local forecast investigations (retrospective)</strong> — 1.31425296e-15 ★ new best</summary>
+<summary><strong>Round 7 · ARD and local forecast investigations</strong> — 1.31425296e-15 ★ new best</summary>
 
-**Original learning context:** Near-zero results still held almost no meaningful signal; the Week 7 paper prioritised ARD kernels and checking how well forecasts survived the next portal return.
+**Why this input:** Near-zero results still held almost no meaningful signal; the Week 7 paper prioritised ARD kernels and checking how well forecasts survived the next portal return.
 
-**Strategy / candidate-selection evidence:** ARD and local forecast investigations (retrospective) *(early-round attribution partly retrospective)*.
+**Approach considered:** ARD and local forecast investigations
 
 **Submitted input:** `0.730874-0.7318`  
 **Actual portal result:** `1.3142529628112004e-15`  
 **Best observed before → after:** `7.710875114502849e-16` → `1.3142529628112004e-15`.
 
-**After the result:** The submitted point established a new personal best. Eighth round: separate LLM hypothesis generation from deterministic numerical validation and check candidate precision.
+**What I learnt:** This was technically a new best, but the value remained tiny; it was not yet a useful high-response region.
 
-**Code and evidence:** [Round 7 reflection and portal evidence](../../journey/round_07/README.md) · [Submitted inputs](../../journey/round_07/queries.txt) · [Returned scores](../../journey/round_07/outputs.txt) · [Next-round audit of Week 7 forecasts](../../journey/round_08/results/week7_audit.csv) (subsequent analysis, not the original Round 7 generator) · No authenticated standalone Round 7 selector · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_07/README.md) · [Inputs](../../journey/round_07/queries.txt) · [Outputs](../../journey/round_07/outputs.txt) · [Forecast comparison](../../journey/round_08/results/week7_audit.csv).
 
 </details>
 
 <details>
 <summary><strong>Round 8 · Rank-GP exploration near the Round 7 incumbent</strong> — 4.19700395e-16</summary>
 
-**Original learning context:** Eighth round: separate LLM hypothesis generation from deterministic numerical validation and check candidate precision.
+**Why this input:** Eighth round: separate LLM hypothesis generation from deterministic numerical validation and check candidate precision.
 
-**Strategy / candidate-selection evidence:** Rank-GP local consensus around the new Week 7 best; stay inside the near-zero basin while testing a small x1-up/x2-down move..
+**Approach:** Rank-GP local consensus around the new Week 7 best; stay inside the near-zero basin while testing a small x1-up/x2-down move.
 
 **Submitted input:** `0.735874-0.729467`  
 **Actual portal result:** `4.1970039548686525e-16`  
 **Best observed before → after:** `1.3142529628112004e-15` → `1.3142529628112004e-15`.
 
-**After the result:** The submitted point did not beat the incumbent. A cautious one-coordinate change was chosen while the output scale remained pathological; I had not yet located the main positive-response region.
+**What I learnt:** A small move near the incumbent reduced the response, giving little reason to keep polishing that neighbourhood.
 
-**Code and evidence:** [Round 8 reflection and portal evidence](../../journey/round_08/README.md) · [Submitted inputs](../../journey/round_08/queries.txt) · [Returned scores](../../journey/round_08/outputs.txt) · [Original Module 19 Python analysis](../../journey/round_08/capstone_bbo_module19_round8.py) · [Original eight-input decision record](../../journey/round_08/results/round8_queries.csv) (all eight match portal inputs) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_08/README.md) · [Inputs](../../journey/round_08/queries.txt) · [Outputs](../../journey/round_08/outputs.txt) · [Python analysis](../../journey/round_08/capstone_bbo_module19_round8.py) · [Saved candidates](../../journey/round_08/results/round8_queries.csv).
 
 </details>
 
 <details>
 <summary><strong>Round 9 · Single-coordinate test around the Round 7 best</strong> — 1.92128079e-15 ★ new best</summary>
 
-**Original learning context:** A cautious one-coordinate change was chosen while the output scale remained pathological; I had not yet located the main positive-response region.
+**Why this input:** A cautious one-coordinate change was chosen while the output scale remained pathological; I had not yet located the main positive-response region.
 
-**Strategy / candidate-selection evidence:** One-coordinate probe: move x1 down by 0.001 from the Week 7 incumbent while holding x2 fixed. The updated rank-GP committee favours lower x1, but the output scale is too pathological for a trustworthy numeric forecast..
+**Approach:** One-coordinate probe: move x1 down by 0.001 from the Week 7 incumbent while holding x2 fixed. The updated rank-GP committee favours lower x1, but the output scale is too pathological for a trustworthy numeric forecast.
 
 **Submitted input:** `0.729874-0.7318`  
 **Actual portal result:** `1.921280788064022e-15`  
 **Best observed before → after:** `1.3142529628112004e-15` → `1.921280788064022e-15`.
 
-**After the result:** The submitted point established a new personal best. The original Round 10 plan explicitly left the repeated (0.73,0.73) neighbourhood, using external evidence to challenge the stale local hypothesis.
+**What I learnt:** The score improved only at a negligible scale. The existing local region was not delivering meaningful progress.
 
-**Code and evidence:** [Round 9 reflection and portal evidence](../../journey/round_09/README.md) · [Submitted inputs](../../journey/round_09/queries.txt) · [Returned scores](../../journey/round_09/outputs.txt) · [Dated eight-input decision and forecast ledger](../../journey/round_09/results/round9_queries.csv) (all eight match portal inputs) · The preserved local-fitting script does not generate F1's recorded query · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_09/README.md) · [Inputs](../../journey/round_09/queries.txt) · [Outputs](../../journey/round_09/outputs.txt) · [Candidate forecasts](../../journey/round_09/results/round9_queries.csv).
 
 </details>
 
 <details>
-<summary><strong>Round 10 · Targeted positive-response region; exploratory near-peer evidence; unobserved</strong> — 0.00000726400118 ★ new best</summary>
+<summary><strong>Round 10 · Testing a different positive-response region</strong> — 0.00000726400118 ★ new best</summary>
 
-**Original learning context:** The original Round 10 plan explicitly left the repeated (0.73,0.73) neighbourhood, using external evidence to challenge the stale local hypothesis.
+**Why this input:** The repeated near-zero search had become unproductive. I tested a separate positive-response region rather than another tiny local adjustment.
 
-**Strategy / candidate-selection evidence:** Targeted positive-response region; exploratory near-peer evidence; unobserved.
+**Approach:** Alternative-region search guided by a developing structural hypothesis.
 
 **Submitted input:** `0.582552-0.558941`  
 **Actual portal result:** `0.000007264001184177771`  
 **Best observed before → after:** `1.921280788064022e-15` → `0.000007264001184177771`.
 
-**After the result:** The submitted point established a new personal best. A two-component Gaussian-modulated oscillatory explanation was checked against prior recorded observations before selecting the new point.
+**What I learnt:** Testing another region produced a clear positive response, many orders of magnitude larger than the earlier values.
 
-**Code and evidence:** [Round 10 reflection and portal evidence](../../journey/round_10/README.md) · [Submitted inputs](../../journey/round_10/queries.txt) · [Returned scores](../../journey/round_10/outputs.txt) · [Dated final candidate list](../../journey/round_10/round10_candidates.csv) · [Pre-result planning snapshot](../../journey/round_10/optimisation.yaml) · [GP/HEBO-inspired/TuRBO-style challenger code](../../src/bbo/optimizer.py) (not proof of the exact final per-function generator) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_10/README.md) · [Inputs](../../journey/round_10/queries.txt) · [Outputs](../../journey/round_10/outputs.txt) · [Candidate list](../../journey/round_10/round10_candidates.csv) · [Search plan](../../journey/round_10/optimisation.yaml) · [Related optimiser code](../../src/bbo/optimizer.py).
 
 </details>
 
 <details>
-<summary><strong>Round 11 · Alternative-region exploration and structural investigations</strong> — 2.00000000 ★ new best</summary>
+<summary><strong>Round 11 · Finding a high-scoring point</strong> — 2.00000000 ★ new best</summary>
 
-**Original learning context:** A two-component Gaussian-modulated oscillatory explanation was checked against prior recorded observations before selecting the new point.
+**Why this input:** Round 10 revealed a positive-response region. I tested a different nearby point under a Gaussian-modulated structural hypothesis.
 
-**Strategy / candidate-selection evidence:** Alternative-region exploration and structural investigations.
+**Approach:** Testing a higher-response region.
 
 **Submitted input:** `0.628540-0.628540`  
 **Actual portal result:** `1.9999999996761817`  
 **Best observed before → after:** `0.000007264001184177771` → `1.9999999996761817`.
 
-**After the result:** The submitted point established a new personal best. The same high-scoring coordinates were deliberately repeated, providing little new coverage.
+**What I learnt:** The alternative-region input returned almost 2, the first substantial high-response result of the search.
 
-**Code and evidence:** [Round 11 reflection and portal evidence](../../journey/round_11/README.md) · [Portal inputs/outputs for R11](../../data/portal_rounds_11_12.csv) · [Later reproducible DBSCAN diagnostic](../../research/diagnostics/clustering/clustering_audit.py) (the clustering study was contemporary; this script was assembled later and was not the original query generator) · [Later F1 reconstruction](../../src/bbo/f1_reconstruction.py) (retrospective numerical fit) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_11/README.md) · [Portal results](../../data/portal_rounds_11_12.csv) · [Clustering analysis (later reproduction)](../../research/diagnostics/clustering/clustering_audit.py) · [F1 mathematical model (later)](../../src/bbo/f1_reconstruction.py).
 
 </details>
 
 <details>
-<summary><strong>Round 12 · Controlled probes, repeats and structural investigations</strong> — 2.00000000</summary>
+<summary><strong>Round 12 · Repeating the strongest result</strong> — 2.00000000</summary>
 
-**Original learning context:** The same high-scoring coordinates were deliberately repeated, providing little new coverage.
+**Why this input:** After Round 11 returned almost 2, I repeated its exact coordinates to test consistency.
 
-**Strategy / candidate-selection evidence:** Controlled probes, repeats and structural investigations.
+**Approach:** Repeat query for consistency.
 
 **Submitted input:** `0.628540-0.628540`  
 **Actual portal result:** `1.9999999996761817`  
 **Best observed before → after:** `1.9999999996761817` → `1.9999999996761817`.
 
-**After the result:** The submitted point did not beat the incumbent. The Week 13 reflection discussed allocating the final budget according to immediate benefit; the submitted point was a repeat of the R11 best.
+**What I learnt:** Repeating the high-scoring vector returned the same value. This checked consistency without adding a new location.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (documents the deliberate F1 repeat; the four original Week 12 analysis scripts did not separately generate this point) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
 
 </details>
 
 <details>
-<summary><strong>Round 13 · Final decision</strong> — 2.00000000</summary>
+<summary><strong>Round 13 · Final repeat at the best point</strong> — 2.00000000</summary>
 
-**Original learning context:** The Week 13 reflection discussed allocating the final budget according to immediate benefit; the submitted point was a repeat of the R11 best.
+**Why this input:** The same high-scoring coordinates had succeeded twice, so I used the final query for another consistency check.
 
-**Strategy / candidate-selection evidence:** Final exploitation and regional probes.
+**Approach:** Final repeat at the observed best.
 
 **Submitted input:** `0.628540-0.628540`  
 **Actual portal result:** `1.9999999996761817`  
 **Best observed before → after:** `1.9999999996761817` → `1.9999999996761817`.
 
-**After the result:** The submitted point did not beat the incumbent. A weak GP on a numerically compressed target is a reason to challenge the representation, not endlessly tune one local model.
+**What I learnt:** The final repeat confirmed consistency at the successful point, not broader coverage of the input space.
 
-**Code and evidence:** [Round 13 reflection and portal evidence](../../journey/round_13/README.md) · [Submitted inputs](../../journey/round_13/queries.txt) · [Returned scores](../../journey/round_13/outputs.txt) · [Final thirteen-round reflection](../../journey/final_reflection/README.md) (final reasoning, not a surviving standalone selector) · [Function-specific decision ledger](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_13/README.md) · [Inputs](../../journey/round_13/queries.txt) · [Outputs](../../journey/round_13/outputs.txt) · [Final reflection](../../journey/final_reflection/README.md).
 
 </details>
 
@@ -295,6 +295,5 @@ The model family was available as a separate working implementation. **Its origi
 
 A weak GP on a numerically compressed target is a reason to challenge the representation, not endlessly tune one local model.
 
-**Source discipline:** The originally submitted weekly reflections informed the learning context; the portal results and preserved files establish what actually happened. Historical experiments, post-outcome explanations and model-generated graph values are not interchangeable.
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)
