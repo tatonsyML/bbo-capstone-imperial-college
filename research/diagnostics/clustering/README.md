@@ -2,7 +2,7 @@
 
 [← Methods and experiments](../../../docs/methods.md) · [Round 11 evidence](../../../journey/round_11/README.md) · [F1 research](../../../functions/F1/README.md)
 
-The author's **original Week 11 submission describes applying DBSCAN** to the 255 observations available through Round 10, including numerical cluster findings. **Clustering was therefore part of the contemporary Week 11 research.** The reproducible Python diagnostic in this folder was assembled and executed **later**, and its original relationship to the Week 11 implementation is not established. It was **not the verified original Round 11 candidate generator**. The [weekly-submission audit](../../../docs/WEEKLY_SUBMISSION_EVIDENCE.md) records this source distinction.
+The author's **original Week 11 submission describes applying DBSCAN** to the 255 observations available through Round 10, including numerical cluster findings. **Clustering was therefore part of the contemporary Week 11 research.** The reproducible Python diagnostic in this folder was assembled and executed **later**, and its original relationship to the Week 11 implementation is not established. It was **not the verified original Round 11 candidate generator**. For the original clustering discussion, see the [Round 11 research notes](../../../journey/round_11/README.md).
 
 The analysis uses **only my 255 historical observations**: 175 course-supplied starting evaluations and 80 personal portal evaluations (10 rounds × 8 functions). No peer observations or additional oracle queries enter this clustering analysis. The source CSVs stay in their existing [`data/accumulated/function_N/` folders](../../../data/accumulated/), **not duplicated here**.
 
