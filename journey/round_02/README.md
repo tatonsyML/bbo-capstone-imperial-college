@@ -37,6 +37,8 @@ After receiving Week 1 returns, I moved from function-specific heuristics to a m
 
 The [Week 2 UCB notebook](Capstone_BBO_Week2_UCB_only.ipynb), [Python script](week2_ucb_course_aligned.py), [results CSV](week2_ucb_results.csv) and [archive ZIP](Module13_Round2_Original_Package.zip) preserve the working package assembled on 30 July 2026. It used Gaussian Processes, predicted mean and uncertainty, UCB and grid/random search. Original course `.npy` arrays are not included here; the [consolidated observations](../../data/all_observations.csv) are separate. The ZIP is retained as historical evidence rather than assumed expendable.
 
+**Notebook execution status:** The original Week 2 notebook is an unexecuted historical snapshot. The saved Python script, query list and portal outcomes remain the primary evidence of the round.
+
 ## Original files and evidence
 
 | File | Purpose | Evidence status |

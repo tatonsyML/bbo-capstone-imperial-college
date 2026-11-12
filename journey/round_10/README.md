@@ -61,6 +61,8 @@ F5's legal all-upper-bound input improved decisively and F8's 17-coefficient qua
 I described an **evidence-gated** comparison among GP, regional polynomial, **HEBO-inspired** committees and a **TuRBO-style** search with a fixed width of **0.20**. These were *adaptations*, not full library implementations. F5's four-coordinate boundary query and F8's quadratic vertex were **prospective hypotheses** here; only the subsequent portal returns established the reported scores.
 
 
+**Notebook execution status:** The three early exploratory notebooks are unexecuted historical snapshots, preserved for their course-time reasoning rather than presented as fully executed versions of the final workflow.
+
 ## Original assessed work
 
 The **unchanged** Module 21.2 assessment documents are retained under [archive/component_21_2/](archive/component_21_2/), including the [datasheet](archive/component_21_2/datasheet.md), [model card](archive/component_21_2/model_card.md) and [decision log](archive/component_21_2/decision_log.md). The original [21.1 reflection](archive/component_21_1/submission.md) is a dated submission snapshot, separate from the final model card. An [alternative draft](archive/component_21_1/alternate_draft.md) is preserved as a distinct historical reconstruction; its precise submission status was not independently verified.

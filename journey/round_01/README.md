@@ -37,6 +37,8 @@ I began with the 175 supplied observations and chose a different exploratory que
 
 Module 12 introduced Gaussian Process surrogates, prediction uncertainty and exploration versus exploitation. The original full Week 1 optimiser was not retained. The [Module 12.1 coursework notebook](supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb) is retained as supporting course work, not presented as the exact portal-selection script.
 
+**Notebook execution status:** The original supporting coursework notebook is an unexecuted historical snapshot. Its unexecuted cells are retained as source material; it is not presented as the exact Round 1 portal candidate generator.
+
 ## Original files and evidence
 
 | File | Purpose | Evidence status |
