@@ -23,7 +23,7 @@ Each expandable section separates the same five things:
 
 **What was known → What was predicted → What was submitted → What was observed → What changed afterwards.**
 
-Where a model hyperparameter, seed or exact selection script was not retained, it is described as **not retained**. The detailed [decision ledgers](F2/selection_history.csv), [historical code](../journey/README.md) and [279-row master dataset](../data/all_observations.csv) provide a numerical audit without requiring readers to navigate duplicate CSV files first.
+The [round-by-round code and decision audit](../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) distinguishes surviving original selection code, notebooks that record decisions, code written later to reproduce an analysis, and rounds without an authenticated generator. The detailed [decision ledgers](F2/selection_history.csv), [historical code](../journey/README.md) and [279-row master dataset](../data/all_observations.csv) provide a numerical audit without requiring readers to navigate duplicate CSV files first.
 
 ## How to interpret the graphics
 
