@@ -26,7 +26,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
 
-**Approach considered:** Manual exploration informed by the starting observations.
+**Approach considered:** Exploitation near high-scoring initial observations; a single prominent peak was a working hypothesis, not a verified property of the hidden objective.
 
 **Submitted input:** `0.1-0.75-0.9-0.98`  
 **Actual portal result:** `1426.0897645116545`  
@@ -43,7 +43,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After R1 improved to 1426.09, Week 2 gave F5 the exploitative UCB κ=1.0 and noted that later coordinates near their upper bounds were important.
 
-**Approach considered:** GP and UCB working package
+**Approach considered:** GP/UCB with κ=1.0 favoured exploitation after the largest first-round improvement, while checking high later-coordinate values.
 
 **Submitted input:** `0.522156-0.922246-0.999259-0.99589`  
 **Actual portal result:** `3722.27447382346`  
@@ -60,7 +60,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
 
-**Approach considered:** Function-specific EI or wider search
+**Approach considered:** Local Expected Improvement refined the productive boundary-leaning region, with normalised GP targets and controlled uncertainty.
 
 **Submitted input:** `0.508373-0.970147-0.999999-0.999999`  
 **Actual portal result:** `4295.86773060836`  
@@ -77,7 +77,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The preceding input already placed x3 and x4 at the upper bound. I tested moving x2 to its own maximum while keeping the other coordinates controlled.
 
-**Approach considered:** GP, SVM and neural-network diagnostics
+**Approach considered:** GP remained primary; SVM classification and neural-network gradients were secondary diagnostics while x2 was tested at its legal upper bound.
 
 **Submitted input:** `0.508373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4694.317308235808`  
@@ -94,7 +94,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After Round 4 increased the score, I changed x1 while holding the other coordinates fixed near their upper values.
 
-**Approach considered:** Controlled coordinate probes
+**Approach considered:** Controlled x1 refinement held x2–x4 at their previously tested upper bounds; the earlier isolated x2 change supported that direction.
 
 **Submitted input:** `0.558373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4807.986076589498`  
@@ -111,7 +111,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
 
-**Approach considered:** GP, ridge and MLP comparison; controlled local fit
+**Approach considered:** Incremental x1 refinement followed a measured boundary trend; added neural-network complexity was not justified without better held-out evidence.
 
 **Submitted input:** `0.608373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4957.571711515816`  
@@ -128,7 +128,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
 
-**Approach considered:** ARD and local forecast investigations
+**Approach considered:** RBF/Matérn kernel, noise and restart comparisons included an output-scale/log-transform check, while maintaining the observed boundary trajectory.
 
 **Submitted input:** `0.658373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `5151.047725485012`  
@@ -145,13 +145,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The controlled x1 series had improved repeatedly, so I tested a larger step while retaining the other coordinates near the upper bound.
 
-**Approach:** The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary.
+**Approach considered:** The controlled x1 series remains monotonic with accelerating gains. Increase x1 by 0.10 while retaining x2-x4 at the validated upper boundary.
 
 **Submitted input:** `0.758373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `5709.3613198927205`  
 **Best observed before → after:** `5151.047725485012` → `5709.3613198927205`.
 
-**Forecast preserved before the Round 8 return:** approximately `5654.123` (local quadratic; see [Round 8 forecast table](../../journey/round_08/README.md)).
+**Pre-result forecast:** approximately `5654.123` (local quadratic; see [Round 8 forecast table](../../journey/round_08/README.md)).
 
 **What I learnt:** A larger x1 step produced a substantial gain. The saved forecast was directionally helpful but not exact.
 
@@ -164,13 +164,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
 
-**Approach:** Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gain per unit x1 has been increasing, and independent local quadratic / GP checks both forecast roughly 6454.
+**Approach considered:** Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gain per unit x1 has been increasing, and independent local quadratic / GP checks both forecast roughly 6454.
 
 **Submitted input:** `0.858373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `6583.56144525802`  
 **Best observed before → after:** `5709.3613198927205` → `6583.56144525802`.
 
-**Pre-result numerical forecast:** `6454.0` (recorded before return).
+**Pre-result forecast:** `6454.0` (recorded before return).
 
 **What I learnt:** The next x1 step exceeded the pre-result forecast and strengthened the case for testing the legal corner.
 
@@ -183,7 +183,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original Round 10 decision says that nine successive gains justified testing every coordinate at the legal upper corner, with external cubic/challenger support.
 
-**Approach:** Test the legal upper corner.
+**Approach considered:** Test the legal upper corner.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
@@ -200,7 +200,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The legal upper-corner query returned 8662.405 in Round 10. I repeated the input to check consistency.
 
-**Approach:** Repeat at the measured best.
+**Approach considered:** Repeat at the measured best.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
@@ -217,7 +217,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After matching upper-corner returns in Rounds 10 and 11, I retained the same vector.
 
-**Approach:** Repeat at the upper boundary.
+**Approach considered:** Repeat at the upper boundary.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
@@ -234,7 +234,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The upper-corner query remained the best measured location. I chose to repeat it in the final round.
 
-**Approach:** Final repeat of the boundary best.
+**Approach considered:** Final repeat of the boundary best.
 
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  

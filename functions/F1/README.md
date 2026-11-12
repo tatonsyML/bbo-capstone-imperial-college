@@ -26,7 +26,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The first reflection described F1 as nearly all zero and chose an under-sampled area because no useful local peak had been established.
 
-**Approach considered:** Manual exploration informed by the starting observations.
+**Approach considered:** Sparse-region signal search based on starting observations; GP/EI guided the reasoning but no complete original selector is established for this first round.
 
 **Submitted input:** `0.02-0.98`  
 **Actual portal result:** `0.0`  
@@ -43,7 +43,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After the first query returned zero, the original Week 2 reflection gave F1 the largest UCB exploration weight, κ=3.0, and considered a future signal/no-signal classifier without claiming it was already implemented.
 
-**Approach considered:** GP and UCB working package
+**Approach considered:** GP/UCB with κ=3.0 prioritised exploration on the two-input grid. Signal/no-signal classification was considered for future work, not implemented as the query selector.
 
 **Submitted input:** `0.052001-0.865999`  
 **Actual portal result:** `-1.9632454298284602e-233`  
@@ -60,7 +60,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Third round: function-specific EI/UCB policy; 1%-of-output-SD EI margin and GP fitting restarts documented at pipeline level.
 
-**Approach considered:** Function-specific EI or wider search
+**Approach considered:** Maximin exploration sought a non-negligible signal rather than local EI around a near-zero incumbent; the original candidate-generator script is not preserved.
 
 **Submitted input:** `0.636406-0.206433`  
 **Actual portal result:** `2.69213108614911e-65`  
@@ -77,7 +77,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Fourth round: GP paired with SVM good/bad checks and small neural-network gradient challengers, not hard classifier exclusion.
 
-**Approach considered:** GP, SVM and neural-network diagnostics
+**Approach considered:** GP remained the main surrogate; SVM good/bad boundaries and small-neural-network gradients were secondary diagnostics, not hard filters.
 
 **Submitted input:** `0.999999-0.999999`  
 **Actual portal result:** `1.517648729565899e-192`  
@@ -94,7 +94,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
 
-**Approach considered:** Controlled coordinate probes
+**Approach considered:** Controlled coordinate probes and alternative areas tested whether the near-zero pattern could be escaped; no meaningful local incumbent had emerged.
 
 **Submitted input:** `0.75-0.75`  
 **Actual portal result:** `1.3319145509281447e-22`  
@@ -111,7 +111,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Sixth round: compare GP and MLP using five-fold cross-validated error; treat extra model flexibility as something to justify.
 
-**Approach considered:** GP, ridge and MLP comparison; controlled local fit
+**Approach considered:** GP versus MLP and controlled local tests challenged the usefulness of further refinement when almost all F1 responses remained tiny.
 
 **Submitted input:** `0.732524-0.7389`  
 **Actual portal result:** `3.2554751168755075e-17`  
@@ -128,7 +128,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Near-zero results still held almost no meaningful signal; the Week 7 paper prioritised ARD kernels and checking how well forecasts survived the next portal return.
 
-**Approach considered:** ARD and local forecast investigations
+**Approach considered:** ARD RBF/Matérn kernel, noise and rolling-origin investigations assessed whether a local GP forecast deserved trust despite the weak signal.
 
 **Submitted input:** `0.730874-0.7318`  
 **Actual portal result:** `1.3142529628112004e-15`  
@@ -145,7 +145,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Eighth round: separate LLM hypothesis generation from deterministic numerical validation and check candidate precision.
 
-**Approach:** Rank-GP local consensus around the new Week 7 best; stay inside the near-zero basin while testing a small x1-up/x2-down move.
+**Approach considered:** Rank-GP local consensus around the new Week 7 best; stay inside the near-zero basin while testing a small x1-up/x2-down move.
 
 **Submitted input:** `0.735874-0.729467`  
 **Actual portal result:** `4.1970039548686525e-16`  
@@ -162,7 +162,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** A cautious one-coordinate change was chosen while the output scale remained pathological; I had not yet located the main positive-response region.
 
-**Approach:** One-coordinate probe: move x1 down by 0.001 from the Week 7 incumbent while holding x2 fixed. The updated rank-GP committee favours lower x1, but the output scale is too pathological for a trustworthy numeric forecast.
+**Approach considered:** One-coordinate probe: move x1 down by 0.001 from the Week 7 incumbent while holding x2 fixed. The updated rank-GP committee favours lower x1, but the output scale is too pathological for a trustworthy numeric forecast.
 
 **Submitted input:** `0.729874-0.7318`  
 **Actual portal result:** `1.921280788064022e-15`  
@@ -179,7 +179,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The repeated near-zero search had become unproductive. I tested a separate positive-response region rather than another tiny local adjustment.
 
-**Approach:** Alternative-region search guided by a developing structural hypothesis.
+**Approach considered:** Alternative-region search guided by a developing structural hypothesis.
 
 **Submitted input:** `0.582552-0.558941`  
 **Actual portal result:** `0.000007264001184177771`  
@@ -196,7 +196,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Round 10 revealed a positive-response region. I tested a different nearby point under a Gaussian-modulated structural hypothesis.
 
-**Approach:** Testing a higher-response region.
+**Approach considered:** Testing a higher-response region.
 
 **Submitted input:** `0.628540-0.628540`  
 **Actual portal result:** `1.9999999996761817`  
@@ -213,7 +213,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After Round 11 returned almost 2, I repeated its exact coordinates to test consistency.
 
-**Approach:** Repeat query for consistency.
+**Approach considered:** Repeat query for consistency.
 
 **Submitted input:** `0.628540-0.628540`  
 **Actual portal result:** `1.9999999996761817`  
@@ -230,7 +230,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The same high-scoring coordinates had succeeded twice, so I used the final query for another consistency check.
 
-**Approach:** Final repeat at the observed best.
+**Approach considered:** Final repeat at the observed best.
 
 **Submitted input:** `0.628540-0.628540`  
 **Actual portal result:** `1.9999999996761817`  

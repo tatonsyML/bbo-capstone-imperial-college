@@ -26,7 +26,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original first reflection noted that the best outputs were already close to zero and favoured cautious exploitation while retaining a promising coordinate.
 
-**Approach considered:** Manual exploration informed by the starting observations.
+**Approach considered:** Cautious exploitation near strong negative scores (higher is nearer zero), while treating GP/EI as exploratory decision ideas, not a confirmed automated Round 1 generator.
 
 **Submitted input:** `0.5-0.5-0.345`  
 **Actual portal result:** `-0.0437772384849064`  
@@ -43,7 +43,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The first return was close to, but worse than, the starting best; Week 2 used a balanced UCB setting κ=2.0.
 
-**Approach considered:** GP and UCB working package
+**Approach considered:** GP/UCB with κ=2.0 balanced exploration and exploitation after the first result failed to improve the supplied incumbent.
 
 **Submitted input:** `0.993188-0.591985-0.00028`  
 **Actual portal result:** `-0.1064950977729621`  
@@ -60,7 +60,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The Week 3 plan explicitly selected local predicted-mean optimisation for F3, not the globally exploratory EI used for F2.
 
-**Approach considered:** Function-specific EI or wider search
+**Approach considered:** Local predicted-mean optimisation, not a blanket EI rule, refined a promising observed region using normalised GP targets.
 
 **Submitted input:** `0.496377-0.564413-0.34369`  
 **Actual portal result:** `-0.0427365723752823`  
@@ -77,7 +77,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After early GP-led comparisons, I tested a different candidate rather than assuming that the poor initial returns described the whole region.
 
-**Approach considered:** GP, SVM and neural-network diagnostics
+**Approach considered:** GP remained the primary surrogate, with SVM classification and neural-network gradients as secondary evidence rather than a hard veto on candidates.
 
 **Submitted input:** `0.49-0.62-0.36`  
 **Actual portal result:** `-0.0312815968234451`  
@@ -94,7 +94,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Fifth round: use controlled coordinate differences to avoid confusing a multi-variable shift with a causal single-input effect.
 
-**Approach considered:** Controlled coordinate probes
+**Approach considered:** Controlled coordinate probes tested local response and interactions instead of assuming separate input effects.
 
 **Submitted input:** `0.483623-0.675587-0.37631`  
 **Actual portal result:** `-0.0334231088352711`  
@@ -111,7 +111,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Original five-fold validation found that a small MLP slightly outperformed the GP on F3, unlike F7/F8. This challenged uncritical model preference.
 
-**Approach considered:** GP, ridge and MLP comparison; controlled local fit
+**Approach considered:** Five-fold GP/MLP comparison and local fitting challenged GP authority where the small MLP's validation error was lower for F3.
 
 **Submitted input:** `0.487816-0.639038-0.365586`  
 **Actual portal result:** `-0.0208561545295093`  
@@ -128,7 +128,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
 
-**Approach considered:** ARD and local forecast investigations
+**Approach considered:** RBF/Matérn, ARD, noise and rolling-origin checks tested uncertain local extrapolation against later returned scores.
 
 **Submitted input:** `0.486949-0.646592-0.367803`  
 **Actual portal result:** `-0.0279111486430777`  
@@ -145,13 +145,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** A local quadratic suggested an improved score along the existing path. I submitted the candidate to test that extrapolation.
 
-**Approach:** Week 7 overshot the Week 6 local best. A quadratic through the left bracket, Week 6 best and Week 7 point places the local vertex back at t≈0.260 on the controlled path.
+**Approach considered:** Week 7 overshot the Week 6 local best. A quadratic through the left bracket, Week 6 best and Week 7 point places the local vertex back at t≈0.260 on the controlled path.
 
 **Submitted input:** `0.488344-0.634434-0.364235`  
 **Actual portal result:** `-0.0296632773887996`  
 **Best observed before → after:** `-0.0208561545295093` → `-0.0208561545295093`.
 
-**Forecast preserved before the Round 8 return:** approximately `−0.019675` (local-path model; see [Round 8 forecast table](../../journey/round_08/README.md)).
+**Pre-result forecast:** approximately `−0.019675` (local-path model; see [Round 8 forecast table](../../journey/round_08/README.md)).
 
 **What I learnt:** The preserved forecast was too optimistic: the portal returned a materially lower score.
 
@@ -164,13 +164,13 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original Week 9 reflection warned that an optimistic F3 forecast near -0.01968 had returned around -0.02966.
 
-**Approach:** Updated local-path quadratic using Week 8, Week 6 and Week 7 places the vertex near this point, predicting about -0.02011. This is a tighter bracket after two forecast misses.
+**Approach considered:** Updated local-path quadratic using Week 8, Week 6 and Week 7 places the vertex near this point, predicting about -0.02011. This is a tighter bracket after two forecast misses.
 
 **Submitted input:** `0.487611-0.640821-0.366109`  
 **Actual portal result:** `-0.0258164064206346`  
 **Best observed before → after:** `-0.0208561545295093` → `-0.0208561545295093`.
 
-**Pre-result numerical forecast:** `-0.02011192237870145` (recorded before return).
+**Pre-result forecast:** `-0.02011192237870145` (recorded before return).
 
 **What I learnt:** The revised local-path forecast missed again, showing that a tighter local fit was not yet reliable.
 
@@ -183,7 +183,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The Week 10 submission describes rejecting a speculative restart in favour of an alternative x3 region, partly informed by separately attributed external data.
 
-**Approach:** Alternative-region local interpolation; external evidence; uncertain.
+**Approach considered:** Alternative-region local interpolation; external evidence; uncertain.
 
 **Submitted input:** `0.469634-0.620072-0.416672`  
 **Actual portal result:** `-0.014602810625106634`  
@@ -200,7 +200,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Eleventh round: analyse density with DBSCAN but do not confuse sampled clusters with high-performing regions.
 
-**Approach:** Alternative-region exploration and structural investigations.
+**Approach considered:** Alternative-region exploration and structural investigations.
 
 **Submitted input:** `0.445500-0.593000-0.420000`  
 **Actual portal result:** `-0.005709220275560069`  
@@ -217,7 +217,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** After Round 11 improved the best to approximately −0.005709, I tested a wider alternative to explore beyond the incumbent.
 
-**Approach:** Alternative-region probe.
+**Approach considered:** Alternative-region probe.
 
 **Submitted input:** `0.313581-0.474345-0.485191`  
 **Actual portal result:** `-0.0226526646178297`  
@@ -234,7 +234,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** With one query remaining and Round 12 below the incumbent, I tested another candidate in a different region.
 
-**Approach:** Final exploration of a competing region.
+**Approach considered:** Final exploration of a competing region.
 
 **Submitted input:** `0.197280-0.523429-0.470094`  
 **Actual portal result:** `-0.0037530969187192596`  
