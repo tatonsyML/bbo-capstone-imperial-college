@@ -34,6 +34,7 @@ SOURCES = {
 
 
 def observed(root: Path = ROOT) -> list[dict[str, str]]:
+    """Load the unchanged 175 starting and 104 personal portal records."""
     path = root / "data" / "all_observations.csv"
     with path.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
@@ -47,6 +48,7 @@ def observed(root: Path = ROOT) -> list[dict[str, str]]:
 
 
 def by_function(rows: list[dict[str, str]], number: int, round_number: int):
+    """Select the original data available for a specified function and round."""
     selected = [r for r in rows if int(r["function"]) == number
                 and int(r["round"]) == round_number]
     if len(selected) != (INITIAL_COUNTS[number - 1] if round_number == 0 else 1):
@@ -63,6 +65,7 @@ def by_function(rows: list[dict[str, str]], number: int, round_number: int):
 
 
 def array_bytes(values: np.ndarray) -> bytes:
+    """Serialise a NumPy array in memory for a reproducible input archive."""
     output = BytesIO()
     np.save(output, values, allow_pickle=False)
     return output.getvalue()
@@ -117,6 +120,7 @@ def prepare(round_number: int, workspace: Path, root: Path = ROOT) -> dict:
     if not source.is_file():
         raise FileNotFoundError(source)
     destination = workspace / source.name
+    # Copy the historical script byte-for-byte; only its input files are recreated.
     shutil.copyfile(source, destination)
     if destination.read_bytes() != source.read_bytes():
         raise RuntimeError("Historical script copy was not byte-identical")
@@ -160,6 +164,7 @@ def prepare(round_number: int, workspace: Path, root: Path = ROOT) -> dict:
 
 
 def main() -> None:
+    """Prepare an isolated replay, optionally run it, and preserve logs."""
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--round", required=True, type=int, choices=sorted(SOURCES))
     cli.add_argument("--workdir", type=Path,
