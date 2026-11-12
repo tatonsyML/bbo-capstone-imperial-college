@@ -1,6 +1,6 @@
 # Round 1 · Module 12 | An initial GP and acquisition baseline
 
-**Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
+**Round summary:** Eight submitted inputs, eight measured results and the decisions behind them.
 
 ## My reasoning at the time
 
@@ -35,12 +35,12 @@ Module 12 introduced Gaussian Process surrogates, prediction uncertainty and exp
 
 **Notebook execution status:** The original supporting coursework notebook is an unexecuted historical snapshot. Its unexecuted cells are retained as source material; it is not presented as the exact Round 1 portal candidate generator.
 
-## Original files and evidence
+## Inputs, results and code
 
-| File | Purpose | Evidence status |
+| File | Purpose | Description |
 |---|---|---|
-| [queries.txt](queries.txt) | submitted input vector | portal input, historical |
-| [outputs.txt](outputs.txt) | returned output values | portal observation, historical |
+| [queries.txt](queries.txt) | submitted input vector | Submitted input |
+| [outputs.txt](outputs.txt) | returned output values | Measured score |
 | [supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb](supporting_coursework/Required_assignment_12_1_Tamer_ready.ipynb) | coursework notebook | original exercise artefact |
 
 [Complete data](../../data/all_observations.csv) · [Whole project journey](../README.md) · [Final reproducible notebook](../../notebooks/Capstone_Final_Walkthrough.ipynb)

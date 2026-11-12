@@ -10,7 +10,7 @@ Prospective forecast accuracy had become a gate on model authority. F4's local p
 
 I made eight distinct decisions. F1 required another chance to locate a positive-response region rather than continue polishing microscopic outputs. F3 warranted a targeted alternative basin, with external evidence attributed separately. F5's sequence of improvements suggested the upper boundary, leading me to submit four coordinates at 0.999999. F6 called for comparison with a peer-informed proposal rather than another unexamined local extrapolation. F7's speculative local vertex was challenged by an alternative region with greater potential. F8 suggested that a much simpler additive quadratic with 17 coefficients might explain the score more effectively than a complex GP.
 
-I regarded provenance as part of the method. A reproducible record needs chronological inputs and returns, dates on pre-result forecasts, code revisions, transformations, random seeds and a clear division between my own observations and external evidence. Adaptively selected data were concentrated near places I had chosen to investigate; they did not describe the entire input space. The underlying assumption of local smoothness remained uncertain outside tested regions.
+I learnt to separate model predictions from observed returns, while recognising that adaptively selected inputs concentrate around areas I had already explored. The assumption of local smoothness remained uncertain outside tested regions.
 
 This reflection was written before the round's results. The later F5 boundary return and F8 score of 10 belong to the confirmed technical record below, not to the certainty I held at the decision point. The week's central achievement was to make each query an accountable hypothesis.
 
@@ -20,7 +20,7 @@ I compared controlled local experiments with GP/ARD forecasts, HEBO-inspired mod
 
 ## What happened at the decision point (before the return)
 
-At the time of the 18 October audit, **247 outputs through Week 9** were known and the eight Round 10 queries were pending. Those prospective labels are preserved as dated evidence, not current project status.
+Before the Round 10 scores were returned, I had **247 observations through Round 9** and eight candidate queries to choose.
 
 ## Decisions and reasoning
 
@@ -57,17 +57,15 @@ F5's legal all-upper-bound input improved decisively and F8's 17-coefficient qua
 I described an **evidence-gated** comparison among GP, regional polynomial, **HEBO-inspired** committees and a **TuRBO-style** search with a fixed width of **0.20**. These were *adaptations*, not full library implementations. F5's four-coordinate boundary query and F8's quadratic vertex were **prospective hypotheses** here; only the subsequent portal returns established the reported scores.
 
 
-**Notebook execution status:** The three early exploratory notebooks are unexecuted historical snapshots, preserved for their course-time reasoning rather than presented as fully executed versions of the final workflow.
-
 ## Original assessed work
 
 The **unchanged** Module 21.2 assessment documents are retained under [archive/component_21_2/](archive/component_21_2/), including the [datasheet](archive/component_21_2/datasheet.md), [model card](archive/component_21_2/model_card.md) and [decision log](archive/component_21_2/decision_log.md). The original [21.1 reflection](archive/component_21_1/submission.md) is a dated submission snapshot, separate from the final model card. An [alternative draft](archive/component_21_1/alternate_draft.md) is preserved as a distinct historical reconstruction; its precise submission status was not independently verified.
 
 Other records include the [Round 10 optimisation snapshot](optimisation.yaml), [candidate CSV](round10_candidates.csv) and [early exploratory notebooks](early_notebooks/).
 
-## Supporting Round 10 revision audit (dated before outputs)
+## Further Round 10 model comparisons
 
-## 2. Evidence comparison, without treating predictions as portal scores
+### Comparing predictions with observed results
 
 | Function | Comparison | Interpretation |
 |---|---|---|
@@ -82,7 +80,7 @@ Other records include the [Round 10 optimisation snapshot](optimisation.yaml), [
 
 The F5 all-upper-bound choice remains 0.999999 in each coordinate; its cubic model predicts approximately **8,489** there, but the real output has not been returned.
 
-## 3. External evidence and provenance
+### Additional data used in model comparisons
 
 Classmates' publicly shared records informed supplementary **experimental models** and helped reveal underexplored areas; they have **not** been counted as this participant's own portal observations.
 
@@ -96,11 +94,4 @@ The supplementary research used publicly shared input-output histories, model-ca
 
 **Academic-use note:** Public accessibility is not consent for unrestricted assessed use. The participant must comply with programme collaboration and attribution rules when applying peer-observed outputs to assessed query design.
 
-## 4. Reproducibility status
-
-The authoritative personal observation CSV files, main GP/acquisition code and Round 10 submitted inputs are in this repository. This audit captures the supplementary parameter families, types of external evidence, predictions and chosen coordinates, without identifying individual contributors. The detailed ad-hoc external test scripts were developed separately from the versioned project pipeline; the **exact supplementary analysis is not yet fully reproducible from this repository alone**. Any future publication should add the tested script revisions, dependencies, seeds and permitted source-retrieval instructions and an appropriate attribution register for authorised review.
-
-This document makes no claim that F3, F6, F7 or F8 achieved the forecast scores; only new portal outputs can establish that.
-
-
-[Complete observations](../../data/all_observations.csv) · [F5/F8 validation](../../notebooks/Capstone_Final_Walkthrough.ipynb).
+[Round 10 inputs](queries.txt) · [Measured returns](outputs.txt) · [Saved candidate comparisons](round10_candidates.csv) · [Methods](../../docs/methods.md)

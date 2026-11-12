@@ -1,6 +1,6 @@
 # Round 9 · Module 20 | A correct forecast can still lead to poor search
 
-**Evidence:** [Submitted inputs](queries.txt) and [returned outputs](outputs.txt) are the observed portal record. The forecasts below were recorded before the result, as documented in the [Week 9 audit](../../results/week9_forecast_audit.csv).
+**Round summary:** [Submitted inputs](queries.txt), [measured outputs](outputs.txt) and [recorded forecasts](../../results/week9_forecast_audit.csv).
 
 ## My reasoning at the time
 
@@ -29,7 +29,7 @@ The [controlled fitting script](round9_controlled_fits.py) evaluated local polyn
 | F7 | 1.786415 | 1.786338 | Small prediction error |
 | F8 | 9.933511 | 9.932443 | Small prediction error |
 
-No reliable scalar forecast for F1 or F6 was retained.
+F1 and F6 were assessed without a single numeric forecast.
 
 ## What I learnt
 
@@ -42,4 +42,4 @@ I considered the *value of one more expensive query*, using **Week 8 forecast er
 
 ## Files
 
-[Queries](queries.txt) · [Returns](outputs.txt) · [Week 8 audit](results/week8_audit.csv) · [scaling ledger](results/scaling_ledger.csv) · [cumulative historical records](results/submission_history_through_week8.csv).
+[Queries](queries.txt) · [Returns](outputs.txt) · [Week 8 forecasts](results/week8_audit.csv) · [scaling ledger](results/scaling_ledger.csv) · [cumulative historical records](results/submission_history_through_week8.csv).

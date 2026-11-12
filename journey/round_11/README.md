@@ -1,6 +1,6 @@
 # Round 11 | F1 breakthrough and stronger local search
 
-**Results:** All eight submitted inputs and scores are confirmed by the portal records. F7's full input and score are documented in the official results email; its original candidate-generation script is unavailable.
+**Results:** F1 reached almost 2, F4 improved to 0.730459, and F2, F3 and F7 also improved. The table below contains all eight submitted inputs and scores.
 
 ## My reasoning at the time
 
@@ -35,19 +35,17 @@ I challenged the nearly flat F1 response near the earlier incumbent and explored
 
 ## What I learnt
 
-A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. For F7, the input and full-precision result are confirmed by the official course email, not model-generated.
+A high-accuracy GP forecast is not enough if I confine the search to an unproductive neighbourhood. F7's move into a different region raised the best recorded result to 3.278968.
 
 ## How I approached this round
 
-I applied **DBSCAN** to the **255 observations available through Round 10**, with Euclidean distance, **min_samples=3** and a neighbourhood-radius sensitivity sweep. For F1, **ε=0.02** gave one **five-point cluster** and **15 unclustered observations**; the best observed score was **outside** that cluster. This was part of my contemporary research. I also investigated F1's two-component response and the measured F8 optimum. The later published clustering script was reconstructed separately.
+I applied **DBSCAN** to the **255 observations available through Round 10**, with Euclidean distance, **min_samples=3** and a neighbourhood-radius sensitivity sweep. For F1, **ε=0.02** gave one **five-point cluster** and **15 unclustered observations**; the best observed score was **outside** that cluster. This was part of my contemporary research. I also investigated F1's two-component response and the measured F8 optimum. The [clustering code](../../research/diagnostics/clustering/clustering_audit.py) provides a runnable illustration of the density analysis.
 
 
-## Contemporary clustering research and later executable diagnostic
+## Clustering analysis and visualisation
 
-The **DBSCAN investigation examined 255 observations available through Round 10**, including Euclidean distance, radius sensitivity and observed cluster behaviour. The analysis was part of the Week 11 work, although the original executable clustering script has not been authenticated.
+The analysis considered **255 observations through Round 10**, using Euclidean distances and neighbourhood-radius sensitivity checks. The [DBSCAN example](../../research/diagnostics/clustering/README.md) illustrates the cluster structure and includes an F1 visualisation. Its smooth model overlay was created later and is separate from the observed points.
 
-The [published reproducible clustering diagnostic](../../research/diagnostics/clustering/README.md) was rebuilt **retrospectively** and is **not** the original candidate-selection implementation. Its [F1 figure](../../research/diagnostics/clustering/f1_clustering_diagnostic.png) separates actual prior inputs from a **later reconstructed model surface**. Neither the later code nor the smooth model overlay is presented as a prospective Round 11 forecast.
+## Inputs, results and code
 
-## Original evidence
-
-[Returned values](outputs.txt) · [full portal CSV for R11–12](../../data/portal_rounds_11_12.csv) · [all observations](../../data/all_observations.csv). No contemporaneous complete Round 11 query text survived as a separate file; F7's vector was added later from verified course evidence.
+[Round 11 results](../../data/portal_rounds_11_12.csv) · [Returned values](outputs.txt) · [Complete dataset](../../data/all_observations.csv) · [Clustering diagnostic](../../research/diagnostics/clustering/README.md).

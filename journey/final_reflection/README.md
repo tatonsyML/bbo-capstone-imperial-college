@@ -34,7 +34,7 @@ With so little data, a Gaussian Process (GP) was a sensible baseline. Its limita
 
 - **R6: Comparing predictive performance.** Five-fold validation showed GP versus small-MLP normalised RMSE of **0.112 versus 0.314 on F7**, and **0.051 versus 0.157 on F8**. The MLP performed slightly better on F2/F3. I added local polynomial challengers rather than assuming one model family would dominate.
 
-- **R7: Adding chronological forecast audits.** I compared RBF/Matérn kernels, automatic relevance determination (ARD), noise settings and optimiser restarts. More importantly, I introduced rolling-origin validation: train using earlier observations, forecast a later result and measure the error. F8 missed by only **0.000025**, while F6 exposed substantial predictive weakness. This changed how I judged models, from fitting existing data to predicting unseen outcomes.
+- **R7: Checking forecasts chronologically.** I compared RBF/Matérn kernels, automatic relevance determination (ARD), noise settings and optimiser restarts. More importantly, I introduced rolling-origin validation: train using earlier observations, forecast a later result and measure the error. F8 missed by only **0.000025**, while F6 exposed substantial predictive weakness. This changed how I judged models, from fitting existing data to predicting unseen outcomes.
 
 - **R8: Separating evidence from hypotheses.** I distinguished actual portal observations, pre-result forecasts, generated candidates and AI-assisted suggestions. F2 demonstrated why: changing one coordinate by **0.000407** reduced the score from **0.691315 to 0.589348**. Nearby inputs did not necessarily produce predictably similar outputs.
 
@@ -120,7 +120,7 @@ F2, F3, F4 and F6 remained unresolved. Numerical agreement with tested observati
 
 **My biggest surprise:** F8's eight-dimensional function yielded a simple quadratic while lower-dimensional functions remained unresolved. Structure mattered more than dimension. Peers reinforced this: Andreia's function-specific BoTorch contrasted with Nayeem's transparent EI; Patrick and Rishin identified F8's quadratic through different approaches. No optimiser was universally superior.
 
-**Starting again**, I would test structural models alongside GPs from R1; record forecasts before outcomes; preserve rejected candidates and settings; audit duplicates; validate chronologically; and benchmark full HEBO/TuRBO rather than confuse them with my adaptations. I would investigate unresolved F2/F3/F4/F6 further.
+**Starting again**, I would test structural models alongside GPs from R1; record forecasts before outcomes; preserve rejected candidates and settings; check duplicate inputs; validate chronologically; and benchmark full HEBO/TuRBO rather than confuse them with my adaptations. I would investigate unresolved F2/F3/F4/F6 further.
 
 In Oracle HCM payroll-extract tuning, I would evaluate runtime alongside complete record reconciliation. **Speed without complete records is not improvement; predictive uncertainty does not replace production validation.**
 
