@@ -28,7 +28,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Cautious exploitation near strong negative scores (higher is nearer zero), while treating GP/EI as exploratory decision ideas, not a confirmed automated Round 1 generator.
 
-**Submitted input:** `0.5-0.5-0.345`  
+**Submitted input:** `0.500000-0.500000-0.345000`  
 **Actual portal result:** `-0.0437772384849064`  
 **Best observed before → after:** `-0.034835313350078584` → `-0.034835313350078584`.
 
@@ -45,7 +45,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP/UCB with κ=2.0 balanced exploration and exploitation after the first result failed to improve the supplied incumbent.
 
-**Submitted input:** `0.993188-0.591985-0.00028`  
+**Submitted input:** `0.993188-0.591985-0.000280`  
 **Actual portal result:** `-0.1064950977729621`  
 **Best observed before → after:** `-0.034835313350078584` → `-0.034835313350078584`.
 
@@ -62,7 +62,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Local predicted-mean optimisation, not a blanket EI rule, refined a promising observed region using normalised GP targets.
 
-**Submitted input:** `0.496377-0.564413-0.34369`  
+**Submitted input:** `0.496377-0.564413-0.343690`  
 **Actual portal result:** `-0.0427365723752823`  
 **Best observed before → after:** `-0.034835313350078584` → `-0.034835313350078584`.
 
@@ -79,7 +79,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** GP remained the primary surrogate, with SVM classification and neural-network gradients as secondary evidence rather than a hard veto on candidates.
 
-**Submitted input:** `0.49-0.62-0.36`  
+**Submitted input:** `0.490000-0.620000-0.360000`  
 **Actual portal result:** `-0.0312815968234451`  
 **Best observed before → after:** `-0.034835313350078584` → `-0.0312815968234451`.
 
@@ -96,7 +96,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Approach considered:** Controlled coordinate probes tested local response and interactions instead of assuming separate input effects.
 
-**Submitted input:** `0.483623-0.675587-0.37631`  
+**Submitted input:** `0.483623-0.675587-0.376310`  
 **Actual portal result:** `-0.0334231088352711`  
 **Best observed before → after:** `-0.0312815968234451` → `-0.0312815968234451`.
 

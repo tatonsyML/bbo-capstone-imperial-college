@@ -89,6 +89,16 @@ def test_story_inputs_and_outputs_match_all_104_real_portal_results():
             ]
             assert coordinates == actual_coordinates, (function, round_number)
 
+            # Formatting is presentation-only: six decimals, matching the
+            # verified portal record exactly, without rounding or new data.
+            canonical_display = "-".join(
+                f"{Decimal(observed[f'x{i}']):.6f}"
+                for i in range(1, dimension + 1)
+            )
+            assert match_input.group(1) == canonical_display, (
+                function, round_number
+            )
+
             score = _line_value(entry, "**Actual portal result:**")
             match_score = re.search(r"`([^`]+)`", score)
             assert match_score is not None
