@@ -9,7 +9,7 @@ From the repository root using Python 3.11:
 ```bash
 python -m pip install -r requirements-notebook.txt
 python -m pytest -q
-jupyter notebook notebooks/Capstone_Final_Walkthrough.ipynb
+jupyter lab notebooks/Capstone_Final_Walkthrough.ipynb
 ```
 
 To generate a fresh executed copy without changing the versioned notebook:
@@ -19,6 +19,8 @@ python -m jupyter nbconvert --to notebook --execute notebooks/Capstone_Final_Wal
 ```
 
 The [GitHub Actions notebook workflow](https://github.com/tatonsyML/bbo-capstone-imperial-college/actions/workflows/notebook-25-3.yml) executes the notebook and saves the result as a **downloadable workflow artifact**. It does **not** commit output files to pull-request branches.
+
+To prepare and run original R2/R4/R8/R9 scripts using an isolated, CSV-derived data adapter, see the [historical replay guide](../docs/historical_replay.md). Original scripts are not altered.
 
 ## Implementation guide
 
