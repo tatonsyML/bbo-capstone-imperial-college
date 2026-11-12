@@ -73,7 +73,7 @@ The [full chronological record](journey/README.md) shows what I knew before each
 
 **The best strategy depends on the function.** Narrow peaks, boundaries, interacting coordinates and unstable local behaviour required different methods and different levels of exploration.
 
-Some equations were investigated or validated **after** the relevant portal submissions. The [reconstruction guide](docs/reconstruction.md) distinguishes these later analyses from forecasts made during the challenge. The separate [full HEBO and TuRBO-1 comparison](research/full_optimisers/README.md) is post-capstone research using model-based feedback, not new portal evaluations.
+Some equations were investigated or validated **after** the relevant portal submissions. The [reconstruction guide](docs/reconstruction.md) distinguishes these later analyses from forecasts made during the challenge. The [executed official HEBO and TuRBO-1 comparison](research/full_optimisers/README.md#executed-f8-model-only-comparison--12-november-2026) uses **post-capstone simulated F8 feedback**, not new portal evaluations.
 
 ## Run the research
 
