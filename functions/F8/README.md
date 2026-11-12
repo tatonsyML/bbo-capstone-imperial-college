@@ -77,7 +77,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Keep refining while challenging the GP with alternative models.
 
-**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; a standalone generator was not recovered · [Function-specific decision ledger](selection_history.csv).
+**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; no standalone original query generator is preserved for this round · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -248,7 +248,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 
 **What changed for the next round:** Keep the full coordinates where compression would reduce the objective.
 
-**Code and evidence:** [Round 12 records](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F8 quadratic-vertex repeat; the recovered four-script suite does not establish a separate F8 generator) · [Machine-readable provenance](selection_history.csv).
+**Code and evidence:** [Round 12 records](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F8 quadratic-vertex repeat; the four original Week 12 analysis scripts does not establish a separate F8 generator) · [Machine-readable provenance](selection_history.csv).
 
 </details>
 

@@ -77,7 +77,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point did not beat the incumbent. The original model-comparison reflection highlighted how a small move could change F4 from about 0.648 to 0.315: near-good points were not automatically good.
 
-**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; a standalone generator was not recovered · [Function-specific decision ledger](selection_history.csv).
+**Code and evidence:** [Round 3 reflection and portal evidence](../../journey/round_03/README.md) · [Submitted inputs](../../journey/round_03/queries.txt) · [Returned scores](../../journey/round_03/outputs.txt) · The original reflection records function-specific acquisition choices; no standalone original query generator is preserved for this round · [Function-specific decision ledger](selection_history.csv).
 
 </details>
 
@@ -248,7 +248,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 
 **After the result:** The submitted point did not beat the incumbent. With a finite horizon, the final non-identical local configuration produced the new best, 0.746898.
 
-**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Recovered original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original local quadratic/TPE diagnostics](../../journey/round_12/original/tpe_local.py) · [Dated rationale for repeating the incumbent](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Original Round 12 model and candidate-selection code](../../journey/round_12/original/review_round12.py) · [Original local quadratic/TPE diagnostics](../../journey/round_12/original/tpe_local.py) · [Dated rationale for repeating the incumbent](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
 
 </details>
 
