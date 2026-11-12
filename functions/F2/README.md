@@ -22,18 +22,14 @@ The line uses **real observed scores only**, starting with the course-provided b
 
 The titles below show the **actual portal return**, with a star for each new best. Each section distinguishes original reasoning, predictions made *before* the result, observations and what the outcome taught me. Model settings are listed only when supported by a historical record; missing original scripts or parameters are not reconstructed as fact.
 
-**How to read the evidence:** Each round links to its saved inputs, portal returns and the actual code or analysis available for that period. An original script, a notebook with recorded selections, and a later reconstruction are different kinds of evidence. The [round-by-round source audit](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) explains those distinctions.
-
 <details>
 <summary><strong>Round 1 · Is there one promising ridge or two?</strong> — 0.379063270</summary>
 
-**Question and context:** **Historical evidence:** The original reflection noted similar x1 values among the best observations but very different x2 values. The first query tested a midpoint rather than assuming a continuous basin.
+**Decision context:** The original reflection noted similar x1 values among the best observations but very different x2 values. The first query tested a midpoint rather than assuming a continuous basin.
 
 **Submitted input:** `0.7-0.5`  
 **Actual portal output:** `0.379063270240082`  
 **Best before → after:** `0.6112052157614438` → `0.6112052157614438`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** A midpoint was less successful than the initial best. The first question remained unresolved; simple interpolation had little support.
 
@@ -46,13 +42,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 2 · Should I explore after the midpoint failed?</strong> — 0.586054705</summary>
 
-**Question and context:** **Historical evidence:** The Week 2 reflection recorded **UCB κ=2.5**, using a dense 501×501 search in two dimensions. The exploration policy was deliberately stronger than for improving functions.
+**Decision context:** The Week 2 reflection recorded **UCB κ=2.5**, using a dense 501×501 search in two dimensions. The exploration policy was deliberately stronger than for improving functions.
 
 **Submitted input:** `0.672-0.999999`  
 **Actual portal output:** `0.5860547049641637`  
 **Best before → after:** `0.6112052157614438` → `0.6112052157614438`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The new point still failed to beat 0.611205. A wider search was not by itself an improvement.
 
@@ -65,13 +59,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 3 · Can global EI identify a better region?</strong> — 0.653867607 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 3 reflection described **global EI**, with an exploration margin of 1% of output standard deviation, target normalisation and eight GP optimiser restarts. Its methodology is documented; the exact historical candidate-generator script is not retained.
+**Decision context:** The Week 3 reflection described **global EI**, with an exploration margin of 1% of output standard deviation, target normalisation and eight GP optimiser restarts. Its methodology is documented; the exact historical candidate-generator script is not retained.
 
 **Submitted input:** `0.7015-0.957999`  
 **Actual portal output:** `0.653867607133911`  
 **Best before → after:** `0.6112052157614438` → `0.653867607133911`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The portal returned the first improvement above the supplied best, to 0.653868.
 
@@ -84,13 +76,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 4 · Would an upper-edge probe be better?</strong> — 0.591285660</summary>
 
-**Question and context:** **Historical evidence:** After the first new best, I investigated competing candidate shapes using GP predictions, SVM good/bad classification and small neural-network gradients. These were supporting diagnostics, not replacements for the portal.
+**Decision context:** After the first new best, I investigated competing candidate shapes using GP predictions, SVM good/bad classification and small neural-network gradients. These were supporting diagnostics, not replacements for the portal.
 
 **Submitted input:** `0.705-0.999999`  
 **Actual portal output:** `0.5912856598404541`  
 **Best before → after:** `0.653867607133911` → `0.653867607133911`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The selected near-boundary x2=0.999999 point returned 0.591286 and lost to the incumbent.
 
@@ -103,13 +93,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 5 · Does a tiny x2 movement help?</strong> — 0.654849871 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 5 reflection emphasised measuring single-coordinate effects while avoiding a claim that every input acts independently. The chosen input held x1 at 0.7015.
+**Decision context:** The Week 5 reflection emphasised measuring single-coordinate effects while avoiding a claim that every input acts independently. The chosen input held x1 at 0.7015.
 
 **Submitted input:** `0.7015-0.959409`  
 **Actual portal output:** `0.6548498709022528`  
 **Best before → after:** `0.653867607133911` → `0.6548498709022528`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** A small x2 change improved the best to 0.654850, only modestly.
 
@@ -122,13 +110,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 6 · How trustworthy is local improvement?</strong> — 0.691314866 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** Five-fold comparisons after Round 5 showed a small MLP was slightly better than the GP on F2, unlike F7/F8. I retained uncertainty-aware GP guidance while comparing alternatives.
+**Decision context:** Five-fold comparisons after Round 5 showed a small MLP was slightly better than the GP on F2, unlike F7/F8. I retained uncertainty-aware GP guidance while comparing alternatives.
 
 **Submitted input:** `0.7015-0.959816`  
 **Actual portal output:** `0.6913148663237587`  
 **Best before → after:** `0.6548498709022528` → `0.6913148663237587`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The nearby query produced 0.691315, a useful new best but not proof that the local surface was smooth.
 
@@ -141,13 +127,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 7 · Is the fitted neighbourhood stable?</strong> — 0.589347608</summary>
 
-**Question and context:** **Historical evidence:** The Week 7 reflection prioritised GP kernel family (RBF/Matérn), lengthscales, noise and rolling-origin forecast audits. F2's prior improvement had differed from its GP forecast.
+**Decision context:** The Week 7 reflection prioritised GP kernel family (RBF/Matérn), lengthscales, noise and rolling-origin forecast audits. F2's prior improvement had differed from its GP forecast.
 
 **Submitted input:** `0.7015-0.960223`  
 **Actual portal output:** `0.5893476079120687`  
 **Best before → after:** `0.6913148663237587` → `0.6913148663237587`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** Moving x2 by only 0.000407 reduced the result to 0.589348. The model had not earned blind confidence.
 
@@ -160,7 +144,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 8 · Where does a local quadratic predict the crest?</strong> — 0.613086131</summary>
 
-**Question and context:** **Historical evidence:** The saved Round 8 decision fitted a quadratic through neighbouring x2 positions, selecting x2≈0.959720 while holding x1 fixed. It tested a specific local interpolation hypothesis.
+**Decision context:** The saved Round 8 decision fitted a quadratic through neighbouring x2 positions, selecting x2≈0.959720 while holding x1 fixed. It tested a specific local interpolation hypothesis.
 
 **Submitted input:** `0.7015-0.95972`  
 **Actual portal output:** `0.6130861312279376`  
@@ -179,7 +163,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 9 · Will a symmetric microstep beat the incumbent?</strong> — 0.505525516</summary>
 
-**Question and context:** **Historical evidence:** The Round 9 local fit proposed x2=0.959912, opposite the earlier microstep, and recorded a **pre-result prediction of 0.730502334656**.
+**Decision context:** The Round 9 local fit proposed x2=0.959912, opposite the earlier microstep, and recorded a **pre-result prediction of 0.730502334656**.
 
 **Submitted input:** `0.7015-0.959912`  
 **Actual portal output:** `0.5055255161847483`  
@@ -198,13 +182,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 10 · Should the suspect local model get another chance?</strong> — 0.617259927</summary>
 
-**Question and context:** **Historical evidence:** The original Week 10 assignment records a *tight diagnostic point* rather than trusting a wider failed forecast. HEBO-inspired kernel/acquisition committees and a TuRBO-style box were alternatives, not full package implementations.
+**Decision context:** The original Week 10 assignment records a *tight diagnostic point* rather than trusting a wider failed forecast. HEBO-inspired kernel/acquisition committees and a TuRBO-style box were alternatives, not full package implementations.
 
 **Submitted input:** `0.701500-0.959796`  
 **Actual portal output:** `0.617259927400158`  
 **Best before → after:** `0.6913148663237587` → `0.6913148663237587`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The output, 0.617260, remained below the incumbent. Further refinement in the same narrow region looked unproductive.
 
@@ -217,13 +199,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 11 · What does a competing region reveal?</strong> — 0.695336827 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 11 reflections describe changing F2 to an alternative portion of a promising ridge and using DBSCAN input-density diagnostics with care. Clustering was not equated with a good objective value.
+**Decision context:** The Week 11 reflections describe changing F2 to an alternative portion of a promising ridge and using DBSCAN input-density diagnostics with care. Clustering was not equated with a good objective value.
 
 **Submitted input:** `0.692000-0.366000`  
 **Actual portal output:** `0.6953368270741286`  
 **Best before → after:** `0.6913148663237587` → `0.6953368270741286`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The new location x=(0.692,0.366) returned **0.695337**, improving the incumbent despite a large change in x2.
 
@@ -236,13 +216,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 12 · Can a nearby point refine the new ridge?</strong> — 0.660671151</summary>
 
-**Question and context:** **Historical evidence:** The Week 12 reflection prioritised forecast validation, bounded alternatives and the value of scarce remaining queries. The local move was a test, not evidence that nearby locations were better.
+**Decision context:** The Week 12 reflection prioritised forecast validation, bounded alternatives and the value of scarce remaining queries. The local move was a test, not evidence that nearby locations were better.
 
 **Submitted input:** `0.684399-0.368552`  
 **Actual portal output:** `0.660671151390024`  
 **Best before → after:** `0.6953368270741286` → `0.6953368270741286`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The response of 0.660671 was below the current best. The apparent ridge remained unreliable.
 
@@ -255,13 +233,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 13 · Is one final alternative worth the risk?</strong> — 0.744250426 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 13 reflection explicitly preferred a competing F2 peak: with no later round, a new region needed a chance of improving the best **now**, not merely providing information.
+**Decision context:** The Week 13 reflection explicitly preferred a competing F2 peak: with no later round, a new region needed a chance of improving the best **now**, not merely providing information.
 
 **Submitted input:** `0.864900-0.500000`  
 **Actual portal output:** `0.7442504263021256`  
 **Best before → after:** `0.6953368270741286` → `0.7442504263021256`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The submitted point x=(0.8649,0.5) returned **0.744250426302**, the final personal best.
 

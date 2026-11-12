@@ -20,10 +20,6 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 ## Weekly development · expand a round
 
-Each round shows **what was known or being tested, what was submitted, what returned, and what was learnt**. The original 52-page weekly reflection is the narrative foundation; the decision ledger, surviving code and official portal records establish what was actually submitted. An exact historic kernel/seed/forecast appears only if retained. Where early rationale was reconstructed later, it is explicitly labelled in the ledger.
-
-**How to read the evidence:** Each round links to its saved inputs, portal returns and the actual code or analysis available for that period. An original script, a notebook with recorded selections, and a later reconstruction are different kinds of evidence. The [round-by-round source audit](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) explains those distinctions.
-
 <details>
 <summary><strong>Round 1 · Opening hypothesis</strong> — 1426.08976 ★ new best</summary>
 
@@ -34,8 +30,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Submitted input:** `0.1-0.75-0.9-0.98`  
 **Actual portal result:** `1426.0897645116545`  
 **Best observed before → after:** `1088.8596181962705` → `1426.0897645116545`.
-
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
 **After the result:** The submitted point established a new personal best. Second round: GP/UCB with per-function exploration weights; deterministic candidate grids or pools.
 
@@ -54,8 +48,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Actual portal result:** `3722.27447382346`  
 **Best observed before → after:** `1426.0897645116545` → `3722.27447382346`.
 
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
-
 **After the result:** The submitted point established a new personal best. The Week 3 strategy used local Expected Improvement because the prior queries kept increasing the best.
 
 **Code and evidence:** [Round 2 reflection and portal evidence](../../journey/round_02/README.md) · [Submitted inputs](../../journey/round_02/queries.txt) · [Returned scores](../../journey/round_02/outputs.txt) · [Original GP/UCB selection script](../../journey/round_02/week2_ucb_course_aligned.py) · [Eight saved selections](../../journey/round_02/week2_ucb_results.csv) (all eight saved portal values match the submitted record) · [Notebook](../../journey/round_02/Capstone_BBO_Week2_UCB_only.ipynb) · [Function-specific decision ledger](selection_history.csv).
@@ -72,8 +64,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Submitted input:** `0.508373-0.970147-0.999999-0.999999`  
 **Actual portal result:** `4295.86773060836`  
 **Best observed before → after:** `3722.27447382346` → `4295.86773060836`.
-
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
 **After the result:** The submitted point established a new personal best. The Week 5 original reflection documents the R4 single-coordinate test: x2 moved from 0.970147 to 0.999999, raising 4295.87 to 4694.32.
 
@@ -92,8 +82,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Actual portal result:** `4694.317308235808`  
 **Best observed before → after:** `4295.86773060836` → `4694.317308235808`.
 
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
-
 **After the result:** The submitted point established a new personal best. The next controlled x1 increase, holding x2–x4 fixed, improved the score again.
 
 **Code and evidence:** [Round 4 reflection and portal evidence](../../journey/round_04/README.md) · [Submitted inputs](../../journey/round_04/queries.txt) · [Returned scores](../../journey/round_04/outputs.txt) · [Original analysis code](../../journey/round_04/capstone_bbo_week4_module15.py) · [Executed notebook](../../journey/round_04/Capstone_BBO_Week4_Module15.ipynb) (final eight inputs stored explicitly; hybrid selection, not an autonomous selector) · [Function-specific decision ledger](selection_history.csv).
@@ -110,8 +98,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Submitted input:** `0.558373-0.999999-0.999999-0.999999`  
 **Actual portal result:** `4807.986076589498`  
 **Best observed before → after:** `4694.317308235808` → `4807.986076589498`.
-
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
 **After the result:** The submitted point established a new personal best. Original Week 6 work describes the contrast between a large early breakthrough and incremental local improvement on F5.
 
@@ -130,8 +116,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Actual portal result:** `4957.571711515816`  
 **Best observed before → after:** `4807.986076589498` → `4957.571711515816`.
 
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
-
 **After the result:** The submitted point established a new personal best. Seventh round: compare RBF and Matérn, ARD, noise and rolling-origin forecast accuracy rather than fitting alone.
 
 **Code and evidence:** [Round 6 reflection and portal evidence](../../journey/round_06/README.md) · [Submitted inputs](../../journey/round_06/queries.txt) · [Returned scores](../../journey/round_06/outputs.txt) · [Original Module 17 notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision rationale](../../journey/round_06/results/round6_query_rationale.csv) (standalone fitter source not retained) · [Function-specific decision ledger](selection_history.csv).
@@ -149,8 +133,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Actual portal result:** `5151.047725485012`  
 **Best observed before → after:** `4957.571711515816` → `5151.047725485012`.
 
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
-
 **After the result:** The submitted point established a new personal best. The Week 8/9 reflections showed gains accelerating along the same x1 path; smaller steps were not automatically safer or better.
 
 **Code and evidence:** [Round 7 reflection and portal evidence](../../journey/round_07/README.md) · [Submitted inputs](../../journey/round_07/queries.txt) · [Returned scores](../../journey/round_07/outputs.txt) · [Next-round audit of Week 7 forecasts](../../journey/round_08/results/week7_audit.csv) (subsequent analysis, not the original Round 7 generator) · No authenticated standalone Round 7 selector · [Function-specific decision ledger](selection_history.csv).
@@ -158,7 +140,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 </details>
 
 <details>
-<summary><strong>Round 8 · The controlled x1 series remains monotonic with accelerating gains. Increase…</strong> — 5709.36132 ★ new best</summary>
+<summary><strong>Round 8 · Extending the improving x1 trajectory</strong> — 5709.36132 ★ new best</summary>
 
 **Original learning context:** The Week 8/9 reflections showed gains accelerating along the same x1 path; smaller steps were not automatically safer or better.
 
@@ -177,7 +159,7 @@ Each round shows **what was known or being tested, what was submitted, what retu
 </details>
 
 <details>
-<summary><strong>Round 9 · Continue the validated boundary trajectory with a 0.10 x1 step. Marginal gai…</strong> — 6583.56145 ★ new best</summary>
+<summary><strong>Round 9 · Another step towards the upper boundary</strong> — 6583.56145 ★ new best</summary>
 
 **Original learning context:** Week 9 emphasised that the prior F5 gain of 558.31 justified another larger step, rather than a default diminishing-returns assumption.
 
@@ -206,8 +188,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `6583.56144525802` → `8662.405001248297`.
 
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
-
 **After the result:** The submitted point established a new personal best. Repeating the confirmed boundary score did not establish a hidden-source global optimum.
 
 **Code and evidence:** [Round 10 reflection and portal evidence](../../journey/round_10/README.md) · [Submitted inputs](../../journey/round_10/queries.txt) · [Returned scores](../../journey/round_10/outputs.txt) · [Dated final candidate list](../../journey/round_10/round10_candidates.csv) · [Pre-result planning snapshot](../../journey/round_10/optimisation.yaml) · [GP/HEBO-inspired/TuRBO-style challenger code](../../src/bbo/optimizer.py) (not proof of the exact final per-function generator) · [Function-specific decision ledger](selection_history.csv).
@@ -224,8 +204,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
-
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
 **After the result:** The submitted point did not beat the incumbent. Another repeat held the incumbent while teaching little about other inputs.
 
@@ -244,8 +222,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
 
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
-
 **After the result:** The submitted point did not beat the incumbent. The final record again retained the highest legal tested point; the mathematically reconstructed power-sum function came from later analysis.
 
 **Supporting material:** [Round 12 evidence](../../journey/round_12/README.md) · [Dated Round 12 recommendations](../../journey/round_12/original/week12_full_review_2026-11-02.md) (records the F5 boundary repeat; it was not generated by a separate script in the four original Week 12 analysis scripts) · [Numerical provenance](selection_history.csv).
@@ -262,8 +238,6 @@ Each round shows **what was known or being tested, what was submitted, what retu
 **Submitted input:** `0.999999-0.999999-0.999999-0.999999`  
 **Actual portal result:** `8662.405001248297`  
 **Best observed before → after:** `8662.405001248297` → `8662.405001248297`.
-
-**Pre-result numerical forecast:** Not retained as a numerical forecast in the original decision ledger; no value has been invented.
 
 **After the result:** The submitted point did not beat the incumbent. Boundary tests are justified when they answer a concrete, evidence-supported question. Avoid claiming that a retrospective equation drove an earlier query.
 

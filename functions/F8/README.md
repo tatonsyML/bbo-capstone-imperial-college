@@ -22,18 +22,14 @@ The line uses **real observed scores only**, starting with the course-provided b
 
 The titles below show the **actual portal return**, with a star for each new best. Each section distinguishes original reasoning, predictions made *before* the result, observations and what the outcome taught me. Model settings are listed only when supported by a historical record; missing original scripts or parameters are not reconstructed as fact.
 
-**How to read the evidence:** Each round links to its saved inputs, portal returns and the actual code or analysis available for that period. An original script, a notebook with recorded selections, and a later reconstruction are different kinds of evidence. The [round-by-round source audit](../../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) explains those distinctions.
-
 <details>
 <summary><strong>Round 1 · How to explore with eight inputs and only 40 observations?</strong> — 9.83211236 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** My first reflection described F8 as the most uncertain query: even 40 starting records provide sparse coverage in eight dimensions. I retained coordinate patterns from stronger observations but deliberately explored.
+**Decision context:** My first reflection described F8 as the most uncertain query: even 40 starting records provide sparse coverage in eight dimensions. I retained coordinate patterns from stronger observations but deliberately explored.
 
 **Submitted input:** `0.088526-0.03196-0.048494-0.063991-0.991333-0.224689-0.073759-0.537568`  
 **Actual portal output:** `9.8321123600691`  
 **Best before → after:** `9.598482002566342` → `9.8321123600691`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The first returned query improved to 9.832112, identifying a more useful region.
 
@@ -46,13 +42,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 2 · Does the early good region justify lower exploration?</strong> — 9.49774899</summary>
 
-**Question and context:** **Historical evidence:** The Week 2 reflection set **UCB κ=1.5** for F8 and used a reproducible random pool of 300,000 candidates for higher-dimensional functions.
+**Decision context:** The Week 2 reflection set **UCB κ=1.5** for F8 and used a reproducible random pool of 300,000 candidates for higher-dimensional functions.
 
 **Submitted input:** `0.321822-0.045429-0.355724-0.015612-0.965914-0.090106-0.138377-0.028859`  
 **Actual portal output:** `9.4977489881389`  
 **Best before → after:** `9.8321123600691` → `9.8321123600691`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The exploratory candidate returned 9.497749, below the standing best.
 
@@ -65,13 +59,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 3 · Can local EI improve after a poor broad step?</strong> — 9.86347856 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 3 strategy used local EI on F8, with output normalisation and multiple optimiser restarts in the GP pipeline.
+**Decision context:** The Week 3 strategy used local EI on F8, with output normalisation and multiple optimiser restarts in the GP pipeline.
 
 **Submitted input:** `0.099253-0.051531-0.055571-0.074437-0.985751-0.228722-0.118577-0.53735`  
 **Actual portal output:** `9.8634785625365`  
 **Best before → after:** `9.8321123600691` → `9.8634785625365`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The query produced 9.863479, a new personal best.
 
@@ -84,13 +76,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 4 · Does model complexity improve the query?</strong> — 9.87547078 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 4 reflections compared GP, SVM decision boundaries and small neural-network gradients. The GP remained primary because it supplied predictive uncertainty; alternative models were secondary checks.
+**Decision context:** The Week 4 reflections compared GP, SVM decision boundaries and small neural-network gradients. The GP remained primary because it supplied predictive uncertainty; alternative models were secondary checks.
 
 **Submitted input:** `0.104617-0.061316-0.05911-0.07966-0.98296-0.230739-0.140986-0.537241`  
 **Actual portal output:** `9.8754707823449`  
 **Best before → after:** `9.8634785625365` → `9.8754707823449`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The submitted point improved to 9.875471.
 
@@ -103,13 +93,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 5 · Are repeated small steps productive?</strong> — 9.88500213 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 5 reflection favoured progressive empirical changes and warned against inventing feature hierarchies for ordinary continuous inputs.
+**Decision context:** The Week 5 reflection favoured progressive empirical changes and warned against inventing feature hierarchies for ordinary continuous inputs.
 
 **Submitted input:** `0.109981-0.071101-0.062649-0.084883-0.980169-0.232756-0.163395-0.537132`  
 **Actual portal output:** `9.8850021313761`  
 **Best before → after:** `9.8754707823449` → `9.8850021313761`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The output reached 9.885002, continuing a measured improvement trend.
 
@@ -122,13 +110,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 6 · Do GPs outperform the neural-network challenger?</strong> — 9.89207261 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** Five-fold cross-validation after Round 5 gave **GP NRMSE 0.051** versus **small-MLP 0.157** on F8. The GP retained the main decision role.
+**Decision context:** Five-fold cross-validation after Round 5 gave **GP NRMSE 0.051** versus **small-MLP 0.157** on F8. The GP retained the main decision role.
 
 **Submitted input:** `0.115345-0.080886-0.066188-0.090106-0.977378-0.234773-0.185804-0.537023`  
 **Actual portal output:** `9.8920726096301`  
 **Best before → after:** `9.8850021313761` → `9.8920726096301`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The submitted point returned 9.89207261; the pre-result forecast quoted later was about 9.892098, an error near 0.000025.
 
@@ -141,13 +127,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 7 · Does the local forecast remain reliable?</strong> — 9.89900201 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 7 reflection compared RBF and Matérn kernels, ARD lengthscales, noise and chronological forecasts. The previous F8 error was only 0.000025.
+**Decision context:** The Week 7 reflection compared RBF and Matérn kernels, ARD lengthscales, noise and chronological forecasts. The previous F8 error was only 0.000025.
 
 **Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.23956-0.238989-0.536764`  
 **Actual portal output:** `9.8990020095864`  
 **Best before → after:** `9.8920726096301` → `9.8990020095864`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The observed value rose to **9.899002010**; the recorded prediction of roughly 9.899002015 was almost exact.
 
@@ -160,7 +144,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 8 · Can an orthogonal coordinate improve a near-plateau?</strong> — 9.91139901 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Round 8 decision kept seven coordinates fixed and increased **x6 by 0.025**, with agreement among GP-kernel challengers on potential gain.
+**Decision context:** The Round 8 decision kept seven coordinates fixed and increased **x6 by 0.025**, with agreement among GP-kernel challengers on potential gain.
 
 **Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.26456-0.238989-0.536764`  
 **Actual portal output:** `9.9113990095864`  
@@ -179,7 +163,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 9 · Will the x6 direction keep improving?</strong> — 9.93244301 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** Three GP kernels supported increasing **x6 by 0.05**, with a saved mean forecast around **9.9335**. The original Week 9 reflection treated this as an instance where extra modelling earned its cost.
+**Decision context:** Three GP kernels supported increasing **x6 by 0.05**, with a saved mean forecast around **9.9335**. The original Week 9 reflection treated this as an instance where extra modelling earned its cost.
 
 **Submitted input:** `0.128076-0.104109-0.074587-0.102502-0.970754-0.31456-0.238989-0.536764`  
 **Actual portal output:** `9.9324430095864`  
@@ -198,7 +182,7 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 10 · Can 17 coefficients replace an eight-dimensional search?</strong> — 10.0000000 ★ new best</summary>
 
-**Question and context:** **Historical evidence:** The Week 10 original submission reported fitting an **additive quadratic with 17 coefficients** to 49 personal-plus-initial observations and testing five published external inputs (errors around 10⁻¹⁰). Its vertex forecast **10** before the portal result.
+**Decision context:** The Week 10 original submission reported fitting an **additive quadratic with 17 coefficients** to 49 personal-plus-initial observations and testing five published external inputs (errors around 10⁻¹⁰). Its vertex forecast **10** before the portal result.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
 **Actual portal output:** `10`  
@@ -217,13 +201,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 11 · Does dense sampling imply high performance?</strong> — 10.0000000</summary>
 
-**Question and context:** **Historical evidence:** The Week 11 reflection investigated DBSCAN and found cluster membership depended on the radius. The quadratic still explained the observations at floating-point precision.
+**Decision context:** The Week 11 reflection investigated DBSCAN and found cluster membership depended on the radius. The quadratic still explained the observations at floating-point precision.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
 **Actual portal output:** `10`  
 **Best before → after:** `10` → `10`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The exact same vertex returned **10**. This confirmed repeatability at that setting but did not explore a new region.
 
@@ -236,13 +218,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 12 · Would PCA simplify the model safely?</strong> — 10.0000000</summary>
 
-**Question and context:** **Historical evidence:** The original Week 12 work found **48.8%** of input variance in two principal components, but restricting the fitted quadratic to two PCs reduced its modelled maximum to **9.955973**. The full eight-input vertex remained stronger.
+**Decision context:** The original Week 12 work found **48.8%** of input variance in two principal components, but restricting the fitted quadratic to two PCs reduced its modelled maximum to **9.955973**. The full eight-input vertex remained stronger.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
 **Actual portal output:** `10`  
 **Best before → after:** `10` → `10`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The portal again returned **10 at precisely the same input**. PCA variance was not a substitute for objective sensitivity.
 
@@ -255,13 +235,11 @@ The titles below show the **actual portal return**, with a star for each new bes
 <details>
 <summary><strong>Round 13 · What is the defensible final decision?</strong> — 10.0000000</summary>
 
-**Question and context:** **Historical evidence:** The Week 13 reflection discussed a proposed distinct local step. **The authoritative final portal record instead shows an exact repeat of the Round 10 vertex.** This discrepancy is preserved rather than described as a new sensitivity experiment.
+**Decision context:** The Week 13 reflection discussed a proposed distinct local step. **The authoritative final portal record instead shows an exact repeat of the Round 10 vertex.** This discrepancy is preserved rather than described as a new sensitivity experiment.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
 **Actual portal output:** `10`  
 **Best before → after:** `10` → `10`.
-
-**Numeric pre-result forecast:** Not retained in the selection ledger. Broad modelling discussion is not represented as a precise prospective prediction.
 
 **Evaluation:** The unchanged input returned **10** again. No new headroom or neighbouring behaviour was measured.
 
