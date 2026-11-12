@@ -147,3 +147,20 @@ def test_genuine_pre_result_evidence_and_retrospective_caveats_remain():
         encoding="utf-8"
     )
     assert "submitted the same vertex" in round_13
+
+
+def test_f5_chemical_yield_is_a_working_analogy_not_a_verified_course_scenario():
+    """Keep the function and chronological accounts aligned on provenance."""
+    f5_round_one = _round_entries(5)[0]
+    chronological = (ROOT / "journey/round_01/README.md").read_text(
+        encoding="utf-8"
+    )
+    for account in (f5_round_one, chronological):
+        assert "chemical yield" in account
+        assert "working analogy" in account
+        assert "not verified as the programme's official F5 scenario" in account
+        assert "peak" in account
+
+    # No official descriptions have been recovered for the other functions.
+    datasheet = (ROOT / "DATASHEET.md").read_text(encoding="utf-8")
+    assert "unverified in this repository" in datasheet
