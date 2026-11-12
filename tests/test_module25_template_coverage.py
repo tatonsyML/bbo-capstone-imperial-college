@@ -243,3 +243,13 @@ def test_readme_links_the_research_without_imposing_an_editorial_word_count():
     assert "## Non-technical summary" in readme
     summary = readme.split("## Non-technical summary", 1)[1].split("**Technical scope:**", 1)[0]
     assert 85 <= len(summary.split()) <= 115
+
+
+def test_datasheet_avoids_official_scenario_attribution():
+    """The original brief did not establish real-world function scenarios."""
+    text = (ROOT / "DATASHEET.md").read_text(encoding="utf-8")
+    assert "did not provide authoritative real-world descriptions" in text
+    assert "verified scenario-to-function mapping" in text
+    assert "illustrative analogy" in text
+    assert "not a verified official description" in text
+    assert "programme FAQ says function descriptions" not in text

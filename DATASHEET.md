@@ -14,7 +14,7 @@ This datasheet follows the seven dataset-lifecycle sections proposed in Gebru et
 
 **Division of responsibility:** This page describes the **data**: origin, collection, quality, preparation, limitations, use and maintenance. The eight [function investigations](functions/README.md) remain the full accounts of optimisation methods, weekly choices, submitted inputs, results, plots, code links and lessons. [Appendix A](#appendix-a-function-specific-data-profiles) adds only function-specific dataset information and concise answers not otherwise explicit in those stories. [Appendix B](#appendix-b-module-25-template-coverage) maps the template to the relevant material.
 
-The published observations identify F1–F8 as numerical objectives without physical units. **The programme FAQ says function descriptions and real-world analogies were supplied**, but those original function briefs are not included in the public data checked here. Their precise scenario labels are therefore **unverified in this repository**, not assumed absent. Research analogies are not asserted to describe the hidden functions.
+The capstone instructions available to the author did not provide authoritative real-world descriptions or a verified scenario-to-function mapping for F1–F8. The published observations identify numerical objectives without physical units. Any proposed official scenario-to-function mapping is **unverified in this repository**. Any real-world application mentioned in this write-up, including F5's chemical-yield example, is an **illustrative analogy**, not a verified official description of a hidden function.
 
 ## 1. Motivation
 
