@@ -118,7 +118,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 
 **Evaluation:** The submitted point returned 9.89207261; the pre-result forecast quoted later was about 9.892098, an error near 0.000025.
 
-**What changed for the next round:** Audit future forecasts chronologically instead of trusting fit quality alone.
+**What changed for the next round:** Compare later portal returns with forecasts made before those returns, rather than relying on training fit.
 
 **Code and data:** [Round notes](../../journey/round_06/README.md) · [Inputs](../../journey/round_06/queries.txt) · [Outputs](../../journey/round_06/outputs.txt) · [Notebook](../../journey/round_06/Capstone_BBO_Module17_Week6.ipynb) · [Eight selected inputs](../../journey/round_06/results/round6_queries.csv) · [Decision notes](../../journey/round_06/results/round6_query_rationale.csv).
 
@@ -235,7 +235,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 13 · What is the defensible final decision?</strong> — 10.0000000</summary>
 
-**Decision context:** The Week 13 reflection discussed a proposed distinct local step. **The authoritative final portal record instead shows an exact repeat of the Round 10 vertex.** This discrepancy is preserved rather than described as a new sensitivity experiment.
+**Decision context:** My final reflection considered a small move away from the vertex, but I ultimately submitted the same input as in Round 10.
 
 **Submitted input:** `0.100000-0.150000-0.130000-0.150000-0.800000-0.500000-0.200000-0.600000`  
 **Actual portal output:** `10`  

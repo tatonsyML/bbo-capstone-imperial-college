@@ -25,7 +25,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Week 1 observed that raising selected coordinates and lowering another could help, and deliberately chose a relatively bold vector.
 
-**Approach considered:** GP and acquisition baseline
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.440752-0.249118-0.839948-0.999999-1e-06`  
 **Actual portal result:** `-0.6039806265819045`  
@@ -220,7 +220,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **What I learnt:** A multi-coordinate refinement reached about −0.037519, the best recorded result for this function.
 
-**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Round 12 Python](../../journey/round_12/original/review_round12.py) · [Original robustness and warping tests](../../journey/round_12/original/robust_and_warp.py) · [Original trust-region/Thompson-sampling tests](../../journey/round_12/original/trust_region_ts.py) · [Dated F6 candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Round 12 Python](../../journey/round_12/original/review_round12.py) · [Robustness code](../../journey/round_12/original/robust_and_warp.py) · [Trust-region and Thompson-sampling code](../../journey/round_12/original/trust_region_ts.py) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 

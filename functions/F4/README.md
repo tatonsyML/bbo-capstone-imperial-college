@@ -25,7 +25,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** Week 1 identified possible multiple good regions and selected a nearby but not identical configuration to test the neighbourhood of an existing observation.
 
-**Approach considered:** GP and acquisition baseline
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.5315-0.448817-0.362651-0.331977`  
 **Actual portal result:** `-1.910544236949021`  
@@ -222,7 +222,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **What I learnt:** Repeating the Round 11 input returned exactly the same score and provided a local consistency check.
 
-**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Round 12 Python](../../journey/round_12/original/review_round12.py) · [Original local quadratic/TPE diagnostics](../../journey/round_12/original/tpe_local.py) · [Dated rationale for repeating the incumbent](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Round 12 Python](../../journey/round_12/original/review_round12.py) · [Local quadratic and TPE code](../../journey/round_12/original/tpe_local.py) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 

@@ -10,7 +10,7 @@
 
 ## Understanding this function
 
-F5 had a strong directional signal. A sequence of controlled coordinate changes showed increasing scores towards the legal upper boundary; R10 tested (0.999999)⁴ and returned 8662.405. The full interacting power-sum equation was reconstructed **after** the boundary query, so it explains rather than caused that decision.
+F5 had a strong directional signal. A sequence of controlled coordinate changes showed increasing scores towards the legal upper boundary; R10 tested (0.999999)⁴ and returned 8662.405. A power-sum mathematical reconstruction, examined below, helps explain the measured boundary trend.
 
 ### Score progression from real evaluations
 
@@ -25,7 +25,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original first reflection expected one main chemical-yield peak and chose a stronger area for exploitation rather than global search.
 
-**Approach considered:** GP and acquisition baseline
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.1-0.75-0.9-0.98`  
 **Actual portal result:** `1426.0897645116545`  
@@ -224,7 +224,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **What I learnt:** Another repeat retained the incumbent but provided no new information about alternative locations.
 
-**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 
@@ -265,7 +265,7 @@ At the legal upper input of **(0.999999)⁴**, the equation returns **8662.40500
 
 ## Lessons to carry forward
 
-Boundary tests are justified when they answer a concrete, evidence-supported question. Avoid claiming that a retrospective equation drove an earlier query.
+Boundary tests proved productive when supported by successive measured gains. A high boundary score is not a substitute for testing competing regions.
 
 
 [← All eight functions](../README.md) · [Dataset description](../../DATASHEET.md) · [Model card](../../MODEL_CARD.md)

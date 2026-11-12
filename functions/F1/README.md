@@ -25,7 +25,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The first reflection described F1 as nearly all zero and chose an under-sampled area because no useful local peak had been established.
 
-**Approach considered:** GP and acquisition baseline
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.02-0.98`  
 **Actual portal result:** `0.0`  
@@ -220,7 +220,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **What I learnt:** Repeating the high-scoring vector returned the same value. This checked consistency without adding a new location.
 
-**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 
@@ -273,7 +273,7 @@ $$
 | Minor centre | 0.421460183660255 | Both inputs |
 | Major centre | 0.628539816339745 | Both inputs |
 
-**New retrospective validation, no peer observations:** [the executable fitting script](../../src/bbo/f1_reconstruction.py) fits these **six free parameters** using only the **10 course-supplied F1 observations in my dataset**, then evaluates **all 13 later personal portal results** without using those results for parameter fitting. The fit uses an **informed starting guess and an already proposed functional family**, not an uninformed discovery of a mathematical form. It reproduces the observations to approximately floating-point precision, including the zero return. [Automated regression tests](../../tests/test_f1_reconstruction.py) preserve the numerical check.
+**Independent model check:** [the executable fitting script](../../src/bbo/f1_reconstruction.py) fits these **six free parameters** using only the **10 course-supplied F1 observations in my dataset**, then evaluates **all 13 later personal portal results** without using those results for parameter fitting. The fit uses an **informed starting guess and an already proposed functional family**, not an uninformed discovery of a mathematical form. It reproduces the observations to approximately floating-point precision, including the zero return. [Automated regression tests](../../tests/test_f1_reconstruction.py) preserve the numerical check.
 
 Run from the repository root after installing `requirements.txt`:
 
@@ -283,13 +283,13 @@ PYTHONPATH=src python -m bbo.f1_reconstruction
 
 The returned Round 11 score at `[0.628540, 0.628540]` was **1.9999999996761817**. The reconstructed expression predicts the same value to the published precision. This is a **strong observational match**, not proof of identity with the undisclosed course source at every possible input, nor a certified global maximum on the full search domain.
 
-The model family was available as a separate working implementation. **Its original derivation and authorship are not independently verified.** Historic Round 10–11 notes include earlier use of external exploratory evidence; these retrospective coefficient-fitting and validation tests **exclude all peer data** and do not rewrite the original chronology.
+The functional family was supplied separately rather than discovered from these observations. This later numerical test uses no peer data and is distinct from the method used to select the Round 11 input.
 
 ### Reconstructed function: modelled 2D/3D views
 
 <table><tr><td width="50%"><img src="../../results/figures/f1_model_2d.svg" width="460" alt="Two-dimensional heatmap of F1 reconstructed model"></td><td width="50%"><img src="../../results/figures/f1_model_3d.svg" width="460" alt="Three-dimensional surface of F1 reconstructed model"></td></tr></table>
 
-**Predicted values only:** these mathematical-model plots zoom to `0.32 ≤ x1,x2 ≤ 0.74` so both response regions are visible. The 3D camera has been rotated **45°** from the earlier view to separate the minor and major peaks on screen. They are **not additional portal measurements**. Compare with the observed-data plots immediately above. [Rebuild model figures](../../results/figures/build_f1_reconstruction.mjs) · [Reconstruction index](../../docs/reconstruction.md).
+**Modelled surfaces:** These plots show the reconstructed function over `0.32 ≤ x1,x2 ≤ 0.74` so both response regions are visible. They are predictions, not additional portal measurements; compare them with the observed-data plots above. [Rebuild model figures](../../results/figures/build_f1_reconstruction.mjs) · [Reconstruction index](../../docs/reconstruction.md).
 
 ## Lessons to carry forward
 

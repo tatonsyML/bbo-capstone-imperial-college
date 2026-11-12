@@ -25,7 +25,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The original first reflection noted that the best outputs were already close to zero and favoured cautious exploitation while retaining a promising coordinate.
 
-**Approach considered:** GP and acquisition baseline
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.5-0.5-0.345`  
 **Actual portal result:** `-0.0437772384849064`  
@@ -224,7 +224,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **What I learnt:** The wider candidate scored below the Round 11 best; exploring new regions still incurred an opportunity cost.
 
-**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Round 12 Python](../../journey/round_12/original/review_round12.py) · [Original TPE and local-model comparisons](../../journey/round_12/original/tpe_local.py) · [Dated candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Round 12 Python](../../journey/round_12/original/review_round12.py) · [Original TPE and local-model comparisons](../../journey/round_12/original/tpe_local.py) · [Dated candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 

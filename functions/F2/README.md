@@ -127,7 +127,7 @@ Open a round to follow the question, submitted input, measured score and what ch
 <details>
 <summary><strong>Round 7 · Is the fitted neighbourhood stable?</strong> — 0.589347608</summary>
 
-**Decision context:** The Week 7 reflection prioritised GP kernel family (RBF/Matérn), lengthscales, noise and rolling-origin forecast audits. F2's prior improvement had differed from its GP forecast.
+**Decision context:** The Week 7 reflection prioritised GP kernel family (RBF/Matérn), lengthscales, noise and rolling-origin forecast checks. F2's prior improvement had differed from its GP forecast.
 
 **Submitted input:** `0.7015-0.960223`  
 **Actual portal output:** `0.5893476079120687`  

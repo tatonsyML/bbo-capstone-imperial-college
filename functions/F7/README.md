@@ -25,7 +25,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **Why this input:** The Week 1 reflection started from strong observed configurations but changed several coordinates to test whether the good region extended further.
 
-**Approach considered:** GP and acquisition baseline
+**Approach considered:** Manual exploration informed by the starting observations.
 
 **Submitted input:** `0.034737-0.246867-0.265123-0.307852-0.362506-0.937209`  
 **Actual portal result:** `1.3605555033645358`  
@@ -226,7 +226,7 @@ The chart tracks measured best-so-far results. A flat interval means no improvem
 
 **What I learnt:** The positive Hartmann-6 forecast of about 3.32236801 closely matched the subsequent portal result.
 
-**Code and data:** [Round 12 evidence](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md) · [Numerical provenance](selection_history.csv).
+**Code and data:** [Round notes](../../journey/round_12/README.md) · [Candidate rationale](../../journey/round_12/original/week12_full_review_2026-11-02.md).
 
 </details>
 
