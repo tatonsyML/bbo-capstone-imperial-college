@@ -9,7 +9,7 @@ This is my chronological account of thirteen rounds of experiments. Each round l
 | Round | Module | Main method or question | Evidence and lesson | Source folder |
 |---|---:|---|---|---|
 | **1** | 12 | Initial exploration across 175 observations; GP/EI ideas | Model strength differed sharply by function | [Open R1](round_01/README.md) |
-| **2** | 13 | GP/UCB with function-specific κ from 1.0 to 3.0 | F4/F5 improved; [original Python](round_02/week2_ucb_course_aligned.py) and [candidate records](round_02/week2_ucb_results.csv) | [Open R2](round_02/README.md) |
+| **2** | 13 | GP/UCB with function-specific κ from 1.0 to 3.0 | F4/F5 improved; [original Python](round_02/week2_ucb_course_aligned.py) and [candidate records](round_02/week2_ucb_results.csv) and [submitted-input record](round_02/week2_ucb_portal_values.txt) | [Open R2](round_02/README.md) |
 | **3** | 14 | F1 maximin, F2 global EI, F3 local GP mean, F4–F8 local EI; 501×501 2D grids and larger candidate pools | Five new personal bests; tune policy by function | [Open R3](round_03/README.md) |
 | **4** | 15 | GP, logistic regression, SVM and small NN challengers | F5/F6/F8 improved; [historical Python](round_04/capstone_bbo_week4_module15.py) explores the diagnostics | [Open R4](round_04/README.md) |
 | **5** | 16 | Controlled coordinate probes | Controlled moves helped but did not prove a maximum | [Open R5](round_05/README.md) |

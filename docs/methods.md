@@ -1,6 +1,6 @@
 # Optimisation methods, source code and reproduction
 
-[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Original model-card](../MODEL_CARD.md) · [Round 13 verified results](../journey/round_13/README.md)
+[← Main README](../README.md) · [How to run the benchmark](../research/full_optimisers/README.md) · [Model card](../MODEL_CARD.md) · [Final measured results](../journey/round_13/README.md)
 
 ## What was implemented and when?
 
@@ -23,6 +23,8 @@
 | Controlled coordinate probes | [Round 5](../journey/round_05/README.md) · [F5](../functions/F5/README.md) | Assess local sensitivity and boundary effects | Original round experiments |
 | DBSCAN analysis of search density | [Clustering study](../research/diagnostics/clustering/README.md) | Compare observed clusters with high-scoring points; published code is a later reproducible diagnostic | Week 11 analysis, later diagnostic |
 
+**Saved historical candidate comparisons:** [HEBO-inspired committee suggestions](../results/hebo_inspired_committee.csv), [TuRBO-style local proposals](../results/turbo_style_challengers.csv) and [structural candidate alternatives](../results/structural_challengers.csv). These contain model proposals and forecasts, **not additional portal measurements**. The [279 observed returns and starting points](../data/all_observations.csv) remain the source for measured outcomes.
+
 ## The logic behind the code
 
 ### 1. GP modelling
@@ -33,7 +35,7 @@ Each function has only a small number of observations relative to its dimension.
 
 ### 2. Choosing one query
 
-EI combines predicted improvement with uncertainty. PI considers the probability of beating an incumbent. UCB gives additional value to uncertainty. Their numerical units differ, so the custom committee **ranks** candidates within each acquisition function instead of directly adding raw acquisition values. The original course permitted only one query per function per round, making it important to audit the choice.
+EI combines predicted improvement with uncertainty. PI considers the probability of beating an incumbent. UCB gives additional value to uncertainty. Their numerical units differ, so the custom committee **ranks** candidates within each acquisition function instead of directly adding raw acquisition values. The original course permitted only one query per function per round, making each selected input worth its limited evaluation budget.
 
 ### 3. What the original 'TuRBO-style' code missed
 
