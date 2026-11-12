@@ -10,7 +10,7 @@ The complete dataset contains **279 rows (approximately 40 KB)** and is stored i
 | Personal portal returns, R1–R10 | **80** | [Recorded round history](accumulated/history_through_week10.csv) |
 | Personal portal returns, R11–R12 | **16** | [Round 11/12 portal log](portal_rounds_11_12.csv) |
 | Personal portal returns, R13 | **8** | [Final portal log](portal_rounds_13.csv) |
-| **Total verified** | **279** | Includes repeated input locations |
+| **Total recorded** | **279** | Includes repeated input locations |
 
 All 13 rounds have returned: 104 personal portal evaluations (13 × 8), plus 175 initial supplied observations.
 

@@ -1,6 +1,6 @@
 # Explore the eight function stories
 
-[← Project homepage](../README.md) · [Research decisions by round](../docs/WEEKLY_SUBMISSION_EVIDENCE.md) · [Mathematical reconstructions](../docs/reconstruction.md) · [Visual gallery](../docs/visualisations.md) · [Historical archive](../journey/README.md) · [Complete data](../data/all_observations.csv)
+[← Project homepage](../README.md) · [Research journey](../journey/README.md) · [Mathematical reconstructions](../docs/reconstruction.md) · [Visual gallery](../docs/visualisations.md) · [Complete data](../data/all_observations.csv)
 
 **One function, thirteen decisions.** Start with the behaviour and final result, open any weekly section, then inspect the progress chart, original evidence, model code and 2D/3D visualisations. The weekly sections collapse by default so the page stays readable.
 
@@ -15,7 +15,7 @@
 | [F7 · From local to structural](F7/README.md) | One-coordinate path, alternative basin and Hartmann-6 forecast | **3.322368011393** | R12 |
 | [F8 · Quadratic reconstruction](F8/README.md) | GP refinement, mathematical solution and held-out validation | **10.000000** | R10 |
 
-[Function-specific dataset profiles](../docs/function_datasheets.md) · [Evidence and editorial standards](../docs/EVIDENCE_RULES.md)
+[Function-specific dataset profiles](../docs/function_datasheets.md)
 
 ## How to read a round
 
@@ -23,7 +23,7 @@ Each expandable section separates the same five things:
 
 **What was known → What was predicted → What was submitted → What was observed → What changed afterwards.**
 
-**Forecasts and evidence:** Numerical forecasts appear in function stories only when documented before the corresponding portal return. Missing forecasts are noted in the linked [decision ledgers](F2/selection_history.csv), not repeated as a notice under every round. The [source evidence audit](../docs/WEEKLY_SUBMISSION_EVIDENCE.md#original-code-and-decision-evidence) distinguishes contemporary candidate-selection work from later reconstructions. The detailed [decision ledgers](F2/selection_history.csv), [historical code](../journey/README.md) and [279-row master dataset](../data/all_observations.csv) provide a numerical audit without requiring readers to navigate duplicate CSV files first.
+**Forecasts and measured results:** Each function page separates predictions from portal returns. The [decision histories](F2/selection_history.csv), [round-by-round narrative](../journey/README.md) and [complete observations](../data/all_observations.csv) provide the supporting numerical record.
 
 ## How to interpret the graphics
 
@@ -34,4 +34,4 @@ Each expandable section separates the same five things:
 
 [Graph descriptions and assumptions](../docs/functions.md) · [Rebuild graph source](../results/figures/build_visual_gallery.mjs)
 
-The project history remains intact in [journey/](../journey/README.md). It is an evidence archive, **not** a second set of independently edited experimental results.
+The project history remains intact in [journey/](../journey/README.md). It provides the chronological narrative alongside the individual function investigations.

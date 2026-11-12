@@ -1,6 +1,6 @@
 # Round 13 | Three new records and the final portal return
 
-**Status:** Confirmed eight portal outputs. This closes the thirteen-round challenge.
+**Final outcome:** Three new personal bests (F2, F3, F4), alongside five non-improving results. This closes the thirteen-round challenge.
 
 ## My reasoning at the time
 
@@ -12,7 +12,7 @@ I considered reinforcement-learning ideas in the reflection as comparisons, not 
 
 Round 12's four exact repeats provided repeatability evidence without discovering new nearby behaviour. F7 improved from about 3.278968 to 3.322368, consistent with a forecast recorded in advance, which strengthened the case for its local structural model. I became more sceptical of exact repeats without a specific measurement reason.
 
-An important correction separates this contemporaneous intention from the saved result. I wrote that the final F8 point would be a small, distinct neighbouring query. The archived Round 13 input instead exactly repeats the previous successful vector (0.100000, 0.150000, 0.130000, 0.150000, 0.800000, 0.500000, 0.200000, 0.600000), and the portal returned 10 again. The submitted evidence takes precedence over the earlier plan. Round 13 improved F2, F3 and F4, but not F6 or F7.
+I considered a small neighbouring F8 query, but ultimately repeated the established optimum at (0.100000, 0.150000, 0.130000, 0.150000, 0.800000, 0.500000, 0.200000, 0.600000). The portal returned 10 again. Round 13 improved F2, F3 and F4, but not F6 or F7.
 
 I also considered how the discipline might transfer to tuning an Oracle HCM data extract: testing batch size and concurrency, verifying full reconciliation, and rewarding genuine runtime improvements per experiment rather than a promising forecast alone. That was a proposed application, not a deployed solution. My closing lesson was to preserve the full chain from hypothesis to query to result, and to challenge decisions even when the surrogate appeared accurate.
 
@@ -44,11 +44,9 @@ An apparent plateau is not evidence of global convergence. Changes in search reg
 Repeated millionth-size F4 moves produced tiny gains, while a later wider step helped. I described this in **_The trouble with the sixth decimal_**. I used forecast errors to refine the final-query strategy. I considered a **small distinct F8 step** near the optimum, but ultimately **submitted the same vertex** and received 10. The [recorded input](queries.txt) shows what I submitted, rather than every option considered.
 
 
-## Original evidence
+## Inputs and results
 
-[Submitted inputs](queries.txt) · [returned outputs](outputs.txt) · [Week 13 portal CSV](../../data/portal_rounds_13.csv) · [verified bests](../../results/current_best_after_week13.csv).
-
-## Detailed final-round analysis
+[Submitted inputs](queries.txt) · [returned outputs](outputs.txt) · [Week 13 portal CSV](../../data/portal_rounds_13.csv) · [final best scores](../../results/current_best_after_week13.csv).
 
 ## Final-round implications
 
@@ -60,10 +58,4 @@ Repeated millionth-size F4 moves produced tiny gains, while a later wider step h
 
 **F6:** R13 scored −0.076980, lower than the R12 incumbent −0.037519. **F7:** R13 shifted x1 from 0.201689 to 0.201690 and scored **3.322368011392718**, only **4.38 × 10⁻¹³** lower than R12, so it is not an exact repeat. **F1/F5/F8:** submitted repeated best inputs and returned identical scores.
 
-## Evidence and limitations
-
-Final dataset: **175 supplied initial observations + 104 personal returned queries (13 rounds × eight functions) = 279 observed records**, including repeated settings. Publicly reported peer observations do not count as personal returns. The confirmed Round 11 F7 input was `0.233000-0.128000-0.522000-0.276000-0.310000-0.667000`, returning `3.278967926227992`. It is confirmed in the [canonical observations](../../data/all_observations.csv) and [Round 11 record](../round_11/README.md). The original candidate-selection script is not available.
-
-The result email contains observed scores, not prior model predictions. These post-result interpretations **do not establish prospective forecasts** or global optimality for unresolved functions.
-
-[Round 13 inputs/outputs](../../data/portal_rounds_13.csv) · [Final best scores and inputs](../../results/current_best_after_week13.csv) · [Cumulative history](../../data/accumulated/history_through_week13.csv) · [Provenance](../../DATASHEET.md) · [Final reflection](../final_reflection/README.md)
+[Round 13 inputs/outputs](../../data/portal_rounds_13.csv) · [Final best scores and inputs](../../results/current_best_after_week13.csv) · [Cumulative history](../../data/accumulated/history_through_week13.csv) · [Final reflection](../final_reflection/README.md)

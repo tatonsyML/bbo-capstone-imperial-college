@@ -25,4 +25,4 @@ Every [function page](../functions/README.md) displays three types of visual evi
 - [F1 retrospective model and check](../src/bbo/f1_reconstruction.py) plus [modelled plot generator](../results/figures/build_f1_reconstruction.mjs) use no peer data. The new [F1 2D](../results/figures/f1_model_2d.svg) and [3D](../results/figures/f1_model_3d.svg) plots show predictions, not measurements.
 - [F8 structural validation code](../src/bbo/structural_validation.py) tests the equation against observations withheld from its retrospective initial-40 fit.
 
-The charts do not invent confidence percentages or turn modelled points into portal observations. **F7 Round 11 has confirmed input coordinates and a returned score**; its point belongs in the observed projections. For exact coordinates and scores, open each function's decision ledger or [the verified facts register](VERIFIED_FACTS.md).
+The graphs distinguish measured points from model-generated values. For exact inputs and scores, see each function's [decision history](../functions/README.md) or the [complete observations](../data/all_observations.csv).

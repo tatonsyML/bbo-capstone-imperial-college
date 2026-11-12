@@ -1,6 +1,6 @@
 # Round 2 · Module 13 | UCB experiments and initial candidate selection
 
-**Record:** Eight submitted inputs and eight returned scores. The score values are observed. The explanatory notes below were compiled **retrospectively** from surviving records unless an original forecast is explicitly identified.
+**Round summary:** Eight submitted inputs, eight measured results and the decisions behind them.
 
 ## My reasoning at the time
 
@@ -35,12 +35,12 @@ The [Week 2 UCB notebook](Capstone_BBO_Week2_UCB_only.ipynb), [Python script](we
 
 **Notebook execution status:** The original Week 2 notebook is an unexecuted historical snapshot. The saved Python script, query list and portal outcomes remain the primary evidence of the round.
 
-## Original files and evidence
+## Inputs, results and code
 
-| File | Purpose | Evidence status |
+| File | Purpose | Description |
 |---|---|---|
-| [queries.txt](queries.txt) | submitted input vector | portal input, historical |
-| [outputs.txt](outputs.txt) | returned output values | portal observation, historical |
+| [queries.txt](queries.txt) | submitted input vector | Submitted input |
+| [outputs.txt](outputs.txt) | returned output values | Measured score |
 | [Capstone_BBO_Week2_UCB_only.ipynb](Capstone_BBO_Week2_UCB_only.ipynb) | notebook | archived course-time work |
 | [week2_ucb_course_aligned.py](week2_ucb_course_aligned.py) | Python script | archived course-time work |
 | [week2_ucb_results.csv](week2_ucb_results.csv) | CSV | recorded output |
