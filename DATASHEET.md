@@ -72,7 +72,7 @@ Initial samples are sparse in high dimensions; later queries were selected adapt
 
 ## 8. Distribution, permissions and privacy
 
-The original course-provided `.npy` files are **not hosted here**. However, the **175 course-provided numerical observations do appear in public CSV files**. Permission to redistribute these numeric values has **not been independently verified**. The author should check the course's terms and, if necessary, restrict publication or replace the course rows with an authorised retrieval link. Do not infer an open data licence from this repository.
+Stage 2, required final capstone submission **25.3**, instructs participants to submit a **public GitHub repository** containing or linking to project data, code and presentation materials, with large datasets hosted externally. The **175 course-provided starting observations** are included as numerical evidence within the approximately 40 KB, 279-row dataset. The original `.npy` files are **not hosted here**. This publication follows the course's capstone-submission instructions; it does not grant unrestricted third-party redistribution or commercial reuse rights over programme-supplied data. See [usage and permissions](USAGE_AND_PERMISSIONS.md).
 
 The dataset contains no reported personal identifiers or health records. The 175 supplied starting observations and 104 personally returned queries have separate source flags. External observations used as research evidence are **not** included among these 279 rows. [Data-use and redistribution statement](USAGE_AND_PERMISSIONS.md).
 

@@ -89,7 +89,7 @@ The default output folder is `results/full_hebo_turbo/`. Results will include:
 
 **Status in this repository:** both official algorithms have now run successfully on the F8 fitted-quadratic simulator. The matched-budget results below are **post-capstone simulations only**; they say nothing about unsubmitted real portal outputs or a global ranking of the methods.
 
-For further context, see [the course-time methodology](../../docs/methods.md), [the final portal evidence](../../journey/round_13/README.md) and [all eight-function visualisations](../../docs/functions.md).
+For further context, see [the course-time methodology](../../docs/methods.md), [the final portal evidence](../../journey/round_13/README.md) and [all eight-function visualisations](../../docs/visualisations.md).
 
 
 ## Executed F8 model-only comparison — 12 November 2026

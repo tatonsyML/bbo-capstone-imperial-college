@@ -38,4 +38,4 @@ The [automated evidence audit](../src/bbo/evidence_audit.py) checks this exact i
 2. Use the [eight function ledgers](../functions/README.md) and [round journey](../journey/README.md) to distinguish **what was known**, **what was submitted**, **what returned**, and **what was learnt later**.
 3. Separate actual paid portal evaluations, hypothetical algorithmic suggestions, and reconstructed mathematical surface scores.
 4. Keep historical source and later reproductions distinct. An accurate later model fit does not demonstrate which algorithm chose the original query.
-5. Run `python -m pytest -q`, `python tests/check_internal_links.py` and the final notebook GitHub Actions workflow before merging changes to `main`.
+5. Require passing core tests and internal-link validation for each pull request. Execute the final notebook workflow when the changes affect the notebook, model code, data, tests or its dependencies; run it manually for a formal research release.
