@@ -88,8 +88,8 @@ def test_datasheet_strategy_outcomes_match_canonical_measurements():
         expected_input = "-".join(
             f'{Decimal(best[f"x{i}"]):.6f}' for i in range(1, dimensions + 1)
         )
-        assert f"**Best measured input:** \`{expected_input}\`" in section
-        found_output = re.search(r"\\*\\*Best measured output:\\*\\* \`([^\`]+)\`", section)
+        assert f"**Best measured input:** `{expected_input}`" in section
+        found_output = re.search(r"\*\*Best measured output:\*\* `([^`]+)`", section)
         assert found_output is not None, function
         assert Decimal(found_output.group(1)) == Decimal(best["output"])
 
